@@ -61,7 +61,8 @@ def global_references(retail: ElfFile) -> list[tuple[str, int]]:
     return references
 
 
-def write_harness(retail: ElfFile, obj: ElfFile, directory: Path) -> tuple[Path, Path]:
+def write_harness(retail: ElfFile, obj: ElfFile, directory: Path,
+                  additional_objects: tuple[ElfFile, ...] = ()) -> tuple[Path, Path]:
     """Write source references and absolute retail bindings for absent units."""
     references = global_references(retail)
     # asm labels here declare external symbol names, including names with dots.
@@ -74,7 +75,8 @@ def write_harness(retail: ElfFile, obj: ElfFile, directory: Path) -> tuple[Path,
     source = directory / "retail-got.cpp"
     source.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
-    defined = {s.name for s in obj.symbols if s.st_shndx not in (SHN_UNDEF, SHN_ABS)}
+    defined = {s.name for unit in (obj, *additional_objects) for s in unit.symbols
+               if s.st_shndx not in (SHN_UNDEF, SHN_ABS)}
     bindings = []
     for symbol in reversed(retail.symbols):
         if (symbol.table == ".symtab" and symbol.st_bind > 0

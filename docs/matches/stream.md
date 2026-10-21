@@ -43,3 +43,9 @@ The vtable symbol itself is 44 bytes; its output section includes four
 additional alignment bytes, which also match. All virtual-function entries
 come from the real compiler-generated vtable, not retail symbol bindings.
 The verification image is not a runnable replacement for the whole library.
+
+BufferStream recovery established that the empty destructor must be visible
+inline in the header. It was moved there from Stream.cpp, and the linker
+selectors accept the resulting COMDAT destructor sections. Every function,
+the full code range and the vtable above still match byte for byte after
+that source change.

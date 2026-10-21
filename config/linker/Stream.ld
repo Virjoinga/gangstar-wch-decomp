@@ -16,8 +16,8 @@ SECTIONS
         *stream.o(.text._ZN6Stream5WriteEc)
         *stream.o(.text._ZN6Stream5WriteERS_i)
         *stream.o(.text._ZN6Stream4PeekEPvi)
-        *stream.o(.text._ZN6StreamD0Ev)
-        *stream.o(.text._ZN6StreamD1Ev .text._ZN6StreamD2Ev)
+        *stream.o(.text._ZN6StreamD0Ev .gnu.linkonce.t._ZN6StreamD0Ev)
+        *stream.o(.text._ZN6StreamD1Ev .text._ZN6StreamD2Ev .gnu.linkonce.t._ZN6StreamD1Ev .gnu.linkonce.t._ZN6StreamD2Ev)
     }
     .vtable 0x004ad6c8 : { *stream.o(.data.rel.ro) }
     .got 0x004b0048 : {

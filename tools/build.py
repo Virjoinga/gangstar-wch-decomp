@@ -60,8 +60,16 @@ def check_section(retail: ElfFile, image: ElfFile, name: str, offset: int = 0) -
     return ok
 
 
-def build_unit(name: str, compiler_root: Path | None, base_library: Path) -> bool:
+def build_unit(name: str, compiler_root: Path | None, base_library: Path,
+               active: tuple[str, ...] = ()) -> bool:
+    if name in active:
+        raise ValueError("cyclic build dependency: " + " -> ".join((*active, name)))
     manifest = json.loads((ROOT / "config" / "matches" / f"{name}.json").read_text())
+    dependency_objects = []
+    for dependency in manifest.get("dependencies", []):
+        if not build_unit(dependency, compiler_root, base_library, (*active, name)):
+            return False
+        dependency_objects.append(f"build/matches/{dependency}/{dependency}.o")
     if compiler_root is None:
         compiler_root = ROOT / manifest.get("toolchain",
             "toolchain/android-ndk-r4b/build/prebuilt/windows/arm-eabi-4.2.1")
@@ -87,10 +95,11 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path) -> boo
         run([str(binary / "arm-eabi-g++"), *manifest["compiler_flags"],
              "-c", manifest["source"], "-o", obj], environment)
 
-    objects = [obj]
+    objects = [*dependency_objects, obj]
     if manifest.get("retail_got"):
         retail, _ = load_base_library(base_library)
-        harness_source, _ = write_harness(retail, ElfFile.load(str(ROOT / obj)), output)
+        dependencies = tuple(ElfFile.load(str(ROOT / path)) for path in dependency_objects)
+        harness_source, _ = write_harness(retail, ElfFile.load(str(ROOT / obj)), output, dependencies)
         harness_obj = output / "retail-got.o"
         harness_flags = ["-O0", "-fpic", "-fno-exceptions", "-fno-rtti",
                          "-fno-unwind-tables", "-fno-asynchronous-unwind-tables",

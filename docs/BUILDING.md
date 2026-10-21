@@ -140,6 +140,13 @@ symbol allocation; it does not patch relocation results. The ADPCM manifest
 also checks the tables and the complete global GOT region. The PLT/local GOT
 prefix remains reserved rather than rebuilt. See `matches/adpcm.md`.
 
+Manifests may declare `dependencies` naming other configured units. The
+builder rebuilds and verifies those units first, then links their real object
+files into the dependent image. Their definitions are excluded from generated
+retail bindings as well. BufferStream uses this to retain Stream's Thumb
+function metadata and verify both source units together. Dependency cycles
+are rejected before compilation.
+
 ## What is already automated
 
 The repository and progress checks need no game data. Catalogue, symbol-map

@@ -4,7 +4,7 @@
 class Stream {
 public:
     Stream();
-    virtual ~Stream();
+    virtual ~Stream() {}
     virtual void Close();
     virtual int Read(void* destination, int size) = 0;
     virtual int Write(const void* source, int size) = 0;

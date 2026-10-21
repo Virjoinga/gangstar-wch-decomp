@@ -4,7 +4,7 @@ from contextlib import redirect_stderr, redirect_stdout
 import io
 import unittest
 
-from tools.build import check_section
+from tools.build import build_unit, check_section
 from tools.elf import EM_ARM, ET_EXEC, ElfFile, Section
 
 
@@ -33,6 +33,10 @@ class SectionComparisonTests(unittest.TestCase):
     def test_region_outside_retail_is_rejected(self):
         with self.assertRaises(ValueError):
             check_section(self.image(b"a"), self.image(b"ab"), ".rodata")
+
+    def test_dependency_cycle_is_rejected_before_building(self):
+        with self.assertRaisesRegex(ValueError, "cyclic build dependency: a -> b -> a"):
+            build_unit("a", None, None, ("a", "b"))
 
 
 if __name__ == "__main__":

@@ -49,7 +49,3 @@ int Stream::Peek(void* destination, int size)
     Seek(position, 0);
     return count;
 }
-
-Stream::~Stream()
-{
-}

@@ -44,6 +44,16 @@ class RetailGotTests(unittest.TestCase):
         self.assertIn('"alias" = 0x3000;', bindings)
         self.assertIn('"imported" = 0x0;', bindings)
 
+    def test_dependency_definitions_are_not_replaced_by_retail_bindings(self):
+        obj = ElfFile("compiled.o", b"", symbols=[Symbol("first", 0, 4, 0x11, 0, 1)])
+        base = ElfFile("base.o", b"", symbols=[Symbol("alias", 0, 4, 0x11, 0, 1)])
+        with tempfile.TemporaryDirectory() as directory:
+            _, script = write_harness(self.retail(), obj, Path(directory), (base,))
+            bindings = script.read_text()
+        self.assertNotIn('"first" =', bindings)
+        self.assertNotIn('"alias" =', bindings)
+        self.assertIn('"imported" = 0x0;', bindings)
+
 
 if __name__ == "__main__":
     unittest.main()
