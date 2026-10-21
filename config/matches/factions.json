@@ -1,0 +1,23 @@
+{
+    "source": "src/game/meta/Factions.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2", "-fpic", "-fno-toplevel-reorder",
+        "-fno-strict-aliasing", "-fno-rtti", "-fno-exceptions",
+        "-mthumb", "-mthumb-interwork", "-march=armv5te",
+        "-mtune=xscale", "-mfloat-abi=softfp"
+    ],
+    "assembler_flags": ["-march=armv5te", "-mfloat-abi=softfp", "-mfpu=vfp", "-meabi=4"],
+    "retail_got": true,
+    "linker_script": "config/linker/Factions.ld",
+    "sections": [".text", {"name": ".got", "offset": 864}],
+    "functions": [
+        "_ZN8Factions4initEv",
+        "_ZN8Factions19setFactionAsNeutralEi",
+        "_ZN8Factions20setFactionAsFriendlyEi",
+        "_ZN8Factions17setFactionAsEnemyEi",
+        "_ZN8Factions16isFactionNeutralEi",
+        "_ZN8Factions17isFactionFriendlyEi",
+        "_ZN8Factions14isFactionEnemyEi"
+    ]
+}
