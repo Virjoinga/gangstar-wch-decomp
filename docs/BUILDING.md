@@ -147,6 +147,22 @@ retail bindings as well. BufferStream uses this to retain Stream's Thumb
 function metadata and verify both source units together. Dependency cycles
 are rejected before compilation.
 
+### External Thumb callees
+
+A unit may list `external_thumb_functions` in its manifest when a callee still
+uses the retail implementation. The builder validates each name against the
+retail ELF and assembles an absolute `.thumb_set` symbol declaration with the
+original address and Thumb function metadata. No instructions or function bytes
+are emitted for these symbols. The declarations do not mark callees matched.
+
+This prevents the legacy linker from turning an original Thumb `BL` into an
+ARM `BLX` merely because an address-only linker assignment lost its mode. A
+compiled definition in the unit or any native dependency cannot be overridden;
+unknown names, ARM functions, objects, imports and duplicates are rejected.
+Native dependencies remain the way to verify callees reconstructed in C++.
+Compiler-generated assembly and linked bytes are never rewritten. SaveGame's
+filename helper exercises this with the still-pending Application::GetInstance.
+
 ## What is already automated
 
 The repository and progress checks need no game data. Catalogue, symbol-map
