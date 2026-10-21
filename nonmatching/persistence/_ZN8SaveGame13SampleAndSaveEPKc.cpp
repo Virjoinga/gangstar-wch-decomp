@@ -44,24 +44,13 @@ bool SaveGame::SampleAndSave(const char* name)
     weaponBlock.id = 2;
     for (int c = 0; c < 2; ++c) {
         PlayerTest::eContext context = static_cast<PlayerTest::eContext>(c);
-        ammo.type = 0;
-        ammo.context = context;
-        ammo.count = weapons->getAmmo(0, context);
-        WriteBlock(ammo);
-        for (int type = 1; type < 7; ++type) {
+        for (int type = 0; type < 7; ++type) {
             ammo.type = type;
             ammo.context = context;
             ammo.count = weapons->getAmmo(type, context);
             WriteBlock(ammo);
         }
-        Weapon* weapon = weapons->getWeaponInList(0, context);
-        weaponBlock.locked = weapon->isLocked();
-        weaponBlock.weaponId = 0;
-        weaponBlock.context = context;
-        weaponBlock.clip = weapon->getClip();
-        weaponBlock.clipSize = weapon->getClipSize();
-        WriteBlock(weaponBlock);
-        for (int id = 1; id < 10; ++id) {
+        for (int id = 0; id < 10; ++id) {
             Weapon* weapon = weapons->getWeaponInList(id, context);
             weaponBlock.locked = weapon->isLocked();
             weaponBlock.weaponId = id;
