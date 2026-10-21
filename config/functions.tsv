@@ -12792,12 +12792,12 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034dac4	0x14	AccelerometerWin32.cpp	game	input	pending	_ZThn76_N18AccelerometerWin32D1Ev	non-virtual thunk to AccelerometerWin32::~AccelerometerWin32()
 0x0034dad9	0x34	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32D1Ev	AccelerometerWin32::~AccelerometerWin32()
 0x0034dad9	0x34	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32D2Ev	AccelerometerWin32::~AccelerometerWin32()
-0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseC1Ev	FileSystemBase::FileSystemBase()
-0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseC2Ev	FileSystemBase::FileSystemBase()
-0x0034db25	0x2	FileSystemBase.cpp	game	persistence	pending	_ZNK14FileSystemBase6_traceEPKc	FileSystemBase::_trace(char const*) const
-0x0034db29	0x20	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD0Ev	FileSystemBase::~FileSystemBase()
-0x0034db49	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD1Ev	FileSystemBase::~FileSystemBase()
-0x0034db49	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD2Ev	FileSystemBase::~FileSystemBase()
+0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseC1Ev	FileSystemBase::FileSystemBase()
+0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseC2Ev	FileSystemBase::FileSystemBase()
+0x0034db25	0x2	FileSystemBase.cpp	game	persistence	matched	_ZNK14FileSystemBase6_traceEPKc	FileSystemBase::_trace(char const*) const
+0x0034db29	0x20	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD0Ev	FileSystemBase::~FileSystemBase()
+0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD1Ev	FileSystemBase::~FileSystemBase()
+0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD2Ev	FileSystemBase::~FileSystemBase()
 0x0034db61	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle7canReadEv	FileSystemIPhone::_FileHandle::canRead() const
 0x0034db65	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle8canWriteEv	FileSystemIPhone::_FileHandle::canWrite() const
 0x0034db69	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11getRootPathEv	FileSystemIPhone::getRootPath() const
