@@ -1,0 +1,9 @@
+/*
+ * MissionConditionStayBetween
+ *
+ * Original file: MissionConditionStayBetween.cpp
+ * Area:          missions
+ *
+ * This file mirrors the layout of the retail build.  Add the decompiled
+ * functions of MissionConditionStayBetween.cpp here, in the order they appear in the library.
+ */

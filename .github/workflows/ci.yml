@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  tooling:
+    name: Tooling and repository checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run the unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Check the repository layout
+        run: python tools/check_repository.py
+
+      - name: Check that the generated tables are up to date
+        # CI has no game data, so the tables cannot be regenerated here.  The
+        # check below verifies the parts that do not need the retail library.
+        run: python tools/progress.py --check
+
+      - name: Make sure no game data is committed
+        run: |
+          if git ls-files | grep -Ei '\.(so|apk|dex|obb)$'; then
+            echo "game data is committed:" >&2
+            git ls-files | grep -Ei '\.(so|apk|dex|obb)$' >&2
+            exit 1
+          fi
+
+  toolchain:
+    name: The toolchain image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the toolchain image
+        run: docker build -t gangstar-wch-decomp/toolchain:latest config/toolchain
+      - name: Make sure the demangler works
+        run: |
+          printf '_ZN7Vehicle11getSkinMeshEv\n' \
+            | docker run --rm -i gangstar-wch-decomp/toolchain:latest c++filt -n

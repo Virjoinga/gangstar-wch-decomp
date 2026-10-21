@@ -1,0 +1,18 @@
+# Keep the retail library and the generated tables out of the history noise.
+*.so binary
+*.apk binary
+
+# Everything is text and uses LF, whatever the platform.
+* text=auto eol=lf
+
+# The tables are generated but they are the project's reference data, so they
+# stay in the repository and are diffed normally.
+config/*.tsv text eol=lf
+
+# Assembly dumps are generated but kept, because they are the work queue.
+asm/**/*.s text eol=lf
+
+*.cpp text eol=lf
+*.h text eol=lf
+*.py text eol=lf
+*.md text eol=lf

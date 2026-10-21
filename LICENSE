@@ -1,0 +1,43 @@
+MIT License
+
+Copyright (c) 2026 the Gangstar: West Coast Hustle decompilation contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---------------------------------------------------------------------------
+NOTICE ABOUT THE REVERSE ENGINEERED CONTENT
+---------------------------------------------------------------------------
+
+The MIT license above covers the tooling, the documentation and the original
+contributions made to this repository.
+
+It does not cover the game itself.  Gangstar: West Coast Hustle was developed
+and published by Gameloft.  All trademarks, artwork, audio, level data and
+other game content remain the property of Gameloft and its licensors.
+
+This repository contains a reverse engineering analysis of the game's native
+library and a reconstruction of the game's behaviour in source form.  That
+material is published for the purpose of preserving a game that is no longer
+available for purchase, and for interoperability and research.
+
+No game data is distributed here.  The retail shared object that this project
+analyses is git ignored and must be obtained from your own copy of the game.
+
+The vendored libraries under src/engine/ are upstream open source projects and
+keep their own licences, which are listed in docs/ENGINE.md.

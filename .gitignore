@@ -1,0 +1,38 @@
+# Game data and proprietary tools are never committed to this repository.
+baselib/
+build/
+work/
+toolchain/
+
+# The retail shared object and the APK it came from.
+*.so
+*.apk
+*.dex
+*.obb
+
+# Build output.
+*.o
+*.obj
+*.a
+*.lo
+*.la
+*.d
+*.i
+
+# Editor and OS noise.
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Python caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local scratch.
+_scratch/
+*.log

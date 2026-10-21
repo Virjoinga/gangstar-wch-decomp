@@ -1,0 +1,153 @@
+# What is inside `libsanangeles.so`
+
+`libsanangeles.so` is the native library of Gangstar: West Coast Hustle. It
+is 6.9 MB and was built for ARM EABI with GCC 4.2.1.
+
+The file is a shared object with 26 sections, of which the interesting ones
+are:
+
+| Section | Address | Size | What it holds |
+| --- | --- | ---: | --- |
+| `.hash` | `0x000000b4` | 139,100 | the hash table of the dynamic symbols |
+| `.dynsym` | `0x00021f10` | 292,768 | the exported symbols |
+| `.dynstr` | `0x000696b0` | 1,040,502 | the exported symbol names |
+| `.rel.dyn` | `0x00167728` | 377,912 | the relocations |
+| `.plt` | `0x001c3f78` | 2,552 | the procedure linkage table |
+| `.text` | `0x001c4970` | 2,337,048 | the code |
+| `.rodata` | `0x00401088` | 315,040 | the read only data, including the strings |
+| `.ARM.exidx` | `0x00457d6c` | 136,592 | the exception unwinding tables |
+| `.data.rel.ro` | `0x0047a638` | 219,696 | the relocated read only data |
+| `.data` | `0x004b49dc` | 6,424 | the writable data |
+| `.bss` | `0x004b6078` | 38,796 | the uninitialised data |
+
+The library depends on `libc.so`, `libstdc++.so`, `libm.so`, `libGLESv1_CM.so`,
+`libdl.so` and `liblog.so`. It is a GLES 1.1 title: there is no shader
+support in it at all.
+
+## The symbol table
+
+The library was shipped **unstripped**. That is the single most important
+fact about it, and it is what makes this project possible.
+
+* `.symtab` holds **53,044** entries, of which **52,797** are defined.
+* **17,703** of them are functions, with their exact addresses and sizes.
+* **19,615** are mangled C++ names, so the game's own classes and methods
+  are known by their original names.
+* **689** are `STT_FILE` symbols: the name of every translation unit the
+  build compiled, in link order.
+
+Nothing about the structure of the game has to be guessed.
+
+## What the library is made of
+
+The engine and its dependencies are statically linked next to the game code.
+
+### Irrlicht Engine 1.4.2 — 8,005 functions
+
+Gameloft shipped a fork of the [Irrlicht engine](https://github.com/irrlicht/irrlicht).
+The version string is in `.rodata`:
+
+```
+&1.4.2
+Warning: The library version of the Irrlicht Engine (
+) does not match the version the application was compiled with (
+```
+
+The fork adds the parts a Gameloft title needs: OpenGL ES support, the
+Collada and OGRE mesh loaders, the particle system, and the software renderer
+for the platforms that need one.
+
+### gameswf — 2,842 functions
+
+A [gameswf](https://github.com/kennethshackleton/gameswf) build for the
+Flash based interface. Its symbols are clearly visible:
+
+```
+_ZN7gameswf5arrayINS_9tesselate12fill_segmentEE6resizeEi
+```
+
+### Box2D 2.0.2 — 324 functions
+
+[Erin Catto's Box2D](https://github.com/erincatto/box2d), used for the
+vehicle and character physics.
+
+### FreeType — 966 functions
+
+The font engine, with the usual module prefixes (`tt_`, `psh_`, `cff_`,
+`type1_`, `sfnt_`, `bdf_`, ...).
+
+### libpng — 335 functions
+
+### libjpeg — 284 functions
+
+An IJG libjpeg 6b, judging by the file names (`jcmaster.c`, `jdarith.c`,
+`jctrans.c`, ...).
+
+### zlib — 81 functions
+
+### STLport — 203 functions
+
+The C++ standard library the NDK of that era shipped. The `stlp_priv`
+namespace is visible in the symbol table.
+
+### GCC support routines — 2 functions
+
+The ARM soft float helpers (`__aeabi_f2uiz` and friends).
+
+## The game code
+
+**4,661 functions, 575,264 bytes.** That is what this project decompiles.
+
+The game's own classes are in the global namespace, with names that make the
+structure of the game obvious:
+
+```
+_ZN7Vehicle11getSkinMeshEv                    Vehicle::getSkinMesh()
+_ZNK3NPC9getWeaponEv                          NPC::getWeapon() const
+_ZN12SoundManager11getInstanceEv              SoundManager::getInstance()
+_ZN13WeaponManager13unlimitedAmmoEb           WeaponManager::unlimitedAmmo(bool)
+_ZN16AchievementManager4Stat8getValueEv       AchievementManager::Stat::getValue()
+```
+
+and, further down, the scripting and mission machinery:
+
+```
+_ZN7Mission14setTextToPrintEi                 Mission::setTextToPrint(int)
+_ZN13ScriptManager6CreateEv                   ScriptManager::Create()
+_ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v
+```
+
+### The JNI layer
+
+The library is loaded by the game's Java code. The entry point is
+`app-android.c`, and there is a second native file, `jni_GLMediaPlayer.c`,
+for the video playback.
+
+### The platforms the build supports
+
+The file names show that this build is the union of several platform ports:
+`FileSystemIPhone.cpp`, `FileSystemWin32.cpp`, `TouchScreenIPhone.cpp`,
+`TouchScreenWin32.cpp`, `AccelerometerIPhone.cpp`, `AccelerometerWin32.cpp`,
+`MediaPlayerIPhone.cpp`. The Android build links the iPhone and Win32
+variants and selects between them at runtime, which is why they are all in
+the library.
+
+## The strings
+
+`.rodata` holds 3,400 printable strings. Among them are the game's own
+identifiers:
+
+```
+Gangstar
+Gameloft
+```
+
+and the engine's diagnostics:
+
+```
+&ERROR-fopen=0: CFileSystem::open-fullPath='%s'
+Not enough memory for decompressing
+```
+
+which is useful, because the engine's error paths are in the library and
+therefore in scope for the decompilation.
