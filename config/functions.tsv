@@ -8713,7 +8713,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d2715	0x1c	wrapper.cpp	game	core	pending	launchTwitter	launchTwitter
 0x002d2731	0x24	wrapper.cpp	game	core	pending	appPause	appPause
 0x002d2759	0xc0	wrapper.cpp	game	core	pending	appInit	appInit
-0x002d2819	0x26	wrapper.cpp	game	core	pending	_Z21ekd_makestringfile255PKcPc	ekd_makestringfile255(char const*, char*)
+0x002d2819	0x26	wrapper.cpp	game	core	matched	_Z21ekd_makestringfile255PKcPc	ekd_makestringfile255(char const*, char*)
 0x002d2841	0x144	wrapper.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002d2985	0x14	wrapper.cpp	game	core	pending	_GLOBAL__I_mouseLButtHeld	_GLOBAL__I_mouseLButtHeld
 0x002d2999	0x2	LODSceneNode.cpp	game	rendering	pending	_ZN12LODSceneNode6renderEPv	LODSceneNode::render(void*)
