@@ -1,0 +1,19 @@
+{
+    "source": "src/game/persistence/Stream.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2", "-fpic", "-fno-toplevel-reorder", "-ffunction-sections",
+        "-fstack-protector", "-fno-strict-aliasing", "-fno-rtti", "-fno-exceptions",
+        "-mthumb", "-mthumb-interwork", "-march=armv5te", "-mtune=xscale",
+        "-mfloat-abi=softfp"
+    ],
+    "assembler_flags": ["-march=armv5te", "-mfloat-abi=softfp", "-mfpu=vfp", "-meabi=4"],
+    "retail_got": true,
+    "linker_script": "config/linker/Stream.ld",
+    "sections": [".text", ".vtable", {"name": ".got", "offset": 864}],
+    "functions": [
+        "_ZN6StreamC1Ev", "_ZN6StreamC2Ev", "_ZN6Stream5CloseEv",
+        "_ZN6Stream4ReadEv", "_ZN6Stream5WriteEc", "_ZN6Stream5WriteERS_i",
+        "_ZN6Stream4PeekEPvi", "_ZN6StreamD0Ev", "_ZN6StreamD1Ev"
+    ]
+}

@@ -33,9 +33,8 @@ import argparse
 import sys
 from pathlib import Path
 
-from .elf import EM_ARM, ElfFile
-from .layout import build_attribution
-from .project import load_base_library, repo_path
+from .elf import EM_ARM, ET_DYN, ET_EXEC, ET_REL, ElfFile
+from .project import load_base_library
 
 #: The number of bytes of context shown around a difference.
 CONTEXT = 8
@@ -94,6 +93,8 @@ def relocations_for(elf: ElfFile, name: str) -> list[str]:
             else:
                 r_offset, r_info = struct.unpack("<II", elf.data[offset : offset + 8])
             start = symbol_offset(elf, symbol)
+            if elf.e_type in (ET_EXEC, ET_DYN):
+                start += elf.sections[symbol.st_shndx].sh_addr
             if start <= r_offset < start + max(symbol.st_size, 1):
                 out.append("0x%x" % r_offset)
     return out
@@ -136,6 +137,10 @@ def main(argv: list[str] | None = None) -> int:
     retail, _ = load_base_library(args.baselib)
     obj = ElfFile.load(str(args.object))
 
+    if obj.e_machine != retail.e_machine or obj.e_type not in (ET_REL, ET_EXEC, ET_DYN):
+        print("expected an ARM relocatable object or linked image", file=sys.stderr)
+        return 2
+
     symbol = find_symbol(obj, args.func)
     if symbol is None:
         print(f"{args.func} is not in {args.object}", file=sys.stderr)
@@ -151,7 +156,6 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     # Find the retail address of the same function.
-    attribution = build_attribution(retail)
     retail_symbol = None
     for candidate in retail.functions(".symtab"):
         if candidate.name == args.func:
@@ -160,6 +164,11 @@ def main(argv: list[str] | None = None) -> int:
     if retail_symbol is None:
         print(f"{args.func} is not in the retail library", file=sys.stderr)
         return 2
+
+    if obj.e_type in (ET_EXEC, ET_DYN) and symbol.st_value != retail_symbol.st_value:
+        print(f"{args.func} is linked at 0x{symbol.st_value:08x}; "
+              f"expected 0x{retail_symbol.st_value:08x}", file=sys.stderr)
+        return 1
 
     expected = retail.read_at(retail_symbol.st_value & ~1, retail_symbol.st_size)
     actual = symbol_bytes(obj, symbol)

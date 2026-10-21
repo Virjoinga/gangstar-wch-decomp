@@ -1,0 +1,63 @@
+{
+    "source": "src/game/persistence/BufferStream.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "linker_script": "config/linker/BufferStream.ld",
+    "sections": [
+        ".text",
+        ".vtable",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".streamtext",
+        ".streamvtable"
+    ],
+    "functions": [
+        "_ZNK12BufferStream4TellEv",
+        "_ZNK12BufferStream6GetPtrEv",
+        "_ZN12BufferStream8GetBytesEi",
+        "_ZN12BufferStream4ReadEPvi",
+        "_ZN12BufferStream10ReadStringEPPc",
+        "_ZN12BufferStream5CloseEv",
+        "_ZN12BufferStream13ReserveBufferEi",
+        "_ZN12BufferStream5WriteER6Streami",
+        "_ZN12BufferStream4SeekEii",
+        "_ZN12BufferStream5WriteEPKvi",
+        "_ZN12BufferStream4OpenEiiPv",
+        "_ZN12BufferStream4OpenEiiPvb",
+        "_ZN12BufferStreamD1Ev",
+        "_ZN12BufferStreamD2Ev",
+        "_ZN12BufferStreamC1EiiPv",
+        "_ZN12BufferStreamC2EiiPv",
+        "_ZN12BufferStreamC1EiiPvb",
+        "_ZN12BufferStreamC2EiiPvb",
+        "_ZN12BufferStreamC2Ev",
+        "_ZN12BufferStreamC1Ev",
+        "_ZN12BufferStreamD0Ev"
+    ],
+    "dependencies": [
+        "stream"
+    ]
+}
