@@ -26,6 +26,14 @@ class SectionComparisonTests(unittest.TestCase):
         with redirect_stderr(io.StringIO()):
             self.assertFalse(check_section(self.image(b"abc\0"), self.image(b"abc\0"), ".text"))
 
+    def test_region_checks_only_the_declared_suffix(self):
+        with redirect_stdout(io.StringIO()):
+            self.assertTrue(check_section(self.image(b"abc\0"), self.image(b"xbc\0"), ".rodata", 1))
+
+    def test_region_outside_retail_is_rejected(self):
+        with self.assertRaises(ValueError):
+            check_section(self.image(b"a"), self.image(b"ab"), ".rodata")
+
 
 if __name__ == "__main__":
     unittest.main()

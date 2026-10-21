@@ -29,6 +29,7 @@ import sys
 from . import check
 from .elf import ElfFile
 from .project import BASE_LIB_SHA256, ROOT, find_base_library, load_base_library
+from .retail_got import write_harness
 
 
 def run(command: list[str], environment: dict[str, str]) -> None:
@@ -36,24 +37,35 @@ def run(command: list[str], environment: dict[str, str]) -> None:
     subprocess.run(command, cwd=ROOT, env=environment, check=True)
 
 
-def check_section(retail: ElfFile, image: ElfFile, name: str) -> bool:
+def check_section(retail: ElfFile, image: ElfFile, name: str, offset: int = 0) -> bool:
     """Check emitted data and alignment as well as individual function bytes."""
     section = image.section(name)
     if section is None or not section.is_alloc or section.sh_size == 0:
         print(f"MISSING SECTION {name}", file=sys.stderr)
         return False
-    actual = image.data[section.sh_offset:section.sh_offset + section.sh_size]
-    expected = retail.read_at(section.sh_addr, section.sh_size)
+    if offset < 0 or offset >= section.sh_size:
+        raise ValueError(f"invalid comparison offset in {name}")
+    address = section.sh_addr + offset
+    actual = image.data[section.sh_offset + offset:section.sh_offset + section.sh_size]
+    retail_section = retail.section_for_address(address)
+    if retail_section is None or address + len(actual) > retail_section.sh_addr + retail_section.sh_size:
+        raise ValueError(f"comparison extends beyond a retail section: {name}")
+    expected = retail.read_at(address, len(actual))
     ok, detail = check.compare(expected, actual)
     if ok:
-        print(f"OK SECTION {name}  0x{section.sh_addr:08x}  {len(actual)} bytes")
+        label = f"REGION {name}+0x{offset:x}" if offset else f"SECTION {name}"
+        print(f"OK {label}  0x{address:08x}  {len(actual)} bytes")
     else:
         print(f"MISMATCH SECTION {name}\n{detail}", file=sys.stderr)
     return ok
 
 
-def build_unit(name: str, compiler_root: Path, base_library: Path) -> bool:
+def build_unit(name: str, compiler_root: Path | None, base_library: Path) -> bool:
     manifest = json.loads((ROOT / "config" / "matches" / f"{name}.json").read_text())
+    if compiler_root is None:
+        compiler_root = ROOT / manifest.get("toolchain",
+            "toolchain/android-ndk-r4b/build/prebuilt/windows/arm-eabi-4.2.1")
+    compiler_root = compiler_root.resolve()
     output = ROOT / "build" / "matches" / name
     output.mkdir(parents=True, exist_ok=True)
     assembly = (output / f"{name}.s").relative_to(ROOT).as_posix()
@@ -75,11 +87,31 @@ def build_unit(name: str, compiler_root: Path, base_library: Path) -> bool:
         run([str(binary / "arm-eabi-g++"), *manifest["compiler_flags"],
              "-c", manifest["source"], "-o", obj], environment)
 
+    objects = [obj]
+    if manifest.get("retail_got"):
+        retail, _ = load_base_library(base_library)
+        harness_source, _ = write_harness(retail, ElfFile.load(str(ROOT / obj)), output)
+        harness_obj = output / "retail-got.o"
+        harness_flags = ["-O0", "-fpic", "-fno-exceptions", "-fno-rtti",
+                         "-fno-unwind-tables", "-fno-asynchronous-unwind-tables",
+                         "-mthumb", "-march=armv5te"]
+        if os.name == "nt":
+            harness_assembly = output / "retail-got.s"
+            run([str(frontend), "-quiet", *harness_flags,
+                 str(harness_source), "-o", str(harness_assembly)], environment)
+            run([str(binary / "arm-eabi-as.exe"), *manifest["assembler_flags"],
+                 "-o", str(harness_obj), str(harness_assembly)], environment)
+        else:
+            run([str(binary / "arm-eabi-g++"), *harness_flags, "-c",
+                 str(harness_source), "-o", str(harness_obj)], environment)
+        # The harness must establish hash insertion order before the game unit.
+        objects.insert(0, harness_obj.relative_to(ROOT).as_posix())
+
     comparison_file = obj
     if manifest.get("linker_script"):
         run([str(binary / f"arm-eabi-ld{extension}"),
              "-T", manifest["linker_script"], "-Map", str(output / f"{name}.map"),
-             "-o", image, obj], environment)
+             "-o", image, *objects], environment)
         comparison_file = image
 
     passed = True
@@ -91,7 +123,10 @@ def build_unit(name: str, compiler_root: Path, base_library: Path) -> bool:
         retail, _ = load_base_library(base_library)
         linked = ElfFile.load(str(ROOT / comparison_file))
         for section in manifest["sections"]:
-            passed = check_section(retail, linked, section) and passed
+            if isinstance(section, str):
+                passed = check_section(retail, linked, section) and passed
+            else:
+                passed = check_section(retail, linked, section["name"], section["offset"]) and passed
     return passed
 
 
@@ -102,8 +137,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--all", action="store_true", help="build every configured unit")
     parser.add_argument("--baselib", help="retail libsanangeles.so")
     parser.add_argument("--toolchain", type=Path,
-                        default=Path(os.environ.get("WCH_TOOLCHAIN_ROOT", str(
-                            ROOT / "toolchain/android-ndk-r4b/build/prebuilt/windows/arm-eabi-4.2.1"))))
+                        default=os.environ.get("WCH_TOOLCHAIN_ROOT"))
     args = parser.parse_args(argv)
     names = available if args.all else args.units
     if not names:
@@ -118,7 +152,7 @@ def main(argv: list[str] | None = None) -> int:
             raise ValueError("retail SHA-256 differs from the repository target")
         passed = True
         for name in names:
-            passed = build_unit(name, args.toolchain.resolve(), base_library) and passed
+            passed = build_unit(name, args.toolchain, base_library) and passed
         return 0 if passed else 1
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print(f"BUILD FAILED: {error}", file=sys.stderr)

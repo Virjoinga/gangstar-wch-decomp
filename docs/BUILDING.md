@@ -134,6 +134,12 @@ output nor linked bytes are edited. Linked functions must also have the
 correct retail address. These verification images do not provide a full
 library build or a replacement runtime.
 
+Units with `retail_got: true` compile a generated C++ reference harness before
+linking. This reproduces the retail global GOT ordering through GNU ld's own
+symbol allocation; it does not patch relocation results. The ADPCM manifest
+also checks the tables and the complete global GOT region. The PLT/local GOT
+prefix remains reserved rather than rebuilt. See `matches/adpcm.md`.
+
 ## What is already automated
 
 The repository and progress checks need no game data. Catalogue, symbol-map

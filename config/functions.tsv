@@ -12941,10 +12941,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034f0cd	0x3a	Stream.cpp	game	persistence	pending	_ZN6Stream4PeekEPvi	Stream::Peek(void*, int)
 0x0034f109	0x20	Stream.cpp	game	persistence	pending	_ZN6StreamD0Ev	Stream::~Stream()
 0x0034f129	0x18	Stream.cpp	game	persistence	pending	_ZN6StreamD1Ev	Stream::~Stream()
-0x0034f141	0xa	AdpcmState.cpp	game	audio	pending	_ZN10AdpcmStateC1Ev	AdpcmState::AdpcmState()
-0x0034f141	0xa	AdpcmState.cpp	game	audio	pending	_ZN10AdpcmStateC2Ev	AdpcmState::AdpcmState()
-0x0034f14d	0x2	AdpcmState.cpp	game	audio	pending	_ZN10AdpcmStateD1Ev	AdpcmState::~AdpcmState()
-0x0034f14d	0x2	AdpcmState.cpp	game	audio	pending	_ZN10AdpcmStateD2Ev	AdpcmState::~AdpcmState()
+0x0034f141	0xa	AdpcmState.cpp	game	audio	matched	_ZN10AdpcmStateC1Ev	AdpcmState::AdpcmState()
+0x0034f141	0xa	AdpcmState.cpp	game	audio	matched	_ZN10AdpcmStateC2Ev	AdpcmState::AdpcmState()
+0x0034f14d	0x2	AdpcmState.cpp	game	audio	matched	_ZN10AdpcmStateD1Ev	AdpcmState::~AdpcmState()
+0x0034f14d	0x2	AdpcmState.cpp	game	audio	matched	_ZN10AdpcmStateD2Ev	AdpcmState::~AdpcmState()
 0x0034f151	0x2	CarSounds.cpp	game	vehicles	pending	_ZN18CarSoundParametersC2Ev	CarSoundParameters::CarSoundParameters()
 0x0034f151	0x2	CarSounds.cpp	game	vehicles	pending	_ZN18CarSoundParametersC1Ev	CarSoundParameters::CarSoundParameters()
 0x0034f155	0x2	CarSounds.cpp	game	vehicles	pending	_ZN18CarSoundParametersD2Ev	CarSoundParameters::~CarSoundParameters()
@@ -13061,7 +13061,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00350da9	0x6	CSoundDecoderADPCM.cpp	game	audio	pending	_ZNK13ISoundDecoder21GetNbEffectiveSamplesEv	ISoundDecoder::GetNbEffectiveSamples() const
 0x00350db1	0x6	CSoundDecoderADPCM.cpp	game	audio	pending	_ZNK13ISoundDecoder15GetTotalSamplesEv	ISoundDecoder::GetTotalSamples() const
 0x00350db9	0x4	CSoundDecoderADPCM.cpp	game	audio	pending	_ZNK13ISoundDecoder11HasMoreDataEv	ISoundDecoder::HasMoreData() const
-0x00350dbd	0x78	AdpcmDecoder.cpp	game	audio	pending	_ZN12AdpcmDecoder11DecodeAdpcmEiP10AdpcmState	AdpcmDecoder::DecodeAdpcm(int, AdpcmState*)
+0x00350dbd	0x78	AdpcmDecoder.cpp	game	audio	matched	_ZN12AdpcmDecoder11DecodeAdpcmEiP10AdpcmState	AdpcmDecoder::DecodeAdpcm(int, AdpcmState*)
 0x00350e35	0x2a	CSoundDecoderADPCM.cpp	game	audio	pending	_ZN18CSoundDecoderADPCM4GoToEi	CSoundDecoderADPCM::GoTo(int)
 0x00350e61	0x20	CSoundDecoderADPCM.cpp	game	audio	pending	_ZN13ISoundDecoderD0Ev	ISoundDecoder::~ISoundDecoder()
 0x00350e81	0x18	CSoundDecoderADPCM.cpp	game	audio	pending	_ZN13ISoundDecoderD1Ev	ISoundDecoder::~ISoundDecoder()
