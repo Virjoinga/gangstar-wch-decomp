@@ -11609,26 +11609,26 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330015	0x2e8	Rocket.cpp	game	combat	pending	_ZN6Rocket6launchEN3irr4core8vector3dIfEE	Rocket::launch(irr::core::vector3d<float>)
 0x003302fd	0x12	Weapon.cpp	game	combat	pending	_Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv	WepaonAnimCallback(irr::scene::ITimelineController*, void*)
 0x00330311	0x44	Weapon.cpp	game	combat	pending	_ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE	Weapon::drawMuzzleFlash(irr::scene::ISceneNode*, irr::scene::ITimelineController*)
-0x00330355	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon13getWeaponTypeEv	Weapon::getWeaponType() const
-0x00330359	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon11getAmmoTypeEv	Weapon::getAmmoType() const
-0x0033035d	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon11getClipSizeEv	Weapon::getClipSize() const
-0x00330361	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon7getClipEv	Weapon::getClip() const
-0x00330365	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon8getRangeEv	Weapon::getRange() const
-0x00330369	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon7getConeEv	Weapon::getCone() const
-0x0033036d	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon9getDamageEv	Weapon::getDamage() const
-0x00330371	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon17getShootfrequencyEv	Weapon::getShootfrequency() const
-0x00330375	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon20getDryShootfrequencyEv	Weapon::getDryShootfrequency() const
-0x00330379	0x6	Weapon.cpp	game	combat	pending	_ZNK6Weapon8isLockedEv	Weapon::isLocked() const
-0x00330381	0x4	Weapon.cpp	game	combat	pending	_ZN6Weapon11setClipSizeEi	Weapon::setClipSize(int)
-0x00330385	0x4	Weapon.cpp	game	combat	pending	_ZN6Weapon7setClipEi	Weapon::setClip(int)
-0x00330389	0x8	Weapon.cpp	game	combat	pending	_ZNK6Weapon8isDoubleEv	Weapon::isDouble() const
-0x00330391	0x8	Weapon.cpp	game	combat	pending	_ZNK6Weapon11isTwoHandedEv	Weapon::isTwoHanded() const
-0x00330399	0x24	Weapon.cpp	game	combat	pending	_ZNK6Weapon5isGunEv	Weapon::isGun() const
-0x003303bd	0x12	Weapon.cpp	game	combat	pending	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
+0x00330355	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon13getWeaponTypeEv	Weapon::getWeaponType() const
+0x00330359	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon11getAmmoTypeEv	Weapon::getAmmoType() const
+0x0033035d	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon11getClipSizeEv	Weapon::getClipSize() const
+0x00330361	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon7getClipEv	Weapon::getClip() const
+0x00330365	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon8getRangeEv	Weapon::getRange() const
+0x00330369	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon7getConeEv	Weapon::getCone() const
+0x0033036d	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon9getDamageEv	Weapon::getDamage() const
+0x00330371	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon17getShootfrequencyEv	Weapon::getShootfrequency() const
+0x00330375	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon20getDryShootfrequencyEv	Weapon::getDryShootfrequency() const
+0x00330379	0x6	Weapon.cpp	game	combat	matched	_ZNK6Weapon8isLockedEv	Weapon::isLocked() const
+0x00330381	0x4	Weapon.cpp	game	combat	matched	_ZN6Weapon11setClipSizeEi	Weapon::setClipSize(int)
+0x00330385	0x4	Weapon.cpp	game	combat	matched	_ZN6Weapon7setClipEi	Weapon::setClip(int)
+0x00330389	0x8	Weapon.cpp	game	combat	matched	_ZNK6Weapon8isDoubleEv	Weapon::isDouble() const
+0x00330391	0x8	Weapon.cpp	game	combat	matched	_ZNK6Weapon11isTwoHandedEv	Weapon::isTwoHanded() const
+0x00330399	0x24	Weapon.cpp	game	combat	matched	_ZNK6Weapon5isGunEv	Weapon::isGun() const
+0x003303bd	0x12	Weapon.cpp	game	combat	matched	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
 0x003303d1	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4showEv	Weapon::show()
 0x00330409	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4hideEv	Weapon::hide()
 0x00330441	0x24	Weapon.cpp	game	combat	pending	__tcf_1	__tcf_1
-0x00330465	0x30	Weapon.cpp	game	combat	pending	_ZN6Weapon4lockEv	Weapon::lock()
+0x00330465	0x30	Weapon.cpp	game	combat	matched	_ZN6Weapon4lockEv	Weapon::lock()
 0x00330495	0x5c	Weapon.cpp	game	combat	pending	_ZN6WeaponD0Ev	Weapon::~Weapon()
 0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD1Ev	Weapon::~Weapon()
 0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD2Ev	Weapon::~Weapon()
@@ -11637,7 +11637,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330581	0x48	Weapon.cpp	game	combat	pending	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
 0x003305c9	0x9c	Weapon.cpp	game	combat	pending	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
 0x00330665	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
-0x00330835	0x48	Weapon.cpp	game	combat	pending	_ZN6Weapon6unlockEv	Weapon::unlock()
+0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()
 0x0033087d	0x144	Weapon.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003309c1	0x14	Weapon.cpp	game	combat	pending	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
 0x003309d5	0x30	Weapon.cpp	game	combat	pending	__tcf_3	__tcf_3

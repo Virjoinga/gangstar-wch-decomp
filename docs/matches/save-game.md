@@ -99,4 +99,7 @@ OK SECTION .filevtable  0x004ad668  48 bytes
 OK SECTION .pathtext  0x002d2818  40 bytes
 OK SECTION .debugtext  0x002d1494  600 bytes
 OK SECTION .debugrodata  0x004130ec  332 bytes
+OK SECTION .weapon_getters  0x00330354  124 bytes
+OK SECTION .weapon_lock  0x00330464  48 bytes
+OK SECTION .weapon_unlock  0x00330834  72 bytes
 ```

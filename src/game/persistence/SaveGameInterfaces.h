@@ -1,6 +1,9 @@
 #ifndef WCH_PERSISTENCE_SAVE_GAME_INTERFACES_H
 #define WCH_PERSISTENCE_SAVE_GAME_INTERFACES_H
 
+#include "../combat/Weapon.h"
+#include "../meta/Achievements.h"
+
 // Partial interfaces and layouts observed by the SaveGame routines.
 // They describe accessed offsets only. Do not instantiate these classes or
 // assume these declarations establish their complete layouts or original names.
@@ -38,15 +41,6 @@ public:
     int contextValues[2];
 };
 
-class Weapon {
-public:
-    bool isLocked() const;
-    int getClip() const;
-    int getClipSize() const;
-    void setClip(int value);
-    void setClipSize(int value);
-    void unlock();
-};
 class WeaponManager {
 public:
     int getAmmo(int type, PlayerTest::eContext context);
@@ -72,28 +66,6 @@ public:
     void resetGame(bool flag, int id);
     unsigned char unknown0[8];
     int scriptCount;
-};
-class AchievementManager {
-public:
-    struct Stat {
-        int getValue() const;
-        unsigned char unknown0[12];
-        int value;
-        unsigned char unknown16[20];
-    };
-    struct Achievement {
-        unsigned char unknown[20];
-        unsigned int flags;
-    };
-    Achievement* getAchievementFromID(int id) const;
-    void completeAchievement(int id);
-    bool hasNewCompletedAchievements();
-    Achievement* popCompletedAchievement();
-    void updateStat(int id);
-    static AchievementManager* s_achievementManager;
-    static int s_statCount;
-    static Stat* s_stats;
-    static int s_achievementCount;
 };
 class LevelObject {
 public:

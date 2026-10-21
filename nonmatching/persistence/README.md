@@ -12,7 +12,8 @@ overwritten. Including the matched SaveGame source composes a translation unit;
 compiler output is not edited. The image also verifies LoadAndApply, its jump
 table, earlier helpers and dependency sections.
 
-Shared partial declarations now live in src/game/persistence/SaveGameInterfaces.h.
+Shared partial declarations are in src/game/persistence/SaveGameInterfaces.h,
+src/game/combat/Weapon.h and src/game/meta/Achievements.h.
 They describe observed offsets and call slots, not complete original classes.
 The attempt uses the verified unit's four-byte enum ABI and tree-CCP setting.
 
@@ -28,9 +29,13 @@ MISMATCH  _ZN8SaveGame13SampleAndSaveEPKc  0x00344821
   differs at 0x3e
 ```
 
-The other 23 SaveGame symbols, loading jump table and global GOT region match.
+The other 23 SaveGame symbols, 18 native Weapon methods, loading jump table
+and global GOT region match.
 Sampling differs in stack spill locations and one independent instruction
 ordering pair. A relocation-aware object diagnostic finds 58 differing bytes;
 that diagnostic is not a linked match and the function remains uncounted.
+Disabling the tree dominator pass reduced the sampling differences in an
+exploratory object build, but changed the matched LoadAndApply function to
+1,484 bytes. That flag was rejected; the verified unit configuration is retained.
 Context values at player offsets 508 and 512 remain unnamed because their
 meaning has not been established.

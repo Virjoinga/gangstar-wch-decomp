@@ -61,7 +61,10 @@
         ".filevtable",
         ".pathtext",
         ".debugtext",
-        ".debugrodata"
+        ".debugrodata",
+        ".weapon_getters",
+        ".weapon_lock",
+        ".weapon_unlock"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -95,7 +98,8 @@
         "persistence",
         "path-name",
         "debug-log",
-        "file-stream"
+        "file-stream",
+        "weapon"
     ],
     "external_thumb_functions": [
         "_ZN10PlayerTest13switchContextENS_8eContextEb",
@@ -103,6 +107,7 @@
         "_ZN10PlayerTest7setCashEi",
         "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
+        "_ZN11CHudManager20toggleWeaponSelectorEb",
         "_ZN13ScriptManager11getInstanceEv",
         "_ZN13ScriptManager9resetGameEbi",
         "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
@@ -112,22 +117,17 @@
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN17GameObjectManager8GetFirstEi",
         "_ZN18AchievementManager10updateStatEi",
+        "_ZN18AchievementManager12recordWeaponEib",
         "_ZN18AchievementManager19completeAchievementEi",
         "_ZN18AchievementManager23popCompletedAchievementEv",
         "_ZN18AchievementManager27hasNewCompletedAchievementsEv",
         "_ZN6Script8setStateENS_5StateEN10PlayerTest8eContextE",
-        "_ZN6Weapon11setClipSizeEi",
-        "_ZN6Weapon6unlockEv",
-        "_ZN6Weapon7setClipEi",
         "_ZN9GSLoading12isGameLoadedEv",
         "_ZNK13ScriptManager10findScriptEi",
         "_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE",
         "_ZNK18AchievementManager20getAchievementFromIDEi",
         "_ZNK18AchievementManager4Stat8getValueEv",
         "_ZNK6Script8getStateEv",
-        "_ZNK6Script9getParentEv",
-        "_ZNK6Weapon11getClipSizeEv",
-        "_ZNK6Weapon7getClipEv",
-        "_ZNK6Weapon8isLockedEv"
+        "_ZNK6Script9getParentEv"
     ]
 }

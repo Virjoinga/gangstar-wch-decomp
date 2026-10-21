@@ -23,6 +23,10 @@ fseek = 0x001c43f4;
 fwrite = 0x001c47e4;
 fread = 0x001c4598;
 SECTIONS {
+    .weapon_getters 0x00330354 : { *weapon.o(.text._ZNK6Weapon13getWeaponTypeEv .text._ZNK6Weapon11getAmmoTypeEv .text._ZNK6Weapon11getClipSizeEv .text._ZNK6Weapon7getClipEv .text._ZNK6Weapon8getRangeEv .text._ZNK6Weapon7getConeEv .text._ZNK6Weapon9getDamageEv .text._ZNK6Weapon17getShootfrequencyEv .text._ZNK6Weapon20getDryShootfrequencyEv .text._ZNK6Weapon8isLockedEv .text._ZN6Weapon11setClipSizeEi .text._ZN6Weapon7setClipEi .text._ZNK6Weapon8isDoubleEv .text._ZNK6Weapon11isTwoHandedEv .text._ZNK6Weapon5isGunEv .text._ZNK6Weapon12isProjectileEv) }
+    .weapon_lock 0x00330464 : { *weapon.o(.text._ZN6Weapon4lockEv) }
+    .weapon_unlock 0x00330834 : { *weapon.o(.text._ZN6Weapon6unlockEv) }
+
     .sampling 0x00344820 : { *save-game-sampling.o(.text._ZN8SaveGame13SampleAndSaveEPKc) }
     .loading 0x0034425c : { *save-game-sampling.o(.text._ZN8SaveGame12LoadAndApplyEPKc) }
     .load_cases 0x00433664 : { *save-game-sampling.o(.rodata._ZN8SaveGame12LoadAndApplyEPKc) }
