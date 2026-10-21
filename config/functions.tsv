@@ -12901,8 +12901,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034eaa9	0x32	DataStream.cpp	game	persistence	matched	_ZN10DataStream5Peek2Ev	DataStream::Peek2()
 0x0034eadd	0x30	DataStream.cpp	game	persistence	matched	_ZN10DataStream10WriteShortEi	DataStream::WriteShort(int)
 0x0034eb0d	0x24	DataStream.cpp	game	persistence	matched	_ZN10DataStream8WriteUTFEPKc	DataStream::WriteUTF(char const*)
-0x0034eb31	0x4c	DataStream.cpp	game	persistence	pending	_ZN10DataStreamC1ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
-0x0034eb31	0x4c	DataStream.cpp	game	persistence	pending	_ZN10DataStreamC2ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
+0x0034eb31	0x4c	DataStream.cpp	game	persistence	matched	_ZN10DataStreamC1ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
+0x0034eb31	0x4c	DataStream.cpp	game	persistence	matched	_ZN10DataStreamC2ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
 0x0034eb7d	0xe	FileStream.cpp	game	persistence	matched	_ZNK10FileStream7IsValidEv	FileStream::IsValid() const
 0x0034eb8d	0x32	FileStream.cpp	game	persistence	matched	_ZN10FileStream4SizeEv	FileStream::Size()
 0x0034ebc1	0xc	FileStream.cpp	game	persistence	matched	_ZN10FileStream6UnloadEPv	FileStream::Unload(void*)

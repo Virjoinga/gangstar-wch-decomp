@@ -62,7 +62,9 @@
         "_ZN10DataStream8WriteIntEi",
         "_ZN10DataStream5Peek2Ev",
         "_ZN10DataStream10WriteShortEi",
-        "_ZN10DataStream8WriteUTFEPKc"
+        "_ZN10DataStream8WriteUTFEPKc",
+        "_ZN10DataStreamC1ER6StreamNS_6endianE",
+        "_ZN10DataStreamC2ER6StreamNS_6endianE"
     ],
     "dependencies": [
         "stream"

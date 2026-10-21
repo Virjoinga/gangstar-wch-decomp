@@ -5,7 +5,7 @@
  * Area:          persistence
  *
  * Typed stream operations matched against the retail library.
- * The constructor remains pending under nonmatching/persistence/.
+ * Includes the constructor and endian conversion helpers.
  */
 
 #include "DataStream.h"
@@ -18,7 +18,7 @@ DataStream::~DataStream()
 {
 }
 
-bool IsBigEndian()
+bool __attribute__((pure)) IsBigEndian()
 {
     int value = 1;
     return *reinterpret_cast<char*>(&value) == 0;
@@ -173,4 +173,11 @@ void DataStream::WriteUTF(const char* text)
     int length = strlen(text);
     WriteShort(length);
     Write(text, length);
+}
+
+DataStream::DataStream(Stream& source, endian order) : stream(&source)
+{
+    isOpen = source.IsOpen();
+    bool big = order == BigEndian;
+    swapBytes = IsBigEndian() != big;
 }

@@ -74,6 +74,7 @@ SECTIONS {
         *data-stream.o(.text._ZN10DataStream5Peek2Ev)
         *data-stream.o(.text._ZN10DataStream10WriteShortEi)
         *data-stream.o(.text._ZN10DataStream8WriteUTFEPKc)
+        *data-stream.o(.text._ZN10DataStreamC1ER6StreamNS_6endianE .text._ZN10DataStreamC2ER6StreamNS_6endianE)
     }
     .datavtable 0x004ad638 : { *data-stream.o(.data.rel.ro) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }

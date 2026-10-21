@@ -87,7 +87,9 @@ OK  _ZN10DataStream8WriteIntEi  0x0034ea6d  60 bytes
 OK  _ZN10DataStream5Peek2Ev  0x0034eaa9  50 bytes
 OK  _ZN10DataStream10WriteShortEi  0x0034eadd  48 bytes
 OK  _ZN10DataStream8WriteUTFEPKc  0x0034eb0d  36 bytes
-OK SECTION .text  0x0034e7b0  896 bytes
+OK  _ZN10DataStreamC1ER6StreamNS_6endianE  0x0034eb31  76 bytes
+OK  _ZN10DataStreamC2ER6StreamNS_6endianE  0x0034eb31  76 bytes
+OK SECTION .text  0x0034e7b0  972 bytes
 OK SECTION .destructor  0x002d3654  36 bytes
 OK SECTION .vtable  0x004ad638  48 bytes
 OK REGION .got+0x360  0x004b03a8  17972 bytes
@@ -134,7 +136,7 @@ OK SECTION .pair_vtable  0x004ad0c8  32 bytes
 OK SECTION .int_vtable  0x004ad0e8  32 bytes
 OK SECTION .block_vtable  0x004ad108  32 bytes
 OK REGION .got+0x360  0x004b03a8  17972 bytes
-OK SECTION .datatext  0x0034e7b0  896 bytes
+OK SECTION .datatext  0x0034e7b0  972 bytes
 OK SECTION .datadestructor  0x002d3654  36 bytes
 OK SECTION .datavtable  0x004ad638  48 bytes
 OK SECTION .streamtext  0x0034efe4  348 bytes
