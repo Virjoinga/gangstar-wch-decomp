@@ -117,9 +117,22 @@ relocations, including Thumb symbols (whose low address bit is a marker):
 python tools/check.py build/toolchain-baseline/importgl.o --func importGLInit
 ```
 
-It refuses functions touched by relocations. There is no relocation-aware
-link-and-compare build yet, so functions with calls or address references
-need further infrastructure before they can be verified.
+It refuses functions touched by unresolved relocations. Configured units can
+now be compiled and linked against the retail layout with the original GNU
+linker, then checked as fully resolved images:
+
+```sh
+python tools/build.py logs
+python tools/build.py --all
+```
+
+`config/matches/*.json` records the compiler flags, source, linker script,
+function list and any whole sections to compare. `config/linker/Logs.ld`
+places the Logs code, strings and GOT base at their retail addresses, and
+binds external calls to the retail ARM PLT entry addresses. Neither compiler
+output nor linked bytes are edited. Linked functions must also have the
+correct retail address. These verification images do not provide a full
+library build or a replacement runtime.
 
 ## What is already automated
 

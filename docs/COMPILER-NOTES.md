@@ -94,7 +94,13 @@ Their assembly queue entries remain intact.
 * `tools/check.py` needed to clear the Thumb marker before extracting object
   bytes and before deciding whether relocations touch a function. Regression
   tests cover both boundaries and preserve odd data/non-ARM offsets.
-* Functions containing unresolved relocations are still rejected. Rebuilding
-  calls and references needs a verified linking/comparison workflow.
+* Functions containing unresolved relocations are still rejected by the raw
+  checker. `python tools/build.py logs` now uses the original GNU linker to
+  resolve calls, GOT-relative string references and retail section placement.
+  It checks all six functions plus the whole code and string sections.
+* `-mtune=xscale` reproduces the retail Logs PIC instruction scheduling;
+  `-O2 -fpic -fno-toplevel-reorder` also preserves its observed source order.
+  Both `-O2` and `-Os` gave the relevant instruction sequence with this tune,
+  so this unit does not distinguish their use in the original build.
 * The probe does not require system headers or engine types. Larger functions
   will need headers, reconstructed class layouts and further flag recovery.
