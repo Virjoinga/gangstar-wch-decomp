@@ -9,47 +9,47 @@ sprintf = 0x001c46ac;
 __stack_chk_fail = 0x001c42e0;
 __cxa_pure_virtual = 0;
 _ZN11Application11GetInstanceEv = 0x002d528d;
-_ZdlPv = 0x001c42b0;
 _Znwj = 0x001c4814;
-_Znaj = 0x001c3ff8;
 fopen = 0x001c45bc;
 fclose = 0x001c4628;
 printf = 0x001c4058;
 fprintf = 0x001c4388;
 strcpy = 0x001c3fd4;
-strlen = 0x001c48bc;
 vprintf = 0x001c43c4;
 __aeabi_f2d = 0x001c48f8;
-__stack_chk_fail = 0x001c42e0;
-sprintf = 0x001c46ac;
 remove = 0x001c41d8;
 ftell = 0x001c45f8;
 fseek = 0x001c43f4;
 fwrite = 0x001c47e4;
 fread = 0x001c4598;
-__cxa_pure_virtual = 0;
 SECTIONS {
     .sampling 0x00344820 : { *save-game-sampling.o(.text._ZN8SaveGame13SampleAndSaveEPKc) }
-    .fn0 0x00343df0 : { *save-game-sampling.o(.text._ZN8SaveGame12SampleObjectEP11LevelObject .gnu.linkonce.t._ZN8SaveGame12SampleObjectEP11LevelObject) }
-    .fn1 0x00343e24 : { *save-game-sampling.o(.text._ZNK8SaveGame8BlockV3D4SizeEv .gnu.linkonce.t._ZNK8SaveGame8BlockV3D4SizeEv) }
-    .fn2 0x00343e34 : { *save-game-sampling.o(.text._ZNK8SaveGame9BlockAmmo4SizeEv .gnu.linkonce.t._ZNK8SaveGame9BlockAmmo4SizeEv) }
-    .fn3 0x00343e44 : { *save-game-sampling.o(.text._ZNK8SaveGame11BlockWeapon4SizeEv .gnu.linkonce.t._ZNK8SaveGame11BlockWeapon4SizeEv) }
-    .fn4 0x00343e54 : { *save-game-sampling.o(.text._ZNK8SaveGame8BlockV3D5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame8BlockV3D5WriteEP10DataStream) }
-    .fn5 0x00343e7c : { *save-game-sampling.o(.text._ZN8SaveGame8BlockV3D4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame8BlockV3D4ReadEP10DataStream) }
-    .fn6 0x00343ea4 : { *save-game-sampling.o(.text._ZNK8SaveGame9BlockAmmo5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame9BlockAmmo5WriteEP10DataStream) }
-    .fn7 0x00343ecc : { *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmo4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame9BlockAmmo4ReadEP10DataStream) }
-    .fn8 0x00343ef4 : { *save-game-sampling.o(.text._ZNK8SaveGame11BlockWeapon5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame11BlockWeapon5WriteEP10DataStream) }
-    .fn9 0x00343f2c : { *save-game-sampling.o(.text._ZN8SaveGame11BlockWeapon4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame11BlockWeapon4ReadEP10DataStream) }
-    .fn10 0x00343f64 : { *save-game-sampling.o(.text._ZN8SaveGame18GetDefaultFilenameEv .gnu.linkonce.t._ZN8SaveGame18GetDefaultFilenameEv) }
-    .fn11 0x00343fa8 : { *save-game-sampling.o(.text._ZN8SaveGameD0Ev .gnu.linkonce.t._ZN8SaveGameD0Ev) }
-    .fn12 0x00343fd0 : { *save-game-sampling.o(.text._ZN8SaveGameD1Ev .gnu.linkonce.t._ZN8SaveGameD1Ev .text._ZN8SaveGameD2Ev .gnu.linkonce.t._ZN8SaveGameD2Ev) }
-    .fn13 0x00343ff0 : { *save-game-sampling.o(.text._ZN8SaveGameC2Ev .gnu.linkonce.t._ZN8SaveGameC2Ev .text._ZN8SaveGameC1Ev .gnu.linkonce.t._ZN8SaveGameC1Ev) }
-    .fn14 0x0034416c : { *save-game-sampling.o(.text._ZN8SaveGame8BlockV3DD0Ev .gnu.linkonce.t._ZN8SaveGame8BlockV3DD0Ev) }
-    .fn15 0x00344198 : { *save-game-sampling.o(.text._ZN8SaveGame8BlockV3DD1Ev .gnu.linkonce.t._ZN8SaveGame8BlockV3DD1Ev) }
-    .fn16 0x003441bc : { *save-game-sampling.o(.text._ZN8SaveGame11BlockWeaponD0Ev .gnu.linkonce.t._ZN8SaveGame11BlockWeaponD0Ev) }
-    .fn17 0x003441e8 : { *save-game-sampling.o(.text._ZN8SaveGame11BlockWeaponD1Ev .gnu.linkonce.t._ZN8SaveGame11BlockWeaponD1Ev) }
-    .fn18 0x0034420c : { *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmoD0Ev .gnu.linkonce.t._ZN8SaveGame9BlockAmmoD0Ev) }
-    .fn19 0x00344238 : { *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmoD1Ev .gnu.linkonce.t._ZN8SaveGame9BlockAmmoD1Ev) }
+    .loading 0x0034425c : { *save-game-sampling.o(.text._ZN8SaveGame12LoadAndApplyEPKc) }
+    .load_cases 0x00433664 : { *save-game-sampling.o(.rodata._ZN8SaveGame12LoadAndApplyEPKc) }
+    .sample 0x00343df0 : { *save-game-sampling.o(.text._ZN8SaveGame12SampleObjectEP11LevelObject .gnu.linkonce.t._ZN8SaveGame12SampleObjectEP11LevelObject) }
+    .text 0x00343e24 : {
+        *save-game-sampling.o(.text._ZNK8SaveGame8BlockV3D4SizeEv .gnu.linkonce.t._ZNK8SaveGame8BlockV3D4SizeEv)
+        *save-game-sampling.o(.text._ZNK8SaveGame9BlockAmmo4SizeEv .gnu.linkonce.t._ZNK8SaveGame9BlockAmmo4SizeEv)
+        *save-game-sampling.o(.text._ZNK8SaveGame11BlockWeapon4SizeEv .gnu.linkonce.t._ZNK8SaveGame11BlockWeapon4SizeEv)
+        *save-game-sampling.o(.text._ZNK8SaveGame8BlockV3D5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame8BlockV3D5WriteEP10DataStream)
+        *save-game-sampling.o(.text._ZN8SaveGame8BlockV3D4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame8BlockV3D4ReadEP10DataStream)
+        *save-game-sampling.o(.text._ZNK8SaveGame9BlockAmmo5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame9BlockAmmo5WriteEP10DataStream)
+        *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmo4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame9BlockAmmo4ReadEP10DataStream)
+        *save-game-sampling.o(.text._ZNK8SaveGame11BlockWeapon5WriteEP10DataStream .gnu.linkonce.t._ZNK8SaveGame11BlockWeapon5WriteEP10DataStream)
+        *save-game-sampling.o(.text._ZN8SaveGame11BlockWeapon4ReadEP10DataStream .gnu.linkonce.t._ZN8SaveGame11BlockWeapon4ReadEP10DataStream)
+        *save-game-sampling.o(.text._ZN8SaveGame18GetDefaultFilenameEv .gnu.linkonce.t._ZN8SaveGame18GetDefaultFilenameEv)
+        *save-game-sampling.o(.text._ZN8SaveGameD0Ev .gnu.linkonce.t._ZN8SaveGameD0Ev)
+        *save-game-sampling.o(.text._ZN8SaveGameD1Ev .gnu.linkonce.t._ZN8SaveGameD1Ev .text._ZN8SaveGameD2Ev .gnu.linkonce.t._ZN8SaveGameD2Ev)
+        *save-game-sampling.o(.text._ZN8SaveGameC2Ev .gnu.linkonce.t._ZN8SaveGameC2Ev .text._ZN8SaveGameC1Ev .gnu.linkonce.t._ZN8SaveGameC1Ev)
+    }
+    .destructors 0x0034416c : {
+        *save-game-sampling.o(.text._ZN8SaveGame8BlockV3DD0Ev .gnu.linkonce.t._ZN8SaveGame8BlockV3DD0Ev)
+        *save-game-sampling.o(.text._ZN8SaveGame8BlockV3DD1Ev .gnu.linkonce.t._ZN8SaveGame8BlockV3DD1Ev)
+        *save-game-sampling.o(.text._ZN8SaveGame11BlockWeaponD0Ev .gnu.linkonce.t._ZN8SaveGame11BlockWeaponD0Ev)
+        *save-game-sampling.o(.text._ZN8SaveGame11BlockWeaponD1Ev .gnu.linkonce.t._ZN8SaveGame11BlockWeaponD1Ev)
+        *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmoD0Ev .gnu.linkonce.t._ZN8SaveGame9BlockAmmoD0Ev)
+        *save-game-sampling.o(.text._ZN8SaveGame9BlockAmmoD1Ev .gnu.linkonce.t._ZN8SaveGame9BlockAmmoD1Ev)
+    }
     .vtable 0x004ad138 : { *save-game-sampling.o(.data.rel.ro._ZTV8SaveGame .gnu.linkonce.d.rel.ro._ZTV8SaveGame) }
     .vector_vtable 0x004ad148 : { *save-game-sampling.o(.data.rel.ro._ZTVN8SaveGame8BlockV3DE .gnu.linkonce.d.rel.ro._ZTVN8SaveGame8BlockV3DE) }
     .ammo_vtable 0x004ad168 : { *save-game-sampling.o(.data.rel.ro._ZTVN8SaveGame9BlockAmmoE .gnu.linkonce.d.rel.ro._ZTVN8SaveGame9BlockAmmoE) }

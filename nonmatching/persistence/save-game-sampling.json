@@ -16,7 +16,9 @@
         "-mtune=xscale",
         "-mfloat-abi=softfp",
         "-fdata-sections",
-        "-finline-limit=40"
+        "-finline-limit=40",
+        "-fno-short-enums",
+        "-fno-tree-ccp"
     ],
     "assembler_flags": [
         "-march=armv5te",
@@ -27,10 +29,39 @@
     "retail_got": true,
     "linker_script": "nonmatching/persistence/SaveGameSampling.ld",
     "sections": [
+        ".sample",
+        ".text",
+        ".destructors",
+        ".vtable",
+        ".vector_vtable",
+        ".ammo_vtable",
+        ".weapon_vtable",
+        ".filename_format",
+        ".filename",
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".persistence_text",
+        ".persistence_vtable",
+        ".persistence_string_vtable",
+        ".persistence_pair_vtable",
+        ".persistence_int_vtable",
+        ".persistence_block_vtable",
+        ".datatext",
+        ".datadestructor",
+        ".datavtable",
+        ".streamtext",
+        ".streamvtable",
+        ".loading",
+        ".load_cases",
+        ".filetext",
+        ".modes",
+        ".filerodata",
+        ".filevtable",
+        ".pathtext",
+        ".debugtext",
+        ".debugrodata"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -55,6 +86,7 @@
         "_ZN8SaveGame11BlockWeaponD1Ev",
         "_ZN8SaveGame9BlockAmmoD0Ev",
         "_ZN8SaveGame9BlockAmmoD1Ev",
+        "_ZN8SaveGame12LoadAndApplyEPKc",
         "_ZN8SaveGame13SampleAndSaveEPKc"
     ],
     "dependencies": [
@@ -66,12 +98,27 @@
         "file-stream"
     ],
     "external_thumb_functions": [
+        "_ZN10PlayerTest13switchContextENS_8eContextEb",
+        "_ZN10PlayerTest7RespawnEv",
+        "_ZN10PlayerTest7setCashEi",
         "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN13ScriptManager11getInstanceEv",
+        "_ZN13ScriptManager9resetGameEbi",
+        "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager14lockAllWeaponsEv",
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN17GameObjectManager8GetFirstEi",
+        "_ZN18AchievementManager10updateStatEi",
+        "_ZN18AchievementManager19completeAchievementEi",
+        "_ZN18AchievementManager23popCompletedAchievementEv",
+        "_ZN18AchievementManager27hasNewCompletedAchievementsEv",
+        "_ZN6Script8setStateENS_5StateEN10PlayerTest8eContextE",
+        "_ZN6Weapon11setClipSizeEi",
+        "_ZN6Weapon6unlockEv",
+        "_ZN6Weapon7setClipEi",
         "_ZN9GSLoading12isGameLoadedEv",
         "_ZNK13ScriptManager10findScriptEi",
         "_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE",

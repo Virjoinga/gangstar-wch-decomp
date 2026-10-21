@@ -16,7 +16,9 @@
         "-mtune=xscale",
         "-mfloat-abi=softfp",
         "-fdata-sections",
-        "-finline-limit=40"
+        "-finline-limit=40",
+        "-fno-short-enums",
+        "-fno-tree-ccp"
     ],
     "assembler_flags": [
         "-march=armv5te",
@@ -50,7 +52,16 @@
         ".datadestructor",
         ".datavtable",
         ".streamtext",
-        ".streamvtable"
+        ".streamvtable",
+        ".loading",
+        ".load_cases",
+        ".filetext",
+        ".modes",
+        ".filerodata",
+        ".filevtable",
+        ".pathtext",
+        ".debugtext",
+        ".debugrodata"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -74,14 +85,38 @@
         "_ZN8SaveGame11BlockWeaponD0Ev",
         "_ZN8SaveGame11BlockWeaponD1Ev",
         "_ZN8SaveGame9BlockAmmoD0Ev",
-        "_ZN8SaveGame9BlockAmmoD1Ev"
+        "_ZN8SaveGame9BlockAmmoD1Ev",
+        "_ZN8SaveGame12LoadAndApplyEPKc"
     ],
     "dependencies": [
         "stream",
         "data-stream",
-        "persistence"
+        "persistence",
+        "path-name",
+        "debug-log",
+        "file-stream"
     ],
     "external_thumb_functions": [
-        "_ZN11Application11GetInstanceEv"
+        "_ZN10PlayerTest13switchContextENS_8eContextEb",
+        "_ZN10PlayerTest7RespawnEv",
+        "_ZN10PlayerTest7setCashEi",
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZN11Application11GetInstanceEv",
+        "_ZN13ScriptManager11getInstanceEv",
+        "_ZN13ScriptManager9resetGameEbi",
+        "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager14lockAllWeaponsEv",
+        "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
+        "_ZN18AchievementManager10updateStatEi",
+        "_ZN18AchievementManager19completeAchievementEi",
+        "_ZN18AchievementManager23popCompletedAchievementEv",
+        "_ZN18AchievementManager27hasNewCompletedAchievementsEv",
+        "_ZN6Script8setStateENS_5StateEN10PlayerTest8eContextE",
+        "_ZN6Weapon11setClipSizeEi",
+        "_ZN6Weapon6unlockEv",
+        "_ZN6Weapon7setClipEi",
+        "_ZN9GSLoading12isGameLoadedEv",
+        "_ZNK13ScriptManager10findScriptEi"
     ]
 }

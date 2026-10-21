@@ -1,10 +1,14 @@
-#ifndef WCH_NONMATCHING_SAVE_GAME_INTERFACES_H
-#define WCH_NONMATCHING_SAVE_GAME_INTERFACES_H
+#ifndef WCH_PERSISTENCE_SAVE_GAME_INTERFACES_H
+#define WCH_PERSISTENCE_SAVE_GAME_INTERFACES_H
 
-// Partial interfaces and layouts observed by the pending SaveGame routines.
+// Partial interfaces and layouts observed by the SaveGame routines.
 // They describe accessed offsets only. Do not instantiate these classes or
 // assume these declarations establish their complete layouts or original names.
-struct SaveVector3 { float x, y, z; };
+struct SaveVector3 {
+    float x, y, z;
+    SaveVector3() {}
+    SaveVector3(float a, float b, float c) : x(a), y(b), z(c) {}
+};
 class SavePositionInterface {
 public:
     virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
@@ -84,7 +88,7 @@ public:
     Achievement* getAchievementFromID(int id) const;
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
-    void popCompletedAchievement();
+    Achievement* popCompletedAchievement();
     void updateStat(int id);
     static AchievementManager* s_achievementManager;
     static int s_statCount;

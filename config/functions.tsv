@@ -12349,7 +12349,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003441e9	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD1Ev	SaveGame::BlockWeapon::~BlockWeapon()
 0x0034420d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD0Ev	SaveGame::BlockAmmo::~BlockAmmo()
 0x00344239	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
-0x0034425d	0x5c4	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
+0x0034425d	0x5c4	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
 0x00344821	0x56c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame13SampleAndSaveEPKc	SaveGame::SampleAndSave(char const*)
 0x00344d8d	0x4	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager4Stat8getValueEv	AchievementManager::Stat::getValue() const
 0x00344d91	0x1c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager20getAchievementFromIDEi	AchievementManager::getAchievementFromID(int) const

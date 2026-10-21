@@ -5,7 +5,7 @@
 #include "../../src/game/persistence/DataStream.h"
 #include "../../src/game/persistence/FileStream.h"
 #include "../../src/game/app/Application.h"
-#include "SaveGameInterfaces.h"
+#include "../../src/game/persistence/SaveGameInterfaces.h"
 
 bool SaveGame::SampleAndSave(const char* name)
 {

@@ -1,8 +1,8 @@
-# SaveGame block helpers and filename
+# SaveGame block helpers, filename and loading
 
-22 of the 27 SaveGame.cpp catalogue symbols match, totaling 800 function bytes
-including aliases. The two larger gameplay routines and three generated
-initialization helpers remain pending and retain their assembly entries.
+23 of the 27 SaveGame.cpp catalogue symbols match, totaling 2,276 function bytes
+including aliases. SampleAndSave and three generated initialization helpers
+remain pending and retain their assembly entries.
 
 The verified code sections are a two-byte empty SampleObject method, a
 496-byte helper section and 240 bytes of inline block destructors. All four
@@ -26,14 +26,15 @@ and does not count that callee as matched. An address-only declaration produced
 an incorrect BLX; the Thumb declaration lets GNU ld emit the original BL.
 No compiler output is changed.
 
-Complete C++ attempts for LoadAndApply and SampleAndSave are saved under
-nonmatching/persistence, with reproduction instructions and exact mismatch
-output. They compile and link but remain uncounted. The three pending
-initialization helpers include Irrlicht and gameplay-header static objects;
-they are excluded from this manifest as well.
+LoadAndApply matches its 1,476-byte function and 84-byte jump table; see
+save-game-loading.md for behavior and build details. SampleAndSave remains a
+compiling/linking attempt under nonmatching/persistence and is uncounted. Three
+initialization helpers with Irrlicht/gameplay-header static objects remain
+excluded from the manifest.
 
 Verified with NDK 1.6 r1 GCC 4.2.1 and binutils 2.17 on 2026-10-22, using the
-recorded -finline-limit=40 configuration. This is a verification image, not a
+recorded -finline-limit=40 -fno-short-enums -fno-tree-ccp configuration.
+This is a verification image, not a
 replacement library. Full-game integration and complete class layouts remain
 unverified.
 
@@ -41,7 +42,7 @@ unverified.
 python tools/build.py save-game
 ```
 
-After rebuilding and verifying Stream, DataStream and Persistence, the command
+After rebuilding and verifying native dependencies, the command
 printed these own-unit comparisons verbatim:
 
 ```text
@@ -67,6 +68,7 @@ OK  _ZN8SaveGame11BlockWeaponD0Ev  0x003441bd  44 bytes
 OK  _ZN8SaveGame11BlockWeaponD1Ev  0x003441e9  36 bytes
 OK  _ZN8SaveGame9BlockAmmoD0Ev  0x0034420d  44 bytes
 OK  _ZN8SaveGame9BlockAmmoD1Ev  0x00344239  36 bytes
+OK  _ZN8SaveGame12LoadAndApplyEPKc  0x0034425d  1476 bytes
 OK SECTION .sample  0x00343df0  4 bytes
 OK SECTION .text  0x00343e24  496 bytes
 OK SECTION .destructors  0x0034416c  240 bytes
@@ -88,4 +90,13 @@ OK SECTION .datadestructor  0x002d3654  36 bytes
 OK SECTION .datavtable  0x004ad638  48 bytes
 OK SECTION .streamtext  0x0034efe4  348 bytes
 OK SECTION .streamvtable  0x004ad6c8  48 bytes
+OK SECTION .loading  0x0034425c  1476 bytes
+OK SECTION .load_cases  0x00433664  84 bytes
+OK SECTION .filetext  0x0034eb7c  860 bytes
+OK SECTION .modes  0x004014f0  8 bytes
+OK SECTION .filerodata  0x004361d4  64 bytes
+OK SECTION .filevtable  0x004ad668  48 bytes
+OK SECTION .pathtext  0x002d2818  40 bytes
+OK SECTION .debugtext  0x002d1494  600 bytes
+OK SECTION .debugrodata  0x004130ec  332 bytes
 ```

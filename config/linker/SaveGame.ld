@@ -9,7 +9,22 @@ sprintf = 0x001c46ac;
 __stack_chk_fail = 0x001c42e0;
 __cxa_pure_virtual = 0;
 _ZN11Application11GetInstanceEv = 0x002d528d;
+_Znwj = 0x001c4814;
+fopen = 0x001c45bc;
+fclose = 0x001c4628;
+printf = 0x001c4058;
+fprintf = 0x001c4388;
+strcpy = 0x001c3fd4;
+vprintf = 0x001c43c4;
+__aeabi_f2d = 0x001c48f8;
+remove = 0x001c41d8;
+ftell = 0x001c45f8;
+fseek = 0x001c43f4;
+fwrite = 0x001c47e4;
+fread = 0x001c4598;
 SECTIONS {
+    .loading 0x0034425c : { *save-game.o(.text._ZN8SaveGame12LoadAndApplyEPKc) }
+    .load_cases 0x00433664 : { *save-game.o(.rodata._ZN8SaveGame12LoadAndApplyEPKc) }
     .sample 0x00343df0 : { *save-game.o(.text._ZN8SaveGame12SampleObjectEP11LevelObject .gnu.linkonce.t._ZN8SaveGame12SampleObjectEP11LevelObject) }
     .text 0x00343e24 : {
         *save-game.o(.text._ZNK8SaveGame8BlockV3D4SizeEv .gnu.linkonce.t._ZNK8SaveGame8BlockV3D4SizeEv)
@@ -126,4 +141,48 @@ SECTIONS {
     .verification 0x00600000 : { *retail-got.o(.text) }
 
 
+    .filetext 0x0034eb7c : {
+        *file-stream.o(.text._ZNK10FileStream7IsValidEv .gnu.linkonce.t._ZNK10FileStream7IsValidEv)
+        *file-stream.o(.text._ZN10FileStream4SizeEv)
+        *file-stream.o(.text._ZN10FileStream6UnloadEPv)
+        *file-stream.o(.text._ZN10FileStream6DeleteEPKc)
+        *file-stream.o(.text._ZNK10FileStream4TellEv)
+        *file-stream.o(.text._ZN10FileStream4SeekEii)
+        *file-stream.o(.text._ZN10FileStream5WriteEPKvi)
+        *file-stream.o(.text._ZN10FileStream4ReadEPvi)
+        *file-stream.o(.text._ZN10FileStream5CloseEv)
+        *file-stream.o(.text._ZN10FileStreamD1Ev .text._ZN10FileStreamD2Ev)
+        *file-stream.o(.text._ZN10FileStream4OpenEPKci)
+        *file-stream.o(.text._ZN10FileStream6CreateEPKc)
+        *file-stream.o(.text._ZN10FileStreamC2Ev .text._ZN10FileStreamC1Ev)
+        *file-stream.o(.text._ZN10FileStream5ExistEPKc)
+        *file-stream.o(.text._ZN10FileStreamC2EPKci .text._ZN10FileStreamC1EPKci)
+        *file-stream.o(.text._ZN10FileStream4LoadEPKcPi)
+        *file-stream.o(.text._ZN10FileStreamD0Ev)
+    }
+    .modes 0x004014f0 : { *file-stream.o(.rodata.readMode .rodata.appendMode) }
+    .filerodata 0x004361d4 : {
+        *file-stream.o(.rodata.deleteFormat .rodata.updateMode .rodata.createMode .rodata.errorOpen)
+    }
+    .filevtable 0x004ad668 : { *file-stream.o(.data.rel.ro._ZTV10FileStream) }
+    .pathtext 0x002d2818 : { *path-name.o(.text._Z21ekd_makestringfile255PKcPc) }
+    .debugtext 0x002d1494 : {
+        *debug-log.o(.text._Z14ekd_debug_initv)
+        *debug-log.o(.text._Z13ekd_debug_outPKcf)
+        *debug-log.o(.text._Z13ekd_debug_outPKci)
+        *debug-log.o(.text._Z13ekd_debug_outPKcPc)
+        *debug-log.o(.text._Z13ekd_debug_outPKc)
+        *debug-log.o(.text._Z7dbg_outPcz)
+    }
+    .debugrodata 0x004130ec : {
+        . = 0x0; *debug-log.o(.rodata.logName)
+        . = 0x10; *debug-log.o(.rodata.writeMode)
+        . = 0x14; *debug-log.o(.rodata.errorInit)
+        . = 0x40; *debug-log.o(.rodata.appendMode)
+        . = 0x44; *debug-log.o(.rodata.errorFloat)
+        . = 0x88; *debug-log.o(.rodata.errorInt)
+        . = 0xcc; *debug-log.o(.rodata.errorString)
+        . = 0x110; *debug-log.o(.rodata.errorText)
+    }
+    .debugbss 0x004b65f4 : { *debug-log.o(.bss.ekd_isHasInit) }
 }
