@@ -10,6 +10,13 @@ given, rewrites the table in ``README.md``.
 
 from __future__ import annotations
 
+if __package__ in (None, ""):  # allow "python tools/progress.py.py" as well
+    import pathlib
+    import sys
+
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+    __package__ = "tools"
+
 import argparse
 import re
 import sys

@@ -22,6 +22,13 @@ library's addresses, which the build described in docs/BUILDING.md does.
 
 from __future__ import annotations
 
+if __package__ in (None, ""):  # allow "python tools/check.py.py" as well
+    import pathlib
+    import sys
+
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+    __package__ = "tools"
+
 import argparse
 import sys
 from pathlib import Path

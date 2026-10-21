@@ -1,8 +1,9 @@
 # Game data and proprietary tools are never committed to this repository.
-baselib/
-build/
-work/
-toolchain/
+# These are anchored at the root so that config/toolchain/ is kept.
+/baselib/
+/build/
+/work/
+/toolchain/
 
 # The retail shared object and the APK it came from.
 *.so

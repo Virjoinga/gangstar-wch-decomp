@@ -23,7 +23,7 @@ jobs:
       - name: Check the repository layout
         run: python tools/check_repository.py
 
-      - name: Check that the generated tables are up to date
+      - name: Check that the progress table is up to date
         # CI has no game data, so the tables cannot be regenerated here.  The
         # check below verifies the parts that do not need the retail library.
         run: python tools/progress.py --check

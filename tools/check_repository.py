@@ -8,12 +8,19 @@ function, or a source file that is not in the layout the retail build used.
 
 from __future__ import annotations
 
+if __package__ in (None, ""):  # allow "python tools/check_repository.py.py" as well
+    import pathlib
+    import sys
+
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+    __package__ = "tools"
+
 import sys
 from pathlib import Path
 
 from .project import ROOT, read_tsv, repo_path
 
-#: Files and directories that must never be committed.
+#: Directories at the root of the repository that must never be committed.
 FORBIDDEN = (
     "baselib",
     "build",

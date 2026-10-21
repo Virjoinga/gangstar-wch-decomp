@@ -12,6 +12,13 @@ is used through Docker.
 
 from __future__ import annotations
 
+if __package__ in (None, ""):  # allow "python tools/disasm.py.py" as well
+    import pathlib
+    import sys
+
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+    __package__ = "tools"
+
 import argparse
 import os
 import re
