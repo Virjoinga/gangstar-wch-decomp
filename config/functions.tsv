@@ -8758,10 +8758,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d3395	0xc	Memory.cpp	game	core	pending	_Z8IrrAllocjN3irr7MemHintEiPKci	IrrAlloc(unsigned int, irr::MemHint, int, char const*, int)
 0x002d33a1	0x58	Memory.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002d33f9	0x14	Memory.cpp	game	core	pending	_GLOBAL__I__Z11CustomAllocj	_GLOBAL__I__Z11CustomAllocj
-0x002d340d	0x3a	StreamReader.cpp	game	persistence	pending	_ZN12StreamReader11writeStringEP11IStreamBasePKcy	StreamReader::writeString(IStreamBase*, char const*, unsigned long long)
-0x002d3449	0x20	StreamReader.cpp	game	persistence	pending	_ZN12StreamReader12readStringExEP11IStreamBasePcy	StreamReader::readStringEx(IStreamBase*, char*, unsigned long long)
-0x002d3469	0x16	StreamReader.cpp	game	persistence	pending	_ZN12StreamReader6readAsIjEET_P11IStreamBase	unsigned int StreamReader::readAs<unsigned int>(IStreamBase*)
-0x002d3481	0x80	StreamReader.cpp	game	persistence	pending	_ZN12StreamReader10readStringEP11IStreamBasePcy	StreamReader::readString(IStreamBase*, char*, unsigned long long)
+0x002d340d	0x3a	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader11writeStringEP11IStreamBasePKcy	StreamReader::writeString(IStreamBase*, char const*, unsigned long long)
+0x002d3449	0x20	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader12readStringExEP11IStreamBasePcy	StreamReader::readStringEx(IStreamBase*, char*, unsigned long long)
+0x002d3469	0x16	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader6readAsIjEET_P11IStreamBase	unsigned int StreamReader::readAs<unsigned int>(IStreamBase*)
+0x002d3481	0x80	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader10readStringEP11IStreamBasePcy	StreamReader::readString(IStreamBase*, char*, unsigned long long)
 0x002d3501	0x6	FileManager.cpp	game	persistence	pending	_ZN11FileManager15_GetNumMappingsEv	FileManager::_GetNumMappings()
 0x002d3509	0xc	FileManager.cpp	game	persistence	pending	_ZN11FileManager11_GetMappingEi	FileManager::_GetMapping(int)
 0x002d3515	0xa	FileManager.cpp	game	persistence	pending	_ZN11FileManager12_GetFileSizeEi	FileManager::_GetFileSize(int)
@@ -12639,7 +12639,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034b2d9	0x18	StringManager.cpp	game	persistence	pending	_ZNK13StringManager17isPackSheetLoadedEjj	StringManager::isPackSheetLoaded(unsigned int, unsigned int) const
 0x0034b2f1	0x22	StringManager.cpp	game	persistence	pending	_ZNK13StringManager21getNumberOfLoadedPackEv	StringManager::getNumberOfLoadedPack() const
 0x0034b315	0x18	StringManager.cpp	game	persistence	pending	_ZN13StringManager10switchPackEj	StringManager::switchPack(unsigned int)
-0x0034b32d	0xe	StreamReader.cpp	game	persistence	pending	_ZN12StreamReader6readAsItEEvP11IStreamBasePT_	void StreamReader::readAs<unsigned short>(IStreamBase*, unsigned short*)
+0x0034b32d	0xe	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader6readAsItEEvP11IStreamBasePT_	void StreamReader::readAs<unsigned short>(IStreamBase*, unsigned short*)
 0x0034b33d	0x12	StringManager.cpp	stlport	-	matched	_ZN9stlp_priv12_Vector_baseIPN7Structs9TextStyleESaIS3_EED1Ev	stlp_priv::_Vector_base<Structs::TextStyle*, std::allocator<Structs::TextStyle*> >::~_Vector_base()
 0x0034b351	0x24	StringManager.cpp	game	persistence	pending	_Z6strRevPc	strRev(char*)
 0x0034b375	0x50	StringManager.cpp	game	persistence	pending	_Z7strchrsPcPKc	strchrs(char*, char const*)
