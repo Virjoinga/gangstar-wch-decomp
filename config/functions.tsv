@@ -12277,40 +12277,40 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00342fb4	0x14	WantedLevelManager.cpp	game	missions	pending	_ZThn4_N18WantedLevelManager6updateEd	non-virtual thunk to WantedLevelManager::update(double)
 0x00342fc9	0x178	WantedLevelManager.cpp	game	missions	pending	_ZN18WantedLevelManager6updateEd	WantedLevelManager::update(double)
 0x00343141	0x170	WantedLevelManager.cpp	game	missions	pending	_ZN18WantedLevelManager7onEventEPK6IEventPK12EventManager	WantedLevelManager::onEvent(IEvent const*, EventManager const*)
-0x003432b1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11PersistenceC2Ev	Persistence::Persistence()
-0x003432b1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11PersistenceC1Ev	Persistence::Persistence()
-0x003432cd	0x4	Persistence.cpp	game	persistence	pending	_ZNK11Persistence5Block4SizeEv	Persistence::Block::Size() const
-0x003432d1	0xe	Persistence.cpp	game	persistence	pending	_ZNK11Persistence8BlockInt4SizeEv	Persistence::BlockInt::Size() const
-0x003432e1	0xe	Persistence.cpp	game	persistence	pending	_ZNK11Persistence12BlockIntPair4SizeEv	Persistence::BlockIntPair::Size() const
-0x003432f1	0x12	Persistence.cpp	game	persistence	pending	_ZNK11Persistence11BlockString4SizeEv	Persistence::BlockString::Size() const
-0x00343305	0x4	Persistence.cpp	game	persistence	pending	_ZN11Persistence13SetDataStreamEP10DataStream	Persistence::SetDataStream(DataStream*)
-0x00343309	0x58	Persistence.cpp	game	persistence	pending	_ZN11Persistence9PeekBlockERNS_5BlockE	Persistence::PeekBlock(Persistence::Block&)
-0x00343361	0x20	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD0Ev	Persistence::~Persistence()
-0x00343381	0x18	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD1Ev	Persistence::~Persistence()
-0x00343381	0x18	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD2Ev	Persistence::~Persistence()
-0x00343399	0x20	Persistence.cpp	game	persistence	pending	_ZN11Persistence5BlockD0Ev	Persistence::Block::~Block()
-0x003433b9	0x18	Persistence.cpp	game	persistence	pending	_ZN11Persistence5BlockD1Ev	Persistence::Block::~Block()
-0x003433d1	0x2a	Persistence.cpp	game	persistence	pending	_ZNK11Persistence5Block5WriteEP10DataStream	Persistence::Block::Write(DataStream*) const
-0x003433fd	0x28	Persistence.cpp	game	persistence	pending	_ZNK11Persistence11BlockString5WriteEP10DataStream	Persistence::BlockString::Write(DataStream*) const
-0x00343425	0x20	Persistence.cpp	game	persistence	pending	_ZNK11Persistence12BlockIntPair5WriteEP10DataStream	Persistence::BlockIntPair::Write(DataStream*) const
-0x00343445	0x18	Persistence.cpp	game	persistence	pending	_ZNK11Persistence8BlockInt5WriteEP10DataStream	Persistence::BlockInt::Write(DataStream*) const
-0x0034345d	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence5Block4ReadEP10DataStream	Persistence::Block::Read(DataStream*)
-0x00343479	0x20	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPair4ReadEP10DataStream	Persistence::BlockIntPair::Read(DataStream*)
-0x00343499	0x18	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockInt4ReadEP10DataStream	Persistence::BlockInt::Read(DataStream*)
-0x003434b1	0x3a	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockString4ReadEP10DataStream	Persistence::BlockString::Read(DataStream*)
-0x003434ed	0x48	Persistence.cpp	game	persistence	pending	_ZN11Persistence10WriteBlockERKNS_5BlockE	Persistence::WriteBlock(Persistence::Block const&)
-0x00343535	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence5ResetEv	Persistence::Reset()
-0x00343559	0x48	Persistence.cpp	game	persistence	pending	_ZN11Persistence9ReadBlockERNS_5BlockE	Persistence::ReadBlock(Persistence::Block&)
-0x003435a1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringC2Ev	Persistence::BlockString::BlockString()
-0x003435a1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringC1Ev	Persistence::BlockString::BlockString()
-0x003435bd	0x2c	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockIntD0Ev	Persistence::BlockInt::~BlockInt()
-0x003435e9	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockIntD1Ev	Persistence::BlockInt::~BlockInt()
-0x0034360d	0x2c	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPairD0Ev	Persistence::BlockIntPair::~BlockIntPair()
-0x00343639	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPairD1Ev	Persistence::BlockIntPair::~BlockIntPair()
-0x0034365d	0x68	Persistence.cpp	game	persistence	pending	_ZN11Persistence9SeekBlockEi	Persistence::SeekBlock(int)
-0x003436c5	0x38	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD0Ev	Persistence::BlockString::~BlockString()
-0x003436fd	0x34	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD1Ev	Persistence::BlockString::~BlockString()
-0x003436fd	0x34	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD2Ev	Persistence::BlockString::~BlockString()
+0x003432b1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11PersistenceC2Ev	Persistence::Persistence()
+0x003432b1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11PersistenceC1Ev	Persistence::Persistence()
+0x003432cd	0x4	Persistence.cpp	game	persistence	matched	_ZNK11Persistence5Block4SizeEv	Persistence::Block::Size() const
+0x003432d1	0xe	Persistence.cpp	game	persistence	matched	_ZNK11Persistence8BlockInt4SizeEv	Persistence::BlockInt::Size() const
+0x003432e1	0xe	Persistence.cpp	game	persistence	matched	_ZNK11Persistence12BlockIntPair4SizeEv	Persistence::BlockIntPair::Size() const
+0x003432f1	0x12	Persistence.cpp	game	persistence	matched	_ZNK11Persistence11BlockString4SizeEv	Persistence::BlockString::Size() const
+0x00343305	0x4	Persistence.cpp	game	persistence	matched	_ZN11Persistence13SetDataStreamEP10DataStream	Persistence::SetDataStream(DataStream*)
+0x00343309	0x58	Persistence.cpp	game	persistence	matched	_ZN11Persistence9PeekBlockERNS_5BlockE	Persistence::PeekBlock(Persistence::Block&)
+0x00343361	0x20	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD0Ev	Persistence::~Persistence()
+0x00343381	0x18	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD1Ev	Persistence::~Persistence()
+0x00343381	0x18	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD2Ev	Persistence::~Persistence()
+0x00343399	0x20	Persistence.cpp	game	persistence	matched	_ZN11Persistence5BlockD0Ev	Persistence::Block::~Block()
+0x003433b9	0x18	Persistence.cpp	game	persistence	matched	_ZN11Persistence5BlockD1Ev	Persistence::Block::~Block()
+0x003433d1	0x2a	Persistence.cpp	game	persistence	matched	_ZNK11Persistence5Block5WriteEP10DataStream	Persistence::Block::Write(DataStream*) const
+0x003433fd	0x28	Persistence.cpp	game	persistence	matched	_ZNK11Persistence11BlockString5WriteEP10DataStream	Persistence::BlockString::Write(DataStream*) const
+0x00343425	0x20	Persistence.cpp	game	persistence	matched	_ZNK11Persistence12BlockIntPair5WriteEP10DataStream	Persistence::BlockIntPair::Write(DataStream*) const
+0x00343445	0x18	Persistence.cpp	game	persistence	matched	_ZNK11Persistence8BlockInt5WriteEP10DataStream	Persistence::BlockInt::Write(DataStream*) const
+0x0034345d	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence5Block4ReadEP10DataStream	Persistence::Block::Read(DataStream*)
+0x00343479	0x20	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPair4ReadEP10DataStream	Persistence::BlockIntPair::Read(DataStream*)
+0x00343499	0x18	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockInt4ReadEP10DataStream	Persistence::BlockInt::Read(DataStream*)
+0x003434b1	0x3a	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockString4ReadEP10DataStream	Persistence::BlockString::Read(DataStream*)
+0x003434ed	0x48	Persistence.cpp	game	persistence	matched	_ZN11Persistence10WriteBlockERKNS_5BlockE	Persistence::WriteBlock(Persistence::Block const&)
+0x00343535	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence5ResetEv	Persistence::Reset()
+0x00343559	0x48	Persistence.cpp	game	persistence	matched	_ZN11Persistence9ReadBlockERNS_5BlockE	Persistence::ReadBlock(Persistence::Block&)
+0x003435a1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringC2Ev	Persistence::BlockString::BlockString()
+0x003435a1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringC1Ev	Persistence::BlockString::BlockString()
+0x003435bd	0x2c	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockIntD0Ev	Persistence::BlockInt::~BlockInt()
+0x003435e9	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockIntD1Ev	Persistence::BlockInt::~BlockInt()
+0x0034360d	0x2c	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPairD0Ev	Persistence::BlockIntPair::~BlockIntPair()
+0x00343639	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPairD1Ev	Persistence::BlockIntPair::~BlockIntPair()
+0x0034365d	0x68	Persistence.cpp	game	persistence	matched	_ZN11Persistence9SeekBlockEi	Persistence::SeekBlock(int)
+0x003436c5	0x38	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD0Ev	Persistence::BlockString::~BlockString()
+0x003436fd	0x34	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD1Ev	Persistence::BlockString::~BlockString()
+0x003436fd	0x34	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD2Ev	Persistence::BlockString::~BlockString()
 0x00343731	0x30	Preferences.cpp	game	ui	pending	__tcf_3	__tcf_3
 0x00343761	0x22	Preferences.cpp	game	ui	pending	_ZN11Preferences5ExistEPKc	Preferences::Exist(char const*)
 0x00343785	0x44	Preferences.cpp	game	ui	pending	_ZN11Preferences18GetDefaultFilenameEv	Preferences::GetDefaultFilename()
