@@ -12324,31 +12324,31 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00343a39	0x25c	Preferences.cpp	game	ui	pending	_ZN11Preferences12LoadAndApplyEPKc	Preferences::LoadAndApply(char const*)
 0x00343c99	0x144	Preferences.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00343ddd	0x14	Preferences.cpp	game	ui	pending	_GLOBAL__I__ZN11PreferencesC2Ev	_GLOBAL__I__ZN11PreferencesC2Ev
-0x00343df1	0x2	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame12SampleObjectEP11LevelObject	SaveGame::SampleObject(LevelObject*)
+0x00343df1	0x2	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12SampleObjectEP11LevelObject	SaveGame::SampleObject(LevelObject*)
 0x00343df5	0x30	SaveGame.cpp	game	persistence	pending	__tcf_4	__tcf_4
-0x00343e25	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame8BlockV3D4SizeEv	SaveGame::BlockV3D::Size() const
-0x00343e35	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame9BlockAmmo4SizeEv	SaveGame::BlockAmmo::Size() const
-0x00343e45	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame11BlockWeapon4SizeEv	SaveGame::BlockWeapon::Size() const
-0x00343e55	0x28	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame8BlockV3D5WriteEP10DataStream	SaveGame::BlockV3D::Write(DataStream*) const
-0x00343e7d	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3D4ReadEP10DataStream	SaveGame::BlockV3D::Read(DataStream*)
-0x00343ea5	0x28	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame9BlockAmmo5WriteEP10DataStream	SaveGame::BlockAmmo::Write(DataStream*) const
-0x00343ecd	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmo4ReadEP10DataStream	SaveGame::BlockAmmo::Read(DataStream*)
-0x00343ef5	0x38	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame11BlockWeapon5WriteEP10DataStream	SaveGame::BlockWeapon::Write(DataStream*) const
-0x00343f2d	0x38	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeapon4ReadEP10DataStream	SaveGame::BlockWeapon::Read(DataStream*)
-0x00343f65	0x44	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame18GetDefaultFilenameEv	SaveGame::GetDefaultFilename()
-0x00343fa9	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD0Ev	SaveGame::~SaveGame()
-0x00343fd1	0x20	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD1Ev	SaveGame::~SaveGame()
-0x00343fd1	0x20	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD2Ev	SaveGame::~SaveGame()
-0x00343ff1	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameC2Ev	SaveGame::SaveGame()
-0x00343ff1	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameC1Ev	SaveGame::SaveGame()
+0x00343e25	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame8BlockV3D4SizeEv	SaveGame::BlockV3D::Size() const
+0x00343e35	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame9BlockAmmo4SizeEv	SaveGame::BlockAmmo::Size() const
+0x00343e45	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame11BlockWeapon4SizeEv	SaveGame::BlockWeapon::Size() const
+0x00343e55	0x28	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame8BlockV3D5WriteEP10DataStream	SaveGame::BlockV3D::Write(DataStream*) const
+0x00343e7d	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3D4ReadEP10DataStream	SaveGame::BlockV3D::Read(DataStream*)
+0x00343ea5	0x28	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame9BlockAmmo5WriteEP10DataStream	SaveGame::BlockAmmo::Write(DataStream*) const
+0x00343ecd	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmo4ReadEP10DataStream	SaveGame::BlockAmmo::Read(DataStream*)
+0x00343ef5	0x38	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame11BlockWeapon5WriteEP10DataStream	SaveGame::BlockWeapon::Write(DataStream*) const
+0x00343f2d	0x38	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeapon4ReadEP10DataStream	SaveGame::BlockWeapon::Read(DataStream*)
+0x00343f65	0x44	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame18GetDefaultFilenameEv	SaveGame::GetDefaultFilename()
+0x00343fa9	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD0Ev	SaveGame::~SaveGame()
+0x00343fd1	0x20	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD1Ev	SaveGame::~SaveGame()
+0x00343fd1	0x20	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD2Ev	SaveGame::~SaveGame()
+0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC2Ev	SaveGame::SaveGame()
+0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC1Ev	SaveGame::SaveGame()
 0x00344015	0x144	SaveGame.cpp	game	persistence	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00344159	0x14	SaveGame.cpp	game	persistence	pending	_GLOBAL__I__ZN8SaveGameC2Ev	_GLOBAL__I__ZN8SaveGameC2Ev
-0x0034416d	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3DD0Ev	SaveGame::BlockV3D::~BlockV3D()
-0x00344199	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3DD1Ev	SaveGame::BlockV3D::~BlockV3D()
-0x003441bd	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeaponD0Ev	SaveGame::BlockWeapon::~BlockWeapon()
-0x003441e9	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeaponD1Ev	SaveGame::BlockWeapon::~BlockWeapon()
-0x0034420d	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmoD0Ev	SaveGame::BlockAmmo::~BlockAmmo()
-0x00344239	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
+0x0034416d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD0Ev	SaveGame::BlockV3D::~BlockV3D()
+0x00344199	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD1Ev	SaveGame::BlockV3D::~BlockV3D()
+0x003441bd	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD0Ev	SaveGame::BlockWeapon::~BlockWeapon()
+0x003441e9	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD1Ev	SaveGame::BlockWeapon::~BlockWeapon()
+0x0034420d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD0Ev	SaveGame::BlockAmmo::~BlockAmmo()
+0x00344239	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
 0x0034425d	0x5c4	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
 0x00344821	0x56c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame13SampleAndSaveEPKc	SaveGame::SampleAndSave(char const*)
 0x00344d8d	0x4	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager4Stat8getValueEv	AchievementManager::Stat::getValue() const
