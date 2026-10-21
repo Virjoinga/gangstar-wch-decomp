@@ -12828,32 +12828,32 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034deb9	0x3c	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD0Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
 0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD1Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
 0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD2Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034df2d	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle7canReadEv	FileSystemWin32::_FileHandle::canRead() const
-0x0034df31	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle8canWriteEv	FileSystemWin32::_FileHandle::canWrite() const
-0x0034df35	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211getRootPathEv	FileSystemWin32::getRootPath() const
-0x0034df39	0xc	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3216getResourcesPathEv	FileSystemWin32::getResourcesPath() const
-0x0034df45	0xc	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3216getSaveFilesPathEv	FileSystemWin32::getSaveFilesPath() const
-0x0034df51	0x16	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin329closeFileERP11IFileStream	FileSystemWin32::closeFile(IFileStream*&)
-0x0034df69	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle4tellEv	FileSystemWin32::_FileHandle::tell() const
-0x0034df7d	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle4seekEy	FileSystemWin32::_FileHandle::seek(unsigned long long)
-0x0034df91	0x3c	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle4sizeEv	FileSystemWin32::_FileHandle::size() const
-0x0034dfcd	0x32	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle5writeEPKhy	FileSystemWin32::_FileHandle::write(unsigned char const*, unsigned long long)
-0x0034e001	0x32	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle4readEPhy	FileSystemWin32::_FileHandle::read(unsigned char*, unsigned long long)
-0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleC2EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleC1EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034e0e5	0x34	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3213_createHandleEPKcS1_b	FileSystemWin32::_createHandle(char const*, char const*, bool)
-0x0034e119	0x18	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3212openSavefileEPKc	FileSystemWin32::openSavefile(char const*)
-0x0034e131	0x18	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3212openResourceEPKc	FileSystemWin32::openResource(char const*)
-0x0034e149	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin328openFileEPKc	FileSystemWin32::openFile(char const*)
-0x0034e15d	0x60	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin329_getPathsEv	FileSystemWin32::_getPaths()
-0x0034e1bd	0x28	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D0Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D2Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D1Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32C1Ev	FileSystemWin32::FileSystemWin32()
-0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32C2Ev	FileSystemWin32::FileSystemWin32()
-0x0034e269	0x3c	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD0Ev	FileSystemWin32::_FileHandle::~_FileHandle()
-0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD1Ev	FileSystemWin32::_FileHandle::~_FileHandle()
-0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD2Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034df2d	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle7canReadEv	FileSystemWin32::_FileHandle::canRead() const
+0x0034df31	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle8canWriteEv	FileSystemWin32::_FileHandle::canWrite() const
+0x0034df35	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211getRootPathEv	FileSystemWin32::getRootPath() const
+0x0034df39	0xc	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3216getResourcesPathEv	FileSystemWin32::getResourcesPath() const
+0x0034df45	0xc	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3216getSaveFilesPathEv	FileSystemWin32::getSaveFilesPath() const
+0x0034df51	0x16	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin329closeFileERP11IFileStream	FileSystemWin32::closeFile(IFileStream*&)
+0x0034df69	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle4tellEv	FileSystemWin32::_FileHandle::tell() const
+0x0034df7d	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle4seekEy	FileSystemWin32::_FileHandle::seek(unsigned long long)
+0x0034df91	0x3c	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle4sizeEv	FileSystemWin32::_FileHandle::size() const
+0x0034dfcd	0x32	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle5writeEPKhy	FileSystemWin32::_FileHandle::write(unsigned char const*, unsigned long long)
+0x0034e001	0x32	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle4readEPhy	FileSystemWin32::_FileHandle::read(unsigned char*, unsigned long long)
+0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleC2EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleC1EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034e0e5	0x34	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3213_createHandleEPKcS1_b	FileSystemWin32::_createHandle(char const*, char const*, bool)
+0x0034e119	0x18	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3212openSavefileEPKc	FileSystemWin32::openSavefile(char const*)
+0x0034e131	0x18	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3212openResourceEPKc	FileSystemWin32::openResource(char const*)
+0x0034e149	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin328openFileEPKc	FileSystemWin32::openFile(char const*)
+0x0034e15d	0x60	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin329_getPathsEv	FileSystemWin32::_getPaths()
+0x0034e1bd	0x28	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D0Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D2Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D1Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32C1Ev	FileSystemWin32::FileSystemWin32()
+0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32C2Ev	FileSystemWin32::FileSystemWin32()
+0x0034e269	0x3c	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD0Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD1Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD2Ev	FileSystemWin32::_FileHandle::~_FileHandle()
 0x0034e2dd	0x8	BufferStream.cpp	game	persistence	matched	_ZNK12BufferStream4TellEv	BufferStream::Tell() const
 0x0034e2e5	0x14	BufferStream.cpp	game	persistence	matched	_ZNK12BufferStream6GetPtrEv	BufferStream::GetPtr() const
 0x0034e2f9	0x28	BufferStream.cpp	game	persistence	matched	_ZN12BufferStream8GetBytesEi	BufferStream::GetBytes(int)
