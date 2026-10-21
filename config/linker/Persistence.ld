@@ -46,7 +46,7 @@ SECTIONS {
     .int_vtable 0x004ad0e8 : { *persistence.o(.data.rel.ro._ZTVN11Persistence8BlockIntE .gnu.linkonce.d.rel.ro._ZTVN11Persistence8BlockIntE) }
     .block_vtable 0x004ad108 : { *persistence.o(.data.rel.ro._ZTVN11Persistence5BlockE .gnu.linkonce.d.rel.ro._ZTVN11Persistence5BlockE) }
 
-    .datadestructor 0x002d3654 : { *data-stream.o(.text._ZN10DataStreamD1Ev) }
+    .datadestructor 0x002d3654 : { *data-stream.o(.text._ZN10DataStreamD1Ev .gnu.linkonce.t._ZN10DataStreamD1Ev) }
     .datatext 0x0034e7b0 : {
         *data-stream.o(.text._Z11IsBigEndianv)
         *data-stream.o(.text._ZN10DataStream4ReadEPvi)
@@ -59,7 +59,7 @@ SECTIONS {
         *data-stream.o(.text._ZN10DataStream9ReadFloatEv)
         *data-stream.o(.text._ZN10DataStream7ReadUTFEPci)
         *data-stream.o(.text._ZN10DataStream5Peek1Ev)
-        *data-stream.o(.text._ZN10DataStreamD0Ev)
+        *data-stream.o(.text._ZN10DataStreamD0Ev .gnu.linkonce.t._ZN10DataStreamD0Ev)
         *data-stream.o(.text._ZN10DataStream9WriteByteEi)
         *data-stream.o(.text._ZN10DataStream12WriteBooleanEb)
         *data-stream.o(.text._ZN10DataStream16ReadUnsignedByteEv)

@@ -8,7 +8,7 @@ strlen = 0x001c48bc;
 __stack_chk_fail = 0x001c42e0;
 __cxa_pure_virtual = 0;
 SECTIONS {
-    .destructor 0x002d3654 : { *data-stream.o(.text._ZN10DataStreamD1Ev) }
+    .destructor 0x002d3654 : { *data-stream.o(.text._ZN10DataStreamD1Ev .gnu.linkonce.t._ZN10DataStreamD1Ev) }
     .text 0x0034e7b0 : {
         *data-stream.o(.text._Z11IsBigEndianv)
         *data-stream.o(.text._ZN10DataStream4ReadEPvi)
@@ -21,7 +21,7 @@ SECTIONS {
         *data-stream.o(.text._ZN10DataStream9ReadFloatEv)
         *data-stream.o(.text._ZN10DataStream7ReadUTFEPci)
         *data-stream.o(.text._ZN10DataStream5Peek1Ev)
-        *data-stream.o(.text._ZN10DataStreamD0Ev)
+        *data-stream.o(.text._ZN10DataStreamD0Ev .gnu.linkonce.t._ZN10DataStreamD0Ev)
         *data-stream.o(.text._ZN10DataStream9WriteByteEi)
         *data-stream.o(.text._ZN10DataStream12WriteBooleanEb)
         *data-stream.o(.text._ZN10DataStream16ReadUnsignedByteEv)

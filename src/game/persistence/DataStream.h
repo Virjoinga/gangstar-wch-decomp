@@ -8,7 +8,7 @@ public:
     enum endian { LittleEndian, BigEndian };
 
     DataStream(Stream& stream, endian order);
-    virtual ~DataStream();
+    virtual ~DataStream() {}
     virtual int Read(void* destination, int size);
     virtual int Write(const void* source, int size);
     virtual void Seek(int offset, int origin);

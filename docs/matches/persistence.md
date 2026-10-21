@@ -22,7 +22,8 @@ additional validation or ownership changes are introduced.
 
 The default block constructor leaves the ID and payload fields uninitialized.
 Persistence stores its DataStream pointer at offset four and does not own it.
-All operations check that pointer and the stream's open flag before use.
+PeekBlock, ReadBlock, WriteBlock, Reset and SeekBlock check that pointer
+and the stream's open flag before use.
 Return types and field names that are absent from symbol names are recovered
 from instructions and remain subject to full-game integration verification.
 

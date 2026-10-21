@@ -14,10 +14,6 @@
 #define Reverse32(value) (((value >> 24) & 255) | ((value & 0x00ff0000) >> 8) \
                          | ((value & 0x0000ff00) << 8) | ((value & 255) << 24))
 
-DataStream::~DataStream()
-{
-}
-
 bool __attribute__((pure)) IsBigEndian()
 {
     int value = 1;

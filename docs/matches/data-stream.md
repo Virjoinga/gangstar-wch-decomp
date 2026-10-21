@@ -5,6 +5,10 @@ including constructor aliases. The complete 972-byte contiguous code section,
 36-byte outlying destructor, 48-byte vtable section and global GOT region also
 match. The Stream dependency is rebuilt and verified as native code.
 
+The empty destructor is defined inline in DataStream.h. FileManager calls it
+through the GOT, identifying the required weak-function behavior. This source
+relocation preserves the destructor bytes and all existing DataStream matches.
+
 The stream pointer is at offset 8 and the endian conversion flag at offset 12.
 The constructor copies the underlying open flag and compares the requested
 endianness with IsBigEndian. The endian probe is declared pure: it reads its
