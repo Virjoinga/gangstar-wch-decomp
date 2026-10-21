@@ -1,5 +1,9 @@
 # Run from any directory after installing the local tools described in
 # docs/COMPILER-NOTES.md. Compiler output is passed unchanged to the assembler.
+param(
+    [string]$Source = 'config/toolchain/probes/importgl.cpp'
+)
+
 $ErrorActionPreference = 'Stop'
 $repoRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))
 $compilerRoot = Join-Path $repoRoot 'toolchain\android-ndk-r4b\build\prebuilt\windows\arm-eabi-4.2.1'
@@ -16,7 +20,7 @@ try {
     & "$compilerRoot\libexec\gcc\arm-eabi\4.2.1\cc1plus.exe" -quiet `
         -O2 -fno-strict-aliasing -fno-rtti -fno-exceptions `
         -mthumb -mthumb-interwork -march=armv5te -mfloat-abi=softfp `
-        config/toolchain/probes/importgl.cpp -o build/toolchain-baseline/importgl.s
+        $Source -o build/toolchain-baseline/importgl.s
     if ($LASTEXITCODE -ne 0) { throw "GCC frontend failed: $LASTEXITCODE" }
 
     & "$compilerRoot\bin\arm-eabi-as.exe" -march=armv5te -mfloat-abi=softfp `
