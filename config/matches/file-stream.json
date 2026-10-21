@@ -1,0 +1,71 @@
+{
+    "source": "src/game/persistence/FileStream.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-fdata-sections",
+        "-fno-merge-constants"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "linker_script": "config/linker/FileStream.ld",
+    "sections": [
+        ".text",
+        ".rodata",
+        ".modes",
+        ".vtable",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".streamtext",
+        ".streamvtable",
+        ".pathtext",
+        ".debugtext",
+        ".debugrodata"
+    ],
+    "functions": [
+        "_ZNK10FileStream7IsValidEv",
+        "_ZN10FileStream4SizeEv",
+        "_ZN10FileStream6UnloadEPv",
+        "_ZN10FileStream6DeleteEPKc",
+        "_ZNK10FileStream4TellEv",
+        "_ZN10FileStream4SeekEii",
+        "_ZN10FileStream5WriteEPKvi",
+        "_ZN10FileStream4ReadEPvi",
+        "_ZN10FileStream5CloseEv",
+        "_ZN10FileStreamD1Ev",
+        "_ZN10FileStreamD2Ev",
+        "_ZN10FileStream4OpenEPKci",
+        "_ZN10FileStream6CreateEPKc",
+        "_ZN10FileStreamC2Ev",
+        "_ZN10FileStreamC1Ev",
+        "_ZN10FileStream5ExistEPKc",
+        "_ZN10FileStreamC2EPKci",
+        "_ZN10FileStreamC1EPKci",
+        "_ZN10FileStream4LoadEPKcPi",
+        "_ZN10FileStreamD0Ev"
+    ],
+    "dependencies": [
+        "stream",
+        "path-name",
+        "debug-log"
+    ]
+}
