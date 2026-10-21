@@ -33,7 +33,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from .elf import ElfFile
+from .elf import EM_ARM, ElfFile
 from .layout import build_attribution
 from .project import load_base_library, repo_path
 
@@ -50,6 +50,14 @@ def find_symbol(elf: ElfFile, name: str):
     return None
 
 
+def symbol_offset(elf: ElfFile, symbol) -> int:
+    """Section-relative location, excluding ARM's Thumb function marker."""
+    value = symbol.st_value
+    if elf.e_machine == EM_ARM and symbol.is_func:
+        value &= ~1
+    return value - elf.sections[symbol.st_shndx].sh_addr
+
+
 def symbol_bytes(elf: ElfFile, symbol) -> bytes:
     """The raw bytes of a symbol in an object file."""
     if symbol.st_shndx == 0:
@@ -60,7 +68,7 @@ def symbol_bytes(elf: ElfFile, symbol) -> bytes:
     section = sections[symbol.st_shndx]
     if section.sh_type == 8:  # SHT_NOBITS
         return b""
-    start = section.sh_offset + symbol.st_value
+    start = section.sh_offset + symbol_offset(elf, symbol)
     return elf.data[start : start + symbol.st_size]
 
 
@@ -85,7 +93,8 @@ def relocations_for(elf: ElfFile, name: str) -> list[str]:
                 r_offset, r_info = struct.unpack("<II", elf.data[offset : offset + 8])
             else:
                 r_offset, r_info = struct.unpack("<II", elf.data[offset : offset + 8])
-            if symbol.st_value <= r_offset < symbol.st_value + max(symbol.st_size, 1):
+            start = symbol_offset(elf, symbol)
+            if start <= r_offset < start + max(symbol.st_size, 1):
                 out.append("0x%x" % r_offset)
     return out
 

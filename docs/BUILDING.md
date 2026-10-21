@@ -1,6 +1,6 @@
 # Building and verifying a match
 
-This project does not ship a build system yet. This document describes what
+This project does not ship a full-game build system yet. This document describes what
 the build *has* to be for a function to count as matched, and what is already
 known about the toolchain.
 
@@ -22,31 +22,35 @@ The retail library was built with:
 GCC: (GNU) 4.2.1
 ```
 
-for ARM EABI, hard float, Thumb interworking. The symbol table of the library
+for ARM EABI. The symbol table of the library
 still records the path the compiler was built at:
 
 ```
 /cygdrive/c/digit/Android/git/android-ndk/out/arm-eabi-4.2.1/toolchain/src/gcc-4.2.1/...
 ```
 
-That identifies the toolchain exactly: it is the **Android NDK**, built from
+That identifies an **Android NDK** toolchain, built from
 the `android-ndk` git repository, with the GCC 4.2.1 cross compiler configured
-as `arm-eabi-4.2.1`. The `arm-eabi-4.2.1` output directory is what the NDK
-r4 and r5 era builds produced.
+as `arm-eabi-4.2.1`. It does not identify an exact NDK release or GCC patch set.
+The Windows NDK r4b includes GCC 4.2.1 and has now produced exact bytes for
+two small, integer-only probes. See `COMPILER-NOTES.md` for reproduction.
 
-The library's `e_flags` are `0x04000002`: EABI version 5, hard float ABI.
+The library's `e_flags` are `0x04000002`: the EABI version field is 4, not 5.
+Neither the soft-float (`0x200`) nor hard-float (`0x400`) ABI flag is set.
+These flags do not establish the floating-point calling convention.
 
 To match byte for byte, the compiler has to be that compiler. A modern
 `arm-linux-gnueabi-gcc` will produce different code for the same source.
 
 ### Getting the NDK
 
-The old NDK releases have been delisted from Google's download server. They
-are still available from mirrors and archives. Look for:
+The Windows r4b archive is still available directly from Google:
 
-* `android-ndk-r5-linux-x86_64.zip`, or
-* the `android-ndk` git repository itself, which is what the retail build
-  used, at the revision that produced `arm-eabi-4.2.1`.
+* <https://dl.google.com/android/ndk/android-ndk-r4b-windows.zip>
+
+The compiler requires a 32-bit Cygwin runtime. `COMPILER-NOTES.md` lists the
+runtime packages and a working probe command for current Windows hosts.
+NDK r5 removed GCC 4.2.1; do not use r5 to obtain that compiler.
 
 Build the cross compiler the same way the retail build did:
 
@@ -63,12 +67,12 @@ The resulting compiler is `arm-eabi-4.2.1`.
 The retail build's flags are not recorded in the shared object, so they have
 to be recovered by experiment. The constraints they have to satisfy:
 
-* **Thumb.** Most functions are Thumb. The compiler chooses the instruction
-  set per function; `-mthumb` must be in effect for the ARM half of the code.
-* **Hard float.** `e_flags` says hard float, so `-mfloat-abi=softfp` or
-  `-mfloat-abi=hard` with the matching libgcc.
-* **No exceptions.** The library links `libstdc++.so` and `libc.so` and
-  nothing else; the C++ runtime it uses is the NDK's.
+* **Thumb.** Most functions are Thumb. Use `-mthumb` for Thumb functions;
+  ARM functions require separate investigation.
+* **Floating point.** The exact ABI and instruction selection still need
+  experiments involving float arguments and arithmetic.
+* **Exceptions and RTTI.** These settings remain unverified. The starting
+  flags below disable them; integer-only probes do not establish either.
 * **STLport.** The library uses STLport (the `stlp_priv` symbols are in the
   symbol table), which is what the NDK of that era shipped.
 
@@ -106,12 +110,21 @@ To compare a compiled object against the retail bytes, the steps are:
 3. Extract its bytes.
 4. Compare them with the retail bytes at the function's address.
 
-`tools/check.py` is the place for this; it does not exist yet. Until it does,
-the comparison is done by hand with the two commands above.
+`tools/check.py` implements this for object functions without unresolved
+relocations, including Thumb symbols (whose low address bit is a marker):
+
+```sh
+python tools/check.py build/toolchain-baseline/importgl.o --func importGLInit
+```
+
+It refuses functions touched by relocations. There is no relocation-aware
+link-and-compare build yet, so functions with calls or address references
+need further infrastructure before they can be verified.
 
 ## What is already automated
 
-These work today and need no game data:
+The repository and progress checks need no game data. Catalogue, symbol-map
+and disassembly generation require the retail library:
 
 ```sh
 python3 tools/catalogue.py     # the function catalogue
