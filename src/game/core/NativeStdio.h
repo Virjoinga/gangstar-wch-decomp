@@ -16,6 +16,7 @@ extern "C" {
     long ftell(NativeFile* file);
     unsigned int fread(void* destination, unsigned int size, unsigned int count, NativeFile* file);
     unsigned int fwrite(const void* source, unsigned int size, unsigned int count, NativeFile* file);
+    void* memset(void* destination, int value, unsigned int size);
     int remove(const char* name);
 }
 

@@ -12798,36 +12798,36 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034db29	0x20	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD0Ev	FileSystemBase::~FileSystemBase()
 0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD1Ev	FileSystemBase::~FileSystemBase()
 0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD2Ev	FileSystemBase::~FileSystemBase()
-0x0034db61	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle7canReadEv	FileSystemIPhone::_FileHandle::canRead() const
-0x0034db65	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle8canWriteEv	FileSystemIPhone::_FileHandle::canWrite() const
-0x0034db69	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11getRootPathEv	FileSystemIPhone::getRootPath() const
-0x0034db6d	0xc	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone16getResourcesPathEv	FileSystemIPhone::getResourcesPath() const
-0x0034db79	0xc	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone16getSaveFilesPathEv	FileSystemIPhone::getSaveFilesPath() const
-0x0034db85	0x2	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone9_getPathsEv	FileSystemIPhone::_getPaths()
-0x0034db89	0x16	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone9closeFileERP11IFileStream	FileSystemIPhone::closeFile(IFileStream*&)
-0x0034dba1	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle4tellEv	FileSystemIPhone::_FileHandle::tell() const
-0x0034dbb5	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle4seekEy	FileSystemIPhone::_FileHandle::seek(unsigned long long)
-0x0034dbc9	0x3c	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle4sizeEv	FileSystemIPhone::_FileHandle::size() const
-0x0034dc05	0x32	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle5writeEPKhy	FileSystemIPhone::_FileHandle::write(unsigned char const*, unsigned long long)
-0x0034dc39	0x32	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle4readEPhy	FileSystemIPhone::_FileHandle::read(unsigned char*, unsigned long long)
-0x0034dc6d	0x20	FileSystemIPhone.cpp	game	core	pending	_ZN11IStreamBaseD0Ev	IStreamBase::~IStreamBase()
-0x0034dc8d	0x18	FileSystemIPhone.cpp	game	core	pending	_ZN11IStreamBaseD1Ev	IStreamBase::~IStreamBase()
-0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleC1EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleC2EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034dd55	0x34	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone13_createHandleEPKcS1_b	FileSystemIPhone::_createHandle(char const*, char const*, bool)
-0x0034dd89	0x18	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone12openSavefileEPKc	FileSystemIPhone::openSavefile(char const*)
-0x0034dda1	0x18	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone12openResourceEPKc	FileSystemIPhone::openResource(char const*)
-0x0034ddb9	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone8openFileEPKc	FileSystemIPhone::openFile(char const*)
-0x0034ddcd	0x28	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD0Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD1Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD2Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneC2Ev	FileSystemIPhone::FileSystemIPhone()
-0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneC1Ev	FileSystemIPhone::FileSystemIPhone()
-0x0034de69	0x2c	FileSystemIPhone.cpp	game	core	pending	_ZN11IFileStreamD0Ev	IFileStream::~IFileStream()
-0x0034de95	0x24	FileSystemIPhone.cpp	game	core	pending	_ZN11IFileStreamD1Ev	IFileStream::~IFileStream()
-0x0034deb9	0x3c	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD0Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD1Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD2Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034db61	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle7canReadEv	FileSystemIPhone::_FileHandle::canRead() const
+0x0034db65	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle8canWriteEv	FileSystemIPhone::_FileHandle::canWrite() const
+0x0034db69	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11getRootPathEv	FileSystemIPhone::getRootPath() const
+0x0034db6d	0xc	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone16getResourcesPathEv	FileSystemIPhone::getResourcesPath() const
+0x0034db79	0xc	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone16getSaveFilesPathEv	FileSystemIPhone::getSaveFilesPath() const
+0x0034db85	0x2	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone9_getPathsEv	FileSystemIPhone::_getPaths()
+0x0034db89	0x16	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone9closeFileERP11IFileStream	FileSystemIPhone::closeFile(IFileStream*&)
+0x0034dba1	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle4tellEv	FileSystemIPhone::_FileHandle::tell() const
+0x0034dbb5	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle4seekEy	FileSystemIPhone::_FileHandle::seek(unsigned long long)
+0x0034dbc9	0x3c	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle4sizeEv	FileSystemIPhone::_FileHandle::size() const
+0x0034dc05	0x32	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle5writeEPKhy	FileSystemIPhone::_FileHandle::write(unsigned char const*, unsigned long long)
+0x0034dc39	0x32	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle4readEPhy	FileSystemIPhone::_FileHandle::read(unsigned char*, unsigned long long)
+0x0034dc6d	0x20	FileSystemIPhone.cpp	game	core	matched	_ZN11IStreamBaseD0Ev	IStreamBase::~IStreamBase()
+0x0034dc8d	0x18	FileSystemIPhone.cpp	game	core	matched	_ZN11IStreamBaseD1Ev	IStreamBase::~IStreamBase()
+0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleC1EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleC2EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034dd55	0x34	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone13_createHandleEPKcS1_b	FileSystemIPhone::_createHandle(char const*, char const*, bool)
+0x0034dd89	0x18	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone12openSavefileEPKc	FileSystemIPhone::openSavefile(char const*)
+0x0034dda1	0x18	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone12openResourceEPKc	FileSystemIPhone::openResource(char const*)
+0x0034ddb9	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone8openFileEPKc	FileSystemIPhone::openFile(char const*)
+0x0034ddcd	0x28	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD0Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD1Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD2Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneC2Ev	FileSystemIPhone::FileSystemIPhone()
+0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneC1Ev	FileSystemIPhone::FileSystemIPhone()
+0x0034de69	0x2c	FileSystemIPhone.cpp	game	core	matched	_ZN11IFileStreamD0Ev	IFileStream::~IFileStream()
+0x0034de95	0x24	FileSystemIPhone.cpp	game	core	matched	_ZN11IFileStreamD1Ev	IFileStream::~IFileStream()
+0x0034deb9	0x3c	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD0Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD1Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD2Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
 0x0034df2d	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle7canReadEv	FileSystemWin32::_FileHandle::canRead() const
 0x0034df31	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle8canWriteEv	FileSystemWin32::_FileHandle::canWrite() const
 0x0034df35	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211getRootPathEv	FileSystemWin32::getRootPath() const

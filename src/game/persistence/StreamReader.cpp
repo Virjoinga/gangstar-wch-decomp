@@ -13,20 +13,20 @@
 bool StreamReader::writeString(IStreamBase* stream, const char* text, unsigned long long length)
 {
     unsigned int prefix = length;
-    stream->write(&prefix, sizeof(prefix));
-    stream->write(text, length);
+    stream->write(reinterpret_cast<const unsigned char*>(&prefix), sizeof(prefix));
+    stream->write(reinterpret_cast<const unsigned char*>(text), length);
     return true;
 }
 
 bool StreamReader::readStringEx(IStreamBase* stream, char* text, unsigned long long length)
 {
-    return stream->read(text, length) == length;
+    return stream->read(reinterpret_cast<unsigned char*>(text), length) == length;
 }
 
 template<class T> T StreamReader::readAs(IStreamBase* stream)
 {
     T value;
-    stream->read(&value, sizeof(value));
+    stream->read(reinterpret_cast<unsigned char*>(&value), sizeof(value));
     return value;
 }
 
@@ -35,14 +35,14 @@ bool StreamReader::readString(IStreamBase* stream, char* text, unsigned long lon
     unsigned long long length = readAs<unsigned int>(stream);
     unsigned long long count = length;
     if (count > capacity - 1) count = capacity - 1;
-    stream->read(text, count);
+    stream->read(reinterpret_cast<unsigned char*>(text), count);
     text[count] = 0;
     return capacity > length;
 }
 
 template<class T> void StreamReader::readAs(IStreamBase* stream, T* value)
 {
-    stream->read(value, sizeof(*value));
+    stream->read(reinterpret_cast<unsigned char*>(value), sizeof(*value));
 }
 
 template unsigned int StreamReader::readAs<unsigned int>(IStreamBase*);
