@@ -102,4 +102,10 @@ OK SECTION .debugrodata  0x004130ec  332 bytes
 OK SECTION .weapon_getters  0x00330354  124 bytes
 OK SECTION .weapon_lock  0x00330464  48 bytes
 OK SECTION .weapon_unlock  0x00330834  72 bytes
+OK SECTION .weapon_visibility  0x003303d0  112 bytes
+OK SECTION .weapon_destruction  0x00330494  180 bytes
+OK SECTION .weapon_construction  0x00330548  56 bytes
+OK SECTION .weapon_class_vtable  0x004acba0  168 bytes
+OK SECTION .leveltext  0x003167a4  56 bytes
+OK SECTION .weapon_rocket  0x00330580  72 bytes
 ```

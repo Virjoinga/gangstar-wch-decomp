@@ -3,6 +3,8 @@
 
 #include "../combat/Weapon.h"
 #include "../meta/Achievements.h"
+#include "../world/LevelObject.h"
+#include "../world/GameObjectManager.h"
 
 // Partial interfaces and layouts observed by the SaveGame routines.
 // They describe accessed offsets only. Do not instantiate these classes or
@@ -66,16 +68,6 @@ public:
     void resetGame(bool flag, int id);
     unsigned char unknown0[8];
     int scriptCount;
-};
-class LevelObject {
-public:
-    unsigned char unknown0[12];
-    LevelObject* next;
-};
-class GameObjectManager {
-public:
-    LevelObject* GetFirst(int type);
-    static GameObjectManager* s_gom;
 };
 class GSLoading { public: static bool isGameLoaded(); };
 class Checkpoint { public: static bool s_bTutoCallContact; };

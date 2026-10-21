@@ -34,7 +34,13 @@
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".visibility",
+        ".destruction",
+        ".construction",
+        ".vtable",
+        ".leveltext",
+        ".rocket"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -54,12 +60,25 @@
         "_ZNK6Weapon5isGunEv",
         "_ZNK6Weapon12isProjectileEv",
         "_ZN6Weapon4lockEv",
-        "_ZN6Weapon6unlockEv"
+        "_ZN6Weapon6unlockEv",
+        "_ZN6Weapon4showEv",
+        "_ZN6Weapon4hideEv",
+        "_ZN6WeaponD0Ev",
+        "_ZN6WeaponD1Ev",
+        "_ZN6WeaponD2Ev",
+        "_ZN6WeaponC1Ei",
+        "_ZN6WeaponC2Ei",
+        "_ZN6Weapon12reloadRocketEv"
     ],
-    "dependencies": [],
+    "dependencies": [
+        "level-object"
+    ],
     "external_thumb_functions": [
         "_ZN11Application11GetInstanceEv",
-        "_ZN18AchievementManager12recordWeaponEib",
-        "_ZN11CHudManager20toggleWeaponSelectorEb"
+        "_ZN11CHudManager20toggleWeaponSelectorEb",
+        "_ZN11LevelObjectD1Ev",
+        "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
+        "_ZN18AchievementManager12recordWeaponEib"
     ]
 }

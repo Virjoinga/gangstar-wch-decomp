@@ -1,38 +1,56 @@
-# Weapon accessors, classification and lock state
+# Weapon accessors and lifecycle
 
-18 Weapon.cpp symbols match, totaling 240 function bytes. Complete linked
-sections also match: 124 bytes for the accessor/classification group including
-alignment, 48 for lock and 72 for unlock. The global GOT region matches too.
+26 Weapon.cpp symbols match, totaling 804 catalogue function bytes including
+constructor/destructor aliases. Complete native code sections, the 168-byte
+Weapon vtable, native LevelObject construction and the global GOT region match.
+The original 18 accessor/classification/lock symbols contribute 240 bytes;
+visibility, construction, destruction and rocket reload add 564.
 
-Weapon.h is a partial layout with an unrecovered LevelObject prefix. The virtual
-destructor declaration is pending; no complete Weapon object may be instantiated
-from this layout. Verified fields are weapon type at 52, clip size at 56, clip
-at 60, range at 64, cone at 68, damage at 72, shooting frequencies at 76 and 80,
-ammo type at 84, flags at 88 and the locked byte at 121. Integer payload types
-are supported by Structs::Weapon::Read using DataStream::ReadInt and by the
-copy offsets in Weapon::Load. This does not prove all original enum names.
+Weapon derives from the observed 52-byte LevelObject prefix. Its inherited
+primary virtual table has 40 function slots, with the destructor pair following
+the first three methods. The generated Weapon table matches all 168 retail
+bytes. Several inherited return types and opaque fields remain provisional:
+matching the table establishes slot identities, not a complete recovered API.
+The full hierarchy and runtime integration remain unverified.
 
-isDouble tests flag 1; isTwoHanded tests flag 4. isGun accepts numeric types
-1, 2, 5, 6, 4, 3 and 8; isProjectile accepts 7. These numeric IDs are retained
-without assigning unverified gameplay names.
+Properties are weapon type at 52, clip size at 56, clip at 60, range at 64,
+cone at 68, damage at 72, shooting frequencies at 76 and 80, ammo type at 84
+and flags at 88. Integer payload types follow Structs::Weapon::Read and the
+copy offsets in Weapon::Load. Numeric classification retains types
+1, 2, 5, 6, 4, 3 and 8 for isGun, and 7 for isProjectile; flags 1 and 4 mean
+double and two-handed. No unverified weapon names are assigned to those IDs.
 
-lock records the weapon type with AchievementManager::recordWeapon(type, true)
-and then sets the locked flag. unlock records false, reads the type again,
-and shows the HUD weapon selector for any nonzero type before clearing the
-flag. These side effects occur even if the weapon already had that state.
-The achievement and HUD callees remain external and unmatched. Application's
-observed HUD member at offset 76 is added to its partial declaration.
+The remaining layout has last-shot state at 92, the rocket object at 96,
+primary muzzle node at 100, primary timeline pointer at 104, secondary weapon
+node at 108, secondary muzzle at 112, secondary timeline at 116, an unknown
+byte at 120 and the locked flag at 121.
 
-SaveGame now uses this shared header and links these native methods. All 23
-SaveGame symbols, its dispatch table, other native dependencies and data still
-match. AchievementManager declarations were moved unchanged into Achievements.h
-and extended with the observed recordWeapon call; complete layouts and game
-integration remain unverified.
+Construction calls LevelObject(int), clears last-shot state and the rocket/
+muzzle/secondary-node pointers, then sets locked. Other fields retain retail
+initialization behavior. Destruction removes the two muzzle nodes, drops the
+secondary weapon node through the virtual IReferenceCounted base, then calls
+LevelObject destruction. The deleting destructor additionally calls operator
+delete. Timeline pointers are not the nodes being removed.
 
-Verification uses the configured NDK 1.6 r1 GCC 4.2.1 and binutils 2.17.
-Run python tools/build.py weapon or python tools/build.py save-game.
+SceneNode.h declares partial engine call slots: setVisible at byte offset 80
+and remove at 120. It models virtual inheritance so GCC emits the observed
+virtual-base adjustment for drop. The drop declaration reflects the retail
+STB_WEAK function binding (st_info 0x22), producing the normal GOT call. No
+engine implementation, inline assembly or compiler-output editing is used.
+Placeholder virtual names do not establish the complete engine API.
 
-The SaveGame dependency build printed the Weapon unit comparisons verbatim:
+show/hide act on gun/projectile models and their second model when isDouble.
+reloadRocket returns when a rocket object exists or the clip is empty; otherwise
+it requests metatype 126 and registers the created object's category through
+LevelObject::s_type[objectType]. The retail factory and type table remain external.
+Its result is consumed immediately, as in retail.
+
+lock/unlock preserve achievement recording. Unlock also shows the HUD selector
+for nonzero weapon types before clearing locked. All previously matched Weapon
+and SaveGame definitions retain their bodies; unlock is moved to retail order.
+SaveGame links these native methods and the native base constructor.
+
+Verification command: python tools/build.py save-game. Native Weapon unit output:
 
 ```text
 OK  _ZNK6Weapon13getWeaponTypeEv  0x00330355  4 bytes
@@ -53,8 +71,22 @@ OK  _ZNK6Weapon5isGunEv  0x00330399  36 bytes
 OK  _ZNK6Weapon12isProjectileEv  0x003303bd  18 bytes
 OK  _ZN6Weapon4lockEv  0x00330465  48 bytes
 OK  _ZN6Weapon6unlockEv  0x00330835  72 bytes
+OK  _ZN6Weapon4showEv  0x003303d1  56 bytes
+OK  _ZN6Weapon4hideEv  0x00330409  56 bytes
+OK  _ZN6WeaponD0Ev  0x00330495  92 bytes
+OK  _ZN6WeaponD1Ev  0x003304f1  88 bytes
+OK  _ZN6WeaponD2Ev  0x003304f1  88 bytes
+OK  _ZN6WeaponC1Ei  0x00330549  56 bytes
+OK  _ZN6WeaponC2Ei  0x00330549  56 bytes
+OK  _ZN6Weapon12reloadRocketEv  0x00330581  72 bytes
 OK SECTION .getters  0x00330354  124 bytes
 OK SECTION .lock  0x00330464  48 bytes
 OK SECTION .unlock  0x00330834  72 bytes
 OK REGION .got+0x360  0x004b03a8  17972 bytes
+OK SECTION .visibility  0x003303d0  112 bytes
+OK SECTION .destruction  0x00330494  180 bytes
+OK SECTION .construction  0x00330548  56 bytes
+OK SECTION .vtable  0x004acba0  168 bytes
+OK SECTION .leveltext  0x003167a4  56 bytes
+OK SECTION .rocket  0x00330580  72 bytes
 ```

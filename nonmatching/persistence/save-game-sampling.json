@@ -64,7 +64,13 @@
         ".debugrodata",
         ".weapon_getters",
         ".weapon_lock",
-        ".weapon_unlock"
+        ".weapon_unlock",
+        ".weapon_visibility",
+        ".weapon_destruction",
+        ".weapon_construction",
+        ".weapon_class_vtable",
+        ".leveltext",
+        ".weapon_rocket"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -99,6 +105,7 @@
         "path-name",
         "debug-log",
         "file-stream",
+        "level-object",
         "weapon"
     ],
     "external_thumb_functions": [
@@ -108,6 +115,7 @@
         "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN11CHudManager20toggleWeaponSelectorEb",
+        "_ZN11LevelObjectD1Ev",
         "_ZN13ScriptManager11getInstanceEv",
         "_ZN13ScriptManager9resetGameEbi",
         "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
@@ -115,6 +123,8 @@
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
+        "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN17GameObjectManager8GetFirstEi",
         "_ZN18AchievementManager10updateStatEi",
         "_ZN18AchievementManager12recordWeaponEib",

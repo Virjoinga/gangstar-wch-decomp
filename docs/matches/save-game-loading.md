@@ -2,7 +2,7 @@
 
 The complete 1,476-byte routine at 0x0034425d and 84-byte jump table at
 0x00433664 match. All 22 earlier helpers are reverified with the same
-translation-unit flags. Native FileStream, path, logging and Weapon sections match too.
+translation-unit flags. Native FileStream, path, logging, Weapon and LevelObject sections match too.
 
 The GCC 4.2.1 configuration adds -fno-short-enums and -fno-tree-ccp. Four-byte
 context enums are required by the call ABI and player context load at offset
@@ -25,7 +25,8 @@ false. No extra validation was introduced.
 
 SaveGameInterfaces.h contains partial field layouts and virtual call slots.
 Placeholder names are not recovered original names. Do not instantiate these
-as complete classes. Weapon accessors and lock state methods are now native matched dependencies.
+as complete classes. Weapon accessors, lifecycle methods and LevelObject construction are native
+matched dependencies.
 Other external gameplay callees remain pending and uncounted.
 This verification image does not establish full-game runtime integration.
 

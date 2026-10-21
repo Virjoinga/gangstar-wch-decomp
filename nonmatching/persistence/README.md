@@ -29,7 +29,7 @@ MISMATCH  _ZN8SaveGame13SampleAndSaveEPKc  0x00344821
   differs at 0x3e
 ```
 
-The other 23 SaveGame symbols, 18 native Weapon methods, loading jump table
+The other 23 SaveGame symbols, 26 native Weapon methods and LevelObject construction, loading jump table
 and global GOT region match.
 Sampling differs in stack spill locations and one independent instruction
 ordering pair. A relocation-aware object diagnostic finds 58 differing bytes;

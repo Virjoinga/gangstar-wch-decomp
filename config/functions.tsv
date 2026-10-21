@@ -10801,8 +10801,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316649	0xb0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD0Ev	GameObjectManager::~GameObjectManager()
 0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD1Ev	GameObjectManager::~GameObjectManager()
 0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD2Ev	GameObjectManager::~GameObjectManager()
-0x003167a5	0x38	LevelObject.cpp	game	world	pending	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
-0x003167a5	0x38	LevelObject.cpp	game	world	pending	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
+0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
+0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
 0x003167dd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
 0x003167e1	0x50	LevelObject.cpp	game	world	pending	_ZN11LevelObject5setupEv	LevelObject::setup()
 0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
@@ -11625,16 +11625,16 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330391	0x8	Weapon.cpp	game	combat	matched	_ZNK6Weapon11isTwoHandedEv	Weapon::isTwoHanded() const
 0x00330399	0x24	Weapon.cpp	game	combat	matched	_ZNK6Weapon5isGunEv	Weapon::isGun() const
 0x003303bd	0x12	Weapon.cpp	game	combat	matched	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
-0x003303d1	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4showEv	Weapon::show()
-0x00330409	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4hideEv	Weapon::hide()
+0x003303d1	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4showEv	Weapon::show()
+0x00330409	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4hideEv	Weapon::hide()
 0x00330441	0x24	Weapon.cpp	game	combat	pending	__tcf_1	__tcf_1
 0x00330465	0x30	Weapon.cpp	game	combat	matched	_ZN6Weapon4lockEv	Weapon::lock()
-0x00330495	0x5c	Weapon.cpp	game	combat	pending	_ZN6WeaponD0Ev	Weapon::~Weapon()
-0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD1Ev	Weapon::~Weapon()
-0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD2Ev	Weapon::~Weapon()
-0x00330549	0x38	Weapon.cpp	game	combat	pending	_ZN6WeaponC2Ei	Weapon::Weapon(int)
-0x00330549	0x38	Weapon.cpp	game	combat	pending	_ZN6WeaponC1Ei	Weapon::Weapon(int)
-0x00330581	0x48	Weapon.cpp	game	combat	pending	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
+0x00330495	0x5c	Weapon.cpp	game	combat	matched	_ZN6WeaponD0Ev	Weapon::~Weapon()
+0x003304f1	0x58	Weapon.cpp	game	combat	matched	_ZN6WeaponD1Ev	Weapon::~Weapon()
+0x003304f1	0x58	Weapon.cpp	game	combat	matched	_ZN6WeaponD2Ev	Weapon::~Weapon()
+0x00330549	0x38	Weapon.cpp	game	combat	matched	_ZN6WeaponC2Ei	Weapon::Weapon(int)
+0x00330549	0x38	Weapon.cpp	game	combat	matched	_ZN6WeaponC1Ei	Weapon::Weapon(int)
+0x00330581	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
 0x003305c9	0x9c	Weapon.cpp	game	combat	pending	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
 0x00330665	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
 0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()

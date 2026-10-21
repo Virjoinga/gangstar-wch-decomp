@@ -12,6 +12,7 @@
 #include "../meta/Achievements.h"
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
+#include "../world/GameObjectManager.h"
 
 int Weapon::getWeaponType() const { return weaponType; }
 int Weapon::getAmmoType() const { return ammoType; }
@@ -36,11 +37,52 @@ bool Weapon::isGun() const
 
 bool Weapon::isProjectile() const { return weaponType == 7; }
 
+void Weapon::show()
+{
+    if (isGun() || isProjectile()) {
+        sceneNode->setVisible(true);
+        if (isDouble()) secondSceneNode->setVisible(true);
+    }
+}
+
+void Weapon::hide()
+{
+    if (isGun() || isProjectile()) {
+        sceneNode->setVisible(false);
+        if (isDouble()) secondSceneNode->setVisible(false);
+    }
+}
+
 void Weapon::lock()
 {
     AchievementManager* achievements = AchievementManager::s_achievementManager;
     achievements->recordWeapon(getWeaponType(), true);
     locked = true;
+}
+
+Weapon::~Weapon()
+{
+    if (muzzle) muzzle->remove();
+    if (secondMuzzle) secondMuzzle->remove();
+    if (secondSceneNode) secondSceneNode->drop();
+}
+
+Weapon::Weapon(int id) : LevelObject(id)
+{
+    lastShot = 0;
+    projectile = 0;
+    muzzle = 0;
+    secondSceneNode = 0;
+    secondMuzzle = 0;
+    locked = true;
+}
+
+void Weapon::reloadRocket()
+{
+    if (projectile) return;
+    if (getClip() <= 0) return;
+    projectile = GameObjectManager::s_gom->CreateGameObjectFromMetatype(126);
+    GameObjectManager::s_gom->AddGameObjectOfType(LevelObject::s_type[projectile->getObjectType()]);
 }
 
 void Weapon::unlock()

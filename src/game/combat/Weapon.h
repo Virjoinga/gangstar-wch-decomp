@@ -1,10 +1,13 @@
 #ifndef WCH_COMBAT_WEAPON_H
 #define WCH_COMBAT_WEAPON_H
 
-// Partial observed layout. The prefix includes unrecovered LevelObject state;
-// this declaration must not be used to instantiate a complete Weapon.
-class Weapon {
+#include "../world/LevelObject.h"
+
+// Observed layout; the complete hierarchy and runtime integration remain
+// unverified. Do not treat this declaration as a fully recovered game type.
+class Weapon : public LevelObject {
 public:
+    Weapon(int id);
     virtual ~Weapon();
     int getWeaponType() const;
     int getAmmoType() const;
@@ -22,11 +25,13 @@ public:
     bool isTwoHanded() const;
     bool isGun() const;
     bool isProjectile() const;
+    void show();
+    void hide();
+    void reloadRocket();
     void lock();
     void unlock();
 
 private:
-    unsigned char unknown4[48];
     int weaponType;
     int clipSize;
     int clip;
@@ -37,7 +42,14 @@ private:
     int dryShootFrequency;
     int ammoType;
     unsigned int flags;
-    unsigned char unknown92[29];
+    unsigned int lastShot;
+    LevelObject* projectile;
+    irr::scene::ISceneNode* muzzle;
+    irr::scene::ITimelineController* timeline;
+    irr::scene::ISceneNode* secondSceneNode;
+    irr::scene::ISceneNode* secondMuzzle;
+    irr::scene::ITimelineController* secondTimeline;
+    unsigned char unknown120;
     bool locked;
 };
 
