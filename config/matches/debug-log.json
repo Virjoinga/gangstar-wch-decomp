@@ -1,0 +1,45 @@
+{
+    "source": "src/game/core/Debug_Log.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-fdata-sections",
+        "-fno-merge-constants"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "linker_script": "config/linker/DebugLog.ld",
+    "sections": [
+        ".text",
+        ".rodata",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "functions": [
+        "_Z14ekd_debug_initv",
+        "_Z13ekd_debug_outPKcf",
+        "_Z13ekd_debug_outPKci",
+        "_Z13ekd_debug_outPKcPc",
+        "_Z13ekd_debug_outPKc",
+        "_Z7dbg_outPcz"
+    ]
+}

@@ -94,7 +94,38 @@ Their assembly queue entries remain intact.
 * `tools/check.py` needed to clear the Thumb marker before extracting object
   bytes and before deciding whether relocations touch a function. Regression
   tests cover both boundaries and preserve odd data/non-ARM offsets.
-* Functions containing unresolved relocations are still rejected. Rebuilding
-  calls and references needs a verified linking/comparison workflow.
+* Functions containing unresolved relocations are still rejected by the raw
+  checker. `python tools/build.py logs` now uses the original GNU linker to
+  resolve calls, GOT-relative string references and retail section placement.
+  It checks all six functions plus the whole code and string sections.
+* `-mtune=xscale` reproduces the retail Logs PIC instruction scheduling;
+  `-O2 -fpic -fno-toplevel-reorder` also preserves its observed source order.
+  Both `-O2` and `-Os` gave the relevant instruction sequence with this tune,
+  so this unit does not distinguish their use in the original build.
 * The probe does not require system headers or engine types. Larger functions
   will need headers, reconstructed class layouts and further flag recovery.
+
+## Earlier assembler for ADPCM
+
+The decoder's two-byte literal-pool padding matches NDK 1.6 r1's binutils
+2.17 (`00 00`), whereas r4b binutils 2.19 emits `c0 46`. The complete decoder
+matches with the earlier GCC 4.2.1 toolchain. Its manifest selects that version
+without changing the Logs toolchain. This is evidence about these units,
+not proof that every retail object used one specific NDK release.
+
+Download [Google's NDK 1.6 r1 Windows archive](https://dl.google.com/android/ndk/android-ndk-1.6_r1-windows.zip)
+and extract it into `toolchain/android-ndk-1.6_r1/`. Its observed SHA-256 is:
+
+```text
+fcfe28edfe4a28fe50d352569ba27d873ffd48b35f93b1d3c04db7f03284d46d
+```
+
+It uses the same local 32-bit Cygwin runtime. Run:
+
+```sh
+python tools/build.py adpcm-state adpcm-decoder
+python tools/build.py --all
+```
+
+The generated GOT reference harness and its verification scope are explained
+in [matches/adpcm.md](matches/adpcm.md). No compiler output is rewritten.

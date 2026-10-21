@@ -1,0 +1,20 @@
+{
+    "source": "src/game/core/Logs.cpp",
+    "compiler_flags": [
+        "-O2", "-fpic", "-fno-toplevel-reorder",
+        "-fno-strict-aliasing", "-fno-rtti", "-fno-exceptions",
+        "-mthumb", "-mthumb-interwork", "-march=armv5te",
+        "-mtune=xscale", "-mfloat-abi=softfp"
+    ],
+    "assembler_flags": ["-march=armv5te", "-mfloat-abi=softfp", "-mfpu=vfp", "-meabi=4"],
+    "linker_script": "config/linker/Logs.ld",
+    "sections": [".text", ".rodata"],
+    "functions": [
+        "_ZN4Logs5debugEPKc",
+        "_ZN4Logs5traceEPKcS1_",
+        "_ZN4Logs10newPointerEPvPKcS2_i",
+        "_ZN4Logs4infoEPKc",
+        "_ZN4Logs7warningEPKc",
+        "_ZN4Logs5errorEPKc"
+    ]
+}

@@ -117,9 +117,35 @@ relocations, including Thumb symbols (whose low address bit is a marker):
 python tools/check.py build/toolchain-baseline/importgl.o --func importGLInit
 ```
 
-It refuses functions touched by relocations. There is no relocation-aware
-link-and-compare build yet, so functions with calls or address references
-need further infrastructure before they can be verified.
+It refuses functions touched by unresolved relocations. Configured units can
+now be compiled and linked against the retail layout with the original GNU
+linker, then checked as fully resolved images:
+
+```sh
+python tools/build.py logs
+python tools/build.py --all
+```
+
+`config/matches/*.json` records the compiler flags, source, linker script,
+function list and any whole sections to compare. `config/linker/Logs.ld`
+places the Logs code, strings and GOT base at their retail addresses, and
+binds external calls to the retail ARM PLT entry addresses. Neither compiler
+output nor linked bytes are edited. Linked functions must also have the
+correct retail address. These verification images do not provide a full
+library build or a replacement runtime.
+
+Units with `retail_got: true` compile a generated C++ reference harness before
+linking. This reproduces the retail global GOT ordering through GNU ld's own
+symbol allocation; it does not patch relocation results. The ADPCM manifest
+also checks the tables and the complete global GOT region. The PLT/local GOT
+prefix remains reserved rather than rebuilt. See `matches/adpcm.md`.
+
+Manifests may declare `dependencies` naming other configured units. The
+builder rebuilds and verifies those units first, then links their real object
+files into the dependent image. Their definitions are excluded from generated
+retail bindings as well. BufferStream uses this to retain Stream's Thumb
+function metadata and verify both source units together. Dependency cycles
+are rejected before compilation.
 
 ## What is already automated
 

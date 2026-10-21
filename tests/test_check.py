@@ -5,7 +5,7 @@ import unittest
 from types import SimpleNamespace
 
 from tools.check import relocations_for, symbol_bytes
-from tools.elf import EM_ARM, EM_386, ElfFile, STT_FUNC, STT_OBJECT, Symbol
+from tools.elf import EM_ARM, EM_386, ET_EXEC, ElfFile, STT_FUNC, STT_OBJECT, Symbol
 
 
 class ObjectComparisonTests(unittest.TestCase):
@@ -45,6 +45,22 @@ class ObjectComparisonTests(unittest.TestCase):
             sh_type=9, sh_info=1, sh_entsize=8, sh_size=16, sh_offset=6,
         ))
         self.assertEqual(relocations_for(elf, "probe"), ["0x0"])
+
+    def test_linked_thumb_symbol_uses_section_virtual_address(self):
+        elf, symbol = self.fixture(value=0x8001)
+        elf.e_type = ET_EXEC
+        elf.sections[1].sh_addr = 0x8000
+        self.assertEqual(symbol_bytes(elf, symbol), b"\x01\x20\x70\x47")
+
+    def test_linked_relocation_offsets_are_virtual_addresses(self):
+        elf, _ = self.fixture(value=0x8001)
+        elf.e_type = ET_EXEC
+        elf.sections[1].sh_addr = 0x8000
+        elf.data += struct.pack("<IIII", 0x8000, 2, 0x8004, 2)
+        elf.sections.append(SimpleNamespace(
+            sh_type=9, sh_info=1, sh_entsize=8, sh_size=16, sh_offset=6,
+        ))
+        self.assertEqual(relocations_for(elf, "probe"), ["0x8000"])
 
 
 if __name__ == "__main__":
