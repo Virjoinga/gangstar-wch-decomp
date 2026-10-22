@@ -2,10 +2,14 @@
 
 import struct
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
+import io
+from pathlib import Path
+from unittest.mock import patch
 from types import SimpleNamespace
 
-from tools.check import relocations_for, symbol_bytes
-from tools.elf import EM_ARM, EM_386, ET_EXEC, ElfFile, STT_FUNC, STT_OBJECT, Symbol
+from tools.check import main, relocations_for, select_function, symbol_bytes
+from tools.elf import EM_ARM, EM_386, ET_EXEC, ElfFile, Section, STT_FUNC, STT_OBJECT, Symbol
 
 
 class ObjectComparisonTests(unittest.TestCase):
@@ -61,6 +65,86 @@ class ObjectComparisonTests(unittest.TestCase):
             sh_type=9, sh_info=1, sh_entsize=8, sh_size=16, sh_offset=6,
         ))
         self.assertEqual(relocations_for(elf, "probe"), ["0x8000"])
+
+    def test_relocations_use_the_selected_duplicate(self):
+        elf, first = self.fixture(value=0x8001)
+        elf.e_type = ET_EXEC
+        elf.sections[1].sh_addr = 0x8000
+        second = Symbol("probe", 0x8005, 4, STT_FUNC, 0, 1)
+        elf.symbols.append(second)
+        elf.data += struct.pack("<II", 0x8004, 2)
+        elf.sections.append(SimpleNamespace(
+            sh_type=9, sh_info=1, sh_entsize=8, sh_size=8, sh_offset=6,
+        ))
+        self.assertEqual(relocations_for(elf, "probe", symbol=first), [])
+        self.assertEqual(relocations_for(elf, "probe", symbol=second), ["0x8004"])
+        with self.assertRaisesRegex(ValueError, "ambiguous function"):
+            relocations_for(elf, "probe")
+
+
+class DuplicateFunctionTests(unittest.TestCase):
+    def image(self):
+        data = b"\x01\x20\x70\x47\x02\x20\x70\x47"
+        return ElfFile("synthetic.elf", data, e_type=ET_EXEC, e_machine=EM_ARM,
+                       sections=[Section(0, "", 0, 0, 0, 0, 0, 0, 0, 1, 0),
+                                 Section(1, ".text", 1, 6, 0x8000, 0, 8, 0, 0, 2, 0)],
+                       symbols=[Symbol("__tcf_3", 0x8001, 4, STT_FUNC, 0, 1),
+                                Symbol("__tcf_3", 0x8005, 4, STT_FUNC, 0, 1)])
+
+    def invoke(self, image, *arguments):
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with patch("tools.check.load_base_library", return_value=(self.image(), Path("retail.so"))), \
+             patch("tools.check.ElfFile.load", return_value=image), \
+             patch("tools.check.Path.exists", return_value=True), \
+             redirect_stdout(stdout), redirect_stderr(stderr):
+            code = main(["synthetic.elf", "--func", "__tcf_3", *arguments])
+        return code, stdout.getvalue(), stderr.getvalue()
+
+    def test_ambiguous_retail_name_is_rejected(self):
+        code, stdout, stderr = self.invoke(self.image())
+        self.assertEqual(code, 2)
+        self.assertEqual(stdout, "")
+        self.assertIn("ambiguous function __tcf_3", stderr)
+        self.assertIn("--address", stderr)
+
+    def test_address_selects_matching_duplicate_in_both_images(self):
+        code, stdout, stderr = self.invoke(self.image(), "--address", "0x8005")
+        self.assertEqual((code, stderr), (0, ""))
+        self.assertEqual(stdout, "OK  __tcf_3  0x00008005  4 bytes\n")
+
+    def test_matching_first_copy_cannot_hide_wrong_selected_bytes(self):
+        image = self.image()
+        image.data = image.data[:4] + b"\x03\x20\x70\x47"
+        code, stdout, stderr = self.invoke(image, "--address", "0x8005")
+        self.assertEqual(code, 1)
+        self.assertEqual(stdout, "")
+        self.assertIn("MISMATCH  __tcf_3  0x00008005", stderr)
+
+    def test_thumb_marker_must_be_explicit(self):
+        code, _, stderr = self.invoke(self.image(), "--address", "0x8004")
+        self.assertEqual(code, 2)
+        self.assertIn("0x00008004 is not in the retail library", stderr)
+
+    def test_single_misplaced_definition_is_rejected(self):
+        image = self.image()
+        image.symbols = [image.symbols[0]]
+        code, _, stderr = self.invoke(image, "--address", "0x8005")
+        self.assertEqual(code, 1)
+        self.assertIn("linked at 0x00008001; expected 0x00008005", stderr)
+
+    def test_same_definition_repeated_is_not_ambiguous(self):
+        image = self.image()
+        image.symbols = [image.symbols[0], image.symbols[0]]
+        self.assertEqual(select_function(image, "__tcf_3").st_value, 0x8001)
+
+    def test_imports_and_absolute_bindings_are_not_definitions(self):
+        image = self.image()
+        for section in (0, 0xfff1):
+            with self.subTest(section=section):
+                image.symbols = [Symbol("__tcf_3", 0x8005, 4, STT_FUNC, 0, section)]
+                code, _, stderr = self.invoke(image, "--address", "0x8005")
+                self.assertEqual(code, 2)
+                self.assertIn("is not in synthetic.elf", stderr)
 
 
 if __name__ == "__main__":

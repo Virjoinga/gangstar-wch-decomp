@@ -8762,37 +8762,37 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d3449	0x20	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader12readStringExEP11IStreamBasePcy	StreamReader::readStringEx(IStreamBase*, char*, unsigned long long)
 0x002d3469	0x16	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader6readAsIjEET_P11IStreamBase	unsigned int StreamReader::readAs<unsigned int>(IStreamBase*)
 0x002d3481	0x80	StreamReader.cpp	game	persistence	matched	_ZN12StreamReader10readStringEP11IStreamBasePcy	StreamReader::readString(IStreamBase*, char*, unsigned long long)
-0x002d3501	0x6	FileManager.cpp	game	persistence	pending	_ZN11FileManager15_GetNumMappingsEv	FileManager::_GetNumMappings()
-0x002d3509	0xc	FileManager.cpp	game	persistence	pending	_ZN11FileManager11_GetMappingEi	FileManager::_GetMapping(int)
-0x002d3515	0xa	FileManager.cpp	game	persistence	pending	_ZN11FileManager12_GetFileSizeEi	FileManager::_GetFileSize(int)
-0x002d3521	0xa	FileManager.cpp	game	persistence	pending	_ZN11FileManager11_GetDvdNameEi	FileManager::_GetDvdName(int)
-0x002d352d	0xc	FileManager.cpp	game	persistence	pending	_ZN11FileManager8_GetNameEi	FileManager::_GetName(int)
-0x002d3539	0x36	FileManager.cpp	game	persistence	pending	_ZN11FileManager17StringToShortNameEPci	FileManager::StringToShortName(char*, int)
-0x002d3571	0x22	FileManager.cpp	game	persistence	pending	_ZN11FileManager16StringToBaseNameEPci	FileManager::StringToBaseName(char*, int)
-0x002d3595	0x22	FileManager.cpp	game	persistence	pending	_ZN11FileManager28_Debug_ClearLoadedRessourcesEv	FileManager::_Debug_ClearLoadedRessources()
-0x002d35b9	0x2a	FileManager.cpp	game	persistence	pending	_ZN11FileManager31_Debug_GetLoadedRessourcesCountEv	FileManager::_Debug_GetLoadedRessourcesCount()
-0x002d35e5	0x36	FileManager.cpp	game	persistence	pending	_ZN11FileManager26_Debug_GetLoadedRessourcesEPi	FileManager::_Debug_GetLoadedRessources(int*)
-0x002d361d	0x6	FileManager.cpp	game	persistence	pending	_ZN11FileManager22_Debug_GetMaxFileCountEv	FileManager::_Debug_GetMaxFileCount()
+0x002d3501	0x6	FileManager.cpp	game	persistence	matched	_ZN11FileManager15_GetNumMappingsEv	FileManager::_GetNumMappings()
+0x002d3509	0xc	FileManager.cpp	game	persistence	matched	_ZN11FileManager11_GetMappingEi	FileManager::_GetMapping(int)
+0x002d3515	0xa	FileManager.cpp	game	persistence	matched	_ZN11FileManager12_GetFileSizeEi	FileManager::_GetFileSize(int)
+0x002d3521	0xa	FileManager.cpp	game	persistence	matched	_ZN11FileManager11_GetDvdNameEi	FileManager::_GetDvdName(int)
+0x002d352d	0xc	FileManager.cpp	game	persistence	matched	_ZN11FileManager8_GetNameEi	FileManager::_GetName(int)
+0x002d3539	0x36	FileManager.cpp	game	persistence	matched	_ZN11FileManager17StringToShortNameEPci	FileManager::StringToShortName(char*, int)
+0x002d3571	0x22	FileManager.cpp	game	persistence	matched	_ZN11FileManager16StringToBaseNameEPci	FileManager::StringToBaseName(char*, int)
+0x002d3595	0x22	FileManager.cpp	game	persistence	matched	_ZN11FileManager28_Debug_ClearLoadedRessourcesEv	FileManager::_Debug_ClearLoadedRessources()
+0x002d35b9	0x2a	FileManager.cpp	game	persistence	matched	_ZN11FileManager31_Debug_GetLoadedRessourcesCountEv	FileManager::_Debug_GetLoadedRessourcesCount()
+0x002d35e5	0x36	FileManager.cpp	game	persistence	matched	_ZN11FileManager26_Debug_GetLoadedRessourcesEPi	FileManager::_Debug_GetLoadedRessources(int*)
+0x002d361d	0x6	FileManager.cpp	game	persistence	matched	_ZN11FileManager22_Debug_GetMaxFileCountEv	FileManager::_Debug_GetMaxFileCount()
 0x002d3625	0x30	FileManager.cpp	game	persistence	pending	__tcf_2	__tcf_2
-0x002d3655	0x24	DataStream.cpp	game	persistence	pending	_ZN10DataStreamD1Ev	DataStream::~DataStream()
-0x002d3679	0x12	FileManager.cpp	game	persistence	pending	_ZN11FileManager16StringToBaseNameEPc	FileManager::StringToBaseName(char*)
-0x002d368d	0x12	FileManager.cpp	game	persistence	pending	_ZN11FileManager17StringToShortNameEPc	FileManager::StringToShortName(char*)
-0x002d36a1	0x34	FileManager.cpp	game	persistence	pending	_ZN11FileManager17_GetIdFromDvdNameEPKc	FileManager::_GetIdFromDvdName(char const*)
-0x002d36d5	0x9c	FileManager.cpp	game	persistence	pending	_ZN11FileManager23_GetResIdsFromDvdFolderEPKcPii	FileManager::_GetResIdsFromDvdFolder(char const*, int*, int)
-0x002d3771	0x7e	FileManager.cpp	game	persistence	pending	_ZN11FileManager19_GetNamesFromPrefixEPKcPA256_c	FileManager::_GetNamesFromPrefix(char const*, char (*) [256])
-0x002d37f1	0x42	FileManager.cpp	game	persistence	pending	_ZN11FileManager5_LoadEiPi	FileManager::_Load(int, int*)
-0x002d3835	0x4a	FileManager.cpp	game	persistence	pending	_ZN11FileManager7_UnloadEPv	FileManager::_Unload(void*)
-0x002d3881	0x20	FileManager.cpp	game	persistence	pending	_ZN11FileManager7_UnloadEi	FileManager::_Unload(int)
-0x002d38a1	0x60	FileManager.cpp	game	persistence	pending	_ZN11FileManager21_GetFirstIdFromPrefixEPKc	FileManager::_GetFirstIdFromPrefix(char const*)
-0x002d3901	0x4a	FileManager.cpp	game	persistence	pending	_ZN11FileManager6_GetIdEPKc	FileManager::_GetId(char const*)
-0x002d394d	0x5c	FileManager.cpp	game	persistence	pending	_ZN11FileManagerD1Ev	FileManager::~FileManager()
-0x002d394d	0x5c	FileManager.cpp	game	persistence	pending	_ZN11FileManagerD2Ev	FileManager::~FileManager()
-0x002d39a9	0x30	FileManager.cpp	game	persistence	pending	_ZN11FileManager7DestroyEv	FileManager::Destroy()
-0x002d39d9	0x1c	FileManager.cpp	game	persistence	pending	_ZN7Structs9FileEntry4ReadER10DataStream	Structs::FileEntry::Read(DataStream&)
-0x002d39f5	0x11c	FileManager.cpp	game	persistence	pending	_ZN11FileManagerC1Eb	FileManager::FileManager(bool)
-0x002d39f5	0x11c	FileManager.cpp	game	persistence	pending	_ZN11FileManagerC2Eb	FileManager::FileManager(bool)
-0x002d3b11	0x28	FileManager.cpp	game	persistence	pending	_ZN11FileManager14InitArgMappingEv	FileManager::InitArgMapping()
-0x002d3b39	0x28	FileManager.cpp	game	persistence	pending	_ZN11FileManager4InitEv	FileManager::Init()
+0x002d3655	0x24	DataStream.cpp	game	persistence	matched	_ZN10DataStreamD1Ev	DataStream::~DataStream()
+0x002d3679	0x12	FileManager.cpp	game	persistence	matched	_ZN11FileManager16StringToBaseNameEPc	FileManager::StringToBaseName(char*)
+0x002d368d	0x12	FileManager.cpp	game	persistence	matched	_ZN11FileManager17StringToShortNameEPc	FileManager::StringToShortName(char*)
+0x002d36a1	0x34	FileManager.cpp	game	persistence	matched	_ZN11FileManager17_GetIdFromDvdNameEPKc	FileManager::_GetIdFromDvdName(char const*)
+0x002d36d5	0x9c	FileManager.cpp	game	persistence	matched	_ZN11FileManager23_GetResIdsFromDvdFolderEPKcPii	FileManager::_GetResIdsFromDvdFolder(char const*, int*, int)
+0x002d3771	0x7e	FileManager.cpp	game	persistence	matched	_ZN11FileManager19_GetNamesFromPrefixEPKcPA256_c	FileManager::_GetNamesFromPrefix(char const*, char (*) [256])
+0x002d37f1	0x42	FileManager.cpp	game	persistence	matched	_ZN11FileManager5_LoadEiPi	FileManager::_Load(int, int*)
+0x002d3835	0x4a	FileManager.cpp	game	persistence	matched	_ZN11FileManager7_UnloadEPv	FileManager::_Unload(void*)
+0x002d3881	0x20	FileManager.cpp	game	persistence	matched	_ZN11FileManager7_UnloadEi	FileManager::_Unload(int)
+0x002d38a1	0x60	FileManager.cpp	game	persistence	matched	_ZN11FileManager21_GetFirstIdFromPrefixEPKc	FileManager::_GetFirstIdFromPrefix(char const*)
+0x002d3901	0x4a	FileManager.cpp	game	persistence	matched	_ZN11FileManager6_GetIdEPKc	FileManager::_GetId(char const*)
+0x002d394d	0x5c	FileManager.cpp	game	persistence	matched	_ZN11FileManagerD1Ev	FileManager::~FileManager()
+0x002d394d	0x5c	FileManager.cpp	game	persistence	matched	_ZN11FileManagerD2Ev	FileManager::~FileManager()
+0x002d39a9	0x30	FileManager.cpp	game	persistence	matched	_ZN11FileManager7DestroyEv	FileManager::Destroy()
+0x002d39d9	0x1c	FileManager.cpp	game	persistence	matched	_ZN7Structs9FileEntry4ReadER10DataStream	Structs::FileEntry::Read(DataStream&)
+0x002d39f5	0x11c	FileManager.cpp	game	persistence	matched	_ZN11FileManagerC1Eb	FileManager::FileManager(bool)
+0x002d39f5	0x11c	FileManager.cpp	game	persistence	matched	_ZN11FileManagerC2Eb	FileManager::FileManager(bool)
+0x002d3b11	0x28	FileManager.cpp	game	persistence	matched	_ZN11FileManager14InitArgMappingEv	FileManager::InitArgMapping()
+0x002d3b39	0x28	FileManager.cpp	game	persistence	matched	_ZN11FileManager4InitEv	FileManager::Init()
 0x002d3b61	0x6c	FileManager.cpp	game	persistence	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002d3bcd	0x14	FileManager.cpp	game	persistence	pending	_GLOBAL__I__ZN11FileManager5s_mgrE	_GLOBAL__I__ZN11FileManager5s_mgrE
 0x002d3be1	0x2	MediaPlayerIPhone.cpp	game	app	pending	_ZN17MediaPlayerIPhone9playMovieEPKc	MediaPlayerIPhone::playMovie(char const*)
@@ -10801,8 +10801,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316649	0xb0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD0Ev	GameObjectManager::~GameObjectManager()
 0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD1Ev	GameObjectManager::~GameObjectManager()
 0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD2Ev	GameObjectManager::~GameObjectManager()
-0x003167a5	0x38	LevelObject.cpp	game	world	pending	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
-0x003167a5	0x38	LevelObject.cpp	game	world	pending	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
+0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
+0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
 0x003167dd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
 0x003167e1	0x50	LevelObject.cpp	game	world	pending	_ZN11LevelObject5setupEv	LevelObject::setup()
 0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
@@ -11607,84 +11607,84 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032febd	0x144	Rocket.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00330001	0x14	Rocket.cpp	game	combat	pending	_GLOBAL__I__ZN6RocketC2Ei	_GLOBAL__I__ZN6RocketC2Ei
 0x00330015	0x2e8	Rocket.cpp	game	combat	pending	_ZN6Rocket6launchEN3irr4core8vector3dIfEE	Rocket::launch(irr::core::vector3d<float>)
-0x003302fd	0x12	Weapon.cpp	game	combat	pending	_Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv	WepaonAnimCallback(irr::scene::ITimelineController*, void*)
-0x00330311	0x44	Weapon.cpp	game	combat	pending	_ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE	Weapon::drawMuzzleFlash(irr::scene::ISceneNode*, irr::scene::ITimelineController*)
-0x00330355	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon13getWeaponTypeEv	Weapon::getWeaponType() const
-0x00330359	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon11getAmmoTypeEv	Weapon::getAmmoType() const
-0x0033035d	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon11getClipSizeEv	Weapon::getClipSize() const
-0x00330361	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon7getClipEv	Weapon::getClip() const
-0x00330365	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon8getRangeEv	Weapon::getRange() const
-0x00330369	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon7getConeEv	Weapon::getCone() const
-0x0033036d	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon9getDamageEv	Weapon::getDamage() const
-0x00330371	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon17getShootfrequencyEv	Weapon::getShootfrequency() const
-0x00330375	0x4	Weapon.cpp	game	combat	pending	_ZNK6Weapon20getDryShootfrequencyEv	Weapon::getDryShootfrequency() const
-0x00330379	0x6	Weapon.cpp	game	combat	pending	_ZNK6Weapon8isLockedEv	Weapon::isLocked() const
-0x00330381	0x4	Weapon.cpp	game	combat	pending	_ZN6Weapon11setClipSizeEi	Weapon::setClipSize(int)
-0x00330385	0x4	Weapon.cpp	game	combat	pending	_ZN6Weapon7setClipEi	Weapon::setClip(int)
-0x00330389	0x8	Weapon.cpp	game	combat	pending	_ZNK6Weapon8isDoubleEv	Weapon::isDouble() const
-0x00330391	0x8	Weapon.cpp	game	combat	pending	_ZNK6Weapon11isTwoHandedEv	Weapon::isTwoHanded() const
-0x00330399	0x24	Weapon.cpp	game	combat	pending	_ZNK6Weapon5isGunEv	Weapon::isGun() const
-0x003303bd	0x12	Weapon.cpp	game	combat	pending	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
-0x003303d1	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4showEv	Weapon::show()
-0x00330409	0x38	Weapon.cpp	game	combat	pending	_ZN6Weapon4hideEv	Weapon::hide()
+0x003302fd	0x12	Weapon.cpp	game	combat	matched	_Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv	WepaonAnimCallback(irr::scene::ITimelineController*, void*)
+0x00330311	0x44	Weapon.cpp	game	combat	matched	_ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE	Weapon::drawMuzzleFlash(irr::scene::ISceneNode*, irr::scene::ITimelineController*)
+0x00330355	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon13getWeaponTypeEv	Weapon::getWeaponType() const
+0x00330359	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon11getAmmoTypeEv	Weapon::getAmmoType() const
+0x0033035d	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon11getClipSizeEv	Weapon::getClipSize() const
+0x00330361	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon7getClipEv	Weapon::getClip() const
+0x00330365	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon8getRangeEv	Weapon::getRange() const
+0x00330369	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon7getConeEv	Weapon::getCone() const
+0x0033036d	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon9getDamageEv	Weapon::getDamage() const
+0x00330371	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon17getShootfrequencyEv	Weapon::getShootfrequency() const
+0x00330375	0x4	Weapon.cpp	game	combat	matched	_ZNK6Weapon20getDryShootfrequencyEv	Weapon::getDryShootfrequency() const
+0x00330379	0x6	Weapon.cpp	game	combat	matched	_ZNK6Weapon8isLockedEv	Weapon::isLocked() const
+0x00330381	0x4	Weapon.cpp	game	combat	matched	_ZN6Weapon11setClipSizeEi	Weapon::setClipSize(int)
+0x00330385	0x4	Weapon.cpp	game	combat	matched	_ZN6Weapon7setClipEi	Weapon::setClip(int)
+0x00330389	0x8	Weapon.cpp	game	combat	matched	_ZNK6Weapon8isDoubleEv	Weapon::isDouble() const
+0x00330391	0x8	Weapon.cpp	game	combat	matched	_ZNK6Weapon11isTwoHandedEv	Weapon::isTwoHanded() const
+0x00330399	0x24	Weapon.cpp	game	combat	matched	_ZNK6Weapon5isGunEv	Weapon::isGun() const
+0x003303bd	0x12	Weapon.cpp	game	combat	matched	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
+0x003303d1	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4showEv	Weapon::show()
+0x00330409	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4hideEv	Weapon::hide()
 0x00330441	0x24	Weapon.cpp	game	combat	pending	__tcf_1	__tcf_1
-0x00330465	0x30	Weapon.cpp	game	combat	pending	_ZN6Weapon4lockEv	Weapon::lock()
-0x00330495	0x5c	Weapon.cpp	game	combat	pending	_ZN6WeaponD0Ev	Weapon::~Weapon()
-0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD1Ev	Weapon::~Weapon()
-0x003304f1	0x58	Weapon.cpp	game	combat	pending	_ZN6WeaponD2Ev	Weapon::~Weapon()
-0x00330549	0x38	Weapon.cpp	game	combat	pending	_ZN6WeaponC2Ei	Weapon::Weapon(int)
-0x00330549	0x38	Weapon.cpp	game	combat	pending	_ZN6WeaponC1Ei	Weapon::Weapon(int)
-0x00330581	0x48	Weapon.cpp	game	combat	pending	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
-0x003305c9	0x9c	Weapon.cpp	game	combat	pending	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
+0x00330465	0x30	Weapon.cpp	game	combat	matched	_ZN6Weapon4lockEv	Weapon::lock()
+0x00330495	0x5c	Weapon.cpp	game	combat	matched	_ZN6WeaponD0Ev	Weapon::~Weapon()
+0x003304f1	0x58	Weapon.cpp	game	combat	matched	_ZN6WeaponD1Ev	Weapon::~Weapon()
+0x003304f1	0x58	Weapon.cpp	game	combat	matched	_ZN6WeaponD2Ev	Weapon::~Weapon()
+0x00330549	0x38	Weapon.cpp	game	combat	matched	_ZN6WeaponC2Ei	Weapon::Weapon(int)
+0x00330549	0x38	Weapon.cpp	game	combat	matched	_ZN6WeaponC1Ei	Weapon::Weapon(int)
+0x00330581	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
+0x003305c9	0x9c	Weapon.cpp	game	combat	matched	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
 0x00330665	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
-0x00330835	0x48	Weapon.cpp	game	combat	pending	_ZN6Weapon6unlockEv	Weapon::unlock()
+0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()
 0x0033087d	0x144	Weapon.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003309c1	0x14	Weapon.cpp	game	combat	pending	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
 0x003309d5	0x30	Weapon.cpp	game	combat	pending	__tcf_3	__tcf_3
-0x00330a05	0x44	Weapon.cpp	game	combat	pending	_ZN6Weapon12playDrySoundEv	Weapon::playDrySound()
-0x00330a49	0x84	Weapon.cpp	game	combat	pending	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
-0x00330acd	0x12c	Weapon.cpp	game	combat	pending	_ZN6Weapon15playReloadSoundEv	Weapon::playReloadSound()
-0x00330bf9	0x80	Weapon.cpp	game	combat	pending	_ZN6Weapon6reloadEb	Weapon::reload(bool)
-0x00330c79	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon14playShootSoundEv	Weapon::playShootSound()
-0x00330e49	0x84	Weapon.cpp	game	combat	pending	_ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE	Weapon::shootProjectileFromCar(irr::core::vector3d<float> const&)
-0x00330ecd	0x2e	Weapon.cpp	game	combat	pending	_ZN6Weapon5photoEv	Weapon::photo()
-0x00330efd	0x4a	Weapon.cpp	game	combat	pending	_ZN6Weapon5snipeEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::snipe(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
-0x00330f49	0x7a	Weapon.cpp	game	combat	pending	_ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::shootFromCar(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
-0x00330fc5	0x5a	Weapon.cpp	game	combat	pending	_ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE	Weapon::shootProjectile(irr::core::vector3d<float> const&)
-0x00331021	0x108	Weapon.cpp	game	combat	pending	_ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_	Weapon::shoot(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
-0x00331129	0x6	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager13unlimitedAmmoEb	WeaponManager::unlimitedAmmo(bool)
-0x00331131	0x6	WeaponManager.cpp	game	combat	pending	_ZNK13WeaponManager16areAmmoUnlimitedEv	WeaponManager::areAmmoUnlimited() const
-0x00331139	0x4	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager15getLHWeaponNodeEv	WeaponManager::getLHWeaponNode()
-0x0033113d	0x4	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager15getRHWeaponNodeEv	WeaponManager::getRHWeaponNode()
-0x00331141	0x4	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager9setPlayerEP9Character	WeaponManager::setPlayer(Character*)
+0x00330a05	0x44	Weapon.cpp	game	combat	matched	_ZN6Weapon12playDrySoundEv	Weapon::playDrySound()
+0x00330a49	0x84	Weapon.cpp	game	combat	matched	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
+0x00330acd	0x12c	Weapon.cpp	game	combat	matched	_ZN6Weapon15playReloadSoundEv	Weapon::playReloadSound()
+0x00330bf9	0x80	Weapon.cpp	game	combat	matched	_ZN6Weapon6reloadEb	Weapon::reload(bool)
+0x00330c79	0x1d0	Weapon.cpp	game	combat	matched	_ZN6Weapon14playShootSoundEv	Weapon::playShootSound()
+0x00330e49	0x84	Weapon.cpp	game	combat	matched	_ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE	Weapon::shootProjectileFromCar(irr::core::vector3d<float> const&)
+0x00330ecd	0x2e	Weapon.cpp	game	combat	matched	_ZN6Weapon5photoEv	Weapon::photo()
+0x00330efd	0x4a	Weapon.cpp	game	combat	matched	_ZN6Weapon5snipeEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::snipe(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
+0x00330f49	0x7a	Weapon.cpp	game	combat	matched	_ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::shootFromCar(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
+0x00330fc5	0x5a	Weapon.cpp	game	combat	matched	_ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE	Weapon::shootProjectile(irr::core::vector3d<float> const&)
+0x00331021	0x108	Weapon.cpp	game	combat	matched	_ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_	Weapon::shoot(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
+0x00331129	0x6	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager13unlimitedAmmoEb	WeaponManager::unlimitedAmmo(bool)
+0x00331131	0x6	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager16areAmmoUnlimitedEv	WeaponManager::areAmmoUnlimited() const
+0x00331139	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getLHWeaponNodeEv	WeaponManager::getLHWeaponNode()
+0x0033113d	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getRHWeaponNodeEv	WeaponManager::getRHWeaponNode()
+0x00331141	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager9setPlayerEP9Character	WeaponManager::setPlayer(Character*)
 0x00331145	0x28	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager25isWeaponUsableFromVehicleEi	WeaponManager::isWeaponUsableFromVehicle(int)
-0x0033116d	0x30	WeaponManager.cpp	game	combat	pending	__tcf_3	__tcf_3
-0x0033119d	0x34	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager14isWeaponUsableEi	WeaponManager::isWeaponUsable(int)
-0x003311d1	0x16	WeaponManager.cpp	game	combat	pending	_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE	WeaponManager::getWeaponLimitedTo(PlayerTest::eContext) const
-0x003311e9	0x52	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager5cleanEv	WeaponManager::clean()
-0x0033123d	0x28	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD0Ev	WeaponManager::~WeaponManager()
-0x00331265	0x20	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD1Ev	WeaponManager::~WeaponManager()
-0x00331265	0x20	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD2Ev	WeaponManager::~WeaponManager()
-0x00331285	0x48	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerC2Ev	WeaponManager::WeaponManager()
-0x00331285	0x48	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerC1Ev	WeaponManager::WeaponManager()
-0x003312cd	0x13c	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager4initEv	WeaponManager::init()
-0x00331409	0x46	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE	WeaponManager::getAmmo(int, PlayerTest::eContext)
-0x00331451	0x44	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager16unlockAllWeaponsEv	WeaponManager::unlockAllWeapons()
-0x00331495	0x22	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE	WeaponManager::limitToWeapon(int, PlayerTest::eContext)
-0x003314b9	0x1c	WeaponManager.cpp	game	combat	pending	_ZNK13WeaponManager16getCurrentWeaponEv	WeaponManager::getCurrentWeapon() const
-0x003314d5	0x26	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE	WeaponManager::getWeaponInList(int, PlayerTest::eContext)
-0x003314fd	0xc6	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager10nextWeaponEi	WeaponManager::nextWeapon(int)
-0x003315c5	0x56	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager9addWeaponEP6Weapon	WeaponManager::addWeapon(Weapon*)
-0x0033161d	0x46	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE	WeaponManager::setAmmo(int, int, PlayerTest::eContext)
-0x00331665	0xc6	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager12unlockWeaponEi	WeaponManager::unlockWeapon(int)
-0x0033172d	0xf4	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager12createWeaponEi	WeaponManager::createWeapon(int)
-0x00331821	0xa4	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager9setWeaponEP6Weaponb	WeaponManager::setWeapon(Weapon*, bool)
-0x003318c5	0xe	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager11setLHWeaponEP6Weapon	WeaponManager::setLHWeapon(Weapon*)
-0x003318d5	0xe	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager11setRHWeaponEP6Weapon	WeaponManager::setRHWeapon(Weapon*)
-0x003318e5	0x98	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager10swapWeaponEv	WeaponManager::swapWeapon()
-0x0033197d	0x22	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager10swapWeaponEi	WeaponManager::swapWeapon(int)
-0x003319a1	0x66	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
-0x00331a09	0x108	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
+0x0033116d	0x30	WeaponManager.cpp	game	combat	matched	__tcf_3	__tcf_3
+0x0033119d	0x34	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14isWeaponUsableEi	WeaponManager::isWeaponUsable(int)
+0x003311d1	0x16	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE	WeaponManager::getWeaponLimitedTo(PlayerTest::eContext) const
+0x003311e9	0x52	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager5cleanEv	WeaponManager::clean()
+0x0033123d	0x28	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD0Ev	WeaponManager::~WeaponManager()
+0x00331265	0x20	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD1Ev	WeaponManager::~WeaponManager()
+0x00331265	0x20	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD2Ev	WeaponManager::~WeaponManager()
+0x00331285	0x48	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerC2Ev	WeaponManager::WeaponManager()
+0x00331285	0x48	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerC1Ev	WeaponManager::WeaponManager()
+0x003312cd	0x13c	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager4initEv	WeaponManager::init()
+0x00331409	0x46	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE	WeaponManager::getAmmo(int, PlayerTest::eContext)
+0x00331451	0x44	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager16unlockAllWeaponsEv	WeaponManager::unlockAllWeapons()
+0x00331495	0x22	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE	WeaponManager::limitToWeapon(int, PlayerTest::eContext)
+0x003314b9	0x1c	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager16getCurrentWeaponEv	WeaponManager::getCurrentWeapon() const
+0x003314d5	0x26	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE	WeaponManager::getWeaponInList(int, PlayerTest::eContext)
+0x003314fd	0xc6	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10nextWeaponEi	WeaponManager::nextWeapon(int)
+0x003315c5	0x56	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager9addWeaponEP6Weapon	WeaponManager::addWeapon(Weapon*)
+0x0033161d	0x46	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE	WeaponManager::setAmmo(int, int, PlayerTest::eContext)
+0x00331665	0xc6	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager12unlockWeaponEi	WeaponManager::unlockWeapon(int)
+0x0033172d	0xf4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager12createWeaponEi	WeaponManager::createWeapon(int)
+0x00331821	0xa4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager9setWeaponEP6Weaponb	WeaponManager::setWeapon(Weapon*, bool)
+0x003318c5	0xe	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager11setLHWeaponEP6Weapon	WeaponManager::setLHWeapon(Weapon*)
+0x003318d5	0xe	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager11setRHWeaponEP6Weapon	WeaponManager::setRHWeapon(Weapon*)
+0x003318e5	0x98	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10swapWeaponEv	WeaponManager::swapWeapon()
+0x0033197d	0x22	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10swapWeaponEi	WeaponManager::swapWeapon(int)
+0x003319a1	0x66	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
+0x00331a09	0x108	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
 0x00331b11	0x144	WeaponManager.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00331c55	0x14	WeaponManager.cpp	game	combat	pending	_GLOBAL__I__ZN13WeaponManagerC2Ev	_GLOBAL__I__ZN13WeaponManagerC2Ev
 0x00331c69	0x2	Camera.cpp	game	core	pending	_ZN6Camera5enterEv	Camera::enter()
@@ -12277,40 +12277,40 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00342fb4	0x14	WantedLevelManager.cpp	game	missions	pending	_ZThn4_N18WantedLevelManager6updateEd	non-virtual thunk to WantedLevelManager::update(double)
 0x00342fc9	0x178	WantedLevelManager.cpp	game	missions	pending	_ZN18WantedLevelManager6updateEd	WantedLevelManager::update(double)
 0x00343141	0x170	WantedLevelManager.cpp	game	missions	pending	_ZN18WantedLevelManager7onEventEPK6IEventPK12EventManager	WantedLevelManager::onEvent(IEvent const*, EventManager const*)
-0x003432b1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11PersistenceC2Ev	Persistence::Persistence()
-0x003432b1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11PersistenceC1Ev	Persistence::Persistence()
-0x003432cd	0x4	Persistence.cpp	game	persistence	pending	_ZNK11Persistence5Block4SizeEv	Persistence::Block::Size() const
-0x003432d1	0xe	Persistence.cpp	game	persistence	pending	_ZNK11Persistence8BlockInt4SizeEv	Persistence::BlockInt::Size() const
-0x003432e1	0xe	Persistence.cpp	game	persistence	pending	_ZNK11Persistence12BlockIntPair4SizeEv	Persistence::BlockIntPair::Size() const
-0x003432f1	0x12	Persistence.cpp	game	persistence	pending	_ZNK11Persistence11BlockString4SizeEv	Persistence::BlockString::Size() const
-0x00343305	0x4	Persistence.cpp	game	persistence	pending	_ZN11Persistence13SetDataStreamEP10DataStream	Persistence::SetDataStream(DataStream*)
-0x00343309	0x58	Persistence.cpp	game	persistence	pending	_ZN11Persistence9PeekBlockERNS_5BlockE	Persistence::PeekBlock(Persistence::Block&)
-0x00343361	0x20	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD0Ev	Persistence::~Persistence()
-0x00343381	0x18	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD1Ev	Persistence::~Persistence()
-0x00343381	0x18	Persistence.cpp	game	persistence	pending	_ZN11PersistenceD2Ev	Persistence::~Persistence()
-0x00343399	0x20	Persistence.cpp	game	persistence	pending	_ZN11Persistence5BlockD0Ev	Persistence::Block::~Block()
-0x003433b9	0x18	Persistence.cpp	game	persistence	pending	_ZN11Persistence5BlockD1Ev	Persistence::Block::~Block()
-0x003433d1	0x2a	Persistence.cpp	game	persistence	pending	_ZNK11Persistence5Block5WriteEP10DataStream	Persistence::Block::Write(DataStream*) const
-0x003433fd	0x28	Persistence.cpp	game	persistence	pending	_ZNK11Persistence11BlockString5WriteEP10DataStream	Persistence::BlockString::Write(DataStream*) const
-0x00343425	0x20	Persistence.cpp	game	persistence	pending	_ZNK11Persistence12BlockIntPair5WriteEP10DataStream	Persistence::BlockIntPair::Write(DataStream*) const
-0x00343445	0x18	Persistence.cpp	game	persistence	pending	_ZNK11Persistence8BlockInt5WriteEP10DataStream	Persistence::BlockInt::Write(DataStream*) const
-0x0034345d	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence5Block4ReadEP10DataStream	Persistence::Block::Read(DataStream*)
-0x00343479	0x20	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPair4ReadEP10DataStream	Persistence::BlockIntPair::Read(DataStream*)
-0x00343499	0x18	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockInt4ReadEP10DataStream	Persistence::BlockInt::Read(DataStream*)
-0x003434b1	0x3a	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockString4ReadEP10DataStream	Persistence::BlockString::Read(DataStream*)
-0x003434ed	0x48	Persistence.cpp	game	persistence	pending	_ZN11Persistence10WriteBlockERKNS_5BlockE	Persistence::WriteBlock(Persistence::Block const&)
-0x00343535	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence5ResetEv	Persistence::Reset()
-0x00343559	0x48	Persistence.cpp	game	persistence	pending	_ZN11Persistence9ReadBlockERNS_5BlockE	Persistence::ReadBlock(Persistence::Block&)
-0x003435a1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringC2Ev	Persistence::BlockString::BlockString()
-0x003435a1	0x1c	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringC1Ev	Persistence::BlockString::BlockString()
-0x003435bd	0x2c	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockIntD0Ev	Persistence::BlockInt::~BlockInt()
-0x003435e9	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence8BlockIntD1Ev	Persistence::BlockInt::~BlockInt()
-0x0034360d	0x2c	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPairD0Ev	Persistence::BlockIntPair::~BlockIntPair()
-0x00343639	0x24	Persistence.cpp	game	persistence	pending	_ZN11Persistence12BlockIntPairD1Ev	Persistence::BlockIntPair::~BlockIntPair()
-0x0034365d	0x68	Persistence.cpp	game	persistence	pending	_ZN11Persistence9SeekBlockEi	Persistence::SeekBlock(int)
-0x003436c5	0x38	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD0Ev	Persistence::BlockString::~BlockString()
-0x003436fd	0x34	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD1Ev	Persistence::BlockString::~BlockString()
-0x003436fd	0x34	Persistence.cpp	game	persistence	pending	_ZN11Persistence11BlockStringD2Ev	Persistence::BlockString::~BlockString()
+0x003432b1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11PersistenceC2Ev	Persistence::Persistence()
+0x003432b1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11PersistenceC1Ev	Persistence::Persistence()
+0x003432cd	0x4	Persistence.cpp	game	persistence	matched	_ZNK11Persistence5Block4SizeEv	Persistence::Block::Size() const
+0x003432d1	0xe	Persistence.cpp	game	persistence	matched	_ZNK11Persistence8BlockInt4SizeEv	Persistence::BlockInt::Size() const
+0x003432e1	0xe	Persistence.cpp	game	persistence	matched	_ZNK11Persistence12BlockIntPair4SizeEv	Persistence::BlockIntPair::Size() const
+0x003432f1	0x12	Persistence.cpp	game	persistence	matched	_ZNK11Persistence11BlockString4SizeEv	Persistence::BlockString::Size() const
+0x00343305	0x4	Persistence.cpp	game	persistence	matched	_ZN11Persistence13SetDataStreamEP10DataStream	Persistence::SetDataStream(DataStream*)
+0x00343309	0x58	Persistence.cpp	game	persistence	matched	_ZN11Persistence9PeekBlockERNS_5BlockE	Persistence::PeekBlock(Persistence::Block&)
+0x00343361	0x20	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD0Ev	Persistence::~Persistence()
+0x00343381	0x18	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD1Ev	Persistence::~Persistence()
+0x00343381	0x18	Persistence.cpp	game	persistence	matched	_ZN11PersistenceD2Ev	Persistence::~Persistence()
+0x00343399	0x20	Persistence.cpp	game	persistence	matched	_ZN11Persistence5BlockD0Ev	Persistence::Block::~Block()
+0x003433b9	0x18	Persistence.cpp	game	persistence	matched	_ZN11Persistence5BlockD1Ev	Persistence::Block::~Block()
+0x003433d1	0x2a	Persistence.cpp	game	persistence	matched	_ZNK11Persistence5Block5WriteEP10DataStream	Persistence::Block::Write(DataStream*) const
+0x003433fd	0x28	Persistence.cpp	game	persistence	matched	_ZNK11Persistence11BlockString5WriteEP10DataStream	Persistence::BlockString::Write(DataStream*) const
+0x00343425	0x20	Persistence.cpp	game	persistence	matched	_ZNK11Persistence12BlockIntPair5WriteEP10DataStream	Persistence::BlockIntPair::Write(DataStream*) const
+0x00343445	0x18	Persistence.cpp	game	persistence	matched	_ZNK11Persistence8BlockInt5WriteEP10DataStream	Persistence::BlockInt::Write(DataStream*) const
+0x0034345d	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence5Block4ReadEP10DataStream	Persistence::Block::Read(DataStream*)
+0x00343479	0x20	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPair4ReadEP10DataStream	Persistence::BlockIntPair::Read(DataStream*)
+0x00343499	0x18	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockInt4ReadEP10DataStream	Persistence::BlockInt::Read(DataStream*)
+0x003434b1	0x3a	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockString4ReadEP10DataStream	Persistence::BlockString::Read(DataStream*)
+0x003434ed	0x48	Persistence.cpp	game	persistence	matched	_ZN11Persistence10WriteBlockERKNS_5BlockE	Persistence::WriteBlock(Persistence::Block const&)
+0x00343535	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence5ResetEv	Persistence::Reset()
+0x00343559	0x48	Persistence.cpp	game	persistence	matched	_ZN11Persistence9ReadBlockERNS_5BlockE	Persistence::ReadBlock(Persistence::Block&)
+0x003435a1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringC2Ev	Persistence::BlockString::BlockString()
+0x003435a1	0x1c	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringC1Ev	Persistence::BlockString::BlockString()
+0x003435bd	0x2c	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockIntD0Ev	Persistence::BlockInt::~BlockInt()
+0x003435e9	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence8BlockIntD1Ev	Persistence::BlockInt::~BlockInt()
+0x0034360d	0x2c	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPairD0Ev	Persistence::BlockIntPair::~BlockIntPair()
+0x00343639	0x24	Persistence.cpp	game	persistence	matched	_ZN11Persistence12BlockIntPairD1Ev	Persistence::BlockIntPair::~BlockIntPair()
+0x0034365d	0x68	Persistence.cpp	game	persistence	matched	_ZN11Persistence9SeekBlockEi	Persistence::SeekBlock(int)
+0x003436c5	0x38	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD0Ev	Persistence::BlockString::~BlockString()
+0x003436fd	0x34	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD1Ev	Persistence::BlockString::~BlockString()
+0x003436fd	0x34	Persistence.cpp	game	persistence	matched	_ZN11Persistence11BlockStringD2Ev	Persistence::BlockString::~BlockString()
 0x00343731	0x30	Preferences.cpp	game	ui	pending	__tcf_3	__tcf_3
 0x00343761	0x22	Preferences.cpp	game	ui	pending	_ZN11Preferences5ExistEPKc	Preferences::Exist(char const*)
 0x00343785	0x44	Preferences.cpp	game	ui	pending	_ZN11Preferences18GetDefaultFilenameEv	Preferences::GetDefaultFilename()
@@ -12324,32 +12324,32 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00343a39	0x25c	Preferences.cpp	game	ui	pending	_ZN11Preferences12LoadAndApplyEPKc	Preferences::LoadAndApply(char const*)
 0x00343c99	0x144	Preferences.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00343ddd	0x14	Preferences.cpp	game	ui	pending	_GLOBAL__I__ZN11PreferencesC2Ev	_GLOBAL__I__ZN11PreferencesC2Ev
-0x00343df1	0x2	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame12SampleObjectEP11LevelObject	SaveGame::SampleObject(LevelObject*)
+0x00343df1	0x2	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12SampleObjectEP11LevelObject	SaveGame::SampleObject(LevelObject*)
 0x00343df5	0x30	SaveGame.cpp	game	persistence	pending	__tcf_4	__tcf_4
-0x00343e25	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame8BlockV3D4SizeEv	SaveGame::BlockV3D::Size() const
-0x00343e35	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame9BlockAmmo4SizeEv	SaveGame::BlockAmmo::Size() const
-0x00343e45	0xe	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame11BlockWeapon4SizeEv	SaveGame::BlockWeapon::Size() const
-0x00343e55	0x28	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame8BlockV3D5WriteEP10DataStream	SaveGame::BlockV3D::Write(DataStream*) const
-0x00343e7d	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3D4ReadEP10DataStream	SaveGame::BlockV3D::Read(DataStream*)
-0x00343ea5	0x28	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame9BlockAmmo5WriteEP10DataStream	SaveGame::BlockAmmo::Write(DataStream*) const
-0x00343ecd	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmo4ReadEP10DataStream	SaveGame::BlockAmmo::Read(DataStream*)
-0x00343ef5	0x38	SaveGame.cpp	game	persistence	pending	_ZNK8SaveGame11BlockWeapon5WriteEP10DataStream	SaveGame::BlockWeapon::Write(DataStream*) const
-0x00343f2d	0x38	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeapon4ReadEP10DataStream	SaveGame::BlockWeapon::Read(DataStream*)
-0x00343f65	0x44	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame18GetDefaultFilenameEv	SaveGame::GetDefaultFilename()
-0x00343fa9	0x28	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD0Ev	SaveGame::~SaveGame()
-0x00343fd1	0x20	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD1Ev	SaveGame::~SaveGame()
-0x00343fd1	0x20	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameD2Ev	SaveGame::~SaveGame()
-0x00343ff1	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameC2Ev	SaveGame::SaveGame()
-0x00343ff1	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGameC1Ev	SaveGame::SaveGame()
+0x00343e25	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame8BlockV3D4SizeEv	SaveGame::BlockV3D::Size() const
+0x00343e35	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame9BlockAmmo4SizeEv	SaveGame::BlockAmmo::Size() const
+0x00343e45	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame11BlockWeapon4SizeEv	SaveGame::BlockWeapon::Size() const
+0x00343e55	0x28	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame8BlockV3D5WriteEP10DataStream	SaveGame::BlockV3D::Write(DataStream*) const
+0x00343e7d	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3D4ReadEP10DataStream	SaveGame::BlockV3D::Read(DataStream*)
+0x00343ea5	0x28	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame9BlockAmmo5WriteEP10DataStream	SaveGame::BlockAmmo::Write(DataStream*) const
+0x00343ecd	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmo4ReadEP10DataStream	SaveGame::BlockAmmo::Read(DataStream*)
+0x00343ef5	0x38	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame11BlockWeapon5WriteEP10DataStream	SaveGame::BlockWeapon::Write(DataStream*) const
+0x00343f2d	0x38	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeapon4ReadEP10DataStream	SaveGame::BlockWeapon::Read(DataStream*)
+0x00343f65	0x44	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame18GetDefaultFilenameEv	SaveGame::GetDefaultFilename()
+0x00343fa9	0x28	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD0Ev	SaveGame::~SaveGame()
+0x00343fd1	0x20	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD1Ev	SaveGame::~SaveGame()
+0x00343fd1	0x20	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD2Ev	SaveGame::~SaveGame()
+0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC2Ev	SaveGame::SaveGame()
+0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC1Ev	SaveGame::SaveGame()
 0x00344015	0x144	SaveGame.cpp	game	persistence	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00344159	0x14	SaveGame.cpp	game	persistence	pending	_GLOBAL__I__ZN8SaveGameC2Ev	_GLOBAL__I__ZN8SaveGameC2Ev
-0x0034416d	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3DD0Ev	SaveGame::BlockV3D::~BlockV3D()
-0x00344199	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame8BlockV3DD1Ev	SaveGame::BlockV3D::~BlockV3D()
-0x003441bd	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeaponD0Ev	SaveGame::BlockWeapon::~BlockWeapon()
-0x003441e9	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame11BlockWeaponD1Ev	SaveGame::BlockWeapon::~BlockWeapon()
-0x0034420d	0x2c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmoD0Ev	SaveGame::BlockAmmo::~BlockAmmo()
-0x00344239	0x24	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
-0x0034425d	0x5c4	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
+0x0034416d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD0Ev	SaveGame::BlockV3D::~BlockV3D()
+0x00344199	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD1Ev	SaveGame::BlockV3D::~BlockV3D()
+0x003441bd	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD0Ev	SaveGame::BlockWeapon::~BlockWeapon()
+0x003441e9	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD1Ev	SaveGame::BlockWeapon::~BlockWeapon()
+0x0034420d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD0Ev	SaveGame::BlockAmmo::~BlockAmmo()
+0x00344239	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
+0x0034425d	0x5c4	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
 0x00344821	0x56c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame13SampleAndSaveEPKc	SaveGame::SampleAndSave(char const*)
 0x00344d8d	0x4	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager4Stat8getValueEv	AchievementManager::Stat::getValue() const
 0x00344d91	0x1c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager20getAchievementFromIDEi	AchievementManager::getAchievementFromID(int) const
@@ -12792,68 +12792,68 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034dac4	0x14	AccelerometerWin32.cpp	game	input	pending	_ZThn76_N18AccelerometerWin32D1Ev	non-virtual thunk to AccelerometerWin32::~AccelerometerWin32()
 0x0034dad9	0x34	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32D1Ev	AccelerometerWin32::~AccelerometerWin32()
 0x0034dad9	0x34	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32D2Ev	AccelerometerWin32::~AccelerometerWin32()
-0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseC1Ev	FileSystemBase::FileSystemBase()
-0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseC2Ev	FileSystemBase::FileSystemBase()
-0x0034db25	0x2	FileSystemBase.cpp	game	persistence	pending	_ZNK14FileSystemBase6_traceEPKc	FileSystemBase::_trace(char const*) const
-0x0034db29	0x20	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD0Ev	FileSystemBase::~FileSystemBase()
-0x0034db49	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD1Ev	FileSystemBase::~FileSystemBase()
-0x0034db49	0x18	FileSystemBase.cpp	game	persistence	pending	_ZN14FileSystemBaseD2Ev	FileSystemBase::~FileSystemBase()
-0x0034db61	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle7canReadEv	FileSystemIPhone::_FileHandle::canRead() const
-0x0034db65	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle8canWriteEv	FileSystemIPhone::_FileHandle::canWrite() const
-0x0034db69	0x4	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11getRootPathEv	FileSystemIPhone::getRootPath() const
-0x0034db6d	0xc	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone16getResourcesPathEv	FileSystemIPhone::getResourcesPath() const
-0x0034db79	0xc	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone16getSaveFilesPathEv	FileSystemIPhone::getSaveFilesPath() const
-0x0034db85	0x2	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone9_getPathsEv	FileSystemIPhone::_getPaths()
-0x0034db89	0x16	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone9closeFileERP11IFileStream	FileSystemIPhone::closeFile(IFileStream*&)
-0x0034dba1	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle4tellEv	FileSystemIPhone::_FileHandle::tell() const
-0x0034dbb5	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle4seekEy	FileSystemIPhone::_FileHandle::seek(unsigned long long)
-0x0034dbc9	0x3c	FileSystemIPhone.cpp	game	persistence	pending	_ZNK16FileSystemIPhone11_FileHandle4sizeEv	FileSystemIPhone::_FileHandle::size() const
-0x0034dc05	0x32	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle5writeEPKhy	FileSystemIPhone::_FileHandle::write(unsigned char const*, unsigned long long)
-0x0034dc39	0x32	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandle4readEPhy	FileSystemIPhone::_FileHandle::read(unsigned char*, unsigned long long)
-0x0034dc6d	0x20	FileSystemIPhone.cpp	game	core	pending	_ZN11IStreamBaseD0Ev	IStreamBase::~IStreamBase()
-0x0034dc8d	0x18	FileSystemIPhone.cpp	game	core	pending	_ZN11IStreamBaseD1Ev	IStreamBase::~IStreamBase()
-0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleC1EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleC2EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034dd55	0x34	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone13_createHandleEPKcS1_b	FileSystemIPhone::_createHandle(char const*, char const*, bool)
-0x0034dd89	0x18	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone12openSavefileEPKc	FileSystemIPhone::openSavefile(char const*)
-0x0034dda1	0x18	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone12openResourceEPKc	FileSystemIPhone::openResource(char const*)
-0x0034ddb9	0x12	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone8openFileEPKc	FileSystemIPhone::openFile(char const*)
-0x0034ddcd	0x28	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD0Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD1Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneD2Ev	FileSystemIPhone::~FileSystemIPhone()
-0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneC2Ev	FileSystemIPhone::FileSystemIPhone()
-0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhoneC1Ev	FileSystemIPhone::FileSystemIPhone()
-0x0034de69	0x2c	FileSystemIPhone.cpp	game	core	pending	_ZN11IFileStreamD0Ev	IFileStream::~IFileStream()
-0x0034de95	0x24	FileSystemIPhone.cpp	game	core	pending	_ZN11IFileStreamD1Ev	IFileStream::~IFileStream()
-0x0034deb9	0x3c	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD0Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD1Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	pending	_ZN16FileSystemIPhone11_FileHandleD2Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
-0x0034df2d	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle7canReadEv	FileSystemWin32::_FileHandle::canRead() const
-0x0034df31	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle8canWriteEv	FileSystemWin32::_FileHandle::canWrite() const
-0x0034df35	0x4	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211getRootPathEv	FileSystemWin32::getRootPath() const
-0x0034df39	0xc	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3216getResourcesPathEv	FileSystemWin32::getResourcesPath() const
-0x0034df45	0xc	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3216getSaveFilesPathEv	FileSystemWin32::getSaveFilesPath() const
-0x0034df51	0x16	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin329closeFileERP11IFileStream	FileSystemWin32::closeFile(IFileStream*&)
-0x0034df69	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle4tellEv	FileSystemWin32::_FileHandle::tell() const
-0x0034df7d	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle4seekEy	FileSystemWin32::_FileHandle::seek(unsigned long long)
-0x0034df91	0x3c	FileSystemWin32.cpp	game	persistence	pending	_ZNK15FileSystemWin3211_FileHandle4sizeEv	FileSystemWin32::_FileHandle::size() const
-0x0034dfcd	0x32	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle5writeEPKhy	FileSystemWin32::_FileHandle::write(unsigned char const*, unsigned long long)
-0x0034e001	0x32	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandle4readEPhy	FileSystemWin32::_FileHandle::read(unsigned char*, unsigned long long)
-0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleC2EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleC1EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
-0x0034e0e5	0x34	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3213_createHandleEPKcS1_b	FileSystemWin32::_createHandle(char const*, char const*, bool)
-0x0034e119	0x18	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3212openSavefileEPKc	FileSystemWin32::openSavefile(char const*)
-0x0034e131	0x18	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3212openResourceEPKc	FileSystemWin32::openResource(char const*)
-0x0034e149	0x12	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin328openFileEPKc	FileSystemWin32::openFile(char const*)
-0x0034e15d	0x60	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin329_getPathsEv	FileSystemWin32::_getPaths()
-0x0034e1bd	0x28	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D0Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D2Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32D1Ev	FileSystemWin32::~FileSystemWin32()
-0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32C1Ev	FileSystemWin32::FileSystemWin32()
-0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin32C2Ev	FileSystemWin32::FileSystemWin32()
-0x0034e269	0x3c	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD0Ev	FileSystemWin32::_FileHandle::~_FileHandle()
-0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD1Ev	FileSystemWin32::_FileHandle::~_FileHandle()
-0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	pending	_ZN15FileSystemWin3211_FileHandleD2Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseC1Ev	FileSystemBase::FileSystemBase()
+0x0034db0d	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseC2Ev	FileSystemBase::FileSystemBase()
+0x0034db25	0x2	FileSystemBase.cpp	game	persistence	matched	_ZNK14FileSystemBase6_traceEPKc	FileSystemBase::_trace(char const*) const
+0x0034db29	0x20	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD0Ev	FileSystemBase::~FileSystemBase()
+0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD1Ev	FileSystemBase::~FileSystemBase()
+0x0034db49	0x18	FileSystemBase.cpp	game	persistence	matched	_ZN14FileSystemBaseD2Ev	FileSystemBase::~FileSystemBase()
+0x0034db61	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle7canReadEv	FileSystemIPhone::_FileHandle::canRead() const
+0x0034db65	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle8canWriteEv	FileSystemIPhone::_FileHandle::canWrite() const
+0x0034db69	0x4	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11getRootPathEv	FileSystemIPhone::getRootPath() const
+0x0034db6d	0xc	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone16getResourcesPathEv	FileSystemIPhone::getResourcesPath() const
+0x0034db79	0xc	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone16getSaveFilesPathEv	FileSystemIPhone::getSaveFilesPath() const
+0x0034db85	0x2	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone9_getPathsEv	FileSystemIPhone::_getPaths()
+0x0034db89	0x16	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone9closeFileERP11IFileStream	FileSystemIPhone::closeFile(IFileStream*&)
+0x0034dba1	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle4tellEv	FileSystemIPhone::_FileHandle::tell() const
+0x0034dbb5	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle4seekEy	FileSystemIPhone::_FileHandle::seek(unsigned long long)
+0x0034dbc9	0x3c	FileSystemIPhone.cpp	game	persistence	matched	_ZNK16FileSystemIPhone11_FileHandle4sizeEv	FileSystemIPhone::_FileHandle::size() const
+0x0034dc05	0x32	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle5writeEPKhy	FileSystemIPhone::_FileHandle::write(unsigned char const*, unsigned long long)
+0x0034dc39	0x32	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandle4readEPhy	FileSystemIPhone::_FileHandle::read(unsigned char*, unsigned long long)
+0x0034dc6d	0x20	FileSystemIPhone.cpp	game	core	matched	_ZN11IStreamBaseD0Ev	IStreamBase::~IStreamBase()
+0x0034dc8d	0x18	FileSystemIPhone.cpp	game	core	matched	_ZN11IStreamBaseD1Ev	IStreamBase::~IStreamBase()
+0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleC1EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034dca5	0xb0	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleC2EPKcS2_b	FileSystemIPhone::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034dd55	0x34	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone13_createHandleEPKcS1_b	FileSystemIPhone::_createHandle(char const*, char const*, bool)
+0x0034dd89	0x18	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone12openSavefileEPKc	FileSystemIPhone::openSavefile(char const*)
+0x0034dda1	0x18	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone12openResourceEPKc	FileSystemIPhone::openResource(char const*)
+0x0034ddb9	0x12	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone8openFileEPKc	FileSystemIPhone::openFile(char const*)
+0x0034ddcd	0x28	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD0Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD1Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034ddf5	0x20	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneD2Ev	FileSystemIPhone::~FileSystemIPhone()
+0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneC2Ev	FileSystemIPhone::FileSystemIPhone()
+0x0034de15	0x54	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhoneC1Ev	FileSystemIPhone::FileSystemIPhone()
+0x0034de69	0x2c	FileSystemIPhone.cpp	game	core	matched	_ZN11IFileStreamD0Ev	IFileStream::~IFileStream()
+0x0034de95	0x24	FileSystemIPhone.cpp	game	core	matched	_ZN11IFileStreamD1Ev	IFileStream::~IFileStream()
+0x0034deb9	0x3c	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD0Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD1Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034def5	0x38	FileSystemIPhone.cpp	game	persistence	matched	_ZN16FileSystemIPhone11_FileHandleD2Ev	FileSystemIPhone::_FileHandle::~_FileHandle()
+0x0034df2d	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle7canReadEv	FileSystemWin32::_FileHandle::canRead() const
+0x0034df31	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle8canWriteEv	FileSystemWin32::_FileHandle::canWrite() const
+0x0034df35	0x4	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211getRootPathEv	FileSystemWin32::getRootPath() const
+0x0034df39	0xc	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3216getResourcesPathEv	FileSystemWin32::getResourcesPath() const
+0x0034df45	0xc	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3216getSaveFilesPathEv	FileSystemWin32::getSaveFilesPath() const
+0x0034df51	0x16	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin329closeFileERP11IFileStream	FileSystemWin32::closeFile(IFileStream*&)
+0x0034df69	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle4tellEv	FileSystemWin32::_FileHandle::tell() const
+0x0034df7d	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle4seekEy	FileSystemWin32::_FileHandle::seek(unsigned long long)
+0x0034df91	0x3c	FileSystemWin32.cpp	game	persistence	matched	_ZNK15FileSystemWin3211_FileHandle4sizeEv	FileSystemWin32::_FileHandle::size() const
+0x0034dfcd	0x32	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle5writeEPKhy	FileSystemWin32::_FileHandle::write(unsigned char const*, unsigned long long)
+0x0034e001	0x32	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandle4readEPhy	FileSystemWin32::_FileHandle::read(unsigned char*, unsigned long long)
+0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleC2EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034e035	0xb0	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleC1EPKcS2_b	FileSystemWin32::_FileHandle::_FileHandle(char const*, char const*, bool)
+0x0034e0e5	0x34	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3213_createHandleEPKcS1_b	FileSystemWin32::_createHandle(char const*, char const*, bool)
+0x0034e119	0x18	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3212openSavefileEPKc	FileSystemWin32::openSavefile(char const*)
+0x0034e131	0x18	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3212openResourceEPKc	FileSystemWin32::openResource(char const*)
+0x0034e149	0x12	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin328openFileEPKc	FileSystemWin32::openFile(char const*)
+0x0034e15d	0x60	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin329_getPathsEv	FileSystemWin32::_getPaths()
+0x0034e1bd	0x28	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D0Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D2Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e1e5	0x20	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32D1Ev	FileSystemWin32::~FileSystemWin32()
+0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32C1Ev	FileSystemWin32::FileSystemWin32()
+0x0034e205	0x64	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin32C2Ev	FileSystemWin32::FileSystemWin32()
+0x0034e269	0x3c	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD0Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD1Ev	FileSystemWin32::_FileHandle::~_FileHandle()
+0x0034e2a5	0x38	FileSystemWin32.cpp	game	persistence	matched	_ZN15FileSystemWin3211_FileHandleD2Ev	FileSystemWin32::_FileHandle::~_FileHandle()
 0x0034e2dd	0x8	BufferStream.cpp	game	persistence	matched	_ZNK12BufferStream4TellEv	BufferStream::Tell() const
 0x0034e2e5	0x14	BufferStream.cpp	game	persistence	matched	_ZNK12BufferStream6GetPtrEv	BufferStream::GetPtr() const
 0x0034e2f9	0x28	BufferStream.cpp	game	persistence	matched	_ZN12BufferStream8GetBytesEi	BufferStream::GetBytes(int)
@@ -12875,34 +12875,34 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034e729	0x50	BufferStream.cpp	game	persistence	matched	_ZN12BufferStreamC2Ev	BufferStream::BufferStream()
 0x0034e729	0x50	BufferStream.cpp	game	persistence	matched	_ZN12BufferStreamC1Ev	BufferStream::BufferStream()
 0x0034e779	0x38	BufferStream.cpp	game	persistence	matched	_ZN12BufferStreamD0Ev	BufferStream::~BufferStream()
-0x0034e7b1	0x18	DataStream.cpp	game	persistence	pending	_Z11IsBigEndianv	IsBigEndian()
-0x0034e7c9	0x10	DataStream.cpp	game	persistence	pending	_ZN10DataStream4ReadEPvi	DataStream::Read(void*, int)
-0x0034e7d9	0x10	DataStream.cpp	game	persistence	pending	_ZN10DataStream5WriteEPKvi	DataStream::Write(void const*, int)
-0x0034e7e9	0x10	DataStream.cpp	game	persistence	pending	_ZN10DataStream4SeekEii	DataStream::Seek(int, int)
-0x0034e7f9	0x10	DataStream.cpp	game	persistence	pending	_ZNK10DataStream4TellEv	DataStream::Tell() const
-0x0034e809	0x10	DataStream.cpp	game	persistence	pending	_ZN10DataStream4SkipEi	DataStream::Skip(int)
-0x0034e819	0x34	DataStream.cpp	game	persistence	pending	_ZN10DataStream17ReadUnsignedShortEv	DataStream::ReadUnsignedShort()
-0x0034e84d	0x10	DataStream.cpp	game	persistence	pending	_ZN10DataStream9ReadShortEv	DataStream::ReadShort()
-0x0034e85d	0x40	DataStream.cpp	game	persistence	pending	_ZN10DataStream9ReadFloatEv	DataStream::ReadFloat()
-0x0034e89d	0x22	DataStream.cpp	game	persistence	pending	_ZN10DataStream7ReadUTFEPci	DataStream::ReadUTF(char*, int)
-0x0034e8c1	0x1a	DataStream.cpp	game	persistence	pending	_ZN10DataStream5Peek1Ev	DataStream::Peek1()
-0x0034e8dd	0x2c	DataStream.cpp	game	persistence	pending	_ZN10DataStreamD0Ev	DataStream::~DataStream()
-0x0034e909	0x12	DataStream.cpp	game	persistence	pending	_ZN10DataStream9WriteByteEi	DataStream::WriteByte(int)
-0x0034e91d	0xe	DataStream.cpp	game	persistence	pending	_ZN10DataStream12WriteBooleanEb	DataStream::WriteBoolean(bool)
-0x0034e92d	0xe	DataStream.cpp	game	persistence	pending	_ZN10DataStream16ReadUnsignedByteEv	DataStream::ReadUnsignedByte()
-0x0034e93d	0xe	DataStream.cpp	game	persistence	pending	_ZN10DataStream8ReadByteEv	DataStream::ReadByte()
-0x0034e94d	0x14	DataStream.cpp	game	persistence	pending	_ZN10DataStream11ReadBooleanEv	DataStream::ReadBoolean()
-0x0034e961	0x42	DataStream.cpp	game	persistence	pending	_ZN10DataStream7ReadIntEv	DataStream::ReadInt()
-0x0034e9a5	0x26	DataStream.cpp	game	persistence	pending	_ZN10DataStream21ReadAndAllocateStringEv	DataStream::ReadAndAllocateString()
-0x0034e9cd	0x20	DataStream.cpp	game	persistence	pending	_ZN10DataStream10ReadStringEPci	DataStream::ReadString(char*, int)
-0x0034e9ed	0x40	DataStream.cpp	game	persistence	pending	_ZN10DataStream5Peek4Ev	DataStream::Peek4()
-0x0034ea2d	0x3e	DataStream.cpp	game	persistence	pending	_ZN10DataStream10WriteFloatEf	DataStream::WriteFloat(float)
-0x0034ea6d	0x3c	DataStream.cpp	game	persistence	pending	_ZN10DataStream8WriteIntEi	DataStream::WriteInt(int)
-0x0034eaa9	0x32	DataStream.cpp	game	persistence	pending	_ZN10DataStream5Peek2Ev	DataStream::Peek2()
-0x0034eadd	0x30	DataStream.cpp	game	persistence	pending	_ZN10DataStream10WriteShortEi	DataStream::WriteShort(int)
-0x0034eb0d	0x24	DataStream.cpp	game	persistence	pending	_ZN10DataStream8WriteUTFEPKc	DataStream::WriteUTF(char const*)
-0x0034eb31	0x4c	DataStream.cpp	game	persistence	pending	_ZN10DataStreamC1ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
-0x0034eb31	0x4c	DataStream.cpp	game	persistence	pending	_ZN10DataStreamC2ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
+0x0034e7b1	0x18	DataStream.cpp	game	persistence	matched	_Z11IsBigEndianv	IsBigEndian()
+0x0034e7c9	0x10	DataStream.cpp	game	persistence	matched	_ZN10DataStream4ReadEPvi	DataStream::Read(void*, int)
+0x0034e7d9	0x10	DataStream.cpp	game	persistence	matched	_ZN10DataStream5WriteEPKvi	DataStream::Write(void const*, int)
+0x0034e7e9	0x10	DataStream.cpp	game	persistence	matched	_ZN10DataStream4SeekEii	DataStream::Seek(int, int)
+0x0034e7f9	0x10	DataStream.cpp	game	persistence	matched	_ZNK10DataStream4TellEv	DataStream::Tell() const
+0x0034e809	0x10	DataStream.cpp	game	persistence	matched	_ZN10DataStream4SkipEi	DataStream::Skip(int)
+0x0034e819	0x34	DataStream.cpp	game	persistence	matched	_ZN10DataStream17ReadUnsignedShortEv	DataStream::ReadUnsignedShort()
+0x0034e84d	0x10	DataStream.cpp	game	persistence	matched	_ZN10DataStream9ReadShortEv	DataStream::ReadShort()
+0x0034e85d	0x40	DataStream.cpp	game	persistence	matched	_ZN10DataStream9ReadFloatEv	DataStream::ReadFloat()
+0x0034e89d	0x22	DataStream.cpp	game	persistence	matched	_ZN10DataStream7ReadUTFEPci	DataStream::ReadUTF(char*, int)
+0x0034e8c1	0x1a	DataStream.cpp	game	persistence	matched	_ZN10DataStream5Peek1Ev	DataStream::Peek1()
+0x0034e8dd	0x2c	DataStream.cpp	game	persistence	matched	_ZN10DataStreamD0Ev	DataStream::~DataStream()
+0x0034e909	0x12	DataStream.cpp	game	persistence	matched	_ZN10DataStream9WriteByteEi	DataStream::WriteByte(int)
+0x0034e91d	0xe	DataStream.cpp	game	persistence	matched	_ZN10DataStream12WriteBooleanEb	DataStream::WriteBoolean(bool)
+0x0034e92d	0xe	DataStream.cpp	game	persistence	matched	_ZN10DataStream16ReadUnsignedByteEv	DataStream::ReadUnsignedByte()
+0x0034e93d	0xe	DataStream.cpp	game	persistence	matched	_ZN10DataStream8ReadByteEv	DataStream::ReadByte()
+0x0034e94d	0x14	DataStream.cpp	game	persistence	matched	_ZN10DataStream11ReadBooleanEv	DataStream::ReadBoolean()
+0x0034e961	0x42	DataStream.cpp	game	persistence	matched	_ZN10DataStream7ReadIntEv	DataStream::ReadInt()
+0x0034e9a5	0x26	DataStream.cpp	game	persistence	matched	_ZN10DataStream21ReadAndAllocateStringEv	DataStream::ReadAndAllocateString()
+0x0034e9cd	0x20	DataStream.cpp	game	persistence	matched	_ZN10DataStream10ReadStringEPci	DataStream::ReadString(char*, int)
+0x0034e9ed	0x40	DataStream.cpp	game	persistence	matched	_ZN10DataStream5Peek4Ev	DataStream::Peek4()
+0x0034ea2d	0x3e	DataStream.cpp	game	persistence	matched	_ZN10DataStream10WriteFloatEf	DataStream::WriteFloat(float)
+0x0034ea6d	0x3c	DataStream.cpp	game	persistence	matched	_ZN10DataStream8WriteIntEi	DataStream::WriteInt(int)
+0x0034eaa9	0x32	DataStream.cpp	game	persistence	matched	_ZN10DataStream5Peek2Ev	DataStream::Peek2()
+0x0034eadd	0x30	DataStream.cpp	game	persistence	matched	_ZN10DataStream10WriteShortEi	DataStream::WriteShort(int)
+0x0034eb0d	0x24	DataStream.cpp	game	persistence	matched	_ZN10DataStream8WriteUTFEPKc	DataStream::WriteUTF(char const*)
+0x0034eb31	0x4c	DataStream.cpp	game	persistence	matched	_ZN10DataStreamC1ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
+0x0034eb31	0x4c	DataStream.cpp	game	persistence	matched	_ZN10DataStreamC2ER6StreamNS_6endianE	DataStream::DataStream(Stream&, DataStream::endian)
 0x0034eb7d	0xe	FileStream.cpp	game	persistence	matched	_ZNK10FileStream7IsValidEv	FileStream::IsValid() const
 0x0034eb8d	0x32	FileStream.cpp	game	persistence	matched	_ZN10FileStream4SizeEv	FileStream::Size()
 0x0034ebc1	0xc	FileStream.cpp	game	persistence	matched	_ZN10FileStream6UnloadEPv	FileStream::Unload(void*)
@@ -13262,7 +13262,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00353edd	0x4a	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPoolD2Ev	CStreamingPool::~CStreamingPool()
 0x00353edd	0x4a	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPoolD1Ev	CStreamingPool::~CStreamingPool()
 0x00353f29	0x4e	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound4PlayEbfi	StreamingSound::Play(bool, float, int)
-0x00353f79	0x28	FileManager.cpp	game	persistence	pending	_ZN11FileManager10GetDvdNameEPKc	FileManager::GetDvdName(char const*)
+0x00353f79	0x28	FileManager.cpp	game	persistence	matched	_ZN11FileManager10GetDvdNameEPKc	FileManager::GetDvdName(char const*)
 0x00353fa1	0x58	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSoundC1Ei	StreamingSound::StreamingSound(int)
 0x00353fa1	0x58	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSoundC2Ei	StreamingSound::StreamingSound(int)
 0x00353ff9	0x9c	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPoolC2Eii	CStreamingPool::CStreamingPool(int, int)

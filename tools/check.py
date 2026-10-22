@@ -49,6 +49,25 @@ def find_symbol(elf: ElfFile, name: str):
     return None
 
 
+def select_function(elf: ElfFile, name: str, address: int | None = None):
+    """Select a defined function without silently choosing a duplicate name."""
+    for table in (".symtab", ".dynsym"):
+        candidates = [s for s in elf.symbols if s.table == table and s.name == name
+                      and s.is_func and 0 < s.st_shndx < len(elf.sections)]
+        if candidates:
+            break
+    # Repeated table entries for the same definition are not an ambiguity.
+    candidates = list({(s.st_value, s.st_size, s.st_shndx): s for s in candidates}.values())
+    if address is not None:
+        candidates = [s for s in candidates if s.st_value == address]
+    if len(candidates) > 1:
+        locations = ", ".join(f"0x{s.st_value:08x}" for s in candidates[:8])
+        raise ValueError(f"ambiguous function {name}: {locations}; use --address "
+                         "with the retail symbol address (including its Thumb bit), "
+                         "and compare a linked image when object names collide")
+    return candidates[0] if candidates else None
+
+
 def symbol_offset(elf: ElfFile, symbol) -> int:
     """Section-relative location, excluding ARM's Thumb function marker."""
     value = symbol.st_value
@@ -71,9 +90,10 @@ def symbol_bytes(elf: ElfFile, symbol) -> bytes:
     return elf.data[start : start + symbol.st_size]
 
 
-def relocations_for(elf: ElfFile, name: str) -> list[str]:
+def relocations_for(elf: ElfFile, name: str, *, symbol=None) -> list[str]:
     """The relocations that touch the symbol *name*."""
-    symbol = find_symbol(elf, name)
+    if symbol is None:
+        symbol = select_function(elf, name)
     if symbol is None:
         return []
     out = []
@@ -127,6 +147,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("object", type=Path, help="the compiled object file")
     parser.add_argument("--func", required=True, help="the mangled symbol to check")
+    parser.add_argument("--address", type=lambda value: int(value, 0),
+                        help="retail symbol address, including the ARM Thumb marker")
     parser.add_argument("--baselib", help="path to the retail libsanangeles.so")
     args = parser.parse_args(argv)
 
@@ -141,12 +163,26 @@ def main(argv: list[str] | None = None) -> int:
         print("expected an ARM relocatable object or linked image", file=sys.stderr)
         return 2
 
-    symbol = find_symbol(obj, args.func)
+    try:
+        retail_symbol = select_function(retail, args.func, args.address)
+        if retail_symbol is None:
+            suffix = f" at 0x{args.address:08x}" if args.address is not None else ""
+            print(f"{args.func}{suffix} is not in the retail library", file=sys.stderr)
+            return 2
+        symbol = None
+        if obj.e_type in (ET_EXEC, ET_DYN):
+            symbol = select_function(obj, args.func, retail_symbol.st_value)
+        if symbol is None:
+            # A single misplaced definition still gets the normal address error.
+            symbol = select_function(obj, args.func)
+    except ValueError as error:
+        print(str(error), file=sys.stderr)
+        return 2
     if symbol is None:
         print(f"{args.func} is not in {args.object}", file=sys.stderr)
         return 2
 
-    relocations = relocations_for(obj, args.func)
+    relocations = relocations_for(obj, args.func, symbol=symbol)
     if relocations:
         print(
             f"{args.func} has {len(relocations)} relocation(s); the bytes cannot be "
@@ -154,16 +190,6 @@ def main(argv: list[str] | None = None) -> int:
             + ", ".join(relocations[:16])
         )
         return 1
-
-    # Find the retail address of the same function.
-    retail_symbol = None
-    for candidate in retail.functions(".symtab"):
-        if candidate.name == args.func:
-            retail_symbol = candidate
-            break
-    if retail_symbol is None:
-        print(f"{args.func} is not in the retail library", file=sys.stderr)
-        return 2
 
     if obj.e_type in (ET_EXEC, ET_DYN) and symbol.st_value != retail_symbol.st_value:
         print(f"{args.func} is linked at 0x{symbol.st_value:08x}; "

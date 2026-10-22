@@ -30,11 +30,28 @@ from . import check
 from .elf import ElfFile
 from .project import BASE_LIB_SHA256, ROOT, find_base_library, load_base_library
 from .retail_got import write_harness
+from .thumb_bindings import write_bindings
 
 
 def run(command: list[str], environment: dict[str, str]) -> None:
     """Fail immediately rather than checking stale output after a failed step."""
     subprocess.run(command, cwd=ROOT, env=environment, check=True)
+
+
+def comparison_arguments(entry) -> list[str]:
+    """Translate a manifest function selector into the checker's CLI options."""
+    if isinstance(entry, str) and entry:
+        return ["--func", entry]
+    if not isinstance(entry, dict) or set(entry) != {"name", "address"}:
+        raise ValueError("function selector must be a name or {name, address}")
+    name, address = entry["name"], entry["address"]
+    if not isinstance(name, str) or not name or isinstance(address, bool):
+        raise ValueError("function selector requires a name and integer address")
+    if isinstance(address, str):
+        address = int(address, 0)
+    if not isinstance(address, int) or not 0 <= address <= 0xffffffff:
+        raise ValueError("function address must be a 32-bit integer")
+    return ["--func", name, "--address", f"0x{address:08x}"]
 
 
 def check_section(retail: ElfFile, image: ElfFile, name: str, offset: int = 0) -> bool:
@@ -116,6 +133,18 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
         # The harness must establish hash insertion order before the game unit.
         objects.insert(0, harness_obj.relative_to(ROOT).as_posix())
 
+    if manifest.get("external_thumb_functions"):
+        if not manifest.get("linker_script"):
+            raise ValueError("external Thumb functions require a linked verification image")
+        retail, _ = load_base_library(base_library)
+        compiled = tuple(ElfFile.load(str(ROOT / path)) for path in [*dependency_objects, obj])
+        binding_source = write_bindings(retail, compiled,
+                                        manifest["external_thumb_functions"], output)
+        binding_object = output / "external-thumb.o"
+        run([str(binary / f"arm-eabi-as{extension}"), *manifest["assembler_flags"],
+             "-o", str(binding_object), str(binding_source)], environment)
+        objects.append(binding_object.relative_to(ROOT).as_posix())
+
     comparison_file = obj
     if manifest.get("linker_script"):
         run([str(binary / f"arm-eabi-ld{extension}"),
@@ -125,7 +154,8 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
 
     passed = True
     for symbol in manifest["functions"]:
-        result = check.main([str(ROOT / comparison_file), "--func", symbol,
+        arguments = comparison_arguments(symbol)
+        result = check.main([str(ROOT / comparison_file), *arguments,
                              "--baselib", str(base_library)])
         passed = result == 0 and passed
     if manifest.get("sections"):

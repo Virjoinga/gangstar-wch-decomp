@@ -7,3 +7,17 @@
  * This file mirrors the layout of the retail build.  Add the decompiled
  * functions of FileSystemBase.cpp here, in the order they appear in the library.
  */
+
+#include "FileSystemBase.h"
+
+FileSystemBase::FileSystemBase()
+{
+}
+
+void FileSystemBase::_trace(const char*) const
+{
+}
+
+FileSystemBase::~FileSystemBase()
+{
+}

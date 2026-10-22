@@ -1,0 +1,72 @@
+{
+    "source": "src/game/persistence/DataStream.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "linker_script": "config/linker/DataStream.ld",
+    "sections": [
+        ".text",
+        ".destructor",
+        ".vtable",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".streamtext",
+        ".streamvtable"
+    ],
+    "functions": [
+        "_ZN10DataStreamD1Ev",
+        "_Z11IsBigEndianv",
+        "_ZN10DataStream4ReadEPvi",
+        "_ZN10DataStream5WriteEPKvi",
+        "_ZN10DataStream4SeekEii",
+        "_ZNK10DataStream4TellEv",
+        "_ZN10DataStream4SkipEi",
+        "_ZN10DataStream17ReadUnsignedShortEv",
+        "_ZN10DataStream9ReadShortEv",
+        "_ZN10DataStream9ReadFloatEv",
+        "_ZN10DataStream7ReadUTFEPci",
+        "_ZN10DataStream5Peek1Ev",
+        "_ZN10DataStreamD0Ev",
+        "_ZN10DataStream9WriteByteEi",
+        "_ZN10DataStream12WriteBooleanEb",
+        "_ZN10DataStream16ReadUnsignedByteEv",
+        "_ZN10DataStream8ReadByteEv",
+        "_ZN10DataStream11ReadBooleanEv",
+        "_ZN10DataStream7ReadIntEv",
+        "_ZN10DataStream21ReadAndAllocateStringEv",
+        "_ZN10DataStream10ReadStringEPci",
+        "_ZN10DataStream5Peek4Ev",
+        "_ZN10DataStream10WriteFloatEf",
+        "_ZN10DataStream8WriteIntEi",
+        "_ZN10DataStream5Peek2Ev",
+        "_ZN10DataStream10WriteShortEi",
+        "_ZN10DataStream8WriteUTFEPKc",
+        "_ZN10DataStreamC1ER6StreamNS_6endianE",
+        "_ZN10DataStreamC2ER6StreamNS_6endianE"
+    ],
+    "dependencies": [
+        "stream"
+    ]
+}

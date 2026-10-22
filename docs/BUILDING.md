@@ -147,6 +147,22 @@ retail bindings as well. BufferStream uses this to retain Stream's Thumb
 function metadata and verify both source units together. Dependency cycles
 are rejected before compilation.
 
+### External Thumb callees
+
+A unit may list `external_thumb_functions` in its manifest when a callee still
+uses the retail implementation. The builder validates each name against the
+retail ELF and assembles an absolute `.thumb_set` symbol declaration with the
+original address and Thumb function metadata. No instructions or function bytes
+are emitted for these symbols. The declarations do not mark callees matched.
+
+This prevents the legacy linker from turning an original Thumb `BL` into an
+ARM `BLX` merely because an address-only linker assignment lost its mode. A
+compiled definition in the unit or any native dependency cannot be overridden;
+unknown names, ARM functions, objects, imports and duplicates are rejected.
+Native dependencies remain the way to verify callees reconstructed in C++.
+Compiler-generated assembly and linked bytes are never rewritten. SaveGame's
+filename helper exercises this with the still-pending Application::GetInstance.
+
 ## What is already automated
 
 The repository and progress checks need no game data. Catalogue, symbol-map
@@ -159,6 +175,34 @@ python3 tools/disasm.py        # the assembly of every pending function
 python3 tools/progress.py      # how far along the decompilation is
 python3 tools/check_repository.py
 ```
+
+## Repeated local function names
+
+Compiler-generated names such as `__tcf_3` and
+`_Z41__static_initialization_and_destruction_0ii` occur in many translation units.
+The byte checker rejects ambiguous names instead of selecting the first one.
+Specify the exact retail symbol address, including its Thumb marker:
+
+```sh
+python3 tools/check.py build/matches/my-unit/my-unit.elf \
+  --func __tcf_3 --address 0x0033116d
+```
+
+The compiled definition must still have the correct address, size and bytes.
+The selector also chooses the matching local definition in a linked image and
+uses that definition's relocation range. Same-named definitions in a relocatable
+object require a linked verification image to disambiguate them.
+
+Matching manifests retain string selectors for unique names. An explicit
+selector in their `functions` list has this form:
+
+```json
+{"name": "__tcf_3", "address": "0x0033116d"}
+```
+
+This selects a definition to verify; it does not change compiler output, linker
+placement or match status. Undefined imports and absolute address bindings are
+not compiled definitions and cannot be credited by the function checker.
 
 ## The engine
 

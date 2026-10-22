@@ -15,6 +15,7 @@ public:
 
     char Read();
     void Write(char value);
+    bool IsOpen() const { return isOpen; }
 
 protected:
     bool isOpen;
