@@ -74,7 +74,10 @@
         "_ZN9GS3DStuffD0Ev",
         "_ZThn4_N9GS3DStuffD1Ev",
         "_ZN9GS3DStuffD1Ev",
-        "_ZN9GS3DStuffD2Ev"
+        "_ZN9GS3DStuffD2Ev",
+        "_ZN9GS3DStuff6wakeupEPK12StateMachine",
+        "_ZN9GS3DStuff6resumeEPK12StateMachine",
+        "_ZN9GS3DStuff4ctorEPK12StateMachine"
     ],
     "sections": [
         ".factory_d0",
@@ -133,7 +136,10 @@
         ".datatext",
         ".datavtable",
         ".streamtext",
-        ".streamvtable"
+        ".streamvtable",
+        ".gs_wakeup",
+        ".gs_resume",
+        ".gs_enter"
     ],
     "external_thumb_functions": [
         "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
@@ -141,7 +147,12 @@
         "_ZN11Application11GetInstanceEv",
         "_ZN12EventManager6detachEiP14IEventReceiver",
         "_ZN4Lock11getInstanceEv",
-        "_ZN4Lock6renderEv"
+        "_ZN4Lock6renderEv",
+        "_ZN15TouchScreenBase5clearEv",
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZNK10PlayerTest15getAmbientSoundEv",
+        "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
+        "_ZN11CHudManager4showEv"
     ],
     "dependencies": [
         "stream",

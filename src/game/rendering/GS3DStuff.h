@@ -60,6 +60,7 @@ public:
     static irr::video::ITexture* skyBoxTexture;
     static OctTreeAABB* sceneOcttree;
     static Structs::PhonePerformanceProfile s_phonePerformanceProfile;
+    static unsigned int lastTime;
 private:
     unsigned char unknown8[12];
     bool unknownFlag20;

@@ -10,8 +10,8 @@ The observed prefix has StateBase at offset zero and the game's IEventReceiver
 at offset four. These are partial declarations, not a recovered complete class
 layout. In particular, the game receiver is distinct from irr::IEventReceiver.
 StateBase's empty hooks, two boolean defaults and destructor pair are native;
-the receiver destructor pair is native too. GS3DStuff's own ctor callback,
-resume, update and wakeup still use retail bindings and earn no match credit.
+the receiver destructor pair is native too. The ctor callback, resume and wakeup
+are now native too; see [gs3d-timing.md](gs3d-timing.md). update remains pending.
 The three vtables, their alignment padding and both event strings compare.
 
 Construction initializes flags at offsets 20 and 21 to false and the pointer at

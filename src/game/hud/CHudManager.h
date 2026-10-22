@@ -8,6 +8,7 @@ struct HudComponent116 {
 };
 class CHudManager {
 public:
+    void show();
     void toggleWeaponSelector(bool visible);
     unsigned char unknown0[116];
     HudComponent116* component116;
