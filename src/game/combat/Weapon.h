@@ -2,12 +2,17 @@
 #define WCH_COMBAT_WEAPON_H
 
 #include "../world/LevelObject.h"
+namespace Structs { struct Weapon; }
 
 // Observed layout; the complete hierarchy and runtime integration remain
 // unverified. Do not treat this declaration as a fully recovered game type.
 class Weapon : public LevelObject {
 public:
     Weapon(int id);
+    void Load(const Structs::Weapon& data);
+    void loadWeaponFlash(const char* name, irr::scene::ISceneNode* parent,
+                         irr::scene::ISceneNode*& node, irr::scene::ITimelineController*& controller);
+    void drawMuzzleFlash(irr::scene::ISceneNode* node, irr::scene::ITimelineController* controller);
     virtual ~Weapon();
     int getWeaponType() const;
     int getAmmoType() const;

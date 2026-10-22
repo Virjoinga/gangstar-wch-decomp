@@ -7,6 +7,8 @@ namespace irr { namespace core {
 template<class T> class vector3d;
 class quaternion;
 } }
+namespace irr { namespace collada { class CColladaFactory; } }
+namespace Structs { struct GameObjectBasic; }
 
 // Observed primary virtual slots and 52-byte base prefix. Several field and
 // return types remain provisional; complete hierarchy and runtime use await
@@ -17,6 +19,7 @@ public:
     LevelObject(int id);
     unsigned char getObjectType() const { return objectType; }
     static int s_type[256];
+    void Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory);
     virtual irr::scene::ISceneNode* grabSceneNode(int id, void*** parameters);
     virtual void dropSceneNode();
     virtual void setupSceneNode(int id, irr::scene::ISceneNode* node, int count, void** parameters);

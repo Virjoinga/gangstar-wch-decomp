@@ -1,10 +1,11 @@
 # Weapon accessors and lifecycle
 
-26 Weapon.cpp symbols match, totaling 804 catalogue function bytes including
+29 Weapon.cpp symbols match, totaling 1046 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
 visibility, construction, destruction and rocket reload add 564.
+Muzzle-flash callbacks and setup add 242 bytes.
 
 Weapon derives from the observed 52-byte LevelObject prefix. Its inherited
 primary virtual table has 40 function slots, with the destructor pair following
@@ -79,6 +80,9 @@ OK  _ZN6WeaponD2Ev  0x003304f1  88 bytes
 OK  _ZN6WeaponC1Ei  0x00330549  56 bytes
 OK  _ZN6WeaponC2Ei  0x00330549  56 bytes
 OK  _ZN6Weapon12reloadRocketEv  0x00330581  72 bytes
+OK  _Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv  0x003302fd  18 bytes
+OK  _ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE  0x00330311  68 bytes
+OK  _ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE  0x003305c9  156 bytes
 OK SECTION .getters  0x00330354  124 bytes
 OK SECTION .lock  0x00330464  48 bytes
 OK SECTION .unlock  0x00330834  72 bytes
@@ -89,4 +93,16 @@ OK SECTION .construction  0x00330548  56 bytes
 OK SECTION .vtable  0x004acba0  168 bytes
 OK SECTION .leveltext  0x003167a4  56 bytes
 OK SECTION .rocket  0x00330580  72 bytes
+OK SECTION .flash_callbacks  0x003302fc  88 bytes
+OK SECTION .flash_load  0x003305c8  156 bytes
+OK SECTION .flash_uid  0x00427d9c  24 bytes
 ```
+
+The flash callback hides its node. Drawing starts the non-looping timeline at
+its start time and installs the callback. Flash loading constructs the named
+scene, applies material flags, attaches it to flash_dummy_gun-node when present,
+and obtains the first animator timeline. Partial engine declarations retain
+observed virtual slots; no engine implementation is counted. The flash UID
+section also matches all 24 bytes. Existing matched function bodies and compiler
+flags are unchanged. Weapon::Load remains an uncounted attempt under
+nonmatching/combat; see its README for the exact mismatch.

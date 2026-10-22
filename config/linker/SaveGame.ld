@@ -23,6 +23,10 @@ fseek = 0x001c43f4;
 fwrite = 0x001c47e4;
 fread = 0x001c4598;
 SECTIONS {
+    .weapon_flash_callbacks 0x003302fc : { *weapon.o(.text._Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv .text._ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE) }
+    .weapon_flash_load 0x003305c8 : { *weapon.o(.text._ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE) }
+    .weapon_flash_uid 0x00427d9c : { *weapon.o(.rodata.weapon_flash_uid) }
+
     .weapon_rocket 0x00330580 : { *weapon.o(.text._ZN6Weapon12reloadRocketEv) }
     .weapon_visibility 0x003303d0 : { *weapon.o(.text._ZN6Weapon4showEv .text._ZN6Weapon4hideEv) }
     .weapon_destruction 0x00330494 : {

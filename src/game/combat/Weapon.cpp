@@ -13,6 +13,28 @@
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
 #include "../world/GameObjectManager.h"
+#include "../core/Collada.h"
+#include "../rendering/GS3DStuff.h"
+
+static const char flashNodeUid[] __attribute__((section(".rodata.weapon_flash_uid"))) = "flash_dummy_gun-node";
+
+void WepaonAnimCallback(irr::scene::ITimelineController*, void* data)
+{
+    static_cast<irr::scene::ISceneNode*>(data)->setVisible(false);
+}
+
+void Weapon::drawMuzzleFlash(irr::scene::ISceneNode* node, irr::scene::ITimelineController* controller)
+{
+    if (node) {
+        node->setVisible(true);
+        if (controller) {
+            controller->setLoop(false);
+            controller->jumpTo(controller->startTime);
+            controller->callback = WepaonAnimCallback;
+            controller->callbackData = node;
+        }
+    }
+}
 
 int Weapon::getWeaponType() const { return weaponType; }
 int Weapon::getAmmoType() const { return ammoType; }
@@ -83,6 +105,25 @@ void Weapon::reloadRocket()
     if (getClip() <= 0) return;
     projectile = GameObjectManager::s_gom->CreateGameObjectFromMetatype(126);
     GameObjectManager::s_gom->AddGameObjectOfType(LevelObject::s_type[projectile->getObjectType()]);
+}
+
+void Weapon::loadWeaponFlash(const char* name, irr::scene::ISceneNode* parent,
+                             irr::scene::ISceneNode*& node, irr::scene::ITimelineController*& controller)
+{
+    if (!name[0]) return;
+    node = irr::collada::CColladaDatabase::constructScene(name, true, &irr::collada::CColladaDatabase::DefaultFactory);
+    if (!node) return;
+    GS3DStuff::SetMaterialFlag(node, irr::video::MaterialFlag2, false);
+    GS3DStuff::SetMaterialFlag(node, irr::video::MaterialFlag16, true);
+    parent->setVisible(true);
+    irr::scene::ISceneNode* dummy = parent->getSceneNodeFromUID(flashNodeUid);
+    if (dummy) {
+        dummy->addChild(node);
+        node->drop();
+        node->setVisible(false);
+    }
+    const irr::scene::SceneAnimatorList& animators = node->getAnimators();
+    if (animators.size) controller = animators.first->animator->getTimelineCtrl();
 }
 
 void Weapon::unlock()
