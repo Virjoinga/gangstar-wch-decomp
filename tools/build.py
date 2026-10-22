@@ -42,8 +42,8 @@ def comparison_arguments(entry) -> list[str]:
     """Translate a manifest function selector into the checker's CLI options."""
     if isinstance(entry, str) and entry:
         return ["--func", entry]
-    if not isinstance(entry, dict) or set(entry) != {"name", "address"}:
-        raise ValueError("function selector must be a name or {name, address}")
+    if not isinstance(entry, dict) or set(entry) not in ({"name", "address"}, {"name", "address", "compiled_name"}):
+        raise ValueError("function selector must be a name or {name, address[, compiled_name]}")
     name, address = entry["name"], entry["address"]
     if not isinstance(name, str) or not name or isinstance(address, bool):
         raise ValueError("function selector requires a name and integer address")
@@ -51,7 +51,13 @@ def comparison_arguments(entry) -> list[str]:
         address = int(address, 0)
     if not isinstance(address, int) or not 0 <= address <= 0xffffffff:
         raise ValueError("function address must be a 32-bit integer")
-    return ["--func", name, "--address", f"0x{address:08x}"]
+    arguments = ["--func", name, "--address", f"0x{address:08x}"]
+    if "compiled_name" in entry:
+        compiled_name = entry["compiled_name"]
+        if not isinstance(compiled_name, str) or not compiled_name:
+            raise ValueError("compiled_name must be a nonempty callback name")
+        arguments += ["--compiled-func", compiled_name]
+    return arguments
 
 
 def check_section(retail: ElfFile, image: ElfFile, name: str, offset: int = 0) -> bool:
