@@ -35,6 +35,8 @@ public:
     void reloadRocket();
     void lock();
     void unlock();
+    void photo();
+    void playShootSound();
 
 private:
     int weaponType;

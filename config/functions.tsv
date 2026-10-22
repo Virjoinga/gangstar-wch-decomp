@@ -11647,7 +11647,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330bf9	0x80	Weapon.cpp	game	combat	pending	_ZN6Weapon6reloadEb	Weapon::reload(bool)
 0x00330c79	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon14playShootSoundEv	Weapon::playShootSound()
 0x00330e49	0x84	Weapon.cpp	game	combat	pending	_ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE	Weapon::shootProjectileFromCar(irr::core::vector3d<float> const&)
-0x00330ecd	0x2e	Weapon.cpp	game	combat	pending	_ZN6Weapon5photoEv	Weapon::photo()
+0x00330ecd	0x2e	Weapon.cpp	game	combat	matched	_ZN6Weapon5photoEv	Weapon::photo()
 0x00330efd	0x4a	Weapon.cpp	game	combat	pending	_ZN6Weapon5snipeEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::snipe(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
 0x00330f49	0x7a	Weapon.cpp	game	combat	pending	_ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_	Weapon::shootFromCar(bool, irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&)
 0x00330fc5	0x5a	Weapon.cpp	game	combat	pending	_ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE	Weapon::shootProjectile(irr::core::vector3d<float> const&)

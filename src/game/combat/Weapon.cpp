@@ -135,3 +135,10 @@ void Weapon::unlock()
     }
     locked = false;
 }
+
+void Weapon::photo()
+{
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    Application::GetInstance()->GetHudManager()->component116->unknown56 = true;
+    playShootSound();
+}

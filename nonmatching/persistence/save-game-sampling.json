@@ -73,7 +73,8 @@
         ".weapon_rocket",
         ".weapon_flash_callbacks",
         ".weapon_flash_load",
-        ".weapon_flash_uid"
+        ".weapon_flash_uid",
+        ".weapon_photo"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -99,7 +100,8 @@
         "_ZN8SaveGame9BlockAmmoD0Ev",
         "_ZN8SaveGame9BlockAmmoD1Ev",
         "_ZN8SaveGame12LoadAndApplyEPKc",
-        "_ZN8SaveGame13SampleAndSaveEPKc"
+        "_ZN8SaveGame13SampleAndSaveEPKc",
+        "_ZN6Weapon5photoEv"
     ],
     "dependencies": [
         "stream",
@@ -145,6 +147,7 @@
         "_ZNK18AchievementManager4Stat8getValueEv",
         "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
         "_ZNK6Script8getStateEv",
-        "_ZNK6Script9getParentEv"
+        "_ZNK6Script9getParentEv",
+        "_ZN6Weapon14playShootSoundEv"
     ]
 }

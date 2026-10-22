@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-29 Weapon.cpp symbols match, totaling 1046 catalogue function bytes including
+30 Weapon.cpp symbols match, totaling 1092 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -106,3 +106,14 @@ observed virtual slots; no engine implementation is counted. The flash UID
 section also matches all 24 bytes. Existing matched function bodies and compiler
 flags are unchanged. Weapon::Load remains an uncounted attempt under
 nonmatching/combat; see its README for the exact mismatch.
+
+Photo records the real-time timer value at lastShot, sets the byte at offset 56
+of the HUD component referenced at manager offset 116, and calls playShootSound.
+The component type and flag meaning remain unknown. Retail CIrrDeviceStub and
+CTimer vtables identify getTimer at slot byte 56 and getRealTime at byte 8.
+Integrated verification (`python tools/build.py save-game`) also prints:
+
+```text
+OK  _ZN6Weapon5photoEv  0x00330ecd  46 bytes
+OK SECTION .weapon_photo  0x00330ecc  48 bytes
+```
