@@ -215,7 +215,7 @@ to emit this cleanup from the ordinary local-static object lifetime, replacing
 the earlier hand-written ABI-entry call. The old explicit weak member declaration
 had produced an assembler error; that workaround is no longer needed. This is an
 existing matched function replacement, reverified with identical bytes. The
-factory lifecycle, singleton and node creation link natively through game-factory;
+factory lifecycle, singleton and node creation link natively through gs3d-stuff;
 see game-factory.md. Engine callees remain external.
 
 __tcf_3 checks the local string's reference byte at 29, null array and inline
