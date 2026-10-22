@@ -10,6 +10,7 @@
 
 #include "Weapon.h"
 #include "WeaponManager.h"
+#include "../app/CGameFactory.h"
 #include "Rocket.h"
 #include "BulletTraceManager.h"
 #include "../audio/SoundManager.h"
@@ -19,6 +20,42 @@
 #include "../world/GameObjectManager.h"
 #include "../core/Collada.h"
 #include "../rendering/GS3DStuff.h"
+
+// Storage owned by the still-external CGameFactory::getInstance implementation.
+extern "C" CGameFactory _ZZN12CGameFactory11getInstanceEvE2gf __attribute__((weak));
+// GCC 4.2.1 mis-emits a weak destructor member declaration; use its ABI entry.
+extern "C" void _ZN12CGameFactoryD1Ev(CGameFactory*) __attribute__((weak));
+
+namespace irr { namespace scene { namespace quake3 {
+// Observed prefix used by this translation unit's cleanup callback.
+struct LocalStringStorage {
+    char* array;
+    unsigned int allocated;
+    unsigned int used;
+    unsigned char unknown12;
+    char inlineBuffer[16];
+    bool reference;
+    unsigned char unknown30[2];
+};
+static LocalStringStorage irrEmptyStringc;
+} } }
+
+void operator delete(void*) throw();
+extern "C" {
+static void __tcf_1() __attribute__((used));
+static void __tcf_1()
+{
+    _ZN12CGameFactoryD1Ev(&_ZZN12CGameFactory11getInstanceEvE2gf);
+}
+
+static void __tcf_3() __attribute__((used));
+static void __tcf_3()
+{
+    irr::scene::quake3::LocalStringStorage& value = irr::scene::quake3::irrEmptyStringc;
+    if (!value.reference && value.array && value.array != value.inlineBuffer)
+        ::operator delete(value.array);
+}
+}
 
 static const char flashNodeUid[] __attribute__((section(".rodata.weapon_flash_uid"))) = "flash_dummy_gun-node";
 

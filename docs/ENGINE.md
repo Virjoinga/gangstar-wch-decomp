@@ -57,6 +57,24 @@ The fork adds the parts a Gameloft title needs: OpenGL ES support, the
 Collada and OGRE mesh loaders, the particle system, and the software renderer
 for the platforms that need one.
 
+### Using the upstream headers as a reference
+
+An upstream Irrlicht 1.4.2 checkout identifies itself in
+`include/IrrCompileConfig.h` with `IRRLICHT_SDK_VERSION "1.4.2"`.
+Its `include/IQ3Shader.h` defines the header-local
+`irr::scene::quake3::irrEmptyStringc("")`, explaining the repeated string startup
+and cleanup helpers in game translation units. `include/vector3d.h` also provides
+the three-component constructors and nontrivial copy constructor used to reason
+about game parameter passing. These sources help recover types, inline code and
+virtual interfaces before compiling the game functions against retail bytes.
+
+The stock headers cannot be assumed to describe the fork's ABI. For example,
+stock `include/irrString.h` directly deallocates its array in the destructor;
+the verified retail game cleanup callbacks instead test a reference flag at
+byte 29 and avoid deleting an inline buffer at byte 13. Preserve observed fork
+layouts until native comparisons establish compatibility. Engine code remains
+outside the game-code progress totals.
+
 ### gameswf — 2,842 functions
 
 A [gameswf](https://github.com/kennethshackleton/gameswf) build for the
