@@ -28,6 +28,16 @@ jobs:
         # check below verifies the parts that do not need the retail library.
         run: python tools/progress.py --check
 
+      - name: Export verified byte progress for ByteMatch
+        run: python tools/bytematch.py
+
+      - name: Upload ByteMatch report
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-arm_report
+          path: build/android-arm/report.json
+          if-no-files-found: error
+
       - name: Make sure no game data is committed
         run: |
           if git ls-files | grep -Ei '\.(so|apk|dex|obb)$'; then
