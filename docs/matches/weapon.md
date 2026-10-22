@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-32 Weapon.cpp symbols match, totaling 1352 catalogue function bytes including
+35 Weapon.cpp symbols match, totaling 2184 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -139,4 +139,30 @@ OK  _ZN6Weapon7isReadyEb  0x00330a49  132 bytes
 OK  _ZN6Weapon6reloadEb  0x00330bf9  128 bytes
 OK SECTION .readiness  0x00330a48  132 bytes
 OK SECTION .reload  0x00330bf8  128 bytes
+```
+
+Sound methods preserve numeric IDs and the manager byte at offset 140, set
+before playEx and cleared afterwards. The byte's meaning is not established.
+The getInstance declaration retains the retail weak binding (st_info 0x22),
+so GCC emits the observed GOT call. The playEx implementation remains external.
+Each playback site is explicit C++; a first helper-based attempt failed because
+GCC emitted an out-of-line helper. It was rejected without changing flags or
+compiler output. Existing matched function bodies remain unchanged.
+
+Dry fire selects ID 258. Reload IDs for types 1/2, 3, 4, 5, 7 and 8 are
+254, 257, 261, 264, 251 and 272. Shooting IDs for types 1/2, 4, 7, 8 and 9
+are 270, 248, 269, 256 and 259. Type 3 alternates 247/249 and types 5/6
+alternate 265/253 through flag bit 8. Unsupported types make no playback call.
+Both generated switch tables are compared as a contiguous 76-byte section.
+
+Verification command: python tools/build.py save-game. Exact output:
+
+```text
+OK  _ZN6Weapon12playDrySoundEv  0x00330a05  68 bytes
+OK  _ZN6Weapon15playReloadSoundEv  0x00330acd  300 bytes
+OK  _ZN6Weapon14playShootSoundEv  0x00330c79  464 bytes
+OK SECTION .weapon_sounds_dry  0x00330a04  68 bytes
+OK SECTION .weapon_sounds_reload  0x00330acc  300 bytes
+OK SECTION .weapon_sounds_shoot  0x00330c78  464 bytes
+OK SECTION .weapon_sounds_tables  0x00427db4  76 bytes
 ```

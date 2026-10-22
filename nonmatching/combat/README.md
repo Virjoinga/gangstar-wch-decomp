@@ -14,7 +14,7 @@ MISMATCH  _ZN6Weapon4LoadERKN7Structs6WeaponE  0x00330665
   differs at 0x66
 ```
 
-All 32 native Weapon symbols, LevelObject construction, the Weapon vtable,
+All 35 native Weapon symbols, LevelObject construction, the Weapon vtable,
 flash UID and global GOT region pass in this image. The loading function's
 assembly remains in the work queue. Its timeline-reset block ordering differs;
 source and compiler-flag experiments have not resolved it. Shared descriptor

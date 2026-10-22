@@ -5,6 +5,10 @@ INCLUDE build/matches/weapon/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
 __aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .sounds_tables 0x00427db4 : { *weapon.o(.rodata._ZN6Weapon15playReloadSoundEv .rodata._ZN6Weapon14playShootSoundEv) }
+    .sounds_dry 0x00330a04 : { *weapon.o(.text._ZN6Weapon12playDrySoundEv) }
+    .sounds_reload 0x00330acc : { *weapon.o(.text._ZN6Weapon15playReloadSoundEv) }
+    .sounds_shoot 0x00330c78 : { *weapon.o(.text._ZN6Weapon14playShootSoundEv) }
     .readiness 0x00330a48 : { *weapon.o(.text._ZN6Weapon7isReadyEb) }
     .reload 0x00330bf8 : { *weapon.o(.text._ZN6Weapon6reloadEb) }
     .photo 0x00330ecc : { *weapon.o(.text._ZN6Weapon5photoEv) }

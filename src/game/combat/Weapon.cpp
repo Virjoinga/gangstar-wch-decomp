@@ -10,6 +10,7 @@
 
 #include "Weapon.h"
 #include "WeaponManager.h"
+#include "../audio/SoundManager.h"
 #include "../meta/Achievements.h"
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
@@ -137,6 +138,14 @@ void Weapon::unlock()
     locked = false;
 }
 
+void Weapon::playDrySound()
+{
+    SoundManager* sound = SoundManager::getInstance();
+    sound->unknown140 = true;
+    sound->playEx(258, 0, false, 1.0f, 0, true, 1.0f, 0);
+    sound->unknown140 = false;
+}
+
 bool Weapon::isReady(bool ignoreClip)
 {
     unsigned int now = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
@@ -147,6 +156,55 @@ bool Weapon::isReady(bool ignoreClip)
         playDrySound();
     }
     return false;
+}
+
+void Weapon::playReloadSound()
+{
+    switch (getWeaponType()) {
+    case 1:
+    case 2: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(254, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 3: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(257, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 4: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(261, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 5: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(264, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 7: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(251, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 8: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(272, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    }
 }
 
 void Weapon::reload(bool unlimited)
@@ -173,6 +231,79 @@ void Weapon::reload(bool unlimited)
         manager->setAmmo(getAmmoType(), ammo, PlayerTest::AnyContext);
     }
     playReloadSound();
+}
+
+void Weapon::playShootSound()
+{
+    switch (getWeaponType()) {
+    case 1:
+    case 2: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(270, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 3:
+        if (flags & 8) {
+            flags &= ~8U;
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(247, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+        } else {
+            flags |= 8;
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(249, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+        }
+        break;
+    case 4: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(248, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 5:
+    case 6:
+        if (flags & 8) {
+            flags &= ~8U;
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(265, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+        } else {
+            flags |= 8;
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(253, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+        }
+        break;
+    case 7: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(269, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 8: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(256, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 9: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(259, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    }
 }
 
 void Weapon::photo()

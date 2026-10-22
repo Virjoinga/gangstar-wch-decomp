@@ -24,6 +24,10 @@ fwrite = 0x001c47e4;
 fread = 0x001c4598;
 __aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .weapon_sounds_tables 0x00427db4 : { *weapon.o(.rodata._ZN6Weapon15playReloadSoundEv .rodata._ZN6Weapon14playShootSoundEv) }
+    .weapon_sounds_dry 0x00330a04 : { *weapon.o(.text._ZN6Weapon12playDrySoundEv) }
+    .weapon_sounds_reload 0x00330acc : { *weapon.o(.text._ZN6Weapon15playReloadSoundEv) }
+    .weapon_sounds_shoot 0x00330c78 : { *weapon.o(.text._ZN6Weapon14playShootSoundEv) }
     .weapon_readiness 0x00330a48 : { *weapon.o(.text._ZN6Weapon7isReadyEb) }
     .weapon_reload 0x00330bf8 : { *weapon.o(.text._ZN6Weapon6reloadEb) }
     .weapon_photo 0x00330ecc : { *weapon.o(.text._ZN6Weapon5photoEv) }

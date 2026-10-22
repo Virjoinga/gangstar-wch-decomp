@@ -46,7 +46,11 @@
         ".flash_uid",
         ".photo",
         ".readiness",
-        ".reload"
+        ".reload",
+        ".sounds_dry",
+        ".sounds_reload",
+        ".sounds_shoot",
+        ".sounds_tables"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -80,7 +84,10 @@
         "_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE",
         "_ZN6Weapon5photoEv",
         "_ZN6Weapon7isReadyEb",
-        "_ZN6Weapon6reloadEb"
+        "_ZN6Weapon6reloadEb",
+        "_ZN6Weapon12playDrySoundEv",
+        "_ZN6Weapon15playReloadSoundEv",
+        "_ZN6Weapon14playShootSoundEv"
     ],
     "dependencies": [
         "level-object"
@@ -96,11 +103,9 @@
         "_ZN18AchievementManager12recordWeaponEib",
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcbPNS0_15CColladaFactoryE",
-        "_ZN6Weapon12playDrySoundEv",
-        "_ZN6Weapon14playShootSoundEv",
-        "_ZN6Weapon15playReloadSoundEv",
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
         "_ZNK13WeaponManager16areAmmoUnlimitedEv",
-        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv"
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
+        "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE"
     ]
 }
