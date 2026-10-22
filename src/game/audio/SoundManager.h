@@ -7,7 +7,7 @@ namespace irr { namespace core { template<class T> class vector3d; } }
 class SoundManager {
 public:
     static SoundManager* getInstance() __attribute__((weak));
-    void playEx(int id, const irr::core::vector3d<float>* position, bool flag,
+    bool playEx(int id, const irr::core::vector3d<float>* position, bool flag,
                 float value1, int value2, bool flag2, float value3, void (*callback)());
     unsigned char unknown0[140];
     bool unknown140;

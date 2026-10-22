@@ -57,6 +57,7 @@ class PlayerTest : public SavePrimaryInterface, public SavePositionInterface {
 public:
     enum eContext { Context0 = 0, Context1 = 1, AnyContext = -1 };
     static PlayerTest* GetPlayer();
+    int getAmbientSound() const;
     void setCash(int value);
     void switchContext(eContext context, bool flag);
     void Respawn();

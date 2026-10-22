@@ -147,7 +147,10 @@
         ".datatext",
         ".datavtable",
         ".streamtext",
-        ".streamvtable"
+        ".streamvtable",
+        ".gs_wakeup",
+        ".gs_resume",
+        ".gs_enter"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -233,6 +236,9 @@
         "_ZN24CustomBillboardSceneNodeC1ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE",
         "_ZN12EventManager6detachEiP14IEventReceiver",
         "_ZN4Lock11getInstanceEv",
-        "_ZN4Lock6renderEv"
+        "_ZN4Lock6renderEv",
+        "_ZN15TouchScreenBase5clearEv",
+        "_ZNK10PlayerTest15getAmbientSoundEv",
+        "_ZN11CHudManager4showEv"
     ]
 }

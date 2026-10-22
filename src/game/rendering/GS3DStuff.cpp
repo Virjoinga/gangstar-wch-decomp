@@ -15,6 +15,10 @@
 #include "../core/Lock.h"
 #include "../app/Application.h"
 #include "../persistence/DataStream.h"
+#include "../input/TouchScreenBase.h"
+#include "../audio/SoundManager.h"
+#include "../characters/PlayerTest.h"
+#include "../hud/CHudManager.h"
 
 bool GS3DStuff::getProperty(const void* properties, const char* name, char* output)
 {
@@ -45,10 +49,13 @@ irr::scene::ISceneNode* GS3DStuff::skyBox;
 irr::video::ITexture* GS3DStuff::skyBoxTexture;
 OctTreeAABB* GS3DStuff::sceneOcttree;
 Structs::PhonePerformanceProfile GS3DStuff::s_phonePerformanceProfile;
+unsigned int GS3DStuff::lastTime;
 
-// Only the event-manager word at offset 56 is observed here.
+// Only the touch-screen and event-manager words at 44 and 56 are observed here.
 struct ApplicationEventView {
-    unsigned char unknown0[56];
+    unsigned char unknown0[44];
+    TouchScreenBase* touchScreen;
+    unsigned char unknown48[8];
     EventManager* eventManager;
 };
 
@@ -61,6 +68,29 @@ GS3DStuff::~GS3DStuff()
 void GS3DStuff::draw(const StateMachine*)
 {
     Lock::getInstance()->render();
+}
+
+void GS3DStuff::ctor(const StateMachine*)
+{
+    SoundManager* sound = SoundManager::getInstance();
+    int ambientSound = PlayerTest::GetPlayer()->getAmbientSound();
+    sound->unknown140 = true;
+    sound->playEx(ambientSound, 0, true, 1.0f, 0, true, 1.0f, 0);
+    sound->unknown140 = false;
+    Application::GetInstance()->GetHudManager()->show();
+    reinterpret_cast<ApplicationEventView*>(Application::GetInstance())->touchScreen->clear();
+}
+
+void GS3DStuff::wakeup(const StateMachine*)
+{
+    lastTime = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    reinterpret_cast<ApplicationEventView*>(Application::GetInstance())->touchScreen->clear();
+}
+
+void GS3DStuff::resume(const StateMachine*)
+{
+    lastTime = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    reinterpret_cast<ApplicationEventView*>(Application::GetInstance())->touchScreen->clear();
 }
 
 static const char eventFormat[] __attribute__((section(".rodata.gs_event_format"))) = "%i\n";
