@@ -1,6 +1,6 @@
 # WeaponManager context, ammunition and lifecycle
 
-Thirty-two symbols match, totaling 2570 catalogue bytes including constructor/
+Thirty-four symbols match, totaling 2914 catalogue bytes including constructor/
 destructor aliases. Native Weapon and SaveGame
 verification images now link these definitions in place of their retail bindings.
 Existing matched function bodies are unchanged. WeaponManager now uses
@@ -207,13 +207,16 @@ OK SECTION .manager_retention_cost  0x00331a08  264 bytes
 The TU-local cleanup callback __tcf_3 at 0x0033116d checks the string storage's
 reference flag at offset 29 and deletes its array only when it is nonnull and
 not the inline buffer at offset 13. This recovers the game translation unit's
-callback and its observed storage layout; the engine string implementation and
-the dynamic initializer are still external/pending. The BSS placement itself is
-not credited as matched data. The address-qualified selector disambiguates this
+callback and its observed storage layout; the engine string implementation
+remains external. The BSS placement itself is
+not credited as matched data. Its startup initializer and wrapper now match;
+see local-startup.md. The vehicle usability switch is the remaining pending
+method. The address-qualified selector disambiguates this
 callback from same-named functions in other translation units.
 
-The first draft was discarded by GCC because its initializer is not reconstructed
-yet. The used attribute retains the callback without changing its instructions.
+The first draft was discarded by GCC while its initializer was still pending.
+The used attribute retains the callback for verification without changing its
+instructions.
 No existing decompiled function body or compiler flags changed. Verification:
 python tools/build.py weapon-manager:
 

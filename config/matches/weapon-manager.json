@@ -64,7 +64,10 @@
         ".manager_init",
         ".manager_creation_table",
         ".manager_retention_cost",
-        ".manager_string_cleanup"
+        ".manager_string_cleanup",
+        ".manager_startup_initialization",
+        ".manager_startup_wrapper",
+        ".startup_empty_text"
     ],
     "functions": [
         "_ZN13WeaponManager13unlimitedAmmoEb",
@@ -101,7 +104,12 @@
         {
             "name": "__tcf_3",
             "address": "0x0033116d"
-        }
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00331b11"
+        },
+        "_GLOBAL__I__ZN13WeaponManagerC2Ev"
     ],
     "dependencies": [],
     "external_thumb_functions": [

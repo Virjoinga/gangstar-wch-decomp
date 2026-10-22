@@ -10,6 +10,7 @@
 
 #include "Weapon.h"
 #include "WeaponManager.h"
+#include "../core/LocalStartupStorage.h"
 #include "../app/CGameFactory.h"
 #include "Rocket.h"
 #include "BulletTraceManager.h"
@@ -25,20 +26,6 @@
 extern "C" CGameFactory _ZZN12CGameFactory11getInstanceEvE2gf __attribute__((weak));
 // GCC 4.2.1 mis-emits a weak destructor member declaration; use its ABI entry.
 extern "C" void _ZN12CGameFactoryD1Ev(CGameFactory*) __attribute__((weak));
-
-namespace irr { namespace scene { namespace quake3 {
-// Observed prefix used by this translation unit's cleanup callback.
-struct LocalStringStorage {
-    char* array;
-    unsigned int allocated;
-    unsigned int used;
-    unsigned char unknown12;
-    char inlineBuffer[16];
-    bool reference;
-    unsigned char unknown30[2];
-};
-static LocalStringStorage irrEmptyStringc;
-} } }
 
 void operator delete(void*) throw();
 extern "C" {
@@ -408,7 +395,6 @@ void Weapon::shootProjectile(const irr::core::vector3d<float>& direction)
     playShootSound();
 }
 
-
 void Weapon::shoot(bool flag, const irr::core::vector3d<float>& direction,
                    irr::core::vector3d<float>& result)
 {
@@ -435,4 +421,57 @@ void Weapon::shoot(bool flag, const irr::core::vector3d<float>& direction,
     }
     lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
     playShootSound();
+}
+
+// Scoped imports distinguish the original TU-local transition tables.
+namespace retail_weapon_transitions {
+extern const unsigned int civPassive_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int scriptedNpc_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int civAggressive_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int gangMember_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int cop_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int swat_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int civ_vehicle_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int cop_vehicle_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int guard_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int scripted_vehicle_trans[] __attribute__((visibility("hidden")));
+}
+
+extern "C" {
+extern char __dso_handle;
+int __aeabi_atexit(void*, void (*)(void*), void*);
+void* _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(void*, const char*) __attribute__((weak));
+}
+
+static void __static_initialization_and_destruction_0(int initialize, int priority) __attribute__((used));
+static void __static_initialization_and_destruction_0(int initialize, int priority)
+{
+    if (initialize == 1 && priority == 65535) {
+        irr::scene::quake3::LocalStringStorage& value = irr::scene::quake3::irrEmptyStringc;
+        value.array = 0;
+        value.allocated = 0;
+        value.used = 0;
+        value.reference = false;
+        _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(&value, "");
+        __aeabi_atexit(0, reinterpret_cast<void (*)(void*)>(__tcf_3), &__dso_handle);
+        new (irr::ps::vHalf) irr::ps::LocalVector3(0.5f, 0.5f, 0.5f);
+        new (gameloft::ai::civ_passive) gameloft::ai::LocalTransitionList(retail_weapon_transitions::civPassive_trans, 75);
+        new (gameloft::ai::npc_scripted) gameloft::ai::LocalTransitionList(retail_weapon_transitions::scriptedNpc_trans, 12);
+        new (gameloft::ai::civ_agressive) gameloft::ai::LocalTransitionList(retail_weapon_transitions::civAggressive_trans, 57);
+        new (gameloft::ai::gang_member) gameloft::ai::LocalTransitionList(retail_weapon_transitions::gangMember_trans, 3);
+        new (gameloft::ai::cop) gameloft::ai::LocalTransitionList(retail_weapon_transitions::cop_trans, 78);
+        new (gameloft::ai::swat) gameloft::ai::LocalTransitionList(retail_weapon_transitions::swat_trans, 3);
+        new (gameloft::ai::civ_vehicle) gameloft::ai::LocalTransitionList(retail_weapon_transitions::civ_vehicle_trans, 36);
+        new (gameloft::ai::cop_vehicle) gameloft::ai::LocalTransitionList(retail_weapon_transitions::cop_vehicle_trans, 45);
+        new (gameloft::ai::guard) gameloft::ai::LocalTransitionList(retail_weapon_transitions::guard_trans, 42);
+        new (gameloft::ai::scripted_vehicle) gameloft::ai::LocalTransitionList(retail_weapon_transitions::scripted_vehicle_trans, 21);
+    }
+}
+
+extern "C" {
+static void _GLOBAL__I__ZN6WeaponC2Ei() __attribute__((used));
+static void _GLOBAL__I__ZN6WeaponC2Ei()
+{
+    __static_initialization_and_destruction_0(1, 65535);
+}
 }

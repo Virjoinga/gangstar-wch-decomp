@@ -1,8 +1,9 @@
 # SaveGame block helpers, filename and loading
 
-23 of the 27 SaveGame.cpp catalogue symbols match, totaling 2,276 function bytes
-including aliases. SampleAndSave and three generated initialization helpers
-remain pending and retain their assembly entries.
+26 of the 27 SaveGame.cpp catalogue symbols match, totaling 2,668 function bytes
+including aliases. SampleAndSave remains pending and retains its assembly entry.
+The startup initializer, wrapper and local string cleanup now match; see
+local-startup.md.
 
 The verified code sections are a two-byte empty SampleObject method, a
 496-byte helper section and 240 bytes of inline block destructors. All four

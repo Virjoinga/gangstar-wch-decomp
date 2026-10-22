@@ -11638,8 +11638,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003305c9	0x9c	Weapon.cpp	game	combat	matched	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
 0x00330665	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
 0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()
-0x0033087d	0x144	Weapon.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003309c1	0x14	Weapon.cpp	game	combat	pending	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
+0x0033087d	0x144	Weapon.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003309c1	0x14	Weapon.cpp	game	combat	matched	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
 0x003309d5	0x30	Weapon.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x00330a05	0x44	Weapon.cpp	game	combat	matched	_ZN6Weapon12playDrySoundEv	Weapon::playDrySound()
 0x00330a49	0x84	Weapon.cpp	game	combat	matched	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
@@ -11685,8 +11685,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0033197d	0x22	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10swapWeaponEi	WeaponManager::swapWeapon(int)
 0x003319a1	0x66	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
 0x00331a09	0x108	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
-0x00331b11	0x144	WeaponManager.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00331c55	0x14	WeaponManager.cpp	game	combat	pending	_GLOBAL__I__ZN13WeaponManagerC2Ev	_GLOBAL__I__ZN13WeaponManagerC2Ev
+0x00331b11	0x144	WeaponManager.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00331c55	0x14	WeaponManager.cpp	game	combat	matched	_GLOBAL__I__ZN13WeaponManagerC2Ev	_GLOBAL__I__ZN13WeaponManagerC2Ev
 0x00331c69	0x2	Camera.cpp	game	core	pending	_ZN6Camera5enterEv	Camera::enter()
 0x00331c6d	0x2	Camera.cpp	game	core	pending	_ZN6Camera4exitEv	Camera::exit()
 0x00331c71	0x18	Camera.cpp	game	core	pending	_ZN6CameraD1Ev	Camera::~Camera()
@@ -12325,7 +12325,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00343c99	0x144	Preferences.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00343ddd	0x14	Preferences.cpp	game	ui	pending	_GLOBAL__I__ZN11PreferencesC2Ev	_GLOBAL__I__ZN11PreferencesC2Ev
 0x00343df1	0x2	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12SampleObjectEP11LevelObject	SaveGame::SampleObject(LevelObject*)
-0x00343df5	0x30	SaveGame.cpp	game	persistence	pending	__tcf_4	__tcf_4
+0x00343df5	0x30	SaveGame.cpp	game	persistence	matched	__tcf_4	__tcf_4
 0x00343e25	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame8BlockV3D4SizeEv	SaveGame::BlockV3D::Size() const
 0x00343e35	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame9BlockAmmo4SizeEv	SaveGame::BlockAmmo::Size() const
 0x00343e45	0xe	SaveGame.cpp	game	persistence	matched	_ZNK8SaveGame11BlockWeapon4SizeEv	SaveGame::BlockWeapon::Size() const
@@ -12341,8 +12341,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00343fd1	0x20	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameD2Ev	SaveGame::~SaveGame()
 0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC2Ev	SaveGame::SaveGame()
 0x00343ff1	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGameC1Ev	SaveGame::SaveGame()
-0x00344015	0x144	SaveGame.cpp	game	persistence	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00344159	0x14	SaveGame.cpp	game	persistence	pending	_GLOBAL__I__ZN8SaveGameC2Ev	_GLOBAL__I__ZN8SaveGameC2Ev
+0x00344015	0x144	SaveGame.cpp	game	persistence	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00344159	0x14	SaveGame.cpp	game	persistence	matched	_GLOBAL__I__ZN8SaveGameC2Ev	_GLOBAL__I__ZN8SaveGameC2Ev
 0x0034416d	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD0Ev	SaveGame::BlockV3D::~BlockV3D()
 0x00344199	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame8BlockV3DD1Ev	SaveGame::BlockV3D::~BlockV3D()
 0x003441bd	0x2c	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame11BlockWeaponD0Ev	SaveGame::BlockWeapon::~BlockWeapon()
