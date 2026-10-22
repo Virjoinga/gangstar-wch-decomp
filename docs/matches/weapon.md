@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-30 Weapon.cpp symbols match, totaling 1092 catalogue function bytes including
+32 Weapon.cpp symbols match, totaling 1352 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -116,4 +116,27 @@ Integrated verification (`python tools/build.py save-game`) also prints:
 ```text
 OK  _ZN6Weapon5photoEv  0x00330ecd  46 bytes
 OK SECTION .weapon_photo  0x00330ecc  48 bytes
+```
+
+Readiness compares unsigned elapsed real time with 1000 divided by the signed
+shooting frequency. With an empty clip and ignoreClip false, it uses the dry
+frequency, records a fresh timer value and plays the dry sound, then returns
+false. No new guard is added for a zero frequency.
+
+Reload with the boolean flag set fills the clip directly. Otherwise it queries
+ammunition in AnyContext (-1), handles weapon type 7 as a single projectile,
+and updates the manager's ammunition before playing the reload sound. Unlimited
+ammo preserves the retail subtraction behavior, including negative ammunition.
+The previous clip contents are not added back to the reserve.
+
+The existing PlayerTest and WeaponManager partial declarations were moved from
+SaveGameInterfaces.h into their own gameplay headers without changing matched
+function bodies or compiler flags. Integrated SaveGame verification passes.
+Native Weapon comparison output (`python tools/build.py weapon`):
+
+```text
+OK  _ZN6Weapon7isReadyEb  0x00330a49  132 bytes
+OK  _ZN6Weapon6reloadEb  0x00330bf9  128 bytes
+OK SECTION .readiness  0x00330a48  132 bytes
+OK SECTION .reload  0x00330bf8  128 bytes
 ```

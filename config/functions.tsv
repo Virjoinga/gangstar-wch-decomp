@@ -11642,9 +11642,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003309c1	0x14	Weapon.cpp	game	combat	pending	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
 0x003309d5	0x30	Weapon.cpp	game	combat	pending	__tcf_3	__tcf_3
 0x00330a05	0x44	Weapon.cpp	game	combat	pending	_ZN6Weapon12playDrySoundEv	Weapon::playDrySound()
-0x00330a49	0x84	Weapon.cpp	game	combat	pending	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
+0x00330a49	0x84	Weapon.cpp	game	combat	matched	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
 0x00330acd	0x12c	Weapon.cpp	game	combat	pending	_ZN6Weapon15playReloadSoundEv	Weapon::playReloadSound()
-0x00330bf9	0x80	Weapon.cpp	game	combat	pending	_ZN6Weapon6reloadEb	Weapon::reload(bool)
+0x00330bf9	0x80	Weapon.cpp	game	combat	matched	_ZN6Weapon6reloadEb	Weapon::reload(bool)
 0x00330c79	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon14playShootSoundEv	Weapon::playShootSound()
 0x00330e49	0x84	Weapon.cpp	game	combat	pending	_ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE	Weapon::shootProjectileFromCar(irr::core::vector3d<float> const&)
 0x00330ecd	0x2e	Weapon.cpp	game	combat	matched	_ZN6Weapon5photoEv	Weapon::photo()

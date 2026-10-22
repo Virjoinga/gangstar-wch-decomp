@@ -74,7 +74,9 @@
         ".weapon_flash_callbacks",
         ".weapon_flash_load",
         ".weapon_flash_uid",
-        ".weapon_photo"
+        ".weapon_photo",
+        ".weapon_readiness",
+        ".weapon_reload"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -100,7 +102,9 @@
         "_ZN8SaveGame9BlockAmmoD0Ev",
         "_ZN8SaveGame9BlockAmmoD1Ev",
         "_ZN8SaveGame12LoadAndApplyEPKc",
-        "_ZN6Weapon5photoEv"
+        "_ZN6Weapon5photoEv",
+        "_ZN6Weapon7isReadyEb",
+        "_ZN6Weapon6reloadEb"
     ],
     "dependencies": [
         "stream",
@@ -125,6 +129,7 @@
         "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager14lockAllWeaponsEv",
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
@@ -136,10 +141,13 @@
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcbPNS0_15CColladaFactoryE",
         "_ZN6Script8setStateENS_5StateEN10PlayerTest8eContextE",
+        "_ZN6Weapon12playDrySoundEv",
+        "_ZN6Weapon14playShootSoundEv",
+        "_ZN6Weapon15playReloadSoundEv",
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
         "_ZN9GSLoading12isGameLoadedEv",
         "_ZNK13ScriptManager10findScriptEi",
-        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
-        "_ZN6Weapon14playShootSoundEv"
+        "_ZNK13WeaponManager16areAmmoUnlimitedEv",
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv"
     ]
 }

@@ -37,6 +37,10 @@ public:
     void unlock();
     void photo();
     void playShootSound();
+    void playDrySound();
+    void playReloadSound();
+    bool isReady(bool ignoreClip);
+    void reload(bool unlimited);
 
 private:
     int weaponType;

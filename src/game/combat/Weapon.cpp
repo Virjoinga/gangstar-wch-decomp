@@ -9,6 +9,7 @@
  */
 
 #include "Weapon.h"
+#include "WeaponManager.h"
 #include "../meta/Achievements.h"
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
@@ -134,6 +135,44 @@ void Weapon::unlock()
         Application::GetInstance()->GetHudManager()->toggleWeaponSelector(true);
     }
     locked = false;
+}
+
+bool Weapon::isReady(bool ignoreClip)
+{
+    unsigned int now = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    if (getClip() > 0 || ignoreClip)
+        return now - lastShot >= 1000 / getShootfrequency();
+    if (now - lastShot >= 1000 / getDryShootfrequency()) {
+        lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+        playDrySound();
+    }
+    return false;
+}
+
+void Weapon::reload(bool unlimited)
+{
+    if (unlimited) {
+        clip = clipSize;
+    } else {
+        WeaponManager* manager = Application::GetInstance()->GetWeaponManager();
+        int ammo = manager->getAmmo(getAmmoType(), PlayerTest::AnyContext);
+        if (weaponType == 7) {
+            if (ammo > 0 || manager->areAmmoUnlimited()) {
+                clip = 1;
+                --ammo;
+            }
+        } else {
+            if (ammo >= clipSize || manager->areAmmoUnlimited()) {
+                clip = clipSize;
+                ammo -= clipSize;
+            } else {
+                clip = ammo;
+                ammo = 0;
+            }
+        }
+        manager->setAmmo(getAmmoType(), ammo, PlayerTest::AnyContext);
+    }
+    playReloadSound();
 }
 
 void Weapon::photo()

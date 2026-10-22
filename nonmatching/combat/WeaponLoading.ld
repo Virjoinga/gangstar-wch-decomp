@@ -7,7 +7,10 @@ strlen = 0x001c48bc;
 strcpy = 0x001c3fd4;
 _Znaj = 0x001c3ff8;
 _ZdaPv = 0x001c461c;
+__aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .readiness 0x00330a48 : { *weapon-loading.o(.text._ZN6Weapon7isReadyEb) }
+    .reload 0x00330bf8 : { *weapon-loading.o(.text._ZN6Weapon6reloadEb) }
     .photo 0x00330ecc : { *weapon-loading.o(.text._ZN6Weapon5photoEv) }
     .loading 0x00330664 : { *weapon-loading.o(.text._ZN6Weapon4LoadERKN7Structs6WeaponE) }
     .flash_callbacks 0x003302fc : { *weapon-loading.o(.text._Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv .text._ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE) }

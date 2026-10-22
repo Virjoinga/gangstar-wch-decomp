@@ -3,7 +3,10 @@ OUTPUT_ARCH(arm)
 ENTRY(_ZNK6Weapon13getWeaponTypeEv)
 INCLUDE build/matches/weapon/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .readiness 0x00330a48 : { *weapon.o(.text._ZN6Weapon7isReadyEb) }
+    .reload 0x00330bf8 : { *weapon.o(.text._ZN6Weapon6reloadEb) }
     .photo 0x00330ecc : { *weapon.o(.text._ZN6Weapon5photoEv) }
     .flash_callbacks 0x003302fc : { *weapon.o(.text._Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv .text._ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE) }
     .flash_load 0x003305c8 : { *weapon.o(.text._ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE) }

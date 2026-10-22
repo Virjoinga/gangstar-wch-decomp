@@ -44,7 +44,9 @@
         ".flash_callbacks",
         ".flash_load",
         ".flash_uid",
-        ".photo"
+        ".photo",
+        ".readiness",
+        ".reload"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -77,7 +79,9 @@
         "_ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE",
         "_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE",
         "_ZN6Weapon4LoadERKN7Structs6WeaponE",
-        "_ZN6Weapon5photoEv"
+        "_ZN6Weapon5photoEv",
+        "_ZN6Weapon7isReadyEb",
+        "_ZN6Weapon6reloadEb"
     ],
     "dependencies": [
         "level-object"
@@ -87,14 +91,19 @@
         "_ZN11CHudManager20toggleWeaponSelectorEb",
         "_ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE",
         "_ZN11LevelObjectD1Ev",
+        "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN18AchievementManager12recordWeaponEib",
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcbPNS0_15CColladaFactoryE",
+        "_ZN6Weapon12playDrySoundEv",
+        "_ZN6Weapon14playShootSoundEv",
+        "_ZN6Weapon15playReloadSoundEv",
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
-        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
-        "_ZN6Weapon14playShootSoundEv"
+        "_ZNK13WeaponManager16areAmmoUnlimitedEv",
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv"
     ]
 }
