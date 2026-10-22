@@ -313,8 +313,8 @@ extern const unsigned int guard_trans[] __attribute__((visibility("hidden")));
 extern const unsigned int scripted_vehicle_trans[] __attribute__((visibility("hidden")));
 }
 
+extern void* __dso_handle;
 extern "C" {
-extern char __dso_handle;
 int __aeabi_atexit(void*, void (*)(void*), void*);
 void* _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(void*, const char*) __attribute__((weak));
 }

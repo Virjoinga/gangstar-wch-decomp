@@ -127,7 +127,15 @@
         ".startup_empty_text",
         ".save_startup_cleanup",
         ".save_startup_initialization",
-        ".save_startup_wrapper"
+        ".save_startup_wrapper",
+        ".factory_d0",
+        ".factory_d1",
+        ".factory_singleton",
+        ".factory_create",
+        ".factory_cleanup",
+        ".factory_property",
+        ".factory_vtable",
+        ".factory_billboard_text"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -176,6 +184,7 @@
         "_GLOBAL__I__ZN8SaveGameC2Ev"
     ],
     "dependencies": [
+        "game-factory",
         "stream",
         "data-stream",
         "persistence",
@@ -220,6 +229,8 @@
         "_ZNK3irr5scene10ISceneNode9getParentEv",
         "_ZNK6Script8getStateEv",
         "_ZNK6Script9getParentEv",
-        "_ZN13WeaponManager25isWeaponUsableFromVehicleEi"
+        "_ZN13WeaponManager25isWeaponUsableFromVehicleEi",
+        "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
+        "_ZN24CustomBillboardSceneNodeC1ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE"
     ]
 }

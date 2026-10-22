@@ -10,6 +10,7 @@ namespace irr { namespace video {
 enum E_MATERIAL_FLAG { MaterialFlag2 = 2, MaterialFlag16 = 16 };
 } }
 namespace GS3DStuff {
+bool getProperty(const void* properties, const char* name, char* output);
 BulletTraceManager* GetBulletManager();
 void SetMaterialFlag(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_FLAG flag, bool enabled);
 }

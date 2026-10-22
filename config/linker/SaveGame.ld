@@ -60,7 +60,28 @@ _ZN27retail_savegame_transitions17civ_vehicle_transE = 0x00433a48;
 _ZN27retail_savegame_transitions17cop_vehicle_transE = 0x00433ad8;
 _ZN27retail_savegame_transitions11guard_transE = 0x00433b8c;
 _ZN27retail_savegame_transitions22scripted_vehicle_transE = 0x00433c34;
+_ZdlPv = 0x001c42b0;
+_Znwj = 0x001c4814;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+__aeabi_atexit = 0x001c494c;
+strstr = 0x001c446c;
+strchr = 0x001c48e0;
+strlen = 0x001c48bc;
+memcpy = 0x001c4190;
+atoi = 0x001c4880;
+__stack_chk_fail = 0x001c42e0;
 SECTIONS {
+    .factory_d0 0x002db450 : { *game-factory.o(.gnu.linkonce.t._ZN12CGameFactoryD0Ev) }
+    .factory_d1 0x002dd048 : { *game-factory.o(.gnu.linkonce.t._ZN12CGameFactoryD1Ev .gnu.linkonce.t._ZN12CGameFactoryD2Ev) }
+    .factory_singleton 0x002db9a8 : { *game-factory.o(.gnu.linkonce.t._ZN12CGameFactory11getInstanceEv .text._ZN12CGameFactory11getInstanceEv) }
+    .factory_create 0x002dbf58 : { *game-factory.o(.gnu.linkonce.t._ZN12CGameFactory10createNodeERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE) }
+    .factory_cleanup 0x002dd06c : { *game-factory.o(.text.__tcf_0) }
+    .factory_property 0x002db740 : { *game-factory.o(.text._ZN9GS3DStuff11getPropertyEPKvPKcPc) }
+    .factory_vtable 0x004a8ae8 : { *game-factory.o(.gnu.linkonce.d.rel.ro._ZTV12CGameFactory) }
+    .factory_billboard_text 0x004144b8 : { *game-factory.o(.rodata.game_factory_billboard) }
+    .factory_guard 0x004b6724 (NOLOAD) : { *game-factory.o(.gnu.linkonce.b._ZGVZN12CGameFactory11getInstanceEvE2gf) }
+    .factory_instance 0x004b6b4c (NOLOAD) : { *game-factory.o(.gnu.linkonce.b._ZZN12CGameFactory11getInstanceEvE2gf) }
     .save_startup_cleanup 0x00343df4 : { *save-game.o(.text.__tcf_4) }
     .save_startup_initialization 0x00344014 : { *save-game.o(.text._Z41__static_initialization_and_destruction_0ii) }
     .save_startup_wrapper 0x00344158 : { *save-game.o(.text._GLOBAL__I__ZN8SaveGameC2Ev) }
@@ -103,7 +124,7 @@ SECTIONS {
     .weapon_startup_record_8 0x004b9c14 (NOLOAD) : { *weapon.o(.bss._ZN8gameloft2ai5guardE) }
     .weapon_startup_record_9 0x004b9c1c (NOLOAD) : { *weapon.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
     .startup_empty_text 0x0044d91c : { *save-game.o(.rodata.str1.*) *weapon-manager.o(.rodata.str1.*) *weapon.o(.rodata.str1.*) }
-    .weapon_factory_cleanup 0x00330440 : { *weapon.o(.text.__tcf_1) }
+    .weapon_factory_cleanup 0x00330440 : { *weapon.o(.text.__tcf_0) }
     .weapon_string_cleanup 0x003309d4 : { *weapon.o(.text.__tcf_3) }
     .weapon_local_string 0x004b9ba8 (NOLOAD) : { *weapon.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .weapon_manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }

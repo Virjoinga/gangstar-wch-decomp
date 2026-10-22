@@ -10,6 +10,10 @@ extern "C" {
     int printf(const char* format, ...);
     int sprintf(char* destination, const char* format, ...);
     int vprintf(const char* format, __builtin_va_list arguments);
+    char* strstr(const char* text, const char* needle);
+    char* strchr(const char* text, int character);
+    int atoi(const char* text);
+    void* memcpy(void* destination, const void* source, unsigned int size);
     char* strcpy(char* destination, const char* source);
     unsigned int strlen(const char* text);
     int fseek(NativeFile* file, long offset, int origin);
