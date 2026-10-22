@@ -7,7 +7,9 @@ _ZdaPv = 0x001c461c;
 _ZdlPv = 0x001c42b0;
 __aeabi_idivmod = 0x001c4934;
 _Znaj = 0x001c3ff8;
+__aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .manager_retention_cost 0x00331a08 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv) }
     .manager_add 0x003315c4 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager9addWeaponEP6Weapon) }
     .manager_unlock 0x00331664 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager12unlockWeaponEi) }
     .manager_create 0x0033172c : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager12createWeaponEi) }

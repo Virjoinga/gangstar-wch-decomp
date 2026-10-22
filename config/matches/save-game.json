@@ -115,7 +115,8 @@
         ".weapon_manager_unlock",
         ".weapon_manager_create",
         ".weapon_manager_init",
-        ".weapon_manager_creation_table"
+        ".weapon_manager_creation_table",
+        ".weapon_manager_retention_cost"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",

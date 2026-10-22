@@ -11684,7 +11684,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003318e5	0x98	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10swapWeaponEv	WeaponManager::swapWeapon()
 0x0033197d	0x22	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager10swapWeaponEi	WeaponManager::swapWeapon(int)
 0x003319a1	0x66	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
-0x00331a09	0x108	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
+0x00331a09	0x108	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
 0x00331b11	0x144	WeaponManager.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00331c55	0x14	WeaponManager.cpp	game	combat	pending	_GLOBAL__I__ZN13WeaponManagerC2Ev	_GLOBAL__I__ZN13WeaponManagerC2Ev
 0x00331c69	0x2	Camera.cpp	game	core	pending	_ZN6Camera5enterEv	Camera::enter()

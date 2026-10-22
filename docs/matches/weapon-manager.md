@@ -1,6 +1,6 @@
 # WeaponManager context, ammunition and lifecycle
 
-Thirty symbols match, totaling 2258 catalogue bytes including constructor/
+Thirty-one symbols match, totaling 2522 catalogue bytes including constructor/
 destructor aliases. Native Weapon and SaveGame
 verification images now link these definitions in place of their retail bindings.
 Existing matched function bodies are unchanged. WeaponManager now uses
@@ -60,6 +60,7 @@ OK  _ZN13WeaponManager9addWeaponEP6Weapon  0x003315c5  86 bytes
 OK  _ZN13WeaponManager12unlockWeaponEi  0x00331665  198 bytes
 OK  _ZN13WeaponManager12createWeaponEi  0x0033172d  244 bytes
 OK  _ZN13WeaponManager4initEv  0x003312cd  316 bytes
+OK  _ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv  0x00331a09  264 bytes
 OK SECTION .manager_0  0x00331128  8 bytes
 OK SECTION .manager_1  0x00331130  8 bytes
 OK SECTION .manager_2  0x00331138  4 bytes
@@ -91,6 +92,7 @@ OK SECTION .manager_unlock  0x00331664  200 bytes
 OK SECTION .manager_create  0x0033172c  244 bytes
 OK SECTION .manager_init  0x003312cc  316 bytes
 OK SECTION .manager_creation_table  0x004283d0  40 bytes
+OK SECTION .manager_retention_cost  0x00331a08  264 bytes
 ```
 
 python tools/build.py save-game also passes with this unit as a native dependency,
@@ -178,3 +180,25 @@ both the initial clear and seven explicit stores. Value-initialized array drafts
 emitted different loops and were rejected. The HUD selector is hidden after both
 contexts are filled. These definitions retain the existing compiler settings and
 pass in the integrated Weapon/SaveGame byte verification image.
+
+getKeepWeaponsWhenBustedCost reads the retail MenuManager shop array using its
+20-byte record stride, cached record count and price at offset 0. The packed
+word at offset 4 has a 16-bit category view and a signed upper-half index. The
+first cast-only draft emitted shifts in place of the retail halfword load and
+failed comparison; the union views and category-first read reproduce both loads.
+The remaining record fields are opaque and the table itself stays external.
+
+For category 163, an unlocked indexed weapon contributes price * 10 * quantity /
+100. Quantity is normally one; type/index 1 or 5 contributes two when its paired
+slot 2 or 6 is also unlocked. Category 73 with upper index 1 contributes price *
+10 * playerContextValue / 20000 only when that value is positive. The meaning of
+the player fields at 508/512 remains unassigned. The weapon path uses the context
+captured at entry; the other path rereads the player's current context. Arithmetic
+uses signed integer division and retains retail operation order and truncation.
+No entry, weapon or index validation is added. Existing matched bodies and flags
+are unchanged. Verification: python tools/build.py weapon-manager:
+
+```text
+OK  _ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv  0x00331a09  264 bytes
+OK SECTION .manager_retention_cost  0x00331a08  264 bytes
+```

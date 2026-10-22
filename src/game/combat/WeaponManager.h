@@ -16,6 +16,7 @@ public:
     void addWeapon(Weapon* value);
     int unlockWeapon(int id);
     static Weapon* createWeapon(int type);
+    int getKeepWeaponsWhenBustedCost();
     void unlimitedAmmo(bool enabled);
     irr::scene::ISceneNode* getLHWeaponNode();
     irr::scene::ISceneNode* getRHWeaponNode();

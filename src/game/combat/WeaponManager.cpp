@@ -15,6 +15,7 @@
 #include "../core/NativeStdio.h"
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
+#include "../hud/MenuManager.h"
 
 void WeaponManager::unlimitedAmmo(bool enabled) { unlimited = enabled; }
 bool WeaponManager::areAmmoUnlimited() const { return unlimited; }
@@ -298,4 +299,32 @@ void WeaponManager::init()
         ammunition[context][6] = 0;
     }
     Application::GetInstance()->GetHudManager()->toggleWeaponSelector(false);
+}
+
+int WeaponManager::getKeepWeaponsWhenBustedCost()
+{
+    PlayerTest* value = PlayerTest::GetPlayer();
+    PlayerTest::eContext context = value->context;
+    int count = MenuManager::s_WeaponShopDataCount;
+    int total = 0;
+    for (int i = 0; i < count; ++i) {
+        unsigned short category = MenuManager::s_WeaponShopData[i].category;
+        int index = MenuManager::s_WeaponShopData[i].code >> 16;
+        if (category == 163) {
+            if (!weapons[context][index]->isLocked()) {
+                int quantity = 1;
+                if (index == 1) {
+                    if (!weapons[context][2]->isLocked()) quantity = 2;
+                } else if (index == 5) {
+                    if (!weapons[context][6]->isLocked()) quantity = 2;
+                }
+                total += MenuManager::s_WeaponShopData[i].price * 10 * quantity / 100;
+            }
+        } else if (category == 73 && index == 1) {
+            int quantity = value->contextValues[value->context];
+            if (quantity > 0)
+                total += MenuManager::s_WeaponShopData[i].price * 10 * quantity / 20000;
+        }
+    }
+    return total;
 }
