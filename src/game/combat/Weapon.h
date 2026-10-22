@@ -41,6 +41,14 @@ public:
     void playReloadSound();
     bool isReady(bool ignoreClip);
     void reload(bool unlimited);
+    void snipe(bool flag, const irr::core::vector3d<float>& start,
+               const irr::core::vector3d<float>& direction, irr::core::vector3d<float>& result);
+    void shootFromCar(bool flag, const irr::core::vector3d<float>& start,
+                      const irr::core::vector3d<float>& direction, irr::core::vector3d<float>& result);
+    void shootProjectile(const irr::core::vector3d<float>& direction);
+    void shootProjectileFromCar(const irr::core::vector3d<float>& direction);
+    void shoot(bool flag, const irr::core::vector3d<float>& direction,
+               irr::core::vector3d<float>& result);
 
 private:
     int weaponType;

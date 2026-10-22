@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-35 Weapon.cpp symbols match, totaling 2184 catalogue function bytes including
+40 Weapon.cpp symbols match, totaling 2866 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -165,4 +165,40 @@ OK SECTION .weapon_sounds_dry  0x00330a04  68 bytes
 OK SECTION .weapon_sounds_reload  0x00330acc  300 bytes
 OK SECTION .weapon_sounds_shoot  0x00330c78  464 bytes
 OK SECTION .weapon_sounds_tables  0x00427db4  76 bytes
+```
+
+The five shooting paths add 682 catalogue bytes. Sniping consumes one round,
+traces between supplied vectors and updates lastShot before the shooting sound.
+Car shooting alternates flag bit 2 for type 2 and consumes two rounds/traces for
+type 6. Main shooting selects the corresponding muzzle flash(es) and obtains
+each trace origin from its muzzle parent's absolute position (virtual slot 184).
+Other types use the primary muzzle and set bit 2, preserving retail behavior.
+No clip, node or frequency validation has been added.
+
+Projectile shooting launches the held object only for type 7 with an object,
+plays its primary flash and clears the object after consuming a round. The car
+path creates metatype 126 and registers its category before the later object
+null check, as in retail. Both paths still timestamp and play the shooting sound
+when no launch occurs. Rocket and bullet-manager implementations remain external.
+The bullet trace call retains the const final reference encoded in its symbol.
+
+Vector3.h reconstructs the observed three components and nontrivial copy ABI;
+Rocket::launch takes that value through the compiler's temporary copy. No vector
+math implementation or vendored-engine function is counted. All existing matched
+function bodies and compiler flags are unchanged. The integrated SaveGame image
+verifies the shared scene interface changes and all prior matches.
+
+Verification: python tools/build.py save-game. Exact output:
+
+```text
+OK  _ZN6Weapon5snipeEbRKN3irr4core8vector3dIfEES5_RS3_  0x00330efd  74 bytes
+OK  _ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_  0x00330f49  122 bytes
+OK  _ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE  0x00330fc5  90 bytes
+OK  _ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE  0x00330e49  132 bytes
+OK  _ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_  0x00331021  264 bytes
+OK SECTION .weapon_sniping  0x00330efc  76 bytes
+OK SECTION .weapon_car_shooting  0x00330f48  124 bytes
+OK SECTION .weapon_projectile_shooting  0x00330fc4  92 bytes
+OK SECTION .weapon_car_projectile  0x00330e48  132 bytes
+OK SECTION .weapon_shooting  0x00331020  264 bytes
 ```

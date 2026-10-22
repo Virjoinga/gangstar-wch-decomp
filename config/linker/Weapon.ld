@@ -5,6 +5,11 @@ INCLUDE build/matches/weapon/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
 __aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .shooting 0x00331020 : { *weapon.o(.text._ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_) }
+    .sniping 0x00330efc : { *weapon.o(.text._ZN6Weapon5snipeEbRKN3irr4core8vector3dIfEES5_RS3_) }
+    .car_shooting 0x00330f48 : { *weapon.o(.text._ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_) }
+    .projectile_shooting 0x00330fc4 : { *weapon.o(.text._ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE) }
+    .car_projectile 0x00330e48 : { *weapon.o(.text._ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE) }
     .sounds_tables 0x00427db4 : { *weapon.o(.rodata._ZN6Weapon15playReloadSoundEv .rodata._ZN6Weapon14playShootSoundEv) }
     .sounds_dry 0x00330a04 : { *weapon.o(.text._ZN6Weapon12playDrySoundEv) }
     .sounds_reload 0x00330acc : { *weapon.o(.text._ZN6Weapon15playReloadSoundEv) }

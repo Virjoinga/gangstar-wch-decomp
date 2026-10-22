@@ -1,6 +1,8 @@
 #ifndef WCH_CORE_SCENE_NODE_H
 #define WCH_CORE_SCENE_NODE_H
 
+#include "Vector3.h"
+
 // Partial engine call interfaces only. Do not instantiate or infer complete
 // layouts from these declarations; no vendored engine code is implemented.
 namespace irr {
@@ -22,6 +24,7 @@ class ISceneNode : public virtual IReferenceCounted {
 public:
     ISceneNode* getSceneNodeFromUID(const char* uid);
     const SceneAnimatorList& getAnimators() const;
+    ISceneNode* getParent() const;
     virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
     virtual void unknown3(); virtual void unknown4(); virtual void unknown5();
     virtual void unknown6(); virtual void unknown7(); virtual void unknown8();
@@ -40,7 +43,8 @@ public:
     virtual void unknown37(); virtual void unknown38(); virtual void unknown39();
     virtual void unknown40(); virtual void unknown41(); virtual void unknown42();
     virtual void unknown43(); virtual void unknown44(); virtual void unknown45();
-    virtual void unknown46(); virtual void unknown47(); virtual void unknown48();
+    virtual core::vector3d<float> getAbsolutePosition() const;
+    virtual void unknown47(); virtual void unknown48();
     virtual void unknown49(); virtual void unknown50(); virtual void unknown51();
     virtual void updateAbsolutePosition(bool flag);
 };

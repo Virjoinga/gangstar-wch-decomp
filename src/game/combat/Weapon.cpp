@@ -10,6 +10,8 @@
 
 #include "Weapon.h"
 #include "WeaponManager.h"
+#include "Rocket.h"
+#include "BulletTraceManager.h"
 #include "../audio/SoundManager.h"
 #include "../meta/Achievements.h"
 #include "../app/Application.h"
@@ -306,9 +308,94 @@ void Weapon::playShootSound()
     }
 }
 
+void Weapon::shootProjectileFromCar(const irr::core::vector3d<float>& direction)
+{
+    if (weaponType == 7) {
+        projectile = GameObjectManager::s_gom->CreateGameObjectFromMetatype(126);
+        GameObjectManager::s_gom->AddGameObjectOfType(LevelObject::s_type[projectile->getObjectType()]);
+        if (projectile) {
+            static_cast<Rocket*>(projectile)->launch(direction);
+            --clip;
+            projectile = 0;
+        }
+    }
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    playShootSound();
+}
+
 void Weapon::photo()
 {
     lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
     Application::GetInstance()->GetHudManager()->component116->unknown56 = true;
+    playShootSound();
+}
+
+void Weapon::snipe(bool flag, const irr::core::vector3d<float>& start,
+                   const irr::core::vector3d<float>& direction, irr::core::vector3d<float>& result)
+{
+    --clip;
+    GS3DStuff::GetBulletManager()->PlayBulletTrace(start, direction, flag, result);
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    playShootSound();
+}
+
+void Weapon::shootFromCar(bool flag, const irr::core::vector3d<float>& start,
+                          const irr::core::vector3d<float>& direction, irr::core::vector3d<float>& result)
+{
+    if (weaponType == 2 && (flags & 2)) {
+        flags &= ~2U;
+        --clip;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(start, direction, flag, result);
+    } else if (weaponType == 6) {
+        clip -= 2;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(start, direction, flag, result);
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(start, direction, flag, result);
+    } else {
+        flags |= 2;
+        --clip;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(start, direction, flag, result);
+    }
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    playShootSound();
+}
+
+void Weapon::shootProjectile(const irr::core::vector3d<float>& direction)
+{
+    if (weaponType == 7 && projectile) {
+        drawMuzzleFlash(muzzle, timeline);
+        static_cast<Rocket*>(projectile)->launch(direction);
+        --clip;
+        projectile = 0;
+    }
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
+    playShootSound();
+}
+
+
+void Weapon::shoot(bool flag, const irr::core::vector3d<float>& direction,
+                   irr::core::vector3d<float>& result)
+{
+    if (weaponType == 2 && (flags & 2)) {
+        drawMuzzleFlash(secondMuzzle, secondTimeline);
+        flags &= ~2U;
+        --clip;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(
+            secondMuzzle->getParent()->getAbsolutePosition(), direction, flag, result);
+    } else if (weaponType == 6) {
+        drawMuzzleFlash(muzzle, timeline);
+        drawMuzzleFlash(secondMuzzle, secondTimeline);
+        clip -= 2;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(
+            muzzle->getParent()->getAbsolutePosition(), direction, flag, result);
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(
+            secondMuzzle->getParent()->getAbsolutePosition(), direction, flag, result);
+    } else {
+        drawMuzzleFlash(muzzle, timeline);
+        flags |= 2;
+        --clip;
+        GS3DStuff::GetBulletManager()->PlayBulletTrace(
+            muzzle->getParent()->getAbsolutePosition(), direction, flag, result);
+    }
+    lastShot = Application::GetInstance()->GetDevice()->getTimer()->getRealTime();
     playShootSound();
 }
