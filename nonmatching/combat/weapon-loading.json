@@ -87,7 +87,9 @@
         ".weapon_manager_init",
         ".weapon_manager_creation_table",
         ".weapon_manager_retention_cost",
-        ".weapon_manager_string_cleanup"
+        ".weapon_manager_string_cleanup",
+        ".weapon_factory_cleanup",
+        ".weapon_string_cleanup"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -130,7 +132,15 @@
         "_ZN6Weapon12shootFromCarEbRKN3irr4core8vector3dIfEES5_RS3_",
         "_ZN6Weapon15shootProjectileERKN3irr4core8vector3dIfEE",
         "_ZN6Weapon22shootProjectileFromCarERKN3irr4core8vector3dIfEE",
-        "_ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_"
+        "_ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_",
+        {
+            "name": "__tcf_1",
+            "address": "0x00330441"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x003309d5"
+        }
     ],
     "dependencies": [
         "level-object",

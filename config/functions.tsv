@@ -11627,7 +11627,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003303bd	0x12	Weapon.cpp	game	combat	matched	_ZNK6Weapon12isProjectileEv	Weapon::isProjectile() const
 0x003303d1	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4showEv	Weapon::show()
 0x00330409	0x38	Weapon.cpp	game	combat	matched	_ZN6Weapon4hideEv	Weapon::hide()
-0x00330441	0x24	Weapon.cpp	game	combat	pending	__tcf_1	__tcf_1
+0x00330441	0x24	Weapon.cpp	game	combat	matched	__tcf_1	__tcf_1
 0x00330465	0x30	Weapon.cpp	game	combat	matched	_ZN6Weapon4lockEv	Weapon::lock()
 0x00330495	0x5c	Weapon.cpp	game	combat	matched	_ZN6WeaponD0Ev	Weapon::~Weapon()
 0x003304f1	0x58	Weapon.cpp	game	combat	matched	_ZN6WeaponD1Ev	Weapon::~Weapon()
@@ -11640,7 +11640,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()
 0x0033087d	0x144	Weapon.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003309c1	0x14	Weapon.cpp	game	combat	pending	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
-0x003309d5	0x30	Weapon.cpp	game	combat	pending	__tcf_3	__tcf_3
+0x003309d5	0x30	Weapon.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x00330a05	0x44	Weapon.cpp	game	combat	matched	_ZN6Weapon12playDrySoundEv	Weapon::playDrySound()
 0x00330a49	0x84	Weapon.cpp	game	combat	matched	_ZN6Weapon7isReadyEb	Weapon::isReady(bool)
 0x00330acd	0x12c	Weapon.cpp	game	combat	matched	_ZN6Weapon15playReloadSoundEv	Weapon::playReloadSound()

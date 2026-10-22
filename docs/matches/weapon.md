@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-40 Weapon.cpp symbols match, totaling 2866 catalogue function bytes including
+42 Weapon.cpp symbols match, totaling 2950 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -205,3 +205,30 @@ OK SECTION .weapon_shooting  0x00331020  264 bytes
 
 WeaponManager ammunition and context calls now use the native definitions
 documented in weapon-manager.md; the integrated image retains every Weapon match.
+
+
+## Translation-unit cleanup callbacks
+
+__tcf_1 calls the weak CGameFactory complete-object destructor on the weak
+getInstance singleton storage. Both bindings are present in the retail symbol
+map; the factory implementation remains external. GCC 4.2.1 emitted an invalid
+weak member-destructor annotation in the first attempts, so the callback uses
+an explicit C ABI declaration of that existing destructor entry. No generated
+assembly is modified.
+
+__tcf_3 checks the local string's reference byte at 29, null array and inline
+buffer at 13 before calling scalar delete. Its local storage is placed at
+0x004b9ba8. The used attributes retain these callbacks until their corresponding
+initialization paths are reconstructed. Existing matched bodies and compiler
+flags are unchanged. Verification with python tools/build.py weapon:
+
+```text
+OK  __tcf_1  0x00330441  36 bytes
+OK  __tcf_3  0x003309d5  48 bytes
+OK SECTION .weapon_factory_cleanup  0x00330440  36 bytes
+OK SECTION .weapon_string_cleanup  0x003309d4  48 bytes
+```
+
+The same sections are checked in the native SaveGame image. BSS layout is only
+an observed interface, not credited data. The larger startup initializer remains
+uncounted under nonmatching/combat; its original assembly stays in the queue.
