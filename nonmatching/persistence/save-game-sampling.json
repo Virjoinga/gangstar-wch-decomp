@@ -85,7 +85,20 @@
         ".weapon_car_shooting",
         ".weapon_projectile_shooting",
         ".weapon_car_projectile",
-        ".weapon_shooting"
+        ".weapon_shooting",
+        ".weapon_manager_0",
+        ".weapon_manager_1",
+        ".weapon_manager_2",
+        ".weapon_manager_3",
+        ".weapon_manager_4",
+        ".weapon_manager_5",
+        ".weapon_manager_6",
+        ".weapon_manager_7",
+        ".weapon_manager_8",
+        ".weapon_manager_9",
+        ".weapon_manager_10",
+        ".weapon_manager_11",
+        ".weapon_manager_12"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -132,7 +145,8 @@
         "debug-log",
         "file-stream",
         "level-object",
-        "weapon"
+        "weapon",
+        "weapon-manager"
     ],
     "external_thumb_functions": [
         "_ZN10PlayerTest13switchContextENS_8eContextEb",
@@ -145,11 +159,8 @@
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
         "_ZN13ScriptManager11getInstanceEv",
         "_ZN13ScriptManager9resetGameEbi",
-        "_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager14lockAllWeaponsEv",
-        "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
-        "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
-        "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager9setWeaponEP6Weaponb",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN17GameObjectManager8GetFirstEi",
@@ -167,13 +178,11 @@
         "_ZN9GS3DStuff16GetBulletManagerEv",
         "_ZN9GSLoading12isGameLoadedEv",
         "_ZNK13ScriptManager10findScriptEi",
-        "_ZNK13WeaponManager16areAmmoUnlimitedEv",
-        "_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE",
         "_ZNK18AchievementManager20getAchievementFromIDEi",
         "_ZNK18AchievementManager4Stat8getValueEv",
         "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
+        "_ZNK3irr5scene10ISceneNode9getParentEv",
         "_ZNK6Script8getStateEv",
-        "_ZNK6Script9getParentEv",
-        "_ZNK3irr5scene10ISceneNode9getParentEv"
+        "_ZNK6Script9getParentEv"
     ]
 }

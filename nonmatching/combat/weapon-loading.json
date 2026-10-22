@@ -55,7 +55,20 @@
         ".car_shooting",
         ".projectile_shooting",
         ".car_projectile",
-        ".shooting"
+        ".shooting",
+        ".weapon_manager_0",
+        ".weapon_manager_1",
+        ".weapon_manager_2",
+        ".weapon_manager_3",
+        ".weapon_manager_4",
+        ".weapon_manager_5",
+        ".weapon_manager_6",
+        ".weapon_manager_7",
+        ".weapon_manager_8",
+        ".weapon_manager_9",
+        ".weapon_manager_10",
+        ".weapon_manager_11",
+        ".weapon_manager_12"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -101,16 +114,17 @@
         "_ZN6Weapon5shootEbRKN3irr4core8vector3dIfEERS3_"
     ],
     "dependencies": [
-        "level-object"
+        "level-object",
+        "weapon-manager"
     ],
     "external_thumb_functions": [
+        "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN11CHudManager20toggleWeaponSelectorEb",
         "_ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE",
         "_ZN11LevelObjectD1Ev",
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
-        "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
-        "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
+        "_ZN13WeaponManager9setWeaponEP6Weaponb",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN18AchievementManager12recordWeaponEib",
@@ -121,7 +135,6 @@
         "_ZN6Rocket6launchEN3irr4core8vector3dIfEE",
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
         "_ZN9GS3DStuff16GetBulletManagerEv",
-        "_ZNK13WeaponManager16areAmmoUnlimitedEv",
         "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
         "_ZNK3irr5scene10ISceneNode9getParentEv"
     ]

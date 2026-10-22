@@ -202,3 +202,6 @@ OK SECTION .weapon_projectile_shooting  0x00330fc4  92 bytes
 OK SECTION .weapon_car_projectile  0x00330e48  132 bytes
 OK SECTION .weapon_shooting  0x00331020  264 bytes
 ```
+
+WeaponManager ammunition and context calls now use the native definitions
+documented in weapon-manager.md; the integrated image retains every Weapon match.
