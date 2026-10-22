@@ -4,7 +4,7 @@ from contextlib import redirect_stderr, redirect_stdout
 import io
 import unittest
 
-from tools.build import build_unit, check_section
+from tools.build import build_unit, check_section, comparison_arguments
 from tools.elf import EM_ARM, ET_EXEC, ElfFile, Section
 
 
@@ -37,6 +37,18 @@ class SectionComparisonTests(unittest.TestCase):
     def test_dependency_cycle_is_rejected_before_building(self):
         with self.assertRaisesRegex(ValueError, "cyclic build dependency: a -> b -> a"):
             build_unit("a", None, None, ("a", "b"))
+
+    def test_manifest_address_reaches_comparison_cli(self):
+        self.assertEqual(comparison_arguments({"name": "__tcf_3", "address": "0x0033116d"}),
+                         ["--func", "__tcf_3", "--address", "0x0033116d"])
+        self.assertEqual(comparison_arguments("probe"), ["--func", "probe"])
+
+    def test_bad_function_selectors_are_rejected(self):
+        for entry in [{"name": "probe"}, {"name": "probe", "address": True},
+                      {"name": "probe", "address": -1},
+                      {"name": "probe", "address": "not-an-address"}]:
+            with self.subTest(entry=entry), self.assertRaises(ValueError):
+                comparison_arguments(entry)
 
 
 if __name__ == "__main__":

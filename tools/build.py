@@ -38,6 +38,22 @@ def run(command: list[str], environment: dict[str, str]) -> None:
     subprocess.run(command, cwd=ROOT, env=environment, check=True)
 
 
+def comparison_arguments(entry) -> list[str]:
+    """Translate a manifest function selector into the checker's CLI options."""
+    if isinstance(entry, str) and entry:
+        return ["--func", entry]
+    if not isinstance(entry, dict) or set(entry) != {"name", "address"}:
+        raise ValueError("function selector must be a name or {name, address}")
+    name, address = entry["name"], entry["address"]
+    if not isinstance(name, str) or not name or isinstance(address, bool):
+        raise ValueError("function selector requires a name and integer address")
+    if isinstance(address, str):
+        address = int(address, 0)
+    if not isinstance(address, int) or not 0 <= address <= 0xffffffff:
+        raise ValueError("function address must be a 32-bit integer")
+    return ["--func", name, "--address", f"0x{address:08x}"]
+
+
 def check_section(retail: ElfFile, image: ElfFile, name: str, offset: int = 0) -> bool:
     """Check emitted data and alignment as well as individual function bytes."""
     section = image.section(name)
@@ -138,7 +154,8 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
 
     passed = True
     for symbol in manifest["functions"]:
-        result = check.main([str(ROOT / comparison_file), "--func", symbol,
+        arguments = comparison_arguments(symbol)
+        result = check.main([str(ROOT / comparison_file), *arguments,
                              "--baselib", str(base_library)])
         passed = result == 0 and passed
     if manifest.get("sections"):
