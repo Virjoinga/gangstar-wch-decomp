@@ -6,7 +6,13 @@ memset = 0x001c45d4;
 _ZdaPv = 0x001c461c;
 _ZdlPv = 0x001c42b0;
 __aeabi_idivmod = 0x001c4934;
+_Znaj = 0x001c3ff8;
 SECTIONS {
+    .manager_add 0x003315c4 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager9addWeaponEP6Weapon) }
+    .manager_unlock 0x00331664 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager12unlockWeaponEi) }
+    .manager_create 0x0033172c : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager12createWeaponEi) }
+    .manager_init 0x003312cc : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager4initEv) }
+    .manager_creation_table 0x004283d0 : { *weapon-manager-vehicle.o(.rodata._ZN13WeaponManager12createWeaponEi) }
     .manager_vehicle_usable 0x00331144 : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager25isWeaponUsableFromVehicleEi) }
     .manager_usable 0x0033119c : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager14isWeaponUsableEi) }
     .manager_next 0x003314fc : { *weapon-manager-vehicle.o(.text._ZN13WeaponManager10nextWeaponEi) }

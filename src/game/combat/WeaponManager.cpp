@@ -10,6 +10,7 @@
 
 #include "WeaponManager.h"
 #include "Weapon.h"
+#include "../world/GameObjectManager.h"
 #include "../characters/Character.h"
 #include "../core/NativeStdio.h"
 #include "../app/Application.h"
@@ -208,4 +209,93 @@ Weapon* WeaponManager::nextWeapon(int count)
         }
     }
     return weapons[context][current[context]];
+}
+
+void WeaponManager::addWeapon(Weapon* value)
+{
+    PlayerTest::eContext context = PlayerTest::GetPlayer()->context;
+    if (weapons[context][value->getWeaponType()]) {
+        Weapon* existing = weapons[context][value->getWeaponType()];
+        existing->setClipSize(existing->getClipSize() + value->getClipSize());
+    } else {
+        weapons[context][value->getWeaponType()] = value;
+    }
+}
+
+int WeaponManager::unlockWeapon(int id)
+{
+    Weapon* value = getWeaponInList(id, PlayerTest::AnyContext);
+    int result = value->getWeaponType();
+    int extra;
+    int reserve;
+    if (!value->isLocked()) {
+        Weapon* other = 0;
+        switch (id) {
+        case 1: other = getWeaponInList(2, PlayerTest::AnyContext); break;
+        case 5: other = getWeaponInList(6, PlayerTest::AnyContext); break;
+        }
+        if (other) {
+            if (other->isLocked()) other->unlock();
+            result = other->getWeaponType();
+            reserve = getAmmo(value->getAmmoType(), PlayerTest::AnyContext);
+            extra = other->getClipSize();
+            goto grant;
+        }
+    } else {
+        value->unlock();
+    }
+    reserve = getAmmo(value->getAmmoType(), PlayerTest::AnyContext);
+    extra = value->getClipSize() * 2;
+grant:
+    setAmmo(value->getAmmoType(), extra + reserve, PlayerTest::AnyContext);
+    return result;
+}
+
+Weapon* WeaponManager::createWeapon(int type)
+{
+    Weapon* value = 0;
+    switch (type) {
+    case 0: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(50)); break;
+    case 1: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(8)); break;
+    case 2: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(41)); break;
+    case 3: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(0)); break;
+    case 4: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(128)); break;
+    case 5: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(155)); break;
+    case 6: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(42)); break;
+    case 7: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(123)); break;
+    case 8: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(130)); break;
+    case 9: value = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(11)); break;
+    }
+    if (value && value->sceneNode) value->sceneNode->setVisible(false);
+    GameObjectManager::s_gom->AddGameObjectOfType(LevelObject::s_type[value->getObjectType()]);
+    return value;
+}
+
+void WeaponManager::init()
+{
+    for (int context = 0; context < 2; ++context) {
+        weapons[context] = new Weapon*[10];
+        memset(weapons[context], 0, 10 * sizeof(Weapon*));
+        weapons[context][0] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(50));
+        weapons[context][0]->unlock();
+        weapons[context][1] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(8));
+        weapons[context][2] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(41));
+        weapons[context][3] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(0));
+        weapons[context][4] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(128));
+        weapons[context][5] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(155));
+        weapons[context][6] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(42));
+        weapons[context][7] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(123));
+        weapons[context][8] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(130));
+        weapons[context][9] = static_cast<Weapon*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(11));
+        ammunition[context] = new int[7];
+        memset(ammunition[context], 0, 7 * sizeof(int));
+        ammunition[context][0] = 0;
+        ammunition[context][1] = 0;
+        ammunition[context][2] = 0;
+        ammunition[context][3] = 0;
+        ammunition[context][4] = 0;
+        ammunition[context][5] = 0;
+        ammunition[context][6] = 0;
+    }
+    Application::GetInstance()->GetHudManager()->toggleWeaponSelector(false);
 }

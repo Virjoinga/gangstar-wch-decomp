@@ -1,6 +1,6 @@
 # WeaponManager context, ammunition and lifecycle
 
-Twenty-six symbols match, totaling 1414 catalogue bytes including constructor/
+Thirty symbols match, totaling 2258 catalogue bytes including constructor/
 destructor aliases. Native Weapon and SaveGame
 verification images now link these definitions in place of their retail bindings.
 Existing matched function bodies are unchanged. WeaponManager now uses
@@ -56,6 +56,10 @@ OK  _ZN13WeaponManager10swapWeaponEv  0x003318e5  152 bytes
 OK  _ZN13WeaponManager10swapWeaponEi  0x0033197d  34 bytes
 OK  _ZN13WeaponManager14isWeaponUsableEi  0x0033119d  52 bytes
 OK  _ZN13WeaponManager10nextWeaponEi  0x003314fd  198 bytes
+OK  _ZN13WeaponManager9addWeaponEP6Weapon  0x003315c5  86 bytes
+OK  _ZN13WeaponManager12unlockWeaponEi  0x00331665  198 bytes
+OK  _ZN13WeaponManager12createWeaponEi  0x0033172d  244 bytes
+OK  _ZN13WeaponManager4initEv  0x003312cd  316 bytes
 OK SECTION .manager_0  0x00331128  8 bytes
 OK SECTION .manager_1  0x00331130  8 bytes
 OK SECTION .manager_2  0x00331138  4 bytes
@@ -82,6 +86,11 @@ OK SECTION .manager_swap_index  0x0033197c  36 bytes
 OK SECTION .manager_hand_uids  0x0041d8dc  32 bytes
 OK SECTION .manager_usable  0x0033119c  52 bytes
 OK SECTION .manager_next  0x003314fc  200 bytes
+OK SECTION .manager_add  0x003315c4  88 bytes
+OK SECTION .manager_unlock  0x00331664  200 bytes
+OK SECTION .manager_create  0x0033172c  244 bytes
+OK SECTION .manager_init  0x003312cc  316 bytes
+OK SECTION .manager_creation_table  0x004283d0  40 bytes
 ```
 
 python tools/build.py save-game also passes with this unit as a native dependency,
@@ -141,3 +150,31 @@ See README.md there for the command and exact mismatch. Disabling constant
 propagation for WeaponManager matches nextWeapon; the newly reconstructed
 attachment expression was adjusted to match with that same setting. No existing
 matched function body, other unit's compiler flags, or compiler output was edited.
+
+addWeapon installs the incoming object in the current context when its type slot
+is empty. Otherwise it adds the incoming clip size to the existing object's clip
+size; it does not replace or delete the incoming object in that path. Calls and
+array reads are retained in retail order.
+
+unlockWeapon returns the initial weapon type after a normal unlock, granting
+twice its clip size through the manager's getAmmo/setAmmo rules. If an already
+unlocked type 1 or 5 has its paired object at slot 2 or 6, it unlocks that object
+when needed, returns its type and grants one paired-object clip instead. The
+original object's ammo type remains the lookup key. A switch and shared grant
+block reproduce the 198-byte control flow. Earlier oversized/near attempts failed
+comparison and were replaced; no existing matched function body changed.
+
+createWeapon is static: the retail calling convention passes the type in r0.
+The type-to-metatype mapping for 0..9 is 50, 8, 41, 0, 128, 155, 42, 123, 130,
+11. It hides an existing primary scene node, then registers the object's category
+and returns it. Registration retains the retail unconditional object access after
+the guarded visibility update. Its compiler-generated switch table matches all
+40 bytes at 0x4283d0. No new invalid-type or factory-failure guards are added.
+
+init allocates a ten-pointer weapon list and seven-integer ammunition array for
+each of the two contexts. It clears the lists with memset, creates every weapon
+in the same metatype order, and unlocks slot 0. Ammunition initialization preserves
+both the initial clear and seven explicit stores. Value-initialized array drafts
+emitted different loops and were rejected. The HUD selector is hidden after both
+contexts are filled. These definitions retain the existing compiler settings and
+pass in the integrated Weapon/SaveGame byte verification image.

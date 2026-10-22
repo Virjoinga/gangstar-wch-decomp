@@ -57,7 +57,12 @@
         ".manager_swap_index",
         ".manager_hand_uids",
         ".manager_usable",
-        ".manager_next"
+        ".manager_next",
+        ".manager_add",
+        ".manager_unlock",
+        ".manager_create",
+        ".manager_init",
+        ".manager_creation_table"
     ],
     "functions": [
         "_ZN13WeaponManager13unlimitedAmmoEb",
@@ -85,21 +90,30 @@
         "_ZN13WeaponManager10swapWeaponEv",
         "_ZN13WeaponManager10swapWeaponEi",
         "_ZN13WeaponManager14isWeaponUsableEi",
-        "_ZN13WeaponManager10nextWeaponEi"
+        "_ZN13WeaponManager10nextWeaponEi",
+        "_ZN13WeaponManager9addWeaponEP6Weapon",
+        "_ZN13WeaponManager12unlockWeaponEi",
+        "_ZN13WeaponManager12createWeaponEi",
+        "_ZN13WeaponManager4initEv"
     ],
     "dependencies": [],
     "external_thumb_functions": [
         "_ZN10PlayerTest9GetPlayerEv",
-        "_ZNK6Weapon8isLockedEv",
-        "_ZN6Weapon6unlockEv",
-        "_ZN6Weapon4lockEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN11CHudManager20toggleWeaponSelectorEb",
+        "_ZN13WeaponManager25isWeaponUsableFromVehicleEi",
+        "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
+        "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
+        "_ZN6Weapon11setClipSizeEi",
+        "_ZN6Weapon12reloadRocketEv",
+        "_ZN6Weapon4lockEv",
+        "_ZN6Weapon6unlockEv",
+        "_ZNK6Weapon11getAmmoTypeEv",
+        "_ZNK6Weapon11getClipSizeEv",
+        "_ZNK6Weapon11isTwoHandedEv",
         "_ZNK6Weapon13getWeaponTypeEv",
         "_ZNK6Weapon8isDoubleEv",
-        "_ZNK6Weapon11isTwoHandedEv",
-        "_ZN6Weapon12reloadRocketEv",
-        "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
-        "_ZN13WeaponManager25isWeaponUsableFromVehicleEi"
+        "_ZNK6Weapon8isLockedEv"
     ]
 }

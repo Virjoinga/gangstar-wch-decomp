@@ -22,7 +22,7 @@ and engine declarations describe observed offsets and call slots, not complete
 original classes. No existing matched definition or verified compiler flag was
 changed to accommodate this attempt.
 
-The verification image also links 26 matched WeaponManager symbols. A bounded
+The verification image also links 30 matched WeaponManager symbols. A bounded
 compiler-pass audit retained the verified flags: disabling block reordering
 changed Load to 452 bytes and broke 13 existing Weapon methods. Thirty-two
 combinations of inline timeline/list accessors and controller variable scopes
@@ -34,7 +34,7 @@ Run `python nonmatching/combat/try_weapon_manager.py` to reproduce the uncounted
 40-byte vehicle switch. The runner exclusively creates a temporary normal build
 manifest and removes it on exit. The candidate returns false for types 0/7/8/9
 and true for 1..6; behavior outside that set remains unspecified. It still differs
-in the default-path return/block layout. The other 26 manager symbols, sections,
+in the default-path return/block layout. The other 30 manager symbols, sections,
 16-byte vtable, hand UID strings and GOT region pass. Exact output:
 
 ```text

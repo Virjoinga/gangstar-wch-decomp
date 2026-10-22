@@ -80,7 +80,12 @@
         ".weapon_manager_swap_index",
         ".weapon_manager_hand_uids",
         ".weapon_manager_usable",
-        ".weapon_manager_next"
+        ".weapon_manager_next",
+        ".weapon_manager_add",
+        ".weapon_manager_unlock",
+        ".weapon_manager_create",
+        ".weapon_manager_init",
+        ".weapon_manager_creation_table"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

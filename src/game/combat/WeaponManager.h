@@ -12,6 +12,10 @@ public:
     WeaponManager();
     virtual ~WeaponManager();
     void clean();
+    void init();
+    void addWeapon(Weapon* value);
+    int unlockWeapon(int id);
+    static Weapon* createWeapon(int type);
     void unlimitedAmmo(bool enabled);
     irr::scene::ISceneNode* getLHWeaponNode();
     irr::scene::ISceneNode* getRHWeaponNode();
