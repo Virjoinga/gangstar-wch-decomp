@@ -86,7 +86,8 @@
         ".weapon_manager_create",
         ".weapon_manager_init",
         ".weapon_manager_creation_table",
-        ".weapon_manager_retention_cost"
+        ".weapon_manager_retention_cost",
+        ".weapon_manager_string_cleanup"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

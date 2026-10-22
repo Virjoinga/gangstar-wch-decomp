@@ -1,6 +1,6 @@
 # WeaponManager context, ammunition and lifecycle
 
-Thirty-one symbols match, totaling 2522 catalogue bytes including constructor/
+Thirty-two symbols match, totaling 2570 catalogue bytes including constructor/
 destructor aliases. Native Weapon and SaveGame
 verification images now link these definitions in place of their retail bindings.
 Existing matched function bodies are unchanged. WeaponManager now uses
@@ -201,4 +201,23 @@ are unchanged. Verification: python tools/build.py weapon-manager:
 ```text
 OK  _ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv  0x00331a09  264 bytes
 OK SECTION .manager_retention_cost  0x00331a08  264 bytes
+```
+
+
+The TU-local cleanup callback __tcf_3 at 0x0033116d checks the string storage's
+reference flag at offset 29 and deletes its array only when it is nonnull and
+not the inline buffer at offset 13. This recovers the game translation unit's
+callback and its observed storage layout; the engine string implementation and
+the dynamic initializer are still external/pending. The BSS placement itself is
+not credited as matched data. The address-qualified selector disambiguates this
+callback from same-named functions in other translation units.
+
+The first draft was discarded by GCC because its initializer is not reconstructed
+yet. The used attribute retains the callback without changing its instructions.
+No existing decompiled function body or compiler flags changed. Verification:
+python tools/build.py weapon-manager:
+
+```text
+OK  __tcf_3  0x0033116d  48 bytes
+OK SECTION .manager_string_cleanup  0x0033116c  48 bytes
 ```

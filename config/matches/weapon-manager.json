@@ -63,7 +63,8 @@
         ".manager_create",
         ".manager_init",
         ".manager_creation_table",
-        ".manager_retention_cost"
+        ".manager_retention_cost",
+        ".manager_string_cleanup"
     ],
     "functions": [
         "_ZN13WeaponManager13unlimitedAmmoEb",
@@ -96,7 +97,11 @@
         "_ZN13WeaponManager12unlockWeaponEi",
         "_ZN13WeaponManager12createWeaponEi",
         "_ZN13WeaponManager4initEv",
-        "_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv"
+        "_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv",
+        {
+            "name": "__tcf_3",
+            "address": "0x0033116d"
+        }
     ],
     "dependencies": [],
     "external_thumb_functions": [

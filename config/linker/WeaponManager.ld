@@ -9,6 +9,8 @@ __aeabi_idivmod = 0x001c4934;
 _Znaj = 0x001c3ff8;
 __aeabi_idiv = 0x001c43dc;
 SECTIONS {
+    .manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }
+    .manager_local_string 0x004b9c24 (NOLOAD) : { *weapon-manager.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .manager_retention_cost 0x00331a08 : { *weapon-manager.o(.text._ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv) }
     .manager_add 0x003315c4 : { *weapon-manager.o(.text._ZN13WeaponManager9addWeaponEP6Weapon) }
     .manager_unlock 0x00331664 : { *weapon-manager.o(.text._ZN13WeaponManager12unlockWeaponEi) }
