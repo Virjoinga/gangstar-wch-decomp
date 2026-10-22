@@ -98,7 +98,13 @@
         ".weapon_manager_9",
         ".weapon_manager_10",
         ".weapon_manager_11",
-        ".weapon_manager_12"
+        ".weapon_manager_12",
+        ".weapon_manager_cleanup",
+        ".weapon_manager_destruction",
+        ".weapon_manager_construction",
+        ".weapon_manager_vtable",
+        ".weapon_manager_unlock_all",
+        ".weapon_manager_lock_all"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -158,7 +164,6 @@
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
         "_ZN13ScriptManager11getInstanceEv",
         "_ZN13ScriptManager9resetGameEbi",
-        "_ZN13WeaponManager14lockAllWeaponsEv",
         "_ZN13WeaponManager9setWeaponEP6Weaponb",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",

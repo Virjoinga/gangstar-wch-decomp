@@ -68,7 +68,13 @@
         ".weapon_manager_9",
         ".weapon_manager_10",
         ".weapon_manager_11",
-        ".weapon_manager_12"
+        ".weapon_manager_12",
+        ".weapon_manager_cleanup",
+        ".weapon_manager_destruction",
+        ".weapon_manager_construction",
+        ".weapon_manager_vtable",
+        ".weapon_manager_unlock_all",
+        ".weapon_manager_lock_all"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

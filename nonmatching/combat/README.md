@@ -22,7 +22,7 @@ and engine declarations describe observed offsets and call slots, not complete
 original classes. No existing matched definition or verified compiler flag was
 changed to accommodate this attempt.
 
-The verification image also links 13 matched WeaponManager methods. A bounded
+The verification image also links 21 matched WeaponManager symbols. A bounded
 compiler-pass audit retained the verified flags: disabling block reordering
 changed Load to 452 bytes and broke 13 existing Weapon methods. Thirty-two
 combinations of inline timeline/list accessors and controller variable scopes

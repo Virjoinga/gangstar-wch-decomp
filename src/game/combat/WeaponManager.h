@@ -9,7 +9,9 @@ namespace irr { namespace scene { class ISceneNode; } }
 // Partial observed layout through offset 56; do not instantiate as a full class.
 class WeaponManager {
 public:
+    WeaponManager();
     virtual ~WeaponManager();
+    void clean();
     void unlimitedAmmo(bool enabled);
     irr::scene::ISceneNode* getLHWeaponNode();
     irr::scene::ISceneNode* getRHWeaponNode();
@@ -24,6 +26,7 @@ public:
     int getWeaponLimitedTo(PlayerTest::eContext context) const;
     void limitToWeapon(int id, PlayerTest::eContext context);
     void lockAllWeapons();
+    void unlockAllWeapons();
     void setAmmo(int type, int count, PlayerTest::eContext context);
 private:
     Weapon** weapons[2];

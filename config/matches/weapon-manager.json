@@ -44,7 +44,13 @@
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".manager_cleanup",
+        ".manager_destruction",
+        ".manager_construction",
+        ".manager_vtable",
+        ".manager_unlock_all",
+        ".manager_lock_all"
     ],
     "functions": [
         "_ZN13WeaponManager13unlimitedAmmoEb",
@@ -59,11 +65,24 @@
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN13WeaponManager11setLHWeaponEP6Weapon",
-        "_ZN13WeaponManager11setRHWeaponEP6Weapon"
+        "_ZN13WeaponManager11setRHWeaponEP6Weapon",
+        "_ZN13WeaponManager5cleanEv",
+        "_ZN13WeaponManagerD0Ev",
+        "_ZN13WeaponManagerD1Ev",
+        "_ZN13WeaponManagerD2Ev",
+        "_ZN13WeaponManagerC1Ev",
+        "_ZN13WeaponManagerC2Ev",
+        "_ZN13WeaponManager16unlockAllWeaponsEv",
+        "_ZN13WeaponManager14lockAllWeaponsEv"
     ],
     "dependencies": [],
     "external_thumb_functions": [
         "_ZN10PlayerTest9GetPlayerEv",
-        "_ZN13WeaponManager9setWeaponEP6Weaponb"
+        "_ZN13WeaponManager9setWeaponEP6Weaponb",
+        "_ZNK6Weapon8isLockedEv",
+        "_ZN6Weapon6unlockEv",
+        "_ZN6Weapon4lockEv",
+        "_ZN11Application11GetInstanceEv",
+        "_ZN11CHudManager20toggleWeaponSelectorEb"
     ]
 }

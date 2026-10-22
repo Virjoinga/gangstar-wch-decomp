@@ -31,7 +31,7 @@ MISMATCH  _ZN8SaveGame13SampleAndSaveEPKc  0x00344821
 
 The other 23 SaveGame symbols, 40 native Weapon methods and LevelObject construction, loading jump table
 and global GOT region match.
-The image now also verifies 13 native WeaponManager methods; the sampling
+The image now also verifies 21 native WeaponManager symbols; the sampling
 comparison retains the same mismatch at 0x3e.
 Sampling differs in stack spill locations and one independent instruction
 ordering pair. A relocation-aware object diagnostic finds 58 differing bytes;

@@ -11661,15 +11661,15 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0033116d	0x30	WeaponManager.cpp	game	combat	pending	__tcf_3	__tcf_3
 0x0033119d	0x34	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager14isWeaponUsableEi	WeaponManager::isWeaponUsable(int)
 0x003311d1	0x16	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE	WeaponManager::getWeaponLimitedTo(PlayerTest::eContext) const
-0x003311e9	0x52	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager5cleanEv	WeaponManager::clean()
-0x0033123d	0x28	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD0Ev	WeaponManager::~WeaponManager()
-0x00331265	0x20	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD1Ev	WeaponManager::~WeaponManager()
-0x00331265	0x20	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerD2Ev	WeaponManager::~WeaponManager()
-0x00331285	0x48	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerC2Ev	WeaponManager::WeaponManager()
-0x00331285	0x48	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManagerC1Ev	WeaponManager::WeaponManager()
+0x003311e9	0x52	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager5cleanEv	WeaponManager::clean()
+0x0033123d	0x28	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD0Ev	WeaponManager::~WeaponManager()
+0x00331265	0x20	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD1Ev	WeaponManager::~WeaponManager()
+0x00331265	0x20	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerD2Ev	WeaponManager::~WeaponManager()
+0x00331285	0x48	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerC2Ev	WeaponManager::WeaponManager()
+0x00331285	0x48	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManagerC1Ev	WeaponManager::WeaponManager()
 0x003312cd	0x13c	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager4initEv	WeaponManager::init()
 0x00331409	0x46	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE	WeaponManager::getAmmo(int, PlayerTest::eContext)
-0x00331451	0x44	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager16unlockAllWeaponsEv	WeaponManager::unlockAllWeapons()
+0x00331451	0x44	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager16unlockAllWeaponsEv	WeaponManager::unlockAllWeapons()
 0x00331495	0x22	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager13limitToWeaponEiN10PlayerTest8eContextE	WeaponManager::limitToWeapon(int, PlayerTest::eContext)
 0x003314b9	0x1c	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager16getCurrentWeaponEv	WeaponManager::getCurrentWeapon() const
 0x003314d5	0x26	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE	WeaponManager::getWeaponInList(int, PlayerTest::eContext)
@@ -11683,7 +11683,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003318d5	0xe	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager11setRHWeaponEP6Weapon	WeaponManager::setRHWeapon(Weapon*)
 0x003318e5	0x98	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager10swapWeaponEv	WeaponManager::swapWeapon()
 0x0033197d	0x22	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager10swapWeaponEi	WeaponManager::swapWeapon(int)
-0x003319a1	0x66	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
+0x003319a1	0x66	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14lockAllWeaponsEv	WeaponManager::lockAllWeapons()
 0x00331a09	0x108	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv	WeaponManager::getKeepWeaponsWhenBustedCost()
 0x00331b11	0x144	WeaponManager.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00331c55	0x14	WeaponManager.cpp	game	combat	pending	_GLOBAL__I__ZN13WeaponManagerC2Ev	_GLOBAL__I__ZN13WeaponManagerC2Ev
