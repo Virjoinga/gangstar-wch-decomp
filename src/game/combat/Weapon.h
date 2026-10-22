@@ -51,6 +51,7 @@ public:
                irr::core::vector3d<float>& result);
 
 private:
+    friend class WeaponManager;
     int weaponType;
     int clipSize;
     int clip;

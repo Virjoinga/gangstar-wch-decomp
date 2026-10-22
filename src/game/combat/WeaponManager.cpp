@@ -10,6 +10,7 @@
 
 #include "WeaponManager.h"
 #include "Weapon.h"
+#include "../characters/Character.h"
 #include "../core/NativeStdio.h"
 #include "../app/Application.h"
 #include "../hud/CHudManager.h"
@@ -120,4 +121,91 @@ void WeaponManager::lockAllWeapons()
         for (int type = 0; type < 7; ++type) ammunition[context][type] = 0;
     }
     Application::GetInstance()->GetHudManager()->toggleWeaponSelector(false);
+}
+
+static const char leftWeaponUid[] __attribute__((section(".rodata.weapon_hand_uids"))) = "l_h_weapon-node";
+static const char rightWeaponUid[] __attribute__((section(".rodata.weapon_hand_uids"))) = "r_h_weapon-node";
+
+irr::scene::ISceneNode* WeaponManager::setWeapon(Weapon* value, bool left)
+{
+    const char* uid;
+    irr::scene::ISceneNode* node;
+    if (left) {
+        if (value->isDouble()) {
+            node = value->secondSceneNode;
+            uid = leftWeaponUid;
+        } else {
+            node = 0;
+            uid = leftWeaponUid;
+        }
+    } else {
+        node = value->sceneNode;
+        uid = rightWeaponUid;
+    }
+    Application::GetInstance()->GetDevice()->getSceneManager();
+    irr::scene::ISceneNode* parent = player->sceneNode->getSceneNodeFromUID(uid);
+    if (parent) {
+        irr::scene::ISceneNode* primary = value->sceneNode;
+        if (primary || value->getWeaponType() == 0) {
+            parent->removeAll();
+            if (value->getWeaponType() != 0) {
+                parent->addChild(node);
+                parent->setVisible(true);
+                primary->setVisible(true);
+            }
+        }
+    }
+    return node;
+}
+
+void WeaponManager::swapWeapon()
+{
+    PlayerTest::eContext context = PlayerTest::GetPlayer()->context;
+    Weapon* value = weapons[context][current[context]];
+    setRHWeapon(value);
+    if (!value->isDouble()) {
+        irr::scene::ISceneNode* parent = PlayerTest::GetPlayer()->sceneNode->getSceneNodeFromUID(leftWeaponUid);
+        if (parent) parent->removeAll();
+    }
+    if (value->getWeaponType() == 7) value->reloadRocket();
+    if (value->isDouble() || value->isTwoHanded() || value->getWeaponType() == 0)
+        setLHWeapon(value);
+}
+
+void WeaponManager::swapWeapon(int id)
+{
+    current[PlayerTest::GetPlayer()->context] = id;
+    swapWeapon();
+}
+
+bool WeaponManager::isWeaponUsable(int type)
+{
+    PlayerTest* value = PlayerTest::GetPlayer();
+    if ((value->flags240 & 1024) && value->getVehicle())
+        return isWeaponUsableFromVehicle(type);
+    return true;
+}
+
+Weapon* WeaponManager::nextWeapon(int count)
+{
+    PlayerTest::eContext context = PlayerTest::GetPlayer()->context;
+    if (static_cast<unsigned int>(limitedTo[context]) < 10) {
+        unknown28[context] = current[context];
+        current[context] = limitedTo[context];
+    } else if (unknown28[context] != -1 && weapons[context][unknown28[context]] &&
+               !weapons[context][unknown28[context]]->isLocked() &&
+               isWeaponUsable(weapons[context][unknown28[context]]->getWeaponType())) {
+        current[context] = unknown28[context];
+        unknown28[context] = -1;
+    } else {
+        int attempts = 0;
+        while (count > 0 && attempts < 10) {
+            current[context] = (current[context] + 1) % 10;
+            if (weapons[context][current[context]] &&
+                !weapons[context][current[context]]->isLocked() &&
+                isWeaponUsable(weapons[context][current[context]]->getWeaponType())) --count;
+            else ++attempts;
+        }
+    }
+    return weapons[context][current[context]];
 }

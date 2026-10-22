@@ -74,7 +74,13 @@
         ".weapon_manager_construction",
         ".weapon_manager_vtable",
         ".weapon_manager_unlock_all",
-        ".weapon_manager_lock_all"
+        ".weapon_manager_lock_all",
+        ".weapon_manager_attachment",
+        ".weapon_manager_swap",
+        ".weapon_manager_swap_index",
+        ".weapon_manager_hand_uids",
+        ".weapon_manager_usable",
+        ".weapon_manager_next"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -128,7 +134,6 @@
         "_ZN11CHudManager20toggleWeaponSelectorEb",
         "_ZN11LevelObjectD1Ev",
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
-        "_ZN13WeaponManager9setWeaponEP6Weaponb",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN18AchievementManager12recordWeaponEib",
@@ -139,6 +144,7 @@
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
         "_ZN9GS3DStuff16GetBulletManagerEv",
         "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
-        "_ZNK3irr5scene10ISceneNode9getParentEv"
+        "_ZNK3irr5scene10ISceneNode9getParentEv",
+        "_ZN13WeaponManager25isWeaponUsableFromVehicleEi"
     ]
 }

@@ -1,9 +1,11 @@
 # WeaponManager context, ammunition and lifecycle
 
-Twenty-one symbols match, totaling 814 catalogue bytes including constructor/
+Twenty-six symbols match, totaling 1414 catalogue bytes including constructor/
 destructor aliases. Native Weapon and SaveGame
 verification images now link these definitions in place of their retail bindings.
-Existing matched function bodies and compiler flags are unchanged.
+Existing matched function bodies are unchanged. WeaponManager now uses
+-fno-tree-ccp to reproduce the selection loop register allocation; all 21
+previously matched symbols were reverified with that unit setting.
 
 The partial layout has a virtual pointer at 0, weapon-array pointers at 4/8,
 ammunition-array pointers at 12/16, current indices at 20/24, unknown words at
@@ -22,7 +24,7 @@ on, in which case it returns 1. The initial separate early-return formulation
 failed byte comparison; the combined condition matches the retail control flow.
 setAmmo does not decrease the stored count in unlimited mode and never writes
 ammunition type 6. The hand setters store the scene node returned by setWeapon;
-that implementation remains external. The unlimited flag and player/node
+that implementation is now native. The unlimited flag and player/node
 accessors preserve their observed offsets.
 
 Verification: python tools/build.py weapon-manager. Exact output:
@@ -49,6 +51,11 @@ OK  _ZN13WeaponManagerC1Ev  0x00331285  72 bytes
 OK  _ZN13WeaponManagerC2Ev  0x00331285  72 bytes
 OK  _ZN13WeaponManager16unlockAllWeaponsEv  0x00331451  68 bytes
 OK  _ZN13WeaponManager14lockAllWeaponsEv  0x003319a1  102 bytes
+OK  _ZN13WeaponManager9setWeaponEP6Weaponb  0x00331821  164 bytes
+OK  _ZN13WeaponManager10swapWeaponEv  0x003318e5  152 bytes
+OK  _ZN13WeaponManager10swapWeaponEi  0x0033197d  34 bytes
+OK  _ZN13WeaponManager14isWeaponUsableEi  0x0033119d  52 bytes
+OK  _ZN13WeaponManager10nextWeaponEi  0x003314fd  198 bytes
 OK SECTION .manager_0  0x00331128  8 bytes
 OK SECTION .manager_1  0x00331130  8 bytes
 OK SECTION .manager_2  0x00331138  4 bytes
@@ -69,6 +76,12 @@ OK SECTION .manager_construction  0x00331284  72 bytes
 OK SECTION .manager_vtable  0x004acc48  16 bytes
 OK SECTION .manager_unlock_all  0x00331450  68 bytes
 OK SECTION .manager_lock_all  0x003319a0  104 bytes
+OK SECTION .manager_attachment  0x00331820  164 bytes
+OK SECTION .manager_swap  0x003318e4  152 bytes
+OK SECTION .manager_swap_index  0x0033197c  36 bytes
+OK SECTION .manager_hand_uids  0x0041d8dc  32 bytes
+OK SECTION .manager_usable  0x0033119c  52 bytes
+OK SECTION .manager_next  0x003314fc  200 bytes
 ```
 
 python tools/build.py save-game also passes with this unit as a native dependency,
@@ -95,3 +108,36 @@ that assigned slot 1 instead of using continue failed comparison and was replace
 unlockAllWeapons checks all ten entries for isLocked and calls unlock when needed;
 it checks the array but does not add entry null guards. These methods now link
 natively in the SaveGame image. No existing decompiled function bodies changed.
+
+setWeapon selects the requested hand UID and model, preserves the retail device
+scene-manager call even though its result is unused, and finds the attachment
+on the stored Character node at offset 16. If the attachment exists and either
+the primary model exists or the type is zero, it removes all children. Nonzero
+types then attach the selected model and show both attachment and primary model.
+It returns the selected model. The two UID strings match all 32 bytes at 0x41d8dc.
+Character.h is only an observed prefix, not a recovered hierarchy.
+
+swapWeapon attaches the current weapon to the right hand. For non-double weapons
+it clears the player's left attachment (player node at offset 20). It reloads
+rockets for type 7 and sets the left hand for double/two-handed weapons or type 0.
+The index overload writes the current context's selected index, then swaps.
+
+isWeaponUsable checks player flag bit 10 at offset 240 and, when set, calls
+getVehicle through secondary virtual slot 188. The retail vtable identifies that
+slot as the offset-4 getVehicle thunk. Only a nonnull vehicle invokes the
+vehicle-specific check, which remains a retail binding. The flag's full meaning
+and the player hierarchy remain unverified.
+
+nextWeapon honors a valid unsigned limit index, saving the current index at
+28/32. Otherwise it restores an eligible saved weapon and clears the saved index,
+or cycles modulo ten until the requested number of eligible weapons is reached.
+Only rejected candidates increment the failure counter, which is bounded at ten;
+successful candidates decrement the requested count. The early draft incorrectly
+counted every iteration. Repeated table reads after method calls preserve retail
+aliasing behavior; no new bounds or null checks are added.
+
+The separate vehicle-switch attempt remains uncounted under nonmatching/combat.
+See README.md there for the command and exact mismatch. Disabling constant
+propagation for WeaponManager matches nextWeapon; the newly reconstructed
+attachment expression was adjusted to match with that same setting. No existing
+matched function body, other unit's compiler flags, or compiler output was edited.

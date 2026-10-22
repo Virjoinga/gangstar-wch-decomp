@@ -27,6 +27,11 @@ public:
     void limitToWeapon(int id, PlayerTest::eContext context);
     void lockAllWeapons();
     void unlockAllWeapons();
+    void swapWeapon();
+    void swapWeapon(int id);
+    bool isWeaponUsableFromVehicle(int type);
+    bool isWeaponUsable(int type);
+    Weapon* nextWeapon(int count);
     void setAmmo(int type, int count, PlayerTest::eContext context);
 private:
     Weapon** weapons[2];

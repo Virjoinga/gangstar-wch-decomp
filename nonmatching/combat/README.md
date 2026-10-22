@@ -22,8 +22,24 @@ and engine declarations describe observed offsets and call slots, not complete
 original classes. No existing matched definition or verified compiler flag was
 changed to accommodate this attempt.
 
-The verification image also links 21 matched WeaponManager symbols. A bounded
+The verification image also links 26 matched WeaponManager symbols. A bounded
 compiler-pass audit retained the verified flags: disabling block reordering
 changed Load to 452 bytes and broke 13 existing Weapon methods. Thirty-two
 combinations of inline timeline/list accessors and controller variable scopes
 still emitted the original 464-byte, nonmatching candidate. None was adopted.
+
+## WeaponManager vehicle usability
+
+Run `python nonmatching/combat/try_weapon_manager.py` to reproduce the uncounted
+40-byte vehicle switch. The runner exclusively creates a temporary normal build
+manifest and removes it on exit. The candidate returns false for types 0/7/8/9
+and true for 1..6; behavior outside that set remains unspecified. It still differs
+in the default-path return/block layout. The other 26 manager symbols, sections,
+16-byte vtable, hand UID strings and GOT region pass. Exact output:
+
+```text
+MISMATCH  _ZN13WeaponManager25isWeaponUsableFromVehicleEi  0x00331145
+  expected : 00 b5 09 29 00 d9 0b e0 01 23 8b 40 19 1c
+  actual   : 00 b5 09 29 00 d9 00 bd 01 23 8b 40 19 1c
+  differs at 0x6
+```

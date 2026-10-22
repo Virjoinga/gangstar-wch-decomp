@@ -36,7 +36,7 @@ public:
     virtual void unknown21(); virtual void unknown22(); virtual void unknown23();
     virtual void unknown24(); virtual void unknown25(); virtual void unknown26();
     virtual void addChild(ISceneNode* child);
-    virtual void unknown28(); virtual void unknown29();
+    virtual void unknown28(); virtual void removeAll();
     virtual void remove();
     virtual void unknown31(); virtual void unknown32(); virtual void unknown33();
     virtual void unknown34(); virtual void unknown35(); virtual void unknown36();
