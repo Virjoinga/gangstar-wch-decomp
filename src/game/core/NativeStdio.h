@@ -7,6 +7,7 @@ extern "C" {
     NativeFile* fopen(const char* name, const char* mode);
     int fclose(NativeFile* file);
     int fprintf(NativeFile* file, const char* format, ...);
+    int puts(const char* text);
     int printf(const char* format, ...);
     int sprintf(char* destination, const char* format, ...);
     int vprintf(const char* format, __builtin_va_list arguments);

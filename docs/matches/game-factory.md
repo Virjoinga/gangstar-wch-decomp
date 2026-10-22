@@ -58,7 +58,10 @@ parent manifest restore their mode metadata without changing instructions after
 compilation. Singleton BSS placement is required for references but is not
 credited data. These images remain verification images, not a full-game runtime.
 
-Verification: python tools/build.py game-factory and python tools/build.py
+The unit is now named gs3d-stuff and also verifies the state lifecycle described
+in [gs3d-state.md](gs3d-state.md). The six functions below retain their checks.
+
+Verification: python tools/build.py gs3d-stuff and python tools/build.py
 save-game both exit 0. Exact function output:
 
 ```text

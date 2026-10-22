@@ -221,7 +221,7 @@ callbacks, requires --address and a linked image, and retains all definition,
 Thumb address, size, byte and relocation checks:
 
 ```sh
-python3 tools/check.py build/matches/game-factory/game-factory.elf \
+python3 tools/check.py build/matches/gs3d-stuff/gs3d-stuff.elf \
   --func __tcf_2 --address 0x002dd06d --compiled-func __tcf_0
 ```
 

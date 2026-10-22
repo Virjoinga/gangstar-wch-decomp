@@ -2,17 +2,70 @@
 #define WCH_RENDERING_GS3D_STUFF_H
 
 #include "../core/SceneNode.h"
+#include "../core/StateBase.h"
+#include "../core/GameEvents.h"
 
 class BulletTraceManager;
+class TrailMgr;
+class OctTreeAABB;
+class DataStream;
+namespace irr { namespace video { class ITexture; } }
+namespace Structs {
+struct PhonePerformanceProfile {
+    int unknown0;
+    int unknown4;
+    char* textureNameSuffix;
+    void Read(DataStream&);
+};
+}
 
 namespace irr { namespace video {
 // Numeric values are observed; enumerator names are reconstruction labels.
 enum E_MATERIAL_FLAG { MaterialFlag2 = 2, MaterialFlag16 = 16 };
 } }
-namespace GS3DStuff {
-bool getProperty(const void* properties, const char* name, char* output);
-BulletTraceManager* GetBulletManager();
-void SetMaterialFlag(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_FLAG flag, bool enabled);
-}
+// Observed 28-byte prefix, two bases and their virtual slots only.
+// Do not instantiate or infer complete scene-state layout from this prefix.
+class GS3DStuff : public StateBase, public IEventReceiver {
+public:
+    GS3DStuff();
+    virtual ~GS3DStuff();
+    virtual void ctor(const StateMachine*);
+    virtual void dtor(const StateMachine*);
+    virtual void resume(const StateMachine*);
+    virtual void update(StateMachine*);
+    virtual void draw(const StateMachine*);
+    virtual void draw2d(const StateMachine*);
+    virtual void wakeup(const StateMachine*);
+    virtual bool isDrawable() { return drawable; }
+    virtual bool isKindOf(int kind) {
+        if (kind == 1) return true;
+        return StateBase::isKindOf(kind);
+    }
+    virtual void onEvent(const IEvent*, const EventManager*);
+
+    static bool getProperty(const void* properties, const char* name, char* output);
+    static BulletTraceManager* GetBulletManager();
+    static TrailMgr* GetTrailMgr();
+    // Retail returns zero; the source-level return type remains provisional.
+    static irr::scene::ISceneNode* OptimizeHierarchy(irr::scene::ISceneNode*);
+    static irr::scene::ISceneNode* getSkyBox();
+    static irr::video::ITexture* getSkyBoxTexture();
+    static char* getTextureNameSuffix();
+    static OctTreeAABB* getSceneOctTree();
+    static void SetMaterialFlag(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_FLAG flag, bool enabled);
+
+    static BulletTraceManager* s_bulletManager;
+    static TrailMgr* s_TrailMgr;
+    static irr::scene::ISceneNode* skyBox;
+    static irr::video::ITexture* skyBoxTexture;
+    static OctTreeAABB* sceneOcttree;
+    static Structs::PhonePerformanceProfile s_phonePerformanceProfile;
+private:
+    unsigned char unknown8[12];
+    bool unknownFlag20;
+    bool drawable;
+    unsigned char unknown22[2];
+    void* unknown24;
+};
 
 #endif
