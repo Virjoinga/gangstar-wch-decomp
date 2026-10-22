@@ -210,3 +210,28 @@ The library is not just game code. See [ENGINE.md](ENGINE.md) for the full
 breakdown. The short version: the engine and its dependencies are upstream
 open source and get vendored, not decompiled, so they are excluded from the
 matching budget.
+
+
+### Renumbered generated cleanup callbacks
+
+GCC numbers local destructor callbacks by emission order. A partial translation
+unit can therefore emit a retail __tcf_2 as __tcf_0 even when its code and linked
+address are exact. The explicit compiled-name selector supports only __tcf_N
+callbacks, requires --address and a linked image, and retains all definition,
+Thumb address, size, byte and relocation checks:
+
+```sh
+python3 tools/check.py build/matches/game-factory/game-factory.elf \
+  --func __tcf_2 --address 0x002dd06d --compiled-func __tcf_0
+```
+
+Its manifest selector is:
+
+```json
+{"name": "__tcf_2", "address": "0x002dd06d", "compiled_name": "__tcf_0"}
+```
+
+The comparison output discloses the compiled name. This selects the generated
+C++ definition; it does not rename a symbol, edit output, or claim an exact full
+ELF symbol table. Remove the mapping when the completed translation unit restores
+the original emission order. Other function-name mappings are rejected.

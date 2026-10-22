@@ -147,5 +147,73 @@ class DuplicateFunctionTests(unittest.TestCase):
                 self.assertIn("is not in synthetic.elf", stderr)
 
 
+class RenumberedCallbackTests(unittest.TestCase):
+    image = DuplicateFunctionTests.image
+    invoke = DuplicateFunctionTests.invoke
+    # Exercise the CLI with different compiler callback names while retaining
+    # all address, size, byte, definition and relocation requirements.
+    def renamed_image(self):
+        image = self.image()
+        for symbol in image.symbols:
+            symbol.name = "__tcf_0"
+        return image
+
+    def mapped(self, image, *arguments):
+        return self.invoke(image, "--address", "0x8005", "--compiled-func", "__tcf_0", *arguments)
+
+    def test_renumbered_callback_is_explicitly_reported(self):
+        code, stdout, stderr = self.mapped(self.renamed_image())
+        self.assertEqual((code, stderr), (0, ""))
+        self.assertEqual(stdout, "OK  __tcf_3  0x00008005  4 bytes (compiled: __tcf_0)\n")
+
+    def test_mapping_still_checks_selected_bytes(self):
+        image = self.renamed_image()
+        image.data = image.data[:4] + b"\x03\x20\x70\x47"
+        code, _, stderr = self.mapped(image)
+        self.assertEqual(code, 1)
+        self.assertIn("MISMATCH  __tcf_3  0x00008005 (compiled: __tcf_0)", stderr)
+
+    def test_mapping_rejects_wrong_address_and_size(self):
+        image = self.renamed_image()
+        image.symbols = [image.symbols[0]]
+        self.assertEqual(self.mapped(image)[0], 1)
+        image = self.renamed_image()
+        image.symbols[1].st_size = 2
+        self.assertEqual(self.mapped(image)[0], 1)
+
+    def test_mapping_rejects_import_and_absolute_symbols(self):
+        for section in (0, 0xfff1):
+            image = self.renamed_image()
+            image.symbols = [Symbol("__tcf_0", 0x8005, 4, STT_FUNC, 0, section)]
+            with self.subTest(section=section):
+                self.assertEqual(self.mapped(image)[0], 2)
+
+    def test_mapping_rejects_unresolved_selected_relocations(self):
+        image = self.renamed_image()
+        image.data += struct.pack("<II", 0x8004, 2)
+        image.sections.append(SimpleNamespace(
+            sh_type=9, sh_info=1, sh_entsize=8, sh_size=8, sh_offset=8))
+        code, stdout, _ = self.mapped(image)
+        self.assertEqual(code, 1)
+        self.assertIn("relocation(s)", stdout)
+
+    def test_mapping_requires_address_and_linked_image(self):
+        code, _, stderr = self.invoke(self.renamed_image(), "--compiled-func", "__tcf_0")
+        self.assertEqual(code, 2)
+        self.assertIn("require two __tcf_N", stderr)
+        image = self.renamed_image()
+        image.e_type = 1
+        self.assertEqual(self.mapped(image)[0], 2)
+
+    def test_mapping_rejects_ordinary_and_empty_function_names(self):
+        for name in ("probe", ""):
+            with self.subTest(name=name):
+                code, _, stderr = self.invoke(self.renamed_image(), "--address", "0x8005", "--compiled-func", name)
+                self.assertEqual(code, 2)
+                self.assertIn("require two __tcf_N", stderr)
+        code, _, _ = self.invoke(self.renamed_image(), "--func", "probe", "--address", "0x8005", "--compiled-func", "__tcf_0")
+        self.assertEqual(code, 2)
+
+
 if __name__ == "__main__":
     unittest.main()

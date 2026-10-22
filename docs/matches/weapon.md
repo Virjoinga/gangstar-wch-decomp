@@ -209,20 +209,22 @@ documented in weapon-manager.md; the integrated image retains every Weapon match
 
 ## Translation-unit cleanup callbacks
 
-__tcf_1 calls the weak CGameFactory complete-object destructor on the weak
-getInstance singleton storage. Both bindings are present in the retail symbol
-map; the factory implementation remains external. GCC 4.2.1 emitted an invalid
-weak member-destructor annotation in the first attempts, so the callback uses
-an explicit C ABI declaration of that existing destructor entry. No generated
-assembly is modified.
+__tcf_1 calls the weak CGameFactory complete-object destructor on its weak
+getInstance singleton storage. The factory's inline definitions now cause GCC
+to emit this cleanup from the ordinary local-static object lifetime, replacing
+the earlier hand-written ABI-entry call. The old explicit weak member declaration
+had produced an assembler error; that workaround is no longer needed. This is an
+existing matched function replacement, reverified with identical bytes. The
+factory lifecycle, singleton and node creation link natively through game-factory;
+see game-factory.md. Engine callees remain external.
 
 __tcf_3 checks the local string's reference byte at 29, null array and inline
 buffer at 13 before calling scalar delete. Its local storage is placed at
-0x004b9ba8. The used attributes retain these callbacks in standalone verification images. Existing matched bodies and compiler
-flags are unchanged. Verification with python tools/build.py weapon:
+0x004b9ba8. Its C++ body and compiler flags are unchanged. Verification with
+python tools/build.py weapon:
 
 ```text
-OK  __tcf_1  0x00330441  36 bytes
+OK  __tcf_1  0x00330441  36 bytes (compiled: __tcf_0)
 OK  __tcf_3  0x003309d5  48 bytes
 OK SECTION .weapon_factory_cleanup  0x00330440  36 bytes
 OK SECTION .weapon_string_cleanup  0x003309d4  48 bytes
@@ -230,5 +232,6 @@ OK SECTION .weapon_string_cleanup  0x003309d4  48 bytes
 
 The same sections are checked in the native SaveGame image. BSS layout is only
 an observed interface, not credited data. The startup initializer and wrapper
-now match as well; see local-startup.md.
+also still match; see local-startup.md. Their __dso_handle declaration now uses
+the compiler-compatible void* type and C++ linkage, with no instruction changes.
 Weapon::Load is the only remaining pending Weapon.cpp function.

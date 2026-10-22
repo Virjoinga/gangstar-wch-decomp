@@ -47,3 +47,8 @@ The integrated SaveGame image also compares all native dependency functions,
 code sections, vtables, shared empty text and the global GOT region. The three
 remaining near misses are Weapon::Load, WeaponManager's vehicle switch, and
 SaveGame::SampleAndSave; their assembly remains and they receive no credit.
+
+
+Factory integration updates the external __dso_handle declaration in all three
+units to the compiler's void* type and C++ linkage. The address is still passed
+to __aeabi_atexit and every initializer retains its verified bytes and flags.

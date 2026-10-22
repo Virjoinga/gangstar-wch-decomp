@@ -22,19 +22,8 @@
 #include "../core/Collada.h"
 #include "../rendering/GS3DStuff.h"
 
-// Storage owned by the still-external CGameFactory::getInstance implementation.
-extern "C" CGameFactory _ZZN12CGameFactory11getInstanceEvE2gf __attribute__((weak));
-// GCC 4.2.1 mis-emits a weak destructor member declaration; use its ABI entry.
-extern "C" void _ZN12CGameFactoryD1Ev(CGameFactory*) __attribute__((weak));
-
 void operator delete(void*) throw();
 extern "C" {
-static void __tcf_1() __attribute__((used));
-static void __tcf_1()
-{
-    _ZN12CGameFactoryD1Ev(&_ZZN12CGameFactory11getInstanceEvE2gf);
-}
-
 static void __tcf_3() __attribute__((used));
 static void __tcf_3()
 {
@@ -437,8 +426,8 @@ extern const unsigned int guard_trans[] __attribute__((visibility("hidden")));
 extern const unsigned int scripted_vehicle_trans[] __attribute__((visibility("hidden")));
 }
 
+extern void* __dso_handle;
 extern "C" {
-extern char __dso_handle;
 int __aeabi_atexit(void*, void (*)(void*), void*);
 void* _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(void*, const char*) __attribute__((weak));
 }

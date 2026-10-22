@@ -1,0 +1,60 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-fdata-sections",
+        "-finline-limit=40",
+        "-fno-short-enums"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "source": "src/game/rendering/GS3DStuff.cpp",
+    "linker_script": "config/linker/GameFactory.ld",
+    "functions": [
+        "_ZN12CGameFactoryD0Ev",
+        "_ZN12CGameFactoryD1Ev",
+        "_ZN12CGameFactory11getInstanceEv",
+        "_ZN12CGameFactory10createNodeERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE",
+        {
+            "name": "__tcf_2",
+            "address": "0x002dd06d",
+            "compiled_name": "__tcf_0"
+        },
+        "_ZN9GS3DStuff11getPropertyEPKvPKcPc"
+    ],
+    "sections": [
+        ".factory_d0",
+        ".factory_d1",
+        ".factory_singleton",
+        ".factory_create",
+        ".factory_cleanup",
+        ".factory_property",
+        ".factory_vtable",
+        ".factory_billboard_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "external_thumb_functions": [
+        "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
+        "_ZN24CustomBillboardSceneNodeC1ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE"
+    ]
+}

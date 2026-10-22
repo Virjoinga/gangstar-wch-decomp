@@ -43,6 +43,14 @@ class SectionComparisonTests(unittest.TestCase):
                          ["--func", "__tcf_3", "--address", "0x0033116d"])
         self.assertEqual(comparison_arguments("probe"), ["--func", "probe"])
 
+    def test_compiled_callback_name_reaches_cli(self):
+        self.assertEqual(comparison_arguments({"name": "__tcf_2", "address": "0x002dd06d",
+                                               "compiled_name": "__tcf_0"}),
+                         ["--func", "__tcf_2", "--address", "0x002dd06d", "--compiled-func", "__tcf_0"])
+        for value in (None, "", True, 3):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                comparison_arguments({"name": "__tcf_2", "address": 1, "compiled_name": value})
+
     def test_bad_function_selectors_are_rejected(self):
         for entry in [{"name": "probe"}, {"name": "probe", "address": True},
                       {"name": "probe", "address": -1},

@@ -149,6 +149,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--func", required=True, help="the mangled symbol to check")
     parser.add_argument("--address", type=lambda value: int(value, 0),
                         help="retail symbol address, including the ARM Thumb marker")
+    parser.add_argument("--compiled-func", help="explicit compiled name for a renumbered __tcf_N callback")
     parser.add_argument("--baselib", help="path to the retail libsanangeles.so")
     args = parser.parse_args(argv)
 
@@ -163,6 +164,17 @@ def main(argv: list[str] | None = None) -> int:
         print("expected an ARM relocatable object or linked image", file=sys.stderr)
         return 2
 
+    compiled_name = args.func if args.compiled_func is None else args.compiled_func
+    mapping_suffix = f" (compiled: {compiled_name})" if args.compiled_func is not None else ""
+    if args.compiled_func is not None:
+        import re
+        if (args.address is None or obj.e_type not in (ET_EXEC, ET_DYN)
+                or not re.fullmatch(r"__tcf_[0-9]+", args.func)
+                or not re.fullmatch(r"__tcf_[0-9]+", compiled_name)):
+            print("compiled-name mappings require two __tcf_N callback names, "
+                  "--address, and a linked image", file=sys.stderr)
+            return 2
+
     try:
         retail_symbol = select_function(retail, args.func, args.address)
         if retail_symbol is None:
@@ -171,18 +183,18 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         symbol = None
         if obj.e_type in (ET_EXEC, ET_DYN):
-            symbol = select_function(obj, args.func, retail_symbol.st_value)
+            symbol = select_function(obj, compiled_name, retail_symbol.st_value)
         if symbol is None:
             # A single misplaced definition still gets the normal address error.
-            symbol = select_function(obj, args.func)
+            symbol = select_function(obj, compiled_name)
     except ValueError as error:
         print(str(error), file=sys.stderr)
         return 2
     if symbol is None:
-        print(f"{args.func} is not in {args.object}", file=sys.stderr)
+        print(f"{compiled_name} is not in {args.object}", file=sys.stderr)
         return 2
 
-    relocations = relocations_for(obj, args.func, symbol=symbol)
+    relocations = relocations_for(obj, compiled_name, symbol=symbol)
     if relocations:
         print(
             f"{args.func} has {len(relocations)} relocation(s); the bytes cannot be "
@@ -202,12 +214,12 @@ def main(argv: list[str] | None = None) -> int:
     ok, detail = compare(expected, actual)
     if ok:
         print(
-            "OK  %s  0x%08x  %d bytes" % (args.func, retail_symbol.st_value, len(actual))
+            "OK  %s  0x%08x  %d bytes%s" % (args.func, retail_symbol.st_value, len(actual), mapping_suffix)
         )
         return 0
 
     print(
-        "MISMATCH  %s  0x%08x" % (args.func, retail_symbol.st_value),
+        "MISMATCH  %s  0x%08x%s" % (args.func, retail_symbol.st_value, mapping_suffix),
         file=sys.stderr,
     )
     print(detail, file=sys.stderr)
