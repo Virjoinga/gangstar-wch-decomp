@@ -8,7 +8,32 @@ _ZdlPv = 0x001c42b0;
 __aeabi_idivmod = 0x001c4934;
 _Znaj = 0x001c3ff8;
 __aeabi_idiv = 0x001c43dc;
+__aeabi_atexit = 0x001c494c;
+_ZN26retail_manager_transitions16civPassive_transE = 0x004283f8;
+_ZN26retail_manager_transitions17scriptedNpc_transE = 0x00428524;
+_ZN26retail_manager_transitions19civAggressive_transE = 0x00428554;
+_ZN26retail_manager_transitions16gangMember_transE = 0x00428638;
+_ZN26retail_manager_transitions9cop_transE = 0x00428644;
+_ZN26retail_manager_transitions10swat_transE = 0x0042877c;
+_ZN26retail_manager_transitions17civ_vehicle_transE = 0x00428788;
+_ZN26retail_manager_transitions17cop_vehicle_transE = 0x00428818;
+_ZN26retail_manager_transitions11guard_transE = 0x004288cc;
+_ZN26retail_manager_transitions22scripted_vehicle_transE = 0x00428974;
 SECTIONS {
+    .manager_startup_initialization 0x00331b10 : { *weapon-manager.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .manager_startup_wrapper 0x00331c54 : { *weapon-manager.o(.text._GLOBAL__I__ZN13WeaponManagerC2Ev) }
+    .manager_startup_half 0x004b9c44 (NOLOAD) : { *weapon-manager.o(.bss._ZN3irr2ps5vHalfE) }
+    .manager_startup_record_0 0x004b9c50 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .manager_startup_record_1 0x004b9c58 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .manager_startup_record_2 0x004b9c60 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .manager_startup_record_3 0x004b9c68 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .manager_startup_record_4 0x004b9c70 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai3copE) }
+    .manager_startup_record_5 0x004b9c78 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai4swatE) }
+    .manager_startup_record_6 0x004b9c80 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .manager_startup_record_7 0x004b9c88 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .manager_startup_record_8 0x004b9c90 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai5guardE) }
+    .manager_startup_record_9 0x004b9c98 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .startup_empty_text 0x0044d91c : { *weapon-manager.o(.rodata.str1.*) }
     .manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }
     .manager_local_string 0x004b9c24 (NOLOAD) : { *weapon-manager.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .manager_retention_cost 0x00331a08 : { *weapon-manager.o(.text._ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv) }

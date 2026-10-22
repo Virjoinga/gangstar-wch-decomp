@@ -89,7 +89,12 @@
         ".weapon_manager_retention_cost",
         ".weapon_manager_string_cleanup",
         ".weapon_factory_cleanup",
-        ".weapon_string_cleanup"
+        ".weapon_string_cleanup",
+        ".manager_startup_initialization",
+        ".manager_startup_wrapper",
+        ".weapon_startup_initialization",
+        ".weapon_startup_wrapper",
+        ".startup_empty_text"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -140,7 +145,12 @@
         {
             "name": "__tcf_3",
             "address": "0x003309d5"
-        }
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0033087d"
+        },
+        "_GLOBAL__I__ZN6WeaponC2Ei"
     ],
     "dependencies": [
         "level-object",

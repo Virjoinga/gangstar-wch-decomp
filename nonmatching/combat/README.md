@@ -14,7 +14,7 @@ MISMATCH  _ZN6Weapon4LoadERKN7Structs6WeaponE  0x00330665
   differs at 0x66
 ```
 
-All 40 native Weapon symbols, LevelObject construction, the Weapon vtable,
+All 44 native Weapon symbols, LevelObject construction, the Weapon vtable,
 flash UID and global GOT region pass in this image. The loading function's
 assembly remains in the work queue. Its timeline-reset block ordering differs;
 source and compiler-flag experiments have not resolved it. Shared descriptor
@@ -22,7 +22,7 @@ and engine declarations describe observed offsets and call slots, not complete
 original classes. No existing matched definition or verified compiler flag was
 changed to accommodate this attempt.
 
-The verification image also links 31 matched WeaponManager symbols. A bounded
+The verification image also links 34 matched WeaponManager symbols. A bounded
 compiler-pass audit retained the verified flags: disabling block reordering
 changed Load to 452 bytes and broke 13 existing Weapon methods. Thirty-two
 combinations of inline timeline/list accessors and controller variable scopes
@@ -34,7 +34,7 @@ Run `python nonmatching/combat/try_weapon_manager.py` to reproduce the uncounted
 40-byte vehicle switch. The runner exclusively creates a temporary normal build
 manifest and removes it on exit. The candidate returns false for types 0/7/8/9
 and true for 1..6; behavior outside that set remains unspecified. It still differs
-in the default-path return/block layout. The other 31 manager symbols, sections,
+in the default-path return/block layout. The other 34 manager symbols, sections,
 16-byte vtable, hand UID strings and GOT region pass. Exact output:
 
 ```text
@@ -44,27 +44,5 @@ MISMATCH  _ZN13WeaponManager25isWeaponUsableFromVehicleEi  0x00331145
   differs at 0x6
 ```
 
-
-## Weapon startup initialization
-
-Run `python nonmatching/combat/try_weapon_startup.py`. It uses the normal builder
-and removes its exclusively created temporary manifest on exit. The 324-byte
-initializer clears and initializes its local string, registers its cleanup,
-sets vHalf to (0.5, 0.5, 0.5), and fills ten transition-list records. Transition
-tables remain hidden retail imports with their original addresses; their contents
-are not reconstructed or credited. The 20-byte global wrapper matches in this
-verification image, but neither startup function is counted while the initializer
-is pending. Both assembly files remain. Exact initializer output:
-
-```text
-MISMATCH  _Z41__static_initialization_and_destruction_0ii  0x0033087d
-  expected : 2b 4a 2b 4b a2 18 e3 18 13 60 4b 23 53 60 29 4a
-  actual   : 2b 4a 2b 4b a2 18 e3 18 1a 60 4b 22 5a 60 29 4a
-  differs at 0x4e
-```
-
-The initial chained vector assignment reversed its store order (first mismatch
-0x40). Separate stores, a reversed chain and inline setters restore that order
-but still differ in transition-record register allocation. An aggregate copy
-produced oversized code and was rejected. The retained attempt leaves existing
-matched bodies and flags unchanged.
+The former Weapon startup attempt now matches and has moved into the native
+source. See docs/matches/local-startup.md for the exact comparison evidence.

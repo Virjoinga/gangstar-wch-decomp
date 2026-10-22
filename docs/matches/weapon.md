@@ -1,6 +1,6 @@
 # Weapon accessors and lifecycle
 
-42 Weapon.cpp symbols match, totaling 2950 catalogue function bytes including
+44 Weapon.cpp symbols match, totaling 3294 catalogue function bytes including
 constructor/destructor aliases. Complete native code sections, the 168-byte
 Weapon vtable, native LevelObject construction and the global GOT region match.
 The original 18 accessor/classification/lock symbols contribute 240 bytes;
@@ -218,8 +218,7 @@ assembly is modified.
 
 __tcf_3 checks the local string's reference byte at 29, null array and inline
 buffer at 13 before calling scalar delete. Its local storage is placed at
-0x004b9ba8. The used attributes retain these callbacks until their corresponding
-initialization paths are reconstructed. Existing matched bodies and compiler
+0x004b9ba8. The used attributes retain these callbacks in standalone verification images. Existing matched bodies and compiler
 flags are unchanged. Verification with python tools/build.py weapon:
 
 ```text
@@ -230,5 +229,6 @@ OK SECTION .weapon_string_cleanup  0x003309d4  48 bytes
 ```
 
 The same sections are checked in the native SaveGame image. BSS layout is only
-an observed interface, not credited data. The larger startup initializer remains
-uncounted under nonmatching/combat; its original assembly stays in the queue.
+an observed interface, not credited data. The startup initializer and wrapper
+now match as well; see local-startup.md.
+Weapon::Load is the only remaining pending Weapon.cpp function.
