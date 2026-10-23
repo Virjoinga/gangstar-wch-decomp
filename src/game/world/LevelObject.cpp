@@ -9,6 +9,7 @@
  */
 
 #include "LevelObject.h"
+#include "../core/CameraManager.h"
 #include "../core/LocalStartupStorage.h"
 #include "SceneNodeManager.h"
 #include "../characters/PhysicAttributes.h"
@@ -63,6 +64,19 @@ void LevelObject::setup()
 }
 
 bool LevelObject::isEnabled() const { return unknown4 & 1; }
+
+bool LevelObject::isVisibleOnScreen()
+{
+    irr::scene::ISceneNode* mesh = static_cast<irr::scene::ISceneNode*>(getSkinMesh());
+    if (!mesh) return false;
+    const irr::scene::SViewFrustum* frustum = CameraManager::getInstance()->getCamera()->getViewFrustum();
+    return frustum->intersects(mesh->getTransformedBoundingBox());
+}
+
+bool LevelObject::isWithinRange(float range)
+{
+    return CameraManager::getInstance()->getCamera()->getPosition().getDistanceFrom(GetPosition()) <= range;
+}
 
 irr::core::vector3d<float> LevelObject::GetPosition() const
 {

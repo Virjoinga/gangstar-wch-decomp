@@ -69,7 +69,9 @@
             "name": "_Z41__static_initialization_and_destruction_0ii",
             "address": "0x0031787d"
         },
-        "_GLOBAL__I__ZN11LevelObject12s_highlightsE"
+        "_GLOBAL__I__ZN11LevelObject12s_highlightsE",
+        "_ZN11LevelObject17isVisibleOnScreenEv",
+        "_ZN11LevelObject13isWithinRangeEf"
     ],
     "sections": [
         ".text",
@@ -163,7 +165,9 @@
         ".level_string_cleanup",
         ".level_startup",
         ".level_startup_wrapper",
-        ".level_empty_text"
+        ".level_empty_text",
+        ".level_visible",
+        ".level_range"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -195,7 +199,9 @@
         "_ZN11CHudManager4showEv",
         "_ZN9ResStreamC1EPKci",
         "_ZN9ResStreamD1Ev",
-        "_ZN12BufferStream5CloseEv"
+        "_ZN12BufferStream5CloseEv",
+        "_ZN13CameraManager11getInstanceEv",
+        "_ZNK13CameraManager9getCameraEv"
     ],
     "dependencies": [
         "gs3d-stuff",
