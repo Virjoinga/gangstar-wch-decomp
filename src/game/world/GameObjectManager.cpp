@@ -11,7 +11,11 @@
 #include "GameObjectManager.h"
 #include "LevelObject.h"
 #include "ObjectData.h"
+#include "ResStream.h"
 #include "../persistence/DataStream.h"
+#include "../persistence/BufferStream.h"
+
+extern "C" int strncasecmp(const char*, const char*, unsigned int);
 
 GameObjectManager* GameObjectManager::s_gom = 0;
 
@@ -234,6 +238,57 @@ void Structs::Path::Read(DataStream& stream)
     count = stream.ReadInt();
     values = new int[count];
     for (int i = 0; i < count; ++i) values[i] = stream.ReadInt();
+}
+
+LevelObject* GameObjectManager::CreateGameObjectFromMetatype(int type)
+{
+    BufferStream buffer(1, metatypeSizes[type], metatypeData[type]);
+    DataStream stream(buffer, DataStream::BigEndian);
+    LevelObject* object = LoadGameObject(stream);
+    object->objectType = type;
+    return object;
+}
+
+LevelObject* GameObjectManager::SpawnGameObject(int type)
+{
+    LevelObject* object = CreateGameObjectFromMetatype(type);
+    Add(object, object->unknown40);
+    delete[] object->unknown28;
+    object->unknown28 = 0;
+    return object;
+}
+
+int GameObjectManager::GetMetatypeFromName(const char* name)
+{
+    int result = -1;
+    int bestLength = 0;
+    for (int i = 0; i < metatypeCount; ++i) {
+        BufferStream buffer(1, metatypeSizes[i], metatypeData[i]);
+        DataStream stream(buffer, DataStream::BigEndian);
+        if (stream.ReadInt() != -1) {
+            int length = stream.ReadInt();
+            const char* candidate = buffer.GetPtr();
+            if (length > bestLength && strncasecmp(name, candidate, length) == 0) {
+                result = i;
+                bestLength = length;
+            }
+        }
+    }
+    return result;
+}
+
+void GameObjectManager::LoadMetatypes()
+{
+    ResStream buffer("./metatypes.gmap", 1);
+    DataStream stream(buffer, DataStream::BigEndian);
+    metatypeCount = stream.ReadInt();
+    metatypeData = new unsigned char*[metatypeCount];
+    metatypeSizes = new int[metatypeCount];
+    for (int i = 0; i < metatypeCount; ++i) {
+        metatypeSizes[i] = stream.ReadInt();
+        metatypeData[i] = new unsigned char[metatypeSizes[i]];
+        stream.Read(metatypeData[i], metatypeSizes[i]);
+    }
 }
 
 GameObjectManager::GameObjectManager()

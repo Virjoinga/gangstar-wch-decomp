@@ -55,7 +55,11 @@
         "_ZN7Structs11SceneCamera4ReadER10DataStream",
         "_ZN7Structs10Checkpoint4ReadER10DataStream",
         "_ZN7Structs10SpawnPoint4ReadER10DataStream",
-        "_ZN7Structs4Path4ReadER10DataStream"
+        "_ZN7Structs4Path4ReadER10DataStream",
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
+        "_ZN17GameObjectManager15SpawnGameObjectEi",
+        "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
+        "_ZN17GameObjectManager13LoadMetatypesEv"
     ],
     "sections": [
         ".text",
@@ -136,7 +140,22 @@
         ".datastream_text",
         ".datastream_vtable",
         ".streamtext",
-        ".streamvtable"
+        ".streamvtable",
+        ".metatype_create",
+        ".metatype_spawn",
+        ".metatype_lookup",
+        ".bufferstream_text",
+        ".bufferstream_vtable",
+        ".metatype_load",
+        ".metatype_filename",
+        ".resstream_text",
+        ".resdep_text",
+        ".resdep_modes",
+        ".resdep_rodata",
+        ".resdep_vtable",
+        ".resdep_pathtext",
+        ".resdep_debugtext",
+        ".resdep_debugrodata"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -149,13 +168,18 @@
         "_ZN4Lock9setTargetEP11LevelObject",
         "_ZN11LevelObject11GetMetatypeEv",
         "_ZN11LevelObject7SetNameEPKc",
-        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
-        "_ZN17GameObjectManager13LoadMetatypesEv"
+        "_ZN17GameObjectManager14LoadGameObjectER10DataStream",
+        "_ZN9ResStreamD1Ev"
     ],
     "dependencies": [
         "game-object-list",
         "level-object",
         "data-stream",
-        "stream"
+        "stream",
+        "buffer-stream",
+        "res-stream",
+        "file-stream",
+        "path-name",
+        "debug-log"
     ]
 }

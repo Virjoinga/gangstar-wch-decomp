@@ -27,6 +27,7 @@ public:
     using Stream::Write;
 
 private:
+    friend class ResStream;
     char localBuffer[1024];
     int mode;
     char* data;
