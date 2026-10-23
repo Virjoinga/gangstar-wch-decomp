@@ -17,6 +17,7 @@ public:
 class EventManager {
 public:
     bool detach(int eventID, IEventReceiver* receiver);
+    bool attach(int eventID, IEventReceiver* receiver);
 };
 
 #endif

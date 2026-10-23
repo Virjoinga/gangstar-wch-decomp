@@ -4,11 +4,17 @@
 #include "../core/SceneNode.h"
 #include "../core/StateBase.h"
 #include "../core/GameEvents.h"
+#include "../core/PointerVector.h"
 
 class BulletTraceManager;
 class TrailMgr;
 class OctTreeAABB;
 class DataStream;
+class Vehicle;
+class Item;
+class LevelObject;
+class PlayerTest;
+class GameObjectManager;
 namespace irr { namespace video { class ITexture; } }
 namespace Structs {
 struct PhonePerformanceProfile {
@@ -61,12 +67,19 @@ public:
     static OctTreeAABB* sceneOcttree;
     static Structs::PhonePerformanceProfile s_phonePerformanceProfile;
     static unsigned int lastTime;
+    static Vehicle* s_vehicle;
+    static PlayerTest* playerTest;
+    static GameObjectManager* gom;
+    LevelObject* checkForDespawn(LevelObject*);
+    void checkVehicleProximity(std::vector<Vehicle*>&);
+    void checkPickableProximity(std::vector<Item*>&);
+    void updateVisibility(unsigned int);
 private:
     unsigned char unknown8[12];
     bool unknownFlag20;
     bool drawable;
     unsigned char unknown22[2];
-    void* unknown24;
+    int unknown24;
 };
 
 #endif

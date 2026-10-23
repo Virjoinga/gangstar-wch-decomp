@@ -61,6 +61,8 @@ public:
     void setCash(int value);
     void switchContext(eContext context, bool flag);
     void Respawn();
+    void Update();
+    void UpdateSceneNode();
     unsigned char unknown8[12];
     irr::scene::ISceneNode* sceneNode;
     unsigned char unknown24[216];

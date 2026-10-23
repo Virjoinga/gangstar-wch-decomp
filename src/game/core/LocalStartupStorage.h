@@ -2,7 +2,7 @@
 #define WCH_CORE_LOCAL_STARTUP_STORAGE_H
 
 // Standard placement construction for the partial SDK declarations used here.
-inline void* operator new(unsigned int, void* memory) throw() { return memory; }
+#include "PlacementNew.h"
 
 namespace irr { namespace scene { namespace quake3 {
 // Observed fork layout; the engine string implementation remains external.

@@ -31,7 +31,7 @@ public:
     virtual void unknown9(); virtual void unknown10(); virtual void unknown11();
     virtual void unknown12(); virtual void unknown13(); virtual void unknown14();
     virtual void unknown15(); virtual void unknown16(); virtual void unknown17();
-    virtual void unknown18(); virtual void unknown19();
+    virtual bool isVisible() const; virtual void unknown19();
     virtual void setVisible(bool visible);
     virtual void unknown21(); virtual void unknown22(); virtual void unknown23();
     virtual void unknown24(); virtual void unknown25(); virtual void unknown26();
