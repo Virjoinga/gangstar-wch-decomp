@@ -88,6 +88,9 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
     if name in active:
         raise ValueError("cyclic build dependency: " + " -> ".join((*active, name)))
     manifest = json.loads((ROOT / "config" / "matches" / f"{name}.json").read_text())
+    source_first = manifest.get("source_first", False)
+    if not isinstance(source_first, bool):
+        raise ValueError("source_first must be a boolean")
     dependency_objects = []
     for dependency in manifest.get("dependencies", []):
         if not build_unit(dependency, compiler_root, base_library, (*active, name)):
@@ -118,7 +121,7 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
         run([str(binary / "arm-eabi-g++"), *manifest["compiler_flags"],
              "-c", manifest["source"], "-o", obj], environment)
 
-    objects = [*dependency_objects, obj]
+    objects = [obj, *dependency_objects] if source_first else [*dependency_objects, obj]
     if manifest.get("retail_got"):
         retail, _ = load_base_library(base_library)
         dependencies = tuple(ElfFile.load(str(ROOT / path)) for path in dependency_objects)

@@ -77,7 +77,11 @@ printf = 0x001c4058;
 puts = 0x001c41b4;
 __aeabi_fmul = 0x001c4724;
 __aeabi_i2f = 0x001c41e4;
+
 SECTIONS {
+    .level_highlight_load 0x00316a84 : { *level-object.o(.text._ZN11LevelObject14loadHighlightsEPKc) }
+    .level_factory_cleanup 0x003168e4 : { *level-object.o(.text.__tcf_0) }
+
     .level_destructor_delete 0x00317240 : { *level-object.o(.text._ZN11LevelObjectD0Ev) }
     .level_destructor 0x003172e4 : { *level-object.o(.text._ZN11LevelObjectD1Ev .text._ZN11LevelObjectD2Ev) }
     .level_highlight_free 0x00316908 : { *level-object.o(.text._ZN11LevelObject14freeHighlightsEv) }

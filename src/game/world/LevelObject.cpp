@@ -16,6 +16,9 @@
 #include "../app/Application.h"
 #include "../core/Collada.h"
 #include "../core/NativeStdio.h"
+#include "../app/CGameFactory.h"
+#include "../persistence/DataStream.h"
+#include "ResStream.h"
 #include "../rendering/GS3DStuff.h"
 #include "../characters/PlayerTest.h"
 #include "../core/Lock.h"
@@ -91,6 +94,24 @@ unsigned char LevelObject::GetMetatype()
 {
     if (objectType == 0xff) objectType = GameObjectManager::s_gom->GetMetatypeFromName(unknown28);
     return objectType;
+}
+
+void LevelObject::loadHighlights(const char* filename)
+{
+    ResStream buffer(filename, 1);
+    DataStream stream(buffer, DataStream::BigEndian);
+    int count = stream.ReadInt();
+    s_highlights = new int[count];
+    for (int i = 0; i < count; ++i) {
+        char* name = stream.ReadAndAllocateString();
+        s_highlights[i] = SceneNodeManager::getInstance()->findOrCreatePool(name, 6, CGameFactory::getInstance());
+        delete[] name;
+    }
+    count = stream.ReadInt();
+    s_highlightsIcons = new int[count];
+    for (int i = 0; i < count; ++i) s_highlightsIcons[i] = stream.ReadInt();
+    stream.Close();
+    buffer.Close();
 }
 
 void LevelObject::SetRotation(const irr::core::vector3d<float>& rotation)

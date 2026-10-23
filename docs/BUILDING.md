@@ -235,3 +235,13 @@ The comparison output discloses the compiled name. This selects the generated
 C++ definition; it does not rename a symbol, edit output, or claim an exact full
 ELF symbol table. Remove the mapping when the completed translation unit restores
 the original emission order. Other function-name mappings are rejected.
+
+### Primary object precedence
+
+Linked manifests may set `source_first: true` to pass the primary object before
+native dependency objects to GNU ld. The default remains dependencies first.
+This controls ordinary weak-definition selection when the primary translation
+unit and a dependency both emit the same inline SDK/factory methods. The retail
+GOT harness still precedes all game objects, and every existing comparison runs.
+The saved GS3D update image uses this to select its own factory methods before
+LevelObject's copies. Non-Boolean flag values are rejected before compilation.

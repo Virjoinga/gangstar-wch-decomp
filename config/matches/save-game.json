@@ -203,7 +203,9 @@
         ".level_destructor_delete",
         ".level_destructor",
         ".level_highlight_free",
-        ".level_setup"
+        ".level_setup",
+        ".level_highlight_load",
+        ".level_factory_cleanup"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -252,8 +254,8 @@
     ],
     "dependencies": [
         "gs3d-stuff",
-        "stream",
         "data-stream",
+        "stream",
         "persistence",
         "path-name",
         "debug-log",
@@ -310,6 +312,9 @@
         "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
         "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
-        "_ZN16PhysicAttributesD1Ev"
+        "_ZN16PhysicAttributesD1Ev",
+        "_ZN9ResStreamC1EPKci",
+        "_ZN9ResStreamD1Ev",
+        "_ZN12BufferStream5CloseEv"
     ]
 }
