@@ -25,3 +25,13 @@ LevelObject::LevelObject(int)
     unknown44 = -1;
     unknown48 = -1;
 }
+
+void LevelObject::Update(int)
+{
+    if (s_nodePoolID[objectType] == 0xff) return;
+    if (sceneNode) {
+        if (!(unknown4 & 2)) dropSceneNode();
+    } else if (unknown4 & 2) {
+        grabSceneNode(0, 0);
+    }
+}

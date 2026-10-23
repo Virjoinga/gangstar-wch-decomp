@@ -10826,7 +10826,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316a85	0x140	LevelObject.cpp	game	world	pending	_ZN11LevelObject14loadHighlightsEPKc	LevelObject::loadHighlights(char const*)
 0x00316bc5	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE	LevelObject::SetRotation(irr::core::vector3d<float> const&)
 0x00316c29	0x98	LevelObject.cpp	game	world	pending	_ZN11LevelObject13grabSceneNodeEiPPPv	LevelObject::grabSceneNode(int, void***)
-0x00316cc1	0x48	LevelObject.cpp	game	world	pending	_ZN11LevelObject6UpdateEi	LevelObject::Update(int)
+0x00316cc1	0x48	LevelObject.cpp	game	world	matched	_ZN11LevelObject6UpdateEi	LevelObject::Update(int)
 0x00316d09	0x114	LevelObject.cpp	game	world	pending	_ZN11LevelObject13showHighlightEi	LevelObject::showHighlight(int)
 0x00316e1d	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject13dropSceneNodeEv	LevelObject::dropSceneNode()
 0x00316e81	0xd4	LevelObject.cpp	game	world	pending	_ZN11LevelObject7disableEv	LevelObject::disable()

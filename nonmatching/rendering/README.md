@@ -1,8 +1,8 @@
 # GS3DStuff::update near match
 
 This is an **uncounted near miss**. The retail update function and its two local
-vector cleanup callbacks keep their assembly files. Progress remains 389/4661
-functions and 21764/575264 bytes (3.78%). No partial-match credit is exported.
+vector cleanup callbacks keep their assembly files. Progress remains 390/4661
+functions and 21836/575264 bytes (3.80%). No partial-match credit is exported.
 
 Run from the repository root:
 
@@ -109,7 +109,7 @@ interface and the existing startup helpers.
 - `python -m unittest discover -s tests`: 67 tests; OK.
 - `python tools/check_repository.py`: all checks passed.
 - `python tools/progress.py --check` and `python tools/bytematch.py`: unchanged
-  389/4661 functions, 21764/575264 bytes (3.78%).
+  390/4661 functions, 21836/575264 bytes (3.80%).
 
 Existing ordinary-build near misses remain unchanged and exit 1:
 
@@ -131,3 +131,12 @@ MISMATCH  _ZN8SaveGame13SampleAndSaveEPKc  0x00344821
   differs at 0x3e
 ```
 
+
+The current image also links the native LevelObject implementation directly.
+Its constructors and 72-byte Update method pass as dependencies; both code
+sections are checked in this image. This strengthens the recovered call
+interface without changing the four-byte GS3DStuff near miss.
+
+Additional bounded source probes using equivalent while/for conditions, named
+loop temporaries and allocator-aware vector construction retained the same four
+bytes of difference. None was substituted into the committed attempt.

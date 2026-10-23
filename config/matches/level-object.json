@@ -29,13 +29,15 @@
     "linker_script": "config/linker/LevelObject.ld",
     "functions": [
         "_ZN11LevelObjectC1Ei",
-        "_ZN11LevelObjectC2Ei"
+        "_ZN11LevelObjectC2Ei",
+        "_ZN11LevelObject6UpdateEi"
     ],
     "sections": [
         ".text",
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".levelobject_update"
     ]
 }
