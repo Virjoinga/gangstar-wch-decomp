@@ -26,8 +26,11 @@ public:
     vector3d() : X(0), Y(0), Z(0) {}
     vector3d(T x, T y, T z) : X(x), Y(y), Z(z) {}
     vector3d<T> operator*(T scalar) const { return vector3d<T>(X * scalar, Y * scalar, Z * scalar); }
+    vector3d<T> operator+(const vector3d<T>& other) const { return vector3d<T>(X + other.X, Y + other.Y, Z + other.Z); }
+    vector3d<T> operator-(const vector3d<T>& other) const { return vector3d<T>(X - other.X, Y - other.Y, Z - other.Z); }
     vector3d<T> operator-() const { return vector3d<T>(-X, -Y, -Z); }
     vector3d(const vector3d& other) : X(other.X), Y(other.Y), Z(other.Z) {}
+    vector3d<T>& operator=(const vector3d<T>& other) { X=other.X; Y=other.Y; Z=other.Z; return *this; }
     T getLength() const { return (T) sqrt((double)(X*X + Y*Y + Z*Z)); }
     T getDistanceFrom(const vector3d<T>& other) const {
         return vector3d<T>(X - other.X, Y - other.Y, Z - other.Z).getLength();

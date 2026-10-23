@@ -71,7 +71,9 @@
         },
         "_GLOBAL__I__ZN11LevelObject12s_highlightsE",
         "_ZN11LevelObject17isVisibleOnScreenEv",
-        "_ZN11LevelObject13isWithinRangeEf"
+        "_ZN11LevelObject13isWithinRangeEf",
+        "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
+        "_ZN11LevelObject12getSpawnTypeEv"
     ],
     "sections": [
         ".text",
@@ -167,7 +169,9 @@
         ".level_startup_wrapper",
         ".level_empty_text",
         ".level_visible",
-        ".level_range"
+        ".level_range",
+        ".level_sight",
+        ".level_base_type"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -201,7 +205,9 @@
         "_ZN9ResStreamD1Ev",
         "_ZN12BufferStream5CloseEv",
         "_ZN13CameraManager11getInstanceEv",
-        "_ZNK13CameraManager9getCameraEv"
+        "_ZNK13CameraManager9getCameraEv",
+        "_ZN7b2World5QueryERK6b2AABBPP7b2Shapei",
+        "_ZN16PhysicAttributes29IntersectSegmentWithHeightMapERKN3irr4core8vector3dIfEES5_RS3_S6_"
     ],
     "dependencies": [
         "gs3d-stuff",

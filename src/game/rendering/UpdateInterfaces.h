@@ -3,6 +3,7 @@
 
 #include "../world/LevelObject.h"
 #include "../core/CameraManager.h"
+#include "../core/Physics.h"
 #include "../vehicles/Vehicle.h"
 #include "../meta/Item.h"
 #include "../world/SpawnPoint.h"
@@ -12,8 +13,6 @@
 
 // Partial call interfaces for the update loop. No complete layouts are asserted.
 class StateMachine { public: double getTimeStamp() const; };
-
-class b2World { public: void Step(float, int); };
 
 class TrailMgr { public: void Update(); };
 

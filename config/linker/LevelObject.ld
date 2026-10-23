@@ -38,7 +38,13 @@ __aeabi_f2d = 0x001c48f8;
 sqrt = 0x001c401c;
 __aeabi_d2f = 0x001c4310;
 __aeabi_fcmple = 0x001c43ac;
+__aeabi_fdiv = 0x001c4520;
+__aeabi_fcmpgt = 0x001c419c;
+__aeabi_fcmpeq = 0x001c470c;
+__aeabi_fcmplt = 0x001c479c;
 SECTIONS {
+    .level_base_type 0x002f74d0 : { *level-object.o(.text._ZN11LevelObject12getSpawnTypeEv .gnu.linkonce.t._ZN11LevelObject12getSpawnTypeEv) }
+    .level_sight 0x00317380 : { *level-object.o(.text._ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE) }
     .level_visible 0x0031696c : { *level-object.o(.text._ZN11LevelObject17isVisibleOnScreenEv) }
     .level_range 0x003169b4 : { *level-object.o(.text._ZN11LevelObject13isWithinRangeEf) }
     .level_string_cleanup 0x003168b4 : { *level-object.o(.text.__tcf_3) }

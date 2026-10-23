@@ -10152,7 +10152,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f710d	0x308	Character.cpp	game	characters	pending	_ZN9Character5punchEv	Character::punch()
 0x002f7415	0xb8	Character.cpp	game	characters	pending	_ZN9Character6attackEv	Character::attack()
 0x002f74cd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setSpawnTypeEi	LevelObject::setSpawnType(int)
-0x002f74d1	0x1c	LevelObject.cpp	game	world	pending	_ZN11LevelObject12getSpawnTypeEv	LevelObject::getSpawnType()
+0x002f74d1	0x1c	LevelObject.cpp	game	world	matched	_ZN11LevelObject12getSpawnTypeEv	LevelObject::getSpawnType()
 0x002f74ed	0x4	LevelObject.cpp	game	world	pending	_ZNK11LevelObject12getMaxHealthEv	LevelObject::getMaxHealth() const
 0x002f74f1	0x4	LevelObject.cpp	game	world	pending	_ZNK11LevelObject9getHealthEv	LevelObject::getHealth() const
 0x002f74f5	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject6isDeadEv	LevelObject::isDead()
@@ -10835,7 +10835,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00317241	0xa4	LevelObject.cpp	game	world	matched	_ZN11LevelObjectD0Ev	LevelObject::~LevelObject()
 0x003172e5	0x9c	LevelObject.cpp	game	world	matched	_ZN11LevelObjectD1Ev	LevelObject::~LevelObject()
 0x003172e5	0x9c	LevelObject.cpp	game	world	matched	_ZN11LevelObjectD2Ev	LevelObject::~LevelObject()
-0x00317381	0x48c	LevelObject.cpp	game	world	pending	_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE	LevelObject::canSeeLevelObject(LevelObject*, irr::core::vector3d<float>&)
+0x00317381	0x48c	LevelObject.cpp	game	world	matched	_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE	LevelObject::canSeeLevelObject(LevelObject*, irr::core::vector3d<float>&)
 0x0031780d	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject9OnDespawnEv	LevelObject::OnDespawn()
 0x00317819	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject7OnSpawnEv	LevelObject::OnSpawn()
 0x00317825	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
