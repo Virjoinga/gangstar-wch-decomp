@@ -11,6 +11,10 @@
 #include "LevelObject.h"
 #include "SceneNodeManager.h"
 #include "GameObjectManager.h"
+#include "ObjectData.h"
+#include "../app/Application.h"
+#include "../core/Collada.h"
+#include "../core/NativeStdio.h"
 #include "../rendering/GS3DStuff.h"
 #include "../characters/PlayerTest.h"
 #include "../core/Lock.h"
@@ -56,6 +60,19 @@ void LevelObject::SetRotation(const irr::core::quaternion& rotation)
 const irr::core::quaternion& LevelObject::GetRotation() const
 {
     return sceneNode->getRotation();
+}
+
+void LevelObject::SetName(const char* name)
+{
+    delete[] unknown28;
+    unknown28 = new char[strlen(name) + 1];
+    strcpy(unknown28, name);
+}
+
+unsigned char LevelObject::GetMetatype()
+{
+    if (objectType == 0xff) objectType = GameObjectManager::s_gom->GetMetatypeFromName(unknown28);
+    return objectType;
 }
 
 void LevelObject::SetRotation(const irr::core::vector3d<float>& rotation)
@@ -156,6 +173,48 @@ void LevelObject::enable()
         GameObjectManager::s_gom->Add(this, 0);
         manager->AddGameObjectOfType(s_type[objectType]);
     }
+}
+
+void LevelObject::Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory)
+{
+    unknown28 = data.name;
+    unknown40 = data.list;
+    unknown4 = data.flags;
+    objectType = GetMetatype();
+    unknown44 = data.highlight;
+    if (s_type[objectType] == -1) {
+        s_type[objectType] = data.type;
+        s_nodePoolMinimumSize[objectType] = data.poolSize;
+    }
+    if (data.sceneName[0]) {
+        if (data.nodeName[0]) {
+            sceneNode = irr::collada::CColladaDatabase::constructNode(data.sceneName, data.nodeName, factory);
+        } else if (unknown4 & 0x200) {
+            s_nodePoolID[objectType] = SceneNodeManager::getInstance()->findOrCreatePool(
+                data.sceneName, s_nodePoolMinimumSize[objectType], factory);
+        } else {
+            sceneNode = irr::collada::CColladaDatabase::constructScene(data.sceneName, factory);
+        }
+    }
+    delete[] data.nodeName;
+    SetPosition(irr::core::vector3d<float>(data.position.X, data.position.Y, data.position.Z));
+    SetRotation(irr::core::vector3d<float>(data.rotation.X, data.rotation.Y, data.rotation.Z));
+    if (sceneNode) {
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag2, true);
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag4, true);
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag16, true);
+        GS3DStuff::SetColor(sceneNode, irr::video::SColor(255, 0, 0, 0), GS3DStuff::Color3);
+        GS3DStuff::SetColor(sceneNode, irr::video::SColor(255, 255, 255, 255), GS3DStuff::Color0);
+        GS3DStuff::SetColor(sceneNode, irr::video::SColor(255, 255, 255, 255), GS3DStuff::Color1);
+        GS3DStuff::SetColor(sceneNode, irr::video::SColor(255, 255, 255, 255), GS3DStuff::Color2);
+        sceneNode->setScale(irr::core::vector3d<float>(float(data.scale.X) * 0.01f, float(data.scale.Y) * 0.01f, float(data.scale.Z) * 0.01f));
+        sceneNode->setVisible((unknown4 & 3) == 3);
+        sceneNode->updateAbsolutePosition(false);
+        Application::GetInstance()->GetDevice()->getSceneManager()->getRootSceneNode()->addChild(sceneNode);
+    }
+    objectList = GameObjectManager::s_gom->getObjectList(unknown40);
+    setSpawnType(s_type[objectType]);
+    delete[] data.sceneName;
 }
 
 void LevelObject::OnDespawn() { unknown4 &= ~1u; }

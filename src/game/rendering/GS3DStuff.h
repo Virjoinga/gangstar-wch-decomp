@@ -2,6 +2,7 @@
 #define WCH_RENDERING_GS3D_STUFF_H
 
 #include "../core/SceneNode.h"
+#include "../core/Color.h"
 #include "../core/StateBase.h"
 #include "../core/GameEvents.h"
 #include "../core/PointerVector.h"
@@ -58,6 +59,8 @@ public:
     static irr::video::ITexture* getSkyBoxTexture();
     static char* getTextureNameSuffix();
     static OctTreeAABB* getSceneOctTree();
+    enum eColorType { Color0, Color1, Color2, Color3 };
+    static void SetColor(irr::scene::ISceneNode* node, irr::video::SColor color, eColorType type);
     static void SetMaterialFlag(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_FLAG flag, bool enabled);
 
     static BulletTraceManager* s_bulletManager;

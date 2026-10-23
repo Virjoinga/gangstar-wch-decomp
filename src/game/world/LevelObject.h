@@ -26,6 +26,7 @@ public:
     void SetName(const char* name);
     static int s_type[256];
     static unsigned char s_nodePoolID[256];
+    static unsigned char s_nodePoolMinimumSize[256];
     static int* s_highlights;
     static int* s_highlightsIcons;
     void Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory);
