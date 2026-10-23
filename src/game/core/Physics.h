@@ -2,6 +2,7 @@
 #define WCH_CORE_PHYSICS_H
 
 class LevelObject;
+namespace irr { namespace scene { class ISceneNode; } }
 
 // Partial retail Box2D call interfaces and observed field prefixes only.
 // b2Body/b2Shape/b2World are call-only views: do not instantiate them.
@@ -17,7 +18,7 @@ struct b2XForm { b2Vec2 position; float rotation[4]; };
 struct b2FilterData { unsigned short categoryBits, maskBits; short groupIndex; };
 struct PhysicsBodyData {
     LevelObject* owner;
-    int unknown4;
+    irr::scene::ISceneNode* node;
     float lowerHeight, upperHeight;
 };
 class b2Body {

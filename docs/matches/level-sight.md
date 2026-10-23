@@ -22,7 +22,8 @@ owned by either endpoint are also excluded. These retain the retail unchecked
 pointer accesses rather than introducing extra null checks.
 
 `TestSegment` receives the body transform, an in/out fraction initially equal to
-one, a temporary normal and max fraction one. Nonzero user-data field 4 or equal
+one, a temporary normal and max fraction one. A non-null node pointer at user-data
+offset 4 or equal
 height bounds stop at a hit. Otherwise the function interpolates the unadjusted
 endpoint heights at the hit fraction, adds 75 for base category 5 or the player,
 and discards the hit by resetting the fraction to one if its height is outside
@@ -49,10 +50,11 @@ Its body/shape/world classes are partial call views and must not be instantiated
 The two-float vector, four-float bounds and segment records express the call ABI.
 The shape prefix places its body pointer at 12, category/mask/group at 34/36/38
 and sensor at 40. The body transform starts at 4 and user-data pointer at 144.
-The accessed user data contains an owner pointer, unknown word at 4, and float
-height bounds at 8 and 12. TestSegment is virtual slot 1. These declarations do
-not claim complete Box2D layouts, an implementation of its engine methods, or
-recovery of the unknown word's full meaning.
+The accessed user data contains an owner pointer, a scene-node pointer at 4, and
+float height bounds at 8 and 12. The node pointer was identified during the later
+[raycast investigation](mesh-collision.md); typing it leaves this function's bytes
+unchanged. TestSegment is virtual slot 1. These declarations do not claim complete
+Box2D layouts, engine implementations, or complete user-data semantics.
 
 The physics slot index is the observed first word of PhysicAttributes. The
 vehicle driver pointer at 696 is corroborated by `Vehicle::setDriver(Character*)`

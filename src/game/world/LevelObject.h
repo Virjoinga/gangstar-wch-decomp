@@ -39,6 +39,9 @@ public:
     bool isVisibleOnScreen();
     bool isWithinRange(float range);
     bool canSeeLevelObject(LevelObject* other, irr::core::vector3d<float>& point);
+    bool CastRay(const irr::core::vector3d<float>& start, const irr::core::vector3d<float>& direction,
+        irr::core::vector3d<float>& point, irr::core::vector3d<float>& normal,
+        LevelObject*& object, bool detailed);
     // Observed byte predicate, inlined without claiming a standalone retail symbol.
     bool hasHighlightPool() const { return unknown48 != 0xff; }
     // Observed pool-table predicate; used inline without claiming a standalone symbol.

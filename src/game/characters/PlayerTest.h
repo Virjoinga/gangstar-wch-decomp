@@ -57,9 +57,17 @@ public:
     virtual void SetTarget(LevelObject* target);
 };
 
-class SavePrimaryInterface { public: virtual void unknownPrimary(); };
+class SavePrimaryInterface {
+public:
+    virtual void unknownPrimary();
+    virtual void unknownPrimary1(); virtual void unknownPrimary2();
+    virtual void unknownPrimary3(); virtual void unknownPrimary4();
+    virtual void unknownPrimary5(); virtual void unknownPrimary6();
+    virtual Vehicle* getVehicle() const;
+};
 class PlayerTest : public SavePrimaryInterface, public SavePositionInterface {
 public:
+    using SavePositionInterface::getVehicle;
     enum eContext { Context0 = 0, Context1 = 1, AnyContext = -1 };
     static PlayerTest* GetPlayer();
     // Inline access to the observed target at offset 264; no standalone symbol claimed.

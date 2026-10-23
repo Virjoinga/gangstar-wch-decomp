@@ -31,6 +31,7 @@ public:
     vector3d<T> operator-() const { return vector3d<T>(-X, -Y, -Z); }
     vector3d(const vector3d& other) : X(other.X), Y(other.Y), Z(other.Z) {}
     vector3d<T>& operator=(const vector3d<T>& other) { X=other.X; Y=other.Y; Z=other.Z; return *this; }
+    vector3d<T>& normalize() __attribute__((weak));
     T getLength() const { return (T) sqrt((double)(X*X + Y*Y + Z*Z)); }
     T getDistanceFrom(const vector3d<T>& other) const {
         return vector3d<T>(X - other.X, Y - other.Y, Z - other.Z).getLength();
