@@ -2,6 +2,7 @@
 #define WCH_CORE_SCENE_NODE_H
 
 #include "Vector3.h"
+#include "Matrix4.h"
 
 // Partial engine call interfaces only. Do not instantiate or infer complete
 // layouts from these declarations; no vendored engine code is implemented.
@@ -30,19 +31,21 @@ public:
     virtual void unknown6(); virtual void unknown7(); virtual void unknown8();
     virtual void unknown9(); virtual void unknown10(); virtual void unknown11();
     virtual void unknown12(); virtual void unknown13(); virtual void unknown14();
-    virtual void unknown15(); virtual void unknown16(); virtual void unknown17();
+    virtual void unknown15(); virtual void unknown16();
+    virtual void setRelativeTransformation(const core::matrix4& transformation);
     virtual bool isVisible() const; virtual void unknown19();
     virtual void setVisible(bool visible);
     virtual void unknown21(); virtual void unknown22(); virtual void unknown23();
     virtual void unknown24(); virtual void unknown25(); virtual void unknown26();
     virtual void addChild(ISceneNode* child);
-    virtual void unknown28(); virtual void removeAll();
+    virtual bool removeChild(ISceneNode* child); virtual void removeAll();
     virtual void remove();
     virtual void unknown31(); virtual void unknown32(); virtual void unknown33();
     virtual void unknown34(); virtual void unknown35(); virtual void unknown36();
     virtual void unknown37(); virtual void unknown38(); virtual void unknown39();
     virtual void unknown40(); virtual void unknown41(); virtual void unknown42();
-    virtual void unknown43(); virtual void unknown44(); virtual void unknown45();
+    virtual void unknown43(); virtual void unknown44();
+    virtual void setPosition(const core::vector3d<float>& position);
     virtual core::vector3d<float> getAbsolutePosition() const;
     virtual void unknown47(); virtual void unknown48();
     virtual void unknown49(); virtual void unknown50(); virtual void unknown51();

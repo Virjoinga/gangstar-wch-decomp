@@ -10803,7 +10803,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD2Ev	GameObjectManager::~GameObjectManager()
 0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
 0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
-0x003167dd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
+0x003167dd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
 0x003167e1	0x50	LevelObject.cpp	game	world	pending	_ZN11LevelObject5setupEv	LevelObject::setup()
 0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
 0x00316839	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4StopEv	LevelObject::Stop()
@@ -10825,9 +10825,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316a51	0x34	LevelObject.cpp	game	world	pending	_ZN11LevelObject11GetMetatypeEv	LevelObject::GetMetatype()
 0x00316a85	0x140	LevelObject.cpp	game	world	pending	_ZN11LevelObject14loadHighlightsEPKc	LevelObject::loadHighlights(char const*)
 0x00316bc5	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE	LevelObject::SetRotation(irr::core::vector3d<float> const&)
-0x00316c29	0x98	LevelObject.cpp	game	world	pending	_ZN11LevelObject13grabSceneNodeEiPPPv	LevelObject::grabSceneNode(int, void***)
+0x00316c29	0x98	LevelObject.cpp	game	world	matched	_ZN11LevelObject13grabSceneNodeEiPPPv	LevelObject::grabSceneNode(int, void***)
 0x00316cc1	0x48	LevelObject.cpp	game	world	matched	_ZN11LevelObject6UpdateEi	LevelObject::Update(int)
-0x00316d09	0x114	LevelObject.cpp	game	world	pending	_ZN11LevelObject13showHighlightEi	LevelObject::showHighlight(int)
+0x00316d09	0x114	LevelObject.cpp	game	world	matched	_ZN11LevelObject13showHighlightEi	LevelObject::showHighlight(int)
 0x00316e1d	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject13dropSceneNodeEv	LevelObject::dropSceneNode()
 0x00316e81	0xd4	LevelObject.cpp	game	world	pending	_ZN11LevelObject7disableEv	LevelObject::disable()
 0x00316f55	0x98	LevelObject.cpp	game	world	pending	_ZN11LevelObject6enableEv	LevelObject::enable()
@@ -10836,8 +10836,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003172e5	0x9c	LevelObject.cpp	game	world	pending	_ZN11LevelObjectD1Ev	LevelObject::~LevelObject()
 0x003172e5	0x9c	LevelObject.cpp	game	world	pending	_ZN11LevelObjectD2Ev	LevelObject::~LevelObject()
 0x00317381	0x48c	LevelObject.cpp	game	world	pending	_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE	LevelObject::canSeeLevelObject(LevelObject*, irr::core::vector3d<float>&)
-0x0031780d	0xa	LevelObject.cpp	game	world	pending	_ZN11LevelObject9OnDespawnEv	LevelObject::OnDespawn()
-0x00317819	0xa	LevelObject.cpp	game	world	pending	_ZN11LevelObject7OnSpawnEv	LevelObject::OnSpawn()
+0x0031780d	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject9OnDespawnEv	LevelObject::OnDespawn()
+0x00317819	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject7OnSpawnEv	LevelObject::OnSpawn()
 0x00317825	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
 0x0031782d	0x28	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetFrontEv	LevelObject::GetFront() const
 0x00317855	0x28	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetRightEv	LevelObject::GetRight() const
