@@ -178,7 +178,8 @@
         ".gs_touch_event",
         ".gs_wakeup",
         ".gs_resume",
-        ".gs_enter"
+        ".gs_enter",
+        ".levelobject_update"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",

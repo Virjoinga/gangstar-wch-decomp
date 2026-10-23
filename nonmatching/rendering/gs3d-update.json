@@ -154,7 +154,9 @@
         ".gs_enter",
         ".gs_update",
         ".gs_vehicle_cleanup",
-        ".gs_pickable_cleanup"
+        ".gs_pickable_cleanup",
+        ".leveltext",
+        ".levelobject_update"
     ],
     "external_thumb_functions": [
         "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
@@ -194,6 +196,7 @@
     ],
     "dependencies": [
         "stream",
-        "data-stream"
+        "data-stream",
+        "level-object"
     ]
 }

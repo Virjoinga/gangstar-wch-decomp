@@ -19,6 +19,7 @@ public:
     LevelObject(int id);
     unsigned char getObjectType() const { return objectType; }
     static int s_type[256];
+    static unsigned char s_nodePoolID[256];
     void Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory);
     virtual irr::scene::ISceneNode* grabSceneNode(int id, void*** parameters);
     virtual void dropSceneNode();

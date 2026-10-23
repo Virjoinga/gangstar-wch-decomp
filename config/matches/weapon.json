@@ -150,7 +150,8 @@
         ".streamvtable",
         ".gs_wakeup",
         ".gs_resume",
-        ".gs_enter"
+        ".gs_enter",
+        ".levelobject_update"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

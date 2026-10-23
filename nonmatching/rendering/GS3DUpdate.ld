@@ -27,6 +27,8 @@ __aeabi_f2iz = 0x001c44cc;
 __aeabi_ui2f = 0x001c4574;
 __aeabi_ui2d = 0x001c4208;
 SECTIONS {
+    .leveltext 0x003167a4 : { *level-object.o(.text._ZN11LevelObjectC1Ei .text._ZN11LevelObjectC2Ei) }
+    .levelobject_update 0x00316cc0 : { *level-object.o(.text._ZN11LevelObject6UpdateEi) }
     .gs_vehicle_cleanup 0x002dada8 : { *gs3d-update.o(.text.__tcf_1) }
     .gs_pickable_cleanup 0x002dad70 : { *gs3d-update.o(.text.__tcf_2) }
     .gs_update 0x002e078c : { *gs3d-update.o(.text._ZN9GS3DStuff6updateEP12StateMachine) }
