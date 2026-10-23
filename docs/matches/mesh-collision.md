@@ -10,9 +10,9 @@ and receives no progress credit.
 `MeshCollision(const IMesh*, const ISceneNode*)` stores the node pointer at zero,
 the mesh pointer at four, and default-constructs the vector at 36 with zeroes.
 It leaves offsets 8 through 35 untouched. The caller reserves a 48-byte stack
-object; the unresolved region is represented by seven opaque 32-bit words, whose
-original field types remain unrecovered. No complete mesh-intersection behavior
-is claimed. The normal constructor unit checks both aliases and the entire
+object. The later [triangle check](mesh-triangle.md) identifies that region as
+six bounds and a squared segment length; typing the fields retains both exact
+constructor aliases. Complete mesh-intersection behavior remains unrecovered. The normal constructor unit checks both aliases and the entire
 20-byte output section.
 
 ```text
@@ -25,7 +25,8 @@ OK  _ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE  0x00318eed  20
 `nonmatching/world/level-object-ray.cpp` includes the native LevelObject source
 and adds the pending CastRay body. Its manifest and linker script retain all
 existing LevelObject function, section, vtable and 17972-byte global GOT checks,
-link the native MeshCollision constructor, and check the raycast separately.
+link the native MeshCollision constructor and triangle check, and verify the
+raycast separately.
 The standard runner creates a temporary manifest exclusively and removes it in
 its finally block:
 
