@@ -108,7 +108,11 @@
         ".gol_empty_text",
         ".level_load",
         ".level_name",
-        ".level_metatype"
+        ".level_metatype",
+        ".level_destructor_delete",
+        ".level_destructor",
+        ".level_highlight_free",
+        ".level_setup"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -129,7 +133,8 @@
         "_ZN17GameObjectManager13getObjectListEi",
         "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
-        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE"
+        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
+        "_ZN16PhysicAttributesD1Ev"
     ],
     "dependencies": [
         "level-object"

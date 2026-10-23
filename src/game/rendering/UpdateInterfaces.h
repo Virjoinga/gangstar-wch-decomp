@@ -5,6 +5,7 @@
 #include "../vehicles/Vehicle.h"
 #include "../meta/Item.h"
 #include "../world/SpawnPoint.h"
+#include "../characters/PhysicAttributes.h"
 #include "../world/SceneNodeManager.h"
 #include "../persistence/SaveGameInterfaces.h"
 
@@ -19,7 +20,7 @@ public:
 };
 
 class b2World { public: void Step(float, int); };
-class PhysicAttributes { public: static b2World* s_world; };
+
 class TrailMgr { public: void Update(); };
 
 struct UpdateApplicationView {
