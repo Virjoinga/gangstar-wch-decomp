@@ -10,7 +10,10 @@
 
 #include "LevelObject.h"
 #include "SceneNodeManager.h"
+#include "GameObjectManager.h"
 #include "../rendering/GS3DStuff.h"
+#include "../characters/PlayerTest.h"
+#include "../core/Lock.h"
 
 LevelObject::LevelObject(int)
 {
@@ -29,6 +32,8 @@ LevelObject::LevelObject(int)
 }
 
 void LevelObject::WarmUp() {}
+
+bool LevelObject::isEnabled() const { return unknown4 & 1; }
 
 irr::core::vector3d<float> LevelObject::GetPosition() const
 {
@@ -106,6 +111,50 @@ void LevelObject::showHighlight(int id)
         if (sceneNode) sceneNode->removeChild(unknown20);
         if (SceneNodeManager::getInstance()->drop(unknown48, unknown20))
             unknown20 = 0;
+    }
+}
+
+void LevelObject::dropSceneNode()
+{
+    if (s_nodePoolID[objectType] != 0xff && sceneNode) {
+        if (unknown20 && hasHighlightPool()) showHighlight(-1);
+        sceneNode->setVisible(false);
+        if (SceneNodeManager::getInstance()->drop(s_nodePoolID[objectType], sceneNode))
+            sceneNode = 0;
+    }
+}
+
+void LevelObject::disable()
+{
+    if (!isEnabled()) return;
+    if (this == PlayerTest::GetPlayer()->getTarget()) {
+        PlayerTest::GetPlayer()->SetTarget(0);
+        if (Lock::getInstance()->target == this) Lock::getInstance()->setTarget(0);
+    }
+    GameObjectManager* manager = GameObjectManager::s_gom;
+    unknown4 &= ~0x403u;
+    if (sceneNode) {
+        sceneNode->setVisible(false);
+        if (hasSceneNodePool()) dropSceneNode();
+    }
+    manager->Remove(this);
+    manager->Add(this, 2);
+    manager->RemoveGameObjectOfType(getSpawnType());
+    setSpawnType(s_type[objectType]);
+    clearPhotographed();
+}
+
+void LevelObject::enable()
+{
+    unknown4 &= ~0x400u;
+    if (!isEnabled()) {
+        GameObjectManager* manager = GameObjectManager::s_gom;
+        unknown4 |= 3;
+        if (hasSceneNodePool() && !sceneNode) grabSceneNode(0, 0);
+        if (sceneNode) sceneNode->setVisible(true);
+        GameObjectManager::s_gom->Remove(this);
+        GameObjectManager::s_gom->Add(this, 0);
+        manager->AddGameObjectOfType(s_type[objectType]);
     }
 }
 

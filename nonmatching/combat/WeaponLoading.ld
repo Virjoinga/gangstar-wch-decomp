@@ -52,6 +52,10 @@ printf = 0x001c4058;
 puts = 0x001c41b4;
 __aeabi_fmul = 0x001c4724;
 SECTIONS {
+    .level_drop 0x00316e1c : { *level-object.o(.text._ZN11LevelObject13dropSceneNodeEv) }
+    .level_enable 0x00316f54 : { *level-object.o(.text._ZN11LevelObject6enableEv) }
+    .level_disable 0x00316e80 : { *level-object.o(.text._ZN11LevelObject7disableEv) }
+    .level_enabled 0x0031683c : { *level-object.o(.text._ZNK11LevelObject9isEnabledEv) }
     .level_transform_6 0x00317854 : { *level-object.o(.text._ZNK11LevelObject8GetRightEv) }
     .level_transform_5 0x0031782c : { *level-object.o(.text._ZNK11LevelObject8GetFrontEv) }
     .level_transform_4 0x00316bc4 : { *level-object.o(.text._ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE) }

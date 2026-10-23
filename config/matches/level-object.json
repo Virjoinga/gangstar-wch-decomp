@@ -42,7 +42,11 @@
         "_ZNK11LevelObject11GetRotationEv",
         "_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE",
         "_ZNK11LevelObject8GetFrontEv",
-        "_ZNK11LevelObject8GetRightEv"
+        "_ZNK11LevelObject8GetRightEv",
+        "_ZNK11LevelObject9isEnabledEv",
+        "_ZN11LevelObject7disableEv",
+        "_ZN11LevelObject6enableEv",
+        "_ZN11LevelObject13dropSceneNodeEv"
     ],
     "sections": [
         ".text",
@@ -63,13 +67,23 @@
         ".level_transform_3",
         ".level_transform_4",
         ".level_transform_5",
-        ".level_transform_6"
+        ".level_transform_6",
+        ".level_enabled",
+        ".level_disable",
+        ".level_enable",
+        ".level_drop"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
         "_ZN16SceneNodeManager4grabEiP11LevelObjectiPPPv",
         "_ZN16SceneNodeManager4dropEiPKN3irr5scene10ISceneNodeE",
         "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
-        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv"
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZN4Lock11getInstanceEv",
+        "_ZN4Lock9setTargetEP11LevelObject",
+        "_ZN17GameObjectManager3AddEP11LevelObjecti",
+        "_ZN17GameObjectManager22RemoveGameObjectOfTypeEi",
+        "_ZN17GameObjectManager19AddGameObjectOfTypeEi"
     ]
 }

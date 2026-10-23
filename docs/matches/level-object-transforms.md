@@ -1,5 +1,9 @@
 # LevelObject transforms
 
+The dropSceneNode regression recorded below is historical: it now matches in the
+native unit. See [level-object-activation.md](level-object-activation.md); its old
+nonmatching runner is retired.
+
 Seven definitions add 270 verified game-code bytes: GetPosition (18), SetPosition
 (32), quaternion SetRotation (22), GetRotation (18), Euler SetRotation (100),
 GetFront (40), and GetRight (40). Their primary virtual entries and the complete
