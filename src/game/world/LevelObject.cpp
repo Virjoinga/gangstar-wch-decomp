@@ -10,6 +10,7 @@
 
 #include "LevelObject.h"
 #include "SceneNodeManager.h"
+#include "../characters/PhysicAttributes.h"
 #include "GameObjectManager.h"
 #include "ObjectData.h"
 #include "../app/Application.h"
@@ -37,6 +38,15 @@ LevelObject::LevelObject(int)
 
 void LevelObject::WarmUp() {}
 
+void LevelObject::setup()
+{
+    for (int i = 0; i < 256; ++i) {
+        s_type[i] = -1;
+        s_nodePoolID[i] = 0xff;
+        s_nodePoolMinimumSize[i] = 0;
+    }
+}
+
 bool LevelObject::isEnabled() const { return unknown4 & 1; }
 
 irr::core::vector3d<float> LevelObject::GetPosition() const
@@ -60,6 +70,14 @@ void LevelObject::SetRotation(const irr::core::quaternion& rotation)
 const irr::core::quaternion& LevelObject::GetRotation() const
 {
     return sceneNode->getRotation();
+}
+
+void LevelObject::freeHighlights()
+{
+    delete[] s_highlights;
+    s_highlights = 0;
+    delete[] s_highlightsIcons;
+    s_highlightsIcons = 0;
 }
 
 void LevelObject::SetName(const char* name)
@@ -215,6 +233,27 @@ void LevelObject::Load(const Structs::GameObjectBasic& data, irr::collada::CColl
     objectList = GameObjectManager::s_gom->getObjectList(unknown40);
     setSpawnType(s_type[objectType]);
     delete[] data.sceneName;
+}
+
+LevelObject::~LevelObject()
+{
+    Application::GetInstance()->GetDevice()->getSceneManager();
+    if (hasHighlightPool() && unknown20) {
+        SceneNodeManager::getInstance()->drop(unknown48, unknown20);
+    }
+    if (sceneNode) {
+        if (hasSceneNodePool()) {
+            dropSceneNode();
+        } else {
+            sceneNode->remove();
+            sceneNode->drop();
+        }
+    }
+    delete[] unknown28;
+    if (unknown24) {
+        delete unknown24;
+        unknown24 = 0;
+    }
 }
 
 void LevelObject::OnDespawn() { unknown4 &= ~1u; }

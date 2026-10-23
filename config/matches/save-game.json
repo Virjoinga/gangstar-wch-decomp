@@ -199,7 +199,11 @@
         ".level_drop",
         ".level_load",
         ".level_name",
-        ".level_metatype"
+        ".level_metatype",
+        ".level_destructor_delete",
+        ".level_destructor",
+        ".level_highlight_free",
+        ".level_setup"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -265,7 +269,6 @@
         "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN11CHudManager20toggleWeaponSelectorEb",
-        "_ZN11LevelObjectD1Ev",
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
         "_ZN13ScriptManager11getInstanceEv",
         "_ZN13ScriptManager9resetGameEbi",
@@ -306,6 +309,7 @@
         "_ZN17GameObjectManager13getObjectListEi",
         "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
-        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE"
+        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
+        "_ZN16PhysicAttributesD1Ev"
     ]
 }

@@ -10,6 +10,7 @@ class quaternion;
 namespace irr { namespace collada { class CColladaFactory; } }
 namespace Structs { struct GameObjectBasic; }
 class GameObjectList;
+class PhysicAttributes;
 
 // Observed primary virtual slots and 52-byte base prefix. Several field and
 // return types remain provisional; complete hierarchy and runtime use await
@@ -24,6 +25,8 @@ public:
     const char* getName() const { return unknown28; }
     unsigned char GetMetatype();
     void SetName(const char* name);
+    static void setup();
+    static void freeHighlights();
     static int s_type[256];
     static unsigned char s_nodePoolID[256];
     static unsigned char s_nodePoolMinimumSize[256];
@@ -84,7 +87,7 @@ public:
 protected:
     irr::scene::ISceneNode* sceneNode;
     irr::scene::ISceneNode* unknown20;
-    void* unknown24;
+    PhysicAttributes* unknown24;
     char* unknown28;
     GameObjectList* objectList;
     unsigned char objectType;

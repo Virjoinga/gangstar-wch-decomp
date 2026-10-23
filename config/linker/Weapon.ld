@@ -50,6 +50,11 @@ __aeabi_fmul = 0x001c4724;
 __aeabi_i2f = 0x001c41e4;
 strcpy = 0x001c3fd4;
 SECTIONS {
+    .level_destructor_delete 0x00317240 : { *level-object.o(.text._ZN11LevelObjectD0Ev) }
+    .level_destructor 0x003172e4 : { *level-object.o(.text._ZN11LevelObjectD1Ev .text._ZN11LevelObjectD2Ev) }
+    .level_highlight_free 0x00316908 : { *level-object.o(.text._ZN11LevelObject14freeHighlightsEv) }
+    .level_setup 0x003167e0 : { *level-object.o(.text._ZN11LevelObject5setupEv) }
+
     .level_load 0x00316fec : { *level-object.o(.text._ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE) }
     .level_name 0x00316940 : { *level-object.o(.text._ZN11LevelObject7SetNameEPKc) }
     .level_metatype 0x00316a50 : { *level-object.o(.text._ZN11LevelObject11GetMetatypeEv) }
