@@ -60,7 +60,16 @@
             "name": "__tcf_1",
             "address": "0x003168e5",
             "compiled_name": "__tcf_0"
-        }
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x003168b5"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0031787d"
+        },
+        "_GLOBAL__I__ZN11LevelObject12s_highlightsE"
     ],
     "sections": [
         ".text",
@@ -150,7 +159,11 @@
         ".streamvtable",
         ".gs_wakeup",
         ".gs_resume",
-        ".gs_enter"
+        ".gs_enter",
+        ".level_string_cleanup",
+        ".level_startup",
+        ".level_startup_wrapper",
+        ".level_empty_text"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

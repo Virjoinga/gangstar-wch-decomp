@@ -10816,7 +10816,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316899	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetRotationEv	LevelObject::GetRotation() const
 0x003168ad	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4initEv	LevelObject::init()
 0x003168b1	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5cleanEv	LevelObject::clean()
-0x003168b5	0x30	LevelObject.cpp	game	world	pending	__tcf_3	__tcf_3
+0x003168b5	0x30	LevelObject.cpp	game	world	matched	__tcf_3	__tcf_3
 0x003168e5	0x24	LevelObject.cpp	game	world	matched	__tcf_1	__tcf_1
 0x00316909	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObject14freeHighlightsEv	LevelObject::freeHighlights()
 0x00316941	0x2a	LevelObject.cpp	game	world	matched	_ZN11LevelObject7SetNameEPKc	LevelObject::SetName(char const*)
@@ -10841,8 +10841,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00317825	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
 0x0031782d	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetFrontEv	LevelObject::GetFront() const
 0x00317855	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetRightEv	LevelObject::GetRight() const
-0x0031787d	0x144	LevelObject.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003179c1	0x14	LevelObject.cpp	game	world	pending	_GLOBAL__I__ZN11LevelObject12s_highlightsE	_GLOBAL__I__ZN11LevelObject12s_highlightsE
+0x0031787d	0x144	LevelObject.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003179c1	0x14	LevelObject.cpp	game	world	matched	_GLOBAL__I__ZN11LevelObject12s_highlightsE	_GLOBAL__I__ZN11LevelObject12s_highlightsE
 0x003179d5	0x5e0	LevelObject.cpp	game	world	pending	_ZN11LevelObject7CastRayERKN3irr4core8vector3dIfEES5_RS3_S6_RPS_b	LevelObject::CastRay(irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&, irr::core::vector3d<float>&, LevelObject*&, bool)
 0x00317fb5	0xc30	LevelObject.cpp	game	world	pending	_ZN11LevelObject12canGoToPointERKN3irr4core8vector3dIfEERS3_S6_	LevelObject::canGoToPoint(irr::core::vector3d<float> const&, irr::core::vector3d<float>&, irr::core::vector3d<float>&)
 0x00318be5	0x308	LevelObject.cpp	game	world	pending	_ZN11LevelObject12canGoToPointERKN3irr4core8vector3dIfEE	LevelObject::canGoToPoint(irr::core::vector3d<float> const&)

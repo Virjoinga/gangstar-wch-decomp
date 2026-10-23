@@ -23,7 +23,34 @@ __stack_chk_fail = 0x001c42e0;
 __cxa_pure_virtual = 0;
 printf = 0x001c4058;
 puts = 0x001c41b4;
+_ZN24retail_level_transitions16civPassive_transE = 0x00420498;
+_ZN24retail_level_transitions17scriptedNpc_transE = 0x004205c4;
+_ZN24retail_level_transitions19civAggressive_transE = 0x004205f4;
+_ZN24retail_level_transitions16gangMember_transE = 0x004206d8;
+_ZN24retail_level_transitions9cop_transE = 0x004206e4;
+_ZN24retail_level_transitions10swat_transE = 0x0042081c;
+_ZN24retail_level_transitions17civ_vehicle_transE = 0x00420828;
+_ZN24retail_level_transitions17cop_vehicle_transE = 0x004208b8;
+_ZN24retail_level_transitions11guard_transE = 0x0042096c;
+_ZN24retail_level_transitions22scripted_vehicle_transE = 0x00420a14;
 SECTIONS {
+    .level_string_cleanup 0x003168b4 : { *level-object.o(.text.__tcf_3) }
+    .level_startup 0x0031787c : { *level-object.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .level_startup_wrapper 0x003179c0 : { *level-object.o(.text._GLOBAL__I__ZN11LevelObject12s_highlightsE) }
+    .level_startup_string 0x004b8a38 (NOLOAD) : { *level-object.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .level_startup_half 0x004b8a58 (NOLOAD) : { *level-object.o(.bss._ZN3irr2ps5vHalfE) }
+    .level_startup_record_0 0x004b8a64 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .level_startup_record_1 0x004b8a6c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .level_startup_record_2 0x004b8a74 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .level_startup_record_3 0x004b8a7c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .level_startup_record_4 0x004b8a84 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai3copE) }
+    .level_startup_record_5 0x004b8a8c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai4swatE) }
+    .level_startup_record_6 0x004b8a94 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .level_startup_record_7 0x004b8a9c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .level_startup_record_8 0x004b8aa4 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai5guardE) }
+    .level_startup_record_9 0x004b8aac (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+
+
     .level_highlight_load 0x00316a84 : { *level-object.o(.text._ZN11LevelObject14loadHighlightsEPKc) }
     .level_factory_cleanup 0x003168e4 : { *level-object.o(.text.__tcf_0) }
     .gs_enter 0x002dbef8 : { *gs3d-stuff.o(.text._ZN9GS3DStuff4ctorEPK12StateMachine) }
@@ -140,7 +167,7 @@ SECTIONS {
 
     .gol_empty 0x004b8884 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .gol_half 0x004b88a4 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr2ps5vHalfE) }
-    .gol_empty_text 0x0044d91c : { *game-object-list.o(.rodata.str1.*) }
+    .gol_empty_text 0x0044d91c : { *game-object-list.o(.rodata.str1.*)  *level-object.o(.rodata.str1.*) }
 
     .gol_vtable__ZTV22IterationConditionName 0x004abc00 : { *game-object-list.o(.data.rel.ro._ZTV22IterationConditionName .gnu.linkonce.d.rel.ro._ZTV22IterationConditionName) }
     .gol_vtable__ZTV14GameObjectList 0x004abc10 : { *game-object-list.o(.data.rel.ro._ZTV14GameObjectList .gnu.linkonce.d.rel.ro._ZTV14GameObjectList) }

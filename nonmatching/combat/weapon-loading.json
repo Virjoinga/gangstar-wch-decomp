@@ -177,7 +177,10 @@
         ".level_highlight_free",
         ".level_setup",
         ".level_highlight_load",
-        ".level_factory_cleanup"
+        ".level_factory_cleanup",
+        ".level_string_cleanup",
+        ".level_startup",
+        ".level_startup_wrapper"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
