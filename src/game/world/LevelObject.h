@@ -27,6 +27,7 @@ public:
     void SetName(const char* name);
     static void setup();
     static void freeHighlights();
+    static void loadHighlights(const char* filename);
     static int s_type[256];
     static unsigned char s_nodePoolID[256];
     static unsigned char s_nodePoolMinimumSize[256];

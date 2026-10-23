@@ -175,7 +175,9 @@
         ".level_destructor_delete",
         ".level_destructor",
         ".level_highlight_free",
-        ".level_setup"
+        ".level_setup",
+        ".level_highlight_load",
+        ".level_factory_cleanup"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -235,10 +237,10 @@
     ],
     "dependencies": [
         "gs3d-stuff",
-        "level-object",
-        "weapon-manager",
+        "data-stream",
         "stream",
-        "data-stream"
+        "level-object",
+        "weapon-manager"
     ],
     "external_thumb_functions": [
         "_ZN10PlayerTest9GetPlayerEv",
@@ -276,6 +278,9 @@
         "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
         "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
-        "_ZN16PhysicAttributesD1Ev"
+        "_ZN16PhysicAttributesD1Ev",
+        "_ZN9ResStreamC1EPKci",
+        "_ZN9ResStreamD1Ev",
+        "_ZN12BufferStream5CloseEv"
     ]
 }

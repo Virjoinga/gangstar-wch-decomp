@@ -180,7 +180,9 @@
         ".level_destructor_delete",
         ".level_destructor",
         ".level_highlight_free",
-        ".level_setup"
+        ".level_setup",
+        ".level_highlight_load",
+        ".level_factory_cleanup"
     ],
     "external_thumb_functions": [
         "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
@@ -231,11 +233,15 @@
         "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
         "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
-        "_ZN16PhysicAttributesD1Ev"
+        "_ZN16PhysicAttributesD1Ev",
+        "_ZN9ResStreamC1EPKci",
+        "_ZN9ResStreamD1Ev",
+        "_ZN12BufferStream5CloseEv"
     ],
     "dependencies": [
-        "stream",
         "data-stream",
+        "stream",
         "level-object"
-    ]
+    ],
+    "source_first": true
 }

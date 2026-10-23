@@ -225,7 +225,9 @@
         ".level_destructor_delete",
         ".level_destructor",
         ".level_highlight_free",
-        ".level_setup"
+        ".level_setup",
+        ".level_highlight_load",
+        ".level_factory_cleanup"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -275,15 +277,15 @@
         "_ZN16PhysicAttributesD1Ev"
     ],
     "dependencies": [
-        "game-object-list",
-        "level-object",
+        "gs3d-stuff",
         "data-stream",
         "stream",
+        "game-object-list",
+        "level-object",
         "buffer-stream",
         "res-stream",
         "file-stream",
         "path-name",
-        "debug-log",
-        "gs3d-stuff"
+        "debug-log"
     ]
 }
