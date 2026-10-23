@@ -1,0 +1,63 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-ffunction-sections",
+        "-fstack-protector",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-fdata-sections",
+        "-finline-limit=70",
+        "-fno-short-enums"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "source": "nonmatching/world/level-object-drop.cpp",
+    "linker_script": "nonmatching/world/LevelObjectDrop.ld",
+    "functions": [
+        "_ZN11LevelObjectC1Ei",
+        "_ZN11LevelObjectC2Ei",
+        "_ZN11LevelObject6UpdateEi",
+        "_ZN11LevelObject6WarmUpEv",
+        "_ZN11LevelObject13grabSceneNodeEiPPPv",
+        "_ZN11LevelObject9OnDespawnEv",
+        "_ZN11LevelObject7OnSpawnEv",
+        "_ZN11LevelObject13showHighlightEi",
+        "_ZN11LevelObject13dropSceneNodeEv"
+    ],
+    "sections": [
+        ".text",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".levelobject_update",
+        ".level_grab",
+        ".level_warmup",
+        ".level_despawn",
+        ".level_spawn",
+        ".level_vtable",
+        ".level_highlight",
+        ".level_drop"
+    ],
+    "external_thumb_functions": [
+        "_ZN16SceneNodeManager11getInstanceEv",
+        "_ZN16SceneNodeManager4grabEiP11LevelObjectiPPPv",
+        "_ZN16SceneNodeManager4dropEiPKN3irr5scene10ISceneNodeE",
+        "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv"
+    ]
+}

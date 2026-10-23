@@ -2,15 +2,11 @@
 #define WCH_RENDERING_UPDATE_INTERFACES_H
 
 #include "../world/LevelObject.h"
+#include "../world/SceneNodeManager.h"
 #include "../persistence/SaveGameInterfaces.h"
 
 // Partial call interfaces for the update loop. No complete layouts are asserted.
 class StateMachine { public: double getTimeStamp() const; };
-class SceneNodeManager {
-public:
-    static SceneNodeManager* getInstance();
-    void update(int);
-};
 class Vehicle : public LevelObject {
 public:
     void initializeDriver();

@@ -179,7 +179,13 @@
         ".gs_wakeup",
         ".gs_resume",
         ".gs_enter",
-        ".levelobject_update"
+        ".levelobject_update",
+        ".level_grab",
+        ".level_warmup",
+        ".level_despawn",
+        ".level_spawn",
+        ".level_vtable",
+        ".level_highlight"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -274,6 +280,9 @@
         "_ZN4Lock6renderEv",
         "_ZN15TouchScreenBase5clearEv",
         "_ZNK10PlayerTest15getAmbientSoundEv",
-        "_ZN11CHudManager4showEv"
+        "_ZN11CHudManager4showEv",
+        "_ZN16SceneNodeManager11getInstanceEv",
+        "_ZN16SceneNodeManager4grabEiP11LevelObjectiPPPv",
+        "_ZN16SceneNodeManager4dropEiPKN3irr5scene10ISceneNodeE"
     ]
 }

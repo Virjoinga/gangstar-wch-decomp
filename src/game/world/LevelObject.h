@@ -20,7 +20,10 @@ public:
     unsigned char getObjectType() const { return objectType; }
     static int s_type[256];
     static unsigned char s_nodePoolID[256];
+    static int* s_highlights;
+    static int* s_highlightsIcons;
     void Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory);
+    void showHighlight(int id);
     virtual irr::scene::ISceneNode* grabSceneNode(int id, void*** parameters);
     virtual void dropSceneNode();
     virtual void setupSceneNode(int id, irr::scene::ISceneNode* node, int count, void** parameters);
@@ -68,7 +71,7 @@ public:
     LevelObject* next;
 protected:
     irr::scene::ISceneNode* sceneNode;
-    void* unknown20;
+    irr::scene::ISceneNode* unknown20;
     void* unknown24;
     char* unknown28;
     void* unknown32;
@@ -77,7 +80,7 @@ protected:
     unsigned char unknown38[2];
     int unknown40;
     int unknown44;
-    signed char unknown48;
+    unsigned char unknown48;
     unsigned char unknown49[3];
 };
 

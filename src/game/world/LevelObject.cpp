@@ -9,6 +9,8 @@
  */
 
 #include "LevelObject.h"
+#include "SceneNodeManager.h"
+#include "../rendering/GS3DStuff.h"
 
 LevelObject::LevelObject(int)
 {
@@ -26,6 +28,22 @@ LevelObject::LevelObject(int)
     unknown48 = -1;
 }
 
+void LevelObject::WarmUp() {}
+
+irr::scene::ISceneNode* LevelObject::grabSceneNode(int id, void*** parameters)
+{
+    if (s_nodePoolID[objectType] != 0xff && !sceneNode) {
+        sceneNode = SceneNodeManager::getInstance()->grab(s_nodePoolID[objectType], this, id, parameters);
+        sceneNode->setPosition(irr::core::vector3d<float>(0, 0, 0));
+        sceneNode->updateAbsolutePosition(false);
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag2, true);
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag4, true);
+        GS3DStuff::SetMaterialFlag(sceneNode, irr::video::MaterialFlag16, true);
+        sceneNode->setVisible(true);
+    }
+    return sceneNode;
+}
+
 void LevelObject::Update(int)
 {
     if (s_nodePoolID[objectType] == 0xff) return;
@@ -35,3 +53,33 @@ void LevelObject::Update(int)
         grabSceneNode(0, 0);
     }
 }
+
+void LevelObject::showHighlight(int id)
+{
+    if (id >= 0) {
+        unknown44 = s_highlightsIcons[id];
+        int pool = s_highlights[id];
+        if (unknown20 || !sceneNode) return;
+        unknown20 = SceneNodeManager::getInstance()->grab(pool, 0, 0, 0);
+        unknown48 = pool;
+        GS3DStuff::SetMaterialFlag(unknown20, irr::video::MaterialFlag2, true);
+        GS3DStuff::SetMaterialFlag(unknown20, irr::video::MaterialFlag4, true);
+        GS3DStuff::SetMaterialFlag(unknown20, irr::video::MaterialFlag16, true);
+        sceneNode->addChild(unknown20);
+        unknown20->setVisible(true);
+        unknown20->getAnimators().first->animator->getTimelineCtrl()->setLoop(true);
+        irr::core::matrix4 identity;
+        unknown20->setRelativeTransformation(identity);
+        unknown20->updateAbsolutePosition(false);
+    } else {
+        if (!unknown20) return;
+        unknown20->setVisible(false);
+        if (unknown48 == 0xff) return;
+        if (sceneNode) sceneNode->removeChild(unknown20);
+        if (SceneNodeManager::getInstance()->drop(unknown48, unknown20))
+            unknown20 = 0;
+    }
+}
+
+void LevelObject::OnDespawn() { unknown4 &= ~1u; }
+void LevelObject::OnSpawn() { unknown4 |= 0x81; }
