@@ -10733,29 +10733,29 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003139f9	0x84	Vehicle.cpp	game	vehicles	pending	_ZN7Vehicle18openDoorFromInsideEb	Vehicle::openDoorFromInside(bool)
 0x00313a7d	0x84	Vehicle.cpp	game	vehicles	pending	_ZN7Vehicle8openDoorEb	Vehicle::openDoor(bool)
 0x00313b01	0xfb4	Vehicle.cpp	game	vehicles	pending	_ZN7Vehicle6UpdateEi	Vehicle::Update(int)
-0x00314ab9	0x1c	GameObjectList.cpp	game	world	pending	_ZN14GameObjectListC1Ev	GameObjectList::GameObjectList()
-0x00314ab9	0x1c	GameObjectList.cpp	game	world	pending	_ZN14GameObjectListC2Ev	GameObjectList::GameObjectList()
-0x00314ad5	0x18	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList4SizeEv	GameObjectList::Size() const
-0x00314aed	0x1e	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList11InsertAfterEP11LevelObjectS1_	GameObjectList::InsertAfter(LevelObject*, LevelObject*)
-0x00314b0d	0x1c	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList3AddEP11LevelObjectb	GameObjectList::Add(LevelObject*, bool)
-0x00314b29	0x3c	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList6RemoveEP11LevelObject	GameObjectList::Remove(LevelObject*)
-0x00314b65	0x20	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList16RemoveAndDestroyEP11LevelObject	GameObjectList::RemoveAndDestroy(LevelObject*)
-0x00314b85	0x4	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList8GetFirstEv	GameObjectList::GetFirst() const
-0x00314b89	0x30	GameObjectList.cpp	game	world	pending	__tcf_2	__tcf_2
-0x00314bb9	0x26	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList5ClearEv	GameObjectList::Clear()
-0x00314be1	0x28	GameObjectList.cpp	game	world	pending	_ZN14GameObjectListD0Ev	GameObjectList::~GameObjectList()
-0x00314c09	0x20	GameObjectList.cpp	game	world	pending	_ZN14GameObjectListD2Ev	GameObjectList::~GameObjectList()
-0x00314c09	0x20	GameObjectList.cpp	game	world	pending	_ZN14GameObjectListD1Ev	GameObjectList::~GameObjectList()
-0x00314c29	0x2c	GameObjectList.cpp	game	world	pending	_ZN14GameObjectList17UpdateGameObjectsEib	GameObjectList::UpdateGameObjects(int, bool)
-0x00314c55	0x26	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList7ForEachER15ForEachFunctionb	GameObjectList::ForEach(ForEachFunction&, bool) const
-0x00314c7d	0x38	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList7GetNextERK18IterationConditionPK11LevelObjectbPi	GameObjectList::GetNext(IterationCondition const&, LevelObject const*, bool, int*) const
-0x00314cb5	0x42	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList8GetFirstERK18IterationConditionbPi	GameObjectList::GetFirst(IterationCondition const&, bool, int*) const
-0x00314cf9	0x54	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList9ForEachIfER15ForEachFunctionRK18IterationConditionb	GameObjectList::ForEachIf(ForEachFunction&, IterationCondition const&, bool) const
-0x00314d4d	0x6a	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList8FillListERK18IterationConditioniPP11LevelObjectRib	GameObjectList::FillList(IterationCondition const&, int, LevelObject**, int&, bool) const
-0x00314db9	0x94	GameObjectList.cpp	game	world	pending	_ZNK14GameObjectList19GetGameObjectByNameEPKcbb	GameObjectList::GetGameObjectByName(char const*, bool, bool) const
-0x00314e4d	0x20	GameObjectList.cpp	game	world	pending	_ZNK22IterationConditionName11IsRespectedER11LevelObjecti	IterationConditionName::IsRespected(LevelObject&, int) const
-0x00314e6d	0x6c	GameObjectList.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00314ed9	0x14	GameObjectList.cpp	game	world	pending	_GLOBAL__I__ZN14GameObjectListC2Ev	_GLOBAL__I__ZN14GameObjectListC2Ev
+0x00314ab9	0x1c	GameObjectList.cpp	game	world	matched	_ZN14GameObjectListC1Ev	GameObjectList::GameObjectList()
+0x00314ab9	0x1c	GameObjectList.cpp	game	world	matched	_ZN14GameObjectListC2Ev	GameObjectList::GameObjectList()
+0x00314ad5	0x18	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList4SizeEv	GameObjectList::Size() const
+0x00314aed	0x1e	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList11InsertAfterEP11LevelObjectS1_	GameObjectList::InsertAfter(LevelObject*, LevelObject*)
+0x00314b0d	0x1c	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList3AddEP11LevelObjectb	GameObjectList::Add(LevelObject*, bool)
+0x00314b29	0x3c	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList6RemoveEP11LevelObject	GameObjectList::Remove(LevelObject*)
+0x00314b65	0x20	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList16RemoveAndDestroyEP11LevelObject	GameObjectList::RemoveAndDestroy(LevelObject*)
+0x00314b85	0x4	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList8GetFirstEv	GameObjectList::GetFirst() const
+0x00314b89	0x30	GameObjectList.cpp	game	world	matched	__tcf_2	__tcf_2
+0x00314bb9	0x26	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList5ClearEv	GameObjectList::Clear()
+0x00314be1	0x28	GameObjectList.cpp	game	world	matched	_ZN14GameObjectListD0Ev	GameObjectList::~GameObjectList()
+0x00314c09	0x20	GameObjectList.cpp	game	world	matched	_ZN14GameObjectListD2Ev	GameObjectList::~GameObjectList()
+0x00314c09	0x20	GameObjectList.cpp	game	world	matched	_ZN14GameObjectListD1Ev	GameObjectList::~GameObjectList()
+0x00314c29	0x2c	GameObjectList.cpp	game	world	matched	_ZN14GameObjectList17UpdateGameObjectsEib	GameObjectList::UpdateGameObjects(int, bool)
+0x00314c55	0x26	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList7ForEachER15ForEachFunctionb	GameObjectList::ForEach(ForEachFunction&, bool) const
+0x00314c7d	0x38	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList7GetNextERK18IterationConditionPK11LevelObjectbPi	GameObjectList::GetNext(IterationCondition const&, LevelObject const*, bool, int*) const
+0x00314cb5	0x42	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList8GetFirstERK18IterationConditionbPi	GameObjectList::GetFirst(IterationCondition const&, bool, int*) const
+0x00314cf9	0x54	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList9ForEachIfER15ForEachFunctionRK18IterationConditionb	GameObjectList::ForEachIf(ForEachFunction&, IterationCondition const&, bool) const
+0x00314d4d	0x6a	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList8FillListERK18IterationConditioniPP11LevelObjectRib	GameObjectList::FillList(IterationCondition const&, int, LevelObject**, int&, bool) const
+0x00314db9	0x94	GameObjectList.cpp	game	world	matched	_ZNK14GameObjectList19GetGameObjectByNameEPKcbb	GameObjectList::GetGameObjectByName(char const*, bool, bool) const
+0x00314e4d	0x20	GameObjectList.cpp	game	world	matched	_ZNK22IterationConditionName11IsRespectedER11LevelObjecti	IterationConditionName::IsRespected(LevelObject&, int) const
+0x00314e6d	0x6c	GameObjectList.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00314ed9	0x14	GameObjectList.cpp	game	world	matched	_GLOBAL__I__ZN14GameObjectListC2Ev	_GLOBAL__I__ZN14GameObjectListC2Ev
 0x00314eed	0x12	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager19AddGameObjectOfTypeEi	GameObjectManager::AddGameObjectOfType(int)
 0x00314f01	0x12	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager22RemoveGameObjectOfTypeEi	GameObjectManager::RemoveGameObjectOfType(int)
 0x00314f15	0x10	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager6RemoveEP11LevelObject	GameObjectManager::Remove(LevelObject*)

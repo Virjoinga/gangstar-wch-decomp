@@ -9,15 +9,20 @@ class quaternion;
 } }
 namespace irr { namespace collada { class CColladaFactory; } }
 namespace Structs { struct GameObjectBasic; }
+class GameObjectList;
 
 // Observed primary virtual slots and 52-byte base prefix. Several field and
 // return types remain provisional; complete hierarchy and runtime use await
 // recovery of the remaining methods. The constructor is the recovered standalone
 // function; the inline type accessor represents the observed byte load.
 class LevelObject {
+    friend class GameObjectList;
 public:
     LevelObject(int id);
     unsigned char getObjectType() const { return objectType; }
+    const char* getName() const { return unknown28; }
+    unsigned char GetMetatype();
+    void SetName(const char* name);
     static int s_type[256];
     static unsigned char s_nodePoolID[256];
     static int* s_highlights;
@@ -71,7 +76,7 @@ public:
 
 protected:
     unsigned int unknown4;
-    unsigned int unknown8;
+    LevelObject* previous;
 public:
     LevelObject* next;
 protected:
@@ -79,7 +84,7 @@ protected:
     irr::scene::ISceneNode* unknown20;
     void* unknown24;
     char* unknown28;
-    void* unknown32;
+    GameObjectList* objectList;
     unsigned char objectType;
     unsigned char unknown37;
     unsigned char unknown38[2];
