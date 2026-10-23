@@ -12,6 +12,17 @@
 #include "LevelObject.h"
 #include "ObjectData.h"
 #include "ResStream.h"
+#include "Path.h"
+#include "SpawnPoint.h"
+#include "../app/CGameFactory.h"
+#include "../ai/NPC.h"
+#include "../vehicles/Vehicle.h"
+#include "../combat/Weapon.h"
+#include "../combat/Rocket.h"
+#include "../missions/Checkpoint.h"
+#include "../ui/Shop.h"
+#include "../meta/Item.h"
+#include "../core/SceneCamera.h"
 #include "../persistence/DataStream.h"
 #include "../persistence/BufferStream.h"
 
@@ -240,6 +251,91 @@ void Structs::Path::Read(DataStream& stream)
     for (int i = 0; i < count; ++i) values[i] = stream.ReadInt();
 }
 
+LevelObject* GameObjectManager::LoadGameObject(DataStream& stream)
+{
+    LevelObject* object = 0;
+    int type = stream.Peek4();
+    if (type == 0) {
+        Structs::GameObjectBasic data;
+        data.Read(stream);
+        object = new LevelObject(0);
+        static_cast<LevelObject*>(object)->Load(data, CGameFactory::getInstance());
+        object->WarmUp();
+    } else if (type == 3) {
+        Structs::Car data;
+        data.Read(stream);
+        object = new Vehicle(3);
+        static_cast<Vehicle*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 4) {
+        Structs::Weapon data;
+        data.Read(stream);
+        object = new Weapon(4);
+        static_cast<Weapon*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 5) {
+        Structs::NPC data;
+        data.Read(stream);
+        object = new NPC(5);
+        static_cast<NPC*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 6) {
+        Structs::Checkpoint data;
+        data.Read(stream);
+        object = new Checkpoint(6);
+        static_cast<Checkpoint*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 13) {
+        Structs::CheckpointShop data;
+        data.Read(stream);
+        object = new Shop(13);
+        static_cast<Shop*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 7) {
+        Structs::SceneCamera data;
+        data.Read(stream);
+        object = new SceneCamera(7);
+        static_cast<SceneCamera*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 10) {
+        Structs::Marker data;
+        data.Read(stream);
+        object = new Transformation(10);
+        static_cast<Transformation*>(object)->Load(data, CGameFactory::getInstance());
+        object->WarmUp();
+    } else if (type == 12) {
+        Structs::Rocket data;
+        data.Read(stream);
+        object = new Rocket(12);
+        static_cast<Rocket*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 14) {
+        Structs::Path data;
+        data.Read(stream);
+        object = new Path(14);
+        static_cast<Path*>(object)->Load(data, CGameFactory::getInstance());
+        object->WarmUp();
+    } else if (type == 15) {
+        Structs::Item data;
+        data.Read(stream);
+        object = new Item(15);
+        static_cast<Item*>(object)->Load(data);
+        object->WarmUp();
+    } else if (type == 9) {
+        Structs::SpawnPoint data;
+        data.Read(stream);
+        SpawnPoint* point = new SpawnPoint(9);
+        point->Load(data);
+    } else {
+        Structs::GameObjectBasic data;
+        data.Read(stream);
+        object = new LevelObject(type);
+        object->Load(data, CGameFactory::getInstance());
+        object->WarmUp();
+    }
+    return object;
+}
+
 LevelObject* GameObjectManager::CreateGameObjectFromMetatype(int type)
 {
     BufferStream buffer(1, metatypeSizes[type], metatypeData[type]);
@@ -290,6 +386,43 @@ void GameObjectManager::LoadMetatypes()
         stream.Read(metatypeData[i], metatypeSizes[i]);
     }
 }
+
+void GameObjectManager::LoadSpawnPoints(const char* filename)
+{
+    ResStream buffer(filename, 1);
+    DataStream stream(buffer, DataStream::BigEndian);
+    int count = stream.ReadInt();
+    for (int i = 0; i < count; ++i) {
+        int size = stream.ReadInt();
+        int end = stream.Tell() + size;
+        if (stream.Peek4() == 9) LoadGameObject(stream);
+        if (stream.Tell() != end) stream.Seek(end, 0);
+    }
+}
+
+void GameObjectManager::Load(char* filename)
+{
+    ResStream buffer(filename, 1);
+    DataStream stream(buffer, DataStream::BigEndian);
+    int count = stream.ReadInt();
+    for (int i = 0; i < count; ++i) {
+        int size = stream.ReadInt();
+        int end = stream.Tell() + size;
+        if (stream.Peek4() == 9) {
+            if (stream.Tell() != end) stream.Seek(end, 0);
+        } else {
+            LevelObject* object = LoadGameObject(stream);
+            if (stream.Tell() != end) stream.Seek(end, 0);
+            if (object) {
+                if ((object->unknown4 & 1) || (object->unknown4 & 2))
+                    Add(object, object->unknown40);
+                else
+                    Add(object, 2);
+            }
+        }
+    }
+}
+
 
 GameObjectManager::GameObjectManager()
     : unknown1032(0), metatypeCount(0), metatypeData(0)
