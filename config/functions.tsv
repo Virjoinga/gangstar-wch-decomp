@@ -10807,7 +10807,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003167e1	0x50	LevelObject.cpp	game	world	pending	_ZN11LevelObject5setupEv	LevelObject::setup()
 0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
 0x00316839	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4StopEv	LevelObject::Stop()
-0x0031683d	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject9isEnabledEv	LevelObject::isEnabled() const
+0x0031683d	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject9isEnabledEv	LevelObject::isEnabled() const
 0x00316845	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
 0x00316849	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5debugEPN3irr5video12IVideoDriverE	LevelObject::debug(irr::video::IVideoDriver*)
 0x0031684d	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetPositionEv	LevelObject::GetPosition() const
@@ -10828,9 +10828,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316c29	0x98	LevelObject.cpp	game	world	matched	_ZN11LevelObject13grabSceneNodeEiPPPv	LevelObject::grabSceneNode(int, void***)
 0x00316cc1	0x48	LevelObject.cpp	game	world	matched	_ZN11LevelObject6UpdateEi	LevelObject::Update(int)
 0x00316d09	0x114	LevelObject.cpp	game	world	matched	_ZN11LevelObject13showHighlightEi	LevelObject::showHighlight(int)
-0x00316e1d	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject13dropSceneNodeEv	LevelObject::dropSceneNode()
-0x00316e81	0xd4	LevelObject.cpp	game	world	pending	_ZN11LevelObject7disableEv	LevelObject::disable()
-0x00316f55	0x98	LevelObject.cpp	game	world	pending	_ZN11LevelObject6enableEv	LevelObject::enable()
+0x00316e1d	0x64	LevelObject.cpp	game	world	matched	_ZN11LevelObject13dropSceneNodeEv	LevelObject::dropSceneNode()
+0x00316e81	0xd4	LevelObject.cpp	game	world	matched	_ZN11LevelObject7disableEv	LevelObject::disable()
+0x00316f55	0x98	LevelObject.cpp	game	world	matched	_ZN11LevelObject6enableEv	LevelObject::enable()
 0x00316fed	0x254	LevelObject.cpp	game	world	pending	_ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE	LevelObject::Load(Structs::GameObjectBasic const&, irr::collada::CColladaFactory*)
 0x00317241	0xa4	LevelObject.cpp	game	world	pending	_ZN11LevelObjectD0Ev	LevelObject::~LevelObject()
 0x003172e5	0x9c	LevelObject.cpp	game	world	pending	_ZN11LevelObjectD1Ev	LevelObject::~LevelObject()

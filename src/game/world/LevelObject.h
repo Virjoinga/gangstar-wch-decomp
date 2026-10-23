@@ -24,6 +24,11 @@ public:
     static int* s_highlightsIcons;
     void Load(const Structs::GameObjectBasic& data, irr::collada::CColladaFactory* factory);
     void showHighlight(int id);
+    bool isEnabled() const;
+    // Observed byte predicate, inlined without claiming a standalone retail symbol.
+    bool hasHighlightPool() const { return unknown48 != 0xff; }
+    // Observed pool-table predicate; used inline without claiming a standalone symbol.
+    bool hasSceneNodePool() const { return s_nodePoolID[objectType] != 0xff; }
     virtual irr::scene::ISceneNode* grabSceneNode(int id, void*** parameters);
     virtual void dropSceneNode();
     virtual void setupSceneNode(int id, irr::scene::ISceneNode* node, int count, void** parameters);

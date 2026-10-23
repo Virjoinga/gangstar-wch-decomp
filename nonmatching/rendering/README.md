@@ -133,9 +133,9 @@ MISMATCH  _ZN8SaveGame13SampleAndSaveEPKc  0x00344821
 
 
 The current image also links the native LevelObject implementation directly.
-Its constructors and 72-byte Update method pass as dependencies; both code
-sections are checked in this image. This strengthens the recovered call
-interface without changing the four-byte GS3DStuff near miss.
+Its recovered constructors, scene lifecycle, transforms and activation methods
+pass as dependencies; all native LevelObject sections and its vtable are checked
+in this image. The GS3DStuff update remains a separate four-byte near miss.
 
 Additional bounded source probes using equivalent while/for conditions, named
 loop temporaries and allocator-aware vector construction retained the same four

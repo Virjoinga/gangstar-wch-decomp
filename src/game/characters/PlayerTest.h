@@ -2,6 +2,7 @@
 #define WCH_CHARACTERS_PLAYER_TEST_H
 
 class Vehicle;
+class LevelObject;
 namespace irr { namespace scene { class ISceneNode; } }
 
 // Partial observed layout and call interfaces, not the complete original class.
@@ -50,6 +51,10 @@ public:
     virtual void unknown45();
     virtual void unknown46();
     virtual Vehicle* getVehicle() const;
+    virtual void unknown48(); virtual void unknown49(); virtual void unknown50();
+    virtual void unknown51(); virtual void unknown52(); virtual void unknown53();
+    virtual void unknown54();
+    virtual void SetTarget(LevelObject* target);
 };
 
 class SavePrimaryInterface { public: virtual void unknownPrimary(); };
@@ -57,6 +62,8 @@ class PlayerTest : public SavePrimaryInterface, public SavePositionInterface {
 public:
     enum eContext { Context0 = 0, Context1 = 1, AnyContext = -1 };
     static PlayerTest* GetPlayer();
+    // Inline access to the observed target at offset 264; no standalone symbol claimed.
+    LevelObject* getTarget() const { return target; }
     int getAmbientSound() const;
     void setCash(int value);
     void switchContext(eContext context, bool flag);
@@ -67,7 +74,9 @@ public:
     irr::scene::ISceneNode* sceneNode;
     unsigned char unknown24[216];
     unsigned int flags240;
-    unsigned char unknown244[139];
+    unsigned char unknown244[20];
+    LevelObject* target;
+    unsigned char unknown268[115];
     bool flag383;
     unsigned char unknown384[36];
     int cash;

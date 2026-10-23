@@ -1,5 +1,9 @@
 # LevelObject construction and scene lifecycle
 
+The former dropSceneNode near miss below is superseded by the exact native
+implementation in [level-object-activation.md](level-object-activation.md). Its old
+nonmatching runner is retired; use `python tools/build.py level-object`.
+
 LevelObject(int) matches 56 native bytes at 0x003167a5. Both C1/C2 aliases
 are verified, contributing 112 catalogue bytes. The constructor ignores its
 integer argument, writes the retail vtable pointer, zeroes eight 32-bit fields,
