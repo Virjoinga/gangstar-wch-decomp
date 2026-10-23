@@ -17,6 +17,7 @@ class GameObjectList;
 // function; the inline type accessor represents the observed byte load.
 class LevelObject {
     friend class GameObjectList;
+    friend class GameObjectManager;
 public:
     LevelObject(int id);
     unsigned char getObjectType() const { return objectType; }

@@ -10756,16 +10756,16 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00314e4d	0x20	GameObjectList.cpp	game	world	matched	_ZNK22IterationConditionName11IsRespectedER11LevelObjecti	IterationConditionName::IsRespected(LevelObject&, int) const
 0x00314e6d	0x6c	GameObjectList.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00314ed9	0x14	GameObjectList.cpp	game	world	matched	_GLOBAL__I__ZN14GameObjectListC2Ev	_GLOBAL__I__ZN14GameObjectListC2Ev
-0x00314eed	0x12	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager19AddGameObjectOfTypeEi	GameObjectManager::AddGameObjectOfType(int)
-0x00314f01	0x12	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager22RemoveGameObjectOfTypeEi	GameObjectManager::RemoveGameObjectOfType(int)
-0x00314f15	0x10	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager6RemoveEP11LevelObject	GameObjectManager::Remove(LevelObject*)
-0x00314f25	0x28	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager13getObjectListEi	GameObjectManager::getObjectList(int)
+0x00314eed	0x12	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager19AddGameObjectOfTypeEi	GameObjectManager::AddGameObjectOfType(int)
+0x00314f01	0x12	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager22RemoveGameObjectOfTypeEi	GameObjectManager::RemoveGameObjectOfType(int)
+0x00314f15	0x10	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager6RemoveEP11LevelObject	GameObjectManager::Remove(LevelObject*)
+0x00314f25	0x28	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager13getObjectListEi	GameObjectManager::getObjectList(int)
 0x00314f4d	0x30	GameObjectManager.cpp	game	world	pending	__tcf_4	__tcf_4
 0x00314f7d	0x24	GameObjectManager.cpp	game	world	pending	__tcf_1	__tcf_1
-0x00314fa1	0x54	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager5ClearEv	GameObjectManager::Clear()
-0x00314ff5	0x38	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager8GetFirstEi	GameObjectManager::GetFirst(int)
-0x0031502d	0x3c	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager3AddEP11LevelObjecti	GameObjectManager::Add(LevelObject*, int)
-0x00315069	0x48	GameObjectManager.cpp	game	world	pending	_ZNK17GameObjectManager19GetGameObjectByNameEPKcb	GameObjectManager::GetGameObjectByName(char const*, bool) const
+0x00314fa1	0x54	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager5ClearEv	GameObjectManager::Clear()
+0x00314ff5	0x38	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager8GetFirstEi	GameObjectManager::GetFirst(int)
+0x0031502d	0x3c	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager3AddEP11LevelObjecti	GameObjectManager::Add(LevelObject*, int)
+0x00315069	0x48	GameObjectManager.cpp	game	world	matched	_ZNK17GameObjectManager19GetGameObjectByNameEPKcb	GameObjectManager::GetGameObjectByName(char const*, bool) const
 0x003150b1	0x24	GameObjectManager.cpp	game	world	pending	_ZN7Structs8SVector34ReadER10DataStream	Structs::SVector3::Read(DataStream&)
 0x003150d5	0x1c	GameObjectManager.cpp	game	world	pending	_ZN7Structs16GameObjectHeader4ReadER10DataStream	Structs::GameObjectHeader::Read(DataStream&)
 0x003150f1	0x74	GameObjectManager.cpp	game	world	pending	_ZN7Structs15GameObjectBasic4ReadER10DataStream	Structs::GameObjectBasic::Read(DataStream&)
@@ -10786,10 +10786,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00315b4d	0x114	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager13LoadMetatypesEv	GameObjectManager::LoadMetatypes()
 0x00315c61	0xe0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager15LoadSpawnPointsEPKc	GameObjectManager::LoadSpawnPoints(char const*)
 0x00315d41	0x11c	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager4LoadEPc	GameObjectManager::Load(char*)
-0x00315e5d	0x80	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerC2Ev	GameObjectManager::GameObjectManager()
-0x00315e5d	0x80	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerC1Ev	GameObjectManager::GameObjectManager()
-0x00315edd	0x28	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager5SetupEv	GameObjectManager::Setup()
-0x00315f05	0x34	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager16RemoveAndDestroyEP11LevelObject	GameObjectManager::RemoveAndDestroy(LevelObject*)
+0x00315e5d	0x80	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerC2Ev	GameObjectManager::GameObjectManager()
+0x00315e5d	0x80	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerC1Ev	GameObjectManager::GameObjectManager()
+0x00315edd	0x28	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager5SetupEv	GameObjectManager::Setup()
+0x00315f05	0x34	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager16RemoveAndDestroyEP11LevelObject	GameObjectManager::RemoveAndDestroy(LevelObject*)
 0x00315f39	0x1a0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager31getDistanceFromAttackableTargetEP9CharacteriP11LevelObjectb	GameObjectManager::getDistanceFromAttackableTarget(Character*, int, LevelObject*, bool)
 0x003160d9	0x13c	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager19getAttackableTargetEP9Character	GameObjectManager::getAttackableTarget(Character*)
 0x00316215	0x11c	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager8spawnNPCEiii	GameObjectManager::spawnNPC(int, int, int)
@@ -10798,9 +10798,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00316421	0x144	GameObjectManager.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00316565	0x14	GameObjectManager.cpp	game	world	pending	_GLOBAL__I__ZN17GameObjectManagerC2Ev	_GLOBAL__I__ZN17GameObjectManagerC2Ev
 0x00316579	0xd0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager7despawnEP11LevelObject	GameObjectManager::despawn(LevelObject*)
-0x00316649	0xb0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD0Ev	GameObjectManager::~GameObjectManager()
-0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD1Ev	GameObjectManager::~GameObjectManager()
-0x003166f9	0xac	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManagerD2Ev	GameObjectManager::~GameObjectManager()
+0x00316649	0xb0	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerD0Ev	GameObjectManager::~GameObjectManager()
+0x003166f9	0xac	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerD1Ev	GameObjectManager::~GameObjectManager()
+0x003166f9	0xac	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerD2Ev	GameObjectManager::~GameObjectManager()
 0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC1Ei	LevelObject::LevelObject(int)
 0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
 0x003167dd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
