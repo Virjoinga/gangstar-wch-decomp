@@ -38,6 +38,7 @@ public:
     bool isEnabled() const;
     bool isVisibleOnScreen();
     bool isWithinRange(float range);
+    bool canSeeLevelObject(LevelObject* other, irr::core::vector3d<float>& point);
     // Observed byte predicate, inlined without claiming a standalone retail symbol.
     bool hasHighlightPool() const { return unknown48 != 0xff; }
     // Observed pool-table predicate; used inline without claiming a standalone symbol.
@@ -50,7 +51,8 @@ public:
     virtual void OnSpawn();
     virtual void OnDespawn();
     virtual void setSpawnType(int type);
-    virtual int getSpawnType();
+    // Header-emitted weak base implementation, also used through qualified calls.
+    virtual int getSpawnType() { return s_type[objectType]; }
     virtual unsigned short GetMatID() const;
     virtual unsigned short GetTriID() const;
     virtual irr::core::vector3d<float> GetPosition() const;

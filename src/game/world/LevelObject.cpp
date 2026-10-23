@@ -10,6 +10,9 @@
 
 #include "LevelObject.h"
 #include "../core/CameraManager.h"
+#include "../core/Physics.h"
+#include "../characters/Character.h"
+#include "../vehicles/Vehicle.h"
 #include "../core/LocalStartupStorage.h"
 #include "SceneNodeManager.h"
 #include "../characters/PhysicAttributes.h"
@@ -77,6 +80,7 @@ bool LevelObject::isWithinRange(float range)
 {
     return CameraManager::getInstance()->getCamera()->getPosition().getDistanceFrom(GetPosition()) <= range;
 }
+
 
 irr::core::vector3d<float> LevelObject::GetPosition() const
 {
@@ -301,6 +305,73 @@ LevelObject::~LevelObject()
         delete unknown24;
         unknown24 = 0;
     }
+}
+
+bool LevelObject::canSeeLevelObject(LevelObject* other, irr::core::vector3d<float>& point)
+{
+    b2World* world = PhysicAttributes::s_world;
+    b2Shape* shapes[100] = {0};
+    b2AABB bounds;
+    if (GetPosition().X > other->GetPosition().X) {
+        bounds.lowerBound.x = other->GetPosition().X / 100.0f;
+        bounds.upperBound.x = GetPosition().X / 100.0f;
+    } else {
+        bounds.lowerBound.x = GetPosition().X / 100.0f;
+        bounds.upperBound.x = other->GetPosition().X / 100.0f;
+    }
+    if (GetPosition().Y > other->GetPosition().Y) {
+        bounds.lowerBound.y = other->GetPosition().Y / 100.0f;
+        bounds.upperBound.y = GetPosition().Y / 100.0f;
+    } else {
+        bounds.lowerBound.y = GetPosition().Y / 100.0f;
+        bounds.upperBound.y = other->GetPosition().Y / 100.0f;
+    }
+    if (bounds.lowerBound.x == bounds.upperBound.x) bounds.upperBound.x += 0.01f;
+    if (bounds.lowerBound.y == bounds.upperBound.y) bounds.upperBound.y += 0.01f;
+    world->Query(bounds, shapes, 100);
+    float fraction = 1.0f;
+    b2Vec2 normal;
+    b2Segment segment;
+    segment.p1.x = GetPosition().X / 100.0f;
+    segment.p1.y = GetPosition().Y / 100.0f;
+    segment.p2.x = other->GetPosition().X / 100.0f;
+    segment.p2.y = other->GetPosition().Y / 100.0f;
+    for (int i = 0; i < 100; ++i) {
+        b2Shape* shape = shapes[i];
+        if (!shape) break;
+        if ((shape->GetFilterData().categoryBits == 0 &&
+             (shape->GetFilterData().groupIndex != unknown24->getIndex() + 1 || shape->GetFilterData().maskBits == 0)) ||
+            shape->IsSensor()) continue;
+        PhysicsBodyData* data = static_cast<PhysicsBodyData*>(shape->GetBody()->GetUserData());
+        if (other->LevelObject::getSpawnType() == 3 &&
+            data->owner == static_cast<Vehicle*>(other)->getDriver()) continue;
+        if (data && (data->owner == this || data->owner == other)) continue;
+        if (shape->TestSegment(shape->GetBody()->GetXForm(), &fraction, &normal, segment, 1.0f)) {
+            if (data->unknown4 != 0 || data->lowerHeight == data->upperHeight) break;
+            float height = GetPosition().Z + (other->GetPosition().Z - GetPosition().Z) * fraction;
+            if (LevelObject::getSpawnType() == 5 ||
+                reinterpret_cast<LevelObject*>(static_cast<SavePositionInterface*>(PlayerTest::GetPlayer())) == this)
+                height += 75.0f;
+            if (height < data->lowerHeight || height > data->upperHeight) fraction = 1.0f;
+            else break;
+        }
+    }
+    irr::core::vector3d<float> start = GetPosition();
+    irr::core::vector3d<float> end = other->GetPosition();
+    irr::core::vector3d<float> heightNormal;
+    if (LevelObject::getSpawnType() == 3) start.Z += 100.0f;
+    else if (LevelObject::getSpawnType() == 5 ||
+        reinterpret_cast<LevelObject*>(static_cast<SavePositionInterface*>(PlayerTest::GetPlayer())) == this)
+        start.Z += 75.0f;
+    if (other->LevelObject::getSpawnType() == 3) end.Z += 100.0f;
+    else if (other->LevelObject::getSpawnType() == 5 ||
+        reinterpret_cast<LevelObject*>(static_cast<SavePositionInterface*>(PlayerTest::GetPlayer())) == other)
+        end.Z += 75.0f;
+    float heightFraction = unknown24->IntersectSegmentWithHeightMap(start, end, point, heightNormal);
+    if (heightFraction > fraction) {
+        point = start + (end - start) * fraction;
+    }
+    return heightFraction == 1.0f && fraction == 1.0f;
 }
 
 void LevelObject::OnDespawn() { unknown4 &= ~1u; }

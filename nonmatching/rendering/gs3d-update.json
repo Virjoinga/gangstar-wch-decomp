@@ -91,7 +91,9 @@
             "compiled_name": "__tcf_2"
         },
         "_ZN11LevelObject17isVisibleOnScreenEv",
-        "_ZN11LevelObject13isWithinRangeEf"
+        "_ZN11LevelObject13isWithinRangeEf",
+        "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
+        "_ZN11LevelObject12getSpawnTypeEv"
     ],
     "sections": [
         ".factory_d0",
@@ -190,7 +192,9 @@
         ".level_startup_wrapper",
         ".level_empty_text",
         ".level_visible",
-        ".level_range"
+        ".level_range",
+        ".level_sight",
+        ".level_base_type"
     ],
     "external_thumb_functions": [
         "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
@@ -244,7 +248,9 @@
         "_ZN16PhysicAttributesD1Ev",
         "_ZN9ResStreamC1EPKci",
         "_ZN9ResStreamD1Ev",
-        "_ZN12BufferStream5CloseEv"
+        "_ZN12BufferStream5CloseEv",
+        "_ZN7b2World5QueryERK6b2AABBPP7b2Shapei",
+        "_ZN16PhysicAttributes29IntersectSegmentWithHeightMapERKN3irr4core8vector3dIfEES5_RS3_S6_"
     ],
     "dependencies": [
         "data-stream",
