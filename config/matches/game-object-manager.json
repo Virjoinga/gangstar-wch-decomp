@@ -42,7 +42,20 @@
         "_ZN17GameObjectManager16RemoveAndDestroyEP11LevelObject",
         "_ZN17GameObjectManagerD0Ev",
         "_ZN17GameObjectManagerD1Ev",
-        "_ZN17GameObjectManagerD2Ev"
+        "_ZN17GameObjectManagerD2Ev",
+        "_ZN7Structs8SVector34ReadER10DataStream",
+        "_ZN7Structs16GameObjectHeader4ReadER10DataStream",
+        "_ZN7Structs15GameObjectBasic4ReadER10DataStream",
+        "_ZN7Structs7Vehicle4ReadER10DataStream",
+        "_ZN7Structs6Rocket4ReadER10DataStream",
+        "_ZN7Structs3NPC4ReadER10DataStream",
+        "_ZN7Structs6Marker4ReadER10DataStream",
+        "_ZN7Structs4Item4ReadER10DataStream",
+        "_ZN7Structs6Weapon4ReadER10DataStream",
+        "_ZN7Structs11SceneCamera4ReadER10DataStream",
+        "_ZN7Structs10Checkpoint4ReadER10DataStream",
+        "_ZN7Structs10SpawnPoint4ReadER10DataStream",
+        "_ZN7Structs4Path4ReadER10DataStream"
     ],
     "sections": [
         ".text",
@@ -105,7 +118,25 @@
         ".gom_10",
         ".gom_11",
         ".gom_12",
-        ".gom_vtable"
+        ".gom_vtable",
+        ".record_0",
+        ".record_1",
+        ".record_2",
+        ".record_3",
+        ".record_4",
+        ".record_5",
+        ".record_6",
+        ".record_7",
+        ".record_8",
+        ".record_9",
+        ".record_10",
+        ".record_11",
+        ".record_12",
+        ".datastream_destructor",
+        ".datastream_text",
+        ".datastream_vtable",
+        ".streamtext",
+        ".streamvtable"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -123,6 +154,8 @@
     ],
     "dependencies": [
         "game-object-list",
-        "level-object"
+        "level-object",
+        "data-stream",
+        "stream"
     ]
 }
