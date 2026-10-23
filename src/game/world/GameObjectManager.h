@@ -4,6 +4,7 @@
 #include "GameObjectList.h"
 
 class LevelObject;
+class DataStream;
 
 // Observed 1088-byte layout. The leading storage and several field meanings
 // remain provisional pending the loading and spawning methods.
@@ -15,6 +16,9 @@ public:
     virtual LevelObject* RemoveAndDestroy(LevelObject* object);
     LevelObject* GetFirst(int type);
     LevelObject* CreateGameObjectFromMetatype(int type);
+    LevelObject* LoadGameObject(DataStream& stream);
+    LevelObject* SpawnGameObject(int type);
+    int GetMetatypeFromName(const char* name);
     void AddGameObjectOfType(int type);
     void RemoveGameObjectOfType(int type);
     void Add(LevelObject* object, int list);
