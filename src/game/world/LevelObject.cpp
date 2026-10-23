@@ -30,6 +30,34 @@ LevelObject::LevelObject(int)
 
 void LevelObject::WarmUp() {}
 
+irr::core::vector3d<float> LevelObject::GetPosition() const
+{
+    return sceneNode->getAbsolutePosition();
+}
+
+void LevelObject::SetPosition(const irr::core::vector3d<float>& position)
+{
+    if (sceneNode) {
+        sceneNode->setPosition(position);
+        sceneNode->updateAbsolutePosition(false);
+    }
+}
+
+void LevelObject::SetRotation(const irr::core::quaternion& rotation)
+{
+    if (sceneNode) sceneNode->setRotation(rotation);
+}
+
+const irr::core::quaternion& LevelObject::GetRotation() const
+{
+    return sceneNode->getRotation();
+}
+
+void LevelObject::SetRotation(const irr::core::vector3d<float>& rotation)
+{
+    if (sceneNode) sceneNode->setRotation(irr::core::quaternion(rotation * 0.017453292f));
+}
+
 irr::scene::ISceneNode* LevelObject::grabSceneNode(int id, void*** parameters)
 {
     if (s_nodePoolID[objectType] != 0xff && !sceneNode) {
@@ -83,3 +111,15 @@ void LevelObject::showHighlight(int id)
 
 void LevelObject::OnDespawn() { unknown4 &= ~1u; }
 void LevelObject::OnSpawn() { unknown4 |= 0x81; }
+
+irr::core::vector3d<float> LevelObject::GetFront() const
+{
+    const irr::core::matrix4& matrix = sceneNode->getAbsoluteTransformation();
+    return -irr::core::vector3d<float>(matrix[4], matrix[5], matrix[6]);
+}
+
+irr::core::vector3d<float> LevelObject::GetRight() const
+{
+    const irr::core::matrix4& matrix = sceneNode->getAbsoluteTransformation();
+    return -irr::core::vector3d<float>(matrix[0], matrix[1], matrix[2]);
+}

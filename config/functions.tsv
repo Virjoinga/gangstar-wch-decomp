@@ -10810,10 +10810,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0031683d	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject9isEnabledEv	LevelObject::isEnabled() const
 0x00316845	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
 0x00316849	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5debugEPN3irr5video12IVideoDriverE	LevelObject::debug(irr::video::IVideoDriver*)
-0x0031684d	0x12	LevelObject.cpp	game	world	pending	_ZNK11LevelObject11GetPositionEv	LevelObject::GetPosition() const
-0x00316861	0x20	LevelObject.cpp	game	world	pending	_ZN11LevelObject11SetPositionERKN3irr4core8vector3dIfEE	LevelObject::SetPosition(irr::core::vector3d<float> const&)
-0x00316881	0x16	LevelObject.cpp	game	world	pending	_ZN11LevelObject11SetRotationERKN3irr4core10quaternionE	LevelObject::SetRotation(irr::core::quaternion const&)
-0x00316899	0x12	LevelObject.cpp	game	world	pending	_ZNK11LevelObject11GetRotationEv	LevelObject::GetRotation() const
+0x0031684d	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetPositionEv	LevelObject::GetPosition() const
+0x00316861	0x20	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetPositionERKN3irr4core8vector3dIfEE	LevelObject::SetPosition(irr::core::vector3d<float> const&)
+0x00316881	0x16	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetRotationERKN3irr4core10quaternionE	LevelObject::SetRotation(irr::core::quaternion const&)
+0x00316899	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetRotationEv	LevelObject::GetRotation() const
 0x003168ad	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4initEv	LevelObject::init()
 0x003168b1	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5cleanEv	LevelObject::clean()
 0x003168b5	0x30	LevelObject.cpp	game	world	pending	__tcf_3	__tcf_3
@@ -10824,7 +10824,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003169b5	0x9a	LevelObject.cpp	game	world	pending	_ZN11LevelObject13isWithinRangeEf	LevelObject::isWithinRange(float)
 0x00316a51	0x34	LevelObject.cpp	game	world	pending	_ZN11LevelObject11GetMetatypeEv	LevelObject::GetMetatype()
 0x00316a85	0x140	LevelObject.cpp	game	world	pending	_ZN11LevelObject14loadHighlightsEPKc	LevelObject::loadHighlights(char const*)
-0x00316bc5	0x64	LevelObject.cpp	game	world	pending	_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE	LevelObject::SetRotation(irr::core::vector3d<float> const&)
+0x00316bc5	0x64	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE	LevelObject::SetRotation(irr::core::vector3d<float> const&)
 0x00316c29	0x98	LevelObject.cpp	game	world	matched	_ZN11LevelObject13grabSceneNodeEiPPPv	LevelObject::grabSceneNode(int, void***)
 0x00316cc1	0x48	LevelObject.cpp	game	world	matched	_ZN11LevelObject6UpdateEi	LevelObject::Update(int)
 0x00316d09	0x114	LevelObject.cpp	game	world	matched	_ZN11LevelObject13showHighlightEi	LevelObject::showHighlight(int)
@@ -10839,8 +10839,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0031780d	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject9OnDespawnEv	LevelObject::OnDespawn()
 0x00317819	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject7OnSpawnEv	LevelObject::OnSpawn()
 0x00317825	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
-0x0031782d	0x28	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetFrontEv	LevelObject::GetFront() const
-0x00317855	0x28	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetRightEv	LevelObject::GetRight() const
+0x0031782d	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetFrontEv	LevelObject::GetFront() const
+0x00317855	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetRightEv	LevelObject::GetRight() const
 0x0031787d	0x144	LevelObject.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003179c1	0x14	LevelObject.cpp	game	world	pending	_GLOBAL__I__ZN11LevelObject12s_highlightsE	_GLOBAL__I__ZN11LevelObject12s_highlightsE
 0x003179d5	0x5e0	LevelObject.cpp	game	world	pending	_ZN11LevelObject7CastRayERKN3irr4core8vector3dIfEES5_RS3_S6_RPS_b	LevelObject::CastRay(irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, irr::core::vector3d<float>&, irr::core::vector3d<float>&, LevelObject*&, bool)
