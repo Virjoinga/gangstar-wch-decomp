@@ -193,3 +193,6 @@ MISMATCH  _ZN13WeaponManager25isWeaponUsableFromVehicleEi  0x00331145
   actual   : 00 b5 09 29 00 d9 00 bd 01 23 8b 40 19 1c
   differs at 0x6
 ```
+
+Further native transform methods and the corrected rotation return interface are
+documented in [level-object-transforms.md](level-object-transforms.md).

@@ -36,7 +36,7 @@ public:
     virtual unsigned short GetMatID() const;
     virtual unsigned short GetTriID() const;
     virtual irr::core::vector3d<float> GetPosition() const;
-    virtual irr::core::vector3d<float> GetRotation() const;
+    virtual const irr::core::quaternion& GetRotation() const;
     virtual irr::core::vector3d<float> GetRight() const;
     virtual irr::core::vector3d<float> GetFront() const;
     virtual void SetPosition(const irr::core::vector3d<float>& value);

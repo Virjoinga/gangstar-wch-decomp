@@ -1,5 +1,5 @@
 // Copyright (C) 2002-2008 Nikolaus Gebhardt
-// Altered excerpt of Irrlicht 1.4.2 matrix4.h: identity construction only.
+// Altered excerpt of Irrlicht 1.4.2 matrix4.h: identity construction and const element access only.
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
 // arising from the use of this software.
@@ -25,6 +25,7 @@ public:
     };
     CMatrix4(eConstructor constructor = EM4CONST_IDENTITY);
     inline CMatrix4<T>& makeIdentity();
+    const T& operator[](unsigned int index) const { return M[index]; }
 private:
     T M[16];
     mutable bool definitelyIdentityMatrix;

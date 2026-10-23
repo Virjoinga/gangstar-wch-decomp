@@ -3,6 +3,7 @@
 
 #include "Vector3.h"
 #include "Matrix4.h"
+#include "Quaternion.h"
 
 // Partial engine call interfaces only. Do not instantiate or infer complete
 // layouts from these declarations; no vendored engine code is implemented.
@@ -30,7 +31,8 @@ public:
     virtual void unknown3(); virtual void unknown4(); virtual void unknown5();
     virtual void unknown6(); virtual void unknown7(); virtual void unknown8();
     virtual void unknown9(); virtual void unknown10(); virtual void unknown11();
-    virtual void unknown12(); virtual void unknown13(); virtual void unknown14();
+    virtual void unknown12(); virtual void unknown13();
+    virtual const core::matrix4& getAbsoluteTransformation() const;
     virtual void unknown15(); virtual void unknown16();
     virtual void setRelativeTransformation(const core::matrix4& transformation);
     virtual bool isVisible() const; virtual void unknown19();
@@ -43,8 +45,9 @@ public:
     virtual void unknown31(); virtual void unknown32(); virtual void unknown33();
     virtual void unknown34(); virtual void unknown35(); virtual void unknown36();
     virtual void unknown37(); virtual void unknown38(); virtual void unknown39();
-    virtual void unknown40(); virtual void unknown41(); virtual void unknown42();
-    virtual void unknown43(); virtual void unknown44();
+    virtual void unknown40(); virtual void unknown41();
+    virtual const core::quaternion& getRotation() const;
+    virtual void setRotation(const core::quaternion& rotation); virtual void unknown44();
     virtual void setPosition(const core::vector3d<float>& position);
     virtual core::vector3d<float> getAbsolutePosition() const;
     virtual void unknown47(); virtual void unknown48();
