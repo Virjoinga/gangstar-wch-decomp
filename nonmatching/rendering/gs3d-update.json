@@ -182,7 +182,11 @@
         ".level_highlight_free",
         ".level_setup",
         ".level_highlight_load",
-        ".level_factory_cleanup"
+        ".level_factory_cleanup",
+        ".level_string_cleanup",
+        ".level_startup",
+        ".level_startup_wrapper",
+        ".level_empty_text"
     ],
     "external_thumb_functions": [
         "_ZN3irr7collada10CSceneNodeC1ERKNS0_16CColladaDatabaseEPNS0_5SNodeE",
