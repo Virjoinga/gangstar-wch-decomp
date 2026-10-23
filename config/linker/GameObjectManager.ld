@@ -10,7 +10,71 @@ __aeabi_atexit = 0x001c494c;
 _Znaj = 0x001c3ff8;
 _Znwj = 0x001c4814;
 _ZdaPv = 0x001c461c;
+__aeabi_i2f = 0x001c41e4;
+strlen = 0x001c48bc;
+__stack_chk_fail = 0x001c42e0;
+__cxa_pure_virtual = 0;
 SECTIONS {
+    .streamvtable 0x004ad6c8 : { */stream.o(.data.rel.ro) }
+
+    .streamtext 0x0034efe4 : {
+        */stream.o(.text._ZN6StreamC1Ev .text._ZN6StreamC2Ev)
+        */stream.o(.text._ZN6Stream5CloseEv)
+        */stream.o(.text._ZN6Stream4ReadEv)
+        */stream.o(.text._ZN6Stream5WriteEc)
+        */stream.o(.text._ZN6Stream5WriteERS_i)
+        */stream.o(.text._ZN6Stream4PeekEPvi)
+        */stream.o(.text._ZN6StreamD0Ev .gnu.linkonce.t._ZN6StreamD0Ev)
+        */stream.o(.text._ZN6StreamD1Ev .text._ZN6StreamD2Ev .gnu.linkonce.t._ZN6StreamD1Ev .gnu.linkonce.t._ZN6StreamD2Ev)
+    }
+
+    .datastream_vtable 0x004ad638 : { *data-stream.o(.data.rel.ro) }
+
+    .datastream_text 0x0034e7b0 : {
+        *data-stream.o(.text._Z11IsBigEndianv)
+        *data-stream.o(.text._ZN10DataStream4ReadEPvi)
+        *data-stream.o(.text._ZN10DataStream5WriteEPKvi)
+        *data-stream.o(.text._ZN10DataStream4SeekEii)
+        *data-stream.o(.text._ZNK10DataStream4TellEv)
+        *data-stream.o(.text._ZN10DataStream4SkipEi)
+        *data-stream.o(.text._ZN10DataStream17ReadUnsignedShortEv)
+        *data-stream.o(.text._ZN10DataStream9ReadShortEv)
+        *data-stream.o(.text._ZN10DataStream9ReadFloatEv)
+        *data-stream.o(.text._ZN10DataStream7ReadUTFEPci)
+        *data-stream.o(.text._ZN10DataStream5Peek1Ev)
+        *data-stream.o(.text._ZN10DataStreamD0Ev .gnu.linkonce.t._ZN10DataStreamD0Ev)
+        *data-stream.o(.text._ZN10DataStream9WriteByteEi)
+        *data-stream.o(.text._ZN10DataStream12WriteBooleanEb)
+        *data-stream.o(.text._ZN10DataStream16ReadUnsignedByteEv)
+        *data-stream.o(.text._ZN10DataStream8ReadByteEv)
+        *data-stream.o(.text._ZN10DataStream11ReadBooleanEv)
+        *data-stream.o(.text._ZN10DataStream7ReadIntEv)
+        *data-stream.o(.text._ZN10DataStream21ReadAndAllocateStringEv)
+        *data-stream.o(.text._ZN10DataStream10ReadStringEPci)
+        *data-stream.o(.text._ZN10DataStream5Peek4Ev)
+        *data-stream.o(.text._ZN10DataStream10WriteFloatEf)
+        *data-stream.o(.text._ZN10DataStream8WriteIntEi)
+        *data-stream.o(.text._ZN10DataStream5Peek2Ev)
+        *data-stream.o(.text._ZN10DataStream10WriteShortEi)
+        *data-stream.o(.text._ZN10DataStream8WriteUTFEPKc)
+        *data-stream.o(.text._ZN10DataStreamC1ER6StreamNS_6endianE .text._ZN10DataStreamC2ER6StreamNS_6endianE)
+    }
+
+    .datastream_destructor 0x002d3654 : { *data-stream.o(.text._ZN10DataStreamD1Ev .gnu.linkonce.t._ZN10DataStreamD1Ev) }
+
+    .record_12 0x00315628 : { *game-object-manager.o(.text._ZN7Structs4Path4ReadER10DataStream .gnu.linkonce.t._ZN7Structs4Path4ReadER10DataStream) }
+    .record_11 0x003155c4 : { *game-object-manager.o(.text._ZN7Structs10SpawnPoint4ReadER10DataStream .gnu.linkonce.t._ZN7Structs10SpawnPoint4ReadER10DataStream) }
+    .record_10 0x00315584 : { *game-object-manager.o(.text._ZN7Structs10Checkpoint4ReadER10DataStream .gnu.linkonce.t._ZN7Structs10Checkpoint4ReadER10DataStream) }
+    .record_9 0x00315500 : { *game-object-manager.o(.text._ZN7Structs11SceneCamera4ReadER10DataStream .gnu.linkonce.t._ZN7Structs11SceneCamera4ReadER10DataStream) }
+    .record_8 0x00315484 : { *game-object-manager.o(.text._ZN7Structs6Weapon4ReadER10DataStream .gnu.linkonce.t._ZN7Structs6Weapon4ReadER10DataStream) }
+    .record_7 0x0031544c : { *game-object-manager.o(.text._ZN7Structs4Item4ReadER10DataStream .gnu.linkonce.t._ZN7Structs4Item4ReadER10DataStream) }
+    .record_6 0x0031541c : { *game-object-manager.o(.text._ZN7Structs6Marker4ReadER10DataStream .gnu.linkonce.t._ZN7Structs6Marker4ReadER10DataStream) }
+    .record_5 0x003153a4 : { *game-object-manager.o(.text._ZN7Structs3NPC4ReadER10DataStream .gnu.linkonce.t._ZN7Structs3NPC4ReadER10DataStream) }
+    .record_4 0x00315354 : { *game-object-manager.o(.text._ZN7Structs6Rocket4ReadER10DataStream .gnu.linkonce.t._ZN7Structs6Rocket4ReadER10DataStream) }
+    .record_3 0x00315164 : { *game-object-manager.o(.text._ZN7Structs7Vehicle4ReadER10DataStream .gnu.linkonce.t._ZN7Structs7Vehicle4ReadER10DataStream) }
+    .record_2 0x003150f0 : { *game-object-manager.o(.text._ZN7Structs15GameObjectBasic4ReadER10DataStream .gnu.linkonce.t._ZN7Structs15GameObjectBasic4ReadER10DataStream) }
+    .record_1 0x003150d4 : { *game-object-manager.o(.text._ZN7Structs16GameObjectHeader4ReadER10DataStream .gnu.linkonce.t._ZN7Structs16GameObjectHeader4ReadER10DataStream) }
+    .record_0 0x003150b0 : { *game-object-manager.o(.text._ZN7Structs8SVector34ReadER10DataStream .gnu.linkonce.t._ZN7Structs8SVector34ReadER10DataStream) }
     .gom_global 0x004b88b0 (NOLOAD) : { *game-object-manager.o(.bss._ZN17GameObjectManager5s_gomE) }
     .gom_vtable 0x004abc40 : { *game-object-manager.o(.data.rel.ro._ZTV17GameObjectManager .gnu.linkonce.d.rel.ro._ZTV17GameObjectManager) }
 

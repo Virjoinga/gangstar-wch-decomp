@@ -10,6 +10,8 @@
 
 #include "GameObjectManager.h"
 #include "LevelObject.h"
+#include "ObjectData.h"
+#include "../persistence/DataStream.h"
 
 GameObjectManager* GameObjectManager::s_gom = 0;
 
@@ -64,6 +66,174 @@ LevelObject* GameObjectManager::GetGameObjectByName(const char* name, bool respa
     object = list2.GetGameObjectByName(name, true, respawnDead);
     if (object) return object;
     return list1.GetGameObjectByName(name, true, respawnDead);
+}
+
+void Structs::SVector3::Read(DataStream& stream)
+{
+    X = stream.ReadInt();
+    Y = stream.ReadInt();
+    Z = stream.ReadInt();
+}
+
+void Structs::GameObjectHeader::Read(DataStream& stream)
+{
+    type = stream.ReadInt();
+    name = stream.ReadAndAllocateString();
+}
+
+void Structs::GameObjectBasic::Read(DataStream& stream)
+{
+    GameObjectHeader::Read(stream);
+    flags = stream.ReadInt();
+    list = stream.ReadInt();
+    unknown16 = stream.ReadInt();
+    highlight = stream.ReadInt();
+    sceneName = stream.ReadAndAllocateString();
+    nodeName = stream.ReadAndAllocateString();
+    poolSize = stream.ReadInt();
+    position.Read(stream);
+    rotation.Read(stream);
+    scale.Read(stream);
+}
+
+void Structs::Vehicle::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadInt();
+    unknown76 = stream.ReadInt();
+    unknown80 = stream.ReadInt();
+    unknown84 = stream.ReadAndAllocateString();
+    unknown88 = stream.ReadInt();
+    unknown92 = stream.ReadInt();
+    unknown96 = stream.ReadInt();
+    unknown100 = stream.ReadInt();
+    unknown104 = stream.ReadInt();
+    unknown108 = stream.ReadAndAllocateString();
+    unknown112 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown116 = stream.ReadAndAllocateString();
+    unknown120 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown124 = stream.ReadInt();
+    unknown128 = stream.ReadInt();
+    unknown132 = stream.ReadAndAllocateString();
+    unknown136 = stream.ReadInt();
+    unknown140 = stream.ReadInt();
+    unknown144 = stream.ReadInt();
+    unknown148 = stream.ReadInt();
+    unknown152 = stream.ReadInt();
+    unknown156 = stream.ReadInt();
+    unknown160 = stream.ReadInt();
+    unknown164 = stream.ReadInt();
+    unknown168 = stream.ReadInt();
+    unknown172 = stream.ReadAndAllocateString();
+    unknown176 = stream.ReadInt();
+    unknown180 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown184 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown188 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown192 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown196 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown200 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown204 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown208 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown212 = stream.ReadInt();
+    unknown216 = stream.ReadInt();
+    unknown220 = stream.ReadInt();
+    unknown224 = stream.ReadInt();
+}
+
+void Structs::Rocket::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadInt();
+    unknown76 = stream.ReadInt();
+    unknown80 = stream.ReadInt();
+    unknown84 = stream.ReadInt();
+    unknown88 = stream.ReadInt();
+    unknown92 = stream.ReadInt();
+}
+
+void Structs::NPC::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadInt();
+    unknown76 = stream.ReadInt();
+    unknown80 = stream.ReadInt();
+    unknown84 = stream.ReadInt();
+    unknown88 = stream.ReadInt();
+    unknown92 = stream.ReadInt();
+    unknown96 = stream.ReadInt();
+    unknown100 = stream.ReadInt();
+    unknown104 = stream.ReadInt();
+    unknown108 = stream.ReadInt();
+    unknown112 = stream.ReadInt();
+}
+
+void Structs::Marker::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadInt();
+    unknown76 = stream.ReadInt();
+}
+
+void Structs::Item::Read(DataStream& stream)
+{
+    Marker::Read(stream);
+    unknown80 = stream.ReadInt();
+    unknown84 = stream.ReadInt();
+    unknown88 = stream.ReadInt();
+}
+
+void Structs::Weapon::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    ammoType = stream.ReadInt();
+    clipSize = stream.ReadInt();
+    cone = stream.ReadInt();
+    damage = stream.ReadInt();
+    dryShootFrequency = stream.ReadInt();
+    muzzleName = stream.ReadAndAllocateString();
+    doubleWeapon = stream.ReadBoolean();
+    twoHanded = stream.ReadBoolean();
+    range = stream.ReadInt();
+    shootFrequency = stream.ReadInt();
+    weaponType = stream.ReadInt();
+}
+
+void Structs::SceneCamera::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadBoolean();
+    unknown76 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown80 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown84 = float(stream.ReadInt()) * (1.0f / 65536.0f);
+    unknown88.Read(stream);
+}
+
+void Structs::Checkpoint::Read(DataStream& stream)
+{
+    Marker::Read(stream);
+    unknown80 = stream.ReadInt();
+    unknown84 = stream.ReadInt();
+    unknown88 = stream.ReadInt();
+    unknown92 = stream.ReadBoolean();
+}
+
+void Structs::SpawnPoint::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    unknown72 = stream.ReadInt();
+    count = stream.ReadInt();
+    values = new int[count];
+    for (int i = 0; i < count; ++i) values[i] = stream.ReadInt();
+    unknown84 = stream.ReadInt();
+    unknown88 = stream.ReadInt();
+}
+
+void Structs::Path::Read(DataStream& stream)
+{
+    GameObjectBasic::Read(stream);
+    count = stream.ReadInt();
+    values = new int[count];
+    for (int i = 0; i < count; ++i) values[i] = stream.ReadInt();
 }
 
 GameObjectManager::GameObjectManager()
