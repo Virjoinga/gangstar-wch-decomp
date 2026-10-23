@@ -24,12 +24,19 @@ public:
     static ScriptManager* getInstance();
     Script* findScript(int id) const;
     void resetGame(bool flag, int id);
+    void update(int);
     unsigned char unknown0[8];
     int scriptCount;
 };
 class GSLoading { public: static bool isGameLoaded(); };
 class Checkpoint { public: static bool s_bTutoCallContact; };
-class WantedLevelManager { public: static bool s_bTutoWantedLevel; };
+class WantedLevelManager {
+public:
+    static bool s_bTutoWantedLevel;
+    static WantedLevelManager* getInstance() __attribute__((weak));
+    virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
+    virtual void update(double);
+};
 class GSFailure { public: static bool s_bCutsceneDie, s_bCutsceneBusted, s_bCutsceneMissionFailed; };
 class CControlManager { public: static bool s_cameraTutorial, s_sniperTutorial; };
 
