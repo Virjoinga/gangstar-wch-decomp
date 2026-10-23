@@ -1,13 +1,17 @@
 #ifndef WCH_CHARACTERS_CHARACTER_H
 #define WCH_CHARACTERS_CHARACTER_H
 
-namespace irr { namespace scene { class ISceneNode; } }
+#include "../world/LevelObject.h"
 
-// Observed prefix used by weapon attachment; not the full class or hierarchy.
-class Character {
+// Character's constructor calls LevelObject and initializes storage through
+// offset 295. NPC's first additional field is at 296. Other fields and virtual
+// overrides remain unrecovered; keep their storage opaque.
+class Character : public LevelObject {
 public:
-    unsigned char unknown0[16];
-    irr::scene::ISceneNode* sceneNode;
+    Character(int type);
+    using LevelObject::sceneNode;
+private:
+    unsigned char unknown52[244];
 };
 
 #endif

@@ -69,6 +69,9 @@ struct Vehicle : public GameObjectBasic {
     int unknown224;
     void Read(DataStream& stream) __attribute__((weak));
 };
+// Specialized records use their base reader; no additional serialized fields
+// are accessed by the recovered dispatch path.
+struct Car : public Vehicle {};
 struct Rocket : public GameObjectBasic {
     int unknown72;
     int unknown76;
@@ -128,6 +131,7 @@ struct Checkpoint : public Marker {
     bool unknown92;
     void Read(DataStream& stream) __attribute__((weak));
 };
+struct CheckpointShop : public Checkpoint {};
 struct SpawnPoint : public GameObjectBasic {
     int unknown72;
     int count;

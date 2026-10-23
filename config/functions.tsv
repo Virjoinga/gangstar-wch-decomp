@@ -10761,7 +10761,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00314f15	0x10	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager6RemoveEP11LevelObject	GameObjectManager::Remove(LevelObject*)
 0x00314f25	0x28	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager13getObjectListEi	GameObjectManager::getObjectList(int)
 0x00314f4d	0x30	GameObjectManager.cpp	game	world	pending	__tcf_4	__tcf_4
-0x00314f7d	0x24	GameObjectManager.cpp	game	world	pending	__tcf_1	__tcf_1
+0x00314f7d	0x24	GameObjectManager.cpp	game	world	matched	__tcf_1	__tcf_1
 0x00314fa1	0x54	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager5ClearEv	GameObjectManager::Clear()
 0x00314ff5	0x38	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager8GetFirstEi	GameObjectManager::GetFirst(int)
 0x0031502d	0x3c	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager3AddEP11LevelObjecti	GameObjectManager::Add(LevelObject*, int)
@@ -10779,13 +10779,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00315585	0x40	GameObjectManager.cpp	game	world	matched	_ZN7Structs10Checkpoint4ReadER10DataStream	Structs::Checkpoint::Read(DataStream&)
 0x003155c5	0x64	GameObjectManager.cpp	game	world	matched	_ZN7Structs10SpawnPoint4ReadER10DataStream	Structs::SpawnPoint::Read(DataStream&)
 0x00315629	0x4c	GameObjectManager.cpp	game	world	matched	_ZN7Structs4Path4ReadER10DataStream	Structs::Path::Read(DataStream&)
-0x00315675	0x2f4	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager14LoadGameObjectER10DataStream	GameObjectManager::LoadGameObject(DataStream&)
+0x00315675	0x2f4	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager14LoadGameObjectER10DataStream	GameObjectManager::LoadGameObject(DataStream&)
 0x00315969	0xac	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi	GameObjectManager::CreateGameObjectFromMetatype(int)
 0x00315a15	0x2a	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager15SpawnGameObjectEi	GameObjectManager::SpawnGameObject(int)
 0x00315a41	0x10c	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager19GetMetatypeFromNameEPKc	GameObjectManager::GetMetatypeFromName(char const*)
 0x00315b4d	0x114	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager13LoadMetatypesEv	GameObjectManager::LoadMetatypes()
-0x00315c61	0xe0	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager15LoadSpawnPointsEPKc	GameObjectManager::LoadSpawnPoints(char const*)
-0x00315d41	0x11c	GameObjectManager.cpp	game	world	pending	_ZN17GameObjectManager4LoadEPc	GameObjectManager::Load(char*)
+0x00315c61	0xe0	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager15LoadSpawnPointsEPKc	GameObjectManager::LoadSpawnPoints(char const*)
+0x00315d41	0x11c	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager4LoadEPc	GameObjectManager::Load(char*)
 0x00315e5d	0x80	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerC2Ev	GameObjectManager::GameObjectManager()
 0x00315e5d	0x80	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManagerC1Ev	GameObjectManager::GameObjectManager()
 0x00315edd	0x28	GameObjectManager.cpp	game	world	matched	_ZN17GameObjectManager5SetupEv	GameObjectManager::Setup()

@@ -2,19 +2,14 @@
 #define WCH_RENDERING_UPDATE_INTERFACES_H
 
 #include "../world/LevelObject.h"
+#include "../vehicles/Vehicle.h"
+#include "../meta/Item.h"
+#include "../world/SpawnPoint.h"
 #include "../world/SceneNodeManager.h"
 #include "../persistence/SaveGameInterfaces.h"
 
 // Partial call interfaces for the update loop. No complete layouts are asserted.
 class StateMachine { public: double getTimeStamp() const; };
-class Vehicle : public LevelObject {
-public:
-    void initializeDriver();
-    void UpdatePhysic(float);
-    void stepPhysic();
-    void step();
-};
-class Item : public LevelObject {};
 class Camera;
 class CameraManager {
 public:
@@ -22,7 +17,7 @@ public:
     Camera* getCamera() const;
     void update(float);
 };
-class SpawnPoint { public: static void UpdateSpawnCenters(); };
+
 class b2World { public: void Step(float, int); };
 class PhysicAttributes { public: static b2World* s_world; };
 class TrailMgr { public: void Update(); };
