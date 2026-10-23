@@ -2,6 +2,7 @@
 #define WCH_RENDERING_UPDATE_INTERFACES_H
 
 #include "../world/LevelObject.h"
+#include "../core/CameraManager.h"
 #include "../vehicles/Vehicle.h"
 #include "../meta/Item.h"
 #include "../world/SpawnPoint.h"
@@ -11,13 +12,6 @@
 
 // Partial call interfaces for the update loop. No complete layouts are asserted.
 class StateMachine { public: double getTimeStamp() const; };
-class Camera;
-class CameraManager {
-public:
-    static CameraManager* getInstance();
-    Camera* getCamera() const;
-    void update(float);
-};
 
 class b2World { public: void Step(float, int); };
 

@@ -60,7 +60,15 @@ _ZN24retail_level_transitions17civ_vehicle_transE = 0x00420828;
 _ZN24retail_level_transitions17cop_vehicle_transE = 0x004208b8;
 _ZN24retail_level_transitions11guard_transE = 0x0042096c;
 _ZN24retail_level_transitions22scripted_vehicle_transE = 0x00420a14;
+__aeabi_fsub = 0x001c4328;
+__aeabi_fadd = 0x001c4154;
+__aeabi_f2d = 0x001c48f8;
+sqrt = 0x001c401c;
+__aeabi_d2f = 0x001c4310;
+__aeabi_fcmple = 0x001c43ac;
 SECTIONS {
+    .level_visible 0x0031696c : { *level-object.o(.text._ZN11LevelObject17isVisibleOnScreenEv) }
+    .level_range 0x003169b4 : { *level-object.o(.text._ZN11LevelObject13isWithinRangeEf) }
     .level_string_cleanup 0x003168b4 : { *level-object.o(.text.__tcf_3) }
     .level_startup 0x0031787c : { *level-object.o(.text._Z41__static_initialization_and_destruction_0ii) }
     .level_startup_wrapper 0x003179c0 : { *level-object.o(.text._GLOBAL__I__ZN11LevelObject12s_highlightsE) }

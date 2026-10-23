@@ -16,6 +16,8 @@
 #ifndef WCH_CORE_VECTOR3_H
 #define WCH_CORE_VECTOR3_H
 
+extern "C" double sqrt(double);
+
 namespace irr { namespace core {
 // Observed three-component value type and nontrivial copy ABI.
 template<class T> class vector3d {
@@ -26,6 +28,10 @@ public:
     vector3d<T> operator*(T scalar) const { return vector3d<T>(X * scalar, Y * scalar, Z * scalar); }
     vector3d<T> operator-() const { return vector3d<T>(-X, -Y, -Z); }
     vector3d(const vector3d& other) : X(other.X), Y(other.Y), Z(other.Z) {}
+    T getLength() const { return (T) sqrt((double)(X*X + Y*Y + Z*Z)); }
+    T getDistanceFrom(const vector3d<T>& other) const {
+        return vector3d<T>(X - other.X, Y - other.Y, Z - other.Z).getLength();
+    }
 };
 } }
 

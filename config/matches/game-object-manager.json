@@ -67,7 +67,9 @@
             "compiled_name": "__tcf_0"
         },
         "_ZN17GameObjectManager15LoadSpawnPointsEPKc",
-        "_ZN17GameObjectManager4LoadEPc"
+        "_ZN17GameObjectManager4LoadEPc",
+        "_ZN11LevelObject17isVisibleOnScreenEv",
+        "_ZN11LevelObject13isWithinRangeEf"
     ],
     "sections": [
         ".text",
@@ -230,7 +232,9 @@
         ".level_factory_cleanup",
         ".level_string_cleanup",
         ".level_startup",
-        ".level_startup_wrapper"
+        ".level_startup_wrapper",
+        ".level_visible",
+        ".level_range"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -277,7 +281,9 @@
         "_ZN9GS3DStuff8SetColorEPN3irr5scene10ISceneNodeENS0_5video6SColorENS_10eColorTypeE",
         "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
         "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE",
-        "_ZN16PhysicAttributesD1Ev"
+        "_ZN16PhysicAttributesD1Ev",
+        "_ZN13CameraManager11getInstanceEv",
+        "_ZNK13CameraManager9getCameraEv"
     ],
     "dependencies": [
         "gs3d-stuff",

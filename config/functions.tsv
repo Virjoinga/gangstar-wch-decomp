@@ -10820,8 +10820,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003168e5	0x24	LevelObject.cpp	game	world	matched	__tcf_1	__tcf_1
 0x00316909	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObject14freeHighlightsEv	LevelObject::freeHighlights()
 0x00316941	0x2a	LevelObject.cpp	game	world	matched	_ZN11LevelObject7SetNameEPKc	LevelObject::SetName(char const*)
-0x0031696d	0x48	LevelObject.cpp	game	world	pending	_ZN11LevelObject17isVisibleOnScreenEv	LevelObject::isVisibleOnScreen()
-0x003169b5	0x9a	LevelObject.cpp	game	world	pending	_ZN11LevelObject13isWithinRangeEf	LevelObject::isWithinRange(float)
+0x0031696d	0x48	LevelObject.cpp	game	world	matched	_ZN11LevelObject17isVisibleOnScreenEv	LevelObject::isVisibleOnScreen()
+0x003169b5	0x9a	LevelObject.cpp	game	world	matched	_ZN11LevelObject13isWithinRangeEf	LevelObject::isWithinRange(float)
 0x00316a51	0x34	LevelObject.cpp	game	world	matched	_ZN11LevelObject11GetMetatypeEv	LevelObject::GetMetatype()
 0x00316a85	0x140	LevelObject.cpp	game	world	matched	_ZN11LevelObject14loadHighlightsEPKc	LevelObject::loadHighlights(char const*)
 0x00316bc5	0x64	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetRotationERKN3irr4core8vector3dIfEE	LevelObject::SetRotation(irr::core::vector3d<float> const&)

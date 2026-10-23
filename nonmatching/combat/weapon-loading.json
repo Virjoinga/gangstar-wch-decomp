@@ -180,7 +180,9 @@
         ".level_factory_cleanup",
         ".level_string_cleanup",
         ".level_startup",
-        ".level_startup_wrapper"
+        ".level_startup_wrapper",
+        ".level_visible",
+        ".level_range"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -237,7 +239,9 @@
             "name": "_Z41__static_initialization_and_destruction_0ii",
             "address": "0x0033087d"
         },
-        "_GLOBAL__I__ZN6WeaponC2Ei"
+        "_GLOBAL__I__ZN6WeaponC2Ei",
+        "_ZN11LevelObject17isVisibleOnScreenEv",
+        "_ZN11LevelObject13isWithinRangeEf"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -285,6 +289,8 @@
         "_ZN16PhysicAttributesD1Ev",
         "_ZN9ResStreamC1EPKci",
         "_ZN9ResStreamD1Ev",
-        "_ZN12BufferStream5CloseEv"
+        "_ZN12BufferStream5CloseEv",
+        "_ZN13CameraManager11getInstanceEv",
+        "_ZNK13CameraManager9getCameraEv"
     ]
 }
