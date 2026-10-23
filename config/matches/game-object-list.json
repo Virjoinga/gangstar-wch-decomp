@@ -105,7 +105,10 @@
         ".gol_20",
         ".gol_vtable__ZTV14GameObjectList",
         ".gol_vtable__ZTV22IterationConditionName",
-        ".gol_empty_text"
+        ".gol_empty_text",
+        ".level_load",
+        ".level_name",
+        ".level_metatype"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -119,9 +122,14 @@
         "_ZN17GameObjectManager3AddEP11LevelObjecti",
         "_ZN17GameObjectManager22RemoveGameObjectOfTypeEi",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
-        "_ZN11LevelObject11GetMetatypeEv",
-        "_ZN11LevelObject7SetNameEPKc",
-        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi"
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
+        "_ZN16SceneNodeManager16findOrCreatePoolEPKciPN3irr7collada15CColladaFactoryE",
+        "_ZN9GS3DStuff8SetColorEPN3irr5scene10ISceneNodeENS0_5video6SColorENS_10eColorTypeE",
+        "_ZN11Application11GetInstanceEv",
+        "_ZN17GameObjectManager13getObjectListEi",
+        "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
+        "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcPNS0_15CColladaFactoryE",
+        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE"
     ],
     "dependencies": [
         "level-object"

@@ -36,6 +36,10 @@ strchr = 0x001c48e0;
 atoi = 0x001c4880;
 puts = 0x001c41b4;
 SECTIONS {
+    .level_load 0x00316fec : { *level-object.o(.text._ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE) }
+    .level_name 0x00316940 : { *level-object.o(.text._ZN11LevelObject7SetNameEPKc) }
+    .level_metatype 0x00316a50 : { *level-object.o(.text._ZN11LevelObject11GetMetatypeEv) }
+
     .object_spawn_file 0x00315c60 : { *game-object-manager.o(.text._ZN17GameObjectManager15LoadSpawnPointsEPKc) }
     .object_load_file 0x00315d40 : { *game-object-manager.o(.text._ZN17GameObjectManager4LoadEPc) }
 

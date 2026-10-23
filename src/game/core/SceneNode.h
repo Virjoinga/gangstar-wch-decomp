@@ -45,7 +45,7 @@ public:
     virtual void unknown31(); virtual void unknown32(); virtual void unknown33();
     virtual void unknown34(); virtual void unknown35(); virtual void unknown36();
     virtual void unknown37(); virtual void unknown38(); virtual void unknown39();
-    virtual void unknown40(); virtual void unknown41();
+    virtual void unknown40(); virtual void setScale(const core::vector3d<float>& scale);
     virtual const core::quaternion& getRotation() const;
     virtual void setRotation(const core::quaternion& rotation); virtual void unknown44();
     virtual void setPosition(const core::vector3d<float>& position);

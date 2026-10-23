@@ -168,7 +168,10 @@
         ".level_enabled",
         ".level_disable",
         ".level_enable",
-        ".level_drop"
+        ".level_drop",
+        ".level_load",
+        ".level_name",
+        ".level_metatype"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -238,7 +241,6 @@
         "_ZN10PlayerTest9GetPlayerEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN11CHudManager20toggleWeaponSelectorEb",
-        "_ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE",
         "_ZN11LevelObjectD1Ev",
         "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
         "_ZN17GameObjectManager19AddGameObjectOfTypeEi",
@@ -266,6 +268,11 @@
         "_ZN16SceneNodeManager4dropEiPKN3irr5scene10ISceneNodeE",
         "_ZN4Lock9setTargetEP11LevelObject",
         "_ZN17GameObjectManager3AddEP11LevelObjecti",
-        "_ZN17GameObjectManager22RemoveGameObjectOfTypeEi"
+        "_ZN17GameObjectManager22RemoveGameObjectOfTypeEi",
+        "_ZN16SceneNodeManager16findOrCreatePoolEPKciPN3irr7collada15CColladaFactoryE",
+        "_ZN9GS3DStuff8SetColorEPN3irr5scene10ISceneNodeENS0_5video6SColorENS_10eColorTypeE",
+        "_ZN17GameObjectManager13getObjectListEi",
+        "_ZN17GameObjectManager19GetMetatypeFromNameEPKc",
+        "_ZN3irr7collada16CColladaDatabase13constructNodeEPKcS3_PNS0_15CColladaFactoryE"
     ]
 }

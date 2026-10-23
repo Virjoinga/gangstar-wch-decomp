@@ -7,7 +7,16 @@ __aeabi_fmul = 0x001c4724;
 _ZdlPv = 0x001c42b0;
 strcmp = 0x001c4658;
 __aeabi_atexit = 0x001c494c;
+__aeabi_i2f = 0x001c41e4;
+_ZdaPv = 0x001c461c;
+strlen = 0x001c48bc;
+strcpy = 0x001c3fd4;
+_Znaj = 0x001c3ff8;
 SECTIONS {
+    .level_load 0x00316fec : { *level-object.o(.text._ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE) }
+    .level_name 0x00316940 : { *level-object.o(.text._ZN11LevelObject7SetNameEPKc) }
+    .level_metatype 0x00316a50 : { *level-object.o(.text._ZN11LevelObject11GetMetatypeEv) }
+
     .gol_empty 0x004b8884 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .gol_half 0x004b88a4 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr2ps5vHalfE) }
     .gol_empty_text 0x0044d91c : { *game-object-list.o(.rodata.str1.*) }

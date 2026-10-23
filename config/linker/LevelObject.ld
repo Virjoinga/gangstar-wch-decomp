@@ -4,7 +4,17 @@ ENTRY(_ZN11LevelObjectC1Ei)
 INCLUDE build/matches/level-object/retail-symbols.ld
 memset = 0x001c45d4;
 __aeabi_fmul = 0x001c4724;
+__aeabi_i2f = 0x001c41e4;
+_ZdaPv = 0x001c461c;
+strlen = 0x001c48bc;
+strcpy = 0x001c3fd4;
+_Znaj = 0x001c3ff8;
 SECTIONS {
+    .level_name 0x00316940 : { *level-object.o(.text._ZN11LevelObject7SetNameEPKc) }
+    .level_metatype 0x00316a50 : { *level-object.o(.text._ZN11LevelObject11GetMetatypeEv) }
+
+    .level_load 0x00316fec : { *level-object.o(.text._ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE) }
+
     .level_drop 0x00316e1c : { *level-object.o(.text._ZN11LevelObject13dropSceneNodeEv) }
     .level_enable 0x00316f54 : { *level-object.o(.text._ZN11LevelObject6enableEv) }
     .level_disable 0x00316e80 : { *level-object.o(.text._ZN11LevelObject7disableEv) }
