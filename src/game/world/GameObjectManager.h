@@ -1,11 +1,15 @@
 #ifndef WCH_WORLD_GAME_OBJECT_MANAGER_H
 #define WCH_WORLD_GAME_OBJECT_MANAGER_H
 
+#include "GameObjectList.h"
+
 class LevelObject;
 
-// Partial call interface; no complete manager layout is asserted.
+// Observed 1088-byte layout. The leading storage and several field meanings
+// remain provisional pending the loading and spawning methods.
 class GameObjectManager {
 public:
+    GameObjectManager();
     virtual ~GameObjectManager();
     virtual LevelObject* Remove(LevelObject* object);
     virtual LevelObject* RemoveAndDestroy(LevelObject* object);
@@ -14,7 +18,22 @@ public:
     void AddGameObjectOfType(int type);
     void RemoveGameObjectOfType(int type);
     void Add(LevelObject* object, int list);
+    GameObjectList* getObjectList(int list);
+    void Clear();
+    static void Setup();
+    void LoadMetatypes();
+    LevelObject* GetGameObjectByName(const char* name, bool respawnDead) const;
     static GameObjectManager* s_gom;
+private:
+    unsigned char unknown4[1028];
+    int unknown1032;
+    int metatypeCount;
+    unsigned char** metatypeData;
+    int* metatypeSizes;
+    int* typeCounts;
+    GameObjectList list0;
+    GameObjectList list2;
+    GameObjectList list1;
 };
 
 #endif
