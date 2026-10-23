@@ -347,7 +347,7 @@ bool LevelObject::canSeeLevelObject(LevelObject* other, irr::core::vector3d<floa
             data->owner == static_cast<Vehicle*>(other)->getDriver()) continue;
         if (data && (data->owner == this || data->owner == other)) continue;
         if (shape->TestSegment(shape->GetBody()->GetXForm(), &fraction, &normal, segment, 1.0f)) {
-            if (data->unknown4 != 0 || data->lowerHeight == data->upperHeight) break;
+            if (data->node != 0 || data->lowerHeight == data->upperHeight) break;
             float height = GetPosition().Z + (other->GetPosition().Z - GetPosition().Z) * fraction;
             if (LevelObject::getSpawnType() == 5 ||
                 reinterpret_cast<LevelObject*>(static_cast<SavePositionInterface*>(PlayerTest::GetPlayer())) == this)

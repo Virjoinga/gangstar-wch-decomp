@@ -56,7 +56,7 @@ public:
     virtual void unknown47(); virtual void unknown48();
     virtual void unknown49(); virtual void unknown50(); virtual void unknown51();
     virtual void updateAbsolutePosition(bool flag);
-    virtual void unknown53(); virtual void unknown54(); virtual void unknown55();
+    virtual int getType() const; virtual void unknown54(); virtual void unknown55();
     virtual void unknown56(); virtual void unknown57(); virtual void unknown58();
     virtual void unknown59(); virtual void unknown60(); virtual void unknown61();
     virtual void unknown62(); virtual void unknown63(); virtual void unknown64();
