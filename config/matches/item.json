@@ -160,7 +160,8 @@
         ".item_add_ammo",
         ".item_pickup",
         ".item_sound",
-        ".item_sound_switch"
+        ".item_sound_switch",
+        ".item_update"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -256,7 +257,8 @@
         "_ZN4Item13grabSceneNodeEiPPPv",
         "_ZN4Item7addAmmoEii",
         "_ZN4Item6pickupEv",
-        "_ZN4Item15playPickupSoundEv"
+        "_ZN4Item15playPickupSoundEv",
+        "_ZN4Item6UpdateEi"
     ],
     "dependencies": [
         "gs3d-stuff",
