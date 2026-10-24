@@ -10229,9 +10229,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fbfe5	0x24	Factions.cpp	game	meta	matched	_ZN8Factions16isFactionNeutralEi	Factions::isFactionNeutral(int)
 0x002fc009	0x24	Factions.cpp	game	meta	matched	_ZN8Factions17isFactionFriendlyEi	Factions::isFactionFriendly(int)
 0x002fc02d	0x24	Factions.cpp	game	meta	matched	_ZN8Factions14isFactionEnemyEi	Factions::isFactionEnemy(int)
-0x002fc051	0x30	Factions.cpp	game	meta	pending	__tcf_2	__tcf_2
-0x002fc081	0x6c	Factions.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002fc0ed	0x14	Factions.cpp	game	meta	pending	_GLOBAL__I__ZN8Factions10s_factionsE	_GLOBAL__I__ZN8Factions10s_factionsE
+0x002fc051	0x30	Factions.cpp	game	meta	matched	__tcf_2	__tcf_2
+0x002fc081	0x6c	Factions.cpp	game	meta	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002fc0ed	0x14	Factions.cpp	game	meta	matched	_GLOBAL__I__ZN8Factions10s_factionsE	_GLOBAL__I__ZN8Factions10s_factionsE
 0x002fc101	0x20	Item.cpp	game	meta	matched	_ZN4Item24resetAchievementCountersEv	Item::resetAchievementCounters()
 0x002fc121	0x2	Item.cpp	game	meta	matched	_ZN4Item5debugEPN3irr5video12IVideoDriverE	Item::debug(irr::video::IVideoDriver*)
 0x002fc125	0x6	Item.cpp	game	meta	matched	_ZN4Item6unlockEv	Item::unlock()
