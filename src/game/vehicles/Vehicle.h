@@ -3,6 +3,7 @@
 #include "../world/LevelObject.h"
 namespace Structs { struct Car; }
 class Character;
+class Path;
 // Primary base and 1012-byte allocation extent; secondary interfaces and fields
 // remain opaque pending recovery of the constructor and vehicle methods.
 class Vehicle : public LevelObject {
@@ -13,11 +14,20 @@ public:
     void UpdatePhysic(float);
     void stepPhysic();
     void step();
+    void setPathToFollow(const Path* path);
+    const Path* getPathToFollow() const;
+    int getCurrentWaypoint() const;
+    void setSpeed();
     // Observed driver pointer at 696; inline accessor claims no separate symbol.
     Character* getDriver() const { return driver; }
 private:
-    unsigned char unknown52[644];
+    friend class Race;
+    unsigned char unknown52[292];
+    unsigned int flags344;
+    unsigned char unknown348[348];
     Character* driver;
-    unsigned char unknown700[312];
+    unsigned char unknown700[76];
+    float unknown776;
+    unsigned char unknown780[232];
 };
 #endif

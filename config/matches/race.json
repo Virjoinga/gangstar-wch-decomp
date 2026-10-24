@@ -1,0 +1,95 @@
+{
+    "source": "src/game/meta/Race.cpp",
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "retail_got": true,
+    "linker_script": "config/linker/Race.ld",
+    "functions": [
+        "_ZNK4Race14isPlayerWinnerEv",
+        "_ZNK4Race8getStateEv",
+        "_ZN4Race5readyEv",
+        "_ZN4Race2goEv",
+        {
+            "name": "__tcf_4",
+            "address": "0x00338661"
+        },
+        "_ZN4RaceD0Ev",
+        "_ZN4RaceD2Ev",
+        "_ZN4RaceD1Ev",
+        "_ZN4Race5resetEv",
+        {
+            "name": "__tcf_3",
+            "address": "0x00338741"
+        },
+        "_ZN4Race13setPlayerPathEPK4Path",
+        "_ZN4RaceC1Ev",
+        "_ZN4RaceC2Ev",
+        "_ZN4Race11addOpponentEP7VehiclePK4Pathf",
+        "_ZN4Race8evaluateEv",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x003389fd"
+        },
+        "_GLOBAL__I__ZN4RaceC2Ev"
+    ],
+    "sections": [
+        ".race_player_winner",
+        ".race_state",
+        ".race_ready",
+        ".race_go",
+        ".race_string_cleanup",
+        ".race_destructor_delete",
+        ".race_destructor",
+        ".race_reset",
+        ".race_ai_cleanup",
+        ".race_player_path",
+        ".race_constructor",
+        ".race_opponent",
+        ".race_evaluate",
+        ".race_startup",
+        ".race_startup_wrapper",
+        ".race_vtable",
+        ".race_checkpoint_name",
+        ".race_empty_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "external_thumb_functions": [
+        "_ZNK4Path7getSizeEv",
+        "_ZNK4Path11getWaypointEiRN3irr4core8vector3dIfEE",
+        "_ZN13ScriptManager10findObjectEPKcb",
+        "_ZN13ScriptManager16displayOnMinimapEP11LevelObjectbb",
+        "_ZN11LevelObject13showHighlightEi",
+        "_ZN7Vehicle15setPathToFollowEPK4Path",
+        "_ZNK7Vehicle15getPathToFollowEv",
+        "_ZNK7Vehicle18getCurrentWaypointEv",
+        "_ZN7Vehicle8setSpeedEv",
+        "_ZN9AIManager8removeAIEP7Vehicle",
+        "_ZN9AIManager5addAIEP7VehicleN8gameloft2ai7StateIDE",
+        "_ZN9AIManagerD1Ev",
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE"
+    ]
+}

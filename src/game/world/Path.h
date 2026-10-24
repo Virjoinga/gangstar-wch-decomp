@@ -6,6 +6,8 @@ class Path : public Transformation {
 public:
     Path(int type);
     void Load(const Structs::Path&, irr::collada::CColladaFactory*);
+    int getSize() const;
+    bool getWaypoint(int index, irr::core::vector3d<float>& position) const;
 private:
     unsigned char unknown84[36];
 };
