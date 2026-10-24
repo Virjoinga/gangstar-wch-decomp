@@ -8,23 +8,44 @@ class Vehicle;
 // Partial declarations and observed record layouts. Not a complete manager.
 class AchievementManager {
 public:
+    struct IDLinks {
+        int* data;
+        unsigned int allocated;
+        unsigned int used;
+        bool free_when_destroyed;
+        bool is_sorted;
+        unsigned int unknown16;
+    };
     struct Stat {
         int getValue() const;
         unsigned char unknown0[12];
         int value;
-        unsigned char unknown16[20];
+        IDLinks rules;
     };
     struct Achievement {
-        unsigned char unknown[20];
+        unsigned int unknown0;
+        int ruleCount;
+        int* rules;
+        unsigned char unknown12[8];
         unsigned int flags;
     };
     struct AchievementRule {
-        // Observed 36-byte stride; the rule fields remain unrecovered.
-        unsigned int unknown[9];
+        unsigned int operation;
+        int statID;
+        int threshold;
+        unsigned int flags;
+        IDLinks achievements;
     };
     Achievement* getAchievementFromID(int id) const;
     AchievementRule* getAchievementRuleFromID(int id) const;
     Stat* getStatFromID(int id) const;
+    bool evaluateRule(AchievementRule& rule) const;
+    bool evaluate(Achievement& achievement) const;
+    bool IsAchievementCompleted(int id);
+    int GetNumAchievementCompleted();
+    void checkAchievement(int id);
+    void addCompletedAchievement(Achievement* achievement);
+    void updateRule(int id);
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     Achievement* popCompletedAchievement();

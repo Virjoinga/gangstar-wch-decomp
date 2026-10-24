@@ -12,6 +12,7 @@
 #include "Item.h"
 #include "../ai/NPC.h"
 
+int AchievementManager::s_achievementCount;
 AchievementManager::Stat* AchievementManager::s_stats;
 AchievementManager::AchievementRule* AchievementManager::s_rules;
 AchievementManager::Achievement* AchievementManager::s_achievements;
@@ -34,6 +35,54 @@ AchievementManager::AchievementRule* AchievementManager::getAchievementRuleFromI
 AchievementManager::Stat* AchievementManager::getStatFromID(int id) const
 {
     return &s_stats[id];
+}
+
+bool AchievementManager::evaluate(Achievement& achievement) const
+{
+    for (int i = 0; i < achievement.ruleCount; ++i) {
+        if (!evaluateRule(s_rules[achievement.rules[i]]))
+            return false;
+    }
+    achievement.flags |= 2;
+    return true;
+}
+
+bool AchievementManager::IsAchievementCompleted(int id)
+{
+    return (s_achievements[id].flags & 2) != 0;
+}
+
+int AchievementManager::GetNumAchievementCompleted()
+{
+    int completed = 0;
+    for (int i = 0; i < s_achievementCount; ++i) {
+        if (s_achievements[i].flags & 2)
+            ++completed;
+    }
+    return completed;
+}
+
+void AchievementManager::checkAchievement(int id)
+{
+    Achievement& achievement = s_achievements[id];
+    if (!(achievement.flags & 2) && evaluate(achievement))
+        addCompletedAchievement(&achievement);
+}
+
+void AchievementManager::updateRule(int id)
+{
+    if (evaluateRule(s_rules[id])) {
+        int count = s_rules[id].achievements.used;
+        for (int i = 0; i < count; ++i)
+            checkAchievement(s_rules[id].achievements.data[i]);
+    }
+}
+
+void AchievementManager::updateStat(int id)
+{
+    int count = s_stats[id].rules.used;
+    for (int i = 0; i < count; ++i)
+        updateRule(s_stats[id].rules.data[i]);
 }
 
 void AchievementManager::setMaxStat(int id, int value)
@@ -237,3 +286,5 @@ typedef char AchievementExtent[sizeof(AchievementManager::Achievement) == 24 ? 1
 
 typedef char AchievementCharacterExtent[sizeof(Character) == 296 ? 1 : -1];
 typedef char AchievementNPCExtent[sizeof(NPC) == 456 ? 1 : -1];
+
+typedef char AchievementLinkExtent[sizeof(AchievementManager::IDLinks) == 20 ? 1 : -1];

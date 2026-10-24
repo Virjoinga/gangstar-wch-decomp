@@ -58,7 +58,13 @@
         "_ZN18AchievementManager16recordHealthPackERK4Item",
         "_ZN18AchievementManager17recordMissionCashEi",
         "_ZN18AchievementManager17recordDroppedCashEi",
-        "_ZN18AchievementManager11recordDeathER9Character"
+        "_ZN18AchievementManager11recordDeathER9Character",
+        "_ZNK18AchievementManager8evaluateERNS_11AchievementE",
+        "_ZN18AchievementManager22IsAchievementCompletedEi",
+        "_ZN18AchievementManager26GetNumAchievementCompletedEv",
+        "_ZN18AchievementManager16checkAchievementEi",
+        "_ZN18AchievementManager10updateRuleEi",
+        "_ZN18AchievementManager10updateStatEi"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -96,16 +102,23 @@
         ".achievement_record_dropped_cash",
         ".achievement_record_death",
         ".achievement_death_switch",
+        ".achievement_evaluate",
+        ".achievement_is_completed",
+        ".achievement_completed_count",
+        ".achievement_check",
+        ".achievement_update_rule",
+        ".achievement_update_stat",
         {
             "name": ".got",
             "offset": 864
         }
     ],
     "external_thumb_functions": [
-        "_ZN18AchievementManager10updateStatEi",
         "_ZN18AchievementManager18updateProgressStatEv",
         "_ZNK4Item5getIdEv",
         "_ZNK9Character8isPlayerEv",
-        "_ZN3NPC5isCopEv"
+        "_ZN3NPC5isCopEv",
+        "_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE",
+        "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE"
     ]
 }
