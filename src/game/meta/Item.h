@@ -25,6 +25,9 @@ public:
     static void drop(int type, irr::core::vector3d<float> position, int amount);
     void debug(irr::video::IVideoDriver* driver);
     void unlock();
+    void hide();
+    void show();
+    void lock();
     bool unlocked() const;
     int getId() const;
     static int s_numHealthCrate;

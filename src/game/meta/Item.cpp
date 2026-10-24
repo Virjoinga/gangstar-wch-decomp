@@ -11,6 +11,7 @@
 #include "Item.h"
 #include "../world/SceneNodeManager.h"
 #include "../world/GameObjectManager.h"
+#include "../scripting/ScriptManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
 #include "../core/Vector3.h"
@@ -160,6 +161,28 @@ void Item::removeAllPlacedItems()
     s_placedItems.is_sorted = true;
 }
 
+void Item::hide()
+{
+    dropSceneNode();
+    unknown4 &= ~2u;
+    if (unknown44 != -1 && itemType != 3)
+        ScriptManager::displayOnMinimap(this, false, true);
+    objectList->Remove(this);
+    GameObjectManager::s_gom->Add(this, 1);
+}
+
+void Item::show()
+{
+    grabSceneNode(0, 0);
+    unknown4 |= 2;
+    reinterpret_cast<irr::scene::ISceneNode&>(
+        static_cast<irr::collada::CSceneNode&>(*billboard)).setVisible(true);
+    if (unknown44 != -1 && itemType != 3)
+        ScriptManager::displayOnMinimap(this, true, true);
+    objectList->Remove(this);
+    GameObjectManager::s_gom->Add(this, 0);
+}
+
 void Item::place(int type, irr::core::vector3d<float> position)
 {
     int metatype;
@@ -183,6 +206,18 @@ void Item::place(int type, irr::core::vector3d<float> position)
     GameObjectManager::s_gom->Add(item, 1);
     item->unlock();
     s_placedItems.push_back(item);
+}
+
+void Item::lock()
+{
+    if (unknown4 & 0x100) {
+        dropSceneNode();
+        GameObjectManager::s_gom->RemoveAndDestroy(this);
+    } else {
+        if (unknown4 & 2)
+            hide();
+        unknown96 = 0;
+    }
 }
 
 void Item::drop(int type, irr::core::vector3d<float> position, int amount)
