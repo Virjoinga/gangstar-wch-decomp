@@ -266,6 +266,24 @@ void Item::drop(int type, irr::core::vector3d<float> position, int amount)
     item->OnSpawn();
 }
 
+irr::scene::ISceneNode* Item::grabSceneNode(int, void***)
+{
+    void** parameters = 0;
+    Transformation::grabSceneNode(2, &parameters);
+    irr::scene::ISceneNode* root = sceneNode;
+    ItemSceneParameters& values = *reinterpret_cast<ItemSceneParameters*>(parameters);
+    billboardPool = values.pool;
+    attachedNode = values.node;
+    billboard = static_cast<CustomBillboardSceneNode*>(
+        static_cast<irr::collada::CSceneNode*>(
+            SceneNodeManager::getInstance()->grab(billboardPool, 0, 0, 0)));
+    animate(true, true, true);
+    billboard->setScale(attachedNode->getScale());
+    billboard->setPosition(root->getPosition() + attachedNode->getPosition());
+    billboard->updateAbsolutePosition(false);
+    return root;
+}
+
 namespace retail_item_transitions {
 extern const unsigned int civPassive_trans[] __attribute__((visibility("hidden")));
 extern const unsigned int scriptedNpc_trans[] __attribute__((visibility("hidden")));

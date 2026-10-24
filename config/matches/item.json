@@ -154,7 +154,9 @@
         ".item_hide",
         ".item_show",
         ".item_lock",
-        ".item_load"
+        ".item_load",
+        ".item_grab",
+        ".item_vtable"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -246,7 +248,8 @@
         "_ZN4Item4hideEv",
         "_ZN4Item4showEv",
         "_ZN4Item4lockEv",
-        "_ZN4Item4LoadERKN7Structs4ItemE"
+        "_ZN4Item4LoadERKN7Structs4ItemE",
+        "_ZN4Item13grabSceneNodeEiPPPv"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -299,6 +302,8 @@
         "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
         "_ZN13ScriptManager16displayOnMinimapEP11LevelObjectbb",
-        "_ZN14Transformation4LoadERKN7Structs6MarkerEPN3irr7collada15CColladaFactoryE"
+        "_ZN14Transformation4LoadERKN7Structs6MarkerEPN3irr7collada15CColladaFactoryE",
+        "_ZN14Transformation13grabSceneNodeEiPPPv",
+        "_ZN4Item7animateEbbb"
     ]
 }

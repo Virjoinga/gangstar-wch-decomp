@@ -28,6 +28,7 @@ public:
     void hide();
     void show();
     void lock();
+    void animate(bool start, bool loop, bool flag);
     bool unlocked() const;
     int getId() const;
     static int s_numHealthCrate;
