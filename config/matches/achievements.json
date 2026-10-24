@@ -64,7 +64,15 @@
         "_ZN18AchievementManager26GetNumAchievementCompletedEv",
         "_ZN18AchievementManager16checkAchievementEi",
         "_ZN18AchievementManager10updateRuleEi",
-        "_ZN18AchievementManager10updateStatEi"
+        "_ZN18AchievementManager10updateStatEi",
+        "_ZN18AchievementManager5setupEv",
+        "_ZN18AchievementManager18updateProgressStatEv",
+        "_ZN18AchievementManager19resetNumMissionStatEv",
+        "_ZN18AchievementManager19completeAchievementEi",
+        "_ZN18AchievementManager29setNextAchievementAsCompletedEv",
+        "_ZN7Structs4Stat4ReadER10DataStream",
+        "_ZN7Structs15AchievementRule4ReadER10DataStream",
+        "_ZN7Structs11Achievement4ReadER10DataStream"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -111,14 +119,22 @@
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".achievement_setup",
+        ".achievement_progress",
+        ".achievement_mission_reset",
+        ".achievement_complete",
+        ".achievement_complete_next",
+        ".achievement_read_stat",
+        ".achievement_read_rule",
+        ".achievement_read_achievement"
     ],
     "external_thumb_functions": [
-        "_ZN18AchievementManager18updateProgressStatEv",
         "_ZNK4Item5getIdEv",
         "_ZNK9Character8isPlayerEv",
         "_ZN3NPC5isCopEv",
         "_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE",
-        "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE"
+        "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE",
+        "_ZN10DataStream7ReadIntEv"
     ]
 }
