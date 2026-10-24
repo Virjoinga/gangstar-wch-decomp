@@ -1,6 +1,26 @@
 #ifndef WCH_META_ACHIEVEMENTS_H
 #define WCH_META_ACHIEVEMENTS_H
 
+class DataStream;
+namespace Structs {
+struct Stat {
+    int fields[3];
+    void Read(DataStream&);
+};
+struct AchievementRule {
+    int fields[3];
+    void Read(DataStream&);
+};
+struct Achievement {
+    int id;
+    int ruleCount;
+    int* rules;
+    int unknown12;
+    int unknown16;
+    void Read(DataStream&);
+};
+}
+
 class Item;
 class Character;
 class Vehicle;
@@ -36,6 +56,8 @@ public:
         unsigned int flags;
         IDLinks achievements;
     };
+    static AchievementManager* setup();
+    void resetNumMissionStat();
     Achievement* getAchievementFromID(int id) const;
     AchievementRule* getAchievementRuleFromID(int id) const;
     Stat* getStatFromID(int id) const;
@@ -46,6 +68,7 @@ public:
     void checkAchievement(int id);
     void addCompletedAchievement(Achievement* achievement);
     void updateRule(int id);
+    void setNextAchievementAsCompleted();
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     Achievement* popCompletedAchievement();

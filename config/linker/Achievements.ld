@@ -2,6 +2,12 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_ZNK18AchievementManager4Stat8getValueEv)
 INCLUDE build/matches/achievements/retail-symbols.ld
+__aeabi_i2d = 0x001c452c;
+__aeabi_ddiv = 0x001c4274;
+__aeabi_d2f = 0x001c4310;
+__aeabi_fadd = 0x001c4154;
+__aeabi_f2iz = 0x001c44cc;
+_Znaj = 0x001c3ff8;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -52,6 +58,16 @@ SECTIONS {
     ASSERT(SIZEOF(.achievement_s_rules) == 4, "Unexpected achievement pointer extent")
     .achievement_s_achievements 0x004bb3f8 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager14s_achievementsE) }
     ASSERT(SIZEOF(.achievement_s_achievements) == 4, "Unexpected achievement pointer extent")
+    .achievement_setup 0x00344f3c : { *achievements.o(.text._ZN18AchievementManager5setupEv) }
+    .achievement_progress 0x00344f50 : { *achievements.o(.text._ZN18AchievementManager18updateProgressStatEv) }
+    .achievement_mission_reset 0x00344ff0 : { *achievements.o(.text._ZN18AchievementManager19resetNumMissionStatEv) }
+    .achievement_complete 0x00345254 : { *achievements.o(.text._ZN18AchievementManager19completeAchievementEi) }
+    .achievement_complete_next 0x00345284 : { *achievements.o(.text._ZN18AchievementManager29setNextAchievementAsCompletedEv) }
+    .achievement_read_stat 0x00345314 : { *achievements.o(.text._ZN7Structs4Stat4ReadER10DataStream) }
+    .achievement_read_rule 0x00345338 : { *achievements.o(.text._ZN7Structs15AchievementRule4ReadER10DataStream) }
+    .achievement_read_achievement 0x0034535c : { *achievements.o(.text._ZN7Structs11Achievement4ReadER10DataStream) }
+    .achievement_local_manager 0x004bb484 (NOLOAD) : { *achievements.o(.bss._ZZN18AchievementManager5setupEvE3man) }
+    ASSERT(SIZEOF(.achievement_local_manager) == 1, "Unexpected local manager extent")
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

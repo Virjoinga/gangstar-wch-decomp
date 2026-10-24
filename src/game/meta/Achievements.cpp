@@ -11,6 +11,7 @@
 #include "Achievements.h"
 #include "Item.h"
 #include "../ai/NPC.h"
+#include "../persistence/DataStream.h"
 
 int AchievementManager::s_achievementCount;
 AchievementManager::Stat* AchievementManager::s_stats;
@@ -62,11 +63,84 @@ int AchievementManager::GetNumAchievementCompleted()
     return completed;
 }
 
+AchievementManager* AchievementManager::setup()
+{
+    static AchievementManager man;
+    return &man;
+}
+
+void AchievementManager::updateProgressStat()
+{
+    int missions = s_stats[49].value;
+    int completed = GetNumAchievementCompleted();
+    Stat& progress = s_stats[0];
+    if (missions > 63)
+        missions = 63;
+    float missionProgress = missions * 90 / 63.0;
+    float achievementProgress = completed * 10 / double(s_achievementCount);
+    progress.value = missionProgress + achievementProgress;
+}
+
+void AchievementManager::resetNumMissionStat()
+{
+    s_stats[24].value = 0;
+    s_stats[49].value = 0;
+    s_achievements[0].flags &= ~2;
+    s_achievements[1].flags &= ~2;
+    s_achievements[2].flags &= ~2;
+    s_achievements[3].flags &= ~2;
+    s_achievements[4].flags &= ~2;
+    s_achievements[5].flags &= ~2;
+    updateProgressStat();
+}
+
+void AchievementManager::completeAchievement(int id)
+{
+    Achievement& achievement = s_achievements[id];
+    achievement.flags |= 2;
+    addCompletedAchievement(&achievement);
+}
+
+void AchievementManager::setNextAchievementAsCompleted()
+{
+    for (int i = 0; i < s_achievementCount; ++i) {
+        if (!(s_achievements[i].flags & 2)) {
+            completeAchievement(i);
+            return;
+        }
+    }
+}
+
 void AchievementManager::checkAchievement(int id)
 {
     Achievement& achievement = s_achievements[id];
     if (!(achievement.flags & 2) && evaluate(achievement))
         addCompletedAchievement(&achievement);
+}
+
+void Structs::Stat::Read(DataStream& stream)
+{
+    fields[0] = stream.ReadInt();
+    fields[1] = stream.ReadInt();
+    fields[2] = stream.ReadInt();
+}
+
+void Structs::AchievementRule::Read(DataStream& stream)
+{
+    fields[0] = stream.ReadInt();
+    fields[1] = stream.ReadInt();
+    fields[2] = stream.ReadInt();
+}
+
+void Structs::Achievement::Read(DataStream& stream)
+{
+    id = stream.ReadInt();
+    ruleCount = stream.ReadInt();
+    rules = new int[ruleCount];
+    for (int i=0; i<ruleCount; ++i)
+        rules[i] = stream.ReadInt();
+    unknown12 = stream.ReadInt();
+    unknown16 = stream.ReadInt();
 }
 
 void AchievementManager::updateRule(int id)
@@ -288,3 +362,7 @@ typedef char AchievementCharacterExtent[sizeof(Character) == 296 ? 1 : -1];
 typedef char AchievementNPCExtent[sizeof(NPC) == 456 ? 1 : -1];
 
 typedef char AchievementLinkExtent[sizeof(AchievementManager::IDLinks) == 20 ? 1 : -1];
+
+typedef char SerializedStatExtent[sizeof(Structs::Stat) == 12 ? 1 : -1];
+typedef char SerializedRuleExtent[sizeof(Structs::AchievementRule) == 12 ? 1 : -1];
+typedef char SerializedAchievementExtent[sizeof(Structs::Achievement) == 20 ? 1 : -1];
