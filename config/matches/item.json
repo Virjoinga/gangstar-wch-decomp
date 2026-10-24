@@ -161,7 +161,8 @@
         ".item_pickup",
         ".item_sound",
         ".item_sound_switch",
-        ".item_update"
+        ".item_update",
+        ".item_animate"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -258,7 +259,8 @@
         "_ZN4Item7addAmmoEii",
         "_ZN4Item6pickupEv",
         "_ZN4Item15playPickupSoundEv",
-        "_ZN4Item6UpdateEi"
+        "_ZN4Item6UpdateEi",
+        "_ZN4Item7animateEbbb"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -313,7 +315,6 @@
         "_ZN13ScriptManager16displayOnMinimapEP11LevelObjectbb",
         "_ZN14Transformation4LoadERKN7Structs6MarkerEPN3irr7collada15CColladaFactoryE",
         "_ZN14Transformation13grabSceneNodeEiPPPv",
-        "_ZN4Item7animateEbbb",
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN4Item8isUsableEv",
