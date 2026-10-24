@@ -1,5 +1,5 @@
 // Copyright (C) 2002-2008 Nikolaus Gebhardt
-// Altered excerpt of Irrlicht 1.4.2 matrix4.h: identity construction and const element access only.
+// Altered excerpt of Irrlicht 1.4.2 matrix4.h: identity construction, vector transform and partial inverse interface.
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
 // arising from the use of this software.
@@ -16,6 +16,7 @@
 #ifndef WCH_CORE_MATRIX4_H
 #define WCH_CORE_MATRIX4_H
 #include "NativeStdio.h"
+#include "Vector3.h"
 namespace irr { namespace core {
 template<class T> class CMatrix4 {
 public:
@@ -26,6 +27,14 @@ public:
     CMatrix4(eConstructor constructor = EM4CONST_IDENTITY);
     inline CMatrix4<T>& makeIdentity();
     const T& operator[](unsigned int index) const { return M[index]; }
+    bool getInverse(CMatrix4<T>& out) const __attribute__((weak));
+    void transformVect(vector3d<float>& vect) const {
+        float vector[3];
+        vector[0] = vect.X*M[0] + vect.Y*M[4] + vect.Z*M[8] + M[12];
+        vector[1] = vect.X*M[1] + vect.Y*M[5] + vect.Z*M[9] + M[13];
+        vector[2] = vect.X*M[2] + vect.Y*M[6] + vect.Z*M[10] + M[14];
+        vect.X = vector[0]; vect.Y = vector[1]; vect.Z = vector[2];
+    }
 private:
     T M[16];
     mutable bool definitelyIdentityMatrix;

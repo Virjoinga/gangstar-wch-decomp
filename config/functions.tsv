@@ -10849,7 +10849,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00318eed	0x14	MeshCollision.cpp	game	world	matched	_ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE	MeshCollision::MeshCollision(irr::scene::IMesh const*, irr::scene::ISceneNode const*)
 0x00318eed	0x14	MeshCollision.cpp	game	world	matched	_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE	MeshCollision::MeshCollision(irr::scene::IMesh const*, irr::scene::ISceneNode const*)
 0x00318f01	0x218	MeshCollision.cpp	game	world	matched	_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE	MeshCollision::checkCollision(irr::core::triangle3d<float> const&, irr::core::line3d<float> const&) const
-0x00319119	0x5d0	MeshCollision.cpp	game	world	pending	_ZNK13MeshCollision16isRayCollideMeshERKN3irr4core6line3dIfEE	MeshCollision::isRayCollideMesh(irr::core::line3d<float> const&) const
+0x00319119	0x5d0	MeshCollision.cpp	game	world	matched	_ZNK13MeshCollision16isRayCollideMeshERKN3irr4core6line3dIfEE	MeshCollision::isRayCollideMesh(irr::core::line3d<float> const&) const
 0x003196e9	0x2	PhysicAttributes.cpp	game	characters	pending	_ZN17b2ContactListener3AddEPK14b2ContactPoint	b2ContactListener::Add(b2ContactPoint const*)
 0x003196ed	0x2	PhysicAttributes.cpp	game	characters	pending	_ZN17b2ContactListener7PersistEPK14b2ContactPoint	b2ContactListener::Persist(b2ContactPoint const*)
 0x003196f1	0x2	PhysicAttributes.cpp	game	characters	pending	_ZN17b2ContactListener6RemoveEPK14b2ContactPoint	b2ContactListener::Remove(b2ContactPoint const*)

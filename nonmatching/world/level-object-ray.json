@@ -77,7 +77,8 @@
         "_ZN11LevelObject7CastRayERKN3irr4core8vector3dIfEES5_RS3_S6_RPS_b",
         "_ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
         "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
-        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE"
+        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE",
+        "_ZNK13MeshCollision16isRayCollideMeshERKN3irr4core6line3dIfEE"
     ],
     "sections": [
         ".text",
@@ -178,7 +179,8 @@
         ".level_base_type",
         ".level_ray",
         ".mesh_constructor",
-        ".mesh_check"
+        ".mesh_check",
+        ".mesh_ray"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
@@ -215,7 +217,8 @@
         "_ZNK13CameraManager9getCameraEv",
         "_ZN7b2World5QueryERK6b2AABBPP7b2Shapei",
         "_ZN16PhysicAttributes29IntersectSegmentWithHeightMapERKN3irr4core8vector3dIfEES5_RS3_S6_",
-        "_ZNK13MeshCollision16isRayCollideMeshERKN3irr4core6line3dIfEE"
+        "_ZNK3irr5video24S3DVertexComponentArrays19getPositionAccessorERNS1_11SAccessorExINS_4core8vector3dEfEE",
+        "_ZNK3irr5video24S3DVertexComponentArrays19getPositionAccessorERNS1_11SAccessorExINS_4core8vector3dEsEE"
     ],
     "dependencies": [
         "gs3d-stuff",
