@@ -30,14 +30,20 @@
     "functions": [
         "_ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
         "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
-        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE"
+        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE",
+        "_ZNK13MeshCollision16isRayCollideMeshERKN3irr4core6line3dIfEE"
     ],
     "sections": [
         ".text",
         ".mesh_check",
+        ".mesh_ray",
         {
             "name": ".got",
             "offset": 864
         }
+    ],
+    "external_thumb_functions": [
+        "_ZNK3irr5video24S3DVertexComponentArrays19getPositionAccessorERNS1_11SAccessorExINS_4core8vector3dEfEE",
+        "_ZNK3irr5video24S3DVertexComponentArrays19getPositionAccessorERNS1_11SAccessorExINS_4core8vector3dEsEE"
     ]
 }

@@ -3,7 +3,8 @@
 `MeshCollision::checkCollision` matches all 536 retail bytes. The two existing
 constructor aliases retain their exact 20-byte body; no constructor source body
 or compiler flags are changed. Only the byte-verified triangle-check assembly
-is removed. The larger mesh scan and LevelObject raycast remain pending.
+is removed. The larger mesh scan is now matched separately in [mesh-ray.md](mesh-ray.md).
+The LevelObject raycast remains pending.
 
 ## Algorithm and state
 
@@ -39,8 +40,8 @@ leaving the bounds and length untouched.
 
 `getLengthSQ` and `getDistanceFromSQ` extend the existing licensed altered Irrlicht
 vector excerpt. The new partial triangle view contains the three vertices and
-the observed weak intersection call. Its default constructor is unavailable;
-no engine construction or intersection implementation is credited.
+the observed weak intersection call. At this stage its default constructor was unavailable; the later mesh scan adds
+the upstream value constructors. No engine intersection implementation is credited.
 The GOT entry at base 0x004b0048 plus 0x1d04 points to the weak triangle method
 at 0x0028057d. That engine function remains retail-bound.
 
