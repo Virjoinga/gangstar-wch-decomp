@@ -42,6 +42,17 @@ __aeabi_fdiv = 0x001c4520;
 __aeabi_fcmpgt = 0x001c419c;
 __aeabi_fcmpeq = 0x001c470c;
 __aeabi_fcmplt = 0x001c479c;
+_ZN23retail_item_transitions16civPassive_transE = 0x0041d2f0;
+_ZN23retail_item_transitions17scriptedNpc_transE = 0x0041d41c;
+_ZN23retail_item_transitions19civAggressive_transE = 0x0041d44c;
+_ZN23retail_item_transitions16gangMember_transE = 0x0041d530;
+_ZN23retail_item_transitions9cop_transE = 0x0041d53c;
+_ZN23retail_item_transitions10swat_transE = 0x0041d674;
+_ZN23retail_item_transitions17civ_vehicle_transE = 0x0041d680;
+_ZN23retail_item_transitions17cop_vehicle_transE = 0x0041d710;
+_ZN23retail_item_transitions11guard_transE = 0x0041d7c4;
+_ZN23retail_item_transitions22scripted_vehicle_transE = 0x0041d86c;
+s_billboardFactory = ADDR(.item_factory_storage);
 SECTIONS {
     .level_base_type 0x002f74d0 : { *level-object.o(.text._ZN11LevelObject12getSpawnTypeEv .gnu.linkonce.t._ZN11LevelObject12getSpawnTypeEv) }
     .level_sight 0x00317380 : { *level-object.o(.text._ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE) }
@@ -52,7 +63,7 @@ SECTIONS {
     .level_startup_wrapper 0x003179c0 : { *level-object.o(.text._GLOBAL__I__ZN11LevelObject12s_highlightsE) }
     .level_startup_string 0x004b8a38 (NOLOAD) : { *level-object.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .level_startup_half 0x004b8a58 (NOLOAD) : { *level-object.o(.bss._ZN3irr2ps5vHalfE) }
-    .level_empty_text 0x0044d91c : { *level-object.o(.rodata.str1.*) }
+    .level_empty_text 0x0044d91c : { *level-object.o(.rodata.str1.*) *item.o(.rodata.str1.*) }
     .level_startup_record_0 0x004b8a64 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11civ_passiveE) }
     .level_startup_record_1 0x004b8a6c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
     .level_startup_record_2 0x004b8a74 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
@@ -212,6 +223,34 @@ SECTIONS {
     .item_delete 0x002fc39c : { *item.o(.text._ZN4ItemD0Ev) }
     .item_destructor 0x002fc3c4 : { *item.o(.text._ZN4ItemD1Ev .text._ZN4ItemD2Ev) }
     .item_constructor 0x002fc3e4 : { *item.o(.text._ZN4ItemC1Ei .text._ZN4ItemC2Ei) }
+    .item_billboard_create 0x002fc25c : { *item.o(.text._ZN21CGameBillboardFactory11createSceneERKN3irr7collada16CColladaDatabaseE .gnu.linkonce.t._ZN21CGameBillboardFactory11createSceneERKN3irr7collada16CColladaDatabaseE) }
+    .item_billboard_delete 0x002fce60 : { *item.o(.text._ZN21CGameBillboardFactoryD0Ev .gnu.linkonce.t._ZN21CGameBillboardFactoryD0Ev) }
+    .item_billboard_destructor 0x002fceb0 : { *item.o(.text._ZN21CGameBillboardFactoryD1Ev .text._ZN21CGameBillboardFactoryD2Ev .gnu.linkonce.t._ZN21CGameBillboardFactoryD1Ev .gnu.linkonce.t._ZN21CGameBillboardFactoryD2Ev) }
+    .item_billboard_vtable 0x004aad20 : { *item.o(.data.rel.ro._ZTV21CGameBillboardFactory .gnu.linkonce.d.rel.ro._ZTV21CGameBillboardFactory) }
+    .item_placed_array 0x004b7f78 (NOLOAD) : { *item.o(.bss._ZN4Item13s_placedItemsE) }
+    .item_startup_string 0x004b7f8c (NOLOAD) : { *item.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .item_startup_half 0x004b7fac (NOLOAD) : { *item.o(.bss._ZN3irr2ps5vHalfE) }
+    .item_factory_storage 0x004b8008 (NOLOAD) : { *item.o(.bss.s_billboardFactoryStorage) }
+    .item_startup_record_0 0x004b7fb8 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .item_startup_record_1 0x004b7fc0 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .item_startup_record_2 0x004b7fc8 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .item_startup_record_3 0x004b7fd0 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .item_startup_record_4 0x004b7fd8 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai3copE) }
+    .item_startup_record_5 0x004b7fe0 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai4swatE) }
+    .item_startup_record_6 0x004b7fe8 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .item_startup_record_7 0x004b7ff0 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .item_startup_record_8 0x004b7ff8 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai5guardE) }
+    .item_startup_record_9 0x004b8000 (NOLOAD) : { *item.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .item_string_cleanup 0x002fc22c : { *item.o(.text.__tcf_4) }
+    .item_factory_cleanup 0x002fced4 : { *item.o(.text.__tcf_5) }
+    .item_array_cleanup 0x002fc144 : { *item.o(.text.__tcf_6) }
+    .item_startup 0x002fccb8 : { *item.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .item_startup_wrapper 0x002fce4c : { *item.o(.text._GLOBAL__I__ZN4Item16s_numHealthCrateE) }
+    .item_setup_node 0x002fc2e4 : { *item.o(.text._ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv) }
+    .item_collectible_glow 0x0041d1f0 : { *item.o(.rodata.item_collectible_glow) }
+    .item_badge_glow 0x0041d20c : { *item.o(.rodata.item_badge_glow) }
+    .item_badge_scene 0x0041d224 : { *item.o(.rodata.item_badge_scene) }
+    .item_collectible_scene 0x0041d238 : { *item.o(.rodata.item_collectible_scene) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
