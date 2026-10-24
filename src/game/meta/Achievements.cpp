@@ -9,10 +9,15 @@
  */
 
 #include "Achievements.h"
+#include "AchievementListSupport.h"
 #include "Item.h"
 #include "../ai/NPC.h"
 #include "../persistence/DataStream.h"
 
+class GSLoading { public: static bool isGameLoaded(); };
+
+int AchievementManager::s_statCount;
+int AchievementManager::s_ruleCount;
 AchievementManager::CompletedNodeBase AchievementManager::s_completedAchievements;
 int AchievementManager::s_achievementCount;
 AchievementManager::Stat* AchievementManager::s_stats;
@@ -103,6 +108,22 @@ bool AchievementManager::hasNewCompletedAchievements()
     return count != 0;
 }
 
+void AchievementManager::addCompletedAchievement(Achievement* achievement)
+{
+    typedef stlp_priv::_List_node<const Achievement*> Node;
+    std::allocator<Node>& allocator = *reinterpret_cast<std::allocator<Node>*>(&s_completedAchievements);
+    Node* node = allocator.allocate(1);
+    node->_M_data = achievement;
+    CompletedNodeBase* position = &s_completedAchievements;
+    CompletedNodeBase* prev = position->prev;
+    node->base.next = position;
+    node->base.prev = prev;
+    prev->next = &node->base;
+    position->prev = &node->base;
+    if (GSLoading::isGameLoaded())
+        updateProgressStat();
+}
+
 void AchievementManager::completeAchievement(int id)
 {
     Achievement& achievement = s_achievements[id];
@@ -150,6 +171,18 @@ void Structs::Achievement::Read(DataStream& stream)
         rules[i] = stream.ReadInt();
     unknown12 = stream.ReadInt();
     unknown16 = stream.ReadInt();
+}
+
+void AchievementManager::reset()
+{
+    for (int i = 0; i < s_statCount; ++i)
+        s_stats[i].value = 0;
+    for (int i = 0; i < s_ruleCount; ++i)
+        s_rules[i].flags &= ~2;
+    for (int i = 0; i < s_achievementCount; ++i)
+        s_achievements[i].flags &= ~2;
+    typedef stlp_priv::_List_base<const Achievement*, std::allocator<const Achievement*> > ListBase;
+    reinterpret_cast<ListBase*>(&s_completedAchievements)->clear();
 }
 
 void AchievementManager::updateRule(int id)

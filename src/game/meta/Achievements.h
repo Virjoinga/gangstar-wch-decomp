@@ -96,6 +96,7 @@ public:
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     const Achievement* popCompletedAchievement();
+    void reset();
     void updateStat(int id);
     void updateProgressStat();
     void setMaxStat(int id, int value);
@@ -130,6 +131,7 @@ public:
     void recordHealthPack(const Item& item);
     static AchievementManager* s_achievementManager;
     static int s_statCount;
+    static int s_ruleCount;
     static Stat* s_stats;
     static AchievementRule* s_rules;
     static Achievement* s_achievements;

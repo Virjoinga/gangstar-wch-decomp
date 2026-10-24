@@ -9,6 +9,9 @@ __aeabi_fadd = 0x001c4154;
 __aeabi_f2iz = 0x001c44cc;
 _Znaj = 0x001c3ff8;
 _ZdlPv = 0x001c42b0;
+_Znwj = 0x001c4814;
+puts = 0x001c41b4;
+exit = 0x001c482c;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -75,6 +78,15 @@ SECTIONS {
     ASSERT(SIZEOF(.achievement_completed_queue) == 8, "Unexpected completed achievement queue extent")
     .achievement_rule_destructor 0x00345e04 : { *achievements.o(.text._ZN18AchievementManager15AchievementRuleD1Ev) }
     .achievement_stat_destructor 0x00345e2c : { *achievements.o(.text._ZN18AchievementManager4StatD1Ev) }
+    .achievement_insert 0x0034520c : { *achievements.o(.text._ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE) }
+    .achievement_reset 0x003456c4 : { *achievements.o(.text._ZN18AchievementManager5resetEv) }
+    .achievement_node_allocator 0x003451cc : { *achievements.o(.gnu.linkonce.t._ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv) }
+    .achievement_list_clear 0x00345090 : { *achievements.o(.gnu.linkonce.t._ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv) }
+    .achievement_stat_count 0x004bb3e4 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager11s_statCountE) }
+    ASSERT(SIZEOF(.achievement_stat_count) == 4, "Unexpected achievement count extent")
+    .achievement_rule_count 0x004bb3e8 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager11s_ruleCountE) }
+    ASSERT(SIZEOF(.achievement_rule_count) == 4, "Unexpected achievement count extent")
+    .achievement_alloc_message 0x00401098 : { *achievements.o(.rodata.str1.4) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

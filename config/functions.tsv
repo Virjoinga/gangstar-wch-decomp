@@ -12367,7 +12367,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003450b5	0x24	Achievements.cpp	game	meta	pending	__tcf_4	__tcf_4
 0x003450d9	0xf4	Achievements.cpp	game	meta	pending	_ZN18AchievementManager4initEv	AchievementManager::init()
 0x003451cd	0x40	Achievements.cpp	stlport	-	matched	_ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv	std::allocator<stlp_priv::_List_node<AchievementManager::Achievement const*> >::allocate(unsigned int, void const*)
-0x0034520d	0x48	Achievements.cpp	game	meta	pending	_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE	AchievementManager::addCompletedAchievement(AchievementManager::Achievement*)
+0x0034520d	0x48	Achievements.cpp	game	meta	matched	_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE	AchievementManager::addCompletedAchievement(AchievementManager::Achievement*)
 0x00345255	0x30	Achievements.cpp	game	meta	matched	_ZN18AchievementManager19completeAchievementEi	AchievementManager::completeAchievement(int)
 0x00345285	0x50	Achievements.cpp	game	meta	matched	_ZN18AchievementManager29setNextAchievementAsCompletedEv	AchievementManager::setNextAchievementAsCompleted()
 0x003452d5	0x40	Achievements.cpp	game	meta	matched	_ZN18AchievementManager16checkAchievementEi	AchievementManager::checkAchievement(int)
@@ -12376,7 +12376,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034535d	0x52	Achievements.cpp	game	meta	matched	_ZN7Structs11Achievement4ReadER10DataStream	Structs::Achievement::Read(DataStream&)
 0x003453b1	0x254	Achievements.cpp	game	meta	pending	_ZN18AchievementManager4loadEPKc	AchievementManager::load(char const*)
 0x00345605	0xc0	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager4Stat12formatStringEPc	AchievementManager::Stat::formatString(char*) const
-0x003456c5	0xb4	Achievements.cpp	game	meta	pending	_ZN18AchievementManager5resetEv	AchievementManager::reset()
+0x003456c5	0xb4	Achievements.cpp	game	meta	matched	_ZN18AchievementManager5resetEv	AchievementManager::reset()
 0x00345779	0x60	Achievements.cpp	game	meta	matched	_ZN18AchievementManager10updateRuleEi	AchievementManager::updateRule(int)
 0x003457d9	0x54	Achievements.cpp	game	meta	matched	_ZN18AchievementManager10updateStatEi	AchievementManager::updateStat(int)
 0x0034582d	0x44	Achievements.cpp	game	meta	matched	_ZN18AchievementManager10setMaxStatEii	AchievementManager::setMaxStat(int, int)
