@@ -76,7 +76,11 @@
         "_ZN18AchievementManager27hasNewCompletedAchievementsEv",
         "_ZN18AchievementManager23popCompletedAchievementEv",
         "_ZN18AchievementManager15AchievementRuleD1Ev",
-        "_ZN18AchievementManager4StatD1Ev"
+        "_ZN18AchievementManager4StatD1Ev",
+        "_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE",
+        "_ZN18AchievementManager5resetEv",
+        "_ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv",
+        "_ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -135,14 +139,19 @@
         ".achievement_has_new",
         ".achievement_pop",
         ".achievement_rule_destructor",
-        ".achievement_stat_destructor"
+        ".achievement_stat_destructor",
+        ".achievement_insert",
+        ".achievement_reset",
+        ".achievement_node_allocator",
+        ".achievement_list_clear",
+        ".achievement_alloc_message"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
         "_ZNK9Character8isPlayerEv",
         "_ZN3NPC5isCopEv",
-        "_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE",
         "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE",
-        "_ZN10DataStream7ReadIntEv"
+        "_ZN10DataStream7ReadIntEv",
+        "_ZN9GSLoading12isGameLoadedEv"
     ]
 }
