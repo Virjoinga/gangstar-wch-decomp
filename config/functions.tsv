@@ -12351,10 +12351,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00344239	0x24	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame9BlockAmmoD1Ev	SaveGame::BlockAmmo::~BlockAmmo()
 0x0034425d	0x5c4	SaveGame.cpp	game	persistence	matched	_ZN8SaveGame12LoadAndApplyEPKc	SaveGame::LoadAndApply(char const*)
 0x00344821	0x56c	SaveGame.cpp	game	persistence	pending	_ZN8SaveGame13SampleAndSaveEPKc	SaveGame::SampleAndSave(char const*)
-0x00344d8d	0x4	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager4Stat8getValueEv	AchievementManager::Stat::getValue() const
-0x00344d91	0x1c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager20getAchievementFromIDEi	AchievementManager::getAchievementFromID(int) const
-0x00344dad	0x1c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager24getAchievementRuleFromIDEi	AchievementManager::getAchievementRuleFromID(int) const
-0x00344dc9	0x1c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager13getStatFromIDEi	AchievementManager::getStatFromID(int) const
+0x00344d8d	0x4	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager4Stat8getValueEv	AchievementManager::Stat::getValue() const
+0x00344d91	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager20getAchievementFromIDEi	AchievementManager::getAchievementFromID(int) const
+0x00344dad	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager24getAchievementRuleFromIDEi	AchievementManager::getAchievementRuleFromID(int) const
+0x00344dc9	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager13getStatFromIDEi	AchievementManager::getStatFromID(int) const
 0x00344de5	0x94	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE	AchievementManager::evaluateRule(AchievementManager::AchievementRule&) const
 0x00344e79	0x5c	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager8evaluateERNS_11AchievementE	AchievementManager::evaluate(AchievementManager::Achievement&) const
 0x00344ed5	0x24	Achievements.cpp	game	meta	pending	_ZN18AchievementManager22IsAchievementCompletedEi	AchievementManager::IsAchievementCompleted(int)
@@ -12379,17 +12379,17 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003456c5	0xb4	Achievements.cpp	game	meta	pending	_ZN18AchievementManager5resetEv	AchievementManager::reset()
 0x00345779	0x60	Achievements.cpp	game	meta	pending	_ZN18AchievementManager10updateRuleEi	AchievementManager::updateRule(int)
 0x003457d9	0x54	Achievements.cpp	game	meta	pending	_ZN18AchievementManager10updateStatEi	AchievementManager::updateStat(int)
-0x0034582d	0x44	Achievements.cpp	game	meta	pending	_ZN18AchievementManager10setMaxStatEii	AchievementManager::setMaxStat(int, int)
-0x00345871	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager10recordJumpEi	AchievementManager::recordJump(int)
-0x00345881	0x44	Achievements.cpp	game	meta	pending	_ZN18AchievementManager12recordDamageEi	AchievementManager::recordDamage(int)
-0x003458c5	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager18recordVehicleSpeedEi	AchievementManager::recordVehicleSpeed(int)
-0x003458d5	0x30	Achievements.cpp	game	meta	pending	_ZN18AchievementManager14updateMaskStatEii	AchievementManager::updateMaskStat(int, int)
-0x00345905	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager12recordOnJumpEi	AchievementManager::recordOnJump(int)
-0x00345915	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager19recordShopCarRentalEi	AchievementManager::recordShopCarRental(int)
-0x00345925	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager16recordShopWeaponEi	AchievementManager::recordShopWeapon(int)
+0x0034582d	0x44	Achievements.cpp	game	meta	matched	_ZN18AchievementManager10setMaxStatEii	AchievementManager::setMaxStat(int, int)
+0x00345871	0x10	Achievements.cpp	game	meta	matched	_ZN18AchievementManager10recordJumpEi	AchievementManager::recordJump(int)
+0x00345881	0x44	Achievements.cpp	game	meta	matched	_ZN18AchievementManager12recordDamageEi	AchievementManager::recordDamage(int)
+0x003458c5	0x10	Achievements.cpp	game	meta	matched	_ZN18AchievementManager18recordVehicleSpeedEi	AchievementManager::recordVehicleSpeed(int)
+0x003458d5	0x30	Achievements.cpp	game	meta	matched	_ZN18AchievementManager14updateMaskStatEii	AchievementManager::updateMaskStat(int, int)
+0x00345905	0x10	Achievements.cpp	game	meta	matched	_ZN18AchievementManager12recordOnJumpEi	AchievementManager::recordOnJump(int)
+0x00345915	0x10	Achievements.cpp	game	meta	matched	_ZN18AchievementManager19recordShopCarRentalEi	AchievementManager::recordShopCarRental(int)
+0x00345925	0x10	Achievements.cpp	game	meta	matched	_ZN18AchievementManager16recordShopWeaponEi	AchievementManager::recordShopWeapon(int)
 0x00345935	0x54	Achievements.cpp	game	meta	pending	_ZN18AchievementManager12recordWeaponEib	AchievementManager::recordWeapon(int, bool)
-0x00345989	0x28	Achievements.cpp	game	meta	pending	_ZN18AchievementManager17recordWantedLevelEi	AchievementManager::recordWantedLevel(int)
-0x003459b1	0x2c	Achievements.cpp	game	meta	pending	_ZN18AchievementManager13incrementStatEii	AchievementManager::incrementStat(int, int)
+0x00345989	0x28	Achievements.cpp	game	meta	matched	_ZN18AchievementManager17recordWantedLevelEi	AchievementManager::recordWantedLevel(int)
+0x003459b1	0x2c	Achievements.cpp	game	meta	matched	_ZN18AchievementManager13incrementStatEii	AchievementManager::incrementStat(int, int)
 0x003459dd	0x14	Achievements.cpp	game	meta	pending	_ZN18AchievementManager18recordMissionEndedEv	AchievementManager::recordMissionEnded()
 0x003459f1	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager25recordDeliverySideMissionEv	AchievementManager::recordDeliverySideMission()
 0x00345a01	0x10	Achievements.cpp	game	meta	pending	_ZN18AchievementManager26recordAmbulanceSideMissionEv	AchievementManager::recordAmbulanceSideMission()

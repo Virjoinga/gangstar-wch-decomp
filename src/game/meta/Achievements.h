@@ -16,11 +16,27 @@ public:
         unsigned char unknown[20];
         unsigned int flags;
     };
+    struct AchievementRule {
+        // Observed 36-byte stride; the rule fields remain unrecovered.
+        unsigned int unknown[9];
+    };
     Achievement* getAchievementFromID(int id) const;
+    AchievementRule* getAchievementRuleFromID(int id) const;
+    Stat* getStatFromID(int id) const;
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     Achievement* popCompletedAchievement();
     void updateStat(int id);
+    void setMaxStat(int id, int value);
+    void updateMaskStat(int id, int bit);
+    void incrementStat(int id, int amount);
+    void recordJump(int value);
+    void recordDamage(int value);
+    void recordVehicleSpeed(int value);
+    void recordOnJump(int bit);
+    void recordShopCarRental(int bit);
+    void recordShopWeapon(int bit);
+    void recordWantedLevel(int value);
     void recordWeapon(int type, bool locked);
     void recordBadgesEscaped(int count);
     void recordDroppedCash(int count);
@@ -29,6 +45,8 @@ public:
     static AchievementManager* s_achievementManager;
     static int s_statCount;
     static Stat* s_stats;
+    static AchievementRule* s_rules;
+    static Achievement* s_achievements;
     static int s_achievementCount;
 };
 
