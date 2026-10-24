@@ -15,6 +15,8 @@
 #include "../missions/WantedLevelManager.h"
 #include "../world/ObjectData.h"
 #include "../app/CGameFactory.h"
+#include "../app/Application.h"
+#include "../combat/WeaponManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
 #include "../core/Vector3.h"
@@ -266,6 +268,13 @@ void Item::drop(int type, irr::core::vector3d<float> position, int amount)
     item->OnSpawn();
 }
 
+void Item::addAmmo(int type, int amount)
+{
+    WeaponManager* manager = Application::GetInstance()->GetWeaponManager();
+    manager->setAmmo(type, manager->getAmmo(type, PlayerTest::AnyContext) + amount,
+        PlayerTest::AnyContext);
+}
+
 irr::scene::ISceneNode* Item::grabSceneNode(int, void***)
 {
     void** parameters = 0;
@@ -282,6 +291,15 @@ irr::scene::ISceneNode* Item::grabSceneNode(int, void***)
     billboard->setPosition(root->getPosition() + attachedNode->getPosition());
     billboard->updateAbsolutePosition(false);
     return root;
+}
+
+void Item::pickup()
+{
+    if (unlocked() && isUsable()) {
+        add();
+        playPickupSound();
+        lock();
+    }
 }
 
 namespace retail_item_transitions {

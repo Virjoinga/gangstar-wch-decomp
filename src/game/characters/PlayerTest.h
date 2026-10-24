@@ -22,8 +22,8 @@ public:
     virtual void position(const SaveVector3& value);
     virtual void unknown17();
     virtual void unknown18();
-    virtual void unknown19();
-    virtual void unknown20();
+    virtual int getMaxHealth() const;
+    virtual int getHealth() const;
     virtual void unknown21();
     virtual void unknown22();
     virtual void unknown23();
