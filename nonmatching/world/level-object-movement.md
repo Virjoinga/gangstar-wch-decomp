@@ -151,8 +151,9 @@ No existing matched function body or compiler flag changes.
 The first build exposed an incomplete aabbox3d declaration in the new translation
 unit; adding Geometry.h resolved that compile failure. The first compiling
 candidate was 2812 bytes. Recovery of the remaining data flow and object lifetimes
-produced the retained 3060-byte candidate. Retail is 3120 bytes. The reproduction
-still fails byte comparison at 0xc and earns zero matched progress.
+produced the 3060-byte candidate saved in PR #54, whose first mismatch was 0xc.
+The current refinement is 3120 bytes, equal to retail, and its first mismatch is
+0x148. It still earns zero matched progress.
 
 ### Shape evidence and partial views
 
@@ -212,19 +213,36 @@ untouched when the closest fraction stays 1, matching the observed branch.
 
 ### Remaining byte differences
 
-The candidate has the same 868-byte frame as retail (literal 0xfffffc9c), and its
-shape array and GetPosition temporaries have the corresponding retail offsets.
-Register allocation differs from the entry: the candidate keeps this in r9,
-where retail uses fp. The candidate also keeps the current hit Z in fp across
-parts of the loop; retail stores it at sp+68. Code and literal-pool placement
-remain different.
+The current candidate has retail's 3120-byte size and 868-byte frame (literal
+0xfffffc9c). Its entry now keeps this in fp, as retail does, and its first 328
+bytes compare exactly. The first remaining difference is the perpendicular's
+spill slots: retail uses sp+92/+88; the candidate uses sp+88/+84. Later differences
+include the saved hit coordinates, collision normal, rotation coefficients and
+height-bound spill slots, nearest-shape assignment ordering, and final output
+arithmetic scheduling. Equal size and frame do not establish a match.
 
-A diagnostic count of direct float-helper call sites in the linked instructions
-finds 72 fmul calls versus 74 retail, while both have 51 fsub, 44 fadd and 14 fdiv
-calls. Both have 28 indirect virtual/GOT calls. These counts are only an analysis
-aid; they do not prove behavioral equivalence or an instruction match. Further
-work must resolve the remaining arithmetic sharing and value lifetimes without
-padding, register pins, compiler-output edits or relaxed comparisons.
+The refinement snapshots the unscaled circle center before choosing a side,
+scales its coordinates separately in each branch, uses base-first hit-point
+addition, and snapshots all four polygon rotation coefficients before the normal
+loop. The transform helper adds the translated position to a rotated vector.
+The final interpolation retains three GetPosition snapshots and separate scaled
+and interpolated vectors. Segment offsets remain inline expressions, allowing the
+compiler to share arithmetic after the corresponding position getter.
+
+A diagnostic count of direct float-helper call sites now finds 74 fmul, 51 fsub,
+44 fadd and 14 fdiv calls in both images, with 28 indirect virtual/GOT calls in
+each. The normalized instruction listings contain 1307 instructions each. These
+counts are analysis aids, not proof of behavioral equivalence or byte matching.
+Compiler SRA and RTL diagnostics identify separate scalar pseudos for the saved
+hit coordinates and normal; declaration-order experiments did not resolve their
+spill allocation and were discarded.
+
+Experiments with inlining limits 40, 80 and 100 failed to link because existing
+LevelObject sections overlapped. Limits 50 and 60 retained only the pending
+movement mismatch. None of those flag changes is retained. Explicit scalar hit
+coordinates, direct transform expressions and altered assignment/declaration
+ordering also failed to produce an exact match and were discarded. No padding,
+register pins, barriers or compiler-output edits are used.
 
 The manifest compares the pending function and its entire .level_movement
 section while retaining all existing native LevelObject and dependency checks,
@@ -234,18 +252,18 @@ is not a full shared-library build or runtime test.
 ### Reproduction and regression checks
 
 `python nonmatching/world/try_level_object_movement.py` exits 1. Its only
-function mismatch is below; .level_movement also differs at 0xc. The other
+function mismatch is below; .level_movement also differs at 0x148. The other
 350 comparisons pass, including all pre-existing native functions and sections.
 
 ```text
 MISMATCH  _ZN11LevelObject12canGoToPointERKN3irr4core8vector3dIfEERS3_S6_  0x00317fb5
-  expected : 56 46 4d 46 44 46 f0 b4 8b 4c 83 46 a5 44 8b 4c
-  actual   : 56 46 4d 46 44 46 f0 b4 88 4c 81 46 a5 44 88 4c
-  differs at 0xc
+  expected : c0 9b c1 9a 59 46 1c 19 17 92 16 94 0b 68 ba a8
+  actual   : c0 9b c1 9a 59 46 1c 19 16 92 15 94 0b 68 ba a8
+  differs at 0x148
 MISMATCH SECTION .level_movement
-  expected : 56 46 4d 46 44 46 f0 b4 8b 4c 83 46 a5 44 8b 4c
-  actual   : 56 46 4d 46 44 46 f0 b4 88 4c 81 46 a5 44 88 4c
-  differs at 0xc
+  expected : c0 9b c1 9a 59 46 1c 19 17 92 16 94 0b 68 ba a8
+  actual   : c0 9b c1 9a 59 46 1c 19 16 92 15 94 0b 68 ba a8
+  differs at 0x148
 ```
 
 `python tools/build.py level-object` exits 0 with 350 successful comparisons.
