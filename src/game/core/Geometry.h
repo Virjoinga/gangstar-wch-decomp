@@ -1,5 +1,5 @@
 // Copyright (C) 2002-2008 Nikolaus Gebhardt
-// Altered excerpts of Irrlicht 1.4.2 line3d.h/aabbox3d.h: partial value interfaces only.
+// Altered excerpts of Irrlicht 1.4.2 line3d.h/aabbox3d.h/triangle3d.h: partial interfaces only.
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
 // arising from the use of this software.
@@ -27,6 +27,14 @@ template<class T> class line3d {
 public:
     line3d(const vector3d<T>& start, const vector3d<T>& end) : start(start), end(end) {}
     vector3d<T> start, end;
+};
+template<class T> class triangle3d {
+public:
+    vector3d<T> pointA, pointB, pointC;
+    bool getIntersectionWithLine(const vector3d<T>&, const vector3d<T>&,
+        vector3d<T>&) const __attribute__((weak));
+private:
+    triangle3d(); // Call-only layout; construction is not recovered here.
 };
 } }
 #endif

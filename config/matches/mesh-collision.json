@@ -24,14 +24,20 @@
         "-mfpu=vfp",
         "-meabi=4"
     ],
-    "retail_got": false,
+    "retail_got": true,
     "source": "src/game/world/MeshCollision.cpp",
     "linker_script": "config/linker/MeshCollision.ld",
     "functions": [
         "_ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
-        "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE"
+        "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
+        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE"
     ],
     "sections": [
-        ".text"
+        ".text",
+        ".mesh_check",
+        {
+            "name": ".got",
+            "offset": 864
+        }
     ]
 }

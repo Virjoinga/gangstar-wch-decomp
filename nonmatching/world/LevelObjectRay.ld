@@ -44,6 +44,7 @@ __aeabi_fcmpeq = 0x001c470c;
 __aeabi_fcmplt = 0x001c479c;
 __aeabi_f2iz = 0x001c44cc;
 SECTIONS {
+    .mesh_check 0x00318f00 : { *mesh-collision.o(.text._ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE) }
     .level_ray 0x003179d4 : { *level-object-ray.o(.text._ZN11LevelObject7CastRayERKN3irr4core8vector3dIfEES5_RS3_S6_RPS_b) }
     .mesh_constructor 0x00318eec : { *mesh-collision.o(.text._ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE .text._ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE) }
     .level_base_type 0x002f74d0 : { *level-object-ray.o(.text._ZN11LevelObject12getSpawnTypeEv .gnu.linkonce.t._ZN11LevelObject12getSpawnTypeEv) }

@@ -76,7 +76,8 @@
         "_ZN11LevelObject12getSpawnTypeEv",
         "_ZN11LevelObject7CastRayERKN3irr4core8vector3dIfEES5_RS3_S6_RPS_b",
         "_ZN13MeshCollisionC1EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
-        "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE"
+        "_ZN13MeshCollisionC2EPKN3irr5scene5IMeshEPKNS1_10ISceneNodeE",
+        "_ZNK13MeshCollision14checkCollisionERKN3irr4core10triangle3dIfEERKNS1_6line3dIfEE"
     ],
     "sections": [
         ".text",
@@ -176,7 +177,8 @@
         ".level_sight",
         ".level_base_type",
         ".level_ray",
-        ".mesh_constructor"
+        ".mesh_constructor",
+        ".mesh_check"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",
