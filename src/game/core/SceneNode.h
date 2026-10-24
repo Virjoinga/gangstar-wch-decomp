@@ -4,6 +4,7 @@
 #include "Vector3.h"
 #include "Matrix4.h"
 #include "Quaternion.h"
+#include "SceneAnimatorList.h"
 
 // Partial engine call interfaces only. Do not instantiate or infer complete
 // layouts from these declarations; no vendored engine code is implemented.
@@ -17,12 +18,6 @@ public:
 namespace scene {
 class ITimelineController;
 class ISceneNodeAnimator;
-struct SceneAnimatorList {
-    struct Node { Node* next; Node* previous; ISceneNodeAnimator* animator; };
-    Node* first;
-    Node* last;
-    unsigned int size;
-};
 class ISceneNode : public virtual IReferenceCounted {
 public:
     ISceneNode* getSceneNodeFromUID(const char* uid);

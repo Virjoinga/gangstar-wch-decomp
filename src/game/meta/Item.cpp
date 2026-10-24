@@ -301,6 +301,21 @@ void Item::addAmmo(int type, int amount)
         PlayerTest::AnyContext);
 }
 
+void Item::animate(bool start, bool loop, bool)
+{
+    irr::scene::ISceneNode* node = sceneNode;
+    if (start && node) {
+        const irr::scene::SceneAnimatorList& animators = node->getAnimators();
+        if (animators.getSize()) {
+            irr::scene::ITimelineController* controller = (*animators.begin())->getTimelineCtrl();
+            if (controller) {
+                controller->setLoop(loop);
+                controller->jumpTo(controller->startTime);
+            }
+        }
+    }
+}
+
 irr::scene::ISceneNode* Item::grabSceneNode(int, void***)
 {
     void** parameters = 0;

@@ -44,7 +44,7 @@ including GetMetatypeFromName at its original 268 bytes. The previously observed
 header-sensitive failure did not recur with these interfaces; no manager
 function body was changed.
 
-## Animation investigation, still pending
+## Animation investigation, resolved subsequently
 
 The C++ candidate resets the first scene animator's timeline when requested,
 sets its loop flag and jumps to startTime. The third bool is unused in retail.
@@ -62,7 +62,8 @@ rejected the unsupported -fno-tree-forwprop option; it was not retained. All suc
 reverted. Brief source-layout experiments on already matched methods did not
 restore those regressions and were also reverted; their final bodies are
 unchanged. No compiler output is edited and none of these experiments receives
-progress credit. Animation stays queued for further work in meta.
+progress credit. The later SDK iterator/accessor reconstruction matches under
+the unchanged flags; see [item-animation.md](item-animation.md).
 
 ## Validation
 
