@@ -14,10 +14,13 @@ inline b2Vec2 movementRotate(const b2XForm& transform, const b2Vec2& value) {
     result.y = transform.rotation[1] * value.x + transform.rotation[3] * value.y;
     return result;
 }
-inline b2Vec2 movementTransform(const b2XForm& transform, const b2Vec2& value) {
-    b2Vec2 result = movementRotate(transform, value);
-    result.x += transform.position.x;
-    result.y += transform.position.y;
+inline b2Vec2 movementAdd(const b2Vec2& a, const b2Vec2& b) {
+    b2Vec2 result;
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
     return result;
+}
+inline b2Vec2 movementTransform(const b2XForm& transform, const b2Vec2& value) {
+    return movementAdd(transform.position, movementRotate(transform, value));
 }
 #endif

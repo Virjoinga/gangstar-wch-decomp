@@ -36,16 +36,14 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
     direction.normalize();
     vector3d<float> perpendicular(direction.Y, -direction.X, 0.0f);
     b2Segment first, second;
-    float offsetX = radius * perpendicular.X;
-    first.p1.x = GetPosition().X / 100.0f - offsetX;
-    float offsetY = radius * perpendicular.Y;
-    first.p1.y = GetPosition().Y / 100.0f - offsetY;
-    first.p2.x = target.X / 100.0f - offsetX;
-    first.p2.y = target.Y / 100.0f - offsetY;
-    second.p1.x = offsetX + GetPosition().X / 100.0f;
-    second.p1.y = offsetY + GetPosition().Y / 100.0f;
-    second.p2.x = offsetX + target.X / 100.0f;
-    second.p2.y = offsetY + target.Y / 100.0f;
+    first.p1.x = GetPosition().X / 100.0f - (radius * perpendicular.X);
+    first.p1.y = GetPosition().Y / 100.0f - (radius * perpendicular.Y);
+    first.p2.x = target.X / 100.0f - (radius * perpendicular.X);
+    first.p2.y = target.Y / 100.0f - (radius * perpendicular.Y);
+    second.p1.x = (radius * perpendicular.X) + GetPosition().X / 100.0f;
+    second.p1.y = (radius * perpendicular.Y) + GetPosition().Y / 100.0f;
+    second.p2.x = (radius * perpendicular.X) + target.X / 100.0f;
+    second.p2.y = (radius * perpendicular.Y) + target.Y / 100.0f;
     float closest = 1.0f;
     b2Shape* closestShape;
     b2Vec2 closestNormal;
@@ -63,10 +61,10 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
             if (data->node) {
                 const irr::core::aabbox3d<float>& box = data->node->getTransformedBoundingBox();
                 float low = box.MinEdge.Z, high = box.MaxEdge.Z;
-                hitPoint = (target - GetPosition()) * fraction + GetPosition();
+                hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (low > hitPoint.Z || high < hitPoint.Z) continue;
             } else if (data->lowerHeight != data->upperHeight) {
-                hitPoint = (target - GetPosition()) * fraction + GetPosition();
+                hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (hitPoint.Z < data->lowerHeight || hitPoint.Z > data->upperHeight) continue;
             }
             if (fraction < closest) {
@@ -79,10 +77,10 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
             if (data->node) {
                 const irr::core::aabbox3d<float>& box = data->node->getTransformedBoundingBox();
                 float low = box.MinEdge.Z, high = box.MaxEdge.Z;
-                hitPoint = (target - GetPosition()) * fraction + GetPosition();
+                hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (low > hitPoint.Z || high < hitPoint.Z) continue;
             } else if (data->lowerHeight != data->upperHeight) {
-                hitPoint = (target - GetPosition()) * fraction + GetPosition();
+                hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (hitPoint.Z < data->lowerHeight || hitPoint.Z > data->upperHeight) continue;
             }
             if (fraction < closest) {
@@ -115,18 +113,26 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
                     adjusted = hitPoint - perpendicular * (radius * 100.0f + 50.0f);
                 else adjusted = hitPoint + perpendicular * (radius * 100.0f + 50.0f);
             } else {
-                vector3d<float> center(transform.position.x * 100.0f, transform.position.y * 100.0f, hitPoint.Z);
-                if (usedSecond) adjusted = center - perpendicular * (radius * 100.0f + 75.0f);
-                else adjusted = center + perpendicular * (radius * 100.0f + 75.0f);
+                // Snapshot the unscaled center; each side scales its own coordinates.
+                b2Vec2 bodyCenter = transform.position;
+                if (usedSecond)
+                    adjusted = vector3d<float>(bodyCenter.x * 100.0f, bodyCenter.y * 100.0f, hitPoint.Z) - perpendicular * (radius * 100.0f + 75.0f);
+                else
+                    adjusted = vector3d<float>(bodyCenter.x * 100.0f, bodyCenter.y * 100.0f, hitPoint.Z) + perpendicular * (radius * 100.0f + 75.0f);
             }
         } else if (type == 1) {
             const MovementPolygonView* polygon = reinterpret_cast<const MovementPolygonView*>(closestShape);
             const b2XForm& transform = closestShape->GetBody()->GetXForm();
+            // Retail snapshots all four coefficients before testing the normals.
+            float rotation0 = transform.rotation[0];
+            float rotation1 = transform.rotation[1];
+            float rotation2 = transform.rotation[2];
+            float rotation3 = transform.rotation[3];
             int edge;
             for (edge = 0; edge < 4; ++edge) {
                 const b2Vec2& normal = polygon->normals[edge];
-                if (closestNormal.x == transform.rotation[0] * normal.x + transform.rotation[2] * normal.y &&
-                    closestNormal.y == transform.rotation[1] * normal.x + transform.rotation[3] * normal.y) break;
+                if (closestNormal.x == rotation0 * normal.x + rotation2 * normal.y &&
+                    closestNormal.y == rotation1 * normal.x + rotation3 * normal.y) break;
             }
             float bodyX, bodyY, lineX, lineY;
             if (usedSecond) {
@@ -151,11 +157,14 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
             adjusted = corner + center * (radius * 100.0f + 50.0f);
         }
     }
-    float baseZ = GetPosition().Z;
+    vector3d<float> zOrigin = GetPosition();
     vector3d<float> base = GetPosition();
     vector3d<float> delta = target - GetPosition();
-    point.X = delta.X * closest + base.X;
-    point.Y = delta.Y * closest + base.Y;
-    point.Z = delta.Z * closest + baseZ;
+    vector3d<float> scaled = delta * closest;
+    vector3d<float> interpolated = base + scaled;
+    float baseZ = zOrigin.Z;
+    point.X = interpolated.X;
+    point.Y = interpolated.Y;
+    point.Z = scaled.Z + baseZ;
     return closest == 1.0f;
 }
