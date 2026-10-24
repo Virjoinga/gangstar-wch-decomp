@@ -10,6 +10,7 @@ class CHudManager {
 public:
     void show();
     void toggleWeaponSelector(bool visible);
+    void switchWeapon(int type);
     unsigned char unknown0[116];
     HudComponent116* component116;
 };

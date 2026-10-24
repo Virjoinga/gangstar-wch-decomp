@@ -29,6 +29,12 @@ public:
     void show();
     void lock();
     void animate(bool start, bool loop, bool flag);
+    void addAmmo(int type, int amount);
+    void addWeapon(int type);
+    bool isUsable();
+    void pickup();
+    void add();
+    void playPickupSound();
     bool unlocked() const;
     int getId() const;
     static int s_numHealthCrate;
