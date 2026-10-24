@@ -146,7 +146,11 @@
         ".item_collectible_glow",
         ".item_badge_glow",
         ".item_badge_scene",
-        ".item_collectible_scene"
+        ".item_collectible_scene",
+        ".item_remove_placed",
+        ".item_place",
+        ".item_place_switch",
+        ".item_spawn_drop"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -231,7 +235,10 @@
             "name": "_GLOBAL__I__ZN4Item16s_numHealthCrateE",
             "address": "0x2fce4d"
         },
-        "_ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv"
+        "_ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv",
+        "_ZN4Item20removeAllPlacedItemsEv",
+        "_ZN4Item5placeEiN3irr4core8vector3dIfEE",
+        "_ZN4Item4dropEiN3irr4core8vector3dIfEEi"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -281,6 +288,7 @@
         "_ZN14TransformationC1Ei",
         "_ZN16SceneNodeManager6manageEiP11LevelObjecti",
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
-        "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv"
+        "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv",
+        "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi"
     ]
 }

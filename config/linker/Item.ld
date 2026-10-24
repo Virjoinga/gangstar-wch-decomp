@@ -251,6 +251,10 @@ SECTIONS {
     .item_badge_glow 0x0041d20c : { *item.o(.rodata.item_badge_glow) }
     .item_badge_scene 0x0041d224 : { *item.o(.rodata.item_badge_scene) }
     .item_collectible_scene 0x0041d238 : { *item.o(.rodata.item_collectible_scene) }
+    .item_remove_placed 0x002fc424 : { *item.o(.text._ZN4Item20removeAllPlacedItemsEv) }
+    .item_place 0x002fc5d0 : { *item.o(.text._ZN4Item5placeEiN3irr4core8vector3dIfEE) }
+    .item_place_switch 0x0041d278 : { *item.o(.rodata._ZN4Item5placeEiN3irr4core8vector3dIfEE) }
+    .item_spawn_drop 0x002fc850 : { *item.o(.text._ZN4Item4dropEiN3irr4core8vector3dIfEEi) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
