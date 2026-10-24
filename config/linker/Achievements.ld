@@ -38,6 +38,14 @@ SECTIONS {
     .achievement_record_dropped_cash 0x00345b84 : { *achievements.o(.text._ZN18AchievementManager17recordDroppedCashEi) }
     .achievement_record_death 0x00345ba4 : { *achievements.o(.text._ZN18AchievementManager11recordDeathER9Character) }
     .achievement_death_switch 0x00433cac : { *achievements.o(.rodata._ZN18AchievementManager11recordDeathER9Character) }
+    .achievement_evaluate 0x00344e78 : { *achievements.o(.text._ZNK18AchievementManager8evaluateERNS_11AchievementE) }
+    .achievement_is_completed 0x00344ed4 : { *achievements.o(.text._ZN18AchievementManager22IsAchievementCompletedEi) }
+    .achievement_completed_count 0x00344ef8 : { *achievements.o(.text._ZN18AchievementManager26GetNumAchievementCompletedEv) }
+    .achievement_check 0x003452d4 : { *achievements.o(.text._ZN18AchievementManager16checkAchievementEi) }
+    .achievement_update_rule 0x00345778 : { *achievements.o(.text._ZN18AchievementManager10updateRuleEi) }
+    .achievement_update_stat 0x003457d8 : { *achievements.o(.text._ZN18AchievementManager10updateStatEi) }
+    .achievement_count 0x004bb3ec (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager18s_achievementCountE) }
+    ASSERT(SIZEOF(.achievement_count) == 4, "Unexpected achievement count extent")
     .achievement_s_stats 0x004bb3f0 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager7s_statsE) }
     ASSERT(SIZEOF(.achievement_s_stats) == 4, "Unexpected achievement pointer extent")
     .achievement_s_rules 0x004bb3f4 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager7s_rulesE) }
