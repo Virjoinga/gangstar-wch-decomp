@@ -9,6 +9,8 @@
  */
 
 #include "Achievements.h"
+#include "Item.h"
+#include "../ai/NPC.h"
 
 AchievementManager::Stat* AchievementManager::s_stats;
 AchievementManager::AchievementRule* AchievementManager::s_rules;
@@ -81,6 +83,15 @@ void AchievementManager::recordShopWeapon(int bit)
     updateMaskStat(37, bit);
 }
 
+void AchievementManager::recordWeapon(int type, bool locked)
+{
+    if (!locked)
+        s_stats[28].value |= 1 << type;
+    else
+        s_stats[28].value &= ~(1 << type);
+    updateStat(28);
+}
+
 void AchievementManager::recordWantedLevel(int value)
 {
     s_stats[26].value = value;
@@ -93,6 +104,136 @@ void AchievementManager::incrementStat(int id, int amount)
     updateStat(id);
 }
 
+void AchievementManager::recordMissionEnded()
+{
+    incrementStat(49, 1);
+    updateProgressStat();
+}
+
+void AchievementManager::recordDeliverySideMission()
+{
+    incrementStat(48, 1);
+}
+
+void AchievementManager::recordAmbulanceSideMission()
+{
+    incrementStat(47, 1);
+}
+
+void AchievementManager::recordTaxiSideMission()
+{
+    incrementStat(46, 1);
+}
+
+void AchievementManager::recordEndChapter()
+{
+    incrementStat(24, 1);
+}
+
+void AchievementManager::recordDrift(int value)
+{
+    setMaxStat(15, value);
+    incrementStat(43, 1);
+}
+
+void AchievementManager::recordRanOverPed()
+{
+    incrementStat(20, 1);
+}
+
+void AchievementManager::recordBadgesEscaped(int count)
+{
+    incrementStat(22, count);
+}
+
+void AchievementManager::recordNbArrests()
+{
+    incrementStat(23, 1);
+}
+
+void AchievementManager::recordCarStolen(int type)
+{
+    incrementStat(21, 1);
+    s_stats[29].value |= 1 << type;
+    updateStat(29);
+}
+
+void AchievementManager::recordKmDriven()
+{
+    incrementStat(17, 1);
+}
+
+void AchievementManager::recordRepair(int value)
+{
+    incrementStat(13, 1);
+    setMaxStat(19, value);
+}
+
+void AchievementManager::recordDestroyedVehicle(const Vehicle&)
+{
+    incrementStat(12, 1);
+    s_stats[12].getValue();
+}
+
+void AchievementManager::recordCashSpent(int amount)
+{
+    incrementStat(11, amount);
+}
+
+void AchievementManager::recordArmor(const Item& item)
+{
+    incrementStat(7, 1);
+    updateMaskStat(40, item.getId());
+}
+
+void AchievementManager::recordHealthPack(const Item& item)
+{
+    incrementStat(6, 1);
+    updateMaskStat(39, item.getId());
+}
+
+void AchievementManager::recordMissionCash(int amount)
+{
+    incrementStat(8, amount);
+    incrementStat(9, amount);
+}
+
+void AchievementManager::recordDroppedCash(int amount)
+{
+    incrementStat(8, amount);
+    incrementStat(10, amount);
+}
+
+void AchievementManager::recordDeath(Character& character)
+{
+    if (character.isPlayer()) {
+        incrementStat(5, 1);
+        return;
+    }
+    NPC& npc = static_cast<NPC&>(character);
+    switch (npc.category428) {
+    case 0: case 1:
+        incrementStat(2, 1);
+        break;
+    case 2:
+        incrementStat(3, 1);
+        break;
+    case 3:
+        incrementStat(4, 1);
+        break;
+    case 5: case 6:
+        if (npc.isCop())
+            incrementStat(4, 1);
+        else
+            incrementStat(3, 1);
+        break;
+    }
+    incrementStat(1, 1);
+}
+
 typedef char AchievementStatExtent[sizeof(AchievementManager::Stat) == 36 ? 1 : -1];
 typedef char AchievementRuleExtent[sizeof(AchievementManager::AchievementRule) == 36 ? 1 : -1];
 typedef char AchievementExtent[sizeof(AchievementManager::Achievement) == 24 ? 1 : -1];
+
+typedef char AchievementCharacterExtent[sizeof(Character) == 296 ? 1 : -1];
+typedef char AchievementNPCExtent[sizeof(NPC) == 456 ? 1 : -1];

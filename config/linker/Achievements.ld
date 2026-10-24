@@ -17,6 +17,27 @@ SECTIONS {
     .achievement_record_shop_weapon 0x00345924 : { *achievements.o(.text._ZN18AchievementManager16recordShopWeaponEi) }
     .achievement_record_wanted 0x00345988 : { *achievements.o(.text._ZN18AchievementManager17recordWantedLevelEi) }
     .achievement_increment 0x003459b0 : { *achievements.o(.text._ZN18AchievementManager13incrementStatEii) }
+    .achievement_record_weapon 0x00345934 : { *achievements.o(.text._ZN18AchievementManager12recordWeaponEib) }
+    .achievement_record_mission_ended 0x003459dc : { *achievements.o(.text._ZN18AchievementManager18recordMissionEndedEv) }
+    .achievement_record_delivery_side_mission 0x003459f0 : { *achievements.o(.text._ZN18AchievementManager25recordDeliverySideMissionEv) }
+    .achievement_record_ambulance_side_mission 0x00345a00 : { *achievements.o(.text._ZN18AchievementManager26recordAmbulanceSideMissionEv) }
+    .achievement_record_taxi_side_mission 0x00345a10 : { *achievements.o(.text._ZN18AchievementManager21recordTaxiSideMissionEv) }
+    .achievement_record_end_chapter 0x00345a20 : { *achievements.o(.text._ZN18AchievementManager16recordEndChapterEv) }
+    .achievement_record_drift 0x00345a30 : { *achievements.o(.text._ZN18AchievementManager11recordDriftEi) }
+    .achievement_record_ran_over_ped 0x00345a48 : { *achievements.o(.text._ZN18AchievementManager16recordRanOverPedEv) }
+    .achievement_record_badges_escaped 0x00345a58 : { *achievements.o(.text._ZN18AchievementManager19recordBadgesEscapedEi) }
+    .achievement_record_nb_arrests 0x00345a68 : { *achievements.o(.text._ZN18AchievementManager15recordNbArrestsEv) }
+    .achievement_record_car_stolen 0x00345a78 : { *achievements.o(.text._ZN18AchievementManager15recordCarStolenEi) }
+    .achievement_record_km_driven 0x00345ab4 : { *achievements.o(.text._ZN18AchievementManager14recordKmDrivenEv) }
+    .achievement_record_repair 0x00345ac4 : { *achievements.o(.text._ZN18AchievementManager12recordRepairEi) }
+    .achievement_record_destroyed_vehicle 0x00345ae4 : { *achievements.o(.text._ZN18AchievementManager22recordDestroyedVehicleERK7Vehicle) }
+    .achievement_record_cash_spent 0x00345b0c : { *achievements.o(.text._ZN18AchievementManager15recordCashSpentEi) }
+    .achievement_record_armor 0x00345b1c : { *achievements.o(.text._ZN18AchievementManager11recordArmorERK4Item) }
+    .achievement_record_health_pack 0x00345b40 : { *achievements.o(.text._ZN18AchievementManager16recordHealthPackERK4Item) }
+    .achievement_record_mission_cash 0x00345b64 : { *achievements.o(.text._ZN18AchievementManager17recordMissionCashEi) }
+    .achievement_record_dropped_cash 0x00345b84 : { *achievements.o(.text._ZN18AchievementManager17recordDroppedCashEi) }
+    .achievement_record_death 0x00345ba4 : { *achievements.o(.text._ZN18AchievementManager11recordDeathER9Character) }
+    .achievement_death_switch 0x00433cac : { *achievements.o(.rodata._ZN18AchievementManager11recordDeathER9Character) }
     .achievement_s_stats 0x004bb3f0 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager7s_statsE) }
     ASSERT(SIZEOF(.achievement_s_stats) == 4, "Unexpected achievement pointer extent")
     .achievement_s_rules 0x004bb3f4 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager7s_rulesE) }

@@ -8,7 +8,11 @@ class NPC : public Character {
 public:
     NPC(int type);
     void Load(const Structs::NPC&);
+    bool isCop();
 private:
-    unsigned char unknown296[160];
+    friend class AchievementManager;
+    unsigned char unknown296[132];
+    unsigned int category428;
+    unsigned char unknown432[24];
 };
 #endif
