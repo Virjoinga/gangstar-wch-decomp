@@ -12,6 +12,9 @@
 #include "../world/SceneNodeManager.h"
 #include "../world/GameObjectManager.h"
 #include "../scripting/ScriptManager.h"
+#include "../missions/WantedLevelManager.h"
+#include "../world/ObjectData.h"
+#include "../app/CGameFactory.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
 #include "../core/Vector3.h"
@@ -217,6 +220,26 @@ void Item::lock()
         if (unknown4 & 2)
             hide();
         unknown96 = 0;
+    }
+}
+
+void Item::Load(const Structs::Item& data)
+{
+    Transformation::Load(data, CGameFactory::getInstance());
+    itemType = data.unknown80;
+    unknown92 = data.unknown88;
+    unknown104 = data.unknown84;
+    if (itemType == 3 && WantedLevelManager::getInstance()->unknown8 == 0) {
+        lock();
+        unknown96 = unknown92 - 1;
+    } else {
+        unlock();
+    }
+    delete[] unknown28;
+    unknown28 = 0;
+    switch (itemType) {
+    case 1: id = s_numArmorVest++; break;
+    case 2: id = s_numHealthCrate++; break;
     }
 }
 
