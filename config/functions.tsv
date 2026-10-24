@@ -10232,11 +10232,11 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fc051	0x30	Factions.cpp	game	meta	pending	__tcf_2	__tcf_2
 0x002fc081	0x6c	Factions.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002fc0ed	0x14	Factions.cpp	game	meta	pending	_GLOBAL__I__ZN8Factions10s_factionsE	_GLOBAL__I__ZN8Factions10s_factionsE
-0x002fc101	0x20	Item.cpp	game	meta	pending	_ZN4Item24resetAchievementCountersEv	Item::resetAchievementCounters()
-0x002fc121	0x2	Item.cpp	game	meta	pending	_ZN4Item5debugEPN3irr5video12IVideoDriverE	Item::debug(irr::video::IVideoDriver*)
-0x002fc125	0x6	Item.cpp	game	meta	pending	_ZN4Item6unlockEv	Item::unlock()
-0x002fc12d	0x12	Item.cpp	game	meta	pending	_ZNK4Item8unlockedEv	Item::unlocked() const
-0x002fc141	0x4	Item.cpp	game	meta	pending	_ZNK4Item5getIdEv	Item::getId() const
+0x002fc101	0x20	Item.cpp	game	meta	matched	_ZN4Item24resetAchievementCountersEv	Item::resetAchievementCounters()
+0x002fc121	0x2	Item.cpp	game	meta	matched	_ZN4Item5debugEPN3irr5video12IVideoDriverE	Item::debug(irr::video::IVideoDriver*)
+0x002fc125	0x6	Item.cpp	game	meta	matched	_ZN4Item6unlockEv	Item::unlock()
+0x002fc12d	0x12	Item.cpp	game	meta	matched	_ZNK4Item8unlockedEv	Item::unlocked() const
+0x002fc141	0x4	Item.cpp	game	meta	matched	_ZNK4Item5getIdEv	Item::getId() const
 0x002fc145	0x24	Item.cpp	game	meta	pending	__tcf_6	__tcf_6
 0x002fc169	0x78	Item.cpp	irrlicht	-	matched	_ZN3irr4core5arrayIP4ItemNS0_12irrAllocatorIS3_EEE10reallocateEj	irr::core::array<Item*, irr::core::irrAllocator<Item*> >::reallocate(unsigned int)
 0x002fc1e1	0x4c	Item.cpp	irrlicht	-	matched	_ZN3irr4core5arrayIP4ItemNS0_12irrAllocatorIS3_EEE9push_backERKS3_	irr::core::array<Item*, irr::core::irrAllocator<Item*> >::push_back(Item* const&)
