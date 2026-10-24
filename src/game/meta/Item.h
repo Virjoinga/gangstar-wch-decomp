@@ -20,6 +20,9 @@ public:
     virtual void Update(int elapsed);
     void Load(const Structs::Item&);
     static void resetAchievementCounters();
+    static void removeAllPlacedItems();
+    static void place(int type, irr::core::vector3d<float> position);
+    static void drop(int type, irr::core::vector3d<float> position, int amount);
     void debug(irr::video::IVideoDriver* driver);
     void unlock();
     bool unlocked() const;

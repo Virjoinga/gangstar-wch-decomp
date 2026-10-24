@@ -10,8 +10,10 @@
 
 #include "Item.h"
 #include "../world/SceneNodeManager.h"
+#include "../world/GameObjectManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
+#include "../core/Vector3.h"
 #include "../core/LocalStartupStorage.h"
 
 // The retail factory derives directly from the engine factory, not CGameFactory.
@@ -145,6 +147,65 @@ Item::Item(int type) : Transformation(type)
     unknown104 = 0;
     billboardPool = -1;
     id = -1;
+}
+
+void Item::removeAllPlacedItems()
+{
+    for (int i = 0; i < s_placedItems.used; ++i)
+        GameObjectManager::s_gom->RemoveAndDestroy(s_placedItems.data[i]);
+    ::operator delete(s_placedItems.data);
+    s_placedItems.data = 0;
+    s_placedItems.used = 0;
+    s_placedItems.allocated = 0;
+    s_placedItems.is_sorted = true;
+}
+
+void Item::place(int type, irr::core::vector3d<float> position)
+{
+    int metatype;
+    switch (type) {
+    case 0: metatype = 16; break;
+    case 1: metatype = 6; break;
+    case 2: metatype = 69; break;
+    case 3: metatype = 114; break;
+    case 4: metatype = 9; break;
+    case 5: metatype = 1; break;
+    case 6: metatype = 129; break;
+    case 7: metatype = 156; break;
+    case 8: metatype = 124; break;
+    case 9: metatype = 131; break;
+    default: return;
+    }
+    Item* item = static_cast<Item*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(metatype));
+    GameObjectManager::s_gom->AddGameObjectOfType(s_type[item->getObjectType()]);
+    item->SetPosition(position);
+    item->unknown4 |= 1;
+    GameObjectManager::s_gom->Add(item, 1);
+    item->unlock();
+    s_placedItems.push_back(item);
+}
+
+void Item::drop(int type, irr::core::vector3d<float> position, int amount)
+{
+    switch (type) {
+    case 42: type = 156; break;
+    case 155: type = 156; break;
+    case 0: type = 1; break;
+    case 8: type = 9; break;
+    case 41: type = 9; break;
+    case 123: type = 124; break;
+    case 128: type = 129; break;
+    case 130: type = 131; break;
+    }
+    Item* item = static_cast<Item*>(GameObjectManager::s_gom->CreateGameObjectFromMetatype(type));
+    GameObjectManager::s_gom->AddGameObjectOfType(s_type[item->getObjectType()]);
+    item->SetPosition(position);
+    if (amount)
+        item->unknown104 = amount;
+    item->unknown4 |= 0x101;
+    GameObjectManager::s_gom->Add(item, 1);
+    item->unlock();
+    item->OnSpawn();
 }
 
 namespace retail_item_transitions {
