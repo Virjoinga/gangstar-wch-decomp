@@ -1,6 +1,8 @@
 #ifndef WCH_META_ACHIEVEMENTS_H
 #define WCH_META_ACHIEVEMENTS_H
 
+void operator delete(void*);
+
 class DataStream;
 namespace Structs {
 struct Stat {
@@ -29,6 +31,17 @@ class Vehicle;
 class AchievementManager {
 public:
     struct IDLinks {
+        ~IDLinks() {
+            if (free_when_destroyed)
+                ::operator delete(data);
+        }
+        void clear() {
+            ::operator delete(data);
+            data = 0;
+            used = 0;
+            allocated = 0;
+            is_sorted = true;
+        }
         int* data;
         unsigned int allocated;
         unsigned int used;
@@ -37,6 +50,7 @@ public:
         unsigned int unknown16;
     };
     struct Stat {
+        ~Stat();
         int getValue() const;
         unsigned char unknown0[12];
         int value;
@@ -59,6 +73,7 @@ public:
     };
     static CompletedNodeBase s_completedAchievements;
     struct AchievementRule {
+        ~AchievementRule();
         unsigned int operation;
         int statID;
         int threshold;

@@ -12413,8 +12413,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00345c4d	0x174	Achievements.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00345dc1	0x14	Achievements.cpp	game	meta	pending	_GLOBAL__I__ZN18AchievementManager11s_statCountE	_GLOBAL__I__ZN18AchievementManager11s_statCountE
 0x00345dd5	0x30	Achievements.cpp	game	meta	pending	__tcf_3	__tcf_3
-0x00345e05	0x26	Achievements.cpp	game	meta	pending	_ZN18AchievementManager15AchievementRuleD1Ev	AchievementManager::AchievementRule::~AchievementRule()
-0x00345e2d	0x26	Achievements.cpp	game	meta	pending	_ZN18AchievementManager4StatD1Ev	AchievementManager::Stat::~Stat()
+0x00345e05	0x26	Achievements.cpp	game	meta	matched	_ZN18AchievementManager15AchievementRuleD1Ev	AchievementManager::AchievementRule::~AchievementRule()
+0x00345e2d	0x26	Achievements.cpp	game	meta	matched	_ZN18AchievementManager4StatD1Ev	AchievementManager::Stat::~Stat()
 0x00345e55	0xdc	Achievements.cpp	game	meta	pending	_ZN18AchievementManager5clearEv	AchievementManager::clear()
 0x00345f31	0x2	AmbulanceSideMission.cpp	game	missions	pending	_ZN20AmbulanceSideMission3endEv	AmbulanceSideMission::end()
 0x00345f35	0x6	AmbulanceSideMission.cpp	game	missions	pending	_ZN20AmbulanceSideMission14getMoneyRewardEv	AmbulanceSideMission::getMoneyReward()

@@ -13,8 +13,6 @@
 #include "../ai/NPC.h"
 #include "../persistence/DataStream.h"
 
-void operator delete(void*);
-
 AchievementManager::CompletedNodeBase AchievementManager::s_completedAchievements;
 int AchievementManager::s_achievementCount;
 AchievementManager::Stat* AchievementManager::s_stats;
@@ -378,6 +376,16 @@ const AchievementManager::Achievement* AchievementManager::popCompletedAchieveme
         ::operator delete(node);
     }
     return achievement;
+}
+
+AchievementManager::AchievementRule::~AchievementRule()
+{
+    achievements.clear();
+}
+
+AchievementManager::Stat::~Stat()
+{
+    rules.clear();
 }
 
 typedef char AchievementStatExtent[sizeof(AchievementManager::Stat) == 36 ? 1 : -1];
