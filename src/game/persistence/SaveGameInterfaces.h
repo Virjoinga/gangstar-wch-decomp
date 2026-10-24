@@ -6,6 +6,7 @@
 #include "../meta/Achievements.h"
 #include "../world/LevelObject.h"
 #include "../world/GameObjectManager.h"
+#include "../scripting/ScriptManager.h"
 
 // Partial interfaces and layouts observed by the SaveGame routines.
 // They describe accessed offsets only. Do not instantiate these classes or
@@ -19,15 +20,7 @@ public:
     unsigned char unknown0[56];
     PlayerTest::eContext context;
 };
-class ScriptManager {
-public:
-    static ScriptManager* getInstance();
-    Script* findScript(int id) const;
-    void resetGame(bool flag, int id);
-    void update(int);
-    unsigned char unknown0[8];
-    int scriptCount;
-};
+
 class GSLoading { public: static bool isGameLoaded(); };
 class Checkpoint { public: static bool s_bTutoCallContact; };
 class WantedLevelManager {

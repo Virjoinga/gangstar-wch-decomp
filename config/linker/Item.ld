@@ -255,6 +255,9 @@ SECTIONS {
     .item_place 0x002fc5d0 : { *item.o(.text._ZN4Item5placeEiN3irr4core8vector3dIfEE) }
     .item_place_switch 0x0041d278 : { *item.o(.rodata._ZN4Item5placeEiN3irr4core8vector3dIfEE) }
     .item_spawn_drop 0x002fc850 : { *item.o(.text._ZN4Item4dropEiN3irr4core8vector3dIfEEi) }
+    .item_hide 0x002fc518 : { *item.o(.text._ZN4Item4hideEv) }
+    .item_show 0x002fc56c : { *item.o(.text._ZN4Item4showEv) }
+    .item_lock 0x002fc67c : { *item.o(.text._ZN4Item4lockEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
