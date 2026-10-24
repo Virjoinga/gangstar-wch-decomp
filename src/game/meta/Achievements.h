@@ -49,6 +49,15 @@ public:
         unsigned char unknown12[8];
         unsigned int flags;
     };
+    // Storage view of the native STLport list's sentinel and value nodes.
+    struct CompletedNodeBase {
+        CompletedNodeBase* next;
+        CompletedNodeBase* prev;
+    };
+    struct CompletedNode : CompletedNodeBase {
+        const Achievement* value;
+    };
+    static CompletedNodeBase s_completedAchievements;
     struct AchievementRule {
         unsigned int operation;
         int statID;
@@ -71,7 +80,7 @@ public:
     void setNextAchievementAsCompleted();
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
-    Achievement* popCompletedAchievement();
+    const Achievement* popCompletedAchievement();
     void updateStat(int id);
     void updateProgressStat();
     void setMaxStat(int id, int value);

@@ -72,7 +72,9 @@
         "_ZN18AchievementManager29setNextAchievementAsCompletedEv",
         "_ZN7Structs4Stat4ReadER10DataStream",
         "_ZN7Structs15AchievementRule4ReadER10DataStream",
-        "_ZN7Structs11Achievement4ReadER10DataStream"
+        "_ZN7Structs11Achievement4ReadER10DataStream",
+        "_ZN18AchievementManager27hasNewCompletedAchievementsEv",
+        "_ZN18AchievementManager23popCompletedAchievementEv"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -127,7 +129,9 @@
         ".achievement_complete_next",
         ".achievement_read_stat",
         ".achievement_read_rule",
-        ".achievement_read_achievement"
+        ".achievement_read_achievement",
+        ".achievement_has_new",
+        ".achievement_pop"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
