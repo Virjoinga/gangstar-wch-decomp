@@ -153,7 +153,8 @@
         ".item_spawn_drop",
         ".item_hide",
         ".item_show",
-        ".item_lock"
+        ".item_lock",
+        ".item_load"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -244,7 +245,8 @@
         "_ZN4Item4dropEiN3irr4core8vector3dIfEEi",
         "_ZN4Item4hideEv",
         "_ZN4Item4showEv",
-        "_ZN4Item4lockEv"
+        "_ZN4Item4lockEv",
+        "_ZN4Item4LoadERKN7Structs4ItemE"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -296,6 +298,7 @@
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
         "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv",
         "_ZN17GameObjectManager28CreateGameObjectFromMetatypeEi",
-        "_ZN13ScriptManager16displayOnMinimapEP11LevelObjectbb"
+        "_ZN13ScriptManager16displayOnMinimapEP11LevelObjectbb",
+        "_ZN14Transformation4LoadERKN7Structs6MarkerEPN3irr7collada15CColladaFactoryE"
     ]
 }

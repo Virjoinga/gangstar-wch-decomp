@@ -7,6 +7,7 @@
 #include "../world/LevelObject.h"
 #include "../world/GameObjectManager.h"
 #include "../scripting/ScriptManager.h"
+#include "../missions/WantedLevelManager.h"
 
 // Partial interfaces and layouts observed by the SaveGame routines.
 // They describe accessed offsets only. Do not instantiate these classes or
@@ -23,13 +24,7 @@ public:
 
 class GSLoading { public: static bool isGameLoaded(); };
 class Checkpoint { public: static bool s_bTutoCallContact; };
-class WantedLevelManager {
-public:
-    static bool s_bTutoWantedLevel;
-    static WantedLevelManager* getInstance() __attribute__((weak));
-    virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
-    virtual void update(double);
-};
+
 class GSFailure { public: static bool s_bCutsceneDie, s_bCutsceneBusted, s_bCutsceneMissionFailed; };
 class CControlManager { public: static bool s_cameraTutorial, s_sniperTutorial; };
 
