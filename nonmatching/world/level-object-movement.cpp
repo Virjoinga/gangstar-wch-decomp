@@ -157,14 +157,11 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
             adjusted = corner + center * (radius * 100.0f + 50.0f);
         }
     }
-    vector3d<float> zOrigin = GetPosition();
+    // Retail materializes this call but never reads its returned coordinates.
+    vector3d<float> unused = GetPosition();
     vector3d<float> base = GetPosition();
     vector3d<float> delta = target - GetPosition();
     vector3d<float> scaled = delta * closest;
-    vector3d<float> interpolated = base + scaled;
-    float baseZ = zOrigin.Z;
-    point.X = interpolated.X;
-    point.Y = interpolated.Y;
-    point.Z = scaled.Z + baseZ;
+    point = scaled + base;
     return closest == 1.0f;
 }
