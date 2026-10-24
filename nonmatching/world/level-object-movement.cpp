@@ -3,6 +3,9 @@
 #include "MovementPhysics.h"
 #include "../../src/game/core/Geometry.h"
 
+// Four-float rotation value; not a complete Box2D object.
+struct MovementRotationView { b2Vec2 column1, column2; };
+
 bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
     irr::core::vector3d<float>& point, irr::core::vector3d<float>& adjusted)
 {
@@ -30,6 +33,8 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
         bounds.upperBound.y = target.Y / 100.0f + radius;
     }
     world->Query(bounds, shapes, 100);
+    vector3d<float> hitPoint;
+    b2Vec2 closestNormal;
     float fraction = 1.0f;
     b2Vec2 shapeNormal;
     vector3d<float> direction = target - GetPosition();
@@ -46,9 +51,7 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
     second.p2.y = (radius * perpendicular.Y) + target.Y / 100.0f;
     float closest = 1.0f;
     b2Shape* closestShape;
-    b2Vec2 closestNormal;
     bool usedSecond = false;
-    vector3d<float> hitPoint;
     for (int i = 0; i < 100; ++i) {
         if (!shapes[i]) break;
         if (shapes[i]->GetFilterData().categoryBits == 0 &&
@@ -59,26 +62,26 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
         if (data && (data->owner == this || !data->owner)) continue;
         if (shapes[i]->TestSegment(shapes[i]->GetBody()->GetXForm(), &fraction, &shapeNormal, first, 1.0f)) {
             if (data->node) {
-                const irr::core::aabbox3d<float>& box = data->node->getTransformedBoundingBox();
-                float low = box.MinEdge.Z, high = box.MaxEdge.Z;
+                // Keep both height bounds across the following virtual getters.
+                irr::core::aabbox3d<float> box = data->node->getTransformedBoundingBox();
                 hitPoint = GetPosition() + (target - GetPosition()) * fraction;
-                if (low > hitPoint.Z || high < hitPoint.Z) continue;
+                if (box.MinEdge.Z > hitPoint.Z || box.MaxEdge.Z < hitPoint.Z) continue;
             } else if (data->lowerHeight != data->upperHeight) {
                 hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (hitPoint.Z < data->lowerHeight || hitPoint.Z > data->upperHeight) continue;
             }
             if (fraction < closest) {
-                closestNormal = shapeNormal;
                 closestShape = shapes[i];
+                closestNormal = shapeNormal;
                 closest = fraction;
                 usedSecond = false;
             }
         } else if (shapes[i]->TestSegment(shapes[i]->GetBody()->GetXForm(), &fraction, &shapeNormal, second, 1.0f)) {
             if (data->node) {
-                const irr::core::aabbox3d<float>& box = data->node->getTransformedBoundingBox();
-                float low = box.MinEdge.Z, high = box.MaxEdge.Z;
+                // Keep both height bounds across the following virtual getters.
+                irr::core::aabbox3d<float> box = data->node->getTransformedBoundingBox();
                 hitPoint = GetPosition() + (target - GetPosition()) * fraction;
-                if (low > hitPoint.Z || high < hitPoint.Z) continue;
+                if (box.MinEdge.Z > hitPoint.Z || box.MaxEdge.Z < hitPoint.Z) continue;
             } else if (data->lowerHeight != data->upperHeight) {
                 hitPoint = GetPosition() + (target - GetPosition()) * fraction;
                 if (hitPoint.Z < data->lowerHeight || hitPoint.Z > data->upperHeight) continue;
@@ -123,16 +126,14 @@ bool LevelObject::canGoToPoint(const irr::core::vector3d<float>& target,
         } else if (type == 1) {
             const MovementPolygonView* polygon = reinterpret_cast<const MovementPolygonView*>(closestShape);
             const b2XForm& transform = closestShape->GetBody()->GetXForm();
-            // Retail snapshots all four coefficients before testing the normals.
-            float rotation0 = transform.rotation[0];
-            float rotation1 = transform.rotation[1];
-            float rotation2 = transform.rotation[2];
-            float rotation3 = transform.rotation[3];
+            MovementRotationView rotation;
+            rotation.column1.x = transform.rotation[0]; rotation.column1.y = transform.rotation[1];
+            rotation.column2.x = transform.rotation[2]; rotation.column2.y = transform.rotation[3];
             int edge;
             for (edge = 0; edge < 4; ++edge) {
                 const b2Vec2& normal = polygon->normals[edge];
-                if (closestNormal.x == rotation0 * normal.x + rotation2 * normal.y &&
-                    closestNormal.y == rotation1 * normal.x + rotation3 * normal.y) break;
+                if (closestNormal.x == rotation.column1.x * normal.x + rotation.column2.x * normal.y &&
+                    closestNormal.y == rotation.column1.y * normal.x + rotation.column2.y * normal.y) break;
             }
             float bodyX, bodyY, lineX, lineY;
             if (usedSecond) {
