@@ -38,9 +38,12 @@ assembly, register pins, compiler-output edits or proprietary data is used.
 This is a static native verification image, not a full shared-library/runtime
 build. The Item constructor and its remaining methods are not newly credited.
 
-Regression validation: `python tools/build.py --all` exited 0 with 6537
+PR #58 regression validation: `python tools/build.py --all` exited 0 with 6537
 successful comparisons, including repeated native dependency checks. All 71
 unit tests passed (`OK`), the repository checker printed `all checks passed`,
 and `python tools/progress.py --check` passed. Catalogue, symbol map and progress
-were regenerated before push. Game progress is 497/4661 functions and
+were regenerated before push. At that checkpoint, game progress was 497/4661 functions and
 34818/575264 bytes (6.05%); meta is 12/130 functions and 278/9930 bytes (2.80%).
+
+See [Item lifecycle](item-lifecycle.md) for the subsequent native family and
+current combined verification image.
