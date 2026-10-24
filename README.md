@@ -1,6 +1,7 @@
 # Gangstar: West Coast Hustle — decompilation
 
-[![Matched code](https://bytematch.dev/Virjoinga/gangstar-wch-decomp.svg?measure=matched_code_percent&label=Matched%20code)](https://bytematch.dev/Virjoinga/gangstar-wch-decomp)
+[![Code](https://bytematch.dev/Virjoinga/gangstar-wch-decomp.svg?mode=shield&label=Code&measure=matched_code_percent)](https://bytematch.dev/Virjoinga/gangstar-wch-decomp)
+[![Functions](https://bytematch.dev/Virjoinga/gangstar-wch-decomp.svg?mode=shield&label=Functions&measure=matched_functions)](https://bytematch.dev/Virjoinga/gangstar-wch-decomp)
 
 A reverse engineering and decompilation project for the native library of
 **Gangstar: West Coast Hustle** (Gameloft, 2013, Android).
