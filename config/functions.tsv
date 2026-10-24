@@ -10237,15 +10237,15 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fc125	0x6	Item.cpp	game	meta	matched	_ZN4Item6unlockEv	Item::unlock()
 0x002fc12d	0x12	Item.cpp	game	meta	matched	_ZNK4Item8unlockedEv	Item::unlocked() const
 0x002fc141	0x4	Item.cpp	game	meta	matched	_ZNK4Item5getIdEv	Item::getId() const
-0x002fc145	0x24	Item.cpp	game	meta	pending	__tcf_6	__tcf_6
+0x002fc145	0x24	Item.cpp	game	meta	matched	__tcf_6	__tcf_6
 0x002fc169	0x78	Item.cpp	irrlicht	-	matched	_ZN3irr4core5arrayIP4ItemNS0_12irrAllocatorIS3_EEE10reallocateEj	irr::core::array<Item*, irr::core::irrAllocator<Item*> >::reallocate(unsigned int)
 0x002fc1e1	0x4c	Item.cpp	irrlicht	-	matched	_ZN3irr4core5arrayIP4ItemNS0_12irrAllocatorIS3_EEE9push_backERKS3_	irr::core::array<Item*, irr::core::irrAllocator<Item*> >::push_back(Item* const&)
-0x002fc22d	0x30	Item.cpp	game	meta	pending	__tcf_4	__tcf_4
-0x002fc25d	0x1e	Item.cpp	game	meta	pending	_ZN21CGameBillboardFactory11createSceneERKN3irr7collada16CColladaDatabaseE	CGameBillboardFactory::createScene(irr::collada::CColladaDatabase const&)
+0x002fc22d	0x30	Item.cpp	game	meta	matched	__tcf_4	__tcf_4
+0x002fc25d	0x1e	Item.cpp	game	meta	matched	_ZN21CGameBillboardFactory11createSceneERKN3irr7collada16CColladaDatabaseE	CGameBillboardFactory::createScene(irr::collada::CColladaDatabase const&)
 0x002fc27d	0x1c	Item.cpp	game	meta	pending	__tcf_2	__tcf_2
 0x002fc299	0x18	Item.cpp	game	meta	matched	_ZN4Item11SetPositionERKN3irr4core8vector3dIfEE	Item::SetPosition(irr::core::vector3d<float> const&)
 0x002fc2b1	0x34	Item.cpp	game	meta	matched	_ZN4Item6WarmUpEv	Item::WarmUp()
-0x002fc2e5	0x8c	Item.cpp	game	meta	pending	_ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	Item::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
+0x002fc2e5	0x8c	Item.cpp	game	meta	matched	_ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	Item::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
 0x002fc371	0x2a	Item.cpp	game	meta	matched	_ZN4Item13dropSceneNodeEv	Item::dropSceneNode()
 0x002fc39d	0x28	Item.cpp	game	meta	matched	_ZN4ItemD0Ev	Item::~Item()
 0x002fc3c5	0x20	Item.cpp	game	meta	matched	_ZN4ItemD1Ev	Item::~Item()
@@ -10266,12 +10266,12 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fca3d	0x160	Item.cpp	game	meta	pending	_ZN4Item3addEv	Item::add()
 0x002fcb9d	0x40	Item.cpp	game	meta	pending	_ZN4Item7animateEbbb	Item::animate(bool, bool, bool)
 0x002fcbdd	0xda	Item.cpp	game	meta	pending	_ZN4Item13grabSceneNodeEiPPPv	Item::grabSceneNode(int, void***)
-0x002fccb9	0x194	Item.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002fce4d	0x14	Item.cpp	game	meta	pending	_GLOBAL__I__ZN4Item16s_numHealthCrateE	_GLOBAL__I__ZN4Item16s_numHealthCrateE
-0x002fce61	0x2c	Item.cpp	game	meta	pending	_ZN21CGameBillboardFactoryD0Ev	CGameBillboardFactory::~CGameBillboardFactory()
+0x002fccb9	0x194	Item.cpp	game	meta	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002fce4d	0x14	Item.cpp	game	meta	matched	_GLOBAL__I__ZN4Item16s_numHealthCrateE	_GLOBAL__I__ZN4Item16s_numHealthCrateE
+0x002fce61	0x2c	Item.cpp	game	meta	matched	_ZN21CGameBillboardFactoryD0Ev	CGameBillboardFactory::~CGameBillboardFactory()
 0x002fce8d	0x24	Item.cpp	game	meta	pending	__tcf_1	__tcf_1
-0x002fceb1	0x24	Item.cpp	game	meta	pending	_ZN21CGameBillboardFactoryD1Ev	CGameBillboardFactory::~CGameBillboardFactory()
-0x002fced5	0x24	Item.cpp	game	meta	pending	__tcf_5	__tcf_5
+0x002fceb1	0x24	Item.cpp	game	meta	matched	_ZN21CGameBillboardFactoryD1Ev	CGameBillboardFactory::~CGameBillboardFactory()
+0x002fced5	0x24	Item.cpp	game	meta	matched	__tcf_5	__tcf_5
 0x002fcef9	0x100	Item.cpp	game	meta	pending	_ZN4Item15playPickupSoundEv	Item::playPickupSound()
 0x002fcff9	0x2c	Item.cpp	game	meta	pending	_ZN4Item6pickupEv	Item::pickup()
 0x002fd025	0x30	Lock.cpp	game	core	pending	__tcf_2	__tcf_2

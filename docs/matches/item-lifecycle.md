@@ -84,12 +84,15 @@ calls restored all 202 manager-image comparisons without editing its matched
 function bodies. The remaining override map is analysis evidence, not an emitted
 native Transformation/Item vtable.
 
-## Final regression validation
+## PR #59 regression validation
 
 The final clean Item build exited 0 with 724 successful comparisons. The final
 `python tools/build.py --all` run exited 0 with 7250 successful comparisons and
 no mismatches. All 71 unit tests printed `OK`; the repository checker printed
 `all checks passed`, and the progress check passed. Catalogue, symbol map and
-progress were regenerated before push. Meta is 20/130 functions and 628/9930
+progress were regenerated before push. At that checkpoint, meta was 20/130 functions and 628/9930
 bytes (6.32%); overall progress is 505/4661 functions and 35168/575264 bytes
 (6.11%).
+
+See [Item billboard and setup](item-billboard.md) for the subsequent native
+factory, TU initialization and scene-node parameter family.

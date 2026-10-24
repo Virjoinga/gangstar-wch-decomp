@@ -14,7 +14,8 @@
         "-mtune=xscale",
         "-mfloat-abi=softfp",
         "-ffunction-sections",
-        "-fdata-sections"
+        "-fdata-sections",
+        "-finline-limit=70"
     ],
     "assembler_flags": [
         "-march=armv5te",
@@ -131,7 +132,21 @@
         ".level_visible",
         ".level_range",
         ".level_sight",
-        ".level_base_type"
+        ".level_base_type",
+        ".item_billboard_create",
+        ".item_billboard_delete",
+        ".item_billboard_destructor",
+        ".item_billboard_vtable",
+        ".item_string_cleanup",
+        ".item_factory_cleanup",
+        ".item_array_cleanup",
+        ".item_startup",
+        ".item_startup_wrapper",
+        ".item_setup_node",
+        ".item_collectible_glow",
+        ".item_badge_glow",
+        ".item_badge_scene",
+        ".item_collectible_scene"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -192,7 +207,31 @@
         "_ZN11LevelObject17isVisibleOnScreenEv",
         "_ZN11LevelObject13isWithinRangeEf",
         "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
-        "_ZN11LevelObject12getSpawnTypeEv"
+        "_ZN11LevelObject12getSpawnTypeEv",
+        "_ZN21CGameBillboardFactory11createSceneERKN3irr7collada16CColladaDatabaseE",
+        "_ZN21CGameBillboardFactoryD0Ev",
+        "_ZN21CGameBillboardFactoryD1Ev",
+        {
+            "name": "__tcf_4",
+            "address": "0x2fc22d"
+        },
+        {
+            "name": "__tcf_5",
+            "address": "0x2fced5"
+        },
+        {
+            "name": "__tcf_6",
+            "address": "0x2fc145"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x2fccb9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN4Item16s_numHealthCrateE",
+            "address": "0x2fce4d"
+        },
+        "_ZN4Item14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -240,6 +279,8 @@
         "_ZN14TransformationD1Ev",
         "_ZN14TransformationD2Ev",
         "_ZN14TransformationC1Ei",
-        "_ZN16SceneNodeManager6manageEiP11LevelObjecti"
+        "_ZN16SceneNodeManager6manageEiP11LevelObjecti",
+        "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
+        "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv"
     ]
 }

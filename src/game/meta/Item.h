@@ -3,6 +3,10 @@
 #include "../characters/Transformation.h"
 namespace Structs { struct Item; }
 namespace irr { namespace video { class IVideoDriver; } }
+namespace irr { namespace core {
+template<class T> class irrAllocator;
+template<class T, class Alloc> class array;
+} }
 class CustomBillboardSceneNode;
 class Item : public Transformation {
 public:
@@ -22,6 +26,7 @@ public:
     int getId() const;
     static int s_numHealthCrate;
     static int s_numArmorVest;
+    static irr::core::array<Item*, irr::core::irrAllocator<Item*> > s_placedItems;
 private:
     // Observed 112-byte extent; the two unlock fields use unsigned comparison.
     CustomBillboardSceneNode* billboard;
