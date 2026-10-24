@@ -9,6 +9,7 @@
 class Character : public LevelObject {
 public:
     Character(int type);
+    bool isPlayer() const;
     using LevelObject::sceneNode;
 private:
     unsigned char unknown52[244];

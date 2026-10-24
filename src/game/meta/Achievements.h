@@ -2,6 +2,8 @@
 #define WCH_META_ACHIEVEMENTS_H
 
 class Item;
+class Character;
+class Vehicle;
 
 // Partial declarations and observed record layouts. Not a complete manager.
 class AchievementManager {
@@ -27,6 +29,7 @@ public:
     bool hasNewCompletedAchievements();
     Achievement* popCompletedAchievement();
     void updateStat(int id);
+    void updateProgressStat();
     void setMaxStat(int id, int value);
     void updateMaskStat(int id, int bit);
     void incrementStat(int id, int amount);
@@ -38,6 +41,21 @@ public:
     void recordShopWeapon(int bit);
     void recordWantedLevel(int value);
     void recordWeapon(int type, bool locked);
+    void recordMissionEnded();
+    void recordDeliverySideMission();
+    void recordAmbulanceSideMission();
+    void recordTaxiSideMission();
+    void recordEndChapter();
+    void recordDrift(int value);
+    void recordRanOverPed();
+    void recordNbArrests();
+    void recordCarStolen(int type);
+    void recordKmDriven();
+    void recordRepair(int value);
+    void recordDestroyedVehicle(const Vehicle& vehicle);
+    void recordCashSpent(int amount);
+    void recordMissionCash(int amount);
+    void recordDeath(Character& character);
     void recordBadgesEscaped(int count);
     void recordDroppedCash(int count);
     void recordArmor(const Item& item);

@@ -38,7 +38,27 @@
         "_ZN18AchievementManager19recordShopCarRentalEi",
         "_ZN18AchievementManager16recordShopWeaponEi",
         "_ZN18AchievementManager17recordWantedLevelEi",
-        "_ZN18AchievementManager13incrementStatEii"
+        "_ZN18AchievementManager13incrementStatEii",
+        "_ZN18AchievementManager12recordWeaponEib",
+        "_ZN18AchievementManager18recordMissionEndedEv",
+        "_ZN18AchievementManager25recordDeliverySideMissionEv",
+        "_ZN18AchievementManager26recordAmbulanceSideMissionEv",
+        "_ZN18AchievementManager21recordTaxiSideMissionEv",
+        "_ZN18AchievementManager16recordEndChapterEv",
+        "_ZN18AchievementManager11recordDriftEi",
+        "_ZN18AchievementManager16recordRanOverPedEv",
+        "_ZN18AchievementManager19recordBadgesEscapedEi",
+        "_ZN18AchievementManager15recordNbArrestsEv",
+        "_ZN18AchievementManager15recordCarStolenEi",
+        "_ZN18AchievementManager14recordKmDrivenEv",
+        "_ZN18AchievementManager12recordRepairEi",
+        "_ZN18AchievementManager22recordDestroyedVehicleERK7Vehicle",
+        "_ZN18AchievementManager15recordCashSpentEi",
+        "_ZN18AchievementManager11recordArmorERK4Item",
+        "_ZN18AchievementManager16recordHealthPackERK4Item",
+        "_ZN18AchievementManager17recordMissionCashEi",
+        "_ZN18AchievementManager17recordDroppedCashEi",
+        "_ZN18AchievementManager11recordDeathER9Character"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -55,12 +75,37 @@
         ".achievement_record_shop_weapon",
         ".achievement_record_wanted",
         ".achievement_increment",
+        ".achievement_record_weapon",
+        ".achievement_record_mission_ended",
+        ".achievement_record_delivery_side_mission",
+        ".achievement_record_ambulance_side_mission",
+        ".achievement_record_taxi_side_mission",
+        ".achievement_record_end_chapter",
+        ".achievement_record_drift",
+        ".achievement_record_ran_over_ped",
+        ".achievement_record_badges_escaped",
+        ".achievement_record_nb_arrests",
+        ".achievement_record_car_stolen",
+        ".achievement_record_km_driven",
+        ".achievement_record_repair",
+        ".achievement_record_destroyed_vehicle",
+        ".achievement_record_cash_spent",
+        ".achievement_record_armor",
+        ".achievement_record_health_pack",
+        ".achievement_record_mission_cash",
+        ".achievement_record_dropped_cash",
+        ".achievement_record_death",
+        ".achievement_death_switch",
         {
             "name": ".got",
             "offset": 864
         }
     ],
     "external_thumb_functions": [
-        "_ZN18AchievementManager10updateStatEi"
+        "_ZN18AchievementManager10updateStatEi",
+        "_ZN18AchievementManager18updateProgressStatEv",
+        "_ZNK4Item5getIdEv",
+        "_ZNK9Character8isPlayerEv",
+        "_ZN3NPC5isCopEv"
     ]
 }
