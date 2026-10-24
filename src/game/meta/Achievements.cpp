@@ -13,6 +13,9 @@
 #include "../ai/NPC.h"
 #include "../persistence/DataStream.h"
 
+void operator delete(void*);
+
+AchievementManager::CompletedNodeBase AchievementManager::s_completedAchievements;
 int AchievementManager::s_achievementCount;
 AchievementManager::Stat* AchievementManager::s_stats;
 AchievementManager::AchievementRule* AchievementManager::s_rules;
@@ -92,6 +95,14 @@ void AchievementManager::resetNumMissionStat()
     s_achievements[4].flags &= ~2;
     s_achievements[5].flags &= ~2;
     updateProgressStat();
+}
+
+bool AchievementManager::hasNewCompletedAchievements()
+{
+    unsigned int count = 0;
+    for (CompletedNodeBase* node = s_completedAchievements.next; node != &s_completedAchievements; node = node->next)
+        ++count;
+    return count != 0;
 }
 
 void AchievementManager::completeAchievement(int id)
@@ -354,6 +365,21 @@ void AchievementManager::recordDeath(Character& character)
     incrementStat(1, 1);
 }
 
+const AchievementManager::Achievement* AchievementManager::popCompletedAchievement()
+{
+    const Achievement* achievement = 0;
+    CompletedNodeBase* node = s_completedAchievements.next;
+    if (node != &s_completedAchievements) {
+        achievement = static_cast<CompletedNode*>(node)->value;
+        CompletedNodeBase* next = node->next;
+        CompletedNodeBase* prev = node->prev;
+        prev->next = next;
+        next->prev = prev;
+        ::operator delete(node);
+    }
+    return achievement;
+}
+
 typedef char AchievementStatExtent[sizeof(AchievementManager::Stat) == 36 ? 1 : -1];
 typedef char AchievementRuleExtent[sizeof(AchievementManager::AchievementRule) == 36 ? 1 : -1];
 typedef char AchievementExtent[sizeof(AchievementManager::Achievement) == 24 ? 1 : -1];
@@ -366,3 +392,6 @@ typedef char AchievementLinkExtent[sizeof(AchievementManager::IDLinks) == 20 ? 1
 typedef char SerializedStatExtent[sizeof(Structs::Stat) == 12 ? 1 : -1];
 typedef char SerializedRuleExtent[sizeof(Structs::AchievementRule) == 12 ? 1 : -1];
 typedef char SerializedAchievementExtent[sizeof(Structs::Achievement) == 20 ? 1 : -1];
+
+typedef char AchievementQueueRootExtent[sizeof(AchievementManager::CompletedNodeBase) == 8 ? 1 : -1];
+typedef char AchievementQueueNodeExtent[sizeof(AchievementManager::CompletedNode) == 12 ? 1 : -1];

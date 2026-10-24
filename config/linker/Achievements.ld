@@ -8,6 +8,7 @@ __aeabi_d2f = 0x001c4310;
 __aeabi_fadd = 0x001c4154;
 __aeabi_f2iz = 0x001c44cc;
 _Znaj = 0x001c3ff8;
+_ZdlPv = 0x001c42b0;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -68,6 +69,10 @@ SECTIONS {
     .achievement_read_achievement 0x0034535c : { *achievements.o(.text._ZN7Structs11Achievement4ReadER10DataStream) }
     .achievement_local_manager 0x004bb484 (NOLOAD) : { *achievements.o(.bss._ZZN18AchievementManager5setupEvE3man) }
     ASSERT(SIZEOF(.achievement_local_manager) == 1, "Unexpected local manager extent")
+    .achievement_has_new 0x0034505c : { *achievements.o(.text._ZN18AchievementManager27hasNewCompletedAchievementsEv) }
+    .achievement_pop 0x00345c1c : { *achievements.o(.text._ZN18AchievementManager23popCompletedAchievementEv) }
+    .achievement_completed_queue 0x004bb3fc (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager23s_completedAchievementsE) }
+    ASSERT(SIZEOF(.achievement_completed_queue) == 8, "Unexpected completed achievement queue extent")
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
