@@ -47,7 +47,7 @@ private:
     unsigned int unknown92;
     unsigned int unknown96;
     irr::scene::ISceneNode* attachedNode;
-    unsigned short unknown104;
+    short unknown104;
     short billboardPool;
     int id;
 };

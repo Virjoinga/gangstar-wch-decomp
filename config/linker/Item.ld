@@ -263,6 +263,8 @@ SECTIONS {
     .item_vtable 0x004aac78 : { *item.o(.data.rel.ro._ZTV4Item) }
     .item_add_ammo 0x002fc908 : { *item.o(.text._ZN4Item7addAmmoEii) }
     .item_pickup 0x002fcff8 : { *item.o(.text._ZN4Item6pickupEv) }
+    .item_sound 0x002fcef8 : { *item.o(.text._ZN4Item15playPickupSoundEv) }
+    .item_sound_switch 0x0041d2c8 : { *item.o(.rodata._ZN4Item15playPickupSoundEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
     /* Unused local helper from the coalesced header-defined factory getter. */

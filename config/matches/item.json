@@ -158,7 +158,9 @@
         ".item_grab",
         ".item_vtable",
         ".item_add_ammo",
-        ".item_pickup"
+        ".item_pickup",
+        ".item_sound",
+        ".item_sound_switch"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -253,7 +255,8 @@
         "_ZN4Item4LoadERKN7Structs4ItemE",
         "_ZN4Item13grabSceneNodeEiPPPv",
         "_ZN4Item7addAmmoEii",
-        "_ZN4Item6pickupEv"
+        "_ZN4Item6pickupEv",
+        "_ZN4Item15playPickupSoundEv"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -312,7 +315,6 @@
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN4Item8isUsableEv",
-        "_ZN4Item3addEv",
-        "_ZN4Item15playPickupSoundEv"
+        "_ZN4Item3addEv"
     ]
 }
