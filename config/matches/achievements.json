@@ -80,7 +80,8 @@
         "_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE",
         "_ZN18AchievementManager5resetEv",
         "_ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv",
-        "_ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv"
+        "_ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv",
+        "_ZNK18AchievementManager4Stat12formatStringEPc"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -144,7 +145,10 @@
         ".achievement_reset",
         ".achievement_node_allocator",
         ".achievement_list_clear",
-        ".achievement_alloc_message"
+        ".achievement_alloc_message",
+        ".achievement_format",
+        ".achievement_percent_format",
+        ".achievement_time_format"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
@@ -152,6 +156,8 @@
         "_ZN3NPC5isCopEv",
         "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE",
         "_ZN10DataStream7ReadIntEv",
-        "_ZN9GSLoading12isGameLoadedEv"
+        "_ZN9GSLoading12isGameLoadedEv",
+        "_ZN11Application11GetInstanceEv",
+        "_ZNK13StringManager12formatAmountEibb"
     ]
 }
