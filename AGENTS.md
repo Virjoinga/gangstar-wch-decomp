@@ -25,6 +25,14 @@ has not been decompiled yet. `src/game/<area>/<File>.cpp` holds the C++. A
 function counts as matched when its assembly file has been deleted and a C++
 definition has replaced it.
 
+## Area completion order
+
+The maintainer requires completing gameplay areas from the fewest total retail
+code bytes to the most. Follow `docs/WORK-ORDER.md`: start with the first area
+that still has pending game functions and stay there until it is 100% byte-matched
+before advancing. Use total area bytes, not remaining bytes. Saved near misses in
+later areas remain queued; do not jump between areas to collect easy matches.
+
 ## Before you change anything
 
 1. `README.md` — what the project is and how it is put together.

@@ -136,6 +136,7 @@ toolchain image automatically.
 * [docs/BUILDING.md](docs/BUILDING.md) — the toolchain, the flags and how a match is verified
 * [docs/ENGINE.md](docs/ENGINE.md) — what is in the library and where it came from
 * [docs/LAYOUT.md](docs/LAYOUT.md) — the original file layout and the gameplay areas
+* [docs/WORK-ORDER.md](docs/WORK-ORDER.md) - complete areas from fewest to most total code bytes
 * [CONTRIBUTING.md](CONTRIBUTING.md) — how to land a change
 * [AGENTS.md](AGENTS.md) — the rules, for human and AI contributors alike
 
