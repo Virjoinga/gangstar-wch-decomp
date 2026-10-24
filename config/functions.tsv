@@ -11939,23 +11939,23 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00338571	0x68	MissionConditionStayWithin.cpp	game	missions	pending	_ZN26MissionConditionStayWithinD0Ev	MissionConditionStayWithin::~MissionConditionStayWithin()
 0x003385d9	0x60	MissionConditionStayWithin.cpp	game	missions	pending	_ZN26MissionConditionStayWithinD1Ev	MissionConditionStayWithin::~MissionConditionStayWithin()
 0x003385d9	0x60	MissionConditionStayWithin.cpp	game	missions	pending	_ZN26MissionConditionStayWithinD2Ev	MissionConditionStayWithin::~MissionConditionStayWithin()
-0x00338639	0x12	Race.cpp	game	meta	pending	_ZNK4Race14isPlayerWinnerEv	Race::isPlayerWinner() const
-0x0033864d	0x4	Race.cpp	game	meta	pending	_ZNK4Race8getStateEv	Race::getState() const
-0x00338651	0x6	Race.cpp	game	meta	pending	_ZN4Race5readyEv	Race::ready()
-0x00338659	0x6	Race.cpp	game	meta	pending	_ZN4Race2goEv	Race::go()
-0x00338661	0x30	Race.cpp	game	meta	pending	__tcf_4	__tcf_4
-0x00338691	0x20	Race.cpp	game	meta	pending	_ZN4RaceD0Ev	Race::~Race()
-0x003386b1	0x18	Race.cpp	game	meta	pending	_ZN4RaceD2Ev	Race::~Race()
-0x003386b1	0x18	Race.cpp	game	meta	pending	_ZN4RaceD1Ev	Race::~Race()
-0x003386c9	0x78	Race.cpp	game	meta	pending	_ZN4Race5resetEv	Race::reset()
-0x00338741	0x1c	Race.cpp	game	meta	pending	__tcf_3	__tcf_3
-0x0033875d	0x6c	Race.cpp	game	meta	pending	_ZN4Race13setPlayerPathEPK4Path	Race::setPlayerPath(Path const*)
-0x003387c9	0x30	Race.cpp	game	meta	pending	_ZN4RaceC1Ev	Race::Race()
-0x003387c9	0x30	Race.cpp	game	meta	pending	_ZN4RaceC2Ev	Race::Race()
-0x003387f9	0x98	Race.cpp	game	meta	pending	_ZN4Race11addOpponentEP7VehiclePK4Pathf	Race::addOpponent(Vehicle*, Path const*, float)
-0x00338891	0x16c	Race.cpp	game	meta	pending	_ZN4Race8evaluateEv	Race::evaluate()
-0x003389fd	0x144	Race.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00338b41	0x14	Race.cpp	game	meta	pending	_GLOBAL__I__ZN4RaceC2Ev	_GLOBAL__I__ZN4RaceC2Ev
+0x00338639	0x12	Race.cpp	game	meta	matched	_ZNK4Race14isPlayerWinnerEv	Race::isPlayerWinner() const
+0x0033864d	0x4	Race.cpp	game	meta	matched	_ZNK4Race8getStateEv	Race::getState() const
+0x00338651	0x6	Race.cpp	game	meta	matched	_ZN4Race5readyEv	Race::ready()
+0x00338659	0x6	Race.cpp	game	meta	matched	_ZN4Race2goEv	Race::go()
+0x00338661	0x30	Race.cpp	game	meta	matched	__tcf_4	__tcf_4
+0x00338691	0x20	Race.cpp	game	meta	matched	_ZN4RaceD0Ev	Race::~Race()
+0x003386b1	0x18	Race.cpp	game	meta	matched	_ZN4RaceD2Ev	Race::~Race()
+0x003386b1	0x18	Race.cpp	game	meta	matched	_ZN4RaceD1Ev	Race::~Race()
+0x003386c9	0x78	Race.cpp	game	meta	matched	_ZN4Race5resetEv	Race::reset()
+0x00338741	0x1c	Race.cpp	game	meta	matched	__tcf_3	__tcf_3
+0x0033875d	0x6c	Race.cpp	game	meta	matched	_ZN4Race13setPlayerPathEPK4Path	Race::setPlayerPath(Path const*)
+0x003387c9	0x30	Race.cpp	game	meta	matched	_ZN4RaceC1Ev	Race::Race()
+0x003387c9	0x30	Race.cpp	game	meta	matched	_ZN4RaceC2Ev	Race::Race()
+0x003387f9	0x98	Race.cpp	game	meta	matched	_ZN4Race11addOpponentEP7VehiclePK4Pathf	Race::addOpponent(Vehicle*, Path const*, float)
+0x00338891	0x16c	Race.cpp	game	meta	matched	_ZN4Race8evaluateEv	Race::evaluate()
+0x003389fd	0x144	Race.cpp	game	meta	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00338b41	0x14	Race.cpp	game	meta	matched	_GLOBAL__I__ZN4RaceC2Ev	_GLOBAL__I__ZN4RaceC2Ev
 0x00338b55	0x6	Revive.cpp	game	missions	pending	_ZN6Revive19finishCashLostAnimsEv	Revive::finishCashLostAnims()
 0x00338b5d	0x30	Revive.cpp	game	core	pending	__tcf_5	__tcf_5
 0x00338b8d	0x20	Revive.cpp	game	missions	pending	_ZN6Revive6draw2dEv	Revive::draw2d()
