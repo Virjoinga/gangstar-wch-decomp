@@ -269,6 +269,7 @@ SECTIONS {
     .item_animate 0x002fcb9c : { *item.o(.text._ZN4Item7animateEbbb) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
-    /* Unused local helper from the coalesced header-defined factory getter. */
-    .unused_factory_cleanup 0x00610000 : { *item.o(.text.__tcf_0) }
+    /* Local callback numbering differs in this partial translation unit. */
+    .item_factory_singleton_cleanup 0x002fce8c : { *item.o(.text.__tcf_0) }
+    .item_wanted_singleton_cleanup 0x002fc27c : { *item.o(.text.__tcf_2) }
 }

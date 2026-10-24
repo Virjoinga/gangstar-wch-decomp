@@ -162,7 +162,9 @@
         ".item_sound",
         ".item_sound_switch",
         ".item_update",
-        ".item_animate"
+        ".item_animate",
+        ".item_factory_singleton_cleanup",
+        ".item_wanted_singleton_cleanup"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -260,7 +262,16 @@
         "_ZN4Item6pickupEv",
         "_ZN4Item15playPickupSoundEv",
         "_ZN4Item6UpdateEi",
-        "_ZN4Item7animateEbbb"
+        "_ZN4Item7animateEbbb",
+        {
+            "name": "__tcf_1",
+            "address": "0x002fce8d",
+            "compiled_name": "__tcf_0"
+        },
+        {
+            "name": "__tcf_2",
+            "address": "0x002fc27d"
+        }
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -318,6 +329,7 @@
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN4Item8isUsableEv",
-        "_ZN4Item3addEv"
+        "_ZN4Item3addEv",
+        "_ZN18WantedLevelManagerD1Ev"
     ]
 }

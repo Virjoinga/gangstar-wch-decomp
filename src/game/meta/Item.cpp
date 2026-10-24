@@ -43,8 +43,16 @@ irr::core::array<Item*, irr::core::irrAllocator<Item*> > Item::s_placedItems;
 static unsigned int s_billboardFactoryStorage[1];
 extern CGameBillboardFactory s_billboardFactory __attribute__((visibility("hidden")));
 
+// Retail storage for the header-defined WantedLevelManager singleton.
+extern WantedLevelManager _ZZN18WantedLevelManager11getInstanceEvE3wlm;
+
 void operator delete(void*) throw();
 extern "C" {
+static void __tcf_2(void*) __attribute__((used));
+static void __tcf_2(void*)
+{
+    _ZZN18WantedLevelManager11getInstanceEvE3wlm.WantedLevelManager::~WantedLevelManager();
+}
 static void __tcf_4(void*) __attribute__((used));
 static void __tcf_4(void*)
 {
