@@ -259,6 +259,8 @@ SECTIONS {
     .item_show 0x002fc56c : { *item.o(.text._ZN4Item4showEv) }
     .item_lock 0x002fc67c : { *item.o(.text._ZN4Item4lockEv) }
     .item_load 0x002fc6bc : { *item.o(.text._ZN4Item4LoadERKN7Structs4ItemE) }
+    .item_grab 0x002fcbdc : { *item.o(.text._ZN4Item13grabSceneNodeEiPPPv) }
+    .item_vtable 0x004aac78 : { *item.o(.data.rel.ro._ZTV4Item) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
     /* Unused local helper from the coalesced header-defined factory getter. */

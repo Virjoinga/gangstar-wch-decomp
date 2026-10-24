@@ -15,9 +15,10 @@ struct SInstanceModularSkin; struct SEmitter; struct SForce;
 class IRootSceneNode;
 struct SNode { unsigned int unknown0[18]; const void* properties; };
 
-// Only allocation extent and constructor ABI are observed here.
-class CSceneNode {
-    unsigned int unknown0[95];
+// Observed scene interface prefix, 380-byte allocation extent and constructor ABI.
+// Remaining storage is opaque; this is not the complete engine class.
+class CSceneNode : public scene::ISceneNode {
+    unsigned int unknown4[94];
 public:
     CSceneNode(const CColladaDatabase&, SNode*);
 };

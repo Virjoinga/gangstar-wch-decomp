@@ -5,7 +5,10 @@
 
 // Allocation extent and the observed CSceneNode conversion at +100 only.
 // The complete billboard hierarchy and field layout remain unreconstructed.
-struct CustomBillboardPrefix { unsigned int unknown0[25]; };
+struct CustomBillboardPrefix {
+    virtual void unknown0();
+    unsigned int unknown4[24];
+};
 class CustomBillboardSceneNode : public CustomBillboardPrefix, public irr::collada::CSceneNode {
     unsigned int unknown480[15];
 public:
