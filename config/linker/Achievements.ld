@@ -12,6 +12,10 @@ _ZdlPv = 0x001c42b0;
 _Znwj = 0x001c4814;
 puts = 0x001c41b4;
 exit = 0x001c482c;
+__aeabi_idiv = 0x001c43dc;
+__aeabi_idivmod = 0x001c4934;
+sprintf = 0x001c46ac;
+strcpy = 0x001c3fd4;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -87,6 +91,9 @@ SECTIONS {
     .achievement_rule_count 0x004bb3e8 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager11s_ruleCountE) }
     ASSERT(SIZEOF(.achievement_rule_count) == 4, "Unexpected achievement count extent")
     .achievement_alloc_message 0x00401098 : { *achievements.o(.rodata.str1.4) }
+    .achievement_format 0x00345604 : { *achievements.o(.text._ZNK18AchievementManager4Stat12formatStringEPc) }
+    .achievement_percent_format 0x00434298 : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE13percentFormat) }
+    .achievement_time_format 0x0043429c : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE10timeFormat) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

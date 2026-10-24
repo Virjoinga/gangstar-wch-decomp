@@ -52,7 +52,10 @@ public:
     struct Stat {
         ~Stat();
         int getValue() const;
-        unsigned char unknown0[12];
+        char* formatString(char* buffer) const;
+        unsigned char unknown0[4];
+        int format;
+        unsigned char unknown8[4];
         int value;
         IDLinks rules;
     };

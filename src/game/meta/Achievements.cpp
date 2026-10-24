@@ -13,6 +13,11 @@
 #include "Item.h"
 #include "../ai/NPC.h"
 #include "../persistence/DataStream.h"
+#include "../persistence/StringManager.h"
+#include "../app/Application.h"
+
+extern "C" char* strcpy(char*, const char*);
+extern "C" int sprintf(char*, const char*, ...);
 
 class GSLoading { public: static bool isGameLoaded(); };
 
@@ -171,6 +176,30 @@ void Structs::Achievement::Read(DataStream& stream)
         rules[i] = stream.ReadInt();
     unknown12 = stream.ReadInt();
     unknown16 = stream.ReadInt();
+}
+
+char* AchievementManager::Stat::formatString(char* buffer) const
+{
+    static const char percentFormat[] = "%i%";
+    static const char timeFormat[] = "%02i:%02i:%02i";
+    switch (format) {
+    case 0: case 1: {
+        StringManager* strings = Application::GetInstance()->GetStringManager();
+        strcpy(buffer, strings->formatAmount(getValue(), true, format == 1));
+        break;
+    }
+    case 2:
+        sprintf(buffer, percentFormat, getValue() <= 0);
+        break;
+    case 3: {
+        int total = getValue();
+        int minutes = total / 60;
+        int hours = minutes / 60;
+        sprintf(buffer, timeFormat, hours, minutes % 60, total % 60);
+        break;
+    }
+    }
+    return buffer;
 }
 
 void AchievementManager::reset()
