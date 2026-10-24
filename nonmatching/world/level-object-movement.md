@@ -153,7 +153,7 @@ unit; adding Geometry.h resolved that compile failure. The first compiling
 candidate was 2812 bytes. Recovery of the remaining data flow and object lifetimes
 produced the 3060-byte candidate saved in PR #54, whose first mismatch was 0xc.
 The current refinement is 3120 bytes, equal to retail, and its first mismatch is
-0x148. It still earns zero matched progress.
+0x482 after the value-lifetime refinement. It still earns zero matched progress.
 
 ### Shape evidence and partial views
 
@@ -224,20 +224,23 @@ untouched when the closest fraction stays 1, matching the observed branch.
 ### Remaining byte differences
 
 The current candidate has retail's 3120-byte size and 868-byte frame (literal
-0xfffffc9c). Its entry now keeps this in fp, as retail does, and its first 328
-bytes compare exactly. The first remaining difference is the perpendicular's
-spill slots: retail uses sp+92/+88; the candidate uses sp+88/+84. Later differences
-include the saved hit coordinates, collision normal, rotation coefficients and
-height-bound spill slots, nearest-shape assignment ordering, and final XY
-multiplication operand selection. Equal size and frame do not establish a match.
+0xfffffc9c). Its first 1154 bytes compare exactly; the first mismatch is now
+0x482 in the final interpolation's XY multiplication operand selection.
 
-The refinement snapshots the unscaled circle center before choosing a side,
-scales its coordinates separately in each branch, uses base-first hit-point
-addition, and snapshots all four polygon rotation coefficients before the normal
-loop. The transform helper adds the translated position to a rotated vector.
-The final interpolation retains three GetPosition snapshots and a scaled
-vector, then assigns scaled+base as a whole vector. Segment offsets remain inline
-expressions, allowing the compiler to share arithmetic after the corresponding position getter.
+The saved hit coordinates, collision normal, perpendicular, height bounds,
+rotation coefficients and polygon edge index now use the corresponding retail
+spill slots. The bounds are copied as aabbox3d values before the virtual getters;
+the rotation is copied into a four-float value record before the normal loop.
+Moving the saved hit point and normal declarations before the perpendicular
+calculation lets GCC's scalar replacement generate the corresponding lifetimes.
+Assigning the nearest shape before its normal also reproduces that retail block.
+These are ordinary C++ values and assignments; no compiler output is modified.
+
+Remaining differences include final XY multiplication operand selection, matrix
+coefficient load/register selection, polygon loop register allocation and some
+later pointer loads. Equal size, frame and spill slots do not establish a match.
+The final interpolation still retains three GetPosition snapshots and a scaled
+vector, then assigns scaled+base as a whole vector.
 
 A diagnostic count of direct float-helper call sites now finds 74 fmul, 51 fsub,
 44 fadd and 14 fdiv calls in both images, with 28 indirect virtual/GOT calls in
@@ -252,8 +255,10 @@ LevelObject sections overlapped. Limits 50 and 60 retained only the pending
 movement mismatch. None of those flag changes is retained. Explicit scalar hit
 coordinates, direct transform expressions and altered assignment/declaration
 ordering also failed to produce an exact match and were discarded. Further
-rotation aggregate/view/helper experiments and scalar normal/declaration-order
-variants also remained unmatched and were discarded. The stock Irrlicht free
+initial rotation aggregate/view/helper experiments and scalar normal/declaration-
+order variants also remained unmatched and were discarded. The later refinement
+retains the four-float rotation record together with copied bounds and reordered
+hit/normal declarations; that combination reproduces the retail spill slots. The stock Irrlicht free
 scalar multiplication template emitted an out-of-line function which overlapped
 existing verification sections at link time; that experiment failed to link and
 is not retained. Bare discarded GetPosition calls changed temporary placement;
@@ -268,18 +273,18 @@ is not a full shared-library build or runtime test.
 ### Reproduction and regression checks
 
 `python nonmatching/world/try_level_object_movement.py` exits 1. Its only
-function mismatch is below; .level_movement also differs at 0x148. The other
+function mismatch is below; .level_movement also differs at 0x482. The other
 350 comparisons pass, including all pre-existing native functions and sections.
 
 ```text
 MISMATCH  _ZN11LevelObject12canGoToPointERKN3irr4core8vector3dIfEERS3_S6_  0x00317fb5
-  expected : c0 9b c1 9a 59 46 1c 19 17 92 16 94 0b 68 ba a8
-  actual   : c0 9b c1 9a 59 46 1c 19 16 92 15 94 0b 68 ba a8
-  differs at 0x148
+  expected : 8f 99 0b 9b 05 1c 88 46 0d 98 21 1c 9f 68 ac f6
+  actual   : 8f 99 0b 9b 05 1c 88 46 20 1c 0d 99 9f 68 ac f6
+  differs at 0x482
 MISMATCH SECTION .level_movement
-  expected : c0 9b c1 9a 59 46 1c 19 17 92 16 94 0b 68 ba a8
-  actual   : c0 9b c1 9a 59 46 1c 19 16 92 15 94 0b 68 ba a8
-  differs at 0x148
+  expected : 8f 99 0b 9b 05 1c 88 46 0d 98 21 1c 9f 68 ac f6
+  actual   : 8f 99 0b 9b 05 1c 88 46 20 1c 0d 99 9f 68 ac f6
+  differs at 0x482
 ```
 
 `python tools/build.py level-object` was checked for PR #55: exit 0 with 350
@@ -288,9 +293,9 @@ successful comparisons.
 exit 1 with its known CastRay
 and .level_ray mismatches at 0x18; all other 365 comparisons pass. The native mesh
 scan remains exact in that image. These checks rebuild dependencies normally;
-cached dependency objects were used only for local iteration. The interpolation
-correction changes only the pending movement body, so the separate LevelObject
-and ray runners were not repeated for that correction; the movement runner
+cached dependency objects were used only for local iteration. The value-lifetime
+refinement changes only the pending movement body, so the separate LevelObject
+and ray runners were not repeated for that refinement; the movement runner
 rebuilds normally and retains all 350 existing native function/section checks.
 
 `python -m unittest discover -s tests` ran 71 tests and printed `OK`.
@@ -298,3 +303,10 @@ rebuilds normally and retains all 350 existing native function/section checks.
 `python tools/progress.py --check` passed. Generated tables were regenerated
 before push. Game progress remains 492/4661 functions and 34756/575264 bytes
 (6.04%). No assembly file is removed for this pending reconstruction.
+
+## Scheduling after this checkpoint
+
+The maintainer requested completing entire areas from fewest total game-code
+bytes to most. This movement attempt remains pending and will resume when world
+is the first incomplete area in `docs/WORK-ORDER.md`. Start the area schedule with
+meta; do not interpret this checkpoint as a completed movement function.
