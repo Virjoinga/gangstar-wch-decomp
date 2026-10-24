@@ -74,13 +74,17 @@ public:
     LevelObject* getTarget() const { return target; }
     int getAmbientSound() const;
     void setCash(int value);
+    void addCash(int amount, int maximum);
     void switchContext(eContext context, bool flag);
     void Respawn();
     void Update();
     void UpdateSceneNode();
     unsigned char unknown8[12];
     irr::scene::ISceneNode* sceneNode;
-    unsigned char unknown24[216];
+    unsigned char unknown24[196];
+    int maximumHealth;
+    int health;
+    unsigned char unknown228[12];
     unsigned int flags240;
     unsigned char unknown244[20];
     LevelObject* target;

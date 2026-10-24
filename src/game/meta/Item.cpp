@@ -17,6 +17,7 @@
 #include "../app/CGameFactory.h"
 #include "../app/Application.h"
 #include "../combat/WeaponManager.h"
+#include "../audio/SoundManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
 #include "../core/Vector3.h"
@@ -291,6 +292,47 @@ irr::scene::ISceneNode* Item::grabSceneNode(int, void***)
     billboard->setPosition(root->getPosition() + attachedNode->getPosition());
     billboard->updateAbsolutePosition(false);
     return root;
+}
+
+void Item::playPickupSound()
+{
+    switch (itemType) {
+    case 0: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(147, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 1: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(150, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 2: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(130, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 3: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(156, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    case 4: case 5: case 6: case 7: case 8: case 9: {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(143, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        break;
+    }
+    }
 }
 
 void Item::pickup()

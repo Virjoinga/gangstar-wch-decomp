@@ -8,6 +8,7 @@ public:
     static WantedLevelManager* getInstance() __attribute__((weak));
     virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
     virtual void update(double);
+    void _processWantedLevel();
     unsigned int unknown4;
     int unknown8;
 };

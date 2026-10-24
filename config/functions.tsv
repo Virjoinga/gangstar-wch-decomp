@@ -10272,7 +10272,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fce8d	0x24	Item.cpp	game	meta	pending	__tcf_1	__tcf_1
 0x002fceb1	0x24	Item.cpp	game	meta	matched	_ZN21CGameBillboardFactoryD1Ev	CGameBillboardFactory::~CGameBillboardFactory()
 0x002fced5	0x24	Item.cpp	game	meta	matched	__tcf_5	__tcf_5
-0x002fcef9	0x100	Item.cpp	game	meta	pending	_ZN4Item15playPickupSoundEv	Item::playPickupSound()
+0x002fcef9	0x100	Item.cpp	game	meta	matched	_ZN4Item15playPickupSoundEv	Item::playPickupSound()
 0x002fcff9	0x2c	Item.cpp	game	meta	matched	_ZN4Item6pickupEv	Item::pickup()
 0x002fd025	0x30	Lock.cpp	game	core	pending	__tcf_2	__tcf_2
 0x002fd055	0x24	Lock.cpp	game	core	pending	_ZN4Lock5cleanEv	Lock::clean()

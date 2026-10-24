@@ -1,6 +1,8 @@
 #ifndef WCH_META_ACHIEVEMENTS_H
 #define WCH_META_ACHIEVEMENTS_H
 
+class Item;
+
 // Partial declarations and observed record layouts. Not a complete manager.
 class AchievementManager {
 public:
@@ -20,6 +22,10 @@ public:
     Achievement* popCompletedAchievement();
     void updateStat(int id);
     void recordWeapon(int type, bool locked);
+    void recordBadgesEscaped(int count);
+    void recordDroppedCash(int count);
+    void recordArmor(const Item& item);
+    void recordHealthPack(const Item& item);
     static AchievementManager* s_achievementManager;
     static int s_statCount;
     static Stat* s_stats;
