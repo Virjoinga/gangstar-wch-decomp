@@ -18,6 +18,7 @@
 #include "../app/Application.h"
 #include "../combat/WeaponManager.h"
 #include "../audio/SoundManager.h"
+#include "../core/CameraManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
 #include "../core/Array.h"
 #include "../core/Vector3.h"
@@ -243,6 +244,30 @@ void Item::Load(const Structs::Item& data)
     switch (itemType) {
     case 1: id = s_numArmorVest++; break;
     case 2: id = s_numHealthCrate++; break;
+    }
+}
+
+void Item::Update(int elapsed)
+{
+    LevelObject::Update(elapsed);
+    if (unlocked()) {
+        if (itemType == 3 && WantedLevelManager::getInstance()->unknown8 == 0) {
+            lock();
+            unknown96 = unknown92 - 1;
+            return;
+        }
+        float distanceSquared = GetPosition().getDistanceFromSQ(
+            CameraManager::getInstance()->getCamera()->getPosition());
+        if (unknown4 & 2) {
+            if (distanceSquared > 25000000.0f)
+                hide();
+        } else if (distanceSquared <= 25000000.0f) {
+            show();
+        }
+    } else if (itemType != 3 || WantedLevelManager::getInstance()->unknown8 != 0) {
+        unknown96 += elapsed;
+        if (unknown96 >= unknown92)
+            unlock();
     }
 }
 

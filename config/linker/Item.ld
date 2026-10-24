@@ -265,6 +265,7 @@ SECTIONS {
     .item_pickup 0x002fcff8 : { *item.o(.text._ZN4Item6pickupEv) }
     .item_sound 0x002fcef8 : { *item.o(.text._ZN4Item15playPickupSoundEv) }
     .item_sound_switch 0x0041d2c8 : { *item.o(.rodata._ZN4Item15playPickupSoundEv) }
+    .item_update 0x002fc748 : { *item.o(.text._ZN4Item6UpdateEi) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
     /* Unused local helper from the coalesced header-defined factory getter. */
