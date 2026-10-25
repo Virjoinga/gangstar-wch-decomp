@@ -270,6 +270,8 @@ SECTIONS {
     .item_add_weapon 0x002fc940 : { *item.o(.text._ZN4Item9addWeaponEi) }
     .item_usable 0x002fc494 : { *item.o(.text._ZN4Item8isUsableEv) }
     .item_usable_switch 0x0041d250 : { *item.o(.rodata._ZN4Item8isUsableEv) }
+    .item_add 0x002fca3c : { *item.o(.text._ZN4Item3addEv) }
+    .item_add_switch 0x0041d2a0 : { *item.o(.rodata._ZN4Item3addEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
     /* Local callback numbering differs in this partial translation unit. */

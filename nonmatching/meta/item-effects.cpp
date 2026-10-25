@@ -1,4 +1,5 @@
-// Unmatched Item::add reconstruction. Retail assembly remains in the queue.
+// Historical near miss, superseded by the matched definition in Item.cpp.
+// This file records the investigation; do not compile it with the current TU.
 // See docs/matches/item-effects.md for the integrated candidate and its limits.
 #include "../../src/game/meta/Item.cpp"
 #include "../../src/game/meta/Achievements.h"
