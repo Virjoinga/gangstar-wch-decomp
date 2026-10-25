@@ -30,7 +30,11 @@
         ".explosion_string_cleanup",
         ".explosion_startup",
         ".explosion_startup_wrapper",
-        ".explosion_empty_string"
+        ".explosion_empty_string",
+        ".explosion_load",
+        ".explosion_scene",
+        ".explosion_draw",
+        ".explosion_damage"
     ],
     "functions": [
         "_Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv",
@@ -43,7 +47,21 @@
             "name": "_Z41__static_initialization_and_destruction_0ii",
             "address": "0x0032f969"
         },
-        "_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv"
+        "_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv",
+        "_ZN9Explosion13loadExplosionEv",
+        "_ZN9Explosion13drawExplosionEN3irr4core8vector3dIfEES3_",
+        "_ZN9Explosion20applyExplosionDamageEP11LevelObjectN3irr4core8vector3dIfEEfi"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcbPNS0_15CColladaFactoryE",
+        "_ZN9GS3DStuff15SetMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb",
+        "_ZN9GS3DStuff15SetMaterialTypeEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_TYPEE",
+        "_ZN11Application11GetInstanceEv",
+        "_ZNK3irr5scene10ISceneNode12getAnimatorsEv",
+        "_ZN7b2World5QueryERK6b2AABBPP7b2Shapei",
+        "_ZNK9Character8isPlayerEv",
+        "_ZN4Lock11getInstanceEv",
+        "_ZN4Lock9setTargetEP11LevelObject"
+    ]
 }
