@@ -16,6 +16,7 @@ __aeabi_idiv = 0x001c43dc;
 __aeabi_idivmod = 0x001c4934;
 sprintf = 0x001c46ac;
 strcpy = 0x001c3fd4;
+__stack_chk_fail = 0x001c42e0;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -94,6 +95,7 @@ SECTIONS {
     .achievement_format 0x00345604 : { *achievements.o(.text._ZNK18AchievementManager4Stat12formatStringEPc) }
     .achievement_percent_format 0x00434298 : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE13percentFormat) }
     .achievement_time_format 0x0043429c : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE10timeFormat) }
+    .achievement_load 0x003453b0 : { *achievements.o(.text._ZN18AchievementManager4loadEPKc) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
