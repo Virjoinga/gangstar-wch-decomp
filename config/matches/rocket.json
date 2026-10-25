@@ -34,7 +34,12 @@
         ".rocket_load",
         ".rocket_attach_uid",
         ".rocket_update",
-        ".rocket_explode"
+        ".rocket_explode",
+        ".rocket_string_cleanup",
+        ".rocket_factory_cleanup",
+        ".rocket_startup",
+        ".rocket_startup_wrapper",
+        ".rocket_empty_string"
     ],
     "functions": [
         "_ZN6Rocket5debugEPN3irr5video12IVideoDriverE",
@@ -46,7 +51,20 @@
         "_ZN11LevelObject12getSpawnTypeEv",
         "_ZN6Rocket4LoadERKN7Structs6RocketE",
         "_ZN6Rocket6UpdateEi",
-        "_ZN6Rocket7explodeEb"
+        "_ZN6Rocket7explodeEb",
+        {
+            "name": "__tcf_3",
+            "address": "0x0032fac5"
+        },
+        {
+            "name": "__tcf_1",
+            "address": "0x0032faf5"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0032febd"
+        },
+        "_GLOBAL__I__ZN6RocketC2Ei"
     ],
     "retail_got": true,
     "external_thumb_functions": [

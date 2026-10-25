@@ -11594,8 +11594,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032f969	0x144	Explosion.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x0032faad	0x14	Explosion.cpp	game	combat	pending	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv
 0x0032fac1	0x2	Rocket.cpp	game	combat	matched	_ZN6Rocket5debugEPN3irr5video12IVideoDriverE	Rocket::debug(irr::video::IVideoDriver*)
-0x0032fac5	0x30	Rocket.cpp	game	combat	pending	__tcf_3	__tcf_3
-0x0032faf5	0x24	Rocket.cpp	game	combat	pending	__tcf_1	__tcf_1
+0x0032fac5	0x30	Rocket.cpp	game	combat	matched	__tcf_3	__tcf_3
+0x0032faf5	0x24	Rocket.cpp	game	combat	matched	__tcf_1	__tcf_1
 0x0032fb19	0xbc	Rocket.cpp	game	combat	matched	_ZN6Rocket4LoadERKN7Structs6RocketE	Rocket::Load(Structs::Rocket const&)
 0x0032fbd5	0xc0	Rocket.cpp	game	combat	matched	_ZN6Rocket7explodeEb	Rocket::explode(bool)
 0x0032fc95	0x80	Rocket.cpp	game	combat	matched	_ZN6RocketD0Ev	Rocket::~Rocket()
@@ -11604,8 +11604,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032fd91	0x58	Rocket.cpp	game	combat	matched	_ZN6RocketC2Ei	Rocket::Rocket(int)
 0x0032fd91	0x58	Rocket.cpp	game	combat	matched	_ZN6RocketC1Ei	Rocket::Rocket(int)
 0x0032fde9	0xd4	Rocket.cpp	game	combat	matched	_ZN6Rocket6UpdateEi	Rocket::Update(int)
-0x0032febd	0x144	Rocket.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00330001	0x14	Rocket.cpp	game	combat	pending	_GLOBAL__I__ZN6RocketC2Ei	_GLOBAL__I__ZN6RocketC2Ei
+0x0032febd	0x144	Rocket.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00330001	0x14	Rocket.cpp	game	combat	matched	_GLOBAL__I__ZN6RocketC2Ei	_GLOBAL__I__ZN6RocketC2Ei
 0x00330015	0x2e8	Rocket.cpp	game	combat	pending	_ZN6Rocket6launchEN3irr4core8vector3dIfEE	Rocket::launch(irr::core::vector3d<float>)
 0x003302fd	0x12	Weapon.cpp	game	combat	matched	_Z18WepaonAnimCallbackPN3irr5scene19ITimelineControllerEPv	WepaonAnimCallback(irr::scene::ITimelineController*, void*)
 0x00330311	0x44	Weapon.cpp	game	combat	matched	_ZN6Weapon15drawMuzzleFlashEPN3irr5scene10ISceneNodeEPNS1_19ITimelineControllerE	Weapon::drawMuzzleFlash(irr::scene::ISceneNode*, irr::scene::ITimelineController*)
