@@ -30,7 +30,9 @@
         ".rocket_destructor",
         ".rocket_delete",
         ".rocket_vtable",
-        ".level_base_type"
+        ".level_base_type",
+        ".rocket_load",
+        ".rocket_attach_uid"
     ],
     "functions": [
         "_ZN6Rocket5debugEPN3irr5video12IVideoDriverE",
@@ -39,7 +41,8 @@
         "_ZN6RocketD1Ev",
         "_ZN6RocketD2Ev",
         "_ZN6RocketD0Ev",
-        "_ZN11LevelObject12getSpawnTypeEv"
+        "_ZN11LevelObject12getSpawnTypeEv",
+        "_ZN6Rocket4LoadERKN7Structs6RocketE"
     ],
     "retail_got": true,
     "external_thumb_functions": [
@@ -86,6 +89,11 @@
         "_ZN11LevelObject12setAnimationEiibbb",
         "_ZN11LevelObject16setNextAnimationEPKcibbb",
         "_ZN11LevelObject16setNextAnimationEiibbb",
-        "_ZN11LevelObject7shootedEiPS_"
+        "_ZN11LevelObject7shootedEiPS_",
+        "_ZN11LevelObject4LoadERKN7Structs15GameObjectBasicEPN3irr7collada15CColladaFactoryE",
+        "_ZN16PhysicAttributesC1EiP6b2Body",
+        "_ZNK6Weapon13getWeaponTypeEv",
+        "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
+        "_ZN16PhysicAttributes13SetPhysicInfoERK10PhysicInfoi"
     ]
 }

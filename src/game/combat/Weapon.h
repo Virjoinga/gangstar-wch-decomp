@@ -8,6 +8,8 @@ namespace Structs { struct Weapon; }
 // unverified. Do not treat this declaration as a fully recovered game type.
 class Weapon : public LevelObject {
 public:
+    // Observed inline scene access used by projectile attachment; no symbol claimed.
+    irr::scene::ISceneNode* projectileSceneNode() const { return sceneNode; }
     Weapon(int id);
     void Load(const Structs::Weapon& data);
     void loadWeaponFlash(const char* name, irr::scene::ISceneNode* parent,

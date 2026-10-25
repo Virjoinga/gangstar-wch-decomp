@@ -11596,7 +11596,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032fac1	0x2	Rocket.cpp	game	combat	matched	_ZN6Rocket5debugEPN3irr5video12IVideoDriverE	Rocket::debug(irr::video::IVideoDriver*)
 0x0032fac5	0x30	Rocket.cpp	game	combat	pending	__tcf_3	__tcf_3
 0x0032faf5	0x24	Rocket.cpp	game	combat	pending	__tcf_1	__tcf_1
-0x0032fb19	0xbc	Rocket.cpp	game	combat	pending	_ZN6Rocket4LoadERKN7Structs6RocketE	Rocket::Load(Structs::Rocket const&)
+0x0032fb19	0xbc	Rocket.cpp	game	combat	matched	_ZN6Rocket4LoadERKN7Structs6RocketE	Rocket::Load(Structs::Rocket const&)
 0x0032fbd5	0xc0	Rocket.cpp	game	combat	pending	_ZN6Rocket7explodeEb	Rocket::explode(bool)
 0x0032fc95	0x80	Rocket.cpp	game	combat	matched	_ZN6RocketD0Ev	Rocket::~Rocket()
 0x0032fd15	0x7c	Rocket.cpp	game	combat	matched	_ZN6RocketD1Ev	Rocket::~Rocket()
