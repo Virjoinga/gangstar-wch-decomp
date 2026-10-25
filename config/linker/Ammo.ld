@@ -13,6 +13,8 @@ _ZN23retail_ammo_transitions17civ_vehicle_transE = 0x004227ac;
 _ZN23retail_ammo_transitions17cop_vehicle_transE = 0x0042283c;
 _ZN23retail_ammo_transitions11guard_transE = 0x004228f0;
 _ZN23retail_ammo_transitions22scripted_vehicle_transE = 0x00422998;
+memset = 0x001c45d4;
+sprintf = 0x001c46ac;
 SECTIONS
 {
     .ammo_set_weapon 0x00325ed4 : { *ammo.o(.text._ZN4Ammo9setWeaponEP6Weapon) }
@@ -39,6 +41,10 @@ SECTIONS
     .ammo_destructor_thunk 0x003260e4 : { *ammo.o(.text._ZThn4_N4AmmoD1Ev) }
     .ammo_delete_thunk 0x003260a0 : { *ammo.o(.text._ZThn4_N4AmmoD0Ev) }
     .ammo_vtable 0x004abdf8 : { *ammo.o(.data.rel.ro._ZTV4Ammo) }
+    .ammo_draw_number 0x00325edc : { *ammo.o(.text._ZNK4Ammo10drawNumberEiPKiRiii) }
+    .ammo_number_format 0x00413c9c : { *ammo.o(.rodata.ammo_number_format) }
+    .ammo_draw 0x00325f94 : { *ammo.o(.text._ZNK4Ammo6draw2dEv) }
+    .ammo_draw_thunk 0x00325f80 : { *ammo.o(.text._ZThn4_NK4Ammo6draw2dEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

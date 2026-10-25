@@ -36,7 +36,11 @@
         ".ammo_delete",
         ".ammo_destructor_thunk",
         ".ammo_delete_thunk",
-        ".ammo_vtable"
+        ".ammo_vtable",
+        ".ammo_draw_number",
+        ".ammo_number_format",
+        ".ammo_draw",
+        ".ammo_draw_thunk"
     ],
     "functions": [
         "_ZN4Ammo9setWeaponEP6Weapon",
@@ -56,11 +60,19 @@
         "_ZN4AmmoD2Ev",
         "_ZN4AmmoD0Ev",
         "_ZThn4_N4AmmoD1Ev",
-        "_ZThn4_N4AmmoD0Ev"
+        "_ZThn4_N4AmmoD0Ev",
+        "_ZNK4Ammo10drawNumberEiPKiRiii",
+        "_ZNK4Ammo6draw2dEv",
+        "_ZThn4_NK4Ammo6draw2dEv"
     ],
     "retail_got": true,
     "external_thumb_functions": [
         "_ZN10HudElementC1EP7ASpriteib",
-        "_ZN10HudElementD1Ev"
+        "_ZN10HudElementD1Ev",
+        "_ZNK7ASprite10PaintFrameEiiii",
+        "_ZN11Application11GetInstanceEv",
+        "_ZNK6Weapon11getAmmoTypeEv",
+        "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
+        "_ZNK6Weapon7getClipEv"
     ]
 }

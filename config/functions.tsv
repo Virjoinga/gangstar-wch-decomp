@@ -11104,9 +11104,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00325ed1	0x2	HudElement.cpp	game	hud	pending	_ZNK10HudElement4drawEv	HudElement::draw() const
 0x00325ed5	0x4	Ammo.cpp	game	combat	matched	_ZN4Ammo9setWeaponEP6Weapon	Ammo::setWeapon(Weapon*)
 0x00325ed9	0x2	Ammo.cpp	game	combat	matched	_ZN4Ammo6updateEd	Ammo::update(double)
-0x00325edd	0xa4	Ammo.cpp	game	combat	pending	_ZNK4Ammo10drawNumberEiPKiRiii	Ammo::drawNumber(int, int const*, int&, int, int) const
-0x00325f80	0x14	Ammo.cpp	game	combat	pending	_ZThn4_NK4Ammo6draw2dEv	non-virtual thunk to Ammo::draw2d() const
-0x00325f95	0x10c	Ammo.cpp	game	combat	pending	_ZNK4Ammo6draw2dEv	Ammo::draw2d() const
+0x00325edd	0xa4	Ammo.cpp	game	combat	matched	_ZNK4Ammo10drawNumberEiPKiRiii	Ammo::drawNumber(int, int const*, int&, int, int) const
+0x00325f80	0x14	Ammo.cpp	game	combat	matched	_ZThn4_NK4Ammo6draw2dEv	non-virtual thunk to Ammo::draw2d() const
+0x00325f95	0x10c	Ammo.cpp	game	combat	matched	_ZNK4Ammo6draw2dEv	Ammo::draw2d() const
 0x003260a0	0x14	Ammo.cpp	game	combat	matched	_ZThn4_N4AmmoD0Ev	non-virtual thunk to Ammo::~Ammo()
 0x003260b5	0x30	Ammo.cpp	game	combat	matched	_ZN4AmmoD0Ev	Ammo::~Ammo()
 0x003260e4	0x14	Ammo.cpp	game	combat	matched	_ZThn4_N4AmmoD1Ev	non-virtual thunk to Ammo::~Ammo()
