@@ -15,7 +15,8 @@
         "-mfloat-abi=softfp",
         "-ffunction-sections",
         "-fdata-sections",
-        "-fstack-protector"
+        "-fstack-protector",
+        "-fno-default-inline"
     ],
     "assembler_flags": [
         "-march=armv5te",
@@ -96,7 +97,8 @@
             "name": "_Z41__static_initialization_and_destruction_0ii",
             "address": "0x00345c4d"
         },
-        "_GLOBAL__I__ZN18AchievementManager11s_statCountE"
+        "_GLOBAL__I__ZN18AchievementManager11s_statCountE",
+        "_ZN18AchievementManager5clearEv"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -169,7 +171,8 @@
         ".achievement_queue_cleanup",
         ".achievement_startup",
         ".achievement_startup_wrapper",
-        ".achievement_empty_text"
+        ".achievement_empty_text",
+        ".achievement_clear"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
