@@ -17,6 +17,8 @@
 #include "../app/CGameFactory.h"
 #include "../app/Application.h"
 #include "../combat/WeaponManager.h"
+#include "../combat/Weapon.h"
+#include "../hud/CHudManager.h"
 #include "../audio/SoundManager.h"
 #include "../core/CameraManager.h"
 #include "../rendering/CustomBillboardSceneNode.h"
@@ -308,6 +310,34 @@ void Item::addAmmo(int type, int amount)
     manager->setAmmo(type, manager->getAmmo(type, PlayerTest::AnyContext) + amount,
         PlayerTest::AnyContext);
 }
+
+void Item::addWeapon(int type)
+{
+    WeaponManager* manager = Application::GetInstance()->GetWeaponManager();
+    Weapon* weapon = manager->getWeaponInList(type, PlayerTest::AnyContext);
+    if (!weapon->isLocked()) {
+        Weapon* secondary = 0;
+        switch (type) {
+        case 1: secondary = manager->getWeaponInList(2, PlayerTest::AnyContext); break;
+        case 5: secondary = manager->getWeaponInList(6, PlayerTest::AnyContext); break;
+        default: break;
+        }
+        if (secondary && secondary->isLocked()) {
+            secondary->unlock();
+            if (manager->getWeaponLimitedTo(PlayerTest::AnyContext) == -1 &&
+                (manager->getCurrentWeapon()->getWeaponType() < weapon->getWeaponType() ||
+                 manager->getCurrentWeapon()->getWeaponType() == 9))
+                Application::GetInstance()->GetHudManager()->switchWeapon(secondary->getWeaponType());
+        }
+    } else {
+        weapon->unlock();
+        if (manager->getWeaponLimitedTo(PlayerTest::AnyContext) == -1 &&
+                (manager->getCurrentWeapon()->getWeaponType() < weapon->getWeaponType() ||
+                 manager->getCurrentWeapon()->getWeaponType() == 9))
+            Application::GetInstance()->GetHudManager()->switchWeapon(weapon->getWeaponType());
+    }
+}
+
 
 void Item::animate(bool start, bool loop, bool)
 {

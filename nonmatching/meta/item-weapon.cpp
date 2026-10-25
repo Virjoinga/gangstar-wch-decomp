@@ -1,4 +1,6 @@
-// Unmatched reconstruction. Retail assembly remains in the queue.
+// Historical pre-match reconstruction, retained for comparison only.
+// The matched definition is now in src/game/meta/Item.cpp.
+// This archived candidate is not a configured build input.
 #include "../../src/game/meta/Item.cpp"
 #include "../../src/game/combat/Weapon.h"
 #include "../../src/game/hud/CHudManager.h"
