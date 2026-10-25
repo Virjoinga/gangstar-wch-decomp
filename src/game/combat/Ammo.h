@@ -12,6 +12,7 @@ public:
     virtual void update(double);
     virtual void draw2d() const;
     void setWeapon(Weapon*);
+    void drawNumber(int value, const int* digits, int& x, int y, int spacing) const;
 private:
     Weapon* weapon;
     int unknown60;

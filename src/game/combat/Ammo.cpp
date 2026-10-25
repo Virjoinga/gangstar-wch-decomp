@@ -9,6 +9,13 @@
  */
 
 #include "Ammo.h"
+#include "../core/ASprite.h"
+#include "../core/VideoDriver.h"
+#include "../core/SceneNode.h"
+#include "../app/Application.h"
+#include "Weapon.h"
+#include "WeaponManager.h"
+#include "../core/NativeStdio.h"
 #include "../core/LocalStartupStorage.h"
 
 void Ammo::setWeapon(Weapon* value)
@@ -18,6 +25,41 @@ void Ammo::setWeapon(Weapon* value)
 
 void Ammo::update(double)
 {
+}
+
+static const char ammoNumberFormat[] __attribute__((section(".rodata.ammo_number_format"))) = "%i";
+
+void Ammo::drawNumber(int value, const int* digits, int& x, int y, int spacing) const
+{
+    char number[5];
+    sprintf(number, ammoNumberFormat, value);
+    int length = 0;
+    while (number[length] && length < 5) ++length;
+    for (int i = length-1; i >= 0; --i) {
+        int frame = digits[number[i]-'0'];
+        x -= spacing + sprite->GetFrameWidth(frame);
+        sprite->PaintFrame(digits[number[i]-'0'], x, y, 0);
+    }
+}
+
+void Ammo::draw2d() const
+{
+    if (weapon && (flags & 1)) {
+        Application* application = Application::GetInstance();
+        irr::video::IVideoDriver* driver = application->GetDevice()->getVideoDriver();
+        driver->setTransform(irr::video::ETS_WORLD, irr::core::matrix4());
+        int ammoType = weapon->getAmmoType();
+        if (ammoType > -1 && ammoType != 6) {
+            int total = application->GetWeaponManager()->getAmmo(ammoType, static_cast<PlayerTest::eContext>(-1));
+            int x = 470;
+            int clip = weapon->getClip();
+            drawNumber(total, largeDigits, x, 55, -7);
+            x = x + 9 - sprite->GetFrameWidth(separatorFrame);
+            sprite->PaintFrame(separatorFrame, x, 55, 0);
+            x -= 3;
+            drawNumber(clip, smallDigits, x, 55, -4);
+        }
+    }
 }
 
 typedef char HudElementExtent[sizeof(HudElement)==56?1:-1];
