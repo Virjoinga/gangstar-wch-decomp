@@ -153,6 +153,25 @@ static void __tcf_4(void*)
 
 }
 
+#include "../core/Array.h"
+
+void AchievementManager::init()
+{
+    for (int i = 0; i < s_ruleCount; ++i) {
+        Stat& stat = s_stats[s_rules[i].statID];
+        const int id = i;
+        reinterpret_cast<irr::core::array<int>*>(&stat.rules)->push_back(id);
+    }
+    for (int i = 0; i < s_achievementCount; ++i) {
+        Achievement& achievement = s_achievements[i];
+        for (int j = 0; j < achievement.ruleCount; ++j) {
+            AchievementRule& rule = s_rules[achievement.rules[j]];
+            const int id = i;
+            reinterpret_cast<irr::core::array<int>*>(&rule.achievements)->push_back(id);
+        }
+    }
+}
+
 void AchievementManager::addCompletedAchievement(Achievement* achievement)
 {
     typedef stlp_priv::_List_node<const Achievement*> Node;

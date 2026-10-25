@@ -98,7 +98,8 @@
             "address": "0x00345c4d"
         },
         "_GLOBAL__I__ZN18AchievementManager11s_statCountE",
-        "_ZN18AchievementManager5clearEv"
+        "_ZN18AchievementManager5clearEv",
+        "_ZN18AchievementManager4initEv"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -172,7 +173,8 @@
         ".achievement_startup",
         ".achievement_startup_wrapper",
         ".achievement_empty_text",
-        ".achievement_clear"
+        ".achievement_clear",
+        ".achievement_init"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
@@ -185,6 +187,7 @@
         "_ZNK13StringManager12formatAmountEibb",
         "_ZN9ResStreamC1EPKci",
         "_ZN10DataStreamC1ER6StreamNS_6endianE",
-        "_ZN9ResStreamD1Ev"
+        "_ZN9ResStreamD1Ev",
+        "_ZN3irr4core5arrayIiNS0_12irrAllocatorIiEEE9push_backERKi"
     ]
 }
