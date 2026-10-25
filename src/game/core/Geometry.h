@@ -1,5 +1,5 @@
 // Copyright (C) 2002-2008 Nikolaus Gebhardt
-// Altered excerpts of Irrlicht 1.4.2 line3d.h/aabbox3d.h/triangle3d.h/irrMath.h: partial value interfaces and triangle construction.
+// Altered excerpts of Irrlicht 1.4.2 line3d.h/aabbox3d.h/triangle3d.h/irrMath.h: partial value interfaces, point-box and triangle construction.
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
 // arising from the use of this software.
@@ -22,9 +22,10 @@ template<class T> inline const T& min_(const T& a, const T& b) { return a < b ? 
 template<class T> inline const T& max_(const T& a, const T& b) { return a < b ? b : a; }
 template<class T> class aabbox3d {
 public:
+    aabbox3d(const vector3d<T>& init) : MinEdge(init), MaxEdge(init) {}
     vector3d<T> MinEdge, MaxEdge;
 private:
-    aabbox3d(); // Layout-only view; its constructors have not been recovered.
+    aabbox3d(); // The default constructor remains unrecovered.
 };
 template<class T> class line3d {
 public:

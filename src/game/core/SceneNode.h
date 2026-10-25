@@ -10,16 +10,21 @@
 // layouts from these declarations; no vendored engine code is implemented.
 namespace irr {
 namespace core { template<class T> class aabbox3d; }
+namespace video { struct SMaterial; }
 class IReferenceCounted {
 public:
     // Retail exposes this header-defined engine method as a weak symbol.
     bool drop() const __attribute__((weak));
 };
 namespace scene {
+enum E_CULLING_TYPE { EAC_OFF = 0, EAC_BOX = 1 };
+enum E_SCENE_NODE_RENDER_PASS { RenderPass6 = 6 };
 class ITimelineController;
 class ISceneNodeAnimator;
 class ISceneNode : public virtual IReferenceCounted {
 public:
+    E_CULLING_TYPE getAutomaticCulling() const;
+    void setAutomaticCulling(E_CULLING_TYPE type);
     ISceneNode* getSceneNodeFromUID(const char* uid);
     const SceneAnimatorList& getAnimators() const;
     ISceneNode* getParent() const;
@@ -112,6 +117,10 @@ public:
     virtual void unknown33(); virtual void unknown34(); virtual void unknown35();
     virtual void unknown36();
     virtual ISceneNode* getRootSceneNode();
+    virtual void unknown38(); virtual void unknown39(); virtual void unknown40();
+    virtual void unknown41(); virtual void unknown42(); virtual void unknown43();
+    virtual void unknown44(); virtual void unknown45(); virtual void unknown46();
+    virtual unsigned int registerNodeForRendering(ISceneNode*, const video::SMaterial*, void*, E_SCENE_NODE_RENDER_PASS);
 };
 }
 class ITimer {
