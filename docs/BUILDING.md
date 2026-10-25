@@ -4,6 +4,9 @@ This project does not ship a full-game build system yet. This document describes
 the build *has* to be for a function to count as matched, and what is already
 known about the toolchain.
 
+For the proposed setup, single-command verification and complete-library build
+milestones, see [Command-driven build plan](COMMAND-BUILD-PLAN.md).
+
 ## What a match means
 
 A function is matched when the bytes the compiler produces for your C++ are
