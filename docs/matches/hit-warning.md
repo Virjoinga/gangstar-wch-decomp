@@ -39,7 +39,10 @@ OK SECTION .hit_warning_draw_thunk  0x0032862c  20 bytes
 ```
 
 Only the ten proven HitWarning symbol assembly files are removed, completing
-all ten catalogued functions (696 bytes). C1/C2 and D1/D2 are aliases under the
+all ten catalogued combat functions (696 bytes). Three TU startup/cleanup
+helpers are catalogued under core and remain queued for that area's turn;
+this is not a claim that the entire translation unit is matched. C1/C2 and
+D1/D2 are aliases under the
 existing per-symbol progress accounting, not separate emitted code copies.
 No previously matched body or compiler flag changed. Native HUD base and sprite
 implementations remain imports. The only shared header addition is the observed
