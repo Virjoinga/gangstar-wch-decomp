@@ -32,7 +32,8 @@
         ".rocket_vtable",
         ".level_base_type",
         ".rocket_load",
-        ".rocket_attach_uid"
+        ".rocket_attach_uid",
+        ".rocket_update"
     ],
     "functions": [
         "_ZN6Rocket5debugEPN3irr5video12IVideoDriverE",
@@ -42,7 +43,8 @@
         "_ZN6RocketD2Ev",
         "_ZN6RocketD0Ev",
         "_ZN11LevelObject12getSpawnTypeEv",
-        "_ZN6Rocket4LoadERKN7Structs6RocketE"
+        "_ZN6Rocket4LoadERKN7Structs6RocketE",
+        "_ZN6Rocket6UpdateEi"
     ],
     "retail_got": true,
     "external_thumb_functions": [
@@ -53,7 +55,6 @@
         "_ZN16PhysicAttributesD1Ev",
         "_ZN7b2World11DestroyBodyEP6b2Body",
         "_ZN9Character16onRocketLaunchedEv",
-        "_ZN6Rocket6UpdateEi",
         "_ZN11LevelObject13grabSceneNodeEiPPPv",
         "_ZN11LevelObject13dropSceneNodeEv",
         "_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv",
@@ -94,6 +95,8 @@
         "_ZN16PhysicAttributesC1EiP6b2Body",
         "_ZNK6Weapon13getWeaponTypeEv",
         "_ZN3irr5scene10ISceneNode19getSceneNodeFromUIDEPKc",
-        "_ZN16PhysicAttributes13SetPhysicInfoERK10PhysicInfoi"
+        "_ZN16PhysicAttributes13SetPhysicInfoERK10PhysicInfoi",
+        "_ZN6Rocket7explodeEb",
+        "_ZN16PhysicAttributes9GetHeightERKN3irr4core8vector3dIfEEib"
     ]
 }
