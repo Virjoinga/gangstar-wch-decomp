@@ -165,7 +165,9 @@
         ".item_animate",
         ".item_factory_singleton_cleanup",
         ".item_wanted_singleton_cleanup",
-        ".item_add_weapon"
+        ".item_add_weapon",
+        ".item_usable",
+        ".item_usable_switch"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -273,7 +275,8 @@
             "name": "__tcf_2",
             "address": "0x002fc27d"
         },
-        "_ZN4Item9addWeaponEi"
+        "_ZN4Item9addWeaponEi",
+        "_ZN4Item8isUsableEv"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -330,7 +333,6 @@
         "_ZN14Transformation13grabSceneNodeEiPPPv",
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
-        "_ZN4Item8isUsableEv",
         "_ZN4Item3addEv",
         "_ZN18WantedLevelManagerD1Ev",
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",

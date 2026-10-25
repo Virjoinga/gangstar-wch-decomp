@@ -178,6 +178,33 @@ void Item::removeAllPlacedItems()
     s_placedItems.is_sorted = true;
 }
 
+int Item::isUsable()
+{
+    int value = 0;
+    switch (itemType) {
+    case 1: {
+        PlayerTest* player = PlayerTest::GetPlayer();
+        value = player->contextValues[*reinterpret_cast<const int*>(&player->context)] < 200;
+        break;
+    }
+    case 2:
+        value = PlayerTest::GetPlayer()->getHealth() < PlayerTest::GetPlayer()->getMaxHealth();
+        break;
+    case 3: {
+        int wanted = WantedLevelManager::getInstance()->unknown8;
+        // The retail code lays out the nonzero path as the fallthrough.
+        if (__builtin_expect(wanted != 0, 1))
+            wanted = 1;
+        value = wanted;
+        break;
+    }
+    case 0: case 4: case 5: case 6: case 7: case 8: case 9:
+        value = 1;
+        break;
+    }
+    return value;
+}
+
 void Item::hide()
 {
     dropSceneNode();
