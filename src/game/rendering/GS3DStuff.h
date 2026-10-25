@@ -28,6 +28,7 @@ struct PhonePerformanceProfile {
 
 namespace irr { namespace video {
 // Numeric values are observed; enumerator names are reconstruction labels.
+enum E_MATERIAL_TYPE { MaterialType13 = 13 };
 enum E_MATERIAL_FLAG { MaterialFlag2 = 2, MaterialFlag4 = 4, MaterialFlag16 = 16 };
 } }
 // Observed 28-byte prefix, two bases and their virtual slots only.
@@ -61,6 +62,7 @@ public:
     static OctTreeAABB* getSceneOctTree();
     enum eColorType { Color0, Color1, Color2, Color3 };
     static void SetColor(irr::scene::ISceneNode* node, irr::video::SColor color, eColorType type);
+    static void SetMaterialType(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_TYPE type);
     static void SetMaterialFlag(irr::scene::ISceneNode* node, irr::video::E_MATERIAL_FLAG flag, bool enabled);
 
     static BulletTraceManager* s_bulletManager;

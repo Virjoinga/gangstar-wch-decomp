@@ -11,6 +11,13 @@
 #include "Explosion.h"
 #include "../core/SceneNode.h"
 #include "../core/LocalStartupStorage.h"
+#include "../core/Collada.h"
+#include "../app/Application.h"
+#include "../rendering/GS3DStuff.h"
+#include "../core/Physics.h"
+#include "../characters/PhysicAttributes.h"
+#include "../characters/Character.h"
+#include "../core/Lock.h"
 
 void operator delete(void*) throw();
 
@@ -35,6 +42,89 @@ static void __tcf_2(void*)
     if (!value.reference && value.array && value.array != value.inlineBuffer)
         ::operator delete(value.array);
 }
+}
+
+static const char explosionScene[] __attribute__((section(".rodata.explosion_scene"))) = "./p_explosion_00.bdae";
+void Explosion::loadExplosion()
+{
+    if (!s_explosion) {
+        s_explosion = irr::collada::CColladaDatabase::constructScene(explosionScene, true, &irr::collada::CColladaDatabase::DefaultFactory);
+        GS3DStuff::SetMaterialFlag(s_explosion, irr::video::MaterialFlag2, false);
+        GS3DStuff::SetMaterialFlag(s_explosion, irr::video::MaterialFlag16, true);
+        GS3DStuff::SetMaterialType(s_explosion, irr::video::MaterialType13);
+        s_explosion->setVisible(false);
+        Application::GetInstance()->GetDevice()->getSceneManager()->getRootSceneNode()->addChild(s_explosion);
+    }
+}
+
+void Explosion::drawExplosion(irr::core::vector3d<float> position, irr::core::vector3d<float>)
+{
+    loadExplosion();
+    s_explosion->setVisible(true);
+    s_explosion->setPosition(position);
+    s_explosion->updateAbsolutePosition(true);
+    GS3DStuff::SetMaterialFlag(s_explosion, irr::video::MaterialFlag2, false);
+    irr::scene::ITimelineController* controller = s_explosion->getAnimators().first->animator->getTimelineCtrl();
+    if (controller) {
+        controller->setLoop(false);
+        controller->jumpTo(controller->startTime);
+        void (*callback)(irr::scene::ITimelineController*, void*) = ExplosionAnimCallback;
+        void* data = s_explosion;
+        controller->callback = callback;
+        controller->callbackData = data;
+    }
+    s_cameraShakeTimer = 1000.0f;
+}
+
+// Observed prefixes used only for damage cleanup, not complete class layouts.
+struct ExplosionObjectPrefix {
+    unsigned int vtable, flags;
+    unsigned char unknown8[8];
+    irr::scene::ISceneNode* sceneNode;
+};
+struct ExplosionCharacterPrefix {
+    unsigned char unknown0[176];
+    irr::scene::ISceneNode* secondNode;
+    unsigned char unknown180[56];
+    unsigned int flags;
+};
+static const float& explosionClamp(const float& value, const float& low, const float& high)
+{
+    const float& maximum = value < low ? low : value;
+    return maximum < high ? maximum : high;
+}
+void Explosion::applyExplosionDamage(LevelObject* source, irr::core::vector3d<float> position, float radius, int damage)
+{
+    b2World* world = PhysicAttributes::s_world;
+    b2Shape* shapes[100] = {0};
+    b2AABB bounds;
+    bounds.lowerBound.x = (position.X-radius)/100.0f;
+    bounds.lowerBound.y = (position.Y-radius)/100.0f;
+    bounds.upperBound.x = (radius+position.X)/100.0f;
+    bounds.upperBound.y = (radius+position.Y)/100.0f;
+    world->Query(bounds, shapes, 100);
+    for (int i=0; i<100; ++i) {
+        if (!shapes[i]) break;
+        PhysicsBodyData* data = static_cast<PhysicsBodyData*>(shapes[i]->GetBody()->GetUserData());
+        if (!data || !data->owner || data->owner == source) continue;
+        LevelObject* object = data->owner;
+        float factor = (radius - (object->GetPosition()-source->GetPosition()).getLength()) / radius;
+        int amount = static_cast<int>(damage * explosionClamp(factor,0.0f,1.0f));
+        object->applyDamage(amount,0,true);
+        if (LevelObject::s_type[object->getObjectType()] == 5) {
+            ExplosionCharacterPrefix* character = reinterpret_cast<ExplosionCharacterPrefix*>(object);
+            if ((character->flags & 0x10000) && object->getHealth() <= 0) {
+                ExplosionObjectPrefix* prefix = reinterpret_cast<ExplosionObjectPrefix*>(object);
+                prefix->flags &= ~2;
+                if (prefix->sceneNode) {
+                    prefix->sceneNode->setVisible(false);
+                    character->secondNode->setVisible(false);
+                }
+                if (!static_cast<Character*>(object)->isPlayer() && Lock::getInstance()->target == object)
+                    Lock::getInstance()->setTarget(0);
+            }
+        }
+    }
 }
 
 // Scoped imports distinguish the original TU-local transition tables.

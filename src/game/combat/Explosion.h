@@ -4,7 +4,7 @@
 class LevelObject;
 namespace irr { namespace core { template<class T> class vector3d; } namespace scene { class ISceneNode; } }
 
-// Partial static interface; loading, drawing and damage implementations remain queued.
+// Reconstructed static explosion services and their observed global storage.
 class Explosion {
 public:
     static irr::scene::ISceneNode* getExplosionNode();

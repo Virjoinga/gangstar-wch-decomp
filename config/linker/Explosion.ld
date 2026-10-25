@@ -13,6 +13,17 @@ _ZN28retail_explosion_transitions17civ_vehicle_transE = 0x00427574;
 _ZN28retail_explosion_transitions17cop_vehicle_transE = 0x00427604;
 _ZN28retail_explosion_transitions11guard_transE = 0x004276b8;
 _ZN28retail_explosion_transitions22scripted_vehicle_transE = 0x00427760;
+memset = 0x001c45d4;
+__aeabi_fsub = 0x001c4328;
+__aeabi_fdiv = 0x001c4520;
+__aeabi_fadd = 0x001c4154;
+__aeabi_fcmplt = 0x001c479c;
+__aeabi_i2f = 0x001c41e4;
+__aeabi_fmul = 0x001c4724;
+__aeabi_f2iz = 0x001c44cc;
+__aeabi_f2d = 0x001c48f8;
+sqrt = 0x001c401c;
+__aeabi_d2f = 0x001c4310;
 SECTIONS
 {
     .explosion_callback 0x0032f610 : { *explosion.o(.text._Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv) }
@@ -35,6 +46,10 @@ SECTIONS
     .explosion_storage_record_7 0x004b9b14 (NOLOAD) : { *explosion.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .explosion_storage_record_8 0x004b9b1c (NOLOAD) : { *explosion.o(.bss._ZN8gameloft2ai5guardE) }
     .explosion_storage_record_9 0x004b9b24 (NOLOAD) : { *explosion.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .explosion_load 0x0032f668 : { *explosion.o(.text._ZN9Explosion13loadExplosionEv) }
+    .explosion_scene 0x004271cc : { *explosion.o(.rodata.explosion_scene) }
+    .explosion_draw 0x0032f6dc : { *explosion.o(.text._ZN9Explosion13drawExplosionEN3irr4core8vector3dIfEES3_) }
+    .explosion_damage 0x0032f768 : { *explosion.o(.text._ZN9Explosion20applyExplosionDamageEP11LevelObjectN3irr4core8vector3dIfEEfi) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
