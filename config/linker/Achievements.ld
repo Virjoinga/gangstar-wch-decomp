@@ -17,6 +17,17 @@ __aeabi_idivmod = 0x001c4934;
 sprintf = 0x001c46ac;
 strcpy = 0x001c3fd4;
 __stack_chk_fail = 0x001c42e0;
+__aeabi_atexit = 0x001c494c;
+_ZN30retail_achievement_transitions16civPassive_transE = 0x00433cc8;
+_ZN30retail_achievement_transitions17scriptedNpc_transE = 0x00433df4;
+_ZN30retail_achievement_transitions19civAggressive_transE = 0x00433e24;
+_ZN30retail_achievement_transitions16gangMember_transE = 0x00433f08;
+_ZN30retail_achievement_transitions9cop_transE = 0x00433f14;
+_ZN30retail_achievement_transitions10swat_transE = 0x0043404c;
+_ZN30retail_achievement_transitions17civ_vehicle_transE = 0x00434058;
+_ZN30retail_achievement_transitions17cop_vehicle_transE = 0x004340e8;
+_ZN30retail_achievement_transitions11guard_transE = 0x0043419c;
+_ZN30retail_achievement_transitions22scripted_vehicle_transE = 0x00434244;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -96,6 +107,37 @@ SECTIONS {
     .achievement_percent_format 0x00434298 : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE13percentFormat) }
     .achievement_time_format 0x0043429c : { *achievements.o(.rodata._ZZNK18AchievementManager4Stat12formatStringEPcE10timeFormat) }
     .achievement_load 0x003453b0 : { *achievements.o(.text._ZN18AchievementManager4loadEPKc) }
+    .achievement_string_cleanup 0x00345dd4 : { *achievements.o(.text.__tcf_3) }
+    .achievement_queue_cleanup 0x003450b4 : { *achievements.o(.text.__tcf_4) }
+    .achievement_startup 0x00345c4c : { *achievements.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .achievement_startup_wrapper 0x00345dc0 : { *achievements.o(.text._GLOBAL__I__ZN18AchievementManager11s_statCountE) }
+    .achievement_empty_text 0x0044d91c : { *achievements.o(.rodata.achievement_empty) }
+    .achievement_manager 0x004bb404 (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager20s_achievementManagerE) }
+    ASSERT(SIZEOF(.achievement_manager) == 4, "Unexpected achievement startup extent")
+    .achievement_local_string 0x004bb408 (NOLOAD) : { *achievements.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    ASSERT(SIZEOF(.achievement_local_string) == 32, "Unexpected achievement startup extent")
+    .achievement_half 0x004bb428 (NOLOAD) : { *achievements.o(.bss._ZN3irr2ps5vHalfE) }
+    ASSERT(SIZEOF(.achievement_half) == 12, "Unexpected achievement startup extent")
+    .achievement_ai_0 0x004bb434 (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    ASSERT(SIZEOF(.achievement_ai_0) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_1 0x004bb43c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    ASSERT(SIZEOF(.achievement_ai_1) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_2 0x004bb444 (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    ASSERT(SIZEOF(.achievement_ai_2) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_3 0x004bb44c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    ASSERT(SIZEOF(.achievement_ai_3) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_4 0x004bb454 (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai3copE) }
+    ASSERT(SIZEOF(.achievement_ai_4) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_5 0x004bb45c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai4swatE) }
+    ASSERT(SIZEOF(.achievement_ai_5) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_6 0x004bb464 (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    ASSERT(SIZEOF(.achievement_ai_6) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_7 0x004bb46c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    ASSERT(SIZEOF(.achievement_ai_7) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_8 0x004bb474 (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai5guardE) }
+    ASSERT(SIZEOF(.achievement_ai_8) == 8, "Unexpected achievement startup extent")
+    .achievement_ai_9 0x004bb47c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    ASSERT(SIZEOF(.achievement_ai_9) == 8, "Unexpected achievement startup extent")
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

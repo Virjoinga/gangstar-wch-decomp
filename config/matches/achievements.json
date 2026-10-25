@@ -83,7 +83,20 @@
         "_ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv",
         "_ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv",
         "_ZNK18AchievementManager4Stat12formatStringEPc",
-        "_ZN18AchievementManager4loadEPKc"
+        "_ZN18AchievementManager4loadEPKc",
+        {
+            "name": "__tcf_3",
+            "address": "0x00345dd5"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x003450b5"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00345c4d"
+        },
+        "_GLOBAL__I__ZN18AchievementManager11s_statCountE"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -151,7 +164,12 @@
         ".achievement_format",
         ".achievement_percent_format",
         ".achievement_time_format",
-        ".achievement_load"
+        ".achievement_load",
+        ".achievement_string_cleanup",
+        ".achievement_queue_cleanup",
+        ".achievement_startup",
+        ".achievement_startup_wrapper",
+        ".achievement_empty_text"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",

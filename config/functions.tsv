@@ -12364,7 +12364,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00344ff1	0x6c	Achievements.cpp	game	meta	matched	_ZN18AchievementManager19resetNumMissionStatEv	AchievementManager::resetNumMissionStat()
 0x0034505d	0x34	Achievements.cpp	game	meta	matched	_ZN18AchievementManager27hasNewCompletedAchievementsEv	AchievementManager::hasNewCompletedAchievements()
 0x00345091	0x22	Achievements.cpp	stlport	-	matched	_ZN9stlp_priv10_List_baseIPKN18AchievementManager11AchievementESaIS4_EE5clearEv	stlp_priv::_List_base<AchievementManager::Achievement const*, std::allocator<AchievementManager::Achievement const*> >::clear()
-0x003450b5	0x24	Achievements.cpp	game	meta	pending	__tcf_4	__tcf_4
+0x003450b5	0x24	Achievements.cpp	game	meta	matched	__tcf_4	__tcf_4
 0x003450d9	0xf4	Achievements.cpp	game	meta	pending	_ZN18AchievementManager4initEv	AchievementManager::init()
 0x003451cd	0x40	Achievements.cpp	stlport	-	matched	_ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv	std::allocator<stlp_priv::_List_node<AchievementManager::Achievement const*> >::allocate(unsigned int, void const*)
 0x0034520d	0x48	Achievements.cpp	game	meta	matched	_ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE	AchievementManager::addCompletedAchievement(AchievementManager::Achievement*)
@@ -12410,9 +12410,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00345b85	0x1e	Achievements.cpp	game	meta	matched	_ZN18AchievementManager17recordDroppedCashEi	AchievementManager::recordDroppedCash(int)
 0x00345ba5	0x78	Achievements.cpp	game	meta	matched	_ZN18AchievementManager11recordDeathER9Character	AchievementManager::recordDeath(Character&)
 0x00345c1d	0x30	Achievements.cpp	game	meta	matched	_ZN18AchievementManager23popCompletedAchievementEv	AchievementManager::popCompletedAchievement()
-0x00345c4d	0x174	Achievements.cpp	game	meta	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00345dc1	0x14	Achievements.cpp	game	meta	pending	_GLOBAL__I__ZN18AchievementManager11s_statCountE	_GLOBAL__I__ZN18AchievementManager11s_statCountE
-0x00345dd5	0x30	Achievements.cpp	game	meta	pending	__tcf_3	__tcf_3
+0x00345c4d	0x174	Achievements.cpp	game	meta	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00345dc1	0x14	Achievements.cpp	game	meta	matched	_GLOBAL__I__ZN18AchievementManager11s_statCountE	_GLOBAL__I__ZN18AchievementManager11s_statCountE
+0x00345dd5	0x30	Achievements.cpp	game	meta	matched	__tcf_3	__tcf_3
 0x00345e05	0x26	Achievements.cpp	game	meta	matched	_ZN18AchievementManager15AchievementRuleD1Ev	AchievementManager::AchievementRule::~AchievementRule()
 0x00345e2d	0x26	Achievements.cpp	game	meta	matched	_ZN18AchievementManager4StatD1Ev	AchievementManager::Stat::~Stat()
 0x00345e55	0xdc	Achievements.cpp	game	meta	pending	_ZN18AchievementManager5clearEv	AchievementManager::clear()
