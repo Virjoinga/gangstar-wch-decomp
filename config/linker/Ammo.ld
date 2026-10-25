@@ -33,6 +33,12 @@ SECTIONS
     .ammo_storage_record_7 0x004b9240 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .ammo_storage_record_8 0x004b9248 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai5guardE) }
     .ammo_storage_record_9 0x004b9250 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .ammo_constructor 0x00326124 : { *ammo.o(.text._ZN4AmmoC1EP7ASpritei) }
+    .ammo_destructor 0x003260f8 : { *ammo.o(.text._ZN4AmmoD1Ev) }
+    .ammo_delete 0x003260b4 : { *ammo.o(.text._ZN4AmmoD0Ev) }
+    .ammo_destructor_thunk 0x003260e4 : { *ammo.o(.text._ZThn4_N4AmmoD1Ev) }
+    .ammo_delete_thunk 0x003260a0 : { *ammo.o(.text._ZThn4_N4AmmoD0Ev) }
+    .ammo_vtable 0x004abdf8 : { *ammo.o(.data.rel.ro._ZTV4Ammo) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

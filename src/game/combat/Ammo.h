@@ -1,17 +1,22 @@
 #ifndef WCH_COMBAT_AMMO_H
 #define WCH_COMBAT_AMMO_H
 
+#include "../hud/HudElement.h"
+
 class Weapon;
 
-// Observed prefix through the weapon pointer. Base interfaces and the rest
-// of the object remain opaque; this is not the complete Ammo declaration.
-class Ammo {
+class Ammo : public HudElement {
 public:
-    void setWeapon(Weapon* value);
-    void update(double elapsed);
+    Ammo(ASprite*,int);
+    virtual ~Ammo();
+    virtual void update(double);
+    virtual void draw2d() const;
+    void setWeapon(Weapon*);
 private:
-    unsigned char unknown0[56];
     Weapon* weapon;
+    int unknown60;
+    int largeDigits[10];
+    int smallDigits[10];
+    int separatorFrame;
 };
-
 #endif

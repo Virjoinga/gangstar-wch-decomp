@@ -11107,13 +11107,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00325edd	0xa4	Ammo.cpp	game	combat	pending	_ZNK4Ammo10drawNumberEiPKiRiii	Ammo::drawNumber(int, int const*, int&, int, int) const
 0x00325f80	0x14	Ammo.cpp	game	combat	pending	_ZThn4_NK4Ammo6draw2dEv	non-virtual thunk to Ammo::draw2d() const
 0x00325f95	0x10c	Ammo.cpp	game	combat	pending	_ZNK4Ammo6draw2dEv	Ammo::draw2d() const
-0x003260a0	0x14	Ammo.cpp	game	combat	pending	_ZThn4_N4AmmoD0Ev	non-virtual thunk to Ammo::~Ammo()
-0x003260b5	0x30	Ammo.cpp	game	combat	pending	_ZN4AmmoD0Ev	Ammo::~Ammo()
-0x003260e4	0x14	Ammo.cpp	game	combat	pending	_ZThn4_N4AmmoD1Ev	non-virtual thunk to Ammo::~Ammo()
-0x003260f9	0x2c	Ammo.cpp	game	combat	pending	_ZN4AmmoD2Ev	Ammo::~Ammo()
-0x003260f9	0x2c	Ammo.cpp	game	combat	pending	_ZN4AmmoD1Ev	Ammo::~Ammo()
-0x00326125	0x94	Ammo.cpp	game	combat	pending	_ZN4AmmoC1EP7ASpritei	Ammo::Ammo(ASprite*, int)
-0x00326125	0x94	Ammo.cpp	game	combat	pending	_ZN4AmmoC2EP7ASpritei	Ammo::Ammo(ASprite*, int)
+0x003260a0	0x14	Ammo.cpp	game	combat	matched	_ZThn4_N4AmmoD0Ev	non-virtual thunk to Ammo::~Ammo()
+0x003260b5	0x30	Ammo.cpp	game	combat	matched	_ZN4AmmoD0Ev	Ammo::~Ammo()
+0x003260e4	0x14	Ammo.cpp	game	combat	matched	_ZThn4_N4AmmoD1Ev	non-virtual thunk to Ammo::~Ammo()
+0x003260f9	0x2c	Ammo.cpp	game	combat	matched	_ZN4AmmoD2Ev	Ammo::~Ammo()
+0x003260f9	0x2c	Ammo.cpp	game	combat	matched	_ZN4AmmoD1Ev	Ammo::~Ammo()
+0x00326125	0x94	Ammo.cpp	game	combat	matched	_ZN4AmmoC1EP7ASpritei	Ammo::Ammo(ASprite*, int)
+0x00326125	0x94	Ammo.cpp	game	combat	matched	_ZN4AmmoC2EP7ASpritei	Ammo::Ammo(ASprite*, int)
 0x003261b9	0x144	Ammo.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003262fd	0x14	Ammo.cpp	game	combat	matched	_GLOBAL__I__ZN4AmmoC2EP7ASpritei	_GLOBAL__I__ZN4AmmoC2EP7ASpritei
 0x00326311	0x30	Ammo.cpp	game	combat	matched	__tcf_3	__tcf_3
