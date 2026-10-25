@@ -13,11 +13,16 @@
 #include "Item.h"
 #include "../ai/NPC.h"
 #include "../persistence/DataStream.h"
+#include "../world/ResStream.h"
+#include "../core/PlacementNew.h"
 #include "../persistence/StringManager.h"
 #include "../app/Application.h"
 
 extern "C" char* strcpy(char*, const char*);
 extern "C" int sprintf(char*, const char*, ...);
+// Preserve the retail weak destructor boundary; the SDK's inline destructor
+// would otherwise be expanded here by this partial translation unit.
+extern "C" void _ZN10DataStreamD1Ev(void*) __attribute__((weak));
 
 class GSLoading { public: static bool isGameLoaded(); };
 
@@ -176,6 +181,32 @@ void Structs::Achievement::Read(DataStream& stream)
         rules[i] = stream.ReadInt();
     unknown12 = stream.ReadInt();
     unknown16 = stream.ReadInt();
+}
+
+void AchievementManager::load(const char* name)
+{
+    ResStream resource(name, 1);
+    unsigned int streamStorage[sizeof(DataStream) / sizeof(unsigned int)];
+    DataStream& stream = *new (streamStorage) DataStream(resource, DataStream::BigEndian);
+    s_ruleCount = stream.ReadInt();
+    s_rules = new AchievementRule[s_ruleCount];
+    for (int i = 0; i < s_ruleCount; ++i) {
+        stream.ReadInt();
+        reinterpret_cast<Structs::AchievementRule*>(&s_rules[i])->Read(stream);
+    }
+    s_achievementCount = stream.ReadInt();
+    s_achievements = new Achievement[s_achievementCount];
+    for (int i = 0; i < s_achievementCount; ++i) {
+        stream.ReadInt();
+        reinterpret_cast<Structs::Achievement*>(&s_achievements[i])->Read(stream);
+    }
+    s_statCount = stream.ReadInt();
+    s_stats = new Stat[s_statCount];
+    for (int i = 0; i < s_statCount; ++i) {
+        stream.ReadInt();
+        reinterpret_cast<Structs::Stat*>(&s_stats[i])->Read(stream);
+    }
+    _ZN10DataStreamD1Ev(&stream);
 }
 
 char* AchievementManager::Stat::formatString(char* buffer) const

@@ -7,11 +7,11 @@ class DataStream;
 namespace Structs {
 struct Stat {
     int fields[3];
-    void Read(DataStream&);
+    void Read(DataStream&) __attribute__((weak));
 };
 struct AchievementRule {
     int fields[3];
-    void Read(DataStream&);
+    void Read(DataStream&) __attribute__((weak));
 };
 struct Achievement {
     int id;
@@ -19,7 +19,7 @@ struct Achievement {
     int* rules;
     int unknown12;
     int unknown16;
-    void Read(DataStream&);
+    void Read(DataStream&) __attribute__((weak));
 };
 }
 
@@ -31,6 +31,7 @@ class Vehicle;
 class AchievementManager {
 public:
     struct IDLinks {
+        IDLinks() : data(0), allocated(0), used(0), free_when_destroyed(true), is_sorted(true), unknown16(1) {}
         ~IDLinks() {
             if (free_when_destroyed)
                 ::operator delete(data);
@@ -50,6 +51,7 @@ public:
         unsigned int unknown16;
     };
     struct Stat {
+        Stat() : value(0) {}
         ~Stat();
         int getValue() const;
         char* formatString(char* buffer) const;
@@ -60,6 +62,8 @@ public:
         IDLinks rules;
     };
     struct Achievement {
+        Achievement() { flags = 0; rules = 0; }
+        ~Achievement() { delete[] rules; }
         unsigned int unknown0;
         int ruleCount;
         int* rules;
@@ -76,6 +80,7 @@ public:
     };
     static CompletedNodeBase s_completedAchievements;
     struct AchievementRule {
+        AchievementRule() : flags(0) {}
         ~AchievementRule();
         unsigned int operation;
         int statID;
@@ -99,6 +104,7 @@ public:
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     const Achievement* popCompletedAchievement();
+    void load(const char*);
     void reset();
     void updateStat(int id);
     void updateProgressStat();
