@@ -28,6 +28,7 @@ _ZN30retail_achievement_transitions17civ_vehicle_transE = 0x00434058;
 _ZN30retail_achievement_transitions17cop_vehicle_transE = 0x004340e8;
 _ZN30retail_achievement_transitions11guard_transE = 0x0043419c;
 _ZN30retail_achievement_transitions22scripted_vehicle_transE = 0x00434244;
+_ZdaPv = 0x001c461c;
 SECTIONS {
     .achievement_stat_value 0x00344d8c : { *achievements.o(.text._ZNK18AchievementManager4Stat8getValueEv) }
     .achievement_achievement_lookup 0x00344d90 : { *achievements.o(.text._ZNK18AchievementManager20getAchievementFromIDEi) }
@@ -92,8 +93,8 @@ SECTIONS {
     .achievement_pop 0x00345c1c : { *achievements.o(.text._ZN18AchievementManager23popCompletedAchievementEv) }
     .achievement_completed_queue 0x004bb3fc (NOLOAD) : { *achievements.o(.bss._ZN18AchievementManager23s_completedAchievementsE) }
     ASSERT(SIZEOF(.achievement_completed_queue) == 8, "Unexpected completed achievement queue extent")
-    .achievement_rule_destructor 0x00345e04 : { *achievements.o(.text._ZN18AchievementManager15AchievementRuleD1Ev) }
-    .achievement_stat_destructor 0x00345e2c : { *achievements.o(.text._ZN18AchievementManager4StatD1Ev) }
+    .achievement_rule_destructor 0x00345e04 : { *achievements.o(.text._ZN18AchievementManager15AchievementRuleD1Ev .gnu.linkonce.t._ZN18AchievementManager15AchievementRuleD1Ev .gnu.linkonce.t._ZN18AchievementManager15AchievementRuleD2Ev) }
+    .achievement_stat_destructor 0x00345e2c : { *achievements.o(.text._ZN18AchievementManager4StatD1Ev .gnu.linkonce.t._ZN18AchievementManager4StatD1Ev .gnu.linkonce.t._ZN18AchievementManager4StatD2Ev) }
     .achievement_insert 0x0034520c : { *achievements.o(.text._ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE) }
     .achievement_reset 0x003456c4 : { *achievements.o(.text._ZN18AchievementManager5resetEv) }
     .achievement_node_allocator 0x003451cc : { *achievements.o(.gnu.linkonce.t._ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv) }
@@ -138,6 +139,7 @@ SECTIONS {
     ASSERT(SIZEOF(.achievement_ai_8) == 8, "Unexpected achievement startup extent")
     .achievement_ai_9 0x004bb47c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
     ASSERT(SIZEOF(.achievement_ai_9) == 8, "Unexpected achievement startup extent")
+    .achievement_clear 0x00345e54 : { *achievements.o(.text._ZN18AchievementManager5clearEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

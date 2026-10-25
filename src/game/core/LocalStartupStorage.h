@@ -7,7 +7,7 @@ namespace gameloft { namespace ai {
 struct LocalTransitionList {
     const unsigned int* transitions;
     unsigned int count;
-    LocalTransitionList(const unsigned int* values, unsigned int length)
+    inline LocalTransitionList(const unsigned int* values, unsigned int length)
         : transitions(values), count(length) {}
 };
 // Backing storage for the objects constructed by each TU's startup callback.

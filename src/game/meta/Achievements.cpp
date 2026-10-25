@@ -554,16 +554,6 @@ static void __tcf_3(void*)
 
 }
 
-AchievementManager::AchievementRule::~AchievementRule()
-{
-    achievements.clear();
-}
-
-AchievementManager::Stat::~Stat()
-{
-    rules.clear();
-}
-
 typedef char AchievementStatExtent[sizeof(AchievementManager::Stat) == 36 ? 1 : -1];
 typedef char AchievementRuleExtent[sizeof(AchievementManager::AchievementRule) == 36 ? 1 : -1];
 typedef char AchievementExtent[sizeof(AchievementManager::Achievement) == 24 ? 1 : -1];
@@ -579,3 +569,10 @@ typedef char SerializedAchievementExtent[sizeof(Structs::Achievement) == 20 ? 1 
 
 typedef char AchievementQueueRootExtent[sizeof(AchievementManager::CompletedNodeBase) == 8 ? 1 : -1];
 typedef char AchievementQueueNodeExtent[sizeof(AchievementManager::CompletedNode) == 12 ? 1 : -1];
+
+void AchievementManager::clear()
+{
+    delete[] s_stats;
+    delete[] s_rules;
+    delete[] s_achievements;
+}

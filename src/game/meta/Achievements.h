@@ -31,12 +31,12 @@ class Vehicle;
 class AchievementManager {
 public:
     struct IDLinks {
-        IDLinks() : data(0), allocated(0), used(0), free_when_destroyed(true), is_sorted(true), unknown16(1) {}
-        ~IDLinks() {
+        inline IDLinks() : data(0), allocated(0), used(0), free_when_destroyed(true), is_sorted(true), unknown16(1) {}
+        inline ~IDLinks() {
             if (free_when_destroyed)
                 ::operator delete(data);
         }
-        void clear() {
+        inline void clear() {
             ::operator delete(data);
             data = 0;
             used = 0;
@@ -51,8 +51,8 @@ public:
         unsigned int unknown16;
     };
     struct Stat {
-        Stat() : value(0) {}
-        ~Stat();
+        inline Stat() : value(0) {}
+        ~Stat() { rules.clear(); }
         int getValue() const;
         char* formatString(char* buffer) const;
         unsigned char unknown0[4];
@@ -62,8 +62,8 @@ public:
         IDLinks rules;
     };
     struct Achievement {
-        Achievement() { flags = 0; rules = 0; }
-        ~Achievement() { delete[] rules; }
+        inline Achievement() { flags = 0; rules = 0; }
+        inline ~Achievement() { delete[] rules; }
         unsigned int unknown0;
         int ruleCount;
         int* rules;
@@ -80,8 +80,8 @@ public:
     };
     static CompletedNodeBase s_completedAchievements;
     struct AchievementRule {
-        AchievementRule() : flags(0) {}
-        ~AchievementRule();
+        inline AchievementRule() : flags(0) {}
+        ~AchievementRule() { achievements.clear(); }
         unsigned int operation;
         int statID;
         int threshold;
@@ -104,6 +104,7 @@ public:
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     const Achievement* popCompletedAchievement();
+    void clear();
     void load(const char*);
     void reset();
     void updateStat(int id);

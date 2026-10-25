@@ -21,7 +21,7 @@ static LocalStringStorage irrEmptyStringc;
 namespace irr { namespace ps {
 struct LocalVector3 {
     float x, y, z;
-    LocalVector3(float a, float b, float c) : x(a), y(b), z(c) {}
+    inline LocalVector3(float a, float b, float c) : x(a), y(b), z(c) {}
 };
 static unsigned int vHalf[3];
 } }

@@ -12,11 +12,11 @@ namespace irr { class IrrlichtDevice; }
 class Application {
 public:
     static Application* GetInstance();
-    irr::IrrlichtDevice* GetDevice() const { return device; }
-    StringManager* GetStringManager() const { return stringManager; }
-    FileSystemBase* GetFileSystem() const { return fileSystem; }
-    CHudManager* GetHudManager() const { return hudManager; }
-    WeaponManager* GetWeaponManager() const { return weaponManager; }
+    inline irr::IrrlichtDevice* GetDevice() const { return device; }
+    inline StringManager* GetStringManager() const { return stringManager; }
+    inline FileSystemBase* GetFileSystem() const { return fileSystem; }
+    inline CHudManager* GetHudManager() const { return hudManager; }
+    inline WeaponManager* GetWeaponManager() const { return weaponManager; }
 private:
     unsigned char unknownPrefix[36];
     irr::IrrlichtDevice* device;
