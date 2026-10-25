@@ -45,6 +45,7 @@ public:
 };
 class b2World {
 public:
+    void DestroyBody(b2Body* body);
     void Step(float, int);
     int Query(const b2AABB&, b2Shape**, int);
 };

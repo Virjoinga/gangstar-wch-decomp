@@ -16,6 +16,7 @@ class Rocket : public LevelObject {
 public:
     Rocket(int type);
     virtual ~Rocket();
+    virtual void Update(int elapsed);
     void debug(irr::video::IVideoDriver* driver);
     void Load(const Structs::Rocket&);
     void launch(irr::core::vector3d<float> direction);
