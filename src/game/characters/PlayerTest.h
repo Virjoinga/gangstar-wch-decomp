@@ -67,6 +67,15 @@ public:
 };
 class PlayerTest : public SavePrimaryInterface, public SavePositionInterface {
 public:
+    // Reconstructed inline armor access; these names claim no retail symbols.
+    int getContextArmor() const { return contextValues[contextWord]; }
+    void setContextArmor(int amount) { contextValues[contextWord] = amount; }
+    void addContextArmor(int amount)
+    {
+        setContextArmor(getContextArmor() + amount);
+        if (getContextArmor() > 200)
+            setContextArmor(200);
+    }
     using SavePositionInterface::getVehicle;
     enum eContext { Context0 = 0, Context1 = 1, AnyContext = -1 };
     static PlayerTest* GetPlayer();
@@ -93,7 +102,9 @@ public:
     unsigned char unknown384[36];
     int cash;
     unsigned int unknown424;
-    eContext context;
+    // Item::add reads the complete word at 428; existing enum users retain
+    // their observed access width. Both views occupy the same storage.
+    union { eContext context; int contextWord; };
     unsigned char unknown432[76];
     int contextValues[2];
 };

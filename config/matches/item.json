@@ -167,7 +167,9 @@
         ".item_wanted_singleton_cleanup",
         ".item_add_weapon",
         ".item_usable",
-        ".item_usable_switch"
+        ".item_usable_switch",
+        ".item_add",
+        ".item_add_switch"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -276,7 +278,8 @@
             "address": "0x002fc27d"
         },
         "_ZN4Item9addWeaponEi",
-        "_ZN4Item8isUsableEv"
+        "_ZN4Item8isUsableEv",
+        "_ZN4Item3addEv"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -333,7 +336,6 @@
         "_ZN14Transformation13grabSceneNodeEiPPPv",
         "_ZN13WeaponManager7getAmmoEiN10PlayerTest8eContextE",
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
-        "_ZN4Item3addEv",
         "_ZN18WantedLevelManagerD1Ev",
         "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
         "_ZNK6Weapon8isLockedEv",
@@ -341,6 +343,12 @@
         "_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE",
         "_ZNK13WeaponManager16getCurrentWeaponEv",
         "_ZNK6Weapon13getWeaponTypeEv",
-        "_ZN11CHudManager12switchWeaponEi"
+        "_ZN11CHudManager12switchWeaponEi",
+        "_ZN10PlayerTest7addCashEii",
+        "_ZN18WantedLevelManager19_processWantedLevelEv",
+        "_ZN18AchievementManager19recordBadgesEscapedEi",
+        "_ZN18AchievementManager17recordDroppedCashEi",
+        "_ZN18AchievementManager11recordArmorERK4Item",
+        "_ZN18AchievementManager16recordHealthPackERK4Item"
     ]
 }

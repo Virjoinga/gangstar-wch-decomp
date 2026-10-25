@@ -1,5 +1,9 @@
 # Item pickup sound and effect dispatcher investigation
 
+The dispatcher investigation below is historical. Item::add now matches all
+352 bytes and its switch table; see [item-add.md](item-add.md) for the final
+reconstruction and verification. Meta is complete.
+
 Item::playPickupSound matches 256 bytes and its 40-byte switch table.
 Item::add remains unmatched. The reconstruction and scalar clamp view are
 saved in nonmatching/meta/item-effects.cpp and ItemScalarMath.h; its assembly
