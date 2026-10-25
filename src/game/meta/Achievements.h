@@ -104,6 +104,7 @@ public:
     void completeAchievement(int id);
     bool hasNewCompletedAchievements();
     const Achievement* popCompletedAchievement();
+    void init();
     void clear();
     void load(const char*);
     void reset();

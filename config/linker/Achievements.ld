@@ -95,6 +95,7 @@ SECTIONS {
     ASSERT(SIZEOF(.achievement_completed_queue) == 8, "Unexpected completed achievement queue extent")
     .achievement_rule_destructor 0x00345e04 : { *achievements.o(.text._ZN18AchievementManager15AchievementRuleD1Ev .gnu.linkonce.t._ZN18AchievementManager15AchievementRuleD1Ev .gnu.linkonce.t._ZN18AchievementManager15AchievementRuleD2Ev) }
     .achievement_stat_destructor 0x00345e2c : { *achievements.o(.text._ZN18AchievementManager4StatD1Ev .gnu.linkonce.t._ZN18AchievementManager4StatD1Ev .gnu.linkonce.t._ZN18AchievementManager4StatD2Ev) }
+    .achievement_init 0x003450d8 : { *achievements.o(.text._ZN18AchievementManager4initEv) }
     .achievement_insert 0x0034520c : { *achievements.o(.text._ZN18AchievementManager23addCompletedAchievementEPNS_11AchievementE) }
     .achievement_reset 0x003456c4 : { *achievements.o(.text._ZN18AchievementManager5resetEv) }
     .achievement_node_allocator 0x003451cc : { *achievements.o(.gnu.linkonce.t._ZNSaIN9stlp_priv10_List_nodeIPKN18AchievementManager11AchievementEEEE8allocateEjPKv) }
