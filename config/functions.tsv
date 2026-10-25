@@ -11102,8 +11102,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00325ea1	0x1a	HudElement.cpp	game	hud	pending	_ZN10HudElement7setUsedEb	HudElement::setUsed(bool)
 0x00325ebc	0x14	HudElement.cpp	game	hud	pending	_ZThn4_NK10HudElement4drawEv	non-virtual thunk to HudElement::draw() const
 0x00325ed1	0x2	HudElement.cpp	game	hud	pending	_ZNK10HudElement4drawEv	HudElement::draw() const
-0x00325ed5	0x4	Ammo.cpp	game	combat	pending	_ZN4Ammo9setWeaponEP6Weapon	Ammo::setWeapon(Weapon*)
-0x00325ed9	0x2	Ammo.cpp	game	combat	pending	_ZN4Ammo6updateEd	Ammo::update(double)
+0x00325ed5	0x4	Ammo.cpp	game	combat	matched	_ZN4Ammo9setWeaponEP6Weapon	Ammo::setWeapon(Weapon*)
+0x00325ed9	0x2	Ammo.cpp	game	combat	matched	_ZN4Ammo6updateEd	Ammo::update(double)
 0x00325edd	0xa4	Ammo.cpp	game	combat	pending	_ZNK4Ammo10drawNumberEiPKiRiii	Ammo::drawNumber(int, int const*, int&, int, int) const
 0x00325f80	0x14	Ammo.cpp	game	combat	pending	_ZThn4_NK4Ammo6draw2dEv	non-virtual thunk to Ammo::draw2d() const
 0x00325f95	0x10c	Ammo.cpp	game	combat	pending	_ZNK4Ammo6draw2dEv	Ammo::draw2d() const
