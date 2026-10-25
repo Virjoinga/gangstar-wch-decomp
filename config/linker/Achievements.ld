@@ -141,6 +141,8 @@ SECTIONS {
     .achievement_ai_9 0x004bb47c (NOLOAD) : { *achievements.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
     ASSERT(SIZEOF(.achievement_ai_9) == 8, "Unexpected achievement startup extent")
     .achievement_clear 0x00345e54 : { *achievements.o(.text._ZN18AchievementManager5clearEv) }
+    .achievement_rule_eval 0x00344de4 : { *achievements.o(.text._ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE) }
+    .achievement_rule_switch 0x00433c88 : { *achievements.o(.rodata._ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

@@ -1,6 +1,5 @@
-// Unmatched reconstruction: 140 compiled bytes versus 148 retail bytes.
-// Retail assembly remains queued; scalar comparison operand order and shared
-// false-return blocks still differ. Use as a replacement translation unit.
+// Historical 140-byte reconstruction, superseded by src/game/meta/Achievements.cpp.
+// The production definition now matches 148 bytes; this is not a build input.
 #include "../../src/game/meta/Achievements.cpp"
 
 bool AchievementManager::evaluateRule(AchievementRule& rule) const

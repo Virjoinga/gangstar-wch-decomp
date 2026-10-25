@@ -5,12 +5,11 @@ bit 1. Stat updates visit their linked rules; successful rules visit linked
 achievements. The linked ID lists occupy 20 bytes inside the 36-byte stat and
 rule records. Achievement records remain 24 bytes.
 
-The rule evaluator remains native. Its saved reconstruction in
-`nonmatching/meta/achievement-rule-evaluation.cpp` emits 140 bytes versus the
-148-byte target: scalar comparison operand order and false-return block sharing
-still differ. Its assembly stays queued, and no progress is claimed for it.
-Return-type, local-variable, comparison-expression and compiler-setting probes
-did not produce a valid whole-unit match; original compiler settings are retained.
+At this earlier checkpoint the rule evaluator remained native. Its saved
+reconstruction emitted 140 bytes versus the 148-byte target, with differences
+in comparison order and false-return blocks. No progress was claimed for it.
+The later [exact rule-evaluation match](achievement-rule-evaluation.md) supersedes
+that attempt while retaining the original compiler settings.
 
 `python tools/build.py achievements` exited 0 with 82 successful comparisons.
 The six new function comparisons printed exactly:
