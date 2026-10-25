@@ -11585,14 +11585,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032f5a9	0x38	SniperControlHandler.cpp	game	input	pending	_ZN20SniperControlHandlerD0Ev	SniperControlHandler::~SniperControlHandler()
 0x0032f5e1	0x30	SniperControlHandler.cpp	game	input	pending	_ZN20SniperControlHandlerD1Ev	SniperControlHandler::~SniperControlHandler()
 0x0032f5e1	0x30	SniperControlHandler.cpp	game	input	pending	_ZN20SniperControlHandlerD2Ev	SniperControlHandler::~SniperControlHandler()
-0x0032f611	0x12	Explosion.cpp	game	combat	pending	_Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv	ExplosionAnimCallback(irr::scene::ITimelineController*, void*)
-0x0032f625	0x14	Explosion.cpp	game	combat	pending	_ZN9Explosion16getExplosionNodeEv	Explosion::getExplosionNode()
-0x0032f639	0x30	Explosion.cpp	game	combat	pending	__tcf_2	__tcf_2
+0x0032f611	0x12	Explosion.cpp	game	combat	matched	_Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv	ExplosionAnimCallback(irr::scene::ITimelineController*, void*)
+0x0032f625	0x14	Explosion.cpp	game	combat	matched	_ZN9Explosion16getExplosionNodeEv	Explosion::getExplosionNode()
+0x0032f639	0x30	Explosion.cpp	game	combat	matched	__tcf_2	__tcf_2
 0x0032f669	0x74	Explosion.cpp	game	combat	pending	_ZN9Explosion13loadExplosionEv	Explosion::loadExplosion()
 0x0032f6dd	0x8c	Explosion.cpp	game	combat	pending	_ZN9Explosion13drawExplosionEN3irr4core8vector3dIfEES3_	Explosion::drawExplosion(irr::core::vector3d<float>, irr::core::vector3d<float>)
 0x0032f769	0x200	Explosion.cpp	game	combat	pending	_ZN9Explosion20applyExplosionDamageEP11LevelObjectN3irr4core8vector3dIfEEfi	Explosion::applyExplosionDamage(LevelObject*, irr::core::vector3d<float>, float, int)
-0x0032f969	0x144	Explosion.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032faad	0x14	Explosion.cpp	game	combat	pending	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv
+0x0032f969	0x144	Explosion.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032faad	0x14	Explosion.cpp	game	combat	matched	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv	_GLOBAL__I__Z21ExplosionAnimCallbackPN3irr5scene19ITimelineControllerEPv
 0x0032fac1	0x2	Rocket.cpp	game	combat	matched	_ZN6Rocket5debugEPN3irr5video12IVideoDriverE	Rocket::debug(irr::video::IVideoDriver*)
 0x0032fac5	0x30	Rocket.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x0032faf5	0x24	Rocket.cpp	game	combat	matched	__tcf_1	__tcf_1
