@@ -99,7 +99,8 @@
         },
         "_GLOBAL__I__ZN18AchievementManager11s_statCountE",
         "_ZN18AchievementManager5clearEv",
-        "_ZN18AchievementManager4initEv"
+        "_ZN18AchievementManager4initEv",
+        "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE"
     ],
     "sections": [
         ".achievement_stat_value",
@@ -174,13 +175,14 @@
         ".achievement_startup_wrapper",
         ".achievement_empty_text",
         ".achievement_clear",
-        ".achievement_init"
+        ".achievement_init",
+        ".achievement_rule_eval",
+        ".achievement_rule_switch"
     ],
     "external_thumb_functions": [
         "_ZNK4Item5getIdEv",
         "_ZNK9Character8isPlayerEv",
         "_ZN3NPC5isCopEv",
-        "_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE",
         "_ZN10DataStream7ReadIntEv",
         "_ZN9GSLoading12isGameLoadedEv",
         "_ZN11Application11GetInstanceEv",

@@ -12355,7 +12355,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00344d91	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager20getAchievementFromIDEi	AchievementManager::getAchievementFromID(int) const
 0x00344dad	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager24getAchievementRuleFromIDEi	AchievementManager::getAchievementRuleFromID(int) const
 0x00344dc9	0x1c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager13getStatFromIDEi	AchievementManager::getStatFromID(int) const
-0x00344de5	0x94	Achievements.cpp	game	meta	pending	_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE	AchievementManager::evaluateRule(AchievementManager::AchievementRule&) const
+0x00344de5	0x94	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager12evaluateRuleERNS_15AchievementRuleE	AchievementManager::evaluateRule(AchievementManager::AchievementRule&) const
 0x00344e79	0x5c	Achievements.cpp	game	meta	matched	_ZNK18AchievementManager8evaluateERNS_11AchievementE	AchievementManager::evaluate(AchievementManager::Achievement&) const
 0x00344ed5	0x24	Achievements.cpp	game	meta	matched	_ZN18AchievementManager22IsAchievementCompletedEi	AchievementManager::IsAchievementCompleted(int)
 0x00344ef9	0x44	Achievements.cpp	game	meta	matched	_ZN18AchievementManager26GetNumAchievementCompletedEv	AchievementManager::GetNumAchievementCompleted()

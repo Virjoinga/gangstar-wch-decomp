@@ -80,6 +80,45 @@ AchievementManager::Stat* AchievementManager::getStatFromID(int id) const
     return &s_stats[id];
 }
 
+// Read-only ABI view of the native four-byte getter. Keep the conservative
+// member declaration for its other existing call sites.
+extern "C" int _ZNK18AchievementManager4Stat8getValueEv(const AchievementManager::Stat*) __attribute__((pure));
+
+bool AchievementManager::evaluateRule(AchievementRule& rule) const
+{
+    if (rule.flags & 2)
+        return true;
+    Stat* stat = getStatFromID(rule.statID);
+    switch (rule.operation) {
+    case 1:
+        if (__builtin_expect(rule.threshold == _ZNK18AchievementManager4Stat8getValueEv(stat), 0)) break;
+        return false;
+    case 2:
+        if (__builtin_expect(rule.threshold < _ZNK18AchievementManager4Stat8getValueEv(stat), 0)) break;
+        return false;
+    case 3:
+        if (__builtin_expect(rule.threshold <= _ZNK18AchievementManager4Stat8getValueEv(stat), 0)) break;
+        return false;
+    case 4:
+        if (__builtin_expect(rule.threshold > _ZNK18AchievementManager4Stat8getValueEv(stat), 0)) break;
+        return false;
+    case 5:
+        if (__builtin_expect(rule.threshold >= _ZNK18AchievementManager4Stat8getValueEv(stat), 0)) break;
+        return false;
+    case 8: {
+        int value = stat->getValue();
+        int mask = rule.threshold;
+        value &= mask;
+        if (__builtin_expect(value == mask, 0)) break;
+        return false;
+    }
+    default:
+        return false;
+    }
+    rule.flags |= 2;
+    return true;
+}
+
 bool AchievementManager::evaluate(Achievement& achievement) const
 {
     for (int i = 0; i < achievement.ruleCount; ++i) {
