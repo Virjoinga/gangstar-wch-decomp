@@ -10253,7 +10253,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fc3e5	0x40	Item.cpp	game	meta	matched	_ZN4ItemC1Ei	Item::Item(int)
 0x002fc3e5	0x40	Item.cpp	game	meta	matched	_ZN4ItemC2Ei	Item::Item(int)
 0x002fc425	0x70	Item.cpp	game	meta	matched	_ZN4Item20removeAllPlacedItemsEv	Item::removeAllPlacedItems()
-0x002fc495	0x84	Item.cpp	game	meta	pending	_ZN4Item8isUsableEv	Item::isUsable()
+0x002fc495	0x84	Item.cpp	game	meta	matched	_ZN4Item8isUsableEv	Item::isUsable()
 0x002fc519	0x54	Item.cpp	game	meta	matched	_ZN4Item4hideEv	Item::hide()
 0x002fc56d	0x64	Item.cpp	game	meta	matched	_ZN4Item4showEv	Item::show()
 0x002fc5d1	0xac	Item.cpp	game	meta	matched	_ZN4Item5placeEiN3irr4core8vector3dIfEE	Item::place(int, irr::core::vector3d<float>)

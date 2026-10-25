@@ -70,6 +70,9 @@ That is expected in CI, which has no game data.
   output of the comparison tool exactly as it printed it.
 - **Plain C++.** No inline assembly inside a function, no register pins, no
   barriers to force an ordering.
+  Maintainer exception approved on 2026-10-25: `Item::isUsable` may use one
+  GCC `__builtin_expect` branch-likelihood hint for its wanted-level path.
+  This exception applies only to that function and hint.
 - **Nothing edits compiler output.** A function that only matches after a
   post-processing step is not matched.
 - **Never commit game data.** The retail library, the APK and the assets stay

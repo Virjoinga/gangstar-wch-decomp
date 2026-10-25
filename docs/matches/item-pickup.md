@@ -1,5 +1,9 @@
 # Item ammo update and pickup guard
 
+This report records an earlier checkpoint. Later matches include
+[weapon selection](item-weapon-selection.md),
+[sound playback](item-effects.md), and [usability](item-usability.md).
+
 Item::addAmmo matches 54 bytes and Item::pickup matches 44 bytes. Existing
 matched function bodies and Item compiler flags are unchanged. Weapon selection,
 usability, sound playback and the add dispatcher remain pending.

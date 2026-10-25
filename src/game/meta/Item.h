@@ -31,7 +31,7 @@ public:
     void animate(bool start, bool loop, bool flag);
     void addAmmo(int type, int amount);
     void addWeapon(int type);
-    bool isUsable();
+    int isUsable();
     void pickup();
     void add();
     void playPickupSound();

@@ -1,5 +1,5 @@
-// Unmatched reconstruction. Retail assembly remains in the queue.
-// Context word access requires the enum flags described in item-pickup.md.
+// Historical unmatched reconstruction, superseded by src/game/meta/Item.cpp.
+// The production definition now matches 132 bytes; this file is not a build input.
 #include "../../src/game/meta/Item.cpp"
 
 bool Item::isUsable()
