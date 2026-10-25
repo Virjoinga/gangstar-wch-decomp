@@ -15,6 +15,7 @@
 #include "../persistence/DataStream.h"
 #include "../world/ResStream.h"
 #include "../core/PlacementNew.h"
+#include "../core/LocalStartupStorage.h"
 #include "../persistence/StringManager.h"
 #include "../app/Application.h"
 
@@ -24,8 +25,33 @@ extern "C" int sprintf(char*, const char*, ...);
 // would otherwise be expanded here by this partial translation unit.
 extern "C" void _ZN10DataStreamD1Ev(void*) __attribute__((weak));
 
+namespace AchievementStartup {
+static const char empty[] __attribute__((section(".rodata.achievement_empty"))) = "";
+}
+namespace retail_achievement_transitions {
+extern const unsigned int civPassive_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int scriptedNpc_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int civAggressive_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int gangMember_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int cop_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int swat_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int civ_vehicle_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int cop_vehicle_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int guard_trans[] __attribute__((visibility("hidden")));
+extern const unsigned int scripted_vehicle_trans[] __attribute__((visibility("hidden")));
+}
+
+extern void* __dso_handle;
+extern "C" {
+int __aeabi_atexit(void*, void (*)(void*), void*);
+void* _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(void*, const char*) __attribute__((weak));
+static void __tcf_3(void*) __attribute__((used));
+static void __tcf_4(void*) __attribute__((used));
+}
+
 class GSLoading { public: static bool isGameLoaded(); };
 
+AchievementManager* AchievementManager::s_achievementManager;
 int AchievementManager::s_statCount;
 int AchievementManager::s_ruleCount;
 AchievementManager::CompletedNodeBase AchievementManager::s_completedAchievements;
@@ -116,6 +142,15 @@ bool AchievementManager::hasNewCompletedAchievements()
     for (CompletedNodeBase* node = s_completedAchievements.next; node != &s_completedAchievements; node = node->next)
         ++count;
     return count != 0;
+}
+
+extern "C" {
+static void __tcf_4(void*)
+{
+    typedef stlp_priv::_List_base<const AchievementManager::Achievement*, std::allocator<const AchievementManager::Achievement*> > ListBase;
+    reinterpret_cast<ListBase*>(&AchievementManager::s_completedAchievements)->clear();
+}
+
 }
 
 void AchievementManager::addCompletedAchievement(Achievement* achievement)
@@ -469,6 +504,54 @@ const AchievementManager::Achievement* AchievementManager::popCompletedAchieveme
         ::operator delete(node);
     }
     return achievement;
+}
+
+static void __static_initialization_and_destruction_0(int initialize, int priority) __attribute__((used));
+static void __static_initialization_and_destruction_0(int initialize, int priority)
+{
+    if (initialize == 1 && priority == 65535) {
+        irr::scene::quake3::LocalStringStorage& value = irr::scene::quake3::irrEmptyStringc;
+        value.array = 0;
+        value.allocated = 0;
+        value.used = 0;
+        value.reference = false;
+        _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(&value, AchievementStartup::empty);
+        __aeabi_atexit(0, __tcf_3, &__dso_handle);
+        new (irr::ps::vHalf) irr::ps::LocalVector3(0.5f, 0.5f, 0.5f);
+        new (gameloft::ai::civ_passive) gameloft::ai::LocalTransitionList(retail_achievement_transitions::civPassive_trans, 75);
+        new (gameloft::ai::npc_scripted) gameloft::ai::LocalTransitionList(retail_achievement_transitions::scriptedNpc_trans, 12);
+        new (gameloft::ai::civ_agressive) gameloft::ai::LocalTransitionList(retail_achievement_transitions::civAggressive_trans, 57);
+        new (gameloft::ai::gang_member) gameloft::ai::LocalTransitionList(retail_achievement_transitions::gangMember_trans, 3);
+        new (gameloft::ai::cop) gameloft::ai::LocalTransitionList(retail_achievement_transitions::cop_trans, 78);
+        new (gameloft::ai::swat) gameloft::ai::LocalTransitionList(retail_achievement_transitions::swat_trans, 3);
+        new (gameloft::ai::civ_vehicle) gameloft::ai::LocalTransitionList(retail_achievement_transitions::civ_vehicle_trans, 36);
+        new (gameloft::ai::cop_vehicle) gameloft::ai::LocalTransitionList(retail_achievement_transitions::cop_vehicle_trans, 45);
+        new (gameloft::ai::guard) gameloft::ai::LocalTransitionList(retail_achievement_transitions::guard_trans, 42);
+        new (gameloft::ai::scripted_vehicle) gameloft::ai::LocalTransitionList(retail_achievement_transitions::scripted_vehicle_trans, 21);
+        AchievementManager::s_completedAchievements.next = &AchievementManager::s_completedAchievements;
+        AchievementManager::s_completedAchievements.prev = &AchievementManager::s_completedAchievements;
+        __aeabi_atexit(0, __tcf_4, &__dso_handle);
+        AchievementManager::s_achievementManager = AchievementManager::setup();
+    }
+}
+
+extern "C" {
+static void _GLOBAL__I__ZN18AchievementManager11s_statCountE() __attribute__((used));
+static void _GLOBAL__I__ZN18AchievementManager11s_statCountE()
+{
+    __static_initialization_and_destruction_0(1, 65535);
+}
+}
+
+
+extern "C" {
+static void __tcf_3(void*)
+{
+    irr::scene::quake3::LocalStringStorage& value = irr::scene::quake3::irrEmptyStringc;
+    if (!value.reference && value.array && value.array != value.inlineBuffer)
+        ::operator delete(value.array);
+}
+
 }
 
 AchievementManager::AchievementRule::~AchievementRule()
