@@ -2,10 +2,15 @@
 #define WCH_CHARACTERS_PHYSIC_ATTRIBUTES_H
 #include "../core/Vector3.h"
 class b2World;
-// Observed call interface and first field only; remaining layout is unrecovered.
+class b2Body;
+struct PhysicInfo;
+// Observed 120-byte allocation extent, index and info pointer. Other fields
+// remain opaque; constructor and methods are retail call interfaces.
 class PhysicAttributes {
 public:
+    PhysicAttributes(int type, b2Body* body);
     ~PhysicAttributes();
+    void SetPhysicInfo(const PhysicInfo& info, int flag);
     static b2World* s_world;
     float IntersectSegmentWithHeightMap(const irr::core::vector3d<float>&,
         const irr::core::vector3d<float>&, irr::core::vector3d<float>&,
@@ -13,5 +18,8 @@ public:
     // Observed slot index at offset zero; no standalone accessor is credited.
     int getIndex() const { return index; }
     int index;
+    unsigned char unknown4[4];
+    PhysicInfo* info;
+    unsigned char unknown12[108];
 };
 #endif

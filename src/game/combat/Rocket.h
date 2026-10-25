@@ -24,7 +24,12 @@ private:
     b2Body* body;
     Weapon* weapon;
     SavePositionInterface* owner;
-    unsigned char unknown64[24];
+    int unknown64;
+    int unknown68;
+    int unknown72;
+    int unknown76;
+    int unknown80;
+    int unknown84;
     int unknown88;
     bool unknown92;
     bool launched;

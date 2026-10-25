@@ -2,6 +2,7 @@
 #define WCH_CHARACTERS_PLAYER_TEST_H
 
 class Vehicle;
+class Weapon;
 class LevelObject;
 namespace irr { namespace scene { class ISceneNode; } }
 
@@ -53,7 +54,7 @@ public:
     virtual Vehicle* getVehicle() const;
     virtual void unknown48(); virtual void unknown49(); virtual void unknown50();
     virtual void unknown51(); virtual void unknown52(); virtual void unknown53();
-    virtual void unknown54();
+    virtual Weapon* getWeapon() const;
     virtual void SetTarget(LevelObject* target);
 };
 
