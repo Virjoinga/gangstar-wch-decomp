@@ -20,6 +20,36 @@ void Ammo::update(double)
 {
 }
 
+typedef char HudElementExtent[sizeof(HudElement)==56?1:-1];
+typedef char AmmoExtent[sizeof(Ammo)==148?1:-1];
+Ammo::~Ammo() {}
+Ammo::Ammo(ASprite* sprite, int firstFrame) : HudElement(sprite,firstFrame,false)
+{
+    unknown60=firstFrame;
+    weapon=0;
+    smallDigits[1]=firstFrame;
+    smallDigits[2]=firstFrame+1;
+    smallDigits[3]=firstFrame+2;
+    smallDigits[4]=firstFrame+3;
+    smallDigits[5]=firstFrame+4;
+    smallDigits[6]=firstFrame+5;
+    smallDigits[7]=firstFrame+6;
+    smallDigits[8]=firstFrame+7;
+    smallDigits[9]=firstFrame+8;
+    smallDigits[0]=firstFrame+9;
+    separatorFrame=firstFrame+10;
+    largeDigits[1]=firstFrame+11;
+    largeDigits[2]=firstFrame+12;
+    largeDigits[3]=firstFrame+13;
+    largeDigits[4]=firstFrame+14;
+    largeDigits[5]=firstFrame+15;
+    largeDigits[6]=firstFrame+16;
+    largeDigits[7]=firstFrame+17;
+    largeDigits[8]=firstFrame+18;
+    largeDigits[9]=firstFrame+19;
+    largeDigits[0]=firstFrame+20;
+}
+
 void operator delete(void*) throw();
 extern "C" { static void __tcf_3(void*) __attribute__((used)); }
 
