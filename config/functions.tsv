@@ -11253,17 +11253,17 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032835d	0x34	HealthBar.cpp	game	hud	pending	_ZN9HealthBarC1EP7ASpriteiii	HealthBar::HealthBar(ASprite*, int, int, int)
 0x00328391	0x144	HealthBar.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003284d5	0x14	HealthBar.cpp	game	hud	pending	_GLOBAL__I__ZN9HealthBarC2EP7ASpriteiii	_GLOBAL__I__ZN9HealthBarC2EP7ASpriteiii
-0x003284e9	0x48	HitWarning.cpp	game	combat	pending	_ZN10HitWarning6updateEd	HitWarning::update(double)
+0x003284e9	0x48	HitWarning.cpp	game	combat	matched	_ZN10HitWarning6updateEd	HitWarning::update(double)
 0x00328531	0x30	HitWarning.cpp	game	core	pending	__tcf_2	__tcf_2
-0x00328560	0x14	HitWarning.cpp	game	combat	pending	_ZThn4_N10HitWarningD0Ev	non-virtual thunk to HitWarning::~HitWarning()
-0x00328575	0x30	HitWarning.cpp	game	combat	pending	_ZN10HitWarningD0Ev	HitWarning::~HitWarning()
-0x003285a4	0x14	HitWarning.cpp	game	combat	pending	_ZThn4_N10HitWarningD1Ev	non-virtual thunk to HitWarning::~HitWarning()
-0x003285b9	0x2c	HitWarning.cpp	game	combat	pending	_ZN10HitWarningD2Ev	HitWarning::~HitWarning()
-0x003285b9	0x2c	HitWarning.cpp	game	combat	pending	_ZN10HitWarningD1Ev	HitWarning::~HitWarning()
-0x003285e5	0x48	HitWarning.cpp	game	combat	pending	_ZN10HitWarningC2EP7ASpritei	HitWarning::HitWarning(ASprite*, int)
-0x003285e5	0x48	HitWarning.cpp	game	combat	pending	_ZN10HitWarningC1EP7ASpritei	HitWarning::HitWarning(ASprite*, int)
-0x0032862c	0x14	HitWarning.cpp	game	combat	pending	_ZThn4_NK10HitWarning6draw2dEv	non-virtual thunk to HitWarning::draw2d() const
-0x00328641	0x11c	HitWarning.cpp	game	combat	pending	_ZNK10HitWarning6draw2dEv	HitWarning::draw2d() const
+0x00328560	0x14	HitWarning.cpp	game	combat	matched	_ZThn4_N10HitWarningD0Ev	non-virtual thunk to HitWarning::~HitWarning()
+0x00328575	0x30	HitWarning.cpp	game	combat	matched	_ZN10HitWarningD0Ev	HitWarning::~HitWarning()
+0x003285a4	0x14	HitWarning.cpp	game	combat	matched	_ZThn4_N10HitWarningD1Ev	non-virtual thunk to HitWarning::~HitWarning()
+0x003285b9	0x2c	HitWarning.cpp	game	combat	matched	_ZN10HitWarningD2Ev	HitWarning::~HitWarning()
+0x003285b9	0x2c	HitWarning.cpp	game	combat	matched	_ZN10HitWarningD1Ev	HitWarning::~HitWarning()
+0x003285e5	0x48	HitWarning.cpp	game	combat	matched	_ZN10HitWarningC2EP7ASpritei	HitWarning::HitWarning(ASprite*, int)
+0x003285e5	0x48	HitWarning.cpp	game	combat	matched	_ZN10HitWarningC1EP7ASpritei	HitWarning::HitWarning(ASprite*, int)
+0x0032862c	0x14	HitWarning.cpp	game	combat	matched	_ZThn4_NK10HitWarning6draw2dEv	non-virtual thunk to HitWarning::draw2d() const
+0x00328641	0x11c	HitWarning.cpp	game	combat	matched	_ZNK10HitWarning6draw2dEv	HitWarning::draw2d() const
 0x0032875d	0x6c	HitWarning.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003287c9	0x14	HitWarning.cpp	game	core	pending	_GLOBAL__I__ZN10HitWarningC2EP7ASpritei	_GLOBAL__I__ZN10HitWarningC2EP7ASpritei
 0x003287dd	0x2	HudElement.cpp	game	hud	pending	_ZN10HudElement6updateEd	HudElement::update(double)

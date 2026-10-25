@@ -1,0 +1,56 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/combat/HitWarning.cpp",
+    "linker_script": "config/linker/HitWarning.ld",
+    "sections": [
+        ".hit_warning_update",
+        ".hit_warning_constructor",
+        ".hit_warning_destructor",
+        ".hit_warning_delete",
+        ".hit_warning_destructor_thunk",
+        ".hit_warning_delete_thunk",
+        ".hit_warning_vtable",
+        ".hit_warning_draw",
+        ".hit_warning_draw_thunk"
+    ],
+    "functions": [
+        "_ZN10HitWarning6updateEd",
+        "_ZN10HitWarningC1EP7ASpritei",
+        "_ZN10HitWarningC2EP7ASpritei",
+        "_ZN10HitWarningD1Ev",
+        "_ZN10HitWarningD2Ev",
+        "_ZN10HitWarningD0Ev",
+        "_ZThn4_N10HitWarningD1Ev",
+        "_ZThn4_N10HitWarningD0Ev",
+        "_ZNK10HitWarning6draw2dEv",
+        "_ZThn4_NK10HitWarning6draw2dEv"
+    ],
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN10HudElementC1EP7ASpriteib",
+        "_ZN10HudElementD1Ev",
+        "_ZNK7ASprite10PaintFrameEiiii"
+    ]
+}
