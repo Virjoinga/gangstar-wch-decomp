@@ -61,4 +61,3 @@ inline CMatrix4<T>& CMatrix4<T>::makeIdentity()
 typedef CMatrix4<float> matrix4;
 } }
 #endif
-
