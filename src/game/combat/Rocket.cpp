@@ -94,3 +94,26 @@ Rocket::Rocket(int type)
 {
     Explosion::loadExplosion();
 }
+
+void Rocket::Update(int elapsed)
+{
+    if (body) {
+        float y = body->GetXForm().position.y * 100.0f;
+        float z = (y - unknown108.Y) / unknown96.Y * unknown96.Z + unknown108.Z;
+        SetPosition(irr::core::vector3d<float>(body->GetXForm().position.x * 100.0f, y, z));
+    }
+    if (launched) {
+        unknown88 += elapsed;
+        if (unknown88 >= unknown84) {
+            _ZN9Character16onRocketLaunchedEv(owner);
+            unknown88 = 0;
+            launched = false;
+        }
+    }
+    if (GetPosition().Z <= unknown24->GetHeight(GetPosition(), 0, false))
+        explode(true);
+    if (unknown92) {
+        unknown4 |= 16;
+        unknown92 = false;
+    }
+}

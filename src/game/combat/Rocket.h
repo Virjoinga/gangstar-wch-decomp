@@ -20,6 +20,7 @@ public:
     void debug(irr::video::IVideoDriver* driver);
     void Load(const Structs::Rocket&);
     void launch(irr::core::vector3d<float> direction);
+    void explode(bool drawEffect);
 private:
     b2Body* body;
     Weapon* weapon;

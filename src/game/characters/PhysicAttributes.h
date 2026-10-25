@@ -11,6 +11,7 @@ public:
     PhysicAttributes(int type, b2Body* body);
     ~PhysicAttributes();
     void SetPhysicInfo(const PhysicInfo& info, int flag);
+    float GetHeight(const irr::core::vector3d<float>& position, int flag, bool detailed);
     static b2World* s_world;
     float IntersectSegmentWithHeightMap(const irr::core::vector3d<float>&,
         const irr::core::vector3d<float>&, irr::core::vector3d<float>&,

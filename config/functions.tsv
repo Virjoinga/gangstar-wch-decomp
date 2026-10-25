@@ -11603,7 +11603,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032fd15	0x7c	Rocket.cpp	game	combat	matched	_ZN6RocketD2Ev	Rocket::~Rocket()
 0x0032fd91	0x58	Rocket.cpp	game	combat	matched	_ZN6RocketC2Ei	Rocket::Rocket(int)
 0x0032fd91	0x58	Rocket.cpp	game	combat	matched	_ZN6RocketC1Ei	Rocket::Rocket(int)
-0x0032fde9	0xd4	Rocket.cpp	game	combat	pending	_ZN6Rocket6UpdateEi	Rocket::Update(int)
+0x0032fde9	0xd4	Rocket.cpp	game	combat	matched	_ZN6Rocket6UpdateEi	Rocket::Update(int)
 0x0032febd	0x144	Rocket.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00330001	0x14	Rocket.cpp	game	combat	pending	_GLOBAL__I__ZN6RocketC2Ei	_GLOBAL__I__ZN6RocketC2Ei
 0x00330015	0x2e8	Rocket.cpp	game	combat	pending	_ZN6Rocket6launchEN3irr4core8vector3dIfEE	Rocket::launch(irr::core::vector3d<float>)
