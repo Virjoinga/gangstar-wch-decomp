@@ -26,10 +26,24 @@
     "linker_script": "config/linker/Ammo.ld",
     "sections": [
         ".ammo_set_weapon",
-        ".ammo_update"
+        ".ammo_update",
+        ".ammo_startup",
+        ".ammo_startup_wrapper",
+        ".ammo_string_cleanup",
+        ".ammo_empty_string"
     ],
     "functions": [
         "_ZN4Ammo9setWeaponEP6Weapon",
-        "_ZN4Ammo6updateEd"
-    ]
+        "_ZN4Ammo6updateEd",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x003261b9"
+        },
+        "_GLOBAL__I__ZN4AmmoC2EP7ASpritei",
+        {
+            "name": "__tcf_3",
+            "address": "0x00326311"
+        }
+    ],
+    "retail_got": true
 }

@@ -11114,9 +11114,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003260f9	0x2c	Ammo.cpp	game	combat	pending	_ZN4AmmoD1Ev	Ammo::~Ammo()
 0x00326125	0x94	Ammo.cpp	game	combat	pending	_ZN4AmmoC1EP7ASpritei	Ammo::Ammo(ASprite*, int)
 0x00326125	0x94	Ammo.cpp	game	combat	pending	_ZN4AmmoC2EP7ASpritei	Ammo::Ammo(ASprite*, int)
-0x003261b9	0x144	Ammo.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003262fd	0x14	Ammo.cpp	game	combat	pending	_GLOBAL__I__ZN4AmmoC2EP7ASpritei	_GLOBAL__I__ZN4AmmoC2EP7ASpritei
-0x00326311	0x30	Ammo.cpp	game	combat	pending	__tcf_3	__tcf_3
+0x003261b9	0x144	Ammo.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003262fd	0x14	Ammo.cpp	game	combat	matched	_GLOBAL__I__ZN4AmmoC2EP7ASpritei	_GLOBAL__I__ZN4AmmoC2EP7ASpritei
+0x00326311	0x30	Ammo.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x00326341	0x4	AnalogStick.cpp	game	input	pending	_ZN11AnalogStick10switchModeENS_4ModeE	AnalogStick::switchMode(AnalogStick::Mode)
 0x00326345	0x30	AnalogStick.cpp	game	input	pending	__tcf_2	__tcf_2
 0x00326375	0x20	AnalogStick.cpp	game	input	pending	_ZN7Point2DIsED0Ev	Point2D<short>::~Point2D()
