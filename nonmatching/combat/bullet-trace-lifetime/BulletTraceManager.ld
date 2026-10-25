@@ -1,0 +1,45 @@
+OUTPUT_FORMAT("elf32-littlearm")
+OUTPUT_ARCH(arm)
+INCLUDE build/matches/nonmatching-bullet-trace-lifetime/retail-symbols.ld
+_ZdlPv = 0x001c42b0;
+__aeabi_atexit = 0x001c494c;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+_ZdaPv = 0x001c461c;
+__cxa_pure_virtual = 0;
+SECTIONS
+{
+    .bullet_trace_startup 0x002f0c6c : { *nonmatching-bullet-trace-lifetime.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .bullet_trace_startup_wrapper 0x002f0cd8 : { *nonmatching-bullet-trace-lifetime.o(.text._GLOBAL__I__ZN18BulletTraceManagerC2Ev) }
+    .bullet_trace_string_cleanup 0x002f0cec : { *nonmatching-bullet-trace-lifetime.o(.text.__tcf_2) }
+    .bullet_trace_empty_string 0x0044d91c : { *nonmatching-bullet-trace-lifetime.o(.rodata.str1.4) }
+    .bullet_trace_string 0x004b7d6c (NOLOAD) : { *nonmatching-bullet-trace-lifetime.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .bullet_trace_half 0x004b7d8c (NOLOAD) : { *nonmatching-bullet-trace-lifetime.o(.bss._ZN3irr2ps5vHalfE) }
+    .bullet_trace_bounds 0x002f0600 : { *nonmatching-bullet-trace-lifetime.o(.text._ZNK18BulletTraceManager14getBoundingBoxEv) }
+    .bullet_trace_bounds_guard 0x004b7d98 (NOLOAD) : { *nonmatching-bullet-trace-lifetime.o(.bss._ZGVZNK18BulletTraceManager14getBoundingBoxEvE8EmptyBox) }
+    .bullet_trace_bounds_storage 0x004b7d9c (NOLOAD) : { *nonmatching-bullet-trace-lifetime.o(.bss._ZZNK18BulletTraceManager14getBoundingBoxEvE8EmptyBox) }
+    .bullet_trace_impacts 0x002f0354 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN18BulletTraceManager10getImpactsEv) }
+    .bullet_trace_register 0x002f035c : { *nonmatching-bullet-trace-lifetime.o(.text._ZN18BulletTraceManager19OnRegisterSceneNodeEv) }
+    .bullet_full_d1 0x002f12d8 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN18BulletTraceManagerD1Ev) }
+    .bullet_full_d2 0x002f1398 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN18BulletTraceManagerD2Ev) }
+    .bullet_full_d0 0x002f11ec : { *nonmatching-bullet-trace-lifetime.o(.text._ZN18BulletTraceManagerD0Ev) }
+    .bullet_full_d0_v12 0x002f11c4 : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n12_N18BulletTraceManagerD0Ev) }
+    .bullet_full_d0_v24 0x002f11d8 : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n24_N18BulletTraceManagerD0Ev) }
+    .bullet_full_d1_v12 0x002f12b0 : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n12_N18BulletTraceManagerD1Ev) }
+    .bullet_full_d1_v24 0x002f12c4 : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n24_N18BulletTraceManagerD1Ev) }
+    .bullet_full_vtable 0x004a9d48 : { *nonmatching-bullet-trace-lifetime.o(.data.rel.ro._ZTV18BulletTraceManager .gnu.linkonce.d.rel.ro._ZTV18BulletTraceManager) }
+    .bullet_full_vtt 0x004a9e88 : { *nonmatching-bullet-trace-lifetime.o(.data.rel.ro._ZTT18BulletTraceManager .gnu.linkonce.d.rel.ro._ZTT18BulletTraceManager) }
+    .bullet_full_base_scene_vtable 0x004a9ea8 : { *nonmatching-bullet-trace-lifetime.o(.data.rel.ro._ZTC18BulletTraceManager0_N3irr5scene10ISceneNodeE .gnu.linkonce.d.rel.ro._ZTC18BulletTraceManager0_N3irr5scene10ISceneNodeE) }
+    .bullet_full_base_attributes_vtable 0x004a9fe8 : { *nonmatching-bullet-trace-lifetime.o(.data.rel.ro._ZTC18BulletTraceManager0_N3irr2io26IAttributeExchangingObjectE .gnu.linkonce.d.rel.ro._ZTC18BulletTraceManager0_N3irr2io26IAttributeExchangingObjectE) }
+    .sdk_attribute_0 0x0021a8e8 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN3irr2io26IAttributeExchangingObjectD0Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD0Ev) }
+    .sdk_attribute_1 0x0021a930 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN3irr2io26IAttributeExchangingObjectD1Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD1Ev) }
+    .sdk_attribute_2 0x0021a958 : { *nonmatching-bullet-trace-lifetime.o(.text._ZN3irr2io26IAttributeExchangingObjectD2Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD2Ev) }
+    .sdk_attribute_3 0x0021a8d4 : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev) }
+    .sdk_attribute_4 0x0021a91c : { *nonmatching-bullet-trace-lifetime.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev) }
+    .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
+    .verification 0x00600000 : { *retail-got.o(.text) }
+}
+ASSERT(SIZEOF(.bullet_trace_string) == 32, "BulletTraceManager string extent");
+ASSERT(SIZEOF(.bullet_trace_half) == 12, "BulletTraceManager half-vector extent");
+ASSERT(SIZEOF(.bullet_trace_bounds_guard) == 4, "BulletTraceManager box guard extent");
+ASSERT(SIZEOF(.bullet_trace_bounds_storage) == 24, "BulletTraceManager box extent");
