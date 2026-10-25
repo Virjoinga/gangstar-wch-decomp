@@ -41,7 +41,12 @@
         ".circle_d1",
         ".circle_d0",
         ".shape_vtable",
-        ".circle_vtable"
+        ".circle_vtable",
+        ".rocket_string_cleanup",
+        ".rocket_factory_cleanup",
+        ".rocket_startup",
+        ".rocket_startup_wrapper",
+        ".rocket_empty_string"
     ],
     "functions": [
         "_ZN6Rocket5debugEPN3irr5video12IVideoDriverE",
@@ -58,7 +63,20 @@
         "_ZN10b2ShapeDefD1Ev",
         "_ZN10b2ShapeDefD0Ev",
         "_ZN11b2CircleDefD1Ev",
-        "_ZN11b2CircleDefD0Ev"
+        "_ZN11b2CircleDefD0Ev",
+        {
+            "name": "__tcf_3",
+            "address": "0x0032fac5"
+        },
+        {
+            "name": "__tcf_1",
+            "address": "0x0032faf5"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0032febd"
+        },
+        "_GLOBAL__I__ZN6RocketC2Ei"
     ],
     "retail_got": true,
     "external_thumb_functions": [

@@ -21,9 +21,10 @@ they do not modify production headers or compiler output.
 
 ## Current verification
 
-The command exits 1, as expected for an unmatched function. Thirty comparisons
+The command exits 1, as expected for an unmatched function. Thirty-nine comparisons
 pass: the existing Rocket functions/sections, four emitted SDK destructor
-functions and their sections, and two SDK vtables. The SDK code receives no
+functions and their sections, and two SDK vtables, including the four newly matched Rocket startup/cleanup
+functions and their sections plus the empty string section. The SDK code receives no
 game-code credit. The launch function and its complete section both fail.
 The candidate and retail both have 744 bytes. A direct byte comparison finds
 201 differing bytes, first at 0xce; the first 206 bytes agree. Exact failure
