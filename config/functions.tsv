@@ -10262,7 +10262,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fc749	0x108	Item.cpp	game	meta	matched	_ZN4Item6UpdateEi	Item::Update(int)
 0x002fc851	0xb8	Item.cpp	game	meta	matched	_ZN4Item4dropEiN3irr4core8vector3dIfEEi	Item::drop(int, irr::core::vector3d<float>, int)
 0x002fc909	0x36	Item.cpp	game	meta	matched	_ZN4Item7addAmmoEii	Item::addAmmo(int, int)
-0x002fc941	0xfa	Item.cpp	game	meta	pending	_ZN4Item9addWeaponEi	Item::addWeapon(int)
+0x002fc941	0xfa	Item.cpp	game	meta	matched	_ZN4Item9addWeaponEi	Item::addWeapon(int)
 0x002fca3d	0x160	Item.cpp	game	meta	pending	_ZN4Item3addEv	Item::add()
 0x002fcb9d	0x40	Item.cpp	game	meta	matched	_ZN4Item7animateEbbb	Item::animate(bool, bool, bool)
 0x002fcbdd	0xda	Item.cpp	game	meta	matched	_ZN4Item13grabSceneNodeEiPPPv	Item::grabSceneNode(int, void***)

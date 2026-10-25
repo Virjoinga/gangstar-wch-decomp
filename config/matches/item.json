@@ -164,7 +164,8 @@
         ".item_update",
         ".item_animate",
         ".item_factory_singleton_cleanup",
-        ".item_wanted_singleton_cleanup"
+        ".item_wanted_singleton_cleanup",
+        ".item_add_weapon"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
@@ -271,7 +272,8 @@
         {
             "name": "__tcf_2",
             "address": "0x002fc27d"
-        }
+        },
+        "_ZN4Item9addWeaponEi"
     ],
     "dependencies": [
         "gs3d-stuff",
@@ -330,6 +332,13 @@
         "_ZN13WeaponManager7setAmmoEiiN10PlayerTest8eContextE",
         "_ZN4Item8isUsableEv",
         "_ZN4Item3addEv",
-        "_ZN18WantedLevelManagerD1Ev"
+        "_ZN18WantedLevelManagerD1Ev",
+        "_ZN13WeaponManager15getWeaponInListEiN10PlayerTest8eContextE",
+        "_ZNK6Weapon8isLockedEv",
+        "_ZN6Weapon6unlockEv",
+        "_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE",
+        "_ZNK13WeaponManager16getCurrentWeaponEv",
+        "_ZNK6Weapon13getWeaponTypeEv",
+        "_ZN11CHudManager12switchWeaponEi"
     ]
 }
