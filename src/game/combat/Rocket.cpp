@@ -15,6 +15,7 @@
 #include "../characters/PhysicAttributes.h"
 #include "../core/Physics.h"
 #include "../world/ObjectData.h"
+#include "../audio/SoundManager.h"
 
 void* operator new(unsigned int);
 void operator delete(void*) throw();
@@ -36,6 +37,15 @@ static const char rocketAttachmentUid[] __attribute__((section(".rodata.rocket_a
 // engine/Character layouts. References preserve the native non-null grab ABI.
 struct RocketReferenceView { unsigned int unknown0; int references; };
 struct RocketOwnerPhysicsView { unsigned char unknown0[24]; PhysicAttributes* attributes; };
+// Observed body state written by the inlined sleep operation; the shared
+// call-only Box2D interface keeps its existing extent and declarations.
+struct RocketSleepingBodyView {
+    unsigned short flags;
+    unsigned char unknown2[62];
+    float unknown64, unknown68, unknown72, unknown76, unknown80, unknown84;
+    unsigned char unknown88[52];
+    float unknown140;
+};
 
 void Rocket::debug(irr::video::IVideoDriver*)
 {
@@ -65,6 +75,27 @@ void Rocket::Load(const Structs::Rocket& data)
             unknown24->SetPhysicInfo(*reinterpret_cast<RocketOwnerPhysicsView*>(owner)->attributes->info, 0);
         }
     }
+}
+
+void Rocket::explode(bool drawEffect)
+{
+    RocketSleepingBodyView* state = reinterpret_cast<RocketSleepingBodyView*>(body);
+    state->flags |= 8;
+    state->unknown140 = 0.0f;
+    state->unknown64 = 0.0f;
+    state->unknown68 = 0.0f;
+    state->unknown72 = 0.0f;
+    state->unknown76 = 0.0f;
+    state->unknown80 = 0.0f;
+    state->unknown84 = 0.0f;
+    unknown92 = true;
+    SoundManager* sound = SoundManager::getInstance();
+    sound->unknown140 = true;
+    sound->playEx(260, 0, false, 1.0f, 0, true, 1.0f, 0);
+    sound->unknown140 = false;
+    if (drawEffect)
+        Explosion::drawExplosion(GetPosition(), irr::core::vector3d<float>(unknown80, unknown80, unknown80));
+    Explosion::applyExplosionDamage(this, GetPosition(), static_cast<float>(unknown68), unknown64);
 }
 
 Rocket::~Rocket()
