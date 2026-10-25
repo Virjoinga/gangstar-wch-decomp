@@ -9,7 +9,44 @@
  */
 
 #include "BulletTraceManager.h"
+#include "../core/Geometry.h"
+#include "../core/SceneNode.h"
 #include "../core/LocalSdkStartupStorage.h"
+
+// Accessed native offsets only; not the full scene-node hierarchy or extent.
+struct BulletTraceObservedLayout {
+    unsigned char unknown0[280];
+    irr::scene::ISceneManager* sceneManager;
+    unsigned char unknown284[460];
+    int activeTraces;
+    unsigned char unknown748[1004];
+    irr::scene::ISceneNode** impacts;
+};
+typedef char BulletTracePrefixExtent[sizeof(BulletTraceObservedLayout) == 1756 ? 1 : -1];
+
+irr::scene::ISceneNode** BulletTraceManager::getImpacts()
+{
+    return reinterpret_cast<BulletTraceObservedLayout*>(this)->impacts;
+}
+
+void BulletTraceManager::OnRegisterSceneNode()
+{
+    BulletTraceObservedLayout* state = reinterpret_cast<BulletTraceObservedLayout*>(this);
+    if (state->activeTraces > 0) {
+        // The native primary scene-node base is at offset zero.
+        irr::scene::ISceneNode* node = reinterpret_cast<irr::scene::ISceneNode*>(this);
+        irr::scene::E_CULLING_TYPE culling = node->getAutomaticCulling();
+        node->setAutomaticCulling(irr::scene::EAC_OFF);
+        state->sceneManager->registerNodeForRendering(node, 0, 0, irr::scene::RenderPass6);
+        node->setAutomaticCulling(culling);
+    }
+}
+
+const irr::core::aabbox3d<float>& BulletTraceManager::getBoundingBox() const
+{
+    static irr::core::aabbox3d<float> EmptyBox(irr::core::vector3d<float>(0, 0, 0));
+    return EmptyBox;
+}
 
 void operator delete(void*) throw();
 extern void* __dso_handle;

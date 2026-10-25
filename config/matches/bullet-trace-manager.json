@@ -28,7 +28,10 @@
         ".bullet_trace_startup",
         ".bullet_trace_startup_wrapper",
         ".bullet_trace_string_cleanup",
-        ".bullet_trace_empty_string"
+        ".bullet_trace_empty_string",
+        ".bullet_trace_bounds",
+        ".bullet_trace_impacts",
+        ".bullet_trace_register"
     ],
     "functions": [
         {
@@ -39,7 +42,14 @@
         {
             "name": "__tcf_2",
             "address": "0x002f0ced"
-        }
+        },
+        "_ZNK18BulletTraceManager14getBoundingBoxEv",
+        "_ZN18BulletTraceManager10getImpactsEv",
+        "_ZN18BulletTraceManager19OnRegisterSceneNodeEv"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZNK3irr5scene10ISceneNode19getAutomaticCullingEv",
+        "_ZN3irr5scene10ISceneNode19setAutomaticCullingENS0_14E_CULLING_TYPEE"
+    ]
 }
