@@ -10009,9 +10009,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f064d	0x1f0	BulletTraceManager.cpp	game	combat	pending	_ZN18BulletTraceManager9OnAnimateEj	BulletTraceManager::OnAnimate(unsigned int)
 0x002f083d	0x188	BulletTraceManager.cpp	game	combat	pending	_ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_	BulletTraceManager::PlayBulletTrace(irr::core::vector3d<float> const&, irr::core::vector3d<float> const&, bool, irr::core::vector3d<float> const&)
 0x002f09c5	0x2a8	BulletTraceManager.cpp	game	combat	pending	_ZN18BulletTraceManager6renderEPv	BulletTraceManager::render(void*)
-0x002f0c6d	0x6c	BulletTraceManager.cpp	game	combat	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002f0cd9	0x14	BulletTraceManager.cpp	game	combat	pending	_GLOBAL__I__ZN18BulletTraceManagerC2Ev	_GLOBAL__I__ZN18BulletTraceManagerC2Ev
-0x002f0ced	0x30	BulletTraceManager.cpp	game	combat	pending	__tcf_2	__tcf_2
+0x002f0c6d	0x6c	BulletTraceManager.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002f0cd9	0x14	BulletTraceManager.cpp	game	combat	matched	_GLOBAL__I__ZN18BulletTraceManagerC2Ev	_GLOBAL__I__ZN18BulletTraceManagerC2Ev
+0x002f0ced	0x30	BulletTraceManager.cpp	game	combat	matched	__tcf_2	__tcf_2
 0x002f0d1d	0x26c	BulletTraceManager.cpp	game	combat	pending	_ZN18BulletTraceManagerC1Ev	BulletTraceManager::BulletTraceManager()
 0x002f0f89	0x23c	BulletTraceManager.cpp	game	combat	pending	_ZN18BulletTraceManagerC2Ev	BulletTraceManager::BulletTraceManager()
 0x002f11c5	0x14	BulletTraceManager.cpp	game	combat	pending	_ZTv0_n12_N18BulletTraceManagerD0Ev	virtual thunk to BulletTraceManager::~BulletTraceManager()
