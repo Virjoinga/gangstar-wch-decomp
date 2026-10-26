@@ -50,7 +50,8 @@
         ".bullet_constructor_c1",
         ".bullet_constructor_c2",
         ".bullet_impact_asset",
-        ".bullet_play"
+        ".bullet_play",
+        ".bullet_render"
     ],
     "functions": [
         {
@@ -80,7 +81,8 @@
         "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev",
         "_ZN18BulletTraceManagerC1Ev",
         "_ZN18BulletTraceManagerC2Ev",
-        "_ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_"
+        "_ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_",
+        "_ZN18BulletTraceManager6renderEPv"
     ],
     "retail_got": true,
     "external_thumb_functions": [

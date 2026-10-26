@@ -19,6 +19,7 @@ __aeabi_fdiv = 0x001c4520;
 lrand48 = 0x001c4664;
 __aeabi_i2f = 0x001c41e4;
 __aeabi_fcmpgt = 0x001c419c;
+memset = 0x001c45d4;
 SECTIONS
 {
     .bullet_trace_startup 0x002f0c6c : { *bullet-trace-manager.o(.text._Z41__static_initialization_and_destruction_0ii) }
@@ -55,6 +56,7 @@ SECTIONS
     /* SDK constructor copy is not matched; this image checks game constructors. */
     .sdk_material_ctor 0x0020e7ec : { *bullet-trace-manager.o(.text._ZN3irr5video9SMaterialC1Ev .gnu.linkonce.t._ZN3irr5video9SMaterialC1Ev) }
     .bullet_play 0x002f083c : { *bullet-trace-manager.o(.text._ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_) }
+    .bullet_render 0x002f09c4 : { *bullet-trace-manager.o(.text._ZN18BulletTraceManager6renderEPv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
