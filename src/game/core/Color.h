@@ -19,6 +19,7 @@ namespace irr { namespace video {
 // Retail constructs BGRA bytes individually. Stock 1.4.2 uses a packed integer.
 class SColor {
 public:
+    SColor() {}
     SColor(unsigned int a, unsigned int r, unsigned int g, unsigned int b)
     {
         this->b = b; this->g = g; this->r = r; this->a = a;

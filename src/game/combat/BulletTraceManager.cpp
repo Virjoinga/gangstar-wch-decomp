@@ -9,6 +9,8 @@
  */
 
 #include "BulletTraceManager.h"
+#include "../core/Collada.h"
+#include "../app/Application.h"
 #include "../core/Geometry.h"
 #include "../core/SceneNode.h"
 #include "../core/LocalSdkStartupStorage.h"
@@ -46,6 +48,27 @@ const irr::core::aabbox3d<float>& BulletTraceManager::getBoundingBox() const
 {
     static irr::core::aabbox3d<float> EmptyBox(irr::core::vector3d<float>(0, 0, 0));
     return EmptyBox;
+}
+
+extern "C" long lrand48();
+void BulletTraceManager::PlayBulletTrace(const irr::core::vector3d<float>& start,
+    const irr::core::vector3d<float>& target, bool flag,
+    const irr::core::vector3d<float>& impact)
+{
+    if (activeTraces < 8) {
+        BulletTraceRecord& trace = traces[activeTraces];
+        trace.start = start;
+        trace.direction = target;
+        trace.end = impact;
+        trace.showImpact = !flag;
+        float length = (trace.direction-trace.start).getLength();
+        trace.progress = 250.0f / length;
+        trace.rate = 400.0f / length;
+        trace.current = trace.rate + (-0.01f * trace.progress) * (lrand48() % 100);
+        if (trace.current + trace.progress > 1.0f)
+            trace.current = trace.rate - trace.progress;
+        ++activeTraces;
+    }
 }
 
 void operator delete(void*) throw();
@@ -87,6 +110,32 @@ static void __tcf_2(void*)
 
 typedef char BulletTraceSceneExtent[sizeof(irr::scene::ISceneNode) == 340 ? 1 : -1];
 typedef char BulletTraceExtent[sizeof(BulletTraceManager) == 1768 ? 1 : -1];
+
+static const char impactAsset[] __attribute__((section(".rodata.bullet_impact_asset"))) = "./beretta_flash.bdae";
+void* operator new[](unsigned int);
+BulletTraceManager::BulletTraceManager()
+    : irr::scene::ISceneNode(-1, irr::core::vector3d<float>(0,0,0), irr::core::quaternion(), irr::core::vector3d<float>(1,1,1)), activeTraces(0)
+{
+    material.setFlag(irr::video::MaterialFlag2,false);
+    material.setFlag(irr::video::MaterialFlag256,false);
+    material.setType(13);
+    material.setFlag(irr::video::MaterialFlag512,false);
+    material.setFlag(irr::video::MaterialFlag1024,false);
+    irr::video::SColor gray;
+    gray.a = 255; gray.b = 170; gray.g = 170; gray.r = 170;
+    irr::video::SColor green;
+    green.a = 255; green.b = 119; green.g = 119; green.r = 0;
+    for(int i=0;i<24;++i) {
+        indices[i]=i;
+        vertices[i]=BulletTraceVertex(irr::core::vector3d<float>(0,0,0),irr::core::vector3d<float>(0,0,0),i%3==2?green:gray,0,0);
+    }
+    impacts=new irr::scene::ISceneNode*[8];
+    for(int i=0;i<8;++i) {
+        impacts[i]=irr::collada::CColladaDatabase::constructScene(impactAsset,true,&irr::collada::CColladaDatabase::DefaultFactory);
+        impacts[i]->setVisible(false);
+        Application::GetInstance()->GetDevice()->getSceneManager()->getRootSceneNode()->addChild(impacts[i]);
+    }
+}
 
 BulletTraceManager::~BulletTraceManager()
 {

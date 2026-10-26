@@ -46,7 +46,11 @@
         ".sdk_attribute_0",
         ".sdk_attribute_1",
         ".sdk_attribute_2",
-        ".sdk_layer"
+        ".sdk_layer",
+        ".bullet_constructor_c1",
+        ".bullet_constructor_c2",
+        ".bullet_impact_asset",
+        ".bullet_play"
     ],
     "functions": [
         {
@@ -73,12 +77,18 @@
         "_ZN3irr2io26IAttributeExchangingObjectD1Ev",
         "_ZN3irr2io26IAttributeExchangingObjectD2Ev",
         "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev",
-        "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev"
+        "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev",
+        "_ZN18BulletTraceManagerC1Ev",
+        "_ZN18BulletTraceManagerC2Ev",
+        "_ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_"
     ],
     "retail_got": true,
     "external_thumb_functions": [
         "_ZNK3irr5scene10ISceneNode19getAutomaticCullingEv",
         "_ZN3irr5scene10ISceneNode19setAutomaticCullingENS0_14E_CULLING_TYPEE",
-        "_ZN3irr5scene10ISceneNodeD2Ev"
+        "_ZN3irr5scene10ISceneNodeD2Ev",
+        "_ZN3irr5scene10ISceneNodeC2EiRKNS_4core8vector3dIfEERKNS2_10quaternionES6_",
+        "_ZN3irr7collada16CColladaDatabase14constructSceneEPKcbPNS0_15CColladaFactoryE",
+        "_ZN11Application11GetInstanceEv"
     ]
 }

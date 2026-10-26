@@ -7,6 +7,18 @@ __cxa_guard_acquire = 0x001c4958;
 __cxa_guard_release = 0x001c46c4;
 _ZdaPv = 0x001c461c;
 __cxa_pure_virtual = 0;
+_Znaj = 0x001c3ff8;
+__aeabi_idivmod = 0x001c4934;
+__aeabi_fsub = 0x001c4328;
+__aeabi_fmul = 0x001c4724;
+__aeabi_fadd = 0x001c4154;
+__aeabi_f2d = 0x001c48f8;
+sqrt = 0x001c401c;
+__aeabi_d2f = 0x001c4310;
+__aeabi_fdiv = 0x001c4520;
+lrand48 = 0x001c4664;
+__aeabi_i2f = 0x001c41e4;
+__aeabi_fcmpgt = 0x001c419c;
 SECTIONS
 {
     .bullet_trace_startup 0x002f0c6c : { *bullet-trace-manager.o(.text._Z41__static_initialization_and_destruction_0ii) }
@@ -37,6 +49,12 @@ SECTIONS
     .sdk_attribute_3 0x0021a8d4 : { *bullet-trace-manager.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev) }
     .sdk_attribute_4 0x0021a91c : { *bullet-trace-manager.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev) }
     .sdk_layer 0x0020f09c : { *bullet-trace-manager.o(.text._ZN3irr5video14SMaterialLayerD1Ev .gnu.linkonce.t._ZN3irr5video14SMaterialLayerD1Ev) }
+    .bullet_constructor_c1 0x002f0d1c : { *bullet-trace-manager.o(.text._ZN18BulletTraceManagerC1Ev) }
+    .bullet_constructor_c2 0x002f0f88 : { *bullet-trace-manager.o(.text._ZN18BulletTraceManagerC2Ev) }
+    .bullet_impact_asset 0x0041bc98 : { *bullet-trace-manager.o(.rodata.bullet_impact_asset) }
+    /* SDK constructor copy is not matched; this image checks game constructors. */
+    .sdk_material_ctor 0x0020e7ec : { *bullet-trace-manager.o(.text._ZN3irr5video9SMaterialC1Ev .gnu.linkonce.t._ZN3irr5video9SMaterialC1Ev) }
+    .bullet_play 0x002f083c : { *bullet-trace-manager.o(.text._ZN18BulletTraceManager15PlayBulletTraceERKN3irr4core8vector3dIfEES5_bS5_) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }

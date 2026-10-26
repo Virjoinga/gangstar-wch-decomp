@@ -5,8 +5,11 @@
 #include "../core/Material.h"
 
 // Observed records used by the native manager. Unrecovered fields stay opaque.
-struct BulletTraceRecord { irr::core::vector3d<float> start, direction, end; unsigned char unknown36[16]; };
-struct BulletTraceVertex { irr::core::vector3d<float> position, normal; unsigned char color[4]; float u, v; };
+struct BulletTraceRecord { irr::core::vector3d<float> start, direction, end; bool showImpact; float current, progress, rate; };
+struct BulletTraceVertex { irr::core::vector3d<float> position, normal; irr::video::SColor color; float u, v;
+    BulletTraceVertex():u(0),v(0){}
+    BulletTraceVertex(const irr::core::vector3d<float>& p,const irr::core::vector3d<float>& n,irr::video::SColor c,float a,float b):position(p),normal(n),color(c),u(a),v(b){}
+};
 
 class BulletTraceManager : public irr::scene::ISceneNode {
 public:
