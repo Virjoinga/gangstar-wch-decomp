@@ -184,7 +184,8 @@
         ".level_visible",
         ".level_range",
         ".level_sight",
-        ".level_base_type"
+        ".level_base_type",
+        ".loading"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",
@@ -244,7 +245,8 @@
         "_ZN11LevelObject17isVisibleOnScreenEv",
         "_ZN11LevelObject13isWithinRangeEf",
         "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
-        "_ZN11LevelObject12getSpawnTypeEv"
+        "_ZN11LevelObject12getSpawnTypeEv",
+        "_ZN6Weapon4LoadERKN7Structs6WeaponE"
     ],
     "dependencies": [
         "gs3d-stuff",

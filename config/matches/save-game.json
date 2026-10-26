@@ -212,7 +212,8 @@
         ".level_visible",
         ".level_range",
         ".level_sight",
-        ".level_base_type"
+        ".level_base_type",
+        ".weapon_loading"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",

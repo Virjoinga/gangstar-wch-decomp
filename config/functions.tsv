@@ -11636,7 +11636,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00330549	0x38	Weapon.cpp	game	combat	matched	_ZN6WeaponC1Ei	Weapon::Weapon(int)
 0x00330581	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon12reloadRocketEv	Weapon::reloadRocket()
 0x003305c9	0x9c	Weapon.cpp	game	combat	matched	_ZN6Weapon15loadWeaponFlashEPKcPN3irr5scene10ISceneNodeERS5_RPNS3_19ITimelineControllerE	Weapon::loadWeaponFlash(char const*, irr::scene::ISceneNode*, irr::scene::ISceneNode*&, irr::scene::ITimelineController*&)
-0x00330665	0x1d0	Weapon.cpp	game	combat	pending	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
+0x00330665	0x1d0	Weapon.cpp	game	combat	matched	_ZN6Weapon4LoadERKN7Structs6WeaponE	Weapon::Load(Structs::Weapon const&)
 0x00330835	0x48	Weapon.cpp	game	combat	matched	_ZN6Weapon6unlockEv	Weapon::unlock()
 0x0033087d	0x144	Weapon.cpp	game	combat	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003309c1	0x14	Weapon.cpp	game	combat	matched	_GLOBAL__I__ZN6WeaponC2Ei	_GLOBAL__I__ZN6WeaponC2Ei
