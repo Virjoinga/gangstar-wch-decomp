@@ -8,6 +8,16 @@ comparison output and the maintainer-approved branch-likelihood hint.
 The old `try_weapon_load.py` command delegates to the production Weapon build so
 historical match-record commands remain usable.
 
+## BulletTraceManager animation
+
+Run `python nonmatching/combat/bullet-trace-animation/reproduce.py` for the
+uncounted `OnAnimate` candidate. It compiles the complete production source and
+retains all 50 existing comparisons. The candidate emits 492 bytes against
+retail's 496; the function and its section fail, and the runner exits 1.
+The retail assembly remains queued. See
+[the animation investigation](../../docs/matches/bullet-trace-animation.md) for
+the exact comparison output, recovered behavior and remaining differences.
+
 ## WeaponManager vehicle usability
 
 Run `python nonmatching/combat/try_weapon_manager.py` to reproduce the uncounted
