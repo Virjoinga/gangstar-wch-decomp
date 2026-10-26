@@ -38,6 +38,23 @@ irr::scene::ISceneNode* WeaponManager::getLHWeaponNode() { return leftNode; }
 irr::scene::ISceneNode* WeaponManager::getRHWeaponNode() { return rightNode; }
 void WeaponManager::setPlayer(Character* value) { player = value; }
 
+bool WeaponManager::isWeaponUsableFromVehicle(int type)
+{
+    // Separate case returns preserve the retail switch/return layout.
+    switch (type) {
+    case 0: return false;
+    case 1: return true;
+    case 2: return true;
+    case 3: return true;
+    case 4: return true;
+    case 5: return true;
+    case 6: return true;
+    case 7: return false;
+    case 8: return false;
+    case 9: return false;
+    }
+}
+
 int WeaponManager::getWeaponLimitedTo(PlayerTest::eContext) const
 {
     return limitedTo[PlayerTest::GetPlayer()->context];

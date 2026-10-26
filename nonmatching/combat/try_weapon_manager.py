@@ -1,4 +1,4 @@
-"""Reproduce the uncounted WeaponManager vehicle-switch attempt with the normal builder."""
+"""Historical command retained for the now-matched production WeaponManager unit."""
 
 from pathlib import Path
 import subprocess
@@ -8,16 +8,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
-    name = "weapon-manager-vehicle"
-    source = Path(__file__).with_name(name + ".json")
-    target = ROOT / "config" / "matches" / (name + ".json")
-    with target.open("x", encoding="utf-8", newline="\n") as handle:
-        handle.write(source.read_text(encoding="utf-8"))
-    try:
-        return subprocess.run([sys.executable, str(ROOT / "tools/build.py"), name],
-                              cwd=ROOT, check=False).returncode
-    finally:
-        target.unlink()
+    return subprocess.run([sys.executable, str(ROOT / "tools/build.py"), "weapon-manager"],
+                          cwd=ROOT, check=False).returncode
 
 
 if __name__ == "__main__":
