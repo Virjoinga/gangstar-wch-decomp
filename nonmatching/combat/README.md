@@ -1,10 +1,12 @@
 # Combat investigations
 
 Weapon::Load now matches all 464 bytes in the production Weapon unit. Its saved
-loading fixture and runner have been retired. Run `python tools/build.py weapon`
+loading fixture has been retired. Run `python tools/build.py weapon`
 or `python tools/build.py save-game`; both compile and verify the real definition.
 See [the loading match record](../../docs/matches/weapon-loading.md) for the exact
 comparison output and the maintainer-approved branch-likelihood hint.
+The old `try_weapon_load.py` command delegates to the production Weapon build so
+historical match-record commands remain usable.
 
 ## WeaponManager vehicle usability
 

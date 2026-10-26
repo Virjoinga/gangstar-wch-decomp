@@ -39,7 +39,8 @@ comparison in the SaveGame image:
 OK SECTION .weapon_loading  0x00330664  464 bytes
 ```
 
-The obsolete nonmatching loading source, manifest, linker script and runner are
-retired. The vehicle-usability investigation remains queued. The 71 tooling tests
+The obsolete nonmatching loading source, manifest and linker script are retired.
+The old runner delegates to the production Weapon build, preserving historical
+match-record commands. The vehicle-usability investigation remains queued. The 71 tooling tests
 print `OK`; repository checks print `all checks passed`. Catalogue/symbol-map/
 progress regeneration, progress check, ByteMatch export and diff check pass.
