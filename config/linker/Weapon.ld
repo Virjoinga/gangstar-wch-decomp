@@ -264,6 +264,7 @@ SECTIONS {
     .weapon_manager_create 0x0033172c : { *weapon-manager.o(.text._ZN13WeaponManager12createWeaponEi) }
     .weapon_manager_init 0x003312cc : { *weapon-manager.o(.text._ZN13WeaponManager4initEv) }
     .weapon_manager_creation_table 0x004283d0 : { *weapon-manager.o(.rodata._ZN13WeaponManager12createWeaponEi) }
+    .weapon_manager_vehicle_usable 0x00331144 : { *weapon-manager.o(.text._ZN13WeaponManager25isWeaponUsableFromVehicleEi) }
     .weapon_manager_usable 0x0033119c : { *weapon-manager.o(.text._ZN13WeaponManager14isWeaponUsableEi) }
     .weapon_manager_next 0x003314fc : { *weapon-manager.o(.text._ZN13WeaponManager10nextWeaponEi) }
     .weapon_manager_attachment 0x00331820 : { *weapon-manager.o(.text._ZN13WeaponManager9setWeaponEP6Weaponb) }

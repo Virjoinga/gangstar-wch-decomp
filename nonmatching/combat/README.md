@@ -20,19 +20,13 @@ the exact comparison output, recovered behavior and remaining differences.
 
 ## WeaponManager vehicle usability
 
-Run `python nonmatching/combat/try_weapon_manager.py` to reproduce the uncounted
-40-byte vehicle switch. The runner exclusively creates a temporary normal build
-manifest and removes it on exit. The candidate returns false for types 0/7/8/9
-and true for 1..6; behavior outside that set remains unspecified. It still differs
-in the default-path return/block layout. The other 34 manager symbols, sections,
-16-byte vtable, hand UID strings and GOT region pass. Exact output:
-
-```text
-MISMATCH  _ZN13WeaponManager25isWeaponUsableFromVehicleEi  0x00331145
-  expected : 00 b5 09 29 00 d9 0b e0 01 23 8b 40 19 1c
-  actual   : 00 b5 09 29 00 d9 00 bd 01 23 8b 40 19 1c
-  differs at 0x6
-```
+The 40-byte switch now matches in the production WeaponManager unit. Run
+`python tools/build.py weapon-manager`. The historical
+`python nonmatching/combat/try_weapon_manager.py` command delegates to that same
+build, preserving commands in earlier match records. The saved candidate and
+temporary manifest/linker script have been retired. See
+[the vehicle usability match record](../../docs/matches/weapon-manager-vehicle.md)
+for the exact comparison output and the switch case grouping.
 
 The former Weapon startup attempt now matches and has moved into the native
 source. See docs/matches/local-startup.md for the exact comparison evidence.

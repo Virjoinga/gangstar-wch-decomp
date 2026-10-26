@@ -11657,7 +11657,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00331139	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getLHWeaponNodeEv	WeaponManager::getLHWeaponNode()
 0x0033113d	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager15getRHWeaponNodeEv	WeaponManager::getRHWeaponNode()
 0x00331141	0x4	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager9setPlayerEP9Character	WeaponManager::setPlayer(Character*)
-0x00331145	0x28	WeaponManager.cpp	game	combat	pending	_ZN13WeaponManager25isWeaponUsableFromVehicleEi	WeaponManager::isWeaponUsableFromVehicle(int)
+0x00331145	0x28	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager25isWeaponUsableFromVehicleEi	WeaponManager::isWeaponUsableFromVehicle(int)
 0x0033116d	0x30	WeaponManager.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x0033119d	0x34	WeaponManager.cpp	game	combat	matched	_ZN13WeaponManager14isWeaponUsableEi	WeaponManager::isWeaponUsable(int)
 0x003311d1	0x16	WeaponManager.cpp	game	combat	matched	_ZNK13WeaponManager18getWeaponLimitedToEN10PlayerTest8eContextE	WeaponManager::getWeaponLimitedTo(PlayerTest::eContext) const
