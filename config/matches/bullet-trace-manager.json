@@ -31,7 +31,22 @@
         ".bullet_trace_empty_string",
         ".bullet_trace_bounds",
         ".bullet_trace_impacts",
-        ".bullet_trace_register"
+        ".bullet_trace_register",
+        ".bullet_full_d1",
+        ".bullet_full_d2",
+        ".bullet_full_d0",
+        ".bullet_full_d0_v12",
+        ".bullet_full_d0_v24",
+        ".bullet_full_d1_v12",
+        ".bullet_full_d1_v24",
+        ".bullet_full_vtable",
+        ".bullet_full_vtt",
+        ".bullet_full_base_scene_vtable",
+        ".bullet_full_base_attributes_vtable",
+        ".sdk_attribute_0",
+        ".sdk_attribute_1",
+        ".sdk_attribute_2",
+        ".sdk_layer"
     ],
     "functions": [
         {
@@ -45,11 +60,25 @@
         },
         "_ZNK18BulletTraceManager14getBoundingBoxEv",
         "_ZN18BulletTraceManager10getImpactsEv",
-        "_ZN18BulletTraceManager19OnRegisterSceneNodeEv"
+        "_ZN18BulletTraceManager19OnRegisterSceneNodeEv",
+        "_ZN18BulletTraceManagerD1Ev",
+        "_ZN18BulletTraceManagerD2Ev",
+        "_ZN18BulletTraceManagerD0Ev",
+        "_ZTv0_n12_N18BulletTraceManagerD0Ev",
+        "_ZTv0_n24_N18BulletTraceManagerD0Ev",
+        "_ZTv0_n12_N18BulletTraceManagerD1Ev",
+        "_ZTv0_n24_N18BulletTraceManagerD1Ev",
+        "_ZN3irr5video14SMaterialLayerD1Ev",
+        "_ZN3irr2io26IAttributeExchangingObjectD0Ev",
+        "_ZN3irr2io26IAttributeExchangingObjectD1Ev",
+        "_ZN3irr2io26IAttributeExchangingObjectD2Ev",
+        "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev",
+        "_ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev"
     ],
     "retail_got": true,
     "external_thumb_functions": [
         "_ZNK3irr5scene10ISceneNode19getAutomaticCullingEv",
-        "_ZN3irr5scene10ISceneNode19setAutomaticCullingENS0_14E_CULLING_TYPEE"
+        "_ZN3irr5scene10ISceneNode19setAutomaticCullingENS0_14E_CULLING_TYPEE",
+        "_ZN3irr5scene10ISceneNodeD2Ev"
     ]
 }

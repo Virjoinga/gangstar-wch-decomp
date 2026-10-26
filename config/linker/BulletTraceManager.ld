@@ -5,6 +5,8 @@ _ZdlPv = 0x001c42b0;
 __aeabi_atexit = 0x001c494c;
 __cxa_guard_acquire = 0x001c4958;
 __cxa_guard_release = 0x001c46c4;
+_ZdaPv = 0x001c461c;
+__cxa_pure_virtual = 0;
 SECTIONS
 {
     .bullet_trace_startup 0x002f0c6c : { *bullet-trace-manager.o(.text._Z41__static_initialization_and_destruction_0ii) }
@@ -18,6 +20,23 @@ SECTIONS
     .bullet_trace_bounds_storage 0x004b7d9c (NOLOAD) : { *bullet-trace-manager.o(.bss._ZZNK18BulletTraceManager14getBoundingBoxEvE8EmptyBox) }
     .bullet_trace_impacts 0x002f0354 : { *bullet-trace-manager.o(.text._ZN18BulletTraceManager10getImpactsEv) }
     .bullet_trace_register 0x002f035c : { *bullet-trace-manager.o(.text._ZN18BulletTraceManager19OnRegisterSceneNodeEv) }
+    .bullet_full_d1 0x002f12d8 : { *bullet-trace-manager.o(.text._ZN18BulletTraceManagerD1Ev) }
+    .bullet_full_d2 0x002f1398 : { *bullet-trace-manager.o(.text._ZN18BulletTraceManagerD2Ev) }
+    .bullet_full_d0 0x002f11ec : { *bullet-trace-manager.o(.text._ZN18BulletTraceManagerD0Ev) }
+    .bullet_full_d0_v12 0x002f11c4 : { *bullet-trace-manager.o(.text._ZTv0_n12_N18BulletTraceManagerD0Ev) }
+    .bullet_full_d0_v24 0x002f11d8 : { *bullet-trace-manager.o(.text._ZTv0_n24_N18BulletTraceManagerD0Ev) }
+    .bullet_full_d1_v12 0x002f12b0 : { *bullet-trace-manager.o(.text._ZTv0_n12_N18BulletTraceManagerD1Ev) }
+    .bullet_full_d1_v24 0x002f12c4 : { *bullet-trace-manager.o(.text._ZTv0_n24_N18BulletTraceManagerD1Ev) }
+    .bullet_full_vtable 0x004a9d48 : { *bullet-trace-manager.o(.data.rel.ro._ZTV18BulletTraceManager .gnu.linkonce.d.rel.ro._ZTV18BulletTraceManager) }
+    .bullet_full_vtt 0x004a9e88 : { *bullet-trace-manager.o(.data.rel.ro._ZTT18BulletTraceManager .gnu.linkonce.d.rel.ro._ZTT18BulletTraceManager) }
+    .bullet_full_base_scene_vtable 0x004a9ea8 : { *bullet-trace-manager.o(.data.rel.ro._ZTC18BulletTraceManager0_N3irr5scene10ISceneNodeE .gnu.linkonce.d.rel.ro._ZTC18BulletTraceManager0_N3irr5scene10ISceneNodeE) }
+    .bullet_full_base_attributes_vtable 0x004a9fe8 : { *bullet-trace-manager.o(.data.rel.ro._ZTC18BulletTraceManager0_N3irr2io26IAttributeExchangingObjectE .gnu.linkonce.d.rel.ro._ZTC18BulletTraceManager0_N3irr2io26IAttributeExchangingObjectE) }
+    .sdk_attribute_0 0x0021a8d4 : { *bullet-trace-manager.o(.text._ZN3irr2io26IAttributeExchangingObjectD0Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD0Ev) }
+    .sdk_attribute_1 0x0021a91c : { *bullet-trace-manager.o(.text._ZN3irr2io26IAttributeExchangingObjectD1Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD1Ev) }
+    .sdk_attribute_2 0x0021a958 : { *bullet-trace-manager.o(.text._ZN3irr2io26IAttributeExchangingObjectD2Ev .gnu.linkonce.t._ZN3irr2io26IAttributeExchangingObjectD2Ev) }
+    .sdk_attribute_3 0x0021a8d4 : { *bullet-trace-manager.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD0Ev) }
+    .sdk_attribute_4 0x0021a91c : { *bullet-trace-manager.o(.text._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev .gnu.linkonce.t._ZTv0_n12_N3irr2io26IAttributeExchangingObjectD1Ev) }
+    .sdk_layer 0x0020f09c : { *bullet-trace-manager.o(.text._ZN3irr5video14SMaterialLayerD1Ev .gnu.linkonce.t._ZN3irr5video14SMaterialLayerD1Ev) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
 }
