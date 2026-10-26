@@ -84,3 +84,12 @@ static void __tcf_2(void*)
         ::operator delete(value.array);
 }
 }
+
+typedef char BulletTraceSceneExtent[sizeof(irr::scene::ISceneNode) == 340 ? 1 : -1];
+typedef char BulletTraceExtent[sizeof(BulletTraceManager) == 1768 ? 1 : -1];
+
+BulletTraceManager::~BulletTraceManager()
+{
+    for (int i = 0; i < 8; ++i) impacts[i]->drop();
+    delete[] impacts;
+}

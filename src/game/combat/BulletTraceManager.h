@@ -1,19 +1,29 @@
 #ifndef WCH_COMBAT_BULLET_TRACE_MANAGER_H
 #define WCH_COMBAT_BULLET_TRACE_MANAGER_H
 
-#include "../core/Vector3.h"
+#include "../core/SceneNode.h"
+#include "../core/Material.h"
 
-namespace irr { namespace core { template<class T> class aabbox3d; } namespace scene { class ISceneNode; } }
+// Observed records used by the native manager. Unrecovered fields stay opaque.
+struct BulletTraceRecord { irr::core::vector3d<float> start, direction, end; unsigned char unknown36[16]; };
+struct BulletTraceVertex { irr::core::vector3d<float> position, normal; unsigned char color[4]; float u, v; };
 
-// Partial call interface. The retail mangling has a const final reference.
-class BulletTraceManager {
+class BulletTraceManager : public irr::scene::ISceneNode {
 public:
+    BulletTraceManager();
+    virtual ~BulletTraceManager();
+    virtual void OnRegisterSceneNode();
+    virtual const irr::core::aabbox3d<float>& getBoundingBox() const;
+    virtual void OnAnimate(unsigned int);
+    virtual void render(void*);
     irr::scene::ISceneNode** getImpacts();
-    void OnRegisterSceneNode();
-    const irr::core::aabbox3d<float>& getBoundingBox() const;
-    void PlayBulletTrace(const irr::core::vector3d<float>& start,
-                         const irr::core::vector3d<float>& direction, bool flag,
-                         const irr::core::vector3d<float>& result);
+    void PlayBulletTrace(const irr::core::vector3d<float>&,const irr::core::vector3d<float>&,bool,const irr::core::vector3d<float>&);
+private:
+    BulletTraceRecord traces[8];
+    int activeTraces;
+    irr::video::SMaterial material;
+    unsigned short indices[24];
+    BulletTraceVertex vertices[24];
+    irr::scene::ISceneNode** impacts;
 };
-
 #endif

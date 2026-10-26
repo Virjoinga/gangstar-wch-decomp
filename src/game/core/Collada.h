@@ -2,11 +2,21 @@
 #define WCH_CORE_COLLADA_H
 
 #include "SceneNode.h"
+#include "Geometry.h"
 
 // Observed engine call/vtable interfaces. Unused return types remain provisional.
 namespace irr {
 namespace res { class String; template<class T> class vector; }
 namespace scene { class IColladaMesh; }
+namespace scene {
+class CEmptySceneNode : public ISceneNode {
+public:
+    virtual void render(void*);
+    virtual const core::aabbox3d<float>& getBoundingBox() const;
+private:
+    core::aabbox3d<float> box;
+};
+}
 namespace collada {
 class CColladaDatabase;
 struct SLibraryAnimationClips; struct SLight; struct SMaterial;
@@ -17,11 +27,13 @@ struct SNode { unsigned int unknown0[18]; const void* properties; };
 
 // Observed scene interface prefix, 380-byte allocation extent and constructor ABI.
 // Remaining storage is opaque; this is not the complete engine class.
-class CSceneNode : public scene::ISceneNode {
-    unsigned int unknown4[94];
+class CSceneNode : public scene::CEmptySceneNode {
+    unsigned int unknown352[4];
 public:
     CSceneNode(const CColladaDatabase&, SNode*);
 };
+
+typedef char ColladaSceneExtent[sizeof(CSceneNode) == 380 ? 1 : -1];
 
 class CColladaFactory {
 public:
