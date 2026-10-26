@@ -14,6 +14,7 @@
 #include "../core/Geometry.h"
 #include "../core/SceneNode.h"
 #include "../core/LocalSdkStartupStorage.h"
+#include "../core/VideoDriver.h"
 
 // Accessed native offsets only; not the full scene-node hierarchy or extent.
 struct BulletTraceObservedLayout {
@@ -69,6 +70,33 @@ void BulletTraceManager::PlayBulletTrace(const irr::core::vector3d<float>& start
             trace.current = trace.rate - trace.progress;
         ++activeTraces;
     }
+}
+
+void BulletTraceManager::render(void*)
+{
+    irr::scene::ISceneManager* const& manager = reinterpret_cast<BulletTraceObservedLayout*>(this)->sceneManager;
+    irr::core::vector3d<float> camera = manager->getActiveCamera()->getAbsolutePosition();
+    manager->getVideoDriver()->setMaterial(material);
+    manager->getVideoDriver()->setTransform(irr::video::ETS_WORLD, irr::core::matrix4());
+    for (int i = 0; i < activeTraces; ++i) {
+        irr::core::vector3d<float> head = irr::core::lerp(traces[i].start, traces[i].direction, traces[i].current);
+        irr::core::vector3d<float> tail = irr::core::lerp(traces[i].start, traces[i].direction, traces[i].current - traces[i].rate);
+        irr::core::vector3d<float> view = camera - head;
+        irr::core::vector3d<float> along = tail - head;
+        // along x view: preserve the native multiply/add order for floating point.
+        irr::core::vector3d<float> side(
+            -view.Y * along.Z + view.Z * along.Y,
+            -view.Z * along.X + view.X * along.Z,
+            -view.X * along.Y + view.Y * along.X);
+        side.normalize();
+        side *= 3.0f;
+        vertices[i * 3].position = head;
+        vertices[i * 3 + 1].position = head + side;
+        vertices[i * 3 + 2].position = tail;
+    }
+    manager->getVideoDriver()->drawVertexPrimitiveList(vertices, indices, 0,
+        activeTraces * 3, activeTraces, irr::video::EVT_STANDARD,
+        irr::scene::EPT_TRIANGLES, irr::video::EIT_16BIT, 0);
 }
 
 void operator delete(void*) throw();

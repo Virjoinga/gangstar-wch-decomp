@@ -25,7 +25,7 @@
 // remain provisional; engine implementations stay native unless inlined here.
 namespace irr {
 namespace core { template<class T> class aabbox3d; }
-namespace video { struct SMaterial; }
+namespace video { struct SMaterial; class IVideoDriver; }
 class IReferenceCounted {
 public:
     IReferenceCounted() : references(1), debugName(0) {}
@@ -170,7 +170,7 @@ class ISceneManager {
 public:
     virtual void unknown0(); virtual void unknown1(); virtual void unknown2();
     virtual void unknown3(); virtual void unknown4(); virtual void unknown5();
-    virtual void unknown6(); virtual void unknown7(); virtual void unknown8();
+    virtual void unknown6(); virtual video::IVideoDriver* getVideoDriver(); virtual void unknown8();
     virtual void unknown9(); virtual void unknown10(); virtual void unknown11();
     virtual void unknown12(); virtual void unknown13(); virtual void unknown14();
     virtual void unknown15(); virtual void unknown16(); virtual void unknown17();
@@ -183,7 +183,7 @@ public:
     virtual void unknown36();
     virtual ISceneNode* getRootSceneNode();
     virtual void unknown38(); virtual void unknown39(); virtual void unknown40();
-    virtual void unknown41(); virtual void unknown42(); virtual void unknown43();
+    virtual void unknown41(); virtual void unknown42(); virtual ICameraSceneNode* getActiveCamera();
     virtual void unknown44(); virtual void unknown45(); virtual void unknown46();
     virtual unsigned int registerNodeForRendering(ISceneNode*, const video::SMaterial*, void*, E_SCENE_NODE_RENDER_PASS);
 };
