@@ -315,6 +315,7 @@ SECTIONS {
 
     .weapon_getters 0x00330354 : { *weapon.o(.text._ZNK6Weapon13getWeaponTypeEv .text._ZNK6Weapon11getAmmoTypeEv .text._ZNK6Weapon11getClipSizeEv .text._ZNK6Weapon7getClipEv .text._ZNK6Weapon8getRangeEv .text._ZNK6Weapon7getConeEv .text._ZNK6Weapon9getDamageEv .text._ZNK6Weapon17getShootfrequencyEv .text._ZNK6Weapon20getDryShootfrequencyEv .text._ZNK6Weapon8isLockedEv .text._ZN6Weapon11setClipSizeEi .text._ZN6Weapon7setClipEi .text._ZNK6Weapon8isDoubleEv .text._ZNK6Weapon11isTwoHandedEv .text._ZNK6Weapon5isGunEv .text._ZNK6Weapon12isProjectileEv) }
     .weapon_lock 0x00330464 : { *weapon.o(.text._ZN6Weapon4lockEv) }
+    .weapon_loading 0x00330664 : { *weapon.o(.text._ZN6Weapon4LoadERKN7Structs6WeaponE) }
     .weapon_unlock 0x00330834 : { *weapon.o(.text._ZN6Weapon6unlockEv) }
 
     .loading 0x0034425c : { *save-game.o(.text._ZN8SaveGame12LoadAndApplyEPKc) }
