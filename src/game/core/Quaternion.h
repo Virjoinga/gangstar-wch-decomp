@@ -22,6 +22,7 @@ namespace irr { namespace core {
 class quaternion {
 public:
     float X, Y, Z, W;
+    quaternion() : X(0),Y(0),Z(0),W(1) {}
     quaternion(float x, float y, float z) { set(x, y, z); }
     quaternion(const vector3d<float>& v) { set(v.X, v.Y, v.Z); }
     quaternion& set(float x, float y, float z) __attribute__((weak));

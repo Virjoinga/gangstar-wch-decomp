@@ -17,13 +17,17 @@
 #define WCH_CORE_MATERIAL_H
 
 #include "SceneNode.h"
+#include "Color.h"
 
 // Observed 8-byte layer ownership and 92-byte material extent. Do not assume
-// the opaque material fields or texture allocation extent are fully recovered.
+// all material field names or the texture allocation extent are recovered.
+// The inline material constructor is a semantic SDK reconstruction; its weak
+// out-of-line copy is not byte-matched or credited as game code.
 void operator delete(void*) throw();
 namespace irr { namespace video {
 class ITexture : public virtual IReferenceCounted {};
 struct SMaterialLayer {
+    SMaterialLayer() : matrix(0) {}
     ITexture* texture;
     core::matrix4* matrix;
     ~SMaterialLayer() {
@@ -31,12 +35,27 @@ struct SMaterialLayer {
         if (texture) texture->drop();
     }
 };
+enum E_MATERIAL_FLAG { MaterialFlag2 = 2, MaterialFlag4 = 4, MaterialFlag16 = 16, MaterialFlag256 = 256, MaterialFlag512 = 512, MaterialFlag1024 = 1024 };
 struct SMaterial {
+    SMaterial() : unknown0(1), type(0), flags40(0x387), mode44(3),
+        color48(255,255,255,255), color52(0,0,0,0), color56(255,255,255,255),
+        unknown60(0), unknown64(1), unknown68(0), unknown72(0), unknown76(0), unknown80(0),
+        color84(255,255,255,255), dirtyFlags(0xfc) {
+        layers[0].texture=0; layers[1].texture=0; layers[2].texture=0; layers[3].texture=0;
+    }
+    // Native leaves this in r0; fluent return type inferred, callers ignore it.
+    SMaterial& setFlag(E_MATERIAL_FLAG, bool) __attribute__((weak));
+    void setType(int value) { if(type!=value) {dirtyFlags|=1;type=value;} }
     unsigned int unknown0;
     int type;
     SMaterialLayer layers[4];
-    unsigned char unknown40[52];
+    unsigned int flags40,mode44;
+    SColor color48,color52,color56;
+    float unknown60,unknown64,unknown68,unknown72,unknown76,unknown80;
+    SColor color84;
+    unsigned int dirtyFlags;
 };
+
 } }
 
 #endif
