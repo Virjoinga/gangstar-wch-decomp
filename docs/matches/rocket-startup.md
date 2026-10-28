@@ -49,8 +49,8 @@ OK SECTION .rocket_empty_string  0x0044d91c  4 bytes
 The saved launch fixture includes the production source, so its linker and
 manifest now include the same startup definitions and storage placements.
 `python nonmatching/combat/rocket-launch/reproduce.py` still exits 1: 39
-comparisons pass, while launch and its section still fail at offset 0xce.
-The exact failure remains recorded in rocket-launch.md. No launch credit is taken.
+comparisons pass, while launch and its section remain unmatched.
+The current exact failure is recorded in rocket-launch.md. No launch credit is taken.
 
 The 71 tooling tests printed `OK`; repository checks printed `all checks passed`.
 Catalogue and symbol-map regeneration, progress checking, ByteMatch export and
