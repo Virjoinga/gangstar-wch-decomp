@@ -27,7 +27,7 @@ functions and their sections, and two SDK vtables, including the four newly matc
 functions and their sections plus the empty string section. The SDK code receives no
 game-code credit. The launch function and its complete section both fail.
 The candidate and retail both have 744 bytes. A direct byte comparison finds
-160 differing bytes, first at 0x106; the first 262 bytes agree. Exact failure
+125 differing bytes, first at 0x106; the first 262 bytes agree. Exact failure
 excerpt:
 
 ```text
@@ -42,9 +42,10 @@ include body/shape temporary setup and later register use. Matching the extent o
 a matching launch function. This is a linked verification image, not a runtime
 or complete-library build.
 
-On 2026-10-28, putting the zero-direction fallback first in the source and caching
-the body pointer before shape creation reduced the difference from 201 to 160
-bytes. The cached pointer receives the mesh/user-data record. The normal reproducer retained all
+The saved form puts the zero-direction fallback first and caches the body pointer
+before shape creation for the mesh/user-data assignment. Refining the independent
+`b2ShapeDef` initializer order then reduced the difference from 160 to 125 bytes;
+all nine initializer values remain unchanged. The normal reproducer retained all
 39 passing comparisons and the same 744-byte extent. This is a saved near miss;
 the launch assembly remains queued. No production header, compiler flag or
 existing matched function body changed.
