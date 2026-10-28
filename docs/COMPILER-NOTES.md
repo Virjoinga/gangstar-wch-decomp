@@ -129,3 +129,60 @@ python tools/build.py --all
 
 The generated GOT reference harness and its verification scope are explained
 in [matches/adpcm.md](matches/adpcm.md). No compiler output is rewritten.
+
+## Enum width in the legacy toolchain (2026-10-28)
+
+The local NDK 1.6 r1 GCC 4.2.1 defaults to one-byte storage for the small signed
+enum in [the standalone probe](../config/probes/enum-width.cpp).
+`-fno-short-enums` changes it to four bytes. A following pointer hides this
+difference in the probe record's total extent:
+
+| Probe | Default flags | With `-fno-short-enums` |
+| --- | ---: | ---: |
+| `sizeof(EnumWidthProbe)` | 1 | 4 |
+| `sizeof(PaddedEnumProbe)` | 8 | 8 |
+| `sizeof(bool)` | 1 | 1 |
+
+Matching a record's total size therefore does not establish an enum field's
+storage width. Check field accesses and generated instructions as well.
+
+Reproduce on Windows with the same Cygwin runtime used above. This compiles
+object files only and needs no game data:
+
+```powershell
+$probeCompilerRoot = Join-Path (Get-Location) 'toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1'
+$enumProbeDir = Join-Path (Get-Location) 'build/enum-width'
+New-Item -ItemType Directory -Force $enumProbeDir | Out-Null
+$env:PATH = (Join-Path (Get-Location) 'toolchain/cygwin32/bin') + ';' + $env:PATH
+foreach ($enumProbeMode in @('default', 'integer')) {
+    $enumProbeFlags = @()
+    if ($enumProbeMode -eq 'integer') { $enumProbeFlags = @('-fno-short-enums') }
+    & "$probeCompilerRoot/libexec/gcc/arm-eabi/4.2.1/cc1plus.exe" -quiet -O2 -mthumb -march=armv5te -fdata-sections @enumProbeFlags config/probes/enum-width.cpp -o "$enumProbeDir/$enumProbeMode.s"
+    if ($LASTEXITCODE -ne 0) { throw 'Enum probe compilation failed' }
+    & "$probeCompilerRoot/bin/arm-eabi-as.exe" -march=armv5te -meabi=4 -o "$enumProbeDir/$enumProbeMode.o" "$enumProbeDir/$enumProbeMode.s"
+    if ($LASTEXITCODE -ne 0) { throw 'Enum probe assembly failed' }
+    & "$probeCompilerRoot/bin/arm-eabi-readelf.exe" -x .data.probe_enum_width -x .data.probe_record_width -x .data.probe_bool_width "$enumProbeDir/$enumProbeMode.o"
+    if ($LASTEXITCODE -ne 0) { throw 'Enum probe inspection failed' }
+}
+```
+
+The legacy readelf displays `00000001`, `00000008`, `00000001` for the default
+object, and `00000004`, `00000008`, `00000001` for the integer-width object,
+in the section order requested above.
+
+This does not identify the retail game's global enum flags. Its 16-byte
+`.ARM.attributes` section contains an empty AEABI file-attribute subsection;
+`arm-eabi-readelf -A` reports no enum-width tag. In the current Rocket near miss,
+an explicit shape enum with `-fno-short-enums` reproduces the same target bytes
+as the partial integer-field view and preserves its existing comparisons, but
+does not improve the 125 differing bytes. No production flag or matched-function
+credit was changed by this experiment.
+
+## Retail debug information coverage
+
+The retail library has DWARF sections, but its 242-byte `.debug_info` contains
+one assembler compilation unit for GCC's `config/arm/ieee754-sf.S`, covering
+`0x00401034` through `0x00401088`. It contains no game C++ type or member-layout
+entries. `arm-eabi-readelf --debug-dump=info baselib/libsanangeles.so` reproduces
+that coverage. A different build with game C++ DWARF could provide useful type
+information; the debug-section names in this retail build alone do not provide it.
