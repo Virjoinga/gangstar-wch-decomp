@@ -28,7 +28,7 @@ struct b2BodyDef {
  b2MassData massData; void* userData; b2Vec2 position; float angle,linearDamping,angularDamping; bool allowSleep,isSleeping,fixedRotation,isBullet;
 };
 struct b2ShapeDef {
- b2ShapeDef(){type=-1;userData=0;friction=0.2f;restitution=0;density=0;isSensor=false;filter.categoryBits=1;filter.maskBits=0xffff;filter.groupIndex=0;}
+ b2ShapeDef(){userData=0;type=-1;restitution=0;density=0;filter.categoryBits=1;isSensor=false;filter.groupIndex=0;friction=0.2f;filter.maskBits=0xffff;}
  virtual ~b2ShapeDef() {}
  int type; void* userData; float friction,restitution,density; bool isSensor; b2FilterData filter;
 };
