@@ -27,21 +27,27 @@ functions and their sections, and two SDK vtables, including the four newly matc
 functions and their sections plus the empty string section. The SDK code receives no
 game-code credit. The launch function and its complete section both fail.
 The candidate and retail both have 744 bytes. A direct byte comparison finds
-201 differing bytes, first at 0xce; the first 206 bytes agree. Exact failure
+160 differing bytes, first at 0x106; the first 262 bytes agree. Exact failure
 excerpt:
 
 ```text
 MISMATCH  _ZN6Rocket6launchEN3irr4core8vector3dIfEE  0x00330015
-  expected : 94 f6 18 eb 00 28 00 d0 dc e0 7a 4b 29 95 2a 95
-  actual   : 94 f6 18 eb 00 28 00 d0 dd e0 7a 4b 29 95 2a 95
-  differs at 0xce
+  expected : d0 23 00 21 02 68 6c 4c 1e ae d3 58 98 47 38 69
+  actual   : d0 23 00 21 02 68 6c 4c 00 25 d3 58 98 47 38 69
+  differs at 0x106
 ```
 
-The first difference is the branch to the fallback block, whose current start
-is two bytes later than retail. Later differences include stack temporary
-placement and register use. Matching the extent or SDK calls is not proof of
+The direction-handling prefix now agrees with retail. Remaining differences
+include body/shape temporary setup and later register use. Matching the extent or SDK calls is not proof of
 a matching launch function. This is a linked verification image, not a runtime
 or complete-library build.
+
+On 2026-10-28, putting the zero-direction fallback first in the source and caching
+the body pointer before shape creation reduced the difference from 201 to 160
+bytes. The cached pointer receives the mesh/user-data record. The normal reproducer retained all
+39 passing comparisons and the same 744-byte extent. This is a saved near miss;
+the launch assembly remains queued. No production header, compiler flag or
+existing matched function body changed.
 
 ## Recovered evidence
 
@@ -71,8 +77,8 @@ source work but do not establish that the reconstructed source is complete.
 ## Further work
 
 Keep the production Rocket comparisons intact while resolving the remaining
-launch differences. The next source investigation should address the quaternion
-axis/fallback temporary ordering and the later body/shape register allocation.
+launch differences. The next source investigation should address the remaining
+body/shape temporary setup and register allocation.
 The saved runner already compares the emitted SDK methods/vtables at their native
 addresses, so any change must retain those checks as well. Once the complete
 launch function and section pass, integrate the required interfaces, rebuild

@@ -12,6 +12,7 @@ void* operator new(unsigned int);
 
 void Rocket::launch(irr::core::vector3d<float> direction)
 {
+ b2Body* createdBody;
  unknown96=direction;
  unknown24->SetPhysicInfo(*reinterpret_cast<RocketOwnerPhysicsView*>(owner)->attributes->info,0);
  unknown108=GetPosition();
@@ -20,11 +21,11 @@ void Rocket::launch(irr::core::vector3d<float> direction)
  irr::core::matrix4 transformation(sceneNode->getAbsoluteTransformation(),irr::core::matrix4::EM4CONST_COPY);
  Application::GetInstance()->GetDevice()->getSceneManager()->getRootSceneNode()->addChild(sceneNode);
  sceneNode->setRelativeTransformation(transformation);
- if(direction.getLengthSQ()!=0.f) {
+ if(direction.getLengthSQ()==0.f) direction=-GetRight(); else {
   irr::core::quaternion rotation;
   rotation.rotationFromTo(direction,irr::core::vector3d<float>(1,0,0));
   sceneNode->setRotation(rotation);
- } else direction=-GetRight();
+ }
  sceneNode->updateAbsolutePosition(false);
  sceneNode->setVisible(true);
  b2BodyDef bodyDefinition;
@@ -39,9 +40,10 @@ void Rocket::launch(irr::core::vector3d<float> direction)
  circle.filter.categoryBits=2;
  circle.filter.groupIndex=unknown24->getIndex()+1;
  circle.isSensor=true;
+ createdBody=body;
  body->CreateShape(&circle);
  body->SetMassFromShapes();
- body->data=new PhysicsBodyData(this,GS3DStuff::FindAMesh(sceneNode));
+ createdBody->data=new PhysicsBodyData(this,GS3DStuff::FindAMesh(sceneNode));
  GameObjectManager::s_gom->Add(this,0);
  body->SetLinearVelocity(static_cast<float>(unknown72)*b2Vec2(direction.X,direction.Y));
  body->WakeUp();
