@@ -28,6 +28,14 @@
 #include "../characters/PlayerTest.h"
 #include "../core/Lock.h"
 
+// Observed PhysicInfo prefix used by the ID accessors, not a complete layout.
+// Never instantiate this view or infer the full record extent from it.
+struct LevelObjectPhysicsInfoView {
+    unsigned short materialID;
+    unsigned char unknown2[6];
+    unsigned short triangleID;
+};
+
 void operator delete(void*) throw();
 extern "C" {
 static void __tcf_3(void*) __attribute__((used));
@@ -41,6 +49,11 @@ static void __tcf_3(void*)
 
 // Retail emits these base defaults as weak definitions. Keep them local to
 // this partial source unit without changing callers' inline visibility.
+float __attribute__((weak)) LevelObject::GetSpeed() const
+{
+    return 0.0f;
+}
+
 void __attribute__((weak)) LevelObject::photographed() {}
 
 void __attribute__((weak)) LevelObject::clearPhotographed() {}
@@ -96,6 +109,13 @@ LevelObject::LevelObject(int)
     unknown40 = -1;
     unknown44 = -1;
     unknown48 = -1;
+}
+
+unsigned short LevelObject::GetMatID() const
+{
+    const LevelObjectPhysicsInfoView* info =
+        reinterpret_cast<const LevelObjectPhysicsInfoView*>(unknown24->info);
+    return info->materialID;
 }
 
 void LevelObject::Stop() {}
@@ -429,6 +449,13 @@ bool LevelObject::canSeeLevelObject(LevelObject* other, irr::core::vector3d<floa
 
 void LevelObject::OnDespawn() { unknown4 &= ~1u; }
 void LevelObject::OnSpawn() { unknown4 |= 0x81; }
+
+unsigned short LevelObject::GetTriID() const
+{
+    const LevelObjectPhysicsInfoView* info =
+        reinterpret_cast<const LevelObjectPhysicsInfoView*>(unknown24->info);
+    return info->triangleID;
+}
 
 irr::core::vector3d<float> LevelObject::GetFront() const
 {

@@ -54,6 +54,9 @@ _ZN23retail_item_transitions11guard_transE = 0x0041d7c4;
 _ZN23retail_item_transitions22scripted_vehicle_transE = 0x0041d86c;
 s_billboardFactory = ADDR(.item_factory_storage);
 SECTIONS {
+    .level_get_speed 0x2f1430 : { *level-object.o(.text._ZNK11LevelObject8GetSpeedEv .gnu.linkonce.t._ZNK11LevelObject8GetSpeedEv) }
+    .level_get_material_id 0x316830 : { *level-object.o(.text._ZNK11LevelObject8GetMatIDEv .gnu.linkonce.t._ZNK11LevelObject8GetMatIDEv) }
+    .level_get_triangle_id 0x317824 : { *level-object.o(.text._ZNK11LevelObject8GetTriIDEv .gnu.linkonce.t._ZNK11LevelObject8GetTriIDEv) }
     .level_hook_photo 0x2f1438 : { *level-object.o(.text._ZN11LevelObject12photographedEv .gnu.linkonce.t._ZN11LevelObject12photographedEv) }
     .level_hook_clear_photo 0x2f143c : { *level-object.o(.text._ZN11LevelObject17clearPhotographedEv .gnu.linkonce.t._ZN11LevelObject17clearPhotographedEv) }
     .level_hook_set_spawn 0x2f74cc : { *level-object.o(.text._ZN11LevelObject12setSpawnTypeEi .gnu.linkonce.t._ZN11LevelObject12setSpawnTypeEi) }

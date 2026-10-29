@@ -10021,7 +10021,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f12c5	0x14	BulletTraceManager.cpp	game	combat	matched	_ZTv0_n24_N18BulletTraceManagerD1Ev	virtual thunk to BulletTraceManager::~BulletTraceManager()
 0x002f12d9	0xc0	BulletTraceManager.cpp	game	combat	matched	_ZN18BulletTraceManagerD1Ev	BulletTraceManager::~BulletTraceManager()
 0x002f1399	0x98	BulletTraceManager.cpp	game	combat	matched	_ZN18BulletTraceManagerD2Ev	BulletTraceManager::~BulletTraceManager()
-0x002f1431	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetSpeedEv	LevelObject::GetSpeed() const
+0x002f1431	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetSpeedEv	LevelObject::GetSpeed() const
 0x002f1439	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject12photographedEv	LevelObject::photographed()
 0x002f143d	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject17clearPhotographedEv	LevelObject::clearPhotographed()
 0x002f1441	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject14isPhotographedEv	LevelObject::isPhotographed() const
@@ -10805,7 +10805,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003167a5	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObjectC2Ei	LevelObject::LevelObject(int)
 0x003167dd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
 0x003167e1	0x50	LevelObject.cpp	game	world	matched	_ZN11LevelObject5setupEv	LevelObject::setup()
-0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
+0x00316831	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
 0x00316839	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject4StopEv	LevelObject::Stop()
 0x0031683d	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject9isEnabledEv	LevelObject::isEnabled() const
 0x00316845	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
@@ -10838,7 +10838,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00317381	0x48c	LevelObject.cpp	game	world	matched	_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE	LevelObject::canSeeLevelObject(LevelObject*, irr::core::vector3d<float>&)
 0x0031780d	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject9OnDespawnEv	LevelObject::OnDespawn()
 0x00317819	0xa	LevelObject.cpp	game	world	matched	_ZN11LevelObject7OnSpawnEv	LevelObject::OnSpawn()
-0x00317825	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
+0x00317825	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetTriIDEv	LevelObject::GetTriID() const
 0x0031782d	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetFrontEv	LevelObject::GetFront() const
 0x00317855	0x28	LevelObject.cpp	game	world	matched	_ZNK11LevelObject8GetRightEv	LevelObject::GetRight() const
 0x0031787d	0x144	LevelObject.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
