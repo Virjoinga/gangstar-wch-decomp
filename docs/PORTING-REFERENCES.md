@@ -2,8 +2,8 @@
 
 The maintainer supplied these projects on 2026-10-27 and authorized reviewing
 them during combat work on 2026-10-28. The implementation review below is read-only:
-none of these runtimes has been built or tested here. Matching work remains in
-combat, following [WORK-ORDER.md](WORK-ORDER.md).
+none of these runtimes has been built or tested here. Matching work follows the
+reuse-first priorities in [WORK-ORDER.md](WORK-ORDER.md).
 
 ## AndroidRecomp
 

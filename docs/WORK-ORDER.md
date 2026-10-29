@@ -1,41 +1,62 @@
-# Area completion order
+# Reuse-first matching workflow
 
-The maintainer requested completing whole gameplay areas from the fewest total
-retail code bytes to the most. Start with the first incomplete area below and
-stay there until every game function in that area has compiled C++ that compares
-byte for byte with retail. Then advance to the next area.
+On 2026-10-29 the maintainer replaced the strict smallest-area-to-100% schedule
+with a workflow based on OpenRAC's
+[family selection](https://github.com/OpenRAC/rac1-decomp/blob/main/docs/AGENT_WORKFLOW.md#picking-functions-family-order)
+and [bounded worker attempts](https://github.com/OpenRAC/rac1-decomp/blob/main/docs/QUEUE.md).
+Select work for the matched bytes and reusable knowledge it can unlock. Work may
+cross gameplay areas. The full objective is still all 4,661 game functions,
+575,264 retail code bytes, matched byte for byte; vendored dependencies stay
+outside that budget. No verification rule is relaxed.
 
-This is an order for completing the full decompilation, not a reduced target.
-Use total retail bytes, not remaining unmatched bytes or function counts. Existing
-matches remain credited. Pending attempts in later areas remain pending until
-that area's turn; a near miss does not justify skipping ahead. Choose coherent
-function families within the current area and keep the normal small-commit,
-comparison, review and merge requirements.
+## Selection priorities
 
-The order below comes from `config/functions.tsv` game rows. Recompute it if the
-retail catalogue's area attribution or sizes change. Vendored engine/dependency
-code is excluded from this project's game-code budget.
+1. **Tools and existing evidence first.** Look for exact candidates that were
+   never integrated, identical implementations, and variants of existing
+   matches. Reuse their source and normal build configuration. Similarity or a
+   masked comparison is a candidate filter, never proof of a match.
+2. **Matched relatives.** Prefer functions with a matched sibling, variant or
+   corresponding implementation. Compare their instructions, interfaces and
+   layouts before adapting the source; names alone do not establish a family.
+3. **Unlock families.** For an unmatched family, start with its smallest useful
+   representative. Prefer families with more pending relatives, so one solution
+   supplies a starting point for several others.
+4. **Fresh shared helpers and small functions.** Prefer common helpers and
+   functions in translation units whose types, imports and build configuration
+   are already established. Use size as a tie-breaker, not an area gate.
+5. **Long functions and near misses.** Give long routines a bounded dedicated
+   pass when most of their callees and interfaces are understood. Revisit saved
+   near misses with new evidence or an explicit escalation budget. Keep known
+   toolchain or catalogue problems out of the ordinary matching queue until
+   their prerequisites are addressed.
 
-| Order | Area | Total game-code bytes |
-| ---: | --- | ---: |
-| 1 | meta | 9,930 |
-| 2 | combat | 15,952 |
-| 3 | app | 17,338 |
-| 4 | persistence | 17,750 |
-| 5 | audio | 18,996 |
-| 6 | input | 19,642 |
-| 7 | hud | 26,776 |
-| 8 | missions | 27,300 |
-| 9 | scripting | 28,500 |
-| 10 | world | 36,978 |
-| 11 | core | 37,240 |
-| 12 | ai | 50,734 |
-| 13 | characters | 58,870 |
-| 14 | rendering | 66,842 |
-| 15 | vehicles | 67,932 |
-| 16 | ui | 74,484 |
+Re-rank after each landed family: its source, recovered types and prototypes
+may make other functions substantially easier. All areas remain eligible.
 
-The pending LevelObject movement investigation was the work in progress when
-this order was requested. Its saved checkpoint remains unmatched; the area
-schedule starts with **meta**. The 100% objective is complete only after every
-area is fully byte-matched, not when this list has merely been worked through.
+## Attempt limits and handoff
+
+- Default first pass: six candidate compile/compare iterations per function.
+- Stop earlier if three materially different source forms produce identical
+  function bytes. Diagnose the unchanged instructions and record the result.
+- Keep the best source/header pair, reproduction command, compiler flags,
+  exact comparison output and remaining differences. A near miss earns no
+  matching credit; its assembly remains in the queue.
+- Park a stalled function and take the next ranked candidate. Return when a
+  matched relative, corrected type or prototype, compiler finding, or other
+  concrete new evidence changes the next experiment. A longer escalation must
+  have an explicit bound and a specific hypothesis.
+- Environment failures need separate repair; do not conceal them as failed
+  source hypotheses or claim stale output as a match.
+
+These are work-selection limits, not a reduced completion target. A parked
+function is still required for 100%. Human authorization is still required
+before starting a wave of agents, as specified in AGENTS.md.
+
+## Current stalled combat work
+
+The saved BulletTraceManager::OnAnimate and Rocket::launch candidates remain
+unmatched. Their diagnostics and reproduction paths are documented under
+docs/matches/ and nonmatching/combat/. Preserve them while advancing the
+reuse queue. Do not restart their exhausted source-order searches without new
+evidence. Historical area-order statements in old match notes are not queue
+instructions.

@@ -25,13 +25,19 @@ has not been decompiled yet. `src/game/<area>/<File>.cpp` holds the C++. A
 function counts as matched when its assembly file has been deleted and a C++
 definition has replaced it.
 
-## Area completion order
+## Work selection
 
-The maintainer requires completing gameplay areas from the fewest total retail
-code bytes to the most. Follow `docs/WORK-ORDER.md`: start with the first area
-that still has pending game functions and stay there until it is 100% byte-matched
-before advancing. Use total area bytes, not remaining bytes. Saved near misses in
-later areas remain queued; do not jump between areas to collect easy matches.
+Maintainer direction on 2026-10-29 replaces the strict area-completion order with
+the reuse-first workflow in `docs/WORK-ORDER.md`. Prioritize automated reuse,
+relatives of existing matches, and small representatives that unlock large
+families. Work may cross gameplay areas; an incomplete area does not hold up
+the queue. The objective remains 100% byte-matched game code.
+
+Use a default first-pass budget of six candidate compile/compare iterations.
+Stop earlier when three materially different source forms produce identical
+function bytes. Preserve the best candidate and exact differences, then park
+the function. Revisit it with new evidence or a bounded escalation; do not spend
+successive turns repeating a stalled search while fresh work is available.
 
 ## Before you change anything
 
@@ -121,7 +127,8 @@ python3 tools/progress.py
 
 ## If you hand work to other agents
 
-Sort by size and use the cheapest model that can do the job. Each worker gets
+Use the work-selection priorities above, smaller first within a priority, and
+the cheapest model that can do the job. Each worker gets
 its own branch and its own functions, stops after a bounded effort, and hands
 its best attempt up a tier. There is no queue or claim file: the assembly
 files themselves are the queue, and a function whose assembly file is gone is
