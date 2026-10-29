@@ -3,12 +3,12 @@
 class ASprite;
 class IUpdatable {
 public:
-    virtual ~IUpdatable();
+    virtual ~IUpdatable() {}
     virtual void update(double) = 0;
 };
 class IDrawable {
 public:
-    virtual ~IDrawable();
+    virtual ~IDrawable() {}
     virtual void draw() const = 0;
     virtual void draw2d() const = 0;
     virtual int getDrawingLayer() const = 0;
@@ -19,10 +19,10 @@ public:
     virtual void processTouchRelease() = 0;
     virtual bool isUsed() const = 0;
 };
-// Observed four-word returned region; its source-level type remains provisional.
-struct HudTouchRegion { unsigned int words[4]; };
-// Call/vtable interface and observed 56-byte storage. Unused return types
-// remain provisional; the native base implementation is not credited here.
+// Four floats written by SetElemRegion; coordinate meanings remain provisional.
+struct HudTouchRegion { float coordinates[4]; };
+// Recovered virtual slots and 56-byte extent. Coordinate meanings and the
+// two zero-initialized fields at offsets 32/36 remain provisional.
 class HudElement : public IUpdatable, public IDrawable, public ITouchable {
 public:
     HudElement(ASprite*, int, bool);
@@ -42,10 +42,16 @@ public:
     virtual void draw() const;
     virtual void draw2d() const;
     virtual int getDrawingLayer() const;
+    void SetElemRegion(float, float, float, float);
+    void blink(bool enabled, bool force);
+    void updateBlinkTimer(int elapsed);
+    void setWasInRegionLastFrame(bool value);
 protected:
     unsigned int flags;
     HudTouchRegion touchRegion;
-    int unknown32,unknown36,unknown40;
+    float unknown32,unknown36;
+    bool wasInRegionLastFrame;
+    unsigned char unknown41[3];
     ASprite* sprite;
     int frame;
     int unknown52;

@@ -25,6 +25,7 @@
     "source": "src/game/hud/HudElement.cpp",
     "linker_script": "config/linker/HudElement.ld",
     "functions": [
+        "_ZN10HudElement4hideEv",
         "_ZN10HudElement4showEv",
         "_ZNK10HudElement9isVisibleEv",
         "_ZNK10HudElement10isBlinkingEv",
@@ -40,8 +41,35 @@
         "_ZThn4_NK10HudElement4drawEv",
         "_ZNK10HudElement4drawEv",
         "_ZN10HudElement6updateEd",
+        "_ZNK10HudElement14getTouchRegionEv",
+        "_ZN10HudElement13SetElemRegionEffff",
         "_ZThn4_NK10HudElement15getDrawingLayerEv",
-        "_ZNK10HudElement15getDrawingLayerEv"
+        "_ZNK10HudElement15getDrawingLayerEv",
+        "_ZN10HudElement5blinkEbb",
+        "_ZN10HudElement16updateBlinkTimerEi",
+        "_ZN10HudElement23setWasInRegionLastFrameEb",
+        "_ZThn4_NK10HudElement6draw2dEv",
+        "_ZNK10HudElement6draw2dEv",
+        "_ZN10HudElementC1EP7ASpriteib",
+        "_ZN10HudElementC2EP7ASpriteib",
+        "_ZThn4_N10HudElementD0Ev",
+        "_ZN10HudElementD0Ev",
+        "_ZThn4_N10HudElementD1Ev",
+        "_ZN10HudElementD1Ev",
+        "_ZN10HudElementD2Ev",
+        "_ZN9IDrawableD0Ev",
+        "_ZN9IDrawableD1Ev",
+        "_ZN10IUpdatableD0Ev",
+        "_ZN10IUpdatableD1Ev",
+        {
+            "name": "__tcf_2",
+            "address": "0x0032885d"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x003289bd"
+        },
+        "_GLOBAL__I__ZN10HudElementC2EP7ASpriteib"
     ],
     "sections": [
         ".hud_show",
@@ -60,6 +88,39 @@
         ".hud_draw",
         ".hud_update",
         ".hud_layer_thunk",
-        ".hud_layer"
+        ".hud_layer",
+        ".hud_hide",
+        ".hud_region",
+        ".hud_set_region",
+        ".hud_blink",
+        ".hud_blink_timer",
+        ".hud_was_in_region",
+        ".hud_draw2d_thunk",
+        ".hud_draw2d",
+        ".hud_constructor",
+        ".hud_delete",
+        ".hud_destructor",
+        ".hud_delete_thunk",
+        ".hud_destructor_thunk",
+        ".hud_vtable",
+        ".hud_updatable_vtable",
+        ".hud_drawable_vtable",
+        ".hud_touchable_vtable",
+        ".hud_drawable_delete",
+        ".hud_drawable_destructor",
+        ".hud_updatable_delete",
+        ".hud_updatable_destructor",
+        ".hud_cleanup",
+        ".hud_startup",
+        ".hud_startup_wrapper",
+        ".hud_rodata",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZNK7ASprite10PaintFrameEiiii"
     ]
 }
