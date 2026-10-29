@@ -150,6 +150,19 @@ retail bindings as well. BufferStream uses this to retain Stream's Thumb
 function metadata and verify both source units together. Dependency cycles
 are rejected before compilation.
 
+The command plans the complete dependency graph before compiling. Each required
+unit is built and compared once per invocation, even when several selected units
+share it or it is also selected explicitly. Every dependent image still links
+the verified dependency object and runs its own function and section comparisons.
+`BUILD <unit>` identifies each scheduled unit. A failed byte comparison skips
+its dependent units, reports `SKIP`, and makes the command fail; independent
+units are still checked. A compiler or linker failure stops the command.
+
+This scheduling does not provide a persistent or incremental cache. Every new
+command rebuilds all required units from source using their configured compiler
+profiles (or the explicit toolchain override). Keep sources, manifests, linker
+scripts and toolchains unchanged while a command runs.
+
 ### External Thumb callees
 
 A unit may list `external_thumb_functions` in its manifest when a callee still
