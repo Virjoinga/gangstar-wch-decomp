@@ -4,6 +4,18 @@ The retail `importGLInit` returns 1 immediately; `importGLDeinit` returns
 without doing any work. The replacements preserve C linkage and the original
 translation-unit name. No engine types or unresolved relocations are needed.
 
+Both functions are included in the normal verification selection:
+
+```sh
+python tools/build.py importgl
+python tools/build.py --all
+```
+
+The manifest compiles the production source and checks its unmodified object
+directly. These relocation-free functions do not require a linked image.
+Previously, only the standalone baseline script below selected them; adding the
+manifest makes the complete configured build cover these existing matches too.
+
 Verified on 2026-10-22 using Windows NDK r4b GCC 4.2.1 and the setup in
 `docs/COMPILER-NOTES.md`:
 
