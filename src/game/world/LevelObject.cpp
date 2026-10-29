@@ -39,6 +39,33 @@ static void __tcf_3(void*)
 }
 }
 
+// Retail emits these base defaults as weak definitions. Keep them local to
+// this partial source unit without changing callers' inline visibility.
+bool __attribute__((weak)) LevelObject::isPhotographed() const
+{
+    return false;
+}
+
+int __attribute__((weak)) LevelObject::getMaxHealth() const
+{
+    return 0;
+}
+
+int __attribute__((weak)) LevelObject::getHealth() const
+{
+    return 0;
+}
+
+bool __attribute__((weak)) LevelObject::isDead()
+{
+    return true;
+}
+
+void* __attribute__((weak)) LevelObject::getSkinMesh()
+{
+    return 0;
+}
+
 LevelObject::LevelObject(int)
 {
     unknown4 = 0;

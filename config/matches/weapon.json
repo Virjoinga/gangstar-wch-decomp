@@ -186,7 +186,12 @@
         ".level_range",
         ".level_sight",
         ".level_base_type",
-        ".loading"
+        ".loading",
+        ".level_base_photo",
+        ".level_base_health_max",
+        ".level_base_health",
+        ".level_base_dead",
+        ".level_base_skin"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

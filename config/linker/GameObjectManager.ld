@@ -56,6 +56,11 @@ __aeabi_fcmpgt = 0x001c419c;
 __aeabi_fcmpeq = 0x001c470c;
 __aeabi_fcmplt = 0x001c479c;
 SECTIONS {
+    .level_base_photo 0x2f1440 : { *level-object.o(.text._ZNK11LevelObject14isPhotographedEv .gnu.linkonce.t._ZNK11LevelObject14isPhotographedEv) }
+    .level_base_health_max 0x2f74ec : { *level-object.o(.text._ZNK11LevelObject12getMaxHealthEv .gnu.linkonce.t._ZNK11LevelObject12getMaxHealthEv) }
+    .level_base_health 0x2f74f0 : { *level-object.o(.text._ZNK11LevelObject9getHealthEv .gnu.linkonce.t._ZNK11LevelObject9getHealthEv) }
+    .level_base_dead 0x2f74f4 : { *level-object.o(.text._ZN11LevelObject6isDeadEv .gnu.linkonce.t._ZN11LevelObject6isDeadEv) }
+    .level_base_skin 0x2f74f8 : { *level-object.o(.text._ZN11LevelObject11getSkinMeshEv .gnu.linkonce.t._ZN11LevelObject11getSkinMeshEv) }
     .level_sight 0x00317380 : { *level-object.o(.text._ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE) }
     .level_base_type 0x002f74d0 : { *level-object.o(.text._ZN11LevelObject12getSpawnTypeEv .gnu.linkonce.t._ZN11LevelObject12getSpawnTypeEv) }
     .level_visible 0x0031696c : { *level-object.o(.text._ZN11LevelObject17isVisibleOnScreenEv) }

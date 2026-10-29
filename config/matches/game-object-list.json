@@ -181,7 +181,12 @@
         ".level_visible",
         ".level_range",
         ".level_sight",
-        ".level_base_type"
+        ".level_base_type",
+        ".level_base_photo",
+        ".level_base_health_max",
+        ".level_base_health",
+        ".level_base_dead",
+        ".level_base_skin"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

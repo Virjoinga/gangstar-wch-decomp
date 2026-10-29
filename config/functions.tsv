@@ -10024,7 +10024,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f1431	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetSpeedEv	LevelObject::GetSpeed() const
 0x002f1439	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject12photographedEv	LevelObject::photographed()
 0x002f143d	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject17clearPhotographedEv	LevelObject::clearPhotographed()
-0x002f1441	0x4	LevelObject.cpp	game	world	pending	_ZNK11LevelObject14isPhotographedEv	LevelObject::isPhotographed() const
+0x002f1441	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject14isPhotographedEv	LevelObject::isPhotographed() const
 0x002f1445	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setAnimationEiibbb	LevelObject::setAnimation(int, int, bool, bool, bool)
 0x002f1449	0x8	Character.cpp	game	characters	pending	_ZN9Character12getSpawnTypeEv	Character::getSpawnType()
 0x002f1451	0x8	Character.cpp	game	characters	pending	_ZN9Character12setSpawnTypeEi	Character::setSpawnType(int)
@@ -10153,10 +10153,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f7415	0xb8	Character.cpp	game	characters	pending	_ZN9Character6attackEv	Character::attack()
 0x002f74cd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setSpawnTypeEi	LevelObject::setSpawnType(int)
 0x002f74d1	0x1c	LevelObject.cpp	game	world	matched	_ZN11LevelObject12getSpawnTypeEv	LevelObject::getSpawnType()
-0x002f74ed	0x4	LevelObject.cpp	game	world	pending	_ZNK11LevelObject12getMaxHealthEv	LevelObject::getMaxHealth() const
-0x002f74f1	0x4	LevelObject.cpp	game	world	pending	_ZNK11LevelObject9getHealthEv	LevelObject::getHealth() const
-0x002f74f5	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject6isDeadEv	LevelObject::isDead()
-0x002f74f9	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject11getSkinMeshEv	LevelObject::getSkinMesh()
+0x002f74ed	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject12getMaxHealthEv	LevelObject::getMaxHealth() const
+0x002f74f1	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject9getHealthEv	LevelObject::getHealth() const
+0x002f74f5	0x4	LevelObject.cpp	game	world	matched	_ZN11LevelObject6isDeadEv	LevelObject::isDead()
+0x002f74f9	0x4	LevelObject.cpp	game	world	matched	_ZN11LevelObject11getSkinMeshEv	LevelObject::getSkinMesh()
 0x002f74fd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject11applyDamageEiPS_b	LevelObject::applyDamage(int, LevelObject*, bool)
 0x002f7501	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject27setAnimationSpeedMultiplierEi	LevelObject::setAnimationSpeedMultiplier(int)
 0x002f7505	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setAnimationEPKcibbb	LevelObject::setAnimation(char const*, int, bool, bool, bool)
