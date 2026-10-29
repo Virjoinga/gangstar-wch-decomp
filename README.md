@@ -139,7 +139,7 @@ toolchain image automatically.
 * [docs/PORTING-REFERENCES.md](docs/PORTING-REFERENCES.md) — AndroidRecomp, BackStabRecomp and local Vita reference findings
 * [docs/ENGINE.md](docs/ENGINE.md) — what is in the library and where it came from
 * [docs/LAYOUT.md](docs/LAYOUT.md) — the original file layout and the gameplay areas
-* [docs/WORK-ORDER.md](docs/WORK-ORDER.md) - complete areas from fewest to most total code bytes
+* [docs/WORK-ORDER.md](docs/WORK-ORDER.md) - reuse-first family selection and bounded matching attempts
 * [CONTRIBUTING.md](CONTRIBUTING.md) — how to land a change
 * [AGENTS.md](AGENTS.md) — the rules, for human and AI contributors alike
 

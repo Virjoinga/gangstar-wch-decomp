@@ -152,7 +152,7 @@ output and must pass required CI with a clean merge before merging.
 ## Delivery order
 
 The maintainer's [AndroidRecomp and BackStabRecomp references](PORTING-REFERENCES.md)
-are queued for implementation review after combat is fully byte-matched. Their
+were reviewed during combat work; their findings are recorded there. Their
 runtime approaches may inform later porting work; they do not change these
 matching and full-link acceptance gates.
 
@@ -161,4 +161,4 @@ small tooling PRs separate from function matches. Follow with extraction,
 full-link auditing, and finally runtime/packaging support; each has the gates
 above. Full linking is a separate engineering project and must not imply that
 pending C++ functions are complete. Continue the decompilation in
-[WORK-ORDER.md](WORK-ORDER.md) order: combat follows meta.
+[WORK-ORDER.md](WORK-ORDER.md) reuse-first order across gameplay areas.

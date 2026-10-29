@@ -50,6 +50,11 @@ install.
 
 ## Finding work
 
+Follow [WORK-ORDER.md](docs/WORK-ORDER.md): reuse existing matches, prioritize
+related function families, and park stalled attempts with their best candidate
+and exact differences. Any gameplay area is eligible; completing an area is
+not a prerequisite for taking work elsewhere.
+
 ```sh
 python3 tools/progress.py
 ```
