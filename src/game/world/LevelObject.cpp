@@ -41,10 +41,16 @@ static void __tcf_3(void*)
 
 // Retail emits these base defaults as weak definitions. Keep them local to
 // this partial source unit without changing callers' inline visibility.
+void __attribute__((weak)) LevelObject::photographed() {}
+
+void __attribute__((weak)) LevelObject::clearPhotographed() {}
+
 bool __attribute__((weak)) LevelObject::isPhotographed() const
 {
     return false;
 }
+
+void __attribute__((weak)) LevelObject::setSpawnType(int) {}
 
 int __attribute__((weak)) LevelObject::getMaxHealth() const
 {
@@ -66,6 +72,16 @@ void* __attribute__((weak)) LevelObject::getSkinMesh()
     return 0;
 }
 
+void __attribute__((weak)) LevelObject::applyDamage(int, LevelObject*, bool) {}
+
+void __attribute__((weak)) LevelObject::setAnimationSpeedMultiplier(int) {}
+
+void __attribute__((weak)) LevelObject::setNextAnimation(const char*, int, bool, bool, bool) {}
+
+void __attribute__((weak)) LevelObject::setNextAnimation(int, int, bool, bool, bool) {}
+
+void __attribute__((weak)) LevelObject::shooted(int, LevelObject*) {}
+
 LevelObject::LevelObject(int)
 {
     unknown4 = 0;
@@ -82,7 +98,17 @@ LevelObject::LevelObject(int)
     unknown48 = -1;
 }
 
+void LevelObject::Stop() {}
+
+void LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**) {}
+
+void LevelObject::debug(irr::video::IVideoDriver*) {}
+
 void LevelObject::WarmUp() {}
+
+void LevelObject::init() {}
+
+void LevelObject::clean() {}
 
 void LevelObject::setup()
 {

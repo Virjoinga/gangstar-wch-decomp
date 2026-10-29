@@ -25,6 +25,7 @@ public:
     const char* getName() const { return unknown28; }
     unsigned char GetMetatype();
     void SetName(const char* name);
+    void debug(irr::video::IVideoDriver* driver);
     static void setup();
     static void freeHighlights();
     static void loadHighlights(const char* filename);
