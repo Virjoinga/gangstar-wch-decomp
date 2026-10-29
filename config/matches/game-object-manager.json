@@ -256,7 +256,10 @@
         ".level_hook_setup_node",
         ".level_hook_debug",
         ".level_hook_init",
-        ".level_hook_clean"
+        ".level_hook_clean",
+        ".level_get_speed",
+        ".level_get_material_id",
+        ".level_get_triangle_id"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

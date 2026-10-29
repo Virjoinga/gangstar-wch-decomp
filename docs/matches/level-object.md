@@ -4,6 +4,8 @@ Five matched base query defaults are documented in
 [level-object-default-queries.md](level-object-default-queries.md).
 The empty base hooks are documented in
 [level-object-base-hooks.md](level-object-base-hooks.md).
+Speed and physics ID accessors are documented in
+[level-object-metadata-accessors.md](level-object-metadata-accessors.md).
 
 The former dropSceneNode near miss below is superseded by the exact native
 implementation in [level-object-activation.md](level-object-activation.md). Its old
