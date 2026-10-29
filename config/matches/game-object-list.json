@@ -186,7 +186,20 @@
         ".level_base_health_max",
         ".level_base_health",
         ".level_base_dead",
-        ".level_base_skin"
+        ".level_base_skin",
+        ".level_hook_photo",
+        ".level_hook_clear_photo",
+        ".level_hook_set_spawn",
+        ".level_hook_damage",
+        ".level_hook_anim_speed",
+        ".level_hook_next_named",
+        ".level_hook_next_id",
+        ".level_hook_shot",
+        ".level_hook_stop",
+        ".level_hook_setup_node",
+        ".level_hook_debug",
+        ".level_hook_init",
+        ".level_hook_clean"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

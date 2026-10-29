@@ -56,6 +56,19 @@ __aeabi_fcmpgt = 0x001c419c;
 __aeabi_fcmpeq = 0x001c470c;
 __aeabi_fcmplt = 0x001c479c;
 SECTIONS {
+    .level_hook_photo 0x2f1438 : { *level-object.o(.text._ZN11LevelObject12photographedEv .gnu.linkonce.t._ZN11LevelObject12photographedEv) }
+    .level_hook_clear_photo 0x2f143c : { *level-object.o(.text._ZN11LevelObject17clearPhotographedEv .gnu.linkonce.t._ZN11LevelObject17clearPhotographedEv) }
+    .level_hook_set_spawn 0x2f74cc : { *level-object.o(.text._ZN11LevelObject12setSpawnTypeEi .gnu.linkonce.t._ZN11LevelObject12setSpawnTypeEi) }
+    .level_hook_damage 0x2f74fc : { *level-object.o(.text._ZN11LevelObject11applyDamageEiPS_b .gnu.linkonce.t._ZN11LevelObject11applyDamageEiPS_b) }
+    .level_hook_anim_speed 0x2f7500 : { *level-object.o(.text._ZN11LevelObject27setAnimationSpeedMultiplierEi .gnu.linkonce.t._ZN11LevelObject27setAnimationSpeedMultiplierEi) }
+    .level_hook_next_named 0x2f7508 : { *level-object.o(.text._ZN11LevelObject16setNextAnimationEPKcibbb .gnu.linkonce.t._ZN11LevelObject16setNextAnimationEPKcibbb) }
+    .level_hook_next_id 0x2f750c : { *level-object.o(.text._ZN11LevelObject16setNextAnimationEiibbb .gnu.linkonce.t._ZN11LevelObject16setNextAnimationEiibbb) }
+    .level_hook_shot 0x2f7510 : { *level-object.o(.text._ZN11LevelObject7shootedEiPS_ .gnu.linkonce.t._ZN11LevelObject7shootedEiPS_) }
+    .level_hook_stop 0x316838 : { *level-object.o(.text._ZN11LevelObject4StopEv .gnu.linkonce.t._ZN11LevelObject4StopEv) }
+    .level_hook_setup_node 0x316844 : { *level-object.o(.text._ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv .gnu.linkonce.t._ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv) }
+    .level_hook_debug 0x316848 : { *level-object.o(.text._ZN11LevelObject5debugEPN3irr5video12IVideoDriverE .gnu.linkonce.t._ZN11LevelObject5debugEPN3irr5video12IVideoDriverE) }
+    .level_hook_init 0x3168ac : { *level-object.o(.text._ZN11LevelObject4initEv .gnu.linkonce.t._ZN11LevelObject4initEv) }
+    .level_hook_clean 0x3168b0 : { *level-object.o(.text._ZN11LevelObject5cleanEv .gnu.linkonce.t._ZN11LevelObject5cleanEv) }
     .level_base_photo 0x2f1440 : { *level-object.o(.text._ZNK11LevelObject14isPhotographedEv .gnu.linkonce.t._ZNK11LevelObject14isPhotographedEv) }
     .level_base_health_max 0x2f74ec : { *level-object.o(.text._ZNK11LevelObject12getMaxHealthEv .gnu.linkonce.t._ZNK11LevelObject12getMaxHealthEv) }
     .level_base_health 0x2f74f0 : { *level-object.o(.text._ZNK11LevelObject9getHealthEv .gnu.linkonce.t._ZNK11LevelObject9getHealthEv) }

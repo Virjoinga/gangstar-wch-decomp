@@ -10022,8 +10022,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f12d9	0xc0	BulletTraceManager.cpp	game	combat	matched	_ZN18BulletTraceManagerD1Ev	BulletTraceManager::~BulletTraceManager()
 0x002f1399	0x98	BulletTraceManager.cpp	game	combat	matched	_ZN18BulletTraceManagerD2Ev	BulletTraceManager::~BulletTraceManager()
 0x002f1431	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetSpeedEv	LevelObject::GetSpeed() const
-0x002f1439	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject12photographedEv	LevelObject::photographed()
-0x002f143d	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject17clearPhotographedEv	LevelObject::clearPhotographed()
+0x002f1439	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject12photographedEv	LevelObject::photographed()
+0x002f143d	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject17clearPhotographedEv	LevelObject::clearPhotographed()
 0x002f1441	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject14isPhotographedEv	LevelObject::isPhotographed() const
 0x002f1445	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setAnimationEiibbb	LevelObject::setAnimation(int, int, bool, bool, bool)
 0x002f1449	0x8	Character.cpp	game	characters	pending	_ZN9Character12getSpawnTypeEv	Character::getSpawnType()
@@ -10151,18 +10151,18 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f6fb9	0x154	Character.cpp	game	characters	pending	_ZN9Character4kickEv	Character::kick()
 0x002f710d	0x308	Character.cpp	game	characters	pending	_ZN9Character5punchEv	Character::punch()
 0x002f7415	0xb8	Character.cpp	game	characters	pending	_ZN9Character6attackEv	Character::attack()
-0x002f74cd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setSpawnTypeEi	LevelObject::setSpawnType(int)
+0x002f74cd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject12setSpawnTypeEi	LevelObject::setSpawnType(int)
 0x002f74d1	0x1c	LevelObject.cpp	game	world	matched	_ZN11LevelObject12getSpawnTypeEv	LevelObject::getSpawnType()
 0x002f74ed	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject12getMaxHealthEv	LevelObject::getMaxHealth() const
 0x002f74f1	0x4	LevelObject.cpp	game	world	matched	_ZNK11LevelObject9getHealthEv	LevelObject::getHealth() const
 0x002f74f5	0x4	LevelObject.cpp	game	world	matched	_ZN11LevelObject6isDeadEv	LevelObject::isDead()
 0x002f74f9	0x4	LevelObject.cpp	game	world	matched	_ZN11LevelObject11getSkinMeshEv	LevelObject::getSkinMesh()
-0x002f74fd	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject11applyDamageEiPS_b	LevelObject::applyDamage(int, LevelObject*, bool)
-0x002f7501	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject27setAnimationSpeedMultiplierEi	LevelObject::setAnimationSpeedMultiplier(int)
+0x002f74fd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject11applyDamageEiPS_b	LevelObject::applyDamage(int, LevelObject*, bool)
+0x002f7501	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject27setAnimationSpeedMultiplierEi	LevelObject::setAnimationSpeedMultiplier(int)
 0x002f7505	0x4	LevelObject.cpp	game	world	pending	_ZN11LevelObject12setAnimationEPKcibbb	LevelObject::setAnimation(char const*, int, bool, bool, bool)
-0x002f7509	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject16setNextAnimationEPKcibbb	LevelObject::setNextAnimation(char const*, int, bool, bool, bool)
-0x002f750d	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject16setNextAnimationEiibbb	LevelObject::setNextAnimation(int, int, bool, bool, bool)
-0x002f7511	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject7shootedEiPS_	LevelObject::shooted(int, LevelObject*)
+0x002f7509	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject16setNextAnimationEPKcibbb	LevelObject::setNextAnimation(char const*, int, bool, bool, bool)
+0x002f750d	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject16setNextAnimationEiibbb	LevelObject::setNextAnimation(int, int, bool, bool, bool)
+0x002f7511	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject7shootedEiPS_	LevelObject::shooted(int, LevelObject*)
 0x002f7515	0x24	Checkpoint.cpp	game	missions	pending	__tcf_1	__tcf_1
 0x002f7539	0x2e	Checkpoint.cpp	game	missions	pending	_ZN10Checkpoint11SetPositionERKN3irr4core8vector3dIfEE	Checkpoint::SetPosition(irr::core::vector3d<float> const&)
 0x002f7569	0x98	Checkpoint.cpp	game	missions	pending	_ZN10Checkpoint6enableEv	Checkpoint::enable()
@@ -10806,16 +10806,16 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003167dd	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject6WarmUpEv	LevelObject::WarmUp()
 0x003167e1	0x50	LevelObject.cpp	game	world	matched	_ZN11LevelObject5setupEv	LevelObject::setup()
 0x00316831	0x8	LevelObject.cpp	game	world	pending	_ZNK11LevelObject8GetMatIDEv	LevelObject::GetMatID() const
-0x00316839	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4StopEv	LevelObject::Stop()
+0x00316839	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject4StopEv	LevelObject::Stop()
 0x0031683d	0x8	LevelObject.cpp	game	world	matched	_ZNK11LevelObject9isEnabledEv	LevelObject::isEnabled() const
-0x00316845	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
-0x00316849	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5debugEPN3irr5video12IVideoDriverE	LevelObject::debug(irr::video::IVideoDriver*)
+0x00316845	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject14setupSceneNodeEiPN3irr5scene10ISceneNodeEiPPv	LevelObject::setupSceneNode(int, irr::scene::ISceneNode*, int, void**)
+0x00316849	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject5debugEPN3irr5video12IVideoDriverE	LevelObject::debug(irr::video::IVideoDriver*)
 0x0031684d	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetPositionEv	LevelObject::GetPosition() const
 0x00316861	0x20	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetPositionERKN3irr4core8vector3dIfEE	LevelObject::SetPosition(irr::core::vector3d<float> const&)
 0x00316881	0x16	LevelObject.cpp	game	world	matched	_ZN11LevelObject11SetRotationERKN3irr4core10quaternionE	LevelObject::SetRotation(irr::core::quaternion const&)
 0x00316899	0x12	LevelObject.cpp	game	world	matched	_ZNK11LevelObject11GetRotationEv	LevelObject::GetRotation() const
-0x003168ad	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject4initEv	LevelObject::init()
-0x003168b1	0x2	LevelObject.cpp	game	world	pending	_ZN11LevelObject5cleanEv	LevelObject::clean()
+0x003168ad	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject4initEv	LevelObject::init()
+0x003168b1	0x2	LevelObject.cpp	game	world	matched	_ZN11LevelObject5cleanEv	LevelObject::clean()
 0x003168b5	0x30	LevelObject.cpp	game	world	matched	__tcf_3	__tcf_3
 0x003168e5	0x24	LevelObject.cpp	game	world	matched	__tcf_1	__tcf_1
 0x00316909	0x38	LevelObject.cpp	game	world	matched	_ZN11LevelObject14freeHighlightsEv	LevelObject::freeHighlights()
