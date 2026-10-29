@@ -1,5 +1,8 @@
 # LevelObject construction and scene lifecycle
 
+Five matched base query defaults are documented in
+[level-object-default-queries.md](level-object-default-queries.md).
+
 The former dropSceneNode near miss below is superseded by the exact native
 implementation in [level-object-activation.md](level-object-activation.md). Its old
 nonmatching runner is retired; use `python tools/build.py level-object`.

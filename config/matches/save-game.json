@@ -214,7 +214,12 @@
         ".level_range",
         ".level_sight",
         ".level_base_type",
-        ".weapon_loading"
+        ".weapon_loading",
+        ".level_base_photo",
+        ".level_base_health_max",
+        ".level_base_health",
+        ".level_base_dead",
+        ".level_base_skin"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",

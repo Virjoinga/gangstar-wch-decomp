@@ -169,7 +169,12 @@
         ".item_usable",
         ".item_usable_switch",
         ".item_add",
-        ".item_add_switch"
+        ".item_add_switch",
+        ".level_base_photo",
+        ".level_base_health_max",
+        ".level_base_health",
+        ".level_base_dead",
+        ".level_base_skin"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
