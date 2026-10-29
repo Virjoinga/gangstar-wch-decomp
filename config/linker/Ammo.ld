@@ -15,6 +15,8 @@ _ZN23retail_ammo_transitions11guard_transE = 0x004228f0;
 _ZN23retail_ammo_transitions22scripted_vehicle_transE = 0x00422998;
 memset = 0x001c45d4;
 sprintf = 0x001c46ac;
+__cxa_pure_virtual = 0;
+INCLUDE config/linker/HudElement-sections.ld
 SECTIONS
 {
     .ammo_set_weapon 0x00325ed4 : { *ammo.o(.text._ZN4Ammo9setWeaponEP6Weapon) }
@@ -22,7 +24,7 @@ SECTIONS
     .ammo_startup 0x003261b8 : { *ammo.o(.text._Z41__static_initialization_and_destruction_0ii) }
     .ammo_startup_wrapper 0x003262fc : { *ammo.o(.text._GLOBAL__I__ZN4AmmoC2EP7ASpritei) }
     .ammo_string_cleanup 0x00326310 : { *ammo.o(.text.__tcf_3) }
-    .ammo_empty_string 0x0044d91c : { *ammo.o(.rodata.str1.4) }
+    .ammo_empty_string 0x0044d91c : { *ammo.o(.rodata.str1.4) *hud-element.o(.rodata.str1.4) }
     .ammo_storage_string 0x004b91dc (NOLOAD) : { *ammo.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .ammo_storage_half 0x004b91fc (NOLOAD) : { *ammo.o(.bss._ZN3irr2ps5vHalfE) }
     .ammo_storage_record_0 0x004b9208 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai11civ_passiveE) }
@@ -60,3 +62,6 @@ ASSERT(SIZEOF(.ammo_storage_record_6) == 8, "Ammo record_6 extent");
 ASSERT(SIZEOF(.ammo_storage_record_7) == 8, "Ammo record_7 extent");
 ASSERT(SIZEOF(.ammo_storage_record_8) == 8, "Ammo record_8 extent");
 ASSERT(SIZEOF(.ammo_storage_record_9) == 8, "Ammo record_9 extent");
+
+ASSERT(SIZEOF(.hud_empty_string) == 32, "HudElement string storage extent");
+ASSERT(SIZEOF(.hud_half_vector) == 12, "HudElement half-vector storage extent");
