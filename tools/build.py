@@ -91,11 +91,55 @@ def build_unit(name: str, compiler_root: Path | None, base_library: Path,
     source_first = manifest.get("source_first", False)
     if not isinstance(source_first, bool):
         raise ValueError("source_first must be a boolean")
-    dependency_objects = []
     for dependency in manifest.get("dependencies", []):
         if not build_unit(dependency, compiler_root, base_library, (*active, name)):
             return False
-        dependency_objects.append(f"build/matches/{dependency}/{dependency}.o")
+    return _build_unit(name, compiler_root, base_library, manifest)
+
+
+def build_units(names: list[str], compiler_root: Path | None, base_library: Path) -> bool:
+    """Plan one invocation, then verify each required unit once, dependencies first.
+
+    This is not an incremental cache: every invocation compiles from source.
+    As with a normal build, inputs must not be edited while it is running.
+    """
+    manifests = {}
+    ordered = []
+
+    def visit(name, active=()):
+        if name in active:
+            raise ValueError("cyclic build dependency: " + " -> ".join((*active, name)))
+        if name in manifests:
+            return
+        manifest = json.loads((ROOT / "config/matches" / f"{name}.json").read_text())
+        if not isinstance(manifest.get("source_first", False), bool):
+            raise ValueError("source_first must be a boolean")
+        for dependency in manifest.get("dependencies", []):
+            visit(dependency, (*active, name))
+        manifests[name] = manifest
+        ordered.append(name)
+
+    for name in names:
+        visit(name)
+    results = {}
+    for name in ordered:
+        manifest = manifests[name]
+        failed = [dep for dep in manifest.get("dependencies", []) if not results[dep]]
+        if failed:
+            print(f"SKIP {name}: failed dependencies: {', '.join(failed)}", file=sys.stderr)
+            results[name] = False
+        else:
+            print(f"BUILD {name}")
+            results[name] = _build_unit(name, compiler_root, base_library, manifest)
+    return all(results.values())
+
+
+def _build_unit(name: str, compiler_root: Path | None, base_library: Path,
+                manifest: dict) -> bool:
+    """Build and compare a unit whose dependencies have already passed."""
+    source_first = manifest.get("source_first", False)
+    dependency_objects = [f"build/matches/{dep}/{dep}.o"
+                          for dep in manifest.get("dependencies", [])]
     if compiler_root is None:
         compiler_root = ROOT / manifest.get("toolchain",
             "toolchain/android-ndk-r4b/build/prebuilt/windows/arm-eabi-4.2.1")
@@ -198,9 +242,7 @@ def main(argv: list[str] | None = None) -> int:
         base_library = find_base_library(args.baselib)
         if hashlib.sha256(base_library.read_bytes()).hexdigest() != BASE_LIB_SHA256:
             raise ValueError("retail SHA-256 differs from the repository target")
-        passed = True
-        for name in names:
-            passed = build_unit(name, args.toolchain, base_library) and passed
+        passed = build_units(names, args.toolchain, base_library)
         return 0 if passed else 1
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print(f"BUILD FAILED: {error}", file=sys.stderr)
