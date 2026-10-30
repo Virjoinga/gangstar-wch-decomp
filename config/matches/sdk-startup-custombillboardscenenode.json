@@ -1,0 +1,52 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/rendering/CustomBillboardSceneNode.cpp",
+    "linker_script": "config/linker/CustomBillboardSceneNodeSdkStartup.ld",
+    "functions": [
+        {
+            "name": "__tcf_2",
+            "address": "0x002f7a25"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002f7dd1"
+        },
+        {
+            "name": "_GLOBAL__I__ZN24CustomBillboardSceneNodeC2ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE",
+            "address": "0x002f7e3d"
+        }
+    ],
+    "sections": [
+        ".sdk_startup_function_0",
+        ".sdk_startup_function_1",
+        ".sdk_startup_function_2",
+        ".shared_startup_empty_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}

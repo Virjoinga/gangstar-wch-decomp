@@ -8737,9 +8737,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d2edd	0x54	LODSceneNode.cpp	game	rendering	pending	_ZNK12LODSceneNode29GetMeshTransformedBoundingBoxEPKN3irr5scene10ISceneNodeE	LODSceneNode::GetMeshTransformedBoundingBox(irr::scene::ISceneNode const*) const
 0x002d2f31	0x1e	LODSceneNode.cpp	game	rendering	pending	_ZNK12LODSceneNode25getTransformedBoundingBoxEv	LODSceneNode::getTransformedBoundingBox() const
 0x002d2f51	0xd0	LODSceneNode.cpp	game	rendering	pending	_ZN12LODSceneNodeC1EiRKN3irr4core8vector3dIfEERKNS1_10quaternionES5_	LODSceneNode::LODSceneNode(int, irr::core::vector3d<float> const&, irr::core::quaternion const&, irr::core::vector3d<float> const&)
-0x002d3021	0x6c	LODSceneNode.cpp	game	rendering	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002d308d	0x14	LODSceneNode.cpp	game	rendering	pending	_GLOBAL__I__ZN12LODSceneNodeC2EiRKN3irr4core8vector3dIfEERKNS1_10quaternionES5_	_GLOBAL__I__ZN12LODSceneNodeC2EiRKN3irr4core8vector3dIfEERKNS1_10quaternionES5_
-0x002d30a1	0x30	LODSceneNode.cpp	game	rendering	pending	__tcf_2	__tcf_2
+0x002d3021	0x6c	LODSceneNode.cpp	game	rendering	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002d308d	0x14	LODSceneNode.cpp	game	rendering	matched	_GLOBAL__I__ZN12LODSceneNodeC2EiRKN3irr4core8vector3dIfEERKNS1_10quaternionES5_	_GLOBAL__I__ZN12LODSceneNodeC2EiRKN3irr4core8vector3dIfEERKNS1_10quaternionES5_
+0x002d30a1	0x30	LODSceneNode.cpp	game	rendering	matched	__tcf_2	__tcf_2
 0x002d30d1	0x14	LODSceneNode.cpp	game	rendering	pending	_ZTv0_n12_N12LODSceneNodeD0Ev	virtual thunk to LODSceneNode::~LODSceneNode()
 0x002d30e5	0x14	LODSceneNode.cpp	game	rendering	pending	_ZTv0_n24_N12LODSceneNodeD0Ev	virtual thunk to LODSceneNode::~LODSceneNode()
 0x002d30f9	0xb4	LODSceneNode.cpp	game	rendering	pending	_ZN12LODSceneNodeD0Ev	LODSceneNode::~LODSceneNode()
@@ -10181,7 +10181,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f79b5	0x30	Checkpoint.cpp	game	missions	pending	__tcf_3	__tcf_3
 0x002f79e5	0x3a	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode9setParentEPN3irr5scene10ISceneNodeE	CustomBillboardSceneNode::setParent(irr::scene::ISceneNode*)
 0x002f7a21	0x2	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode6renderEv	CustomBillboardSceneNode::render()
-0x002f7a25	0x30	CustomBillboardSceneNode.cpp	game	rendering	pending	__tcf_2	__tcf_2
+0x002f7a25	0x30	CustomBillboardSceneNode.cpp	game	rendering	matched	__tcf_2	__tcf_2
 0x002f7a55	0x48	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode9setLengthEj	CustomBillboardSceneNode::setLength(unsigned int)
 0x002f7a9d	0xa0	CustomBillboardSceneNode.cpp	irrlicht	-	matched	_ZN3irr7collada14CRootSceneNodeC2ERKNS0_16CColladaDatabaseE	irr::collada::CRootSceneNode::CRootSceneNode(irr::collada::CColladaDatabase const&)
 0x002f7b3d	0xb4	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNodeC1ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE	CustomBillboardSceneNode::CustomBillboardSceneNode(irr::collada::CColladaDatabase const&, irr::collada::SNode*)
@@ -10189,8 +10189,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f7c71	0x36	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode23setChildrenMaterialTypeEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_TYPEE	CustomBillboardSceneNode::setChildrenMaterialType(irr::scene::ISceneNode*, irr::video::E_MATERIAL_TYPE)
 0x002f7ca9	0x40	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode23setChildrenMaterialFlagEPN3irr5scene10ISceneNodeENS0_5video15E_MATERIAL_FLAGEb	CustomBillboardSceneNode::setChildrenMaterialFlag(irr::scene::ISceneNode*, irr::video::E_MATERIAL_FLAG, bool)
 0x002f7ce9	0xe8	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode8setColorEPN3irr5scene10ISceneNodeENS0_5video6SColorE	CustomBillboardSceneNode::setColor(irr::scene::ISceneNode*, irr::video::SColor)
-0x002f7dd1	0x6c	CustomBillboardSceneNode.cpp	game	rendering	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002f7e3d	0x14	CustomBillboardSceneNode.cpp	game	rendering	pending	_GLOBAL__I__ZN24CustomBillboardSceneNodeC2ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE	_GLOBAL__I__ZN24CustomBillboardSceneNodeC2ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE
+0x002f7dd1	0x6c	CustomBillboardSceneNode.cpp	game	rendering	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002f7e3d	0x14	CustomBillboardSceneNode.cpp	game	rendering	matched	_GLOBAL__I__ZN24CustomBillboardSceneNodeC2ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE	_GLOBAL__I__ZN24CustomBillboardSceneNodeC2ERKN3irr7collada16CColladaDatabaseEPNS1_5SNodeE
 0x002f7e51	0x1a8	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode5debugEPN3irr5video12IVideoDriverE	CustomBillboardSceneNode::debug(irr::video::IVideoDriver*)
 0x002f7ff8	0x14	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZThn100_N24CustomBillboardSceneNode9OnAnimateEj	non-virtual thunk to CustomBillboardSceneNode::OnAnimate(unsigned int)
 0x002f800d	0x2c0	CustomBillboardSceneNode.cpp	game	rendering	pending	_ZN24CustomBillboardSceneNode9OnAnimateEj	CustomBillboardSceneNode::OnAnimate(unsigned int)
@@ -10209,9 +10209,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002f8491	0x4	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZNK21CustomSkyBoxSceneNode16getMaterialCountEv	CustomSkyBoxSceneNode::getMaterialCount() const
 0x002f8495	0x32	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZN21CustomSkyBoxSceneNode19OnRegisterSceneNodeEv	CustomSkyBoxSceneNode::OnRegisterSceneNode()
 0x002f84c9	0x1018	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZN21CustomSkyBoxSceneNode11setSkyColorEb	CustomSkyBoxSceneNode::setSkyColor(bool)
-0x002f94e1	0x6c	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002f954d	0x14	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_GLOBAL__I__ZN21CustomSkyBoxSceneNodeC2EPN3irr5video8ITextureEPNS0_5scene10ISceneNodeEi	_GLOBAL__I__ZN21CustomSkyBoxSceneNodeC2EPN3irr5video8ITextureEPNS0_5scene10ISceneNodeEi
-0x002f9561	0x30	CustomSkyBoxSceneNode.cpp	game	rendering	pending	__tcf_2	__tcf_2
+0x002f94e1	0x6c	CustomSkyBoxSceneNode.cpp	game	rendering	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002f954d	0x14	CustomSkyBoxSceneNode.cpp	game	rendering	matched	_GLOBAL__I__ZN21CustomSkyBoxSceneNodeC2EPN3irr5video8ITextureEPNS0_5scene10ISceneNodeEi	_GLOBAL__I__ZN21CustomSkyBoxSceneNodeC2EPN3irr5video8ITextureEPNS0_5scene10ISceneNodeEi
+0x002f9561	0x30	CustomSkyBoxSceneNode.cpp	game	rendering	matched	__tcf_2	__tcf_2
 0x002f9591	0x158	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZN21CustomSkyBoxSceneNode6renderEPv	CustomSkyBoxSceneNode::render(void*)
 0x002f96e9	0x1378	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZN21CustomSkyBoxSceneNodeC1EPN3irr5video8ITextureEPNS0_5scene10ISceneNodeEi	CustomSkyBoxSceneNode::CustomSkyBoxSceneNode(irr::video::ITexture*, irr::scene::ISceneNode*, int)
 0x002faa61	0x58	CustomSkyBoxSceneNode.cpp	game	rendering	pending	_ZN21CustomSkyBoxSceneNode5cloneEPN3irr5scene10ISceneNodeEPNS1_13ISceneManagerE	CustomSkyBoxSceneNode::clone(irr::scene::ISceneNode*, irr::scene::ISceneManager*)
@@ -10274,15 +10274,15 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002fced5	0x24	Item.cpp	game	meta	matched	__tcf_5	__tcf_5
 0x002fcef9	0x100	Item.cpp	game	meta	matched	_ZN4Item15playPickupSoundEv	Item::playPickupSound()
 0x002fcff9	0x2c	Item.cpp	game	meta	matched	_ZN4Item6pickupEv	Item::pickup()
-0x002fd025	0x30	Lock.cpp	game	core	pending	__tcf_2	__tcf_2
+0x002fd025	0x30	Lock.cpp	game	core	matched	__tcf_2	__tcf_2
 0x002fd055	0x24	Lock.cpp	game	core	pending	_ZN4Lock5cleanEv	Lock::clean()
 0x002fd079	0x154	Lock.cpp	game	core	pending	_ZN4LockC2EPKcPN3irr5scene10ISceneNodeEb	Lock::Lock(char const*, irr::scene::ISceneNode*, bool)
 0x002fd079	0x154	Lock.cpp	game	core	pending	_ZN4LockC1EPKcPN3irr5scene10ISceneNodeEb	Lock::Lock(char const*, irr::scene::ISceneNode*, bool)
 0x002fd1cd	0x38	Lock.cpp	game	core	pending	_ZN4Lock11getInstanceEv	Lock::getInstance()
 0x002fd205	0x8c	Lock.cpp	game	core	pending	_ZN4Lock9setTargetEP11LevelObject	Lock::setTarget(LevelObject*)
 0x002fd291	0x130	Lock.cpp	game	core	pending	_ZN4Lock6renderEv	Lock::render()
-0x002fd3c1	0x6c	Lock.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002fd42d	0x14	Lock.cpp	game	core	pending	_GLOBAL__I__ZN4Lock6s_lockE	_GLOBAL__I__ZN4Lock6s_lockE
+0x002fd3c1	0x6c	Lock.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002fd42d	0x14	Lock.cpp	game	core	matched	_GLOBAL__I__ZN4Lock6s_lockE	_GLOBAL__I__ZN4Lock6s_lockE
 0x002fd441	0x8	NPC.cpp	game	ai	pending	_ZNK3NPC9getWeaponEv	NPC::getWeapon() const
 0x002fd449	0x10	NPC.cpp	game	ai	pending	_ZN3NPC12photographedEv	NPC::photographed()
 0x002fd459	0x14	NPC.cpp	game	ai	pending	_ZN3NPC17clearPhotographedEv	NPC::clearPhotographed()
@@ -10364,9 +10364,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00300bc5	0xc8	Path.cpp	game	world	pending	_ZN4Path4LoadERKN7Structs4PathEPN3irr7collada15CColladaFactoryE	Path::Load(Structs::Path const&, irr::collada::CColladaFactory*)
 0x00300c8d	0x40	Path.cpp	game	world	pending	_ZN4PathC2Ei	Path::Path(int)
 0x00300c8d	0x40	Path.cpp	game	world	pending	_ZN4PathC1Ei	Path::Path(int)
-0x00300ccd	0x6c	Path.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00300d39	0x14	Path.cpp	game	world	pending	_GLOBAL__I__ZN4PathC2Ei	_GLOBAL__I__ZN4PathC2Ei
-0x00300d4d	0x30	Path.cpp	game	world	pending	__tcf_2	__tcf_2
+0x00300ccd	0x6c	Path.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00300d39	0x14	Path.cpp	game	world	matched	_GLOBAL__I__ZN4PathC2Ei	_GLOBAL__I__ZN4PathC2Ei
+0x00300d4d	0x30	Path.cpp	game	world	matched	__tcf_2	__tcf_2
 0x00300d7d	0x6	PlayerTest.cpp	game	ai	pending	_ZN10PlayerTest13getMarkerTypeEv	PlayerTest::getMarkerType()
 0x00300d85	0x20	PlayerTest.cpp	game	ai	pending	_ZN10PlayerTest8hideMeshEv	PlayerTest::hideMesh()
 0x00300da5	0x12	PlayerTest.cpp	game	ai	pending	_ZN10PlayerTest12hideAllAnimsEv	PlayerTest::hideAllAnims()
@@ -10463,14 +10463,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0030577d	0x2a0	PlayerTest.cpp	game	ai	pending	_ZN10PlayerTest5snipeEP6Weapon	PlayerTest::snipe(Weapon*)
 0x00305a1d	0x160	PlayerTest.cpp	game	ai	pending	_ZN10PlayerTest6attackEb	PlayerTest::attack(bool)
 0x00305b7d	0x2	RenderObject.cpp	game	characters	pending	_ZNK12RenderObject6RenderEv	RenderObject::Render() const
-0x00305b81	0x30	RenderObject.cpp	game	characters	pending	__tcf_2	__tcf_2
+0x00305b81	0x30	RenderObject.cpp	game	characters	matched	__tcf_2	__tcf_2
 0x00305bb1	0x20	RenderObject.cpp	game	characters	pending	_ZN12RenderObjectD0Ev	RenderObject::~RenderObject()
 0x00305bd1	0x18	RenderObject.cpp	game	characters	pending	_ZN12RenderObjectD2Ev	RenderObject::~RenderObject()
 0x00305bd1	0x18	RenderObject.cpp	game	characters	pending	_ZN12RenderObjectD1Ev	RenderObject::~RenderObject()
 0x00305be9	0x3c	RenderObject.cpp	game	characters	pending	_ZN12RenderObjectC2EP10GameObject	RenderObject::RenderObject(GameObject*)
 0x00305be9	0x3c	RenderObject.cpp	game	characters	pending	_ZN12RenderObjectC1EP10GameObject	RenderObject::RenderObject(GameObject*)
-0x00305c25	0x6c	RenderObject.cpp	game	characters	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00305c91	0x14	RenderObject.cpp	game	characters	pending	_GLOBAL__I__ZN12RenderObjectC2EP10GameObject	_GLOBAL__I__ZN12RenderObjectC2EP10GameObject
+0x00305c25	0x6c	RenderObject.cpp	game	characters	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00305c91	0x14	RenderObject.cpp	game	characters	matched	_GLOBAL__I__ZN12RenderObjectC2EP10GameObject	_GLOBAL__I__ZN12RenderObjectC2EP10GameObject
 0x00305ca5	0x20	Shop.cpp	game	ui	pending	_ZN4Shop24resetAchievementCountersEv	Shop::resetAchievementCounters()
 0x00305cc5	0x8	Shop.cpp	game	ui	pending	_ZNK4Shop8unlockedEv	Shop::unlocked() const
 0x00305ccd	0x6	Shop.cpp	game	ui	pending	_ZNK4Shop9triggeredEv	Shop::triggered() const
@@ -10536,10 +10536,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00307981	0x6c	Transformation.cpp	game	characters	pending	_ZN14Transformation11SetRotationERKN3irr4core8vector3dIfEE	Transformation::SetRotation(irr::core::vector3d<float> const&)
 0x003079ed	0x40	Transformation.cpp	game	characters	pending	_ZN14TransformationC1Ei	Transformation::Transformation(int)
 0x003079ed	0x40	Transformation.cpp	game	characters	pending	_ZN14TransformationC2Ei	Transformation::Transformation(int)
-0x00307a2d	0x6c	Transformation.cpp	game	characters	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00307a99	0x14	Transformation.cpp	game	characters	pending	_GLOBAL__I__ZN14TransformationC2Ei	_GLOBAL__I__ZN14TransformationC2Ei
+0x00307a2d	0x6c	Transformation.cpp	game	characters	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00307a99	0x14	Transformation.cpp	game	characters	matched	_GLOBAL__I__ZN14TransformationC2Ei	_GLOBAL__I__ZN14TransformationC2Ei
 0x00307aad	0x24	Transformation.cpp	game	characters	pending	__tcf_1	__tcf_1
-0x00307ad1	0x30	Transformation.cpp	game	characters	pending	__tcf_2	__tcf_2
+0x00307ad1	0x30	Transformation.cpp	game	characters	matched	__tcf_2	__tcf_2
 0x00307b01	0x16	Vehicle.cpp	game	vehicles	pending	_ZNK26CustomSkinnedMeshSceneNode14getBoundingBoxEv	CustomSkinnedMeshSceneNode::getBoundingBox() const
 0x00307b19	0x8	Vehicle.cpp	game	vehicles	pending	_ZN7Vehicle11getSkinMeshEv	Vehicle::getSkinMesh()
 0x00307b21	0x10	Vehicle.cpp	game	vehicles	pending	_ZN7Vehicle12photographedEv	Vehicle::photographed()
@@ -10937,14 +10937,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00321b21	0x54	SceneNodeManager.cpp	game	world	pending	_ZN16SceneNodeManager11getInstanceEv	SceneNodeManager::getInstance()
 0x00321b75	0x12	SceneNodeManager.cpp	stlport	-	matched	_ZN9stlp_priv12_Vector_baseIPN16SceneNodeManager4PoolESaIS3_EED1Ev	stlp_priv::_Vector_base<SceneNodeManager::Pool*, std::allocator<SceneNodeManager::Pool*> >::~_Vector_base()
 0x00321b89	0x12	SceneNodeManager.cpp	stlport	-	matched	_ZNSt6vectorIPN16SceneNodeManager4NodeESaIS2_EE8_M_clearEv	std::vector<SceneNodeManager::Node*, std::allocator<SceneNodeManager::Node*> >::_M_clear()
-0x00321b9d	0x6c	SceneNodeManager.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00321c09	0x14	SceneNodeManager.cpp	game	world	pending	_GLOBAL__I__Z10crcReflectjc	_GLOBAL__I__Z10crcReflectjc
+0x00321b9d	0x6c	SceneNodeManager.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00321c09	0x14	SceneNodeManager.cpp	game	world	matched	_GLOBAL__I__Z10crcReflectjc	_GLOBAL__I__Z10crcReflectjc
 0x00321c1d	0xcc	SceneNodeManager.cpp	stlport	-	matched	_ZN9stlp_priv8_Rb_treeIiSt4lessIiESt4pairIKiiENS_10_Select1stIS5_EENS_11_MapTraitsTIS5_EESaIS5_EE9_M_insertEPNS_18_Rb_tree_node_baseERKS5_SD_SD_	stlp_priv::_Rb_tree<int, std::less<int>, std::pair<int const, int>, stlp_priv::_Select1st<std::pair<int const, int> >, stlp_priv::_MapTraitsT<std::pair<int const, int> >, std::allocator<std::pair<int const, int> > >::_M_insert(stlp_priv::_Rb_tree_node_base*, std::pair<int const, int> const&, stlp_priv::_Rb_tree_node_base*, stlp_priv::_Rb_tree_node_base*)
 0x00321ce9	0xc4	SceneNodeManager.cpp	stlport	-	matched	_ZN9stlp_priv8_Rb_treeIiSt4lessIiESt4pairIKiiENS_10_Select1stIS5_EENS_11_MapTraitsTIS5_EESaIS5_EE13insert_uniqueERKS5_	stlp_priv::_Rb_tree<int, std::less<int>, std::pair<int const, int>, stlp_priv::_Select1st<std::pair<int const, int> >, stlp_priv::_MapTraitsT<std::pair<int const, int> >, std::allocator<std::pair<int const, int> > >::insert_unique(std::pair<int const, int> const&)
 0x00321dad	0x180	SceneNodeManager.cpp	stlport	-	matched	_ZN9stlp_priv8_Rb_treeIiSt4lessIiESt4pairIKiiENS_10_Select1stIS5_EENS_11_MapTraitsTIS5_EESaIS5_EE13insert_uniqueENS_17_Rb_tree_iteratorIS5_S9_EERKS5_	stlp_priv::_Rb_tree<int, std::less<int>, std::pair<int const, int>, stlp_priv::_Select1st<std::pair<int const, int> >, stlp_priv::_MapTraitsT<std::pair<int const, int> >, std::allocator<std::pair<int const, int> > >::insert_unique(stlp_priv::_Rb_tree_iterator<std::pair<int const, int>, stlp_priv::_MapTraitsT<std::pair<int const, int> > >, std::pair<int const, int> const&)
 0x00321f2d	0x60	SceneNodeManager.cpp	stlport	-	matched	_ZNSt3mapIiiSt4lessIiESaISt4pairIKiiEEEixIiEERiRKT_	int& std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[]<int>(int const&)
 0x00321f8d	0xdc	SceneNodeManager.cpp	stlport	-	matched	_ZNSt6vectorIPN16SceneNodeManager4NodeESaIS2_EE18_M_fill_insert_auxEPS2_jRKS2_RKSt12__false_type	std::vector<SceneNodeManager::Node*, std::allocator<SceneNodeManager::Node*> >::_M_fill_insert_aux(SceneNodeManager::Node**, unsigned int, SceneNodeManager::Node* const&, std::__false_type const&)
-0x00322069	0x30	SceneNodeManager.cpp	game	world	pending	__tcf_3	__tcf_3
+0x00322069	0x30	SceneNodeManager.cpp	game	world	matched	__tcf_3	__tcf_3
 0x00322099	0xbc	SceneNodeManager.cpp	game	world	pending	_ZNK16SceneNodeManager9getPoolIDEPKc	SceneNodeManager::getPoolID(char const*) const
 0x00322155	0x58	SceneNodeManager.cpp	game	world	pending	_ZN16SceneNodeManager4PoolD1Ev	SceneNodeManager::Pool::~Pool()
 0x00322155	0x58	SceneNodeManager.cpp	game	world	pending	_ZN16SceneNodeManager4PoolD2Ev	SceneNodeManager::Pool::~Pool()
@@ -10989,9 +10989,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00322c45	0x18	CCameraHud.cpp	game	hud	pending	_ZN10CCameraHudD1Ev	CCameraHud::~CCameraHud()
 0x00322c5d	0x178	CCameraHud.cpp	game	hud	pending	_ZN10CCameraHud4showEv	CCameraHud::show()
 0x00322dd5	0xd4	CCameraHud.cpp	game	hud	pending	_ZN10CCameraHud4hideEv	CCameraHud::hide()
-0x00322ea9	0x30	CCameraHud.cpp	game	hud	pending	__tcf_2	__tcf_2
-0x00322ed9	0x6c	CCameraHud.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00322f45	0x14	CCameraHud.cpp	game	hud	pending	_GLOBAL__I__ZN10CCameraHudC2EP11CHudManager	_GLOBAL__I__ZN10CCameraHudC2EP11CHudManager
+0x00322ea9	0x30	CCameraHud.cpp	game	hud	matched	__tcf_2	__tcf_2
+0x00322ed9	0x6c	CCameraHud.cpp	game	hud	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00322f45	0x14	CCameraHud.cpp	game	hud	matched	_GLOBAL__I__ZN10CCameraHudC2EP11CHudManager	_GLOBAL__I__ZN10CCameraHudC2EP11CHudManager
 0x00322f59	0x30	CDrivingHud.cpp	game	hud	pending	_ZN11CDrivingHudC2EP11CHudManager	CDrivingHud::CDrivingHud(CHudManager*)
 0x00322f59	0x30	CDrivingHud.cpp	game	hud	pending	_ZN11CDrivingHudC1EP11CHudManager	CDrivingHud::CDrivingHud(CHudManager*)
 0x00322f89	0x18	CDrivingHud.cpp	game	hud	pending	_ZN11CDrivingHudD2Ev	CDrivingHud::~CDrivingHud()
@@ -11075,18 +11075,18 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00325951	0x3c	CWalkingHud.cpp	game	hud	pending	_ZN11CWalkingHud12showSpyGaugeEb	CWalkingHud::showSpyGauge(bool)
 0x0032598d	0x20	CWalkingHud.cpp	game	hud	pending	_ZN11CWalkingHud8showCashEb	CWalkingHud::showCash(bool)
 0x003259ad	0x80	CWalkingHud.cpp	game	hud	pending	_ZN11CWalkingHud20toggleWeaponSelectorEb	CWalkingHud::toggleWeaponSelector(bool)
-0x00325a2d	0x30	CWalkingHud.cpp	game	hud	pending	__tcf_2	__tcf_2
-0x00325a5d	0x6c	CWalkingHud.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00325ac9	0x14	CWalkingHud.cpp	game	hud	pending	_GLOBAL__I__ZN11CWalkingHudC2EP11CHudManager	_GLOBAL__I__ZN11CWalkingHudC2EP11CHudManager
+0x00325a2d	0x30	CWalkingHud.cpp	game	hud	matched	__tcf_2	__tcf_2
+0x00325a5d	0x6c	CWalkingHud.cpp	game	hud	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00325ac9	0x14	CWalkingHud.cpp	game	hud	matched	_GLOBAL__I__ZN11CWalkingHudC2EP11CHudManager	_GLOBAL__I__ZN11CWalkingHudC2EP11CHudManager
 0x00325add	0x30	SniperHud.cpp	game	hud	pending	_ZN10CSniperHudC1EP11CHudManager	CSniperHud::CSniperHud(CHudManager*)
 0x00325add	0x30	SniperHud.cpp	game	hud	pending	_ZN10CSniperHudC2EP11CHudManager	CSniperHud::CSniperHud(CHudManager*)
 0x00325b0d	0x18	SniperHud.cpp	game	hud	pending	_ZN10CSniperHudD1Ev	CSniperHud::~CSniperHud()
 0x00325b0d	0x18	SniperHud.cpp	game	hud	pending	_ZN10CSniperHudD2Ev	CSniperHud::~CSniperHud()
 0x00325b25	0x154	SniperHud.cpp	game	hud	pending	_ZN10CSniperHud4showEv	CSniperHud::show()
 0x00325c79	0xd4	SniperHud.cpp	game	hud	pending	_ZN10CSniperHud4hideEv	CSniperHud::hide()
-0x00325d4d	0x30	SniperHud.cpp	game	core	pending	__tcf_2	__tcf_2
-0x00325d7d	0x6c	SniperHud.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00325de9	0x14	SniperHud.cpp	game	core	pending	_GLOBAL__I__ZN10CSniperHudC2EP11CHudManager	_GLOBAL__I__ZN10CSniperHudC2EP11CHudManager
+0x00325d4d	0x30	SniperHud.cpp	game	core	matched	__tcf_2	__tcf_2
+0x00325d7d	0x6c	SniperHud.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00325de9	0x14	SniperHud.cpp	game	core	matched	_GLOBAL__I__ZN10CSniperHudC2EP11CHudManager	_GLOBAL__I__ZN10CSniperHudC2EP11CHudManager
 0x00325dfd	0x10	HudElement.cpp	game	hud	matched	_ZN10HudElement4hideEv	HudElement::hide()
 0x00325e0d	0xa	HudElement.cpp	game	hud	matched	_ZN10HudElement4showEv	HudElement::show()
 0x00325e19	0x8	HudElement.cpp	game	hud	matched	_ZNK10HudElement9isVisibleEv	HudElement::isVisible() const
@@ -11118,7 +11118,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003262fd	0x14	Ammo.cpp	game	combat	matched	_GLOBAL__I__ZN4AmmoC2EP7ASpritei	_GLOBAL__I__ZN4AmmoC2EP7ASpritei
 0x00326311	0x30	Ammo.cpp	game	combat	matched	__tcf_3	__tcf_3
 0x00326341	0x4	AnalogStick.cpp	game	input	pending	_ZN11AnalogStick10switchModeENS_4ModeE	AnalogStick::switchMode(AnalogStick::Mode)
-0x00326345	0x30	AnalogStick.cpp	game	input	pending	__tcf_2	__tcf_2
+0x00326345	0x30	AnalogStick.cpp	game	input	matched	__tcf_2	__tcf_2
 0x00326375	0x20	AnalogStick.cpp	game	input	pending	_ZN7Point2DIsED0Ev	Point2D<short>::~Point2D()
 0x00326395	0x18	AnalogStick.cpp	game	input	pending	_ZN7Point2DIsED1Ev	Point2D<short>::~Point2D()
 0x003263ac	0x14	AnalogStick.cpp	game	input	pending	_ZThn4_N11AnalogStickD0Ev	non-virtual thunk to AnalogStick::~AnalogStick()
@@ -11131,8 +11131,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00326495	0xec	AnalogStick.cpp	game	input	pending	_ZNK11AnalogStick6draw2dEv	AnalogStick::draw2d() const
 0x00326581	0x168	AnalogStick.cpp	game	input	pending	_ZN11AnalogStickC2EP7ASpriteii	AnalogStick::AnalogStick(ASprite*, int, int)
 0x00326581	0x168	AnalogStick.cpp	game	input	pending	_ZN11AnalogStickC1EP7ASpriteii	AnalogStick::AnalogStick(ASprite*, int, int)
-0x003266e9	0x6c	AnalogStick.cpp	game	input	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00326755	0x14	AnalogStick.cpp	game	input	pending	_GLOBAL__I__ZN11AnalogStickC2EP7ASpriteii	_GLOBAL__I__ZN11AnalogStickC2EP7ASpriteii
+0x003266e9	0x6c	AnalogStick.cpp	game	input	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00326755	0x14	AnalogStick.cpp	game	input	matched	_GLOBAL__I__ZN11AnalogStickC2EP7ASpriteii	_GLOBAL__I__ZN11AnalogStickC2EP7ASpriteii
 0x00326769	0x2c	AnalogStick.cpp	game	input	pending	_ZN21EvUpDownStickReleasedD0Ev	EvUpDownStickReleased::~EvUpDownStickReleased()
 0x00326795	0x24	AnalogStick.cpp	game	input	pending	_ZN11EvStickMoveD1Ev	EvStickMove::~EvStickMove()
 0x003267b9	0x24	AnalogStick.cpp	game	input	pending	_ZN21EvUpDownStickReleasedD1Ev	EvUpDownStickReleased::~EvUpDownStickReleased()
@@ -11182,7 +11182,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00327399	0x144	ArmorBar.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x003274dd	0x14	ArmorBar.cpp	game	hud	pending	_GLOBAL__I__ZN8ArmorBarC2EP7ASpriteiii	_GLOBAL__I__ZN8ArmorBarC2EP7ASpriteiii
 0x003274f1	0x34	Background.cpp	game	ui	pending	_ZN10Background6updateEd	Background::update(double)
-0x00327525	0x30	Background.cpp	game	core	pending	__tcf_2	__tcf_2
+0x00327525	0x30	Background.cpp	game	core	matched	__tcf_2	__tcf_2
 0x00327554	0x14	Background.cpp	game	ui	pending	_ZThn4_NK10Background6draw2dEv	non-virtual thunk to Background::draw2d() const
 0x00327569	0x5e	Background.cpp	game	ui	pending	_ZNK10Background6draw2dEv	Background::draw2d() const
 0x003275c8	0x14	Background.cpp	game	ui	pending	_ZThn4_N10BackgroundD0Ev	non-virtual thunk to Background::~Background()
@@ -11192,8 +11192,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00327621	0x2c	Background.cpp	game	ui	pending	_ZN10BackgroundD1Ev	Background::~Background()
 0x0032764d	0x38	Background.cpp	game	ui	pending	_ZN10BackgroundC1EP7ASpritei	Background::Background(ASprite*, int)
 0x0032764d	0x38	Background.cpp	game	ui	pending	_ZN10BackgroundC2EP7ASpritei	Background::Background(ASprite*, int)
-0x00327685	0x6c	Background.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003276f1	0x14	Background.cpp	game	core	pending	_GLOBAL__I__ZN10BackgroundC2EP7ASpritei	_GLOBAL__I__ZN10BackgroundC2EP7ASpritei
+0x00327685	0x6c	Background.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003276f1	0x14	Background.cpp	game	core	matched	_GLOBAL__I__ZN10BackgroundC2EP7ASpritei	_GLOBAL__I__ZN10BackgroundC2EP7ASpritei
 0x00327705	0x30	CarBar.cpp	game	hud	pending	__tcf_3	__tcf_3
 0x00327735	0x5a	CarBar.cpp	game	hud	pending	_ZN6CarBar6updateEd	CarBar::update(double)
 0x00327790	0x14	CarBar.cpp	game	hud	pending	_ZThn4_N6CarBarD0Ev	non-virtual thunk to CarBar::~CarBar()
@@ -11228,7 +11228,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00327f79	0x14	Cash.cpp	game	ui	pending	_GLOBAL__I__ZN4CashC2EP7ASpriteiiiii	_GLOBAL__I__ZN4CashC2EP7ASpriteiiiii
 0x00327f8d	0x2	Gauge.cpp	game	hud	pending	_ZN5Gauge6updateEd	Gauge::update(double)
 0x00327f91	0x24	Gauge.cpp	game	hud	pending	_ZN5Gauge13setPercentageEf	Gauge::setPercentage(float)
-0x00327fb5	0x30	Gauge.cpp	game	hud	pending	__tcf_2	__tcf_2
+0x00327fb5	0x30	Gauge.cpp	game	hud	matched	__tcf_2	__tcf_2
 0x00327fe4	0x14	Gauge.cpp	game	hud	pending	_ZThn4_NK5Gauge6draw2dEv	non-virtual thunk to Gauge::draw2d() const
 0x00327ff9	0x4e	Gauge.cpp	game	hud	pending	_ZNK5Gauge6draw2dEv	Gauge::draw2d() const
 0x00328048	0x14	Gauge.cpp	game	hud	pending	_ZThn4_N5GaugeD0Ev	non-virtual thunk to Gauge::~Gauge()
@@ -11238,8 +11238,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003280a1	0x2c	Gauge.cpp	game	hud	pending	_ZN5GaugeD2Ev	Gauge::~Gauge()
 0x003280d1	0x78	Gauge.cpp	game	hud	pending	_ZN5GaugeC1EP7ASpriteiii	Gauge::Gauge(ASprite*, int, int, int)
 0x003280d1	0x78	Gauge.cpp	game	hud	pending	_ZN5GaugeC2EP7ASpriteiii	Gauge::Gauge(ASprite*, int, int, int)
-0x00328149	0x6c	Gauge.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003281b5	0x14	Gauge.cpp	game	hud	pending	_GLOBAL__I__ZN5GaugeC2EP7ASpriteiii	_GLOBAL__I__ZN5GaugeC2EP7ASpriteiii
+0x00328149	0x6c	Gauge.cpp	game	hud	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003281b5	0x14	Gauge.cpp	game	hud	matched	_GLOBAL__I__ZN5GaugeC2EP7ASpriteiii	_GLOBAL__I__ZN5GaugeC2EP7ASpriteiii
 0x003281c9	0x30	HealthBar.cpp	game	hud	pending	__tcf_3	__tcf_3
 0x003281f8	0x14	HealthBar.cpp	game	hud	pending	_ZThn4_NK9HealthBar6draw2dEv	non-virtual thunk to HealthBar::draw2d() const
 0x0032820d	0x12	HealthBar.cpp	game	hud	pending	_ZNK9HealthBar6draw2dEv	HealthBar::draw2d() const
@@ -11286,7 +11286,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00328a94	0x14	HudElement.cpp	game	hud	matched	_ZThn4_N10HudElementD1Ev	non-virtual thunk to HudElement::~HudElement()
 0x00328aa9	0x38	HudElement.cpp	game	hud	matched	_ZN10HudElementD1Ev	HudElement::~HudElement()
 0x00328aa9	0x38	HudElement.cpp	game	hud	matched	_ZN10HudElementD2Ev	HudElement::~HudElement()
-0x00328ae1	0x30	Map.cpp	game	core	pending	__tcf_3	__tcf_3
+0x00328ae1	0x30	Map.cpp	game	core	matched	__tcf_3	__tcf_3
 0x00328b11	0x24	Map.cpp	game	world	pending	_ZN3Map5cleanEv	Map::clean()
 0x00328b35	0xc	Map.cpp	game	world	pending	_ZN3MapD1Ev	Map::~Map()
 0x00328b35	0xc	Map.cpp	game	world	pending	_ZN3MapD2Ev	Map::~Map()
@@ -11294,8 +11294,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00328c15	0x34	Map.cpp	game	world	pending	_ZN3MapC1Ev	Map::Map()
 0x00328c15	0x34	Map.cpp	game	world	pending	_ZN3MapC2Ev	Map::Map()
 0x00328c49	0x130	Map.cpp	game	world	pending	_ZNK3Map4drawEv	Map::draw() const
-0x00328d79	0x6c	Map.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00328de5	0x14	Map.cpp	game	core	pending	_GLOBAL__I__ZN3MapC2Ev	_GLOBAL__I__ZN3MapC2Ev
+0x00328d79	0x6c	Map.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00328de5	0x14	Map.cpp	game	core	matched	_GLOBAL__I__ZN3MapC2Ev	_GLOBAL__I__ZN3MapC2Ev
 0x00328df9	0x2a	Message.cpp	game	ui	pending	_ZN7Message11isDisplayedEv	Message::isDisplayed()
 0x00328e25	0x18	Message.cpp	game	ui	pending	_ZN7Message8setTimerEi	Message::setTimer(int)
 0x00328e3d	0x30	Message.cpp	game	core	pending	__tcf_3	__tcf_3
@@ -11332,9 +11332,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003297c8	0x14	MiniMap.cpp	game	hud	pending	_ZThn4_N7MiniMapD1Ev	non-virtual thunk to MiniMap::~MiniMap()
 0x003297dd	0x70	MiniMap.cpp	game	hud	pending	_ZN7MiniMapD2Ev	MiniMap::~MiniMap()
 0x003297dd	0x70	MiniMap.cpp	game	hud	pending	_ZN7MiniMapD1Ev	MiniMap::~MiniMap()
-0x0032984d	0x6c	MiniMap.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003298b9	0x14	MiniMap.cpp	game	hud	pending	_GLOBAL__I__ZN7MiniMapC2EP7ASpriteiiii	_GLOBAL__I__ZN7MiniMapC2EP7ASpriteiiii
-0x003298cd	0x30	MiniMap.cpp	game	hud	pending	__tcf_5	__tcf_5
+0x0032984d	0x6c	MiniMap.cpp	game	hud	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003298b9	0x14	MiniMap.cpp	game	hud	matched	_GLOBAL__I__ZN7MiniMapC2EP7ASpriteiiii	_GLOBAL__I__ZN7MiniMapC2EP7ASpriteiiii
+0x003298cd	0x30	MiniMap.cpp	game	hud	matched	__tcf_5	__tcf_5
 0x00329901	0x7dc	MiniMap.cpp	game	hud	pending	_ZNK7MiniMap18_calculateXYOffsetERKN3irr4core8vector3dIfEERKNS1_4rectIiEEbb	MiniMap::_calculateXYOffset(irr::core::vector3d<float> const&, irr::core::rect<int> const&, bool, bool) const
 0x0032a0e0	0x14	MiniMap.cpp	game	hud	pending	_ZThn4_NK7MiniMap6draw2dEv	non-virtual thunk to MiniMap::draw2d() const
 0x0032a0f9	0x564	MiniMap.cpp	game	hud	pending	_ZNK7MiniMap6draw2dEv	MiniMap::draw2d() const
@@ -11354,11 +11354,11 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032a88d	0x68	Radio.cpp	game	audio	pending	_ZN5Radio12processTouchEl	Radio::processTouch(long)
 0x0032a8f5	0x58	Radio.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x0032a94d	0x14	Radio.cpp	game	core	pending	_GLOBAL__I__ZN5RadioC2EP7ASpriteiiiiii	_GLOBAL__I__ZN5RadioC2EP7ASpriteiiiiii
-0x0032a961	0x30	RetroEffect.cpp	game	rendering	pending	__tcf_2	__tcf_2
+0x0032a961	0x30	RetroEffect.cpp	game	rendering	matched	__tcf_2	__tcf_2
 0x0032a990	0x14	RetroEffect.cpp	game	rendering	pending	_ZThn4_N11RetroEffectD0Ev	non-virtual thunk to RetroEffect::~RetroEffect()
 0x0032a9a5	0x74	RetroEffect.cpp	game	rendering	pending	_ZN11RetroEffectD0Ev	RetroEffect::~RetroEffect()
-0x0032aa19	0x6c	RetroEffect.cpp	game	rendering	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032aa85	0x14	RetroEffect.cpp	game	rendering	pending	_GLOBAL__I__ZN11RetroEffectC2Ev	_GLOBAL__I__ZN11RetroEffectC2Ev
+0x0032aa19	0x6c	RetroEffect.cpp	game	rendering	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032aa85	0x14	RetroEffect.cpp	game	rendering	matched	_GLOBAL__I__ZN11RetroEffectC2Ev	_GLOBAL__I__ZN11RetroEffectC2Ev
 0x0032aa99	0xbc	RetroEffect.cpp	game	rendering	pending	_ZN11RetroEffectC2Ev	RetroEffect::RetroEffect()
 0x0032aa99	0xbc	RetroEffect.cpp	game	rendering	pending	_ZN11RetroEffectC1Ev	RetroEffect::RetroEffect()
 0x0032ab54	0x14	RetroEffect.cpp	game	rendering	pending	_ZThn4_N11RetroEffectD1Ev	non-virtual thunk to RetroEffect::~RetroEffect()
@@ -11381,7 +11381,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032b0cc	0x14	Reward.cpp	game	missions	pending	_ZThn4_N6RewardD1Ev	non-virtual thunk to Reward::~Reward()
 0x0032b0e1	0x48	Reward.cpp	game	missions	pending	_ZN6RewardD2Ev	Reward::~Reward()
 0x0032b0e1	0x48	Reward.cpp	game	missions	pending	_ZN6RewardD1Ev	Reward::~Reward()
-0x0032b129	0x30	SlideControl.cpp	game	ui	pending	__tcf_2	__tcf_2
+0x0032b129	0x30	SlideControl.cpp	game	ui	matched	__tcf_2	__tcf_2
 0x0032b158	0x14	SlideControl.cpp	game	ui	pending	_ZThn4_N12SlideControlD0Ev	non-virtual thunk to SlideControl::~SlideControl()
 0x0032b16d	0x30	SlideControl.cpp	game	ui	pending	_ZN12SlideControlD0Ev	SlideControl::~SlideControl()
 0x0032b19c	0x14	SlideControl.cpp	game	ui	pending	_ZThn4_N12SlideControlD1Ev	non-virtual thunk to SlideControl::~SlideControl()
@@ -11392,8 +11392,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032b3e1	0x36	SlideControl.cpp	game	ui	pending	_ZN12SlideControl6updateEd	SlideControl::update(double)
 0x0032b418	0x14	SlideControl.cpp	game	ui	pending	_ZThn4_NK12SlideControl6draw2dEv	non-virtual thunk to SlideControl::draw2d() const
 0x0032b42d	0xec	SlideControl.cpp	game	ui	pending	_ZNK12SlideControl6draw2dEv	SlideControl::draw2d() const
-0x0032b519	0x6c	SlideControl.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032b585	0x14	SlideControl.cpp	game	ui	pending	_GLOBAL__I__ZN12SlideControlC2EP7ASpriteiiNS_16SlideControlModeE	_GLOBAL__I__ZN12SlideControlC2EP7ASpriteiiNS_16SlideControlModeE
+0x0032b519	0x6c	SlideControl.cpp	game	ui	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032b585	0x14	SlideControl.cpp	game	ui	matched	_GLOBAL__I__ZN12SlideControlC2EP7ASpriteiiNS_16SlideControlModeE	_GLOBAL__I__ZN12SlideControlC2EP7ASpriteiiNS_16SlideControlModeE
 0x0032b598	0x14	SlideControl.cpp	game	ui	pending	_ZThn8_N12SlideControl19processTouchReleaseEv	non-virtual thunk to SlideControl::processTouchRelease()
 0x0032b5ad	0xa4	SlideControl.cpp	game	ui	pending	_ZN12SlideControl19processTouchReleaseEv	SlideControl::processTouchRelease()
 0x0032b650	0x14	SlideControl.cpp	game	ui	pending	_ZThn8_N12SlideControl12processTouchEl	non-virtual thunk to SlideControl::processTouch(long)
@@ -11416,7 +11416,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032bbb5	0x14	SpyGauge.cpp	game	hud	pending	_GLOBAL__I__ZN8SpyGaugeC2EP7ASpriteiiiii	_GLOBAL__I__ZN8SpyGaugeC2EP7ASpriteiiiii
 0x0032bbc8	0x14	SwipeButton.cpp	game	ui	pending	_ZThn8_N11SwipeButton19processTouchReleaseEv	non-virtual thunk to SwipeButton::processTouchRelease()
 0x0032bbdd	0x2	SwipeButton.cpp	game	ui	pending	_ZN11SwipeButton19processTouchReleaseEv	SwipeButton::processTouchRelease()
-0x0032bbe1	0x30	SwipeButton.cpp	game	core	pending	__tcf_2	__tcf_2
+0x0032bbe1	0x30	SwipeButton.cpp	game	core	matched	__tcf_2	__tcf_2
 0x0032bc10	0x14	SwipeButton.cpp	game	ui	pending	_ZThn4_N11SwipeButtonD0Ev	non-virtual thunk to SwipeButton::~SwipeButton()
 0x0032bc25	0x30	SwipeButton.cpp	game	ui	pending	_ZN11SwipeButtonD0Ev	SwipeButton::~SwipeButton()
 0x0032bc54	0x14	SwipeButton.cpp	game	ui	pending	_ZThn4_NK11SwipeButton6draw2dEv	non-virtual thunk to SwipeButton::draw2d() const
@@ -11426,17 +11426,17 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032bcd1	0x2c	SwipeButton.cpp	game	ui	pending	_ZN11SwipeButton6updateEd	SwipeButton::update(double)
 0x0032bcfd	0xa4	SwipeButton.cpp	game	ui	pending	_ZN11SwipeButtonC2EP7ASpritei	SwipeButton::SwipeButton(ASprite*, int)
 0x0032bcfd	0xa4	SwipeButton.cpp	game	ui	pending	_ZN11SwipeButtonC1EP7ASpritei	SwipeButton::SwipeButton(ASprite*, int)
-0x0032bda1	0x6c	SwipeButton.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032be0d	0x14	SwipeButton.cpp	game	core	pending	_GLOBAL__I__ZN11SwipeButtonC2EP7ASpritei	_GLOBAL__I__ZN11SwipeButtonC2EP7ASpritei
+0x0032bda1	0x6c	SwipeButton.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032be0d	0x14	SwipeButton.cpp	game	core	matched	_GLOBAL__I__ZN11SwipeButtonC2EP7ASpritei	_GLOBAL__I__ZN11SwipeButtonC2EP7ASpritei
 0x0032be21	0x2	TargetMarker.cpp	game	hud	pending	_ZN12TargetMarkerD2Ev	TargetMarker::~TargetMarker()
 0x0032be21	0x2	TargetMarker.cpp	game	hud	pending	_ZN12TargetMarkerD1Ev	TargetMarker::~TargetMarker()
 0x0032be25	0x8	TargetMarker.cpp	game	hud	pending	_ZN12TargetMarker4initEP7ASpriteii	TargetMarker::init(ASprite*, int, int)
-0x0032be2d	0x30	TargetMarker.cpp	game	hud	pending	__tcf_3	__tcf_3
+0x0032be2d	0x30	TargetMarker.cpp	game	hud	matched	__tcf_3	__tcf_3
 0x0032be5d	0x18	TargetMarker.cpp	game	hud	pending	_ZN12TargetMarkerC1Ev	TargetMarker::TargetMarker()
 0x0032be5d	0x18	TargetMarker.cpp	game	hud	pending	_ZN12TargetMarkerC2Ev	TargetMarker::TargetMarker()
 0x0032be75	0x340	TargetMarker.cpp	game	hud	pending	_ZNK12TargetMarker4drawEv	TargetMarker::draw() const
-0x0032c1b5	0x6c	TargetMarker.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032c221	0x14	TargetMarker.cpp	game	hud	pending	_GLOBAL__I__ZN12TargetMarkerC2Ev	_GLOBAL__I__ZN12TargetMarkerC2Ev
+0x0032c1b5	0x6c	TargetMarker.cpp	game	hud	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032c221	0x14	TargetMarker.cpp	game	hud	matched	_GLOBAL__I__ZN12TargetMarkerC2Ev	_GLOBAL__I__ZN12TargetMarkerC2Ev
 0x0032c234	0x14	ToggleButton.cpp	game	ui	pending	_ZThn8_N12ToggleButton12processTouchEl	non-virtual thunk to ToggleButton::processTouch(long)
 0x0032c249	0xa	ToggleButton.cpp	game	ui	pending	_ZN12ToggleButton12processTouchEl	ToggleButton::processTouch(long)
 0x0032c255	0x30	ToggleButton.cpp	game	core	pending	__tcf_0	__tcf_0
@@ -11457,16 +11457,16 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032c475	0x5c	VirtualButton.cpp	game	ui	pending	_ZN13VirtualButton6updateEd	VirtualButton::update(double)
 0x0032c4d1	0xa8	VirtualButton.cpp	game	ui	pending	_ZN13VirtualButtonC1EP7ASpriteiN9EvVButton10ButtonType4TypeEb	VirtualButton::VirtualButton(ASprite*, int, EvVButton::ButtonType::Type, bool)
 0x0032c4d1	0xa8	VirtualButton.cpp	game	ui	pending	_ZN13VirtualButtonC2EP7ASpriteiN9EvVButton10ButtonType4TypeEb	VirtualButton::VirtualButton(ASprite*, int, EvVButton::ButtonType::Type, bool)
-0x0032c579	0x6c	VirtualButton.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032c5e5	0x14	VirtualButton.cpp	game	core	pending	_GLOBAL__I__ZN13VirtualButtonC2EP7ASpriteiN9EvVButton10ButtonType4TypeEb	_GLOBAL__I__ZN13VirtualButtonC2EP7ASpriteiN9EvVButton10ButtonType4TypeEb
-0x0032c5f9	0x30	VirtualButton.cpp	game	core	pending	__tcf_2	__tcf_2
+0x0032c579	0x6c	VirtualButton.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032c5e5	0x14	VirtualButton.cpp	game	core	matched	_GLOBAL__I__ZN13VirtualButtonC2EP7ASpriteiN9EvVButton10ButtonType4TypeEb	_GLOBAL__I__ZN13VirtualButtonC2EP7ASpriteiN9EvVButton10ButtonType4TypeEb
+0x0032c5f9	0x30	VirtualButton.cpp	game	core	matched	__tcf_2	__tcf_2
 0x0032c629	0x2c	VirtualButton.cpp	game	core	pending	_ZN15EvVirtualButtonD0Ev	EvVirtualButton::~EvVirtualButton()
 0x0032c655	0x24	VirtualButton.cpp	game	core	pending	_ZN15EvVirtualButtonD1Ev	EvVirtualButton::~EvVirtualButton()
 0x0032c678	0x14	VirtualButton.cpp	game	ui	pending	_ZThn8_N13VirtualButton19processTouchReleaseEv	non-virtual thunk to VirtualButton::processTouchRelease()
 0x0032c68d	0x88	VirtualButton.cpp	game	ui	pending	_ZN13VirtualButton19processTouchReleaseEv	VirtualButton::processTouchRelease()
 0x0032c714	0x14	VirtualButton.cpp	game	ui	pending	_ZThn8_N13VirtualButton12processTouchEl	non-virtual thunk to VirtualButton::processTouch(long)
 0x0032c729	0x90	VirtualButton.cpp	game	ui	pending	_ZN13VirtualButton12processTouchEl	VirtualButton::processTouch(long)
-0x0032c7b9	0x30	WantedMeter.cpp	game	missions	pending	__tcf_3	__tcf_3
+0x0032c7b9	0x30	WantedMeter.cpp	game	missions	matched	__tcf_3	__tcf_3
 0x0032c7e8	0x14	WantedMeter.cpp	game	missions	pending	_ZThn4_NK11WantedMeter6draw2dEv	non-virtual thunk to WantedMeter::draw2d() const
 0x0032c7fd	0x38	WantedMeter.cpp	game	missions	pending	_ZNK11WantedMeter6draw2dEv	WantedMeter::draw2d() const
 0x0032c835	0x1c	WantedMeter.cpp	game	missions	pending	__tcf_2	__tcf_2
@@ -11478,10 +11478,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032c919	0x48	WantedMeter.cpp	game	missions	pending	_ZN11WantedMeterD1Ev	WantedMeter::~WantedMeter()
 0x0032c961	0x110	WantedMeter.cpp	game	missions	pending	_ZN11WantedMeterC1EP7ASpritei	WantedMeter::WantedMeter(ASprite*, int)
 0x0032c961	0x110	WantedMeter.cpp	game	missions	pending	_ZN11WantedMeterC2EP7ASpritei	WantedMeter::WantedMeter(ASprite*, int)
-0x0032ca71	0x6c	WantedMeter.cpp	game	missions	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032cadd	0x14	WantedMeter.cpp	game	missions	pending	_GLOBAL__I__ZN11WantedMeterC2EP7ASpritei	_GLOBAL__I__ZN11WantedMeterC2EP7ASpritei
+0x0032ca71	0x6c	WantedMeter.cpp	game	missions	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032cadd	0x14	WantedMeter.cpp	game	missions	matched	_GLOBAL__I__ZN11WantedMeterC2EP7ASpritei	_GLOBAL__I__ZN11WantedMeterC2EP7ASpritei
 0x0032caf1	0x2	Wheel.cpp	game	vehicles	pending	_ZN5Wheel7setHandEb	Wheel::setHand(bool)
-0x0032caf5	0x30	Wheel.cpp	game	vehicles	pending	__tcf_2	__tcf_2
+0x0032caf5	0x30	Wheel.cpp	game	vehicles	matched	__tcf_2	__tcf_2
 0x0032cb24	0x14	Wheel.cpp	game	vehicles	pending	_ZThn4_N5WheelD0Ev	non-virtual thunk to Wheel::~Wheel()
 0x0032cb39	0x30	Wheel.cpp	game	vehicles	pending	_ZN5WheelD0Ev	Wheel::~Wheel()
 0x0032cb68	0x14	Wheel.cpp	game	vehicles	pending	_ZThn4_N5WheelD1Ev	non-virtual thunk to Wheel::~Wheel()
@@ -11491,8 +11491,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0032cbe1	0x100	Wheel.cpp	game	vehicles	pending	_ZN5WheelC1EP7ASpritei	Wheel::Wheel(ASprite*, int)
 0x0032cce0	0x14	Wheel.cpp	game	vehicles	pending	_ZThn4_NK5Wheel6draw2dEv	non-virtual thunk to Wheel::draw2d() const
 0x0032ccf5	0x1f4	Wheel.cpp	game	vehicles	pending	_ZNK5Wheel6draw2dEv	Wheel::draw2d() const
-0x0032cee9	0x6c	Wheel.cpp	game	vehicles	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0032cf55	0x14	Wheel.cpp	game	vehicles	pending	_GLOBAL__I__ZN5WheelC2EP7ASpritei	_GLOBAL__I__ZN5WheelC2EP7ASpritei
+0x0032cee9	0x6c	Wheel.cpp	game	vehicles	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0032cf55	0x14	Wheel.cpp	game	vehicles	matched	_GLOBAL__I__ZN5WheelC2EP7ASpritei	_GLOBAL__I__ZN5WheelC2EP7ASpritei
 0x0032cf69	0x2c	Wheel.cpp	game	vehicles	pending	_ZN15EvWheelReleasedD0Ev	EvWheelReleased::~EvWheelReleased()
 0x0032cf95	0x24	Wheel.cpp	game	vehicles	pending	_ZN11EvWheelTurnD1Ev	EvWheelTurn::~EvWheelTurn()
 0x0032cfb8	0x14	Wheel.cpp	game	vehicles	pending	_ZThn8_N5Wheel12processTouchEl	non-virtual thunk to Wheel::processTouch(long)
@@ -11765,14 +11765,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00334641	0x2	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCamera5debugEPN3irr5video12IVideoDriverE	FreeLookCamera::debug(irr::video::IVideoDriver*)
 0x00334645	0x50	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCamera21updateHorizontalAngleEiif	FreeLookCamera::updateHorizontalAngle(int, int, float)
 0x00334695	0x4c	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCamera19updateVerticalAngleEiif	FreeLookCamera::updateVerticalAngle(int, int, float)
-0x003346e1	0x30	FreeLookCamera.cpp	game	core	pending	__tcf_2	__tcf_2
+0x003346e1	0x30	FreeLookCamera.cpp	game	core	matched	__tcf_2	__tcf_2
 0x00334711	0x20	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCameraD2Ev	FreeLookCamera::~FreeLookCamera()
 0x00334711	0x20	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCameraD1Ev	FreeLookCamera::~FreeLookCamera()
 0x00334731	0x30	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCameraC1Ev	FreeLookCamera::FreeLookCamera()
 0x00334731	0x30	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCameraC2Ev	FreeLookCamera::FreeLookCamera()
 0x00334761	0x18	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCamera11setPositionERKN3irr4core8vector3dIfEE	FreeLookCamera::setPosition(irr::core::vector3d<float> const&)
-0x00334779	0x6c	FreeLookCamera.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003347e5	0x14	FreeLookCamera.cpp	game	core	pending	_GLOBAL__I__ZN14FreeLookCameraC2Ev	_GLOBAL__I__ZN14FreeLookCameraC2Ev
+0x00334779	0x6c	FreeLookCamera.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003347e5	0x14	FreeLookCamera.cpp	game	core	matched	_GLOBAL__I__ZN14FreeLookCameraC2Ev	_GLOBAL__I__ZN14FreeLookCameraC2Ev
 0x003347f9	0x234	FreeLookCamera.cpp	game	core	pending	_ZN14FreeLookCamera14updatePositionEfRKN3irr4core8vector3dIfEEfRS3_S6_ff	FreeLookCamera::updatePosition(float, irr::core::vector3d<float> const&, float, irr::core::vector3d<float>&, irr::core::vector3d<float>&, float, float)
 0x00334a2d	0x2	LockCamera.cpp	game	core	pending	_ZN10LockCamera5debugEPN3irr5video12IVideoDriverE	LockCamera::debug(irr::video::IVideoDriver*)
 0x00334a31	0x30	LockCamera.cpp	game	core	pending	__tcf_3	__tcf_3
@@ -11796,9 +11796,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00334fa1	0x48	SceneCamera.cpp	game	core	pending	_ZN11SceneCameraC1Ei	SceneCamera::SceneCamera(int)
 0x00334fa1	0x48	SceneCamera.cpp	game	core	pending	_ZN11SceneCameraC2Ei	SceneCamera::SceneCamera(int)
 0x00334fe9	0x60	SceneCamera.cpp	game	core	pending	_ZN11SceneCamera4LoadERKN7Structs11SceneCameraE	SceneCamera::Load(Structs::SceneCamera const&)
-0x00335049	0x6c	SceneCamera.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003350b5	0x14	SceneCamera.cpp	game	core	pending	_GLOBAL__I__ZN11SceneCameraC2Ei	_GLOBAL__I__ZN11SceneCameraC2Ei
-0x003350c9	0x30	SceneCamera.cpp	game	core	pending	__tcf_2	__tcf_2
+0x00335049	0x6c	SceneCamera.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003350b5	0x14	SceneCamera.cpp	game	core	matched	_GLOBAL__I__ZN11SceneCameraC2Ei	_GLOBAL__I__ZN11SceneCameraC2Ei
+0x003350c9	0x30	SceneCamera.cpp	game	core	matched	__tcf_2	__tcf_2
 0x003350f9	0x2	VehicleCamera.cpp	game	vehicles	pending	_ZN13VehicleCamera5debugEPN3irr5video12IVideoDriverE	VehicleCamera::debug(irr::video::IVideoDriver*)
 0x003350fd	0x74	VehicleCamera.cpp	game	vehicles	pending	_ZN13VehicleCamera12updateAnglesEii	VehicleCamera::updateAngles(int, int)
 0x00335171	0x30	VehicleCamera.cpp	game	vehicles	pending	__tcf_3	__tcf_3
@@ -12441,14 +12441,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003465cd	0x8	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission13getEndMessageEv	DeliverySideMission::getEndMessage()
 0x003465d5	0x8	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission14getObj1MessageEv	DeliverySideMission::getObj1Message()
 0x003465dd	0x8	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission14getObj2MessageEv	DeliverySideMission::getObj2Message()
-0x003465e5	0x30	DeliverySideMission.cpp	game	missions	pending	__tcf_2	__tcf_2
+0x003465e5	0x30	DeliverySideMission.cpp	game	missions	matched	__tcf_2	__tcf_2
 0x00346615	0x14	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission5cleanEv	DeliverySideMission::clean()
 0x00346629	0x2c	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission7dropOffEN3irr4core8vector3dIfEE	DeliverySideMission::dropOff(irr::core::vector3d<float>)
 0x00346655	0x1b0	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission5beginEN3irr4core8vector3dIfEEiRiRf	DeliverySideMission::begin(irr::core::vector3d<float>, int, int&, float&)
 0x00346805	0x44	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMissionC1Ev	DeliverySideMission::DeliverySideMission()
 0x00346805	0x44	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMissionC2Ev	DeliverySideMission::DeliverySideMission()
-0x00346849	0x6c	DeliverySideMission.cpp	game	missions	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003468b5	0x14	DeliverySideMission.cpp	game	missions	pending	_GLOBAL__I__ZN19DeliverySideMissionC2Ev	_GLOBAL__I__ZN19DeliverySideMissionC2Ev
+0x00346849	0x6c	DeliverySideMission.cpp	game	missions	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003468b5	0x14	DeliverySideMission.cpp	game	missions	matched	_GLOBAL__I__ZN19DeliverySideMissionC2Ev	_GLOBAL__I__ZN19DeliverySideMissionC2Ev
 0x003468c9	0x200	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMission6pickUpEN3irr4core8vector3dIfEERiRfi	DeliverySideMission::pickUp(irr::core::vector3d<float>, int&, float&, int)
 0x00346ac9	0x40	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMissionD1Ev	DeliverySideMission::~DeliverySideMission()
 0x00346ac9	0x40	DeliverySideMission.cpp	game	missions	pending	_ZN19DeliverySideMissionD2Ev	DeliverySideMission::~DeliverySideMission()
@@ -12535,11 +12535,11 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00348735	0x32c	Trail.cpp	game	world	pending	_ZN5Trail10BuildPointEib	Trail::BuildPoint(int, bool)
 0x00348a61	0x142	Trail.cpp	game	world	pending	_ZN5Trail8AddPointERN3irr4core8vector3dIfEES4_b	Trail::AddPoint(irr::core::vector3d<float>&, irr::core::vector3d<float>&, bool)
 0x00348ba5	0xd8	Trail.cpp	game	world	pending	_ZN5Trail6UpdateERN3irr4core8vector3dIfEES4_b	Trail::Update(irr::core::vector3d<float>&, irr::core::vector3d<float>&, bool)
-0x00348c7d	0x6c	Trail.cpp	game	world	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00348ce9	0x14	Trail.cpp	game	world	pending	_GLOBAL__I__ZN5TrailC2Ev	_GLOBAL__I__ZN5TrailC2Ev
+0x00348c7d	0x6c	Trail.cpp	game	world	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00348ce9	0x14	Trail.cpp	game	world	matched	_GLOBAL__I__ZN5TrailC2Ev	_GLOBAL__I__ZN5TrailC2Ev
 0x00348cfd	0x1f4	Trail.cpp	game	world	pending	_ZN5Trail19CreateMeshSceneNodeEv	Trail::CreateMeshSceneNode()
 0x00348ef1	0x74	Trail.cpp	game	world	pending	_ZN5Trail4InitEiiiff	Trail::Init(int, int, int, float, float)
-0x00348f65	0x30	Trail.cpp	game	world	pending	__tcf_2	__tcf_2
+0x00348f65	0x30	Trail.cpp	game	world	matched	__tcf_2	__tcf_2
 0x00348f95	0x20	TrailMgr.cpp	game	world	pending	_ZN8TrailMgrC2Ev	TrailMgr::TrailMgr()
 0x00348f95	0x20	TrailMgr.cpp	game	world	pending	_ZN8TrailMgrC1Ev	TrailMgr::TrailMgr()
 0x00348fb5	0x9a	TrailMgr.cpp	game	world	pending	_ZN8TrailMgr14AllocTrailListEPP5Traili	TrailMgr::AllocTrailList(Trail**, int)
@@ -12570,15 +12570,15 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003493cd	0xc	AnimObject.cpp	game	characters	pending	_ZN10AnimObject7RestartEv	AnimObject::Restart()
 0x003493d9	0x28	AnimObject.cpp	game	characters	pending	_ZN10AnimObject7SetAnimEi	AnimObject::SetAnim(int)
 0x00349401	0x12	AnimObject.cpp	game	characters	pending	_ZN10AnimObject7SetAnimEii	AnimObject::SetAnim(int, int)
-0x00349415	0x30	AnimObject.cpp	game	characters	pending	__tcf_2	__tcf_2
+0x00349415	0x30	AnimObject.cpp	game	characters	matched	__tcf_2	__tcf_2
 0x00349445	0x70	AnimObject.cpp	game	characters	pending	_ZN10AnimObject10IsAnimOverEv	AnimObject::IsAnimOver()
 0x003494b5	0x58	AnimObject.cpp	game	characters	pending	_ZN10AnimObject22GetCurrentBoundingRectEv	AnimObject::GetCurrentBoundingRect()
 0x0034950d	0x54	AnimObject.cpp	game	characters	pending	_ZN10AnimObject4DrawEv	AnimObject::Draw()
 0x00349561	0x50	AnimObject.cpp	game	characters	pending	_Z15PlayPolicy_Loopfff	PlayPolicy_Loop(float, float, float)
 0x003495b1	0x88	AnimObject.cpp	game	characters	pending	_ZN10AnimObject11UpdateFrameEv	AnimObject::UpdateFrame()
 0x00349639	0xc	AnimObject.cpp	game	characters	pending	_ZN10AnimObject6UpdateEi	AnimObject::Update(int)
-0x00349645	0x6c	AnimObject.cpp	game	characters	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x003496b1	0x14	AnimObject.cpp	game	characters	pending	_GLOBAL__I__Z7FSelectfff	_GLOBAL__I__Z7FSelectfff
+0x00349645	0x6c	AnimObject.cpp	game	characters	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x003496b1	0x14	AnimObject.cpp	game	characters	matched	_GLOBAL__I__Z7FSelectfff	_GLOBAL__I__Z7FSelectfff
 0x003496c5	0x1e	ASprite.cpp	game	rendering	pending	_ZN7ASprite21GetTransformFromFlagsEj	ASprite::GetTransformFromFlags(unsigned int)
 0x003496e5	0x34	ASprite.cpp	game	rendering	pending	_ZN7ASpriteC1Ev	ASprite::ASprite()
 0x003496e5	0x34	ASprite.cpp	game	rendering	pending	_ZN7ASpriteC2Ev	ASprite::ASprite()
@@ -12657,9 +12657,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034bb5d	0x40	StringManager.cpp	game	persistence	pending	_ZNK13StringManager9getStringEi	StringManager::getString(int) const
 0x0034bb9d	0x20	StringManager.cpp	game	persistence	pending	_ZN13StringManager8loadPackEj	StringManager::loadPack(unsigned int)
 0x0034bbbd	0x12	StringManager.cpp	stlport	-	matched	_ZNSt6vectorIPN7Structs9TextStyleESaIS2_EE8_M_clearEv	std::vector<Structs::TextStyle*, std::allocator<Structs::TextStyle*> >::_M_clear()
-0x0034bbd1	0x6c	StringManager.cpp	game	persistence	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034bc3d	0x14	StringManager.cpp	game	persistence	pending	_GLOBAL__I__ZN13StringManager9LANGUAGESE	_GLOBAL__I__ZN13StringManager9LANGUAGESE
-0x0034bc51	0x30	StringManager.cpp	game	persistence	pending	__tcf_2	__tcf_2
+0x0034bbd1	0x6c	StringManager.cpp	game	persistence	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034bc3d	0x14	StringManager.cpp	game	persistence	matched	_GLOBAL__I__ZN13StringManager9LANGUAGESE	_GLOBAL__I__ZN13StringManager9LANGUAGESE
+0x0034bc51	0x30	StringManager.cpp	game	persistence	matched	__tcf_2	__tcf_2
 0x0034bc81	0xd0	StringManager.cpp	stlport	-	matched	_ZNSt6vectorIPN7Structs9TextStyleESaIS2_EE18_M_insert_overflowEPS2_RKS2_RKSt11__true_typejb	std::vector<Structs::TextStyle*, std::allocator<Structs::TextStyle*> >::_M_insert_overflow(Structs::TextStyle**, Structs::TextStyle* const&, std::__true_type const&, unsigned int, bool)
 0x0034bd51	0x14c	StringManager.cpp	game	persistence	pending	_ZN13StringManager10loadStylesEPKc	StringManager::loadStyles(char const*)
 0x0034be9d	0xf0	StringManager.cpp	game	persistence	pending	_ZN13StringManagerD2Ev	StringManager::~StringManager()
@@ -12674,9 +12674,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034c119	0xf8	DataReloaderManager.cpp	game	world	pending	_ZNK19DataReloaderManager10checkFilesEv	DataReloaderManager::checkFiles() const
 0x0034c211	0x20	DataReloaderManager.cpp	game	world	pending	_ZN19DataReloaderManagerC2Ev	DataReloaderManager::DataReloaderManager()
 0x0034c211	0x20	DataReloaderManager.cpp	game	world	pending	_ZN19DataReloaderManagerC1Ev	DataReloaderManager::DataReloaderManager()
-0x0034c231	0x6c	DataReloaderManager.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034c29d	0x14	DataReloaderManager.cpp	game	core	pending	_GLOBAL__I__ZN19DataReloaderManagerC2Ev	_GLOBAL__I__ZN19DataReloaderManagerC2Ev
-0x0034c2b1	0x30	DataReloaderManager.cpp	game	core	pending	__tcf_2	__tcf_2
+0x0034c231	0x6c	DataReloaderManager.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034c29d	0x14	DataReloaderManager.cpp	game	core	matched	_GLOBAL__I__ZN19DataReloaderManagerC2Ev	_GLOBAL__I__ZN19DataReloaderManagerC2Ev
+0x0034c2b1	0x30	DataReloaderManager.cpp	game	core	matched	__tcf_2	__tcf_2
 0x0034c2e1	0x5c	DataReloaderManager.cpp	game	world	pending	_ZN19DataReloaderManagerD0Ev	DataReloaderManager::~DataReloaderManager()
 0x0034c33d	0x58	TouchScreenBase.cpp	game	input	pending	_ZN15TouchScreenBase12ConvertCoordER7Point2DIsE	TouchScreenBase::ConvertCoord(Point2D<short>&)
 0x0034c395	0x2	TouchScreenBase.cpp	game	input	pending	_ZNK15TouchScreenBase6_traceEPKc	TouchScreenBase::_trace(char const*) const
@@ -12719,13 +12719,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034cd85	0x8	TouchScreenIPhone.cpp	game	input	pending	_ZNK17TouchScreenIPhone13getRightBoundEv	TouchScreenIPhone::getRightBound() const
 0x0034cd8d	0x8	TouchScreenIPhone.cpp	game	input	pending	_ZNK17TouchScreenIPhone11getTopBoundEv	TouchScreenIPhone::getTopBound() const
 0x0034cd95	0x8	TouchScreenIPhone.cpp	game	input	pending	_ZNK17TouchScreenIPhone14getBottomBoundEv	TouchScreenIPhone::getBottomBound() const
-0x0034cd9d	0x30	TouchScreenIPhone.cpp	game	input	pending	__tcf_2	__tcf_2
+0x0034cd9d	0x30	TouchScreenIPhone.cpp	game	input	matched	__tcf_2	__tcf_2
 0x0034cdcd	0xc	TouchScreenIPhone.cpp	game	input	pending	_ZNK17TouchScreenIPhone18getTouchIDInRegionERKN3irr4core4rectIfEE	TouchScreenIPhone::getTouchIDInRegion(irr::core::rect<float> const&) const
 0x0034cdd9	0xc	TouchScreenIPhone.cpp	game	input	pending	_ZNK17TouchScreenIPhone15isRegionPressedERKN3irr4core4rectIfEE	TouchScreenIPhone::isRegionPressed(irr::core::rect<float> const&) const
 0x0034cde5	0x78	TouchScreenIPhone.cpp	game	input	pending	_ZN17TouchScreenIPhoneC1Effff	TouchScreenIPhone::TouchScreenIPhone(float, float, float, float)
 0x0034cde5	0x78	TouchScreenIPhone.cpp	game	input	pending	_ZN17TouchScreenIPhoneC2Effff	TouchScreenIPhone::TouchScreenIPhone(float, float, float, float)
-0x0034ce5d	0x6c	TouchScreenIPhone.cpp	game	input	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034cec9	0x14	TouchScreenIPhone.cpp	game	input	pending	_GLOBAL__I__ZN17TouchScreenIPhoneC2Effff	_GLOBAL__I__ZN17TouchScreenIPhoneC2Effff
+0x0034ce5d	0x6c	TouchScreenIPhone.cpp	game	input	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034cec9	0x14	TouchScreenIPhone.cpp	game	input	matched	_GLOBAL__I__ZN17TouchScreenIPhoneC2Effff	_GLOBAL__I__ZN17TouchScreenIPhoneC2Effff
 0x0034cedc	0x14	TouchScreenIPhone.cpp	game	input	pending	_ZThn472_N17TouchScreenIPhone7OnEventERKN3irr6SEventE	non-virtual thunk to TouchScreenIPhone::OnEvent(irr::SEvent const&)
 0x0034cef1	0xa0	TouchScreenIPhone.cpp	game	input	pending	_ZN17TouchScreenIPhone7OnEventERKN3irr6SEventE	TouchScreenIPhone::OnEvent(irr::SEvent const&)
 0x0034cf90	0x14	TouchScreenIPhone.cpp	game	input	pending	_ZThn472_N17TouchScreenIPhoneD0Ev	non-virtual thunk to TouchScreenIPhone::~TouchScreenIPhone()
@@ -12737,13 +12737,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034d031	0x4	TouchScreenWin32.cpp	game	input	pending	_ZNK16TouchScreenWin3213getRightBoundEv	TouchScreenWin32::getRightBound() const
 0x0034d035	0x4	TouchScreenWin32.cpp	game	input	pending	_ZNK16TouchScreenWin3211getTopBoundEv	TouchScreenWin32::getTopBound() const
 0x0034d039	0x4	TouchScreenWin32.cpp	game	input	pending	_ZNK16TouchScreenWin3214getBottomBoundEv	TouchScreenWin32::getBottomBound() const
-0x0034d03d	0x30	TouchScreenWin32.cpp	game	input	pending	__tcf_2	__tcf_2
+0x0034d03d	0x30	TouchScreenWin32.cpp	game	input	matched	__tcf_2	__tcf_2
 0x0034d06d	0xc	TouchScreenWin32.cpp	game	input	pending	_ZNK16TouchScreenWin3218getTouchIDInRegionERKN3irr4core4rectIfEE	TouchScreenWin32::getTouchIDInRegion(irr::core::rect<float> const&) const
 0x0034d079	0xc	TouchScreenWin32.cpp	game	input	pending	_ZNK16TouchScreenWin3215isRegionPressedERKN3irr4core4rectIfEE	TouchScreenWin32::isRegionPressed(irr::core::rect<float> const&) const
 0x0034d085	0x3c	TouchScreenWin32.cpp	game	input	pending	_ZN16TouchScreenWin32C1Ev	TouchScreenWin32::TouchScreenWin32()
 0x0034d085	0x3c	TouchScreenWin32.cpp	game	input	pending	_ZN16TouchScreenWin32C2Ev	TouchScreenWin32::TouchScreenWin32()
-0x0034d0c1	0x6c	TouchScreenWin32.cpp	game	input	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034d12d	0x14	TouchScreenWin32.cpp	game	input	pending	_GLOBAL__I__ZN16TouchScreenWin32C2Ev	_GLOBAL__I__ZN16TouchScreenWin32C2Ev
+0x0034d0c1	0x6c	TouchScreenWin32.cpp	game	input	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034d12d	0x14	TouchScreenWin32.cpp	game	input	matched	_GLOBAL__I__ZN16TouchScreenWin32C2Ev	_GLOBAL__I__ZN16TouchScreenWin32C2Ev
 0x0034d140	0x14	TouchScreenWin32.cpp	game	input	pending	_ZThn472_N16TouchScreenWin32D0Ev	non-virtual thunk to TouchScreenWin32::~TouchScreenWin32()
 0x0034d155	0x3c	TouchScreenWin32.cpp	game	input	pending	_ZN16TouchScreenWin32D0Ev	TouchScreenWin32::~TouchScreenWin32()
 0x0034d190	0x14	TouchScreenWin32.cpp	game	input	pending	_ZThn472_N16TouchScreenWin32D1Ev	non-virtual thunk to TouchScreenWin32::~TouchScreenWin32()
@@ -12757,13 +12757,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034d365	0xa8	TouchScreenWin32.cpp	game	input	pending	_ZN16TouchScreenWin327OnEventERKN3irr6SEventE	TouchScreenWin32::OnEvent(irr::SEvent const&)
 0x0034d40d	0x12	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBase5clearEv	AccelerometerBase::clear()
 0x0034d421	0xc	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBase6updateEd	AccelerometerBase::update(double)
-0x0034d42d	0x30	AccelerometerBase.cpp	game	input	pending	__tcf_2	__tcf_2
+0x0034d42d	0x30	AccelerometerBase.cpp	game	input	matched	__tcf_2	__tcf_2
 0x0034d45d	0x1c	AccelerometerBase.cpp	game	input	pending	_ZNK17AccelerometerBase6_traceEPKc	AccelerometerBase::_trace(char const*) const
 0x0034d479	0x108	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBase11_calcAnglesEv	AccelerometerBase::_calcAngles()
 0x0034d581	0x38	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBaseC1Ev	AccelerometerBase::AccelerometerBase()
 0x0034d581	0x38	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBaseC2Ev	AccelerometerBase::AccelerometerBase()
-0x0034d5b9	0x6c	AccelerometerBase.cpp	game	input	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034d625	0x14	AccelerometerBase.cpp	game	input	pending	_GLOBAL__I__ZN17AccelerometerBaseC2Ev	_GLOBAL__I__ZN17AccelerometerBaseC2Ev
+0x0034d5b9	0x6c	AccelerometerBase.cpp	game	input	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034d625	0x14	AccelerometerBase.cpp	game	input	matched	_GLOBAL__I__ZN17AccelerometerBaseC2Ev	_GLOBAL__I__ZN17AccelerometerBaseC2Ev
 0x0034d639	0x2c	AccelerometerBase.cpp	game	input	pending	_ZN14EvAccelerationD0Ev	EvAcceleration::~EvAcceleration()
 0x0034d665	0x24	AccelerometerBase.cpp	game	input	pending	_ZN14EvAccelerationD1Ev	EvAcceleration::~EvAcceleration()
 0x0034d689	0x14c	AccelerometerBase.cpp	game	input	pending	_ZN17AccelerometerBase5movedEfff	AccelerometerBase::moved(float, float, float)
@@ -12782,11 +12782,11 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034d941	0x34	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin327setWideEb	AccelerometerWin32::setWide(bool)
 0x0034d974	0x14	AccelerometerWin32.cpp	game	input	pending	_ZThn76_N18AccelerometerWin327OnEventERKN3irr6SEventE	non-virtual thunk to AccelerometerWin32::OnEvent(irr::SEvent const&)
 0x0034d989	0x2	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin327OnEventERKN3irr6SEventE	AccelerometerWin32::OnEvent(irr::SEvent const&)
-0x0034d98d	0x30	AccelerometerWin32.cpp	game	input	pending	__tcf_2	__tcf_2
+0x0034d98d	0x30	AccelerometerWin32.cpp	game	input	matched	__tcf_2	__tcf_2
 0x0034d9bd	0x3c	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32C1Ev	AccelerometerWin32::AccelerometerWin32()
 0x0034d9bd	0x3c	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32C2Ev	AccelerometerWin32::AccelerometerWin32()
-0x0034d9f9	0x6c	AccelerometerWin32.cpp	game	input	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034da65	0x14	AccelerometerWin32.cpp	game	input	pending	_GLOBAL__I__ZN18AccelerometerWin32C2Ev	_GLOBAL__I__ZN18AccelerometerWin32C2Ev
+0x0034d9f9	0x6c	AccelerometerWin32.cpp	game	input	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034da65	0x14	AccelerometerWin32.cpp	game	input	matched	_GLOBAL__I__ZN18AccelerometerWin32C2Ev	_GLOBAL__I__ZN18AccelerometerWin32C2Ev
 0x0034da78	0x14	AccelerometerWin32.cpp	game	input	pending	_ZThn76_N18AccelerometerWin32D0Ev	non-virtual thunk to AccelerometerWin32::~AccelerometerWin32()
 0x0034da8d	0x38	AccelerometerWin32.cpp	game	input	pending	_ZN18AccelerometerWin32D0Ev	AccelerometerWin32::~AccelerometerWin32()
 0x0034dac4	0x14	AccelerometerWin32.cpp	game	input	pending	_ZThn76_N18AccelerometerWin32D1Ev	non-virtual thunk to AccelerometerWin32::~AccelerometerWin32()
@@ -13029,13 +13029,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00350925	0x2	CSound.cpp	game	audio	pending	_ZN13ALSourcesPoolC2Eii	ALSourcesPool::ALSourcesPool(int, int)
 0x00350929	0x2	CSound.cpp	game	audio	pending	_ZN13ALSourcesPoolD2Ev	ALSourcesPool::~ALSourcesPool()
 0x00350929	0x2	CSound.cpp	game	audio	pending	_ZN13ALSourcesPoolD1Ev	ALSourcesPool::~ALSourcesPool()
-0x0035092d	0x30	CSound.cpp	game	audio	pending	__tcf_2	__tcf_2
+0x0035092d	0x30	CSound.cpp	game	audio	matched	__tcf_2	__tcf_2
 0x0035095d	0x20	CSound.cpp	game	audio	pending	_ZN6CSoundD0Ev	CSound::~CSound()
 0x0035097d	0x18	CSound.cpp	game	audio	pending	_ZN6CSoundD2Ev	CSound::~CSound()
 0x0035097d	0x18	CSound.cpp	game	audio	pending	_ZN6CSoundD1Ev	CSound::~CSound()
 0x00350995	0x50	CSound.cpp	game	audio	pending	_ZNK6CSound17GetAbsoluteVolumeEv	CSound::GetAbsoluteVolume() const
-0x003509e5	0x6c	CSound.cpp	game	audio	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00350a51	0x14	CSound.cpp	game	audio	pending	_GLOBAL__I__ZN6CSound16s_pALSourcesPoolE	_GLOBAL__I__ZN6CSound16s_pALSourcesPoolE
+0x003509e5	0x6c	CSound.cpp	game	audio	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00350a51	0x14	CSound.cpp	game	audio	matched	_GLOBAL__I__ZN6CSound16s_pALSourcesPoolE	_GLOBAL__I__ZN6CSound16s_pALSourcesPoolE
 0x00350a65	0x1c	CSoundData.cpp	game	audio	pending	_ZN10CSoundDataC1Ev	CSoundData::CSoundData()
 0x00350a65	0x1c	CSoundData.cpp	game	audio	pending	_ZN10CSoundDataC2Ev	CSoundData::CSoundData()
 0x00350a81	0x2c	CSoundData.cpp	game	audio	pending	_ZN10CSoundDataC1EiiiiPcib	CSoundData::CSoundData(int, int, int, int, char*, int, bool)
@@ -13218,8 +13218,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00353475	0x14	SoundManager.cpp	game	audio	pending	_ZN12SoundManager6resumeEi	SoundManager::resume(int)
 0x00353489	0x14	SoundManager.cpp	game	audio	pending	_ZN12SoundManager5pauseEi	SoundManager::pause(int)
 0x0035349d	0x6	SoundManager.cpp	game	audio	pending	_ZNK12SoundManager19getNumRadioStationsEv	SoundManager::getNumRadioStations() const
-0x003534a5	0x6c	SoundManager.cpp	game	audio	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00353511	0x14	SoundManager.cpp	game	audio	pending	_GLOBAL__I__ZN12SoundManager15s_soundsPlayingE	_GLOBAL__I__ZN12SoundManager15s_soundsPlayingE
+0x003534a5	0x6c	SoundManager.cpp	game	audio	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00353511	0x14	SoundManager.cpp	game	audio	matched	_GLOBAL__I__ZN12SoundManager15s_soundsPlayingE	_GLOBAL__I__ZN12SoundManager15s_soundsPlayingE
 0x00353525	0x2a8	SoundManager.cpp	game	audio	pending	_ZN12SoundManagerC1Ev	SoundManager::SoundManager()
 0x00353525	0x2a8	SoundManager.cpp	game	audio	pending	_ZN12SoundManagerC2Ev	SoundManager::SoundManager()
 0x003537cd	0x54	SoundManager.cpp	game	audio	pending	_ZN12SoundManager17playPriorityAudioEib	SoundManager::playPriorityAudio(int, bool)
@@ -13229,7 +13229,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003538c9	0x38	SoundManager.cpp	game	audio	pending	_ZN12SoundManager17stopSoundCallbackEii	SoundManager::stopSoundCallback(int, int)
 0x00353901	0x7c	SoundManager.cpp	game	audio	pending	_ZN12SoundManager17playSoundCallbackEibff	SoundManager::playSoundCallback(int, bool, float, float)
 0x0035397d	0x30	SoundManager.cpp	game	audio	pending	_ZN12SoundManager22isSoundPlayingCallbackEii	SoundManager::isSoundPlayingCallback(int, int)
-0x003539ad	0x30	SoundManager.cpp	game	audio	pending	__tcf_2	__tcf_2
+0x003539ad	0x30	SoundManager.cpp	game	audio	matched	__tcf_2	__tcf_2
 0x003539dd	0x58	SoundManager.cpp	game	audio	pending	_ZN12SoundManager18changeRadioStationEi	SoundManager::changeRadioStation(int)
 0x00353a35	0x20	SoundManager.cpp	game	audio	pending	_ZN12SoundManager16lastRadioStationEv	SoundManager::lastRadioStation()
 0x00353a55	0x22	SoundManager.cpp	game	audio	pending	_ZN12SoundManager16nextRadioStationEv	SoundManager::nextRadioStation()
@@ -13258,7 +13258,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00353e85	0x20	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound20InitStaticParametersEP13CSoundBuffersP10CMSWavPool	StreamingSound::InitStaticParameters(CSoundBuffers*, CMSWavPool*)
 0x00353ea5	0x2	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound23SaturateBuffersAndFlushEv	StreamingSound::SaturateBuffersAndFlush()
 0x00353ea9	0x2	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound6UpdateEi	StreamingSound::Update(int)
-0x00353ead	0x30	StreamingSound.cpp	game	audio	pending	__tcf_2	__tcf_2
+0x00353ead	0x30	StreamingSound.cpp	game	audio	matched	__tcf_2	__tcf_2
 0x00353edd	0x4a	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPoolD2Ev	CStreamingPool::~CStreamingPool()
 0x00353edd	0x4a	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPoolD1Ev	CStreamingPool::~CStreamingPool()
 0x00353f29	0x4e	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound4PlayEbfi	StreamingSound::Play(bool, float, int)
@@ -13279,8 +13279,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x003543b9	0xcc	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSoundC1EP10CSoundDatai	StreamingSound::StreamingSound(CSoundData*, int)
 0x00354485	0xb8	StreamingSound.cpp	game	audio	pending	_ZN14StreamingSound4InitEP10CSoundData	StreamingSound::Init(CSoundData*)
 0x0035453d	0x88	StreamingSound.cpp	game	audio	pending	_ZN14CStreamingPool17GetStreamingSoundEP10CSoundData	CStreamingPool::GetStreamingSound(CSoundData*)
-0x003545c5	0x6c	StreamingSound.cpp	game	audio	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00354631	0x14	StreamingSound.cpp	game	audio	pending	_GLOBAL__I__ZN14StreamingSound14s_pBuffersPoolE	_GLOBAL__I__ZN14StreamingSound14s_pBuffersPoolE
+0x003545c5	0x6c	StreamingSound.cpp	game	audio	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00354631	0x14	StreamingSound.cpp	game	audio	matched	_GLOBAL__I__ZN14StreamingSound14s_pBuffersPoolE	_GLOBAL__I__ZN14StreamingSound14s_pBuffersPoolE
 0x00354645	0x1c	EventManager.cpp	game	scripting	pending	_ZN12EventManagerC2Ev	EventManager::EventManager()
 0x00354645	0x1c	EventManager.cpp	game	scripting	pending	_ZN12EventManagerC1Ev	EventManager::EventManager()
 0x00354661	0x2	EventManager.cpp	game	scripting	pending	_ZNK12EventManager6_traceEPKc	EventManager::_trace(char const*) const
