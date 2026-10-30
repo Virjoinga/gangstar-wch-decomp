@@ -113,11 +113,11 @@
         ".hud_cleanup",
         ".hud_startup",
         ".hud_startup_wrapper",
-        ".hud_rodata",
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".shared_startup_empty_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [

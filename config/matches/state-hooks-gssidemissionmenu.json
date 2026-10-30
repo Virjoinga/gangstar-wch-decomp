@@ -99,9 +99,9 @@
         ".local_startup_function_1",
         ".local_startup_function_2",
         ".local_startup_function_3",
-        ".local_startup_text",
         ".state_instance",
-        ".state_instance_cleanup"
+        ".state_instance_cleanup",
+        ".shared_startup_empty_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [

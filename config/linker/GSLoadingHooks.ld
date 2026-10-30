@@ -53,7 +53,8 @@ SECTIONS
     .local_startup_storage_9 0x004b6f54 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .local_startup_storage_10 0x004b6f5c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai5guardE) }
     .local_startup_storage_11 0x004b6f64 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
-    .local_startup_text 0x0044d91c : { *state-hooks-gsloading.o(.rodata.local_startup_empty) }
+
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
 ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

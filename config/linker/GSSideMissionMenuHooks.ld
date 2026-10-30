@@ -56,11 +56,12 @@ SECTIONS
     .local_startup_storage_9 0x004b7078 (NOLOAD) : { *state-hooks-gssidemissionmenu.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .local_startup_storage_10 0x004b7080 (NOLOAD) : { *state-hooks-gssidemissionmenu.o(.bss._ZN8gameloft2ai5guardE) }
     .local_startup_storage_11 0x004b7088 (NOLOAD) : { *state-hooks-gssidemissionmenu.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
-    .local_startup_text 0x0044d91c : { *state-hooks-gssidemissionmenu.o(.rodata.local_startup_empty) }
-    .state_instance 0x002d44c4 : { *state-hooks-gssidemissionmenu.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
+
+.state_instance 0x002d44c4 : { *state-hooks-gssidemissionmenu.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
     .state_instance_cleanup 0x002d4518 : { *state-hooks-gssidemissionmenu.o(.text.__tcf_0) }
     .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gssidemissionmenu.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
     .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gssidemissionmenu.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
 ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

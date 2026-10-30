@@ -79,7 +79,10 @@
             "name": ".got",
             "offset": 864
         },
-        ".hud_rodata"
+        ".module_startup_hit_warning_function_0",
+        ".module_startup_hit_warning_function_1",
+        ".module_startup_hit_warning_function_2",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN10HitWarning6updateEd",
@@ -136,7 +139,19 @@
             "name": "_Z41__static_initialization_and_destruction_0ii",
             "address": "0x003289bd"
         },
-        "_GLOBAL__I__ZN10HudElementC2EP7ASpriteib"
+        "_GLOBAL__I__ZN10HudElementC2EP7ASpriteib",
+        {
+            "name": "__tcf_2",
+            "address": "0x00328531"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0032875d"
+        },
+        {
+            "name": "_GLOBAL__I__ZN10HitWarningC2EP7ASpritei",
+            "address": "0x003287c9"
+        }
     ],
     "retail_got": true,
     "external_thumb_functions": [

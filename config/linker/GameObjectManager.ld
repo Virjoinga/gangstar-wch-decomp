@@ -55,6 +55,26 @@ __aeabi_fdiv = 0x001c4520;
 __aeabi_fcmpgt = 0x001c419c;
 __aeabi_fcmpeq = 0x001c470c;
 __aeabi_fcmplt = 0x001c479c;
+_ZN36retail_gameobjectmanager_transitions16civPassive_transE = 0x0041fec8;
+_ZN36retail_gameobjectmanager_transitions17scriptedNpc_transE = 0x0041fff4;
+_ZN36retail_gameobjectmanager_transitions19civAggressive_transE = 0x00420024;
+_ZN36retail_gameobjectmanager_transitions16gangMember_transE = 0x00420108;
+_ZN36retail_gameobjectmanager_transitions9cop_transE = 0x00420114;
+_ZN36retail_gameobjectmanager_transitions10swat_transE = 0x0042024c;
+_ZN36retail_gameobjectmanager_transitions17civ_vehicle_transE = 0x00420258;
+_ZN36retail_gameobjectmanager_transitions17cop_vehicle_transE = 0x004202e8;
+_ZN36retail_gameobjectmanager_transitions11guard_transE = 0x0042039c;
+_ZN36retail_gameobjectmanager_transitions22scripted_vehicle_transE = 0x00420444;
+_ZN26retail_wrapper_transitions16civPassive_transE = 0x00413508;
+_ZN26retail_wrapper_transitions17scriptedNpc_transE = 0x00413634;
+_ZN26retail_wrapper_transitions19civAggressive_transE = 0x00413664;
+_ZN26retail_wrapper_transitions16gangMember_transE = 0x00413748;
+_ZN26retail_wrapper_transitions9cop_transE = 0x00413754;
+_ZN26retail_wrapper_transitions10swat_transE = 0x0041388c;
+_ZN26retail_wrapper_transitions17civ_vehicle_transE = 0x00413898;
+_ZN26retail_wrapper_transitions17cop_vehicle_transE = 0x00413928;
+_ZN26retail_wrapper_transitions11guard_transE = 0x004139dc;
+_ZN26retail_wrapper_transitions22scripted_vehicle_transE = 0x00413a84;
 SECTIONS {
     .level_get_speed 0x2f1430 : { *level-object.o(.text._ZNK11LevelObject8GetSpeedEv .gnu.linkonce.t._ZNK11LevelObject8GetSpeedEv) }
     .level_get_material_id 0x316830 : { *level-object.o(.text._ZNK11LevelObject8GetMatIDEv .gnu.linkonce.t._ZNK11LevelObject8GetMatIDEv) }
@@ -330,9 +350,8 @@ SECTIONS {
     .gom_0 0x00314eec : { *game-object-manager.o(.text._ZN17GameObjectManager19AddGameObjectOfTypeEi) }
     .gol_empty 0x004b8884 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .gol_half 0x004b88a4 (NOLOAD) : { *game-object-list.o(.bss._ZN3irr2ps5vHalfE) }
-    .gol_empty_text 0x0044d91c : { *game-object-list.o(.rodata.str1.*)  *level-object.o(.rodata.str1.*) }
 
-    .gol_vtable__ZTV22IterationConditionName 0x004abc00 : { *game-object-list.o(.data.rel.ro._ZTV22IterationConditionName .gnu.linkonce.d.rel.ro._ZTV22IterationConditionName) }
+.gol_vtable__ZTV22IterationConditionName 0x004abc00 : { *game-object-list.o(.data.rel.ro._ZTV22IterationConditionName .gnu.linkonce.d.rel.ro._ZTV22IterationConditionName) }
     .gol_vtable__ZTV14GameObjectList 0x004abc10 : { *game-object-list.o(.data.rel.ro._ZTV14GameObjectList .gnu.linkonce.d.rel.ro._ZTV14GameObjectList) }
     .gol_20 0x00314ed8 : { *game-object-list.o(.text._GLOBAL__I__ZN14GameObjectListC2Ev) }
     .gol_19 0x00314e6c : { *game-object-list.o(.text._Z41__static_initialization_and_destruction_0ii) }
@@ -376,4 +395,61 @@ SECTIONS {
     .levelobject_update 0x00316cc0 : { *level-object.o(.text._ZN11LevelObject6UpdateEi) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
+    .module_startup_game_object_manager_function_0 0x00314f4c : { *game-object-manager.o(.text.__tcf_4) }
+    .module_startup_game_object_manager_function_1 0x00316420 : { *game-object-manager.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .module_startup_game_object_manager_function_2 0x00316564 : { *game-object-manager.o(.text._GLOBAL__I__ZN17GameObjectManagerC2Ev) }
+    .module_startup_game_object_manager_storage_0 0x004b88b4 (NOLOAD) : { *game-object-manager.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .module_startup_game_object_manager_storage_1 0x004b88d4 (NOLOAD) : { *game-object-manager.o(.bss._ZN3irr2ps5vHalfE) }
+    .module_startup_game_object_manager_storage_2 0x004b88e0 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .module_startup_game_object_manager_storage_3 0x004b88e8 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .module_startup_game_object_manager_storage_4 0x004b88f0 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .module_startup_game_object_manager_storage_5 0x004b88f8 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .module_startup_game_object_manager_storage_6 0x004b8900 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai3copE) }
+    .module_startup_game_object_manager_storage_7 0x004b8908 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai4swatE) }
+    .module_startup_game_object_manager_storage_8 0x004b8910 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .module_startup_game_object_manager_storage_9 0x004b8918 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .module_startup_game_object_manager_storage_10 0x004b8920 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai5guardE) }
+    .module_startup_game_object_manager_storage_11 0x004b8928 (NOLOAD) : { *game-object-manager.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+
+.module_startup_path_name_function_0 0x002d2624 : { *path-name.o(.text.__tcf_4) }
+    .module_startup_path_name_function_1 0x002d2840 : { *path-name.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .module_startup_path_name_function_2 0x002d2984 : { *path-name.o(.text._GLOBAL__I_mouseLButtHeld) }
+    .module_startup_path_name_storage_0 0x004b66a0 (NOLOAD) : { *path-name.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .module_startup_path_name_storage_1 0x004b66c0 (NOLOAD) : { *path-name.o(.bss._ZN3irr2ps5vHalfE) }
+    .module_startup_path_name_storage_2 0x004b66cc (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .module_startup_path_name_storage_3 0x004b66d4 (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .module_startup_path_name_storage_4 0x004b66dc (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .module_startup_path_name_storage_5 0x004b66e4 (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .module_startup_path_name_storage_6 0x004b66ec (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai3copE) }
+    .module_startup_path_name_storage_7 0x004b66f4 (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai4swatE) }
+    .module_startup_path_name_storage_8 0x004b66fc (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .module_startup_path_name_storage_9 0x004b6704 (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .module_startup_path_name_storage_10 0x004b670c (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai5guardE) }
+    .module_startup_path_name_storage_11 0x004b6714 (NOLOAD) : { *path-name.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_0) == 32, "game-object-manager _ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_1) == 12, "game-object-manager _ZN3irr2ps5vHalfE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_2) == 8, "game-object-manager _ZN8gameloft2ai11civ_passiveE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_3) == 8, "game-object-manager _ZN8gameloft2ai12npc_scriptedE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_4) == 8, "game-object-manager _ZN8gameloft2ai13civ_agressiveE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_5) == 8, "game-object-manager _ZN8gameloft2ai11gang_memberE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_6) == 8, "game-object-manager _ZN8gameloft2ai3copE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_7) == 8, "game-object-manager _ZN8gameloft2ai4swatE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_8) == 8, "game-object-manager _ZN8gameloft2ai11civ_vehicleE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_9) == 8, "game-object-manager _ZN8gameloft2ai11cop_vehicleE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_10) == 8, "game-object-manager _ZN8gameloft2ai5guardE extent");
+ASSERT(SIZEOF(.module_startup_game_object_manager_storage_11) == 8, "game-object-manager _ZN8gameloft2ai16scripted_vehicleE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_0) == 32, "path-name _ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_1) == 12, "path-name _ZN3irr2ps5vHalfE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_2) == 8, "path-name _ZN8gameloft2ai11civ_passiveE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_3) == 8, "path-name _ZN8gameloft2ai12npc_scriptedE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_4) == 8, "path-name _ZN8gameloft2ai13civ_agressiveE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_5) == 8, "path-name _ZN8gameloft2ai11gang_memberE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_6) == 8, "path-name _ZN8gameloft2ai3copE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_7) == 8, "path-name _ZN8gameloft2ai4swatE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_8) == 8, "path-name _ZN8gameloft2ai11civ_vehicleE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_9) == 8, "path-name _ZN8gameloft2ai11cop_vehicleE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_10) == 8, "path-name _ZN8gameloft2ai5guardE extent");
+ASSERT(SIZEOF(.module_startup_path_name_storage_11) == 8, "path-name _ZN8gameloft2ai16scripted_vehicleE extent");

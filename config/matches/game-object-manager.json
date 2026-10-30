@@ -71,7 +71,31 @@
         "_ZN11LevelObject17isVisibleOnScreenEv",
         "_ZN11LevelObject13isWithinRangeEf",
         "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
-        "_ZN11LevelObject12getSpawnTypeEv"
+        "_ZN11LevelObject12getSpawnTypeEv",
+        {
+            "name": "__tcf_4",
+            "address": "0x00314f4d"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00316421"
+        },
+        {
+            "name": "_GLOBAL__I__ZN17GameObjectManagerC2Ev",
+            "address": "0x00316565"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002d2625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d2841"
+        },
+        {
+            "name": "_GLOBAL__I_mouseLButtHeld",
+            "address": "0x002d2985"
+        }
     ],
     "sections": [
         ".text",
@@ -120,7 +144,6 @@
         ".gol_20",
         ".gol_vtable__ZTV14GameObjectList",
         ".gol_vtable__ZTV22IterationConditionName",
-        ".gol_empty_text",
         ".gom_0",
         ".gom_1",
         ".gom_2",
@@ -259,7 +282,14 @@
         ".level_hook_clean",
         ".level_get_speed",
         ".level_get_material_id",
-        ".level_get_triangle_id"
+        ".level_get_triangle_id",
+        ".module_startup_game_object_manager_function_0",
+        ".module_startup_game_object_manager_function_1",
+        ".module_startup_game_object_manager_function_2",
+        ".module_startup_path_name_function_0",
+        ".module_startup_path_name_function_1",
+        ".module_startup_path_name_function_2",
+        ".shared_startup_empty_text"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

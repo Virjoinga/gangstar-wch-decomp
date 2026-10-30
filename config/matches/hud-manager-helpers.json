@@ -28,12 +28,33 @@
         "_ZN11CHudManager4initEv",
         "_ZN11CHudManager4lockEv",
         "_ZN11CHudManager6unlockEv",
-        "_ZNK11CHudManager8isLockedEv"
+        "_ZNK11CHudManager8isLockedEv",
+        {
+            "name": "__tcf_3",
+            "address": "0x003236b9"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00323ed9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN11CHudManagerC2Ev",
+            "address": "0x0032401d"
+        }
     ],
     "sections": [
         ".helper_0",
         ".helper_1",
         ".helper_2",
-        ".helper_3"
-    ]
+        ".helper_3",
+        ".module_startup_hud_manager_helpers_function_0",
+        ".module_startup_hud_manager_helpers_function_1",
+        ".module_startup_hud_manager_helpers_function_2",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".shared_startup_empty_text"
+    ],
+    "retail_got": true
 }

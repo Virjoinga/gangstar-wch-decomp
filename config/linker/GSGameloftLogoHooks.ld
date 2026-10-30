@@ -37,7 +37,8 @@ SECTIONS
     .local_startup_function_2 0x002e25d0 : { *state-hooks-gsgameloftlogo.o(.text.__tcf_3) }
     .local_startup_storage_0 0x004b6e3c (NOLOAD) : { *state-hooks-gsgameloftlogo.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .local_startup_storage_1 0x004b6e5c (NOLOAD) : { *state-hooks-gsgameloftlogo.o(.bss._ZN3irr2ps5vHalfE) }
-    .local_startup_text 0x0044d91c : { *state-hooks-gsgameloftlogo.o(.rodata.local_startup_empty) }
+
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
 ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

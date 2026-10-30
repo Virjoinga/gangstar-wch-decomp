@@ -44,7 +44,11 @@
         ".basevtable",
         ".pathtext",
         ".debugtext",
-        ".debugrodata"
+        ".debugrodata",
+        ".module_startup_path_name_function_0",
+        ".module_startup_path_name_function_1",
+        ".module_startup_path_name_function_2",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZNK16FileSystemIPhone11_FileHandle7canReadEv",
@@ -76,7 +80,19 @@
         "_ZN11IFileStreamD1Ev",
         "_ZN16FileSystemIPhone11_FileHandleD0Ev",
         "_ZN16FileSystemIPhone11_FileHandleD1Ev",
-        "_ZN16FileSystemIPhone11_FileHandleD2Ev"
+        "_ZN16FileSystemIPhone11_FileHandleD2Ev",
+        {
+            "name": "__tcf_4",
+            "address": "0x002d2625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d2841"
+        },
+        {
+            "name": "_GLOBAL__I_mouseLButtHeld",
+            "address": "0x002d2985"
+        }
     ],
     "dependencies": [
         "file-system-base",

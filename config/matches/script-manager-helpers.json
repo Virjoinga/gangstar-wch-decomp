@@ -29,13 +29,34 @@
         "_ZN13ScriptManager20skipBlockingCommandsEv",
         "_ZNK13ScriptManager10getMissionEv",
         "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
-        "_ZNK13ScriptManager7getRaceEv"
+        "_ZNK13ScriptManager7getRaceEv",
+        {
+            "name": "__tcf_6",
+            "address": "0x0033d0c1"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0033f9d9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN13ScriptManager12s_playerTestE",
+            "address": "0x0033fb1d"
+        }
     ],
     "sections": [
         ".helper_0",
         ".helper_1",
         ".helper_2",
         ".helper_3",
-        ".helper_4"
-    ]
+        ".helper_4",
+        ".module_startup_script_manager_helpers_function_0",
+        ".module_startup_script_manager_helpers_function_1",
+        ".module_startup_script_manager_helpers_function_2",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".shared_startup_empty_text"
+    ],
+    "retail_got": true
 }

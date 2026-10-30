@@ -25,9 +25,30 @@
     "source": "src/game/app/Application.cpp",
     "linker_script": "config/linker/ApplicationHelpers.ld",
     "functions": [
-        "_ZNK11Application19GetScreenDimensionsERiS0_"
+        "_ZNK11Application19GetScreenDimensionsERiS0_",
+        {
+            "name": "__tcf_5",
+            "address": "0x002d4045"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d5401"
+        },
+        {
+            "name": "_GLOBAL__I_iAdditionMenuDepth",
+            "address": "0x002d5545"
+        }
     ],
     "sections": [
-        ".screen_dimensions"
-    ]
+        ".screen_dimensions",
+        ".module_startup_application_helpers_function_0",
+        ".module_startup_application_helpers_function_1",
+        ".module_startup_application_helpers_function_2",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".shared_startup_empty_text"
+    ],
+    "retail_got": true
 }

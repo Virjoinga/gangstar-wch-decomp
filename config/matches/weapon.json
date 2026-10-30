@@ -95,7 +95,6 @@
         ".manager_startup_wrapper",
         ".weapon_startup_initialization",
         ".weapon_startup_wrapper",
-        ".startup_empty_text",
         ".factory_d0",
         ".factory_d1",
         ".factory_singleton",
@@ -207,7 +206,8 @@
         ".level_hook_clean",
         ".level_get_speed",
         ".level_get_material_id",
-        ".level_get_triangle_id"
+        ".level_get_triangle_id",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZNK6Weapon13getWeaponTypeEv",

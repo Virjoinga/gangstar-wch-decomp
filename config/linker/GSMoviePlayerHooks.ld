@@ -44,7 +44,8 @@ SECTIONS
     .local_startup_function_2 0x002e333c : { *state-hooks-gsmovieplayer.o(.text.__tcf_3) }
     .local_startup_storage_0 0x004b6fe8 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .local_startup_storage_1 0x004b7008 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.bss._ZN3irr2ps5vHalfE) }
-    .local_startup_text 0x0044d91c : { *state-hooks-gsmovieplayer.o(.rodata.local_startup_empty) }
+
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
 ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");

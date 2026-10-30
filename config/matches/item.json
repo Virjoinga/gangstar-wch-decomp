@@ -128,7 +128,6 @@
         ".level_string_cleanup",
         ".level_startup",
         ".level_startup_wrapper",
-        ".level_empty_text",
         ".level_visible",
         ".level_range",
         ".level_sight",
@@ -190,7 +189,8 @@
         ".level_hook_clean",
         ".level_get_speed",
         ".level_get_material_id",
-        ".level_get_triangle_id"
+        ".level_get_triangle_id",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN4Item24resetAchievementCountersEv",
