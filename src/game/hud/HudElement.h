@@ -1,18 +1,7 @@
 #ifndef WCH_HUD_HUD_ELEMENT_H
 #define WCH_HUD_HUD_ELEMENT_H
+#include "../core/FrameInterfaces.h"
 class ASprite;
-class IUpdatable {
-public:
-    virtual ~IUpdatable() {}
-    virtual void update(double) = 0;
-};
-class IDrawable {
-public:
-    virtual ~IDrawable() {}
-    virtual void draw() const = 0;
-    virtual void draw2d() const = 0;
-    virtual int getDrawingLayer() const = 0;
-};
 class ITouchable {
 public:
     virtual void processTouch(long) = 0;
