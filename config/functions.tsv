@@ -8941,13 +8941,13 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d68c5	0x48	CCustomFileSystem.cpp	game	core	pending	_ZN17CCustomFileSystemD0Ev	CCustomFileSystem::~CCustomFileSystem()
 0x002d690d	0x14	CCustomFileSystem.cpp	game	core	pending	_ZTv0_n12_N17CCustomFileSystemD1Ev	virtual thunk to CCustomFileSystem::~CCustomFileSystem()
 0x002d6921	0x40	CCustomFileSystem.cpp	game	core	pending	_ZN17CCustomFileSystemD1Ev	CCustomFileSystem::~CCustomFileSystem()
-0x002d6961	0x50	CCustomIrrFactory.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x002d69b1	0x14	CCustomIrrFactory.cpp	game	core	pending	_GLOBAL__I_customFactory	_GLOBAL__I_customFactory
-0x002d69c5	0x34	CCustomIrrFactory.cpp	game	core	pending	_ZN16CCustomIrrFactor18createSceneManagerEPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS7_15IGUIEnvironmentE	CCustomIrrFactor::createSceneManager(irr::video::IVideoDriver*, irr::io::IFileSystem*, irr::gui::ICursorControl*, irr::gui::IGUIEnvironment*)
-0x002d69f9	0x54	CCustomIrrFactory.cpp	game	core	pending	_ZN16CCustomIrrFactor16createFileSystemEv	CCustomIrrFactor::createFileSystem()
-0x002d6a4d	0x28	CCustomIrrFactory.cpp	game	core	pending	_ZN16CCustomIrrFactorD0Ev	CCustomIrrFactor::~CCustomIrrFactor()
-0x002d6a75	0x20	CCustomIrrFactory.cpp	game	core	pending	_ZN16CCustomIrrFactorD1Ev	CCustomIrrFactor::~CCustomIrrFactor()
-0x002d6a95	0x24	CCustomIrrFactory.cpp	game	core	pending	__tcf_0	__tcf_0
+0x002d6961	0x50	CCustomIrrFactory.cpp	game	core	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x002d69b1	0x14	CCustomIrrFactory.cpp	game	core	matched	_GLOBAL__I_customFactory	_GLOBAL__I_customFactory
+0x002d69c5	0x34	CCustomIrrFactory.cpp	game	core	matched	_ZN16CCustomIrrFactor18createSceneManagerEPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS7_15IGUIEnvironmentE	CCustomIrrFactor::createSceneManager(irr::video::IVideoDriver*, irr::io::IFileSystem*, irr::gui::ICursorControl*, irr::gui::IGUIEnvironment*)
+0x002d69f9	0x54	CCustomIrrFactory.cpp	game	core	matched	_ZN16CCustomIrrFactor16createFileSystemEv	CCustomIrrFactor::createFileSystem()
+0x002d6a4d	0x28	CCustomIrrFactory.cpp	game	core	matched	_ZN16CCustomIrrFactorD0Ev	CCustomIrrFactor::~CCustomIrrFactor()
+0x002d6a75	0x20	CCustomIrrFactory.cpp	game	core	matched	_ZN16CCustomIrrFactorD1Ev	CCustomIrrFactor::~CCustomIrrFactor()
+0x002d6a95	0x24	CCustomIrrFactory.cpp	game	core	matched	__tcf_0	__tcf_0
 0x002d6ab9	0x4	CCustomMaterialRenderer_VERTEX_COLOR_ALPHA.cpp	game	core	pending	_ZNK42CCustomMaterialRenderer_VERTEX_COLOR_ALPHA13isTransparentEv	CCustomMaterialRenderer_VERTEX_COLOR_ALPHA::isTransparent() const
 0x002d6abd	0x4	CCustomMaterialRenderer_VERTEX_COLOR_ALPHA.cpp	game	core	pending	_ZNK42CCustomMaterialRenderer_VERTEX_COLOR_ALPHA22getVertexAttributeMaskEv	CCustomMaterialRenderer_VERTEX_COLOR_ALPHA::getVertexAttributeMask() const
 0x002d6ac1	0x30	CCustomMaterialRenderer_VERTEX_COLOR_ALPHA.cpp	game	core	matched	__tcf_0	__tcf_0

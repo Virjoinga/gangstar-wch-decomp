@@ -1,0 +1,78 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/core/CCustomIrrFactory.cpp",
+    "linker_script": "config/linker/CCustomIrrFactory.ld",
+    "functions": [
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d6961"
+        },
+        {
+            "name": "_GLOBAL__I_customFactory",
+            "address": "0x002d69b1"
+        },
+        {
+            "name": "_ZN16CCustomIrrFactorD0Ev",
+            "address": "0x002d6a4d"
+        },
+        {
+            "name": "_ZN16CCustomIrrFactorD1Ev",
+            "address": "0x002d6a75"
+        },
+        {
+            "name": "__tcf_0",
+            "address": "0x002d6a95"
+        },
+        {
+            "name": "_ZN16CCustomIrrFactor18createSceneManagerEPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS7_15IGUIEnvironmentE",
+            "address": "0x002d69c5"
+        },
+        {
+            "name": "_ZN16CCustomIrrFactor16createFileSystemEv",
+            "address": "0x002d69f9"
+        }
+    ],
+    "sections": [
+        ".factory_function_0",
+        ".factory_function_1",
+        ".factory_function_2",
+        ".factory_function_3",
+        ".factory_function_4",
+        ".factory_function_scene",
+        ".factory_function_files",
+        ".factory_vtable",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN3irr11CIrrFactoryC1Ev",
+        "_ZN3irr11CIrrFactoryD1Ev",
+        "_ZN19CCustomSceneManagerC1EPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS0_5scene10IMeshCacheEPNS7_15IGUIEnvironmentE",
+        "_ZN3irr2io11CFileSystemC2Ev"
+    ]
+}
