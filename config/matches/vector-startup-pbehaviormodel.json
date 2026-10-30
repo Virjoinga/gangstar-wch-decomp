@@ -1,0 +1,46 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/ai/PBehaviorModel.cpp",
+    "linker_script": "config/linker/PBehaviorModelVectorStartup.ld",
+    "functions": [
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00209b69"
+        },
+        {
+            "name": "_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PBehaviorModel.cpp_8D2A3925_5F21CBFB",
+            "address": "0x00209b99"
+        }
+    ],
+    "sections": [
+        ".vector_startup_function_0",
+        ".vector_startup_function_1",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}

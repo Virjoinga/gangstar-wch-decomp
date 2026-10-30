@@ -1,0 +1,104 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/vehicles/CarSounds.cpp",
+    "linker_script": "config/linker/CarSoundCallbacks.ld",
+    "functions": [
+        {
+            "name": "_Z18IsSoundPlayingStubii",
+            "address": "0x0034f17d"
+        },
+        {
+            "name": "_Z8PlayStubibff",
+            "address": "0x0034f181"
+        },
+        {
+            "name": "_Z8StopStubii",
+            "address": "0x0034f189"
+        },
+        {
+            "name": "_Z12SetPitchStubiif",
+            "address": "0x0034f18d"
+        },
+        {
+            "name": "_Z13SetVolumeStubiif",
+            "address": "0x0034f191"
+        },
+        {
+            "name": "_ZN17CarSoundCallbacksC2Ev",
+            "address": "0x0034f195"
+        },
+        {
+            "name": "_ZN17CarSoundCallbacksC1Ev",
+            "address": "0x0034f195"
+        },
+        {
+            "name": "_ZN17CarSoundCallbacksD1Ev",
+            "address": "0x0034f1d1"
+        },
+        {
+            "name": "_ZN17CarSoundCallbacksD2Ev",
+            "address": "0x0034f1d1"
+        },
+        {
+            "name": "_ZN17CarSoundCallbacksaSERKS_",
+            "address": "0x0034f1d5"
+        },
+        {
+            "name": "_ZN9CarSounds17RegisterCallbacksERK17CarSoundCallbacks",
+            "address": "0x0034f30d"
+        },
+        {
+            "name": "__tcf_0",
+            "address": "0x0034faed"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0034fb09"
+        },
+        {
+            "name": "_GLOBAL__I__ZN18CarSoundParametersC2Ev",
+            "address": "0x0034fb49"
+        }
+    ],
+    "sections": [
+        ".callback_function_0",
+        ".callback_function_1",
+        ".callback_function_2",
+        ".callback_function_3",
+        ".callback_function_4",
+        ".callback_function_5",
+        ".callback_function_7",
+        ".callback_function_9",
+        ".callback_function_10",
+        ".callback_function_11",
+        ".callback_function_12",
+        ".callback_function_13",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}
