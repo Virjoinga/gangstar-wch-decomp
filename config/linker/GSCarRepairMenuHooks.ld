@@ -25,4 +25,5 @@ SECTIONS
     .state_destructor 0x002e1a28 : { *state-hooks-gscarrepairmenu.o(.text._ZN15GSCarRepairMenuD1Ev) }
     .state_delete 0x002e19fc : { *state-hooks-gscarrepairmenu.o(.text._ZN15GSCarRepairMenuD0Ev) }
     .state_vtable 0x004a8c60 : { *state-hooks-gscarrepairmenu.o(.data.rel.ro._ZTV15GSCarRepairMenu .gnu.linkonce.d.rel.ro._ZTV15GSCarRepairMenu) }
+    .state_kind 0x002e155c : { *state-hooks-gscarrepairmenu.o(.gnu.linkonce.t._ZN15GSCarRepairMenu8isKindOfEi .text._ZN15GSCarRepairMenu8isKindOfEi) }
 }

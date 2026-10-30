@@ -26,4 +26,5 @@ SECTIONS
     .state_destructor 0x002e3398 : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayerD1Ev) }
     .state_delete 0x002e336c : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayerD0Ev) }
     .state_vtable 0x004a8e20 : { *state-hooks-gsmovieplayer.o(.data.rel.ro._ZTV13GSMoviePlayer .gnu.linkonce.d.rel.ro._ZTV13GSMoviePlayer) }
+    .state_kind 0x002e323c : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.t._ZN13GSMoviePlayer8isKindOfEi .text._ZN13GSMoviePlayer8isKindOfEi) }
 }

@@ -26,4 +26,5 @@ SECTIONS
     .state_destructor 0x002e1538 : { *state-hooks-gscarrentalmenu.o(.text._ZN15GSCarRentalMenuD1Ev) }
     .state_delete 0x002e150c : { *state-hooks-gscarrentalmenu.o(.text._ZN15GSCarRentalMenuD0Ev) }
     .state_vtable 0x004a8c20 : { *state-hooks-gscarrentalmenu.o(.data.rel.ro._ZTV15GSCarRentalMenu .gnu.linkonce.d.rel.ro._ZTV15GSCarRentalMenu) }
+    .state_kind 0x002e12cc : { *state-hooks-gscarrentalmenu.o(.gnu.linkonce.t._ZN15GSCarRentalMenu8isKindOfEi .text._ZN15GSCarRentalMenu8isKindOfEi) }
 }

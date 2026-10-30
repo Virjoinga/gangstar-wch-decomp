@@ -43,7 +43,8 @@
         "_ZN9StateBase6updateEP12StateMachine",
         "_ZN6GSFadeD1Ev",
         "_ZN6GSFadeD0Ev",
-        "_ZN6GSFadeD2Ev"
+        "_ZN6GSFadeD2Ev",
+        "_ZN6GSFade8isKindOfEi"
     ],
     "sections": [
         ".hook_0",
@@ -68,7 +69,8 @@
         ".base_13",
         ".state_destructor",
         ".state_delete",
-        ".state_vtable"
+        ".state_vtable",
+        ".state_kind"
     ],
     "retail_got": true
 }

@@ -26,4 +26,5 @@ SECTIONS
     .state_destructor 0x002e12a8 : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenuD1Ev) }
     .state_delete 0x002e127c : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenuD0Ev) }
     .state_vtable 0x004a8be0 : { *state-hooks-gsbustedmenu.o(.data.rel.ro._ZTV12GSBustedMenu .gnu.linkonce.d.rel.ro._ZTV12GSBustedMenu) }
+    .state_kind 0x002e0f2c : { *state-hooks-gsbustedmenu.o(.gnu.linkonce.t._ZN12GSBustedMenu8isKindOfEi .text._ZN12GSBustedMenu8isKindOfEi) }
 }

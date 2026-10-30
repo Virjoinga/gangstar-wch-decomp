@@ -24,4 +24,5 @@ SECTIONS
     .state_destructor 0x002e2f6c : { *state-hooks-gsloading.o(.text._ZN9GSLoadingD1Ev) }
     .state_delete 0x002e2f40 : { *state-hooks-gsloading.o(.text._ZN9GSLoadingD0Ev) }
     .state_vtable 0x004a8da0 : { *state-hooks-gsloading.o(.data.rel.ro._ZTV9GSLoading .gnu.linkonce.d.rel.ro._ZTV9GSLoading) }
+    .state_kind 0x002e2b08 : { *state-hooks-gsloading.o(.gnu.linkonce.t._ZN9GSLoading8isKindOfEi .text._ZN9GSLoading8isKindOfEi) }
 }

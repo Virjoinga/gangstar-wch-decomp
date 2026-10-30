@@ -14,7 +14,10 @@ public:
     virtual void dtor(const StateMachine*);
     virtual void update(StateMachine*);
     virtual void draw2d(const StateMachine*);
-    virtual bool isKindOf(int);
+    virtual bool isKindOf(int kind) {
+        if (kind == 6) return true;
+        return StateBase::isKindOf(kind);
+    }
 private:
     unsigned char unknown4[4];
     unsigned int unknown8;

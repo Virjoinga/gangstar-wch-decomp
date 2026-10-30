@@ -26,4 +26,5 @@ SECTIONS
     .state_destructor 0x002e3e58 : { *state-hooks-gsweaponshopmenu.o(.text._ZN16GSWeaponShopMenuD1Ev) }
     .state_delete 0x002e3e2c : { *state-hooks-gsweaponshopmenu.o(.text._ZN16GSWeaponShopMenuD0Ev) }
     .state_vtable 0x004a8f20 : { *state-hooks-gsweaponshopmenu.o(.data.rel.ro._ZTV16GSWeaponShopMenu .gnu.linkonce.d.rel.ro._ZTV16GSWeaponShopMenu) }
+    .state_kind 0x002e3bec : { *state-hooks-gsweaponshopmenu.o(.gnu.linkonce.t._ZN16GSWeaponShopMenu8isKindOfEi .text._ZN16GSWeaponShopMenu8isKindOfEi) }
 }

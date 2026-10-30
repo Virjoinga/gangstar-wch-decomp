@@ -44,7 +44,8 @@
         "_ZN9StateBase6updateEP12StateMachine",
         "_ZN12GSBustedMenuD1Ev",
         "_ZN12GSBustedMenuD0Ev",
-        "_ZN12GSBustedMenuD2Ev"
+        "_ZN12GSBustedMenuD2Ev",
+        "_ZN12GSBustedMenu8isKindOfEi"
     ],
     "sections": [
         ".hook_0",
@@ -70,7 +71,8 @@
         ".base_13",
         ".state_destructor",
         ".state_delete",
-        ".state_vtable"
+        ".state_vtable",
+        ".state_kind"
     ],
     "retail_got": true
 }
