@@ -1,11 +1,13 @@
 # StateMachine lifecycle and interfaces
 
-33 game functions (1,506 retail code bytes) now match in the StateMachine
-family. This includes construction/destruction aliases, update/drawing and
+All 48 game functions (2,062 retail code bytes) attributed to StateMachine.cpp
+now match. This includes construction/destruction aliases, update/drawing and
 recursive drawing, sleep/wakeup, pop/switch, singleton access, adjustment thunks,
 and the six shared interface destructor variants. Aliases retain the existing
-per-symbol catalogue accounting. Fifteen game functions remain queued: the
-push implementation and fourteen typed push/switch wrappers.
+per-symbol catalogue accounting. The final family adds 15 functions and 556
+bytes: the push implementation and
+fourteen typed push/switch wrappers. The four STLport functions catalogued in
+this translation unit remain vendored dependencies outside the game budget.
 
 ## Layout and behavior
 
@@ -25,16 +27,21 @@ loop without forming an out-of-range iterator in the C++ source.
 
 Pop rereads the top state after its callback, deletes it through the virtual
 destructor, removes the pointer and resumes the new top when present. Switch
-cleans the current stack and calls the still-native push implementation. The
+cleans the current stack and calls the rebuilt push implementation. The
 destructor traverses the states in reverse, invokes their cleanup callbacks,
 deletes them and delegates storage cleanup to the existing native STLport base
 destructor through an explicit ABI declaration. The STLport implementation is
 vendored code, outside the game matching budget; it is not claimed reconstructed
-by this prefix view. Stack growth remains external.
+by this prefix view. The push fast path placement-constructs a pointer in
+available capacity and
+advances the end pointer. Overflow delegates to the native STLport insertion
+helper with the observed empty pointer-copy tag, count 1 and true flag. The tag
+has a checked one-byte extent. The game push method pauses the current top,
+appends the new pointer and invokes the new top's constructor hook.
 
 The inline singleton contains a function-local static, preserving the retail
 weak function/storage, four-byte guard and 40-byte object. The `used` attribute
-emits it in this partial translation unit for verification. GCC generates its
+emits it in this translation unit for verification. GCC generates its
 guard calls, exit registration and cleanup callback normally. The cleanup
 callback compares at the Application.cpp retail address using the supported
 `__tcf_2`/compiled `__tcf_0` selector, but its Application assembly remains queued
@@ -53,9 +60,45 @@ the canonical StateMachine declaration instead of a one-method prototype.
 The native image checks the StateMachine vtable, the three interface vtables,
 all selected functions, complete emitted code sections/alignment and the global
 GOT region. The singleton storage/guard extents are linker assertions. The
-remaining push function is a validated external Thumb import. The image is a
+push method is now compiled in the image; its old external Thumb import is
+removed. Constructor imports for the typed states are validated individually.
+The image is a
 verification artifact and retains native imports; it is not a replacement game
 library. Compiler output and relocations are never rewritten.
+
+## Typed state construction
+
+The two generic C++ templates allocate a state, invoke its native constructor,
+route it through push/switch and return the typed pointer. Explicit instantiations
+produce the retail weak symbols. All fourteen 32-byte wrappers matched on the
+first source candidates, following the existing GS3DStuff interface as the first
+representative. The push implementation also matched on its first candidate.
+
+GS3DStuff uses its existing recovered header. The other thirteen headers record
+only allocation extent, constructor/destructor declarations and the observed
+primary StateBase conversion; they do not claim recovered menu internals or
+constructor bodies. Extents came from each retail allocation instruction and
+are checked with native compile-time assertions. No UI or Application function
+bytes are credited for these interfaces.
+
+| State | Allocation bytes |
+| --- | ---: |
+| GSInGameMenu | 20 |
+| GSMoviePlayer | 4 |
+| GS3DStuff | 28 |
+| GSSplash | 8 |
+| GSMainMenu | 20 |
+| GSLoading | 12 |
+| GSWeaponShopMenu | 4 |
+| GSCarRepairMenu | 24 |
+| GSCarRentalMenu | 4 |
+| GSBustedMenu | 12 |
+| GSBlockingTutorial | 8 |
+| GSFailure | 12 |
+| GSFade | 20 |
+| GSSideMissionMenu | 24 |
+
+The STLport growth helper remains external and receives no game matching credit.
 
 ## Validation
 
@@ -66,13 +109,14 @@ Verified on 2026-10-30 with the NDK 1.6_r1 GCC 4.2.1 profile recorded in
 python tools/build.py --all
 ```
 
-Exit 0: 2,454 `OK` comparisons, zero mismatches/errors, 36 unit builds.
-All 769 credited game functions were independently audited against successful
-name/address/size tuples. Before credit, all 33 new definitions also retained
-their exact retail strong/weak bindings. All 68 pre-existing primary objects
-and linked images retained their complete hashes and sizes. The 79 tooling
-tests and repository/progress checks passed. Only the 33 proven assembly files
-are removed; vendored functions and the Application cleanup helper receive no
+Exit 0: 2,484 `OK` comparisons, zero mismatches/errors, 36 unit builds.
+All 784 credited game functions were independently audited against successful
+name/address/size tuples. Before credit, all 15 new definitions also retained
+their exact retail strong/weak bindings. Of 70 baseline artifacts, only the
+StateMachine primary object and image changed; the other 68 retained their
+complete hashes and sizes. The 79 tooling
+tests and repository/progress checks passed. Only the 15 newly proven assembly files
+are removed in this family; vendored functions and the Application cleanup helper receive no
 additional credit. The saved, unmatched GS3D update candidate was not revalidated
 in this batch; its previous interface snapshot is preserved with the local proof.
 
@@ -114,6 +158,21 @@ OK  _ZThn8_N12StateMachineD1Ev  0x002d6740  20 bytes
 OK  _ZThn4_N12StateMachineD0Ev  0x002d66a8  20 bytes
 OK  _ZThn8_N12StateMachineD0Ev  0x002d6694  20 bytes
 OK  _ZN12StateMachineD2Ev  0x002d6769  128 bytes
+OK  _ZN12StateMachine10_pushStateEP9StateBase  0x002d65dd  108 bytes
+OK  _ZN12StateMachine11switchStateI9GS3DStuffEEPT_v  0x002e2be9  32 bytes
+OK  _ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v  0x002d40ad  32 bytes
+OK  _ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v  0x002d456d  32 bytes
+OK  _ZN12StateMachine11switchStateI8GSSplashEEPT_v  0x002e326d  32 bytes
+OK  _ZN12StateMachine11switchStateI10GSMainMenuEEPT_v  0x002e3771  32 bytes
+OK  _ZN12StateMachine11switchStateI9GSLoadingEEPT_v  0x002e7479  32 bytes
+OK  _ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v  0x00305cd9  32 bytes
+OK  _ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v  0x00305cf9  32 bytes
+OK  _ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v  0x00305d35  32 bytes
+OK  _ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v  0x00338bc9  32 bytes
+OK  _ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v  0x003391f1  32 bytes
+OK  _ZN12StateMachine9pushStateI9GSFailureEEPT_v  0x0033e775  32 bytes
+OK  _ZN12StateMachine9pushStateI6GSFadeEEPT_v  0x00346cc1  32 bytes
+OK  _ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v  0x00347a31  32 bytes
 OK SECTION .state_trace  0x002d6190  4 bytes
 OK SECTION .state_timestamp  0x002d6194  8 bytes
 OK SECTION .state_layer  0x002d61b0  8 bytes
@@ -151,6 +210,21 @@ OK SECTION .state_destructor_sleep_thunk  0x002d6740  20 bytes
 OK SECTION .state_delete_draw_thunk  0x002d66a8  20 bytes
 OK SECTION .state_delete_sleep_thunk  0x002d6694  20 bytes
 OK SECTION .state_vtable  0x004a61f8  96 bytes
+OK SECTION .state_push  0x002d65dc  108 bytes
+OK SECTION .state_switch_gs3d  0x002e2be8  32 bytes
+OK SECTION .state_template_0  0x002d40ac  32 bytes
+OK SECTION .state_template_1  0x002d456c  32 bytes
+OK SECTION .state_template_3  0x002e326c  32 bytes
+OK SECTION .state_template_4  0x002e3770  32 bytes
+OK SECTION .state_template_5  0x002e7478  32 bytes
+OK SECTION .state_template_6  0x00305cd8  32 bytes
+OK SECTION .state_template_7  0x00305cf8  32 bytes
+OK SECTION .state_template_8  0x00305d34  32 bytes
+OK SECTION .state_template_9  0x00338bc8  32 bytes
+OK SECTION .state_template_10  0x003391f0  32 bytes
+OK SECTION .state_template_11  0x0033e774  32 bytes
+OK SECTION .state_template_12  0x00346cc0  32 bytes
+OK SECTION .state_template_13  0x00347a30  32 bytes
 ```
 
 ## Attempts

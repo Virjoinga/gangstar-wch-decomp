@@ -63,7 +63,22 @@
         "_ZThn8_N12StateMachineD1Ev",
         "_ZThn4_N12StateMachineD0Ev",
         "_ZThn8_N12StateMachineD0Ev",
-        "_ZN12StateMachineD2Ev"
+        "_ZN12StateMachineD2Ev",
+        "_ZN12StateMachine10_pushStateEP9StateBase",
+        "_ZN12StateMachine11switchStateI9GS3DStuffEEPT_v",
+        "_ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v",
+        "_ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v",
+        "_ZN12StateMachine11switchStateI8GSSplashEEPT_v",
+        "_ZN12StateMachine11switchStateI10GSMainMenuEEPT_v",
+        "_ZN12StateMachine11switchStateI9GSLoadingEEPT_v",
+        "_ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v",
+        "_ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v",
+        "_ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v",
+        "_ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v",
+        "_ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v",
+        "_ZN12StateMachine9pushStateI9GSFailureEEPT_v",
+        "_ZN12StateMachine9pushStateI6GSFadeEEPT_v",
+        "_ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v"
     ],
     "sections": [
         ".state_trace",
@@ -105,9 +120,37 @@
         ".state_destructor_sleep_thunk",
         ".state_delete_draw_thunk",
         ".state_delete_sleep_thunk",
-        ".state_vtable"
+        ".state_vtable",
+        ".state_push",
+        ".state_switch_gs3d",
+        ".state_template_0",
+        ".state_template_1",
+        ".state_template_3",
+        ".state_template_4",
+        ".state_template_5",
+        ".state_template_6",
+        ".state_template_7",
+        ".state_template_8",
+        ".state_template_9",
+        ".state_template_10",
+        ".state_template_11",
+        ".state_template_12",
+        ".state_template_13"
     ],
     "external_thumb_functions": [
-        "_ZN12StateMachine10_pushStateEP9StateBase"
+        "_ZN9GS3DStuffC1Ev",
+        "_ZN12GSInGameMenuC1Ev",
+        "_ZN13GSMoviePlayerC1Ev",
+        "_ZN8GSSplashC1Ev",
+        "_ZN10GSMainMenuC1Ev",
+        "_ZN9GSLoadingC1Ev",
+        "_ZN16GSWeaponShopMenuC1Ev",
+        "_ZN15GSCarRepairMenuC1Ev",
+        "_ZN15GSCarRentalMenuC1Ev",
+        "_ZN12GSBustedMenuC1Ev",
+        "_ZN18GSBlockingTutorialC1Ev",
+        "_ZN9GSFailureC1Ev",
+        "_ZN6GSFadeC1Ev",
+        "_ZN17GSSideMissionMenuC1Ev"
     ]
 }

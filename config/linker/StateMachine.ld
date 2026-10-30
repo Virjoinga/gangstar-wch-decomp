@@ -3,6 +3,7 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-machine/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+_Znwj = 0x001c4814;
 __cxa_pure_virtual = 0;
 __cxa_guard_acquire = 0x001c4958;
 __cxa_guard_release = 0x001c46c4;
@@ -49,6 +50,21 @@ SECTIONS
     .state_delete_draw_thunk 0x002d66a8 : { *state-machine.o(.text._ZThn4_N12StateMachineD0Ev) }
     .state_delete_sleep_thunk 0x002d6694 : { *state-machine.o(.text._ZThn8_N12StateMachineD0Ev) }
     .state_vtable 0x004a61f8 : { *state-machine.o(.data.rel.ro._ZTV12StateMachine .gnu.linkonce.d.rel.ro._ZTV12StateMachine) }
+    .state_push 0x002d65dc : { *state-machine.o(.text._ZN12StateMachine10_pushStateEP9StateBase) }
+    .state_switch_gs3d 0x002e2be8 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI9GS3DStuffEEPT_v .text._ZN12StateMachine11switchStateI9GS3DStuffEEPT_v) }
+    .state_template_0 0x002d40ac : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v .text._ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v) }
+    .state_template_1 0x002d456c : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v .text._ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v) }
+    .state_template_3 0x002e326c : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI8GSSplashEEPT_v .text._ZN12StateMachine11switchStateI8GSSplashEEPT_v) }
+    .state_template_4 0x002e3770 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI10GSMainMenuEEPT_v .text._ZN12StateMachine11switchStateI10GSMainMenuEEPT_v) }
+    .state_template_5 0x002e7478 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI9GSLoadingEEPT_v .text._ZN12StateMachine11switchStateI9GSLoadingEEPT_v) }
+    .state_template_6 0x00305cd8 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v .text._ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v) }
+    .state_template_7 0x00305cf8 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v .text._ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v) }
+    .state_template_8 0x00305d34 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v .text._ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v) }
+    .state_template_9 0x00338bc8 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v .text._ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v) }
+    .state_template_10 0x003391f0 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v .text._ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v) }
+    .state_template_11 0x0033e774 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI9GSFailureEEPT_v .text._ZN12StateMachine9pushStateI9GSFailureEEPT_v) }
+    .state_template_12 0x00346cc0 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI6GSFadeEEPT_v .text._ZN12StateMachine9pushStateI6GSFadeEEPT_v) }
+    .state_template_13 0x00347a30 : { *state-machine.o(.gnu.linkonce.t._ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v .text._ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v) }
 }
 ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
 ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");
