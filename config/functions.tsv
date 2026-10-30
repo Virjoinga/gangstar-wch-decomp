@@ -9237,7 +9237,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e0c6d	0x1c	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorialC2Ev	GSBlockingTutorial::GSBlockingTutorial()
 0x002e0c89	0x2c	GSBlockingTutorial.cpp	game	ui	pending	_ZN18GSBlockingTutorial6updateEP12StateMachine	GSBlockingTutorial::update(StateMachine*)
 0x002e0cb5	0x1c	GSBlockingTutorial.cpp	game	core	pending	__tcf_3	__tcf_3
-0x002e0cd1	0x22	GSBlockingTutorial.cpp	game	ui	pending	_ZN18GSBlockingTutorial4dtorEPK12StateMachine	GSBlockingTutorial::dtor(StateMachine const*)
+0x002e0cd1	0x22	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorial4dtorEPK12StateMachine	GSBlockingTutorial::dtor(StateMachine const*)
 0x002e0cf5	0x60	GSBlockingTutorial.cpp	game	ui	pending	_ZN18GSBlockingTutorial4ctorEPK12StateMachine	GSBlockingTutorial::ctor(StateMachine const*)
 0x002e0d55	0x144	GSBlockingTutorial.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e0e99	0x14	GSBlockingTutorial.cpp	game	core	pending	_GLOBAL__I__ZN18GSBlockingTutorialC2Ev	_GLOBAL__I__ZN18GSBlockingTutorialC2Ev
@@ -9250,7 +9250,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e0f41	0x2	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenu6draw2dEPK12StateMachine	GSBustedMenu::draw2d(StateMachine const*)
 0x002e0f45	0x30	GSBustedMenu.cpp	game	ui	pending	__tcf_4	__tcf_4
 0x002e0f75	0x1c	GSBustedMenu.cpp	game	ui	pending	__tcf_3	__tcf_3
-0x002e0f91	0x22	GSBustedMenu.cpp	game	ui	pending	_ZN12GSBustedMenu4dtorEPK12StateMachine	GSBustedMenu::dtor(StateMachine const*)
+0x002e0f91	0x22	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenu4dtorEPK12StateMachine	GSBustedMenu::dtor(StateMachine const*)
 0x002e0fb5	0x7c	GSBustedMenu.cpp	game	ui	pending	_ZN12GSBustedMenu4ctorEPK12StateMachine	GSBustedMenu::ctor(StateMachine const*)
 0x002e1031	0x1c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuC2Ev	GSBustedMenu::GSBustedMenu()
 0x002e1031	0x1c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuC1Ev	GSBustedMenu::GSBustedMenu()
@@ -9277,7 +9277,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e156d	0x2	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenu4drawEPK12StateMachine	GSCarRepairMenu::draw(StateMachine const*)
 0x002e1571	0x88	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu6draw2dEPK12StateMachine	GSCarRepairMenu::draw2d(StateMachine const*)
 0x002e15f9	0x1c	GSCarRepairMenu.cpp	game	ui	pending	__tcf_3	__tcf_3
-0x002e1615	0x22	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu4dtorEPK12StateMachine	GSCarRepairMenu::dtor(StateMachine const*)
+0x002e1615	0x22	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenu4dtorEPK12StateMachine	GSCarRepairMenu::dtor(StateMachine const*)
 0x002e1639	0x8c	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu4ctorEPK12StateMachine	GSCarRepairMenu::ctor(StateMachine const*)
 0x002e16c5	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuC2Ev	GSCarRepairMenu::GSCarRepairMenu()
 0x002e16c5	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuC1Ev	GSCarRepairMenu::GSCarRepairMenu()
@@ -9293,7 +9293,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e1a61	0x78	GSFade.cpp	game	app	pending	_ZN6GSFade6draw2dEPK12StateMachine	GSFade::draw2d(StateMachine const*)
 0x002e1ad9	0x80	GSFade.cpp	game	app	pending	_ZN6GSFade6updateEP12StateMachine	GSFade::update(StateMachine*)
 0x002e1b59	0x1c	GSFade.cpp	game	app	pending	__tcf_3	__tcf_3
-0x002e1b75	0x22	GSFade.cpp	game	app	pending	_ZN6GSFade4dtorEPK12StateMachine	GSFade::dtor(StateMachine const*)
+0x002e1b75	0x22	GSFade.cpp	game	app	matched	_ZN6GSFade4dtorEPK12StateMachine	GSFade::dtor(StateMachine const*)
 0x002e1b99	0x48	GSFade.cpp	game	app	pending	_ZN6GSFade4ctorEPK12StateMachine	GSFade::ctor(StateMachine const*)
 0x002e1be1	0x1c	GSFade.cpp	game	app	matched	_ZN6GSFadeC1Ev	GSFade::GSFade()
 0x002e1be1	0x1c	GSFade.cpp	game	app	matched	_ZN6GSFadeC2Ev	GSFade::GSFade()
@@ -9444,28 +9444,28 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e3e2d	0x2c	GSWeaponShopMenu.cpp	game	ui	matched	_ZN16GSWeaponShopMenuD0Ev	GSWeaponShopMenu::~GSWeaponShopMenu()
 0x002e3e59	0x24	GSWeaponShopMenu.cpp	game	ui	matched	_ZN16GSWeaponShopMenuD2Ev	GSWeaponShopMenu::~GSWeaponShopMenu()
 0x002e3e59	0x24	GSWeaponShopMenu.cpp	game	ui	matched	_ZN16GSWeaponShopMenuD1Ev	GSWeaponShopMenu::~GSWeaponShopMenu()
-0x002e3e7d	0x8	MenuManager.cpp	game	ui	pending	_ZN11MenuManager21resetWidgetVisibilityEv	MenuManager::resetWidgetVisibility()
-0x002e3e85	0x2	MenuManager.cpp	game	ui	pending	_ZN11MenuManager9MenuPauseEv	MenuManager::MenuPause()
-0x002e3e89	0x2	MenuManager.cpp	game	ui	pending	_ZN11MenuManager10MenuResumeEv	MenuManager::MenuResume()
-0x002e3e8d	0x6	MenuManager.cpp	game	ui	pending	_ZN11MenuManager14setTutorialIdsEii	MenuManager::setTutorialIds(int, int)
+0x002e3e7d	0x8	MenuManager.cpp	game	ui	matched	_ZN11MenuManager21resetWidgetVisibilityEv	MenuManager::resetWidgetVisibility()
+0x002e3e85	0x2	MenuManager.cpp	game	ui	matched	_ZN11MenuManager9MenuPauseEv	MenuManager::MenuPause()
+0x002e3e89	0x2	MenuManager.cpp	game	ui	matched	_ZN11MenuManager10MenuResumeEv	MenuManager::MenuResume()
+0x002e3e8d	0x6	MenuManager.cpp	game	ui	matched	_ZN11MenuManager14setTutorialIdsEii	MenuManager::setTutorialIds(int, int)
 0x002e3e95	0x1e	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager14getTutorialIdsERiS0_	MenuManager::getTutorialIds(int&, int&) const
-0x002e3eb5	0x4	MenuManager.cpp	game	ui	pending	_ZN11MenuManager13setRepairCostEi	MenuManager::setRepairCost(int)
-0x002e3eb9	0x4	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager13getRepairCostEv	MenuManager::getRepairCost() const
-0x002e3ebd	0x8	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager17areCheatsUnlockedEv	MenuManager::areCheatsUnlocked() const
+0x002e3eb5	0x4	MenuManager.cpp	game	ui	matched	_ZN11MenuManager13setRepairCostEi	MenuManager::setRepairCost(int)
+0x002e3eb9	0x4	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager13getRepairCostEv	MenuManager::getRepairCost() const
+0x002e3ebd	0x8	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager17areCheatsUnlockedEv	MenuManager::areCheatsUnlocked() const
 0x002e3ec5	0x20	MenuManager.cpp	game	ui	pending	_ZN11MenuManager17allowCheatsUnlockEb	MenuManager::allowCheatsUnlock(bool)
-0x002e3ee5	0xc	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager21isCheatsUnlockAllowedEv	MenuManager::isCheatsUnlockAllowed() const
+0x002e3ee5	0xc	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager21isCheatsUnlockAllowedEv	MenuManager::isCheatsUnlockAllowed() const
 0x002e3ef1	0x14	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager11getPlaylistEv	MenuManager::getPlaylist() const
-0x002e3f05	0x6	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager15isClearingFocusEv	MenuManager::isClearingFocus() const
-0x002e3f0d	0x6	MenuManager.cpp	game	ui	pending	_ZN11MenuManager9getMenuFXEv	MenuManager::getMenuFX()
-0x002e3f15	0x4	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager12isInGameMenuEv	MenuManager::isInGameMenu() const
-0x002e3f19	0x8	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager15consumedCursorsEv	MenuManager::consumedCursors() const
-0x002e3f21	0xc	MenuManager.cpp	game	ui	pending	_ZN11MenuManager13consumeCursorEv	MenuManager::consumeCursor()
-0x002e3f2d	0x4	MenuManager.cpp	game	ui	pending	_ZN11MenuManager19getCharAutoLineFeedEv	MenuManager::getCharAutoLineFeed()
+0x002e3f05	0x6	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager15isClearingFocusEv	MenuManager::isClearingFocus() const
+0x002e3f0d	0x6	MenuManager.cpp	game	ui	matched	_ZN11MenuManager9getMenuFXEv	MenuManager::getMenuFX()
+0x002e3f15	0x4	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager12isInGameMenuEv	MenuManager::isInGameMenu() const
+0x002e3f19	0x8	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager15consumedCursorsEv	MenuManager::consumedCursors() const
+0x002e3f21	0xc	MenuManager.cpp	game	ui	matched	_ZN11MenuManager13consumeCursorEv	MenuManager::consumeCursor()
+0x002e3f2d	0x4	MenuManager.cpp	game	ui	matched	_ZN11MenuManager19getCharAutoLineFeedEv	MenuManager::getCharAutoLineFeed()
 0x002e3f31	0x16	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager9getTextIdENS_5eTextE	MenuManager::getTextId(MenuManager::eText) const
 0x002e3f49	0x18	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager7getTextENS_5eTextE	MenuManager::getText(MenuManager::eText) const
 0x002e3f61	0x16	MenuManager.cpp	game	ui	pending	_ZN11MenuManager15enableAsianFontEb	MenuManager::enableAsianFont(bool)
-0x002e3f79	0xc	MenuManager.cpp	game	ui	pending	_ZN11MenuManager11enableAnimsEb	MenuManager::enableAnims(bool)
-0x002e3f85	0xc	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager15areAnimsEnabledEv	MenuManager::areAnimsEnabled() const
+0x002e3f79	0xc	MenuManager.cpp	game	ui	matched	_ZN11MenuManager11enableAnimsEb	MenuManager::enableAnims(bool)
+0x002e3f85	0xc	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager15areAnimsEnabledEv	MenuManager::areAnimsEnabled() const
 0x002e3f91	0x20	MenuManager.cpp	stlport	-	matched	_ZN9stlp_priv12_List_globalIbE9_TransferEPNS_15_List_node_baseES3_S3_	stlp_priv::_List_global<bool>::_Transfer(stlp_priv::_List_node_base*, stlp_priv::_List_node_base*, stlp_priv::_List_node_base*)
 0x002e3fb1	0x22	MenuManager.cpp	stlport	-	matched	_ZN9stlp_priv10_List_baseIlSaIlEE5clearEv	stlp_priv::_List_base<long, std::allocator<long> >::clear()
 0x002e3fd5	0x12	MenuManager.cpp	stlport	-	matched	_ZN9stlp_priv12_Vector_baseIPN3irr5video8ITextureESaIS4_EED1Ev	stlp_priv::_Vector_base<irr::video::ITexture*, std::allocator<irr::video::ITexture*> >::~_Vector_base()
@@ -9504,7 +9504,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e4595	0x2e	MenuManager.cpp	game	ui	pending	_ZN11MenuManager16formatMenuFXTextEPKcS1_z	MenuManager::formatMenuFXText(char const*, char const*, ...)
 0x002e45c5	0x68	MenuManager.cpp	game	ui	pending	_ZN11MenuManager13setMenuFXTextEPN7gameswf9characterEPKcbb	MenuManager::setMenuFXText(gameswf::character*, char const*, bool, bool)
 0x002e462d	0x30	MenuManager.cpp	game	ui	pending	_ZN11MenuManager13setMenuFXTextEPKcS1_bb	MenuManager::setMenuFXText(char const*, char const*, bool, bool)
-0x002e465d	0xa	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager8getDepthEv	MenuManager::getDepth() const
+0x002e465d	0xa	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager8getDepthEv	MenuManager::getDepth() const
 0x002e4669	0x2a	MenuManager.cpp	game	ui	pending	_ZN11MenuManager13topSetVisibleEb	MenuManager::topSetVisible(bool)
 0x002e4695	0xe8	MenuManager.cpp	game	ui	pending	_ZN11MenuManager4drawEPK12StateMachine	MenuManager::draw(StateMachine const*)
 0x002e477d	0x118	MenuManager.cpp	game	ui	pending	_ZN11MenuManagerC2Ev	MenuManager::MenuManager()
@@ -9542,7 +9542,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e6461	0x5c	MenuManager.cpp	game	ui	pending	_ZN11MenuManager6popAllEb	MenuManager::popAll(bool)
 0x002e64bd	0xa8	MenuManager.cpp	game	ui	pending	_ZN11MenuManager4pushEPKcb	MenuManager::push(char const*, bool)
 0x002e6565	0x6c	Map.cpp	game	world	pending	_ZNK3Map13getScaledSizeERN3irr4core11dimension2dIiEE	Map::getScaledSize(irr::core::dimension2d<int>&) const
-0x002e65d1	0x4	MenuManager.cpp	game	ui	pending	_ZNK11MenuManager10getMapModeEv	MenuManager::getMapMode() const
+0x002e65d1	0x4	MenuManager.cpp	game	ui	matched	_ZNK11MenuManager10getMapModeEv	MenuManager::getMapMode() const
 0x002e65d5	0x22	MenuManager_Map.cpp	stlport	-	matched	_ZN9stlp_priv10_List_baseIP7Point2DIsESaIS3_EE5clearEv	stlp_priv::_List_base<Point2D<short>*, std::allocator<Point2D<short>*> >::clear()
 0x002e65f9	0x30	MenuManager_Map.cpp	game	ui	pending	__tcf_6	__tcf_6
 0x002e6629	0x1c	MenuManager_Map.cpp	game	ui	pending	__tcf_2	__tcf_2
@@ -11004,12 +11004,12 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00323301	0x14c	CDrivingHud.cpp	game	hud	pending	_ZN11CDrivingHud4hideEv	CDrivingHud::hide()
 0x0032344d	0x144	CDrivingHud.cpp	game	hud	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x00323591	0x14	CDrivingHud.cpp	game	hud	pending	_GLOBAL__I__ZN11CDrivingHudC2EP11CHudManager	_GLOBAL__I__ZN11CDrivingHudC2EP11CHudManager
-0x003235a5	0xc	CHudManager.cpp	game	hud	pending	_ZN11CHudManager4initEv	CHudManager::init()
+0x003235a5	0xc	CHudManager.cpp	game	hud	matched	_ZN11CHudManager4initEv	CHudManager::init()
 0x003235b1	0x24	CHudManager.cpp	game	hud	pending	_ZN11CHudManager4showEv	CHudManager::show()
 0x003235d5	0x10	CHudManager.cpp	game	hud	pending	_ZNK11CHudManager9isVisibleEv	CHudManager::isVisible() const
-0x003235e5	0x8	CHudManager.cpp	game	hud	pending	_ZN11CHudManager4lockEv	CHudManager::lock()
-0x003235ed	0x8	CHudManager.cpp	game	hud	pending	_ZN11CHudManager6unlockEv	CHudManager::unlock()
-0x003235f5	0x6	CHudManager.cpp	game	hud	pending	_ZNK11CHudManager8isLockedEv	CHudManager::isLocked() const
+0x003235e5	0x8	CHudManager.cpp	game	hud	matched	_ZN11CHudManager4lockEv	CHudManager::lock()
+0x003235ed	0x8	CHudManager.cpp	game	hud	matched	_ZN11CHudManager6unlockEv	CHudManager::unlock()
+0x003235f5	0x6	CHudManager.cpp	game	hud	matched	_ZNK11CHudManager8isLockedEv	CHudManager::isLocked() const
 0x003235fd	0x22	CHudManager.cpp	game	hud	pending	_ZN11CHudManager11retroEffectEb	CHudManager::retroEffect(bool)
 0x00323621	0x12	CHudManager.cpp	game	hud	pending	_ZN11CHudManager16isMinimapVisibleEv	CHudManager::isMinimapVisible()
 0x00323635	0x12	CHudManager.cpp	game	hud	pending	_ZNK11CHudManager15isWeaponVisibleEv	CHudManager::isWeaponVisible() const
@@ -12012,18 +12012,18 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0033cfb9	0x32	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManagerC1Ev	ScriptManager::ScriptManager()
 0x0033cfb9	0x32	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManagerC2Ev	ScriptManager::ScriptManager()
 0x0033cfed	0xe	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager12taggedKilledEv	ScriptManager::taggedKilled()
-0x0033cffd	0x8	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager6resumeEv	ScriptManager::resume()
+0x0033cffd	0x8	ScriptManager.cpp	game	scripting	matched	_ZN13ScriptManager6resumeEv	ScriptManager::resume()
 0x0033d005	0x2	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager12printCommandERKN7Structs13ScriptCommandE	ScriptManager::printCommand(Structs::ScriptCommand const&)
 0x0033d009	0x18	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager9addScriptEP6Script	ScriptManager::addScript(Script*)
 0x0033d021	0x14	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager10findScriptEi	ScriptManager::findScript(int) const
-0x0033d035	0x8	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager20skipBlockingCommandsEv	ScriptManager::skipBlockingCommands()
+0x0033d035	0x8	ScriptManager.cpp	game	scripting	matched	_ZN13ScriptManager20skipBlockingCommandsEv	ScriptManager::skipBlockingCommands()
 0x0033d03d	0x10	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager26areBlockingCommandsSkippedEv	ScriptManager::areBlockingCommandsSkipped() const
 0x0033d04d	0x22	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager13isInCinematicEv	ScriptManager::isInCinematic() const
 0x0033d071	0x1a	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager19isSkipButtonVisibleEv	ScriptManager::isSkipButtonVisible() const
-0x0033d08d	0x4	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager10getMissionEv	ScriptManager::getMission() const
+0x0033d08d	0x4	ScriptManager.cpp	game	scripting	matched	_ZNK13ScriptManager10getMissionEv	ScriptManager::getMission() const
 0x0033d091	0x14	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager15getFailureCauseEv	ScriptManager::getFailureCause()
-0x0033d0a5	0x4	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager22getCinematicsHudSpriteEv	ScriptManager::getCinematicsHudSprite() const
-0x0033d0a9	0x4	ScriptManager.cpp	game	scripting	pending	_ZNK13ScriptManager7getRaceEv	ScriptManager::getRace() const
+0x0033d0a5	0x4	ScriptManager.cpp	game	scripting	matched	_ZNK13ScriptManager22getCinematicsHudSpriteEv	ScriptManager::getCinematicsHudSprite() const
+0x0033d0a9	0x4	ScriptManager.cpp	game	scripting	matched	_ZNK13ScriptManager7getRaceEv	ScriptManager::getRace() const
 0x0033d0ad	0x12	ScriptManager.cpp	stlport	-	matched	_ZNSt6vectorIP6ScriptSaIS1_EE8_M_clearEv	std::vector<Script*, std::allocator<Script*> >::_M_clear()
 0x0033d0c1	0x30	ScriptManager.cpp	game	scripting	pending	__tcf_6	__tcf_6
 0x0033d0f1	0x12	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager17finishReviveAnimsEv	ScriptManager::finishReviveAnims()

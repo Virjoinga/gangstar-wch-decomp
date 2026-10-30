@@ -13,8 +13,23 @@ public:
     Script* findScript(int id) const;
     void resetGame(bool flag, int id);
     void update(int);
+    void resume();
+    void skipBlockingCommands();
+    void* getMission() const;
+    void* getCinematicsHudSprite() const;
+    void* getRace() const;
     unsigned char unknown0[8];
     int scriptCount;
+    unsigned char unknown12[8];
+    unsigned int commandCursor;
+    unsigned char unknown24[8];
+    void* cinematicsHudSprite;
+    unsigned char unknown36[24];
+    void* mission;
+    unsigned char unknown64[4];
+    void* race;
+    unsigned char unknown72[4];
+    bool paused;
 };
 
 #endif

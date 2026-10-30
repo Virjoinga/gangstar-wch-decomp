@@ -9,10 +9,21 @@
  */
 
 #include "GSBustedMenu.h"
+#include "../app/Application.h"
+#include "../hud/MenuManager.h"
+#include "../hud/CHudManager.h"
+#include "../scripting/ScriptManager.h"
 
 void GSBustedMenu::draw(const StateMachine*) {}
 
 void GSBustedMenu::draw2d(const StateMachine*) {}
+
+void GSBustedMenu::dtor(const StateMachine*)
+{
+    MenuManager::getInstance()->showTexts();
+    Application::GetInstance()->GetHudManager()->show();
+    ScriptManager::getInstance()->resume();
+}
 
 GSBustedMenu::GSBustedMenu() : unknown8(0) {}
 
