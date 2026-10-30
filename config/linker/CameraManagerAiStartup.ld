@@ -1,0 +1,48 @@
+OUTPUT_FORMAT("elf32-littlearm")
+OUTPUT_ARCH(arm)
+INCLUDE build/matches/ai-startup-cameramanager/retail-symbols.ld
+_ZdlPv = 0x001c42b0;
+__aeabi_atexit = 0x001c494c;
+_ZN32retail_cameramanager_transitions16civPassive_transE = 0x004289dc;
+_ZN32retail_cameramanager_transitions17scriptedNpc_transE = 0x00428b08;
+_ZN32retail_cameramanager_transitions19civAggressive_transE = 0x00428b38;
+_ZN32retail_cameramanager_transitions16gangMember_transE = 0x00428c1c;
+_ZN32retail_cameramanager_transitions9cop_transE = 0x00428c28;
+_ZN32retail_cameramanager_transitions10swat_transE = 0x00428d60;
+_ZN32retail_cameramanager_transitions17civ_vehicle_transE = 0x00428d6c;
+_ZN32retail_cameramanager_transitions17cop_vehicle_transE = 0x00428dfc;
+_ZN32retail_cameramanager_transitions11guard_transE = 0x00428eb0;
+_ZN32retail_cameramanager_transitions22scripted_vehicle_transE = 0x00428f58;
+SECTIONS
+{
+    .ai_startup_function_0 0x00331fc0 : { *ai-startup-cameramanager.o(.text.__tcf_3) }
+    .ai_startup_function_1 0x00332618 : { *ai-startup-cameramanager.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .ai_startup_function_2 0x0033275c : { *ai-startup-cameramanager.o(.text._GLOBAL__I__ZN13CameraManager4s_cmE) }
+    .ai_startup_storage_0 0x004b9cc4 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .ai_startup_storage_1 0x004b9ce4 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN3irr2ps5vHalfE) }
+    .ai_startup_storage_2 0x004b9cf0 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .ai_startup_storage_3 0x004b9cf8 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .ai_startup_storage_4 0x004b9d00 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .ai_startup_storage_5 0x004b9d08 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .ai_startup_storage_6 0x004b9d10 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai3copE) }
+    .ai_startup_storage_7 0x004b9d18 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai4swatE) }
+    .ai_startup_storage_8 0x004b9d20 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .ai_startup_storage_9 0x004b9d28 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .ai_startup_storage_10 0x004b9d30 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai5guardE) }
+    .ai_startup_storage_11 0x004b9d38 (NOLOAD) : { *ai-startup-cameramanager.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
+    .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
+    .verification 0x00600000 : { *retail-got.o(.text) }
+}
+ASSERT(SIZEOF(.ai_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.ai_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");
+ASSERT(SIZEOF(.ai_startup_storage_2) == 8, "_ZN8gameloft2ai11civ_passiveE extent");
+ASSERT(SIZEOF(.ai_startup_storage_3) == 8, "_ZN8gameloft2ai12npc_scriptedE extent");
+ASSERT(SIZEOF(.ai_startup_storage_4) == 8, "_ZN8gameloft2ai13civ_agressiveE extent");
+ASSERT(SIZEOF(.ai_startup_storage_5) == 8, "_ZN8gameloft2ai11gang_memberE extent");
+ASSERT(SIZEOF(.ai_startup_storage_6) == 8, "_ZN8gameloft2ai3copE extent");
+ASSERT(SIZEOF(.ai_startup_storage_7) == 8, "_ZN8gameloft2ai4swatE extent");
+ASSERT(SIZEOF(.ai_startup_storage_8) == 8, "_ZN8gameloft2ai11civ_vehicleE extent");
+ASSERT(SIZEOF(.ai_startup_storage_9) == 8, "_ZN8gameloft2ai11cop_vehicleE extent");
+ASSERT(SIZEOF(.ai_startup_storage_10) == 8, "_ZN8gameloft2ai5guardE extent");
+ASSERT(SIZEOF(.ai_startup_storage_11) == 8, "_ZN8gameloft2ai16scripted_vehicleE extent");
