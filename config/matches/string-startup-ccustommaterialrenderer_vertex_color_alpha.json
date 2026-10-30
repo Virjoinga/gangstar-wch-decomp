@@ -1,0 +1,52 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/core/CCustomMaterialRenderer_VERTEX_COLOR_ALPHA.cpp",
+    "linker_script": "config/linker/CCustomMaterialRenderer_VERTEX_COLOR_ALPHAStringStartup.ld",
+    "functions": [
+        {
+            "name": "__tcf_0",
+            "address": "0x002d6ac1"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d6b61"
+        },
+        {
+            "name": "_GLOBAL__I__ZN42CCustomMaterialRenderer_VERTEX_COLOR_ALPHA13onSetMaterialERKN3irr5video9SMaterialES4_bPNS1_25IMaterialRendererServicesE",
+            "address": "0x002d6bb9"
+        }
+    ],
+    "sections": [
+        ".string_startup_function_0",
+        ".string_startup_function_1",
+        ".string_startup_function_2",
+        ".shared_startup_empty_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}
