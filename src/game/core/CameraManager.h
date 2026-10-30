@@ -9,6 +9,7 @@ public:
     static CameraManager* getInstance();
     irr::scene::ICameraSceneNode* getCamera() const;
     void update(float);
+    void setTouchScreenInputs(bool);
 };
 
 #endif

@@ -17,7 +17,7 @@ public:
         return StateBase::isKindOf(kind);
     }
 private:
-    unsigned int unknown4;
+    int unknown4;
 };
 
 #endif

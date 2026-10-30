@@ -36,4 +36,5 @@ SECTIONS
     .script_manager_helpers_2 0x0033d08c : { *script-manager-helpers.o(.text._ZNK13ScriptManager10getMissionEv .gnu.linkonce.t._ZNK13ScriptManager10getMissionEv) }
     .script_manager_helpers_3 0x0033d0a4 : { *script-manager-helpers.o(.text._ZNK13ScriptManager22getCinematicsHudSpriteEv .gnu.linkonce.t._ZNK13ScriptManager22getCinematicsHudSpriteEv) }
     .script_manager_helpers_4 0x0033d0a8 : { *script-manager-helpers.o(.text._ZNK13ScriptManager7getRaceEv .gnu.linkonce.t._ZNK13ScriptManager7getRaceEv) }
+    .entry_0 0x002e1b98 : { *state-hooks-gsfade.o(.text._ZN6GSFade4ctorEPK12StateMachine .gnu.linkonce.t._ZN6GSFade4ctorEPK12StateMachine) }
 }

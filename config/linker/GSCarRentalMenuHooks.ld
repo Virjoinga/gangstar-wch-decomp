@@ -27,4 +27,16 @@ SECTIONS
     .state_delete 0x002e150c : { *state-hooks-gscarrentalmenu.o(.text._ZN15GSCarRentalMenuD0Ev) }
     .state_vtable 0x004a8c20 : { *state-hooks-gscarrentalmenu.o(.data.rel.ro._ZTV15GSCarRentalMenu .gnu.linkonce.d.rel.ro._ZTV15GSCarRentalMenu) }
     .state_kind 0x002e12cc : { *state-hooks-gscarrentalmenu.o(.gnu.linkonce.t._ZN15GSCarRentalMenu8isKindOfEi .text._ZN15GSCarRentalMenu8isKindOfEi) }
+    .entry_0 0x002e1328 : { *state-hooks-gscarrentalmenu.o(.text._ZN15GSCarRentalMenu4ctorEPK12StateMachine .gnu.linkonce.t._ZN15GSCarRentalMenu4ctorEPK12StateMachine) }
+    .entry_text 0x00415844 : { *state-hooks-gscarrentalmenu.o(.rodata.str1.4 .rodata.str1.1) }
+    .menu_exit 0x002e12fc : { *state-hooks-gscarrentalmenu.o(.text._ZN15GSCarRentalMenu4dtorEPK12StateMachine) }
+    .hud_manager_helpers_0 0x003235a4 : { *hud-manager-helpers.o(.text._ZN11CHudManager4initEv .gnu.linkonce.t._ZN11CHudManager4initEv) }
+    .hud_manager_helpers_1 0x003235e4 : { *hud-manager-helpers.o(.text._ZN11CHudManager4lockEv .gnu.linkonce.t._ZN11CHudManager4lockEv) }
+    .hud_manager_helpers_2 0x003235ec : { *hud-manager-helpers.o(.text._ZN11CHudManager6unlockEv .gnu.linkonce.t._ZN11CHudManager6unlockEv) }
+    .hud_manager_helpers_3 0x003235f4 : { *hud-manager-helpers.o(.text._ZNK11CHudManager8isLockedEv .gnu.linkonce.t._ZNK11CHudManager8isLockedEv) }
+    .script_manager_helpers_0 0x0033cffc : { *script-manager-helpers.o(.text._ZN13ScriptManager6resumeEv .gnu.linkonce.t._ZN13ScriptManager6resumeEv) }
+    .script_manager_helpers_1 0x0033d034 : { *script-manager-helpers.o(.text._ZN13ScriptManager20skipBlockingCommandsEv .gnu.linkonce.t._ZN13ScriptManager20skipBlockingCommandsEv) }
+    .script_manager_helpers_2 0x0033d08c : { *script-manager-helpers.o(.text._ZNK13ScriptManager10getMissionEv .gnu.linkonce.t._ZNK13ScriptManager10getMissionEv) }
+    .script_manager_helpers_3 0x0033d0a4 : { *script-manager-helpers.o(.text._ZNK13ScriptManager22getCinematicsHudSpriteEv .gnu.linkonce.t._ZNK13ScriptManager22getCinematicsHudSpriteEv) }
+    .script_manager_helpers_4 0x0033d0a8 : { *script-manager-helpers.o(.text._ZNK13ScriptManager7getRaceEv .gnu.linkonce.t._ZNK13ScriptManager7getRaceEv) }
 }

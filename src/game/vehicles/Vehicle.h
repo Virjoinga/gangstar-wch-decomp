@@ -14,6 +14,7 @@ public:
     void UpdatePhysic(float);
     void stepPhysic();
     void step();
+    void immobilize();
     void setPathToFollow(const Path* path);
     const Path* getPathToFollow() const;
     int getCurrentWaypoint() const;

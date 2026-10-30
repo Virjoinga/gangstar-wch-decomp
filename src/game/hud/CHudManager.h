@@ -9,6 +9,7 @@ struct HudComponent116 {
 class CHudManager {
 public:
     void show();
+    void hide();
     void init();
     void lock();
     void unlock();

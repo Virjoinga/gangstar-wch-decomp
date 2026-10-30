@@ -13,6 +13,8 @@ namespace irr { class IrrlichtDevice; }
 class Application {
 public:
     static Application* GetInstance();
+    void startSoundThread();
+    void stopSoundThread();
     inline irr::IrrlichtDevice* GetDevice() const { return device; }
     inline StringManager* GetStringManager() const { return stringManager; }
     inline FileSystemBase* GetFileSystem() const { return fileSystem; }

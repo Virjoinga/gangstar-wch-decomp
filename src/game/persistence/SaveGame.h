@@ -38,7 +38,7 @@ public:
     SaveGame();
     virtual ~SaveGame();
     void SampleObject(LevelObject* object);
-    const char* GetDefaultFilename();
+    static const char* GetDefaultFilename();
     bool LoadAndApply(const char* name);
     bool SampleAndSave(const char* name);
 };

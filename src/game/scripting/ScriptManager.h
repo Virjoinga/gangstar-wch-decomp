@@ -14,6 +14,7 @@ public:
     void resetGame(bool flag, int id);
     void update(int);
     void resume();
+    void pause();
     void skipBlockingCommands();
     void* getMission() const;
     void* getCinematicsHudSprite() const;

@@ -3,6 +3,8 @@
 
 #include "../core/StateBase.h"
 
+class Vehicle;
+
 // Observed allocation extent, StateBase interface and constructor stores.
 // Remaining callback bodies and field meanings are provisional.
 class GSCarRepairMenu : public StateBase {
@@ -22,8 +24,8 @@ private:
     unsigned int unknown4;
     unsigned int unknown8;
     unsigned int unknown12;
-    unsigned int unknown16;
-    unsigned int unknown20;
+    int unknown16;
+    Vehicle* unknown20;
 };
 
 #endif

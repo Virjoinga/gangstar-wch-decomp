@@ -9235,10 +9235,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e0c5d	0xe	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorial8isKindOfEi	GSBlockingTutorial::isKindOf(int)
 0x002e0c6d	0x1c	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorialC1Ev	GSBlockingTutorial::GSBlockingTutorial()
 0x002e0c6d	0x1c	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorialC2Ev	GSBlockingTutorial::GSBlockingTutorial()
-0x002e0c89	0x2c	GSBlockingTutorial.cpp	game	ui	pending	_ZN18GSBlockingTutorial6updateEP12StateMachine	GSBlockingTutorial::update(StateMachine*)
+0x002e0c89	0x2c	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorial6updateEP12StateMachine	GSBlockingTutorial::update(StateMachine*)
 0x002e0cb5	0x1c	GSBlockingTutorial.cpp	game	core	pending	__tcf_3	__tcf_3
 0x002e0cd1	0x22	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorial4dtorEPK12StateMachine	GSBlockingTutorial::dtor(StateMachine const*)
-0x002e0cf5	0x60	GSBlockingTutorial.cpp	game	ui	pending	_ZN18GSBlockingTutorial4ctorEPK12StateMachine	GSBlockingTutorial::ctor(StateMachine const*)
+0x002e0cf5	0x60	GSBlockingTutorial.cpp	game	ui	matched	_ZN18GSBlockingTutorial4ctorEPK12StateMachine	GSBlockingTutorial::ctor(StateMachine const*)
 0x002e0d55	0x144	GSBlockingTutorial.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e0e99	0x14	GSBlockingTutorial.cpp	game	core	pending	_GLOBAL__I__ZN18GSBlockingTutorialC2Ev	_GLOBAL__I__ZN18GSBlockingTutorialC2Ev
 0x002e0ead	0x30	GSBlockingTutorial.cpp	game	core	pending	__tcf_4	__tcf_4
@@ -9251,7 +9251,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e0f45	0x30	GSBustedMenu.cpp	game	ui	pending	__tcf_4	__tcf_4
 0x002e0f75	0x1c	GSBustedMenu.cpp	game	ui	pending	__tcf_3	__tcf_3
 0x002e0f91	0x22	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenu4dtorEPK12StateMachine	GSBustedMenu::dtor(StateMachine const*)
-0x002e0fb5	0x7c	GSBustedMenu.cpp	game	ui	pending	_ZN12GSBustedMenu4ctorEPK12StateMachine	GSBustedMenu::ctor(StateMachine const*)
+0x002e0fb5	0x7c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenu4ctorEPK12StateMachine	GSBustedMenu::ctor(StateMachine const*)
 0x002e1031	0x1c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuC2Ev	GSBustedMenu::GSBustedMenu()
 0x002e1031	0x1c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuC1Ev	GSBustedMenu::GSBustedMenu()
 0x002e104d	0x144	GSBustedMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
@@ -9265,8 +9265,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e12dd	0x18	GSCarRentalMenu.cpp	game	ui	matched	_ZN15GSCarRentalMenuC2Ev	GSCarRentalMenu::GSCarRentalMenu()
 0x002e12f5	0x2	GSCarRentalMenu.cpp	game	ui	matched	_ZN15GSCarRentalMenu6updateEP12StateMachine	GSCarRentalMenu::update(StateMachine*)
 0x002e12f9	0x2	GSCarRentalMenu.cpp	game	ui	matched	_ZN15GSCarRentalMenu4drawEPK12StateMachine	GSCarRentalMenu::draw(StateMachine const*)
-0x002e12fd	0x2c	GSCarRentalMenu.cpp	game	ui	pending	_ZN15GSCarRentalMenu4dtorEPK12StateMachine	GSCarRentalMenu::dtor(StateMachine const*)
-0x002e1329	0x5c	GSCarRentalMenu.cpp	game	ui	pending	_ZN15GSCarRentalMenu4ctorEPK12StateMachine	GSCarRentalMenu::ctor(StateMachine const*)
+0x002e12fd	0x2c	GSCarRentalMenu.cpp	game	ui	matched	_ZN15GSCarRentalMenu4dtorEPK12StateMachine	GSCarRentalMenu::dtor(StateMachine const*)
+0x002e1329	0x5c	GSCarRentalMenu.cpp	game	ui	matched	_ZN15GSCarRentalMenu4ctorEPK12StateMachine	GSCarRentalMenu::ctor(StateMachine const*)
 0x002e1385	0x144	GSCarRentalMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e14c9	0x14	GSCarRentalMenu.cpp	game	ui	pending	_GLOBAL__I__ZN15GSCarRentalMenuC2Ev	_GLOBAL__I__ZN15GSCarRentalMenuC2Ev
 0x002e14dd	0x30	GSCarRentalMenu.cpp	game	ui	pending	__tcf_4	__tcf_4
@@ -9278,7 +9278,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e1571	0x88	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu6draw2dEPK12StateMachine	GSCarRepairMenu::draw2d(StateMachine const*)
 0x002e15f9	0x1c	GSCarRepairMenu.cpp	game	ui	pending	__tcf_3	__tcf_3
 0x002e1615	0x22	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenu4dtorEPK12StateMachine	GSCarRepairMenu::dtor(StateMachine const*)
-0x002e1639	0x8c	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu4ctorEPK12StateMachine	GSCarRepairMenu::ctor(StateMachine const*)
+0x002e1639	0x8c	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenu4ctorEPK12StateMachine	GSCarRepairMenu::ctor(StateMachine const*)
 0x002e16c5	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuC2Ev	GSCarRepairMenu::GSCarRepairMenu()
 0x002e16c5	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuC1Ev	GSCarRepairMenu::GSCarRepairMenu()
 0x002e16e9	0x144	GSCarRepairMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
@@ -9294,7 +9294,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e1ad9	0x80	GSFade.cpp	game	app	pending	_ZN6GSFade6updateEP12StateMachine	GSFade::update(StateMachine*)
 0x002e1b59	0x1c	GSFade.cpp	game	app	pending	__tcf_3	__tcf_3
 0x002e1b75	0x22	GSFade.cpp	game	app	matched	_ZN6GSFade4dtorEPK12StateMachine	GSFade::dtor(StateMachine const*)
-0x002e1b99	0x48	GSFade.cpp	game	app	pending	_ZN6GSFade4ctorEPK12StateMachine	GSFade::ctor(StateMachine const*)
+0x002e1b99	0x48	GSFade.cpp	game	app	matched	_ZN6GSFade4ctorEPK12StateMachine	GSFade::ctor(StateMachine const*)
 0x002e1be1	0x1c	GSFade.cpp	game	app	matched	_ZN6GSFadeC1Ev	GSFade::GSFade()
 0x002e1be1	0x1c	GSFade.cpp	game	app	matched	_ZN6GSFadeC2Ev	GSFade::GSFade()
 0x002e1bfd	0x144	GSFade.cpp	game	app	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
@@ -9366,9 +9366,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e2f91	0xe	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu8isKindOfEi	GSMainMenu::isKindOf(int)
 0x002e2fa1	0x2	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu4drawEPK12StateMachine	GSMainMenu::draw(StateMachine const*)
 0x002e2fa5	0x2	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu6draw2dEPK12StateMachine	GSMainMenu::draw2d(StateMachine const*)
-0x002e2fa9	0x1e	GSMainMenu.cpp	game	ui	pending	_ZN10GSMainMenu6updateEP12StateMachine	GSMainMenu::update(StateMachine*)
-0x002e2fc9	0x2c	GSMainMenu.cpp	game	ui	pending	_ZN10GSMainMenu4dtorEPK12StateMachine	GSMainMenu::dtor(StateMachine const*)
-0x002e2ff5	0x50	GSMainMenu.cpp	game	ui	pending	_ZN10GSMainMenu4ctorEPK12StateMachine	GSMainMenu::ctor(StateMachine const*)
+0x002e2fa9	0x1e	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu6updateEP12StateMachine	GSMainMenu::update(StateMachine*)
+0x002e2fc9	0x2c	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu4dtorEPK12StateMachine	GSMainMenu::dtor(StateMachine const*)
+0x002e2ff5	0x50	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenu4ctorEPK12StateMachine	GSMainMenu::ctor(StateMachine const*)
 0x002e3045	0x20	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenuC1Ev	GSMainMenu::GSMainMenu()
 0x002e3045	0x20	GSMainMenu.cpp	game	ui	matched	_ZN10GSMainMenuC2Ev	GSMainMenu::GSMainMenu()
 0x002e3065	0x144	GSMainMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
@@ -9383,7 +9383,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e3265	0x2	GSMoviePlayer.cpp	game	app	matched	_ZN13GSMoviePlayer4ctorEPK12StateMachine	GSMoviePlayer::ctor(StateMachine const*)
 0x002e3269	0x2	GSMoviePlayer.cpp	game	app	matched	_ZN13GSMoviePlayer4dtorEPK12StateMachine	GSMoviePlayer::dtor(StateMachine const*)
 0x002e326d	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI8GSSplashEEPT_v	GSSplash* StateMachine::switchState<GSSplash>()
-0x002e328d	0x30	GSMoviePlayer.cpp	game	app	pending	_ZN13GSMoviePlayer6updateEP12StateMachine	GSMoviePlayer::update(StateMachine*)
+0x002e328d	0x30	GSMoviePlayer.cpp	game	app	matched	_ZN13GSMoviePlayer6updateEP12StateMachine	GSMoviePlayer::update(StateMachine*)
 0x002e32bd	0x6c	GSMoviePlayer.cpp	game	app	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e3329	0x14	GSMoviePlayer.cpp	game	app	pending	_GLOBAL__I__ZN13GSMoviePlayerC2Ev	_GLOBAL__I__ZN13GSMoviePlayerC2Ev
 0x002e333d	0x30	GSMoviePlayer.cpp	game	app	pending	__tcf_3	__tcf_3
