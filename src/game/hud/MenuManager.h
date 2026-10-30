@@ -5,6 +5,10 @@
 // fields and the complete menu manager interface are not yet recovered.
 class MenuManager {
 public:
+    static MenuManager* getInstance();
+    int getDepth() const;
+    void showTexts();
+    void push(const char*, bool);
     struct WeaponShopData {
         int price;
         union { int code; unsigned short category; };
