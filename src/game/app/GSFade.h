@@ -22,8 +22,8 @@ public:
     }
 private:
     unsigned int unknown4;
-    unsigned int unknown8;
-    unsigned int unknown12;
+    int unknown8;
+    int unknown12;
     Vehicle* unknown16;
 };
 

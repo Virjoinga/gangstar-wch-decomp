@@ -2,6 +2,8 @@
 #define WCH_CORE_VIDEO_DRIVER_H
 
 #include "Matrix4.h"
+#include "Color.h"
+#include "Rect.h"
 
 namespace irr { namespace scene {
 enum E_PRIMITIVE_TYPE { EPT_TRIANGLES = 6 };
@@ -34,6 +36,15 @@ public:
     virtual void drawVertexPrimitiveList(const void* vertices, const void* indices,
         unsigned int firstVertex, unsigned int vertexCount, unsigned int primitiveCount,
         E_VERTEX_TYPE, scene::E_PRIMITIVE_TYPE, E_INDEX_TYPE, IDriverBinding**);
+    virtual void unknown43(); virtual void unknown44(); virtual void unknown45();
+    virtual void unknown46(); virtual void unknown47(); virtual void unknown48();
+    virtual void unknown49();
+    virtual void draw2DRectangle(SColor color, const core::rect<int>& position,
+        const core::rect<int>* clip = 0);
+    virtual void unknown51(); virtual void unknown52(); virtual void unknown53();
+    virtual void unknown54(); virtual void unknown55(); virtual void unknown56();
+    virtual void unknown57(); virtual void unknown58(); virtual void unknown59();
+    virtual const core::dimension2d<unsigned int>& getScreenSize() const;
 };
 } }
 

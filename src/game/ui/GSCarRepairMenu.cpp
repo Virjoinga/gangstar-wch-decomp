@@ -9,6 +9,9 @@
  */
 
 #include "GSCarRepairMenu.h"
+#include "../audio/SoundManager.h"
+#include "../ai/StateMachine.h"
+#include "../meta/Achievements.h"
 #include "../input/TouchScreenBase.h"
 #include "MenuDialogs.h"
 #include "../characters/PlayerTest.h"
@@ -43,5 +46,59 @@ void GSCarRepairMenu::ctor(const StateMachine*)
 }
 
 GSCarRepairMenu::GSCarRepairMenu() : unknown4(0), unknown8(0), unknown12(0), unknown16(0), unknown20(0) {}
+
+void GSCarRepairMenu::update(StateMachine* machine)
+{
+    if (unknown16 < MenuManager::getInstance()->getDepth()) return;
+    unknown12 -= machine->getTimeStamp();
+    switch (unknown4) {
+    case 0: {
+        bool confirmed = static_cast<Menus::Confirm*>(MenuManager::getInstance()->getState("CarRepair"))->Confirmed();
+        if (!confirmed || !unknown20) {
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(219, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+            StateMachine::getInstance()->popState();
+            break;
+        }
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(214, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        PlayerTest* player = PlayerTest::GetPlayer();
+        player->subCash(MenuManager::getInstance()->getRepairCost());
+        AchievementManager* achievements = AchievementManager::s_achievementManager;
+        achievements->recordRepair(MenuManager::getInstance()->getRepairCost());
+        unknown4 = 1;
+        unknown12 = 250;
+        unknown8 = 250;
+
+        break;
+    }
+    case 1:
+        if (unknown12 < 0) {
+            unknown4 = 2;
+            unknown12 = 1000;
+            unknown8 = 1000;
+            SoundManager* sound = SoundManager::getInstance();
+            sound->unknown140 = true;
+            sound->playEx(212, 0, false, 1.0f, 0, true, 1.0f, 0);
+            sound->unknown140 = false;
+            unknown20->repair();
+        }
+        break;
+    case 2:
+        if (unknown12 < 0) {
+            unknown4 = 3;
+            unknown12 = 250;
+            unknown8 = 250;
+        }
+        break;
+    case 3:
+        if (unknown12 < 0) StateMachine::getInstance()->popState();
+        break;
+    }
+}
 
 GSCarRepairMenu::~GSCarRepairMenu() {}

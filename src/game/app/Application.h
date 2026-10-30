@@ -15,6 +15,7 @@ public:
     static Application* GetInstance();
     void startSoundThread();
     void stopSoundThread();
+    void GetScreenDimensions(int& width, int& height) const;
     inline irr::IrrlichtDevice* GetDevice() const { return device; }
     inline StringManager* GetStringManager() const { return stringManager; }
     inline FileSystemBase* GetFileSystem() const { return fileSystem; }

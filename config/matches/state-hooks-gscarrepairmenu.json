@@ -73,7 +73,14 @@
         "_ZN11MenuManager11enableAnimsEb",
         "_ZNK11MenuManager15areAnimsEnabledEv",
         "_ZNK11MenuManager8getDepthEv",
-        "_ZNK11MenuManager10getMapModeEv"
+        "_ZNK11MenuManager10getMapModeEv",
+        "_ZN15GSCarRepairMenu6updateEP12StateMachine",
+        "_ZN12StateMachine11getInstanceEv",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d4519",
+            "compiled_name": "__tcf_0"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -129,7 +136,10 @@
         ".menu_manager_helpers_14",
         ".menu_manager_helpers_15",
         ".menu_manager_helpers_16",
-        ".menu_manager_helpers_17"
+        ".menu_manager_helpers_17",
+        ".repair_update",
+        ".state_instance",
+        ".state_instance_cleanup"
     ],
     "retail_got": true,
     "dependencies": [
@@ -151,6 +161,15 @@
         "_ZN5Menus6Dialog10SetMessageEi",
         "_ZN5Menus14ConfirmPayment8SetPriceEi",
         "_ZN11MenuManager4pushEPKcb",
-        "_ZN10PlayerTest9GetPlayerEv"
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZNK5Menus7Confirm9ConfirmedEv",
+        "_ZN12SoundManager6playExEiPKN3irr4core8vector3dIfEEbfibfPFvvE",
+        "_ZN10PlayerTest7subCashEi",
+        "_ZN18AchievementManager12recordRepairEi",
+        "_ZN7Vehicle6repairEv",
+        "_ZNK12StateMachine12getTimeStampEv",
+        "_ZN12StateMachine8popStateEv",
+        "_ZN12StateMachineC1Ev",
+        "_ZN12StateMachineD1Ev"
     ]
 }

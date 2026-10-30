@@ -2,6 +2,12 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gscarrepairmenu/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__aeabi_i2d = 0x001c452c;
+__aeabi_dsub = 0x001c4454;
+__aeabi_d2iz = 0x001c4844;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+__aeabi_atexit = 0x001c494c;
 SECTIONS
 {
     .hook_0 0x002e156c : { *state-hooks-gscarrepairmenu.o(.text._ZN15GSCarRepairMenu4drawEPK12StateMachine .gnu.linkonce.t._ZN15GSCarRepairMenu4drawEPK12StateMachine) }
@@ -56,4 +62,11 @@ SECTIONS
     .menu_manager_helpers_15 0x002e3f84 : { *menu-manager-helpers.o(.text._ZNK11MenuManager15areAnimsEnabledEv .gnu.linkonce.t._ZNK11MenuManager15areAnimsEnabledEv) }
     .menu_manager_helpers_16 0x002e465c : { *menu-manager-helpers.o(.text._ZNK11MenuManager8getDepthEv .gnu.linkonce.t._ZNK11MenuManager8getDepthEv) }
     .menu_manager_helpers_17 0x002e65d0 : { *menu-manager-helpers.o(.text._ZNK11MenuManager10getMapModeEv .gnu.linkonce.t._ZNK11MenuManager10getMapModeEv) }
+    .repair_update 0x002e1870 : { *state-hooks-gscarrepairmenu.o(.text._ZN15GSCarRepairMenu6updateEP12StateMachine) }
+    .state_instance 0x002d44c4 : { *state-hooks-gscarrepairmenu.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
+    .state_instance_cleanup 0x002d4518 : { *state-hooks-gscarrepairmenu.o(.text.__tcf_0) }
+    .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gscarrepairmenu.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
+    .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gscarrepairmenu.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
 }
+ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
+ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");

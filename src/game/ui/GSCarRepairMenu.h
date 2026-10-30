@@ -21,9 +21,9 @@ public:
         return StateBase::isKindOf(kind);
     }
 private:
-    unsigned int unknown4;
-    unsigned int unknown8;
-    unsigned int unknown12;
+    int unknown4;
+    int unknown8;
+    int unknown12;
     int unknown16;
     Vehicle* unknown20;
 };

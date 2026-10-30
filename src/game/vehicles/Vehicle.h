@@ -15,6 +15,9 @@ public:
     void stepPhysic();
     void step();
     void immobilize();
+    void mobilize();
+    void UpdateCarSounds();
+    void repair();
     void setPathToFollow(const Path* path);
     const Path* getPathToFollow() const;
     int getCurrentWaypoint() const;

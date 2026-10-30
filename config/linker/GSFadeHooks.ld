@@ -2,6 +2,13 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gsfade/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__aeabi_i2d = 0x001c452c;
+__aeabi_idiv = 0x001c43dc;
+__aeabi_dsub = 0x001c4454;
+__aeabi_d2iz = 0x001c4844;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+__aeabi_atexit = 0x001c494c;
 SECTIONS
 {
     .hook_0 0x002e1a5c : { *state-hooks-gsfade.o(.text._ZN6GSFade4drawEPK12StateMachine .gnu.linkonce.t._ZN6GSFade4drawEPK12StateMachine) }
@@ -37,4 +44,13 @@ SECTIONS
     .script_manager_helpers_3 0x0033d0a4 : { *script-manager-helpers.o(.text._ZNK13ScriptManager22getCinematicsHudSpriteEv .gnu.linkonce.t._ZNK13ScriptManager22getCinematicsHudSpriteEv) }
     .script_manager_helpers_4 0x0033d0a8 : { *script-manager-helpers.o(.text._ZNK13ScriptManager7getRaceEv .gnu.linkonce.t._ZNK13ScriptManager7getRaceEv) }
     .entry_0 0x002e1b98 : { *state-hooks-gsfade.o(.text._ZN6GSFade4ctorEPK12StateMachine .gnu.linkonce.t._ZN6GSFade4ctorEPK12StateMachine) }
+    .fade_update 0x002e1ad8 : { *state-hooks-gsfade.o(.text._ZN6GSFade6updateEP12StateMachine) }
+    .state_instance 0x002d44c4 : { *state-hooks-gsfade.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
+    .state_instance_cleanup 0x002d4518 : { *state-hooks-gsfade.o(.text.__tcf_0) }
+    .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gsfade.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
+    .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gsfade.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
+    .fade_draw2d 0x002e1a60 : { *state-hooks-gsfade.o(.text._ZN6GSFade6draw2dEPK12StateMachine) }
+    .screen_dimensions 0x002d483c : { *application-helpers.o(.text._ZNK11Application19GetScreenDimensionsERiS0_) }
 }
+ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
+ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");

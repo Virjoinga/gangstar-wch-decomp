@@ -55,7 +55,16 @@
         "_ZNK13ScriptManager10getMissionEv",
         "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
         "_ZNK13ScriptManager7getRaceEv",
-        "_ZN6GSFade4ctorEPK12StateMachine"
+        "_ZN6GSFade4ctorEPK12StateMachine",
+        "_ZN6GSFade6updateEP12StateMachine",
+        "_ZN12StateMachine11getInstanceEv",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d4519",
+            "compiled_name": "__tcf_0"
+        },
+        "_ZN6GSFade6draw2dEPK12StateMachine",
+        "_ZNK11Application19GetScreenDimensionsERiS0_"
     ],
     "sections": [
         ".hook_0",
@@ -92,12 +101,18 @@
         ".script_manager_helpers_2",
         ".script_manager_helpers_3",
         ".script_manager_helpers_4",
-        ".entry_0"
+        ".entry_0",
+        ".fade_update",
+        ".state_instance",
+        ".state_instance_cleanup",
+        ".fade_draw2d",
+        ".screen_dimensions"
     ],
     "retail_got": true,
     "dependencies": [
         "hud-manager-helpers",
-        "script-manager-helpers"
+        "script-manager-helpers",
+        "application-helpers"
     ],
     "external_thumb_functions": [
         "_ZN11MenuManager11getInstanceEv",
@@ -110,6 +125,12 @@
         "_ZN11CHudManager4hideEv",
         "_ZN11MenuManager9hideTextsEv",
         "_ZN10PlayerTest9GetPlayerEv",
-        "_ZN7Vehicle10immobilizeEv"
+        "_ZN7Vehicle10immobilizeEv",
+        "_ZN7Vehicle15UpdateCarSoundsEv",
+        "_ZN7Vehicle8mobilizeEv",
+        "_ZNK12StateMachine12getTimeStampEv",
+        "_ZN12StateMachine8popStateEv",
+        "_ZN12StateMachineC1Ev",
+        "_ZN12StateMachineD1Ev"
     ]
 }
