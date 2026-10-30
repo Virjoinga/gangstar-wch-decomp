@@ -2,6 +2,9 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gsbustedmenu/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+__aeabi_atexit = 0x001c494c;
 SECTIONS
 {
     .hook_0 0x002e0f3c : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenu4drawEPK12StateMachine .gnu.linkonce.t._ZN12GSBustedMenu4drawEPK12StateMachine) }
@@ -57,4 +60,11 @@ SECTIONS
     .menu_manager_helpers_15 0x002e3f84 : { *menu-manager-helpers.o(.text._ZNK11MenuManager15areAnimsEnabledEv .gnu.linkonce.t._ZNK11MenuManager15areAnimsEnabledEv) }
     .menu_manager_helpers_16 0x002e465c : { *menu-manager-helpers.o(.text._ZNK11MenuManager8getDepthEv .gnu.linkonce.t._ZNK11MenuManager8getDepthEv) }
     .menu_manager_helpers_17 0x002e65d0 : { *menu-manager-helpers.o(.text._ZNK11MenuManager10getMapModeEv .gnu.linkonce.t._ZNK11MenuManager10getMapModeEv) }
+    .busted_update 0x002e11a4 : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenu6updateEP12StateMachine) }
+    .state_instance 0x002d44c4 : { *state-hooks-gsbustedmenu.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
+    .state_instance_cleanup 0x002d4518 : { *state-hooks-gsbustedmenu.o(.text.__tcf_0) }
+    .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gsbustedmenu.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
+    .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gsbustedmenu.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
 }
+ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
+ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");

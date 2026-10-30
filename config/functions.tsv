@@ -8846,7 +8846,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d458d	0x20	Application.cpp	game	app	pending	_Z10SafeDeleteI15CControlManagerEvRPT_	void SafeDelete<CControlManager>(CControlManager*&)
 0x002d45ad	0x15c	Application.cpp	game	app	pending	_ZN11Application14appKeyReleasedEi	Application::appKeyReleased(int)
 0x002d4709	0x134	Application.cpp	game	app	pending	_ZN11Application13appKeyPressedEi	Application::appKeyPressed(int)
-0x002d483d	0x24	Application.cpp	game	app	pending	_ZNK11Application19GetScreenDimensionsERiS0_	Application::GetScreenDimensions(int&, int&) const
+0x002d483d	0x24	Application.cpp	game	app	matched	_ZNK11Application19GetScreenDimensionsERiS0_	Application::GetScreenDimensions(int&, int&) const
 0x002d4861	0x1a0	Application.cpp	game	app	pending	_ZN11Application26displayNumberWithHUDSpriteEiiiPKc	Application::displayNumberWithHUDSprite(int, int, int, char const*)
 0x002d4a01	0x6a	Application.cpp	game	app	pending	_ZN11Application7_UpdateEi	Application::_Update(int)
 0x002d4a6d	0x9c	Application.cpp	game	app	pending	_ZN11Application8LogoDrawEv	Application::LogoDraw()
@@ -9256,7 +9256,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e1031	0x1c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuC1Ev	GSBustedMenu::GSBustedMenu()
 0x002e104d	0x144	GSBustedMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e1191	0x14	GSBustedMenu.cpp	game	ui	pending	_GLOBAL__I__ZN12GSBustedMenuC2Ev	_GLOBAL__I__ZN12GSBustedMenuC2Ev
-0x002e11a5	0xd8	GSBustedMenu.cpp	game	ui	pending	_ZN12GSBustedMenu6updateEP12StateMachine	GSBustedMenu::update(StateMachine*)
+0x002e11a5	0xd8	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenu6updateEP12StateMachine	GSBustedMenu::update(StateMachine*)
 0x002e127d	0x2c	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuD0Ev	GSBustedMenu::~GSBustedMenu()
 0x002e12a9	0x24	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuD2Ev	GSBustedMenu::~GSBustedMenu()
 0x002e12a9	0x24	GSBustedMenu.cpp	game	ui	matched	_ZN12GSBustedMenuD1Ev	GSBustedMenu::~GSBustedMenu()
@@ -9284,14 +9284,14 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e16e9	0x144	GSCarRepairMenu.cpp	game	ui	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e182d	0x14	GSCarRepairMenu.cpp	game	ui	pending	_GLOBAL__I__ZN15GSCarRepairMenuC2Ev	_GLOBAL__I__ZN15GSCarRepairMenuC2Ev
 0x002e1841	0x30	GSCarRepairMenu.cpp	game	ui	pending	__tcf_4	__tcf_4
-0x002e1871	0x18c	GSCarRepairMenu.cpp	game	ui	pending	_ZN15GSCarRepairMenu6updateEP12StateMachine	GSCarRepairMenu::update(StateMachine*)
+0x002e1871	0x18c	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenu6updateEP12StateMachine	GSCarRepairMenu::update(StateMachine*)
 0x002e19fd	0x2c	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuD0Ev	GSCarRepairMenu::~GSCarRepairMenu()
 0x002e1a29	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuD2Ev	GSCarRepairMenu::~GSCarRepairMenu()
 0x002e1a29	0x24	GSCarRepairMenu.cpp	game	ui	matched	_ZN15GSCarRepairMenuD1Ev	GSCarRepairMenu::~GSCarRepairMenu()
 0x002e1a4d	0xe	GSFade.cpp	game	app	matched	_ZN6GSFade8isKindOfEi	GSFade::isKindOf(int)
 0x002e1a5d	0x2	GSFade.cpp	game	app	matched	_ZN6GSFade4drawEPK12StateMachine	GSFade::draw(StateMachine const*)
-0x002e1a61	0x78	GSFade.cpp	game	app	pending	_ZN6GSFade6draw2dEPK12StateMachine	GSFade::draw2d(StateMachine const*)
-0x002e1ad9	0x80	GSFade.cpp	game	app	pending	_ZN6GSFade6updateEP12StateMachine	GSFade::update(StateMachine*)
+0x002e1a61	0x78	GSFade.cpp	game	app	matched	_ZN6GSFade6draw2dEPK12StateMachine	GSFade::draw2d(StateMachine const*)
+0x002e1ad9	0x80	GSFade.cpp	game	app	matched	_ZN6GSFade6updateEP12StateMachine	GSFade::update(StateMachine*)
 0x002e1b59	0x1c	GSFade.cpp	game	app	pending	__tcf_3	__tcf_3
 0x002e1b75	0x22	GSFade.cpp	game	app	matched	_ZN6GSFade4dtorEPK12StateMachine	GSFade::dtor(StateMachine const*)
 0x002e1b99	0x48	GSFade.cpp	game	app	matched	_ZN6GSFade4ctorEPK12StateMachine	GSFade::ctor(StateMachine const*)

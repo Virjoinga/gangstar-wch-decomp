@@ -9,6 +9,8 @@
  */
 
 #include "GSBustedMenu.h"
+#include "../audio/SoundManager.h"
+#include "../ai/StateMachine.h"
 #include "../input/TouchScreenBase.h"
 #include "MenuDialogs.h"
 #include "../combat/WeaponManager.h"
@@ -43,5 +45,26 @@ void GSBustedMenu::ctor(const StateMachine*)
 }
 
 GSBustedMenu::GSBustedMenu() : unknown8(0) {}
+
+void GSBustedMenu::update(StateMachine*)
+{
+    if (unknown8 < MenuManager::getInstance()->getDepth()) return;
+    bool confirmed = static_cast<Menus::Confirm*>(MenuManager::getInstance()->getState("CopBribe"))->Confirmed();
+    if (confirmed) {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(214, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        PlayerTest::GetPlayer()->subCash(unknown4);
+    } else {
+        SoundManager* sound = SoundManager::getInstance();
+        sound->unknown140 = true;
+        sound->playEx(219, 0, false, 1.0f, 0, true, 1.0f, 0);
+        sound->unknown140 = false;
+        Application::GetInstance()->GetWeaponManager()->lockAllWeapons();
+        PlayerTest::GetPlayer()->setContextArmor(0);
+    }
+    StateMachine::getInstance()->popState();
+}
 
 GSBustedMenu::~GSBustedMenu() {}

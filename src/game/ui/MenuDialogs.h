@@ -8,7 +8,11 @@ class Dialog {
 public:
     void SetMessage(int id);
 };
-class ConfirmPayment : public Dialog {
+class Confirm : public Dialog {
+public:
+    bool Confirmed() const;
+};
+class ConfirmPayment : public Confirm {
 public:
     void SetPrice(int amount);
 };

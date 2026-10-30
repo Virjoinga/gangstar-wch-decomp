@@ -84,6 +84,7 @@ public:
     LevelObject* getTarget() const { return target; }
     int getAmbientSound() const;
     void setCash(int value);
+    void subCash(int amount);
     void addCash(int amount, int maximum);
     void switchContext(eContext context, bool flag);
     void Respawn();
