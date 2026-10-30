@@ -7,3 +7,9 @@
  * This file mirrors the layout of the retail build.  Add the decompiled
  * functions of GSFailure.cpp here, in the order they appear in the library.
  */
+
+#include "GSFailure.h"
+
+GSFailure::GSFailure() : unknown4(0), unknown8(0) {}
+
+GSFailure::~GSFailure() {}

@@ -74,12 +74,14 @@ produce the retail weak symbols. All fourteen 32-byte wrappers matched on the
 first source candidates, following the existing GS3DStuff interface as the first
 representative. The push implementation also matched on its first candidate.
 
-GS3DStuff uses its existing recovered header. The other thirteen headers record
-only allocation extent, constructor/destructor declarations and the observed
-primary StateBase conversion; they do not claim recovered menu internals or
-constructor bodies. Extents came from each retail allocation instruction and
-are checked with native compile-time assertions. No UI or Application function
-bytes are credited for these interfaces.
+GS3DStuff uses its existing recovered header. The other thirteen interfaces
+initially recorded allocation extent and the observed primary StateBase
+conversion. Their constructor/destructor bodies, empty callbacks and complete
+generated vtables are now independently verified in
+[state-lifecycles.md](state-lifecycles.md). Remaining nonempty callbacks and field
+meanings are provisional. Extents came from each retail allocation instruction
+and are checked with native compile-time assertions. Their UI/Application bytes
+are credited in their original translation units, separately from StateMachine.
 
 | State | Allocation bytes |
 | --- | ---: |
