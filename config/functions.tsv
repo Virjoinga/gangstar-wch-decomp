@@ -8838,7 +8838,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d4409	0x38	Application.cpp	game	app	pending	_ZN11Application17RegisterForUpdateEP10IUpdatable	Application::RegisterForUpdate(IUpdatable*)
 0x002d4441	0x2c	Application.cpp	game	app	pending	_ZN11Application15stopSoundThreadEv	Application::stopSoundThread()
 0x002d446d	0x58	Application.cpp	game	app	pending	_ZN11Application16startSoundThreadEv	Application::startSoundThread()
-0x002d44c5	0x54	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11getInstanceEv	StateMachine::getInstance()
+0x002d44c5	0x54	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11getInstanceEv	StateMachine::getInstance()
 0x002d4519	0x1c	Application.cpp	game	app	pending	__tcf_2	__tcf_2
 0x002d4535	0x1c	ASprite.cpp	game	rendering	pending	_ZN7ASprite14GetFrameHeightEi	ASprite::GetFrameHeight(int)
 0x002d4551	0x1c	ASprite.cpp	game	rendering	pending	_ZN7ASprite13GetFrameWidthEi	ASprite::GetFrameWidth(int)
@@ -8896,43 +8896,43 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d6145	0xc	Logs.cpp	game	core	matched	_ZN4Logs4infoEPKc	Logs::info(char const*)
 0x002d6151	0x20	Logs.cpp	game	core	matched	_ZN4Logs7warningEPKc	Logs::warning(char const*)
 0x002d6171	0x20	Logs.cpp	game	core	matched	_ZN4Logs5errorEPKc	Logs::error(char const*)
-0x002d6191	0x2	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine6_traceEPKc	StateMachine::_trace(char const*) const
-0x002d6195	0x6	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine12getTimeStampEv	StateMachine::getTimeStamp() const
-0x002d619c	0x14	StateMachine.cpp	game	ai	pending	_ZThn4_NK12StateMachine15getDrawingLayerEv	non-virtual thunk to StateMachine::getDrawingLayer() const
-0x002d61b1	0x6	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine15getDrawingLayerEv	StateMachine::getDrawingLayer() const
-0x002d61b8	0x14	StateMachine.cpp	game	ai	pending	_ZThn8_N12StateMachine6wakeupEv	non-virtual thunk to StateMachine::wakeup()
-0x002d61cd	0x22	StateMachine.cpp	game	ai	pending	_ZN12StateMachine6wakeupEv	StateMachine::wakeup()
+0x002d6191	0x2	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine6_traceEPKc	StateMachine::_trace(char const*) const
+0x002d6195	0x6	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine12getTimeStampEv	StateMachine::getTimeStamp() const
+0x002d619c	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_NK12StateMachine15getDrawingLayerEv	non-virtual thunk to StateMachine::getDrawingLayer() const
+0x002d61b1	0x6	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine15getDrawingLayerEv	StateMachine::getDrawingLayer() const
+0x002d61b8	0x14	StateMachine.cpp	game	ai	matched	_ZThn8_N12StateMachine6wakeupEv	non-virtual thunk to StateMachine::wakeup()
+0x002d61cd	0x22	StateMachine.cpp	game	ai	matched	_ZN12StateMachine6wakeupEv	StateMachine::wakeup()
 0x002d61f1	0x44	StateMachine.cpp	stlport	-	matched	_ZNSaIP9StateBaseE8allocateEjRj	std::allocator<StateBase*>::allocate(unsigned int, unsigned int&)
 0x002d6235	0x12	StateMachine.cpp	stlport	-	matched	_ZNSt6vectorIP9StateBaseSaIS1_EE8_M_clearEv	std::vector<StateBase*, std::allocator<StateBase*> >::_M_clear()
-0x002d6249	0x20	StateMachine.cpp	game	ai	pending	_ZN10ISleepableD0Ev	ISleepable::~ISleepable()
-0x002d6269	0x18	StateMachine.cpp	game	ai	pending	_ZN10ISleepableD1Ev	ISleepable::~ISleepable()
-0x002d6281	0x20	StateMachine.cpp	game	ai	pending	_ZN9IDrawableD0Ev	IDrawable::~IDrawable()
-0x002d62a1	0x18	StateMachine.cpp	game	ai	pending	_ZN9IDrawableD1Ev	IDrawable::~IDrawable()
-0x002d62b9	0x20	StateMachine.cpp	game	ai	pending	_ZN10IUpdatableD0Ev	IUpdatable::~IUpdatable()
-0x002d62d9	0x18	StateMachine.cpp	game	ai	pending	_ZN10IUpdatableD1Ev	IUpdatable::~IUpdatable()
-0x002d62f0	0x14	StateMachine.cpp	game	ai	pending	_ZThn8_N12StateMachine5sleepEv	non-virtual thunk to StateMachine::sleep()
-0x002d6305	0x22	StateMachine.cpp	game	ai	pending	_ZN12StateMachine5sleepEv	StateMachine::sleep()
-0x002d6328	0x14	StateMachine.cpp	game	ai	pending	_ZThn4_NK12StateMachine4drawEv	non-virtual thunk to StateMachine::draw() const
-0x002d633d	0x2c	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine4drawEv	StateMachine::draw() const
-0x002d6369	0x24	StateMachine.cpp	game	ai	pending	_ZN12StateMachine6updateEd	StateMachine::update(double)
-0x002d638d	0x28	StateMachine.cpp	game	ai	pending	_ZN12StateMachine10isDrawableEv	StateMachine::isDrawable()
-0x002d63b5	0x44	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine11recurseDrawEv	StateMachine::recurseDraw() const
-0x002d63f9	0x50	StateMachine.cpp	game	ai	pending	_ZN12StateMachine8popStateEv	StateMachine::popState()
-0x002d6449	0x6c	StateMachine.cpp	game	ai	pending	_ZN12StateMachineC1Ev	StateMachine::StateMachine()
-0x002d6449	0x6c	StateMachine.cpp	game	ai	pending	_ZN12StateMachineC2Ev	StateMachine::StateMachine()
-0x002d64b8	0x14	StateMachine.cpp	game	ai	pending	_ZThn4_NK12StateMachine6draw2dEv	non-virtual thunk to StateMachine::draw2d() const
-0x002d64cd	0x2c	StateMachine.cpp	game	ai	pending	_ZNK12StateMachine6draw2dEv	StateMachine::draw2d() const
+0x002d6249	0x20	StateMachine.cpp	game	ai	matched	_ZN10ISleepableD0Ev	ISleepable::~ISleepable()
+0x002d6269	0x18	StateMachine.cpp	game	ai	matched	_ZN10ISleepableD1Ev	ISleepable::~ISleepable()
+0x002d6281	0x20	StateMachine.cpp	game	ai	matched	_ZN9IDrawableD0Ev	IDrawable::~IDrawable()
+0x002d62a1	0x18	StateMachine.cpp	game	ai	matched	_ZN9IDrawableD1Ev	IDrawable::~IDrawable()
+0x002d62b9	0x20	StateMachine.cpp	game	ai	matched	_ZN10IUpdatableD0Ev	IUpdatable::~IUpdatable()
+0x002d62d9	0x18	StateMachine.cpp	game	ai	matched	_ZN10IUpdatableD1Ev	IUpdatable::~IUpdatable()
+0x002d62f0	0x14	StateMachine.cpp	game	ai	matched	_ZThn8_N12StateMachine5sleepEv	non-virtual thunk to StateMachine::sleep()
+0x002d6305	0x22	StateMachine.cpp	game	ai	matched	_ZN12StateMachine5sleepEv	StateMachine::sleep()
+0x002d6328	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_NK12StateMachine4drawEv	non-virtual thunk to StateMachine::draw() const
+0x002d633d	0x2c	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine4drawEv	StateMachine::draw() const
+0x002d6369	0x24	StateMachine.cpp	game	ai	matched	_ZN12StateMachine6updateEd	StateMachine::update(double)
+0x002d638d	0x28	StateMachine.cpp	game	ai	matched	_ZN12StateMachine10isDrawableEv	StateMachine::isDrawable()
+0x002d63b5	0x44	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine11recurseDrawEv	StateMachine::recurseDraw() const
+0x002d63f9	0x50	StateMachine.cpp	game	ai	matched	_ZN12StateMachine8popStateEv	StateMachine::popState()
+0x002d6449	0x6c	StateMachine.cpp	game	ai	matched	_ZN12StateMachineC1Ev	StateMachine::StateMachine()
+0x002d6449	0x6c	StateMachine.cpp	game	ai	matched	_ZN12StateMachineC2Ev	StateMachine::StateMachine()
+0x002d64b8	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_NK12StateMachine6draw2dEv	non-virtual thunk to StateMachine::draw2d() const
+0x002d64cd	0x2c	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine6draw2dEv	StateMachine::draw2d() const
 0x002d64f9	0x12	StateMachine.cpp	stlport	-	matched	_ZN9stlp_priv12_Vector_baseIP9StateBaseSaIS2_EED1Ev	stlp_priv::_Vector_base<StateBase*, std::allocator<StateBase*> >::~_Vector_base()
 0x002d650d	0xd0	StateMachine.cpp	stlport	-	matched	_ZNSt6vectorIP9StateBaseSaIS1_EE18_M_insert_overflowEPS1_RKS1_RKSt11__true_typejb	std::vector<StateBase*, std::allocator<StateBase*> >::_M_insert_overflow(StateBase**, StateBase* const&, std::__true_type const&, unsigned int, bool)
 0x002d65dd	0x6c	StateMachine.cpp	game	ai	pending	_ZN12StateMachine10_pushStateEP9StateBase	StateMachine::_pushState(StateBase*)
-0x002d6649	0x4c	StateMachine.cpp	game	ai	pending	_ZN12StateMachine12_switchStateEP9StateBase	StateMachine::_switchState(StateBase*)
-0x002d6694	0x14	StateMachine.cpp	game	ai	pending	_ZThn8_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
-0x002d66a8	0x14	StateMachine.cpp	game	ai	pending	_ZThn4_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
-0x002d66bd	0x84	StateMachine.cpp	game	ai	pending	_ZN12StateMachineD0Ev	StateMachine::~StateMachine()
-0x002d6740	0x14	StateMachine.cpp	game	ai	pending	_ZThn8_N12StateMachineD1Ev	non-virtual thunk to StateMachine::~StateMachine()
-0x002d6754	0x14	StateMachine.cpp	game	ai	pending	_ZThn4_N12StateMachineD1Ev	non-virtual thunk to StateMachine::~StateMachine()
-0x002d6769	0x80	StateMachine.cpp	game	ai	pending	_ZN12StateMachineD2Ev	StateMachine::~StateMachine()
-0x002d6769	0x80	StateMachine.cpp	game	ai	pending	_ZN12StateMachineD1Ev	StateMachine::~StateMachine()
+0x002d6649	0x4c	StateMachine.cpp	game	ai	matched	_ZN12StateMachine12_switchStateEP9StateBase	StateMachine::_switchState(StateBase*)
+0x002d6694	0x14	StateMachine.cpp	game	ai	matched	_ZThn8_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
+0x002d66a8	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
+0x002d66bd	0x84	StateMachine.cpp	game	ai	matched	_ZN12StateMachineD0Ev	StateMachine::~StateMachine()
+0x002d6740	0x14	StateMachine.cpp	game	ai	matched	_ZThn8_N12StateMachineD1Ev	non-virtual thunk to StateMachine::~StateMachine()
+0x002d6754	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_N12StateMachineD1Ev	non-virtual thunk to StateMachine::~StateMachine()
+0x002d6769	0x80	StateMachine.cpp	game	ai	matched	_ZN12StateMachineD2Ev	StateMachine::~StateMachine()
+0x002d6769	0x80	StateMachine.cpp	game	ai	matched	_ZN12StateMachineD1Ev	StateMachine::~StateMachine()
 0x002d67e9	0x30	CCustomFileSystem.cpp	game	core	pending	__tcf_0	__tcf_0
 0x002d6819	0x58	CCustomFileSystem.cpp	game	core	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002d6871	0x14	CCustomFileSystem.cpp	game	core	pending	_GLOBAL__I__ZNK17CCustomFileSystem15getAbsolutePathERKN3irr4core6stringIcNS1_12irrAllocatorIcEEEE	_GLOBAL__I__ZNK17CCustomFileSystem15getAbsolutePathERKN3irr4core6stringIcNS1_12irrAllocatorIcEEEE

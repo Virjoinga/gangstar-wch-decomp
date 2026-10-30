@@ -30,10 +30,10 @@ branch order using plain C++.
 
 The two empty interface destructors are inline definitions in the shared
 header. All four emitted IUpdatable/IDrawable destructor variants also compare
-exactly, but their StateMachine.cpp catalogue entries remain queued for that
-translation unit's integration; this change does not remove their assembly or
-credit their bytes. The HudElement and three interface vtables, including their
-emitted alignment, all compare against retail data.
+exactly. Their StateMachine.cpp catalogue entries are now integrated and
+credited with the [StateMachine family](state-machine.md). The HudElement and
+three interface vtables, including their emitted alignment, all compare against
+retail data.
 
 The three startup helpers reuse the existing partial SDK storage declarations:
 initialize the TU-local empty engine string, register its cleanup callback,

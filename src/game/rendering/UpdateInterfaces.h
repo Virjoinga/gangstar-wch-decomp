@@ -12,7 +12,7 @@
 #include "../persistence/SaveGameInterfaces.h"
 
 // Partial call interfaces for the update loop. No complete layouts are asserted.
-class StateMachine { public: double getTimeStamp() const; };
+#include "../ai/StateMachine.h"
 
 class TrailMgr { public: void Update(); };
 
