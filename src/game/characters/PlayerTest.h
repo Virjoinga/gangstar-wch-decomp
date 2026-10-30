@@ -62,7 +62,7 @@ class SavePrimaryInterface {
 public:
     virtual void unknownPrimary();
     virtual void unknownPrimary1(); virtual void unknownPrimary2();
-    virtual void unknownPrimary3(); virtual void unknownPrimary4();
+    virtual void Stop(); virtual void unknownPrimary4();
     virtual void unknownPrimary5(); virtual void unknownPrimary6();
     virtual Vehicle* getVehicle() const;
 };

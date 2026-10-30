@@ -14,6 +14,9 @@ public:
     static MenuManager* getInstance();
     int getDepth() const;
     void showTexts();
+    void hideTexts();
+    void popAll(bool);
+    void* getState(const char*) const;
     void push(const char*, bool);
     void resetWidgetVisibility();
     void MenuPause();

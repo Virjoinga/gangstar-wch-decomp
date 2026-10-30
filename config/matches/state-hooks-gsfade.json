@@ -54,7 +54,8 @@
         "_ZN13ScriptManager20skipBlockingCommandsEv",
         "_ZNK13ScriptManager10getMissionEv",
         "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
-        "_ZNK13ScriptManager7getRaceEv"
+        "_ZNK13ScriptManager7getRaceEv",
+        "_ZN6GSFade4ctorEPK12StateMachine"
     ],
     "sections": [
         ".hook_0",
@@ -90,7 +91,8 @@
         ".script_manager_helpers_1",
         ".script_manager_helpers_2",
         ".script_manager_helpers_3",
-        ".script_manager_helpers_4"
+        ".script_manager_helpers_4",
+        ".entry_0"
     ],
     "retail_got": true,
     "dependencies": [
@@ -102,6 +104,12 @@
         "_ZN11MenuManager9showTextsEv",
         "_ZN11Application11GetInstanceEv",
         "_ZN13ScriptManager11getInstanceEv",
-        "_ZN11CHudManager4showEv"
+        "_ZN11CHudManager4showEv",
+        "_ZN15TouchScreenBase5clearEv",
+        "_ZN13ScriptManager5pauseEv",
+        "_ZN11CHudManager4hideEv",
+        "_ZN11MenuManager9hideTextsEv",
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZN7Vehicle10immobilizeEv"
     ]
 }

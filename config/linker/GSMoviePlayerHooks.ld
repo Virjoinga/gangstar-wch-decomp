@@ -2,6 +2,10 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gsmovieplayer/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+_Znwj = 0x001c4814;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
+__aeabi_atexit = 0x001c494c;
 SECTIONS
 {
     .hook_0 0x002e3264 : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayer4ctorEPK12StateMachine .gnu.linkonce.t._ZN13GSMoviePlayer4ctorEPK12StateMachine) }
@@ -27,4 +31,13 @@ SECTIONS
     .state_delete 0x002e336c : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayerD0Ev) }
     .state_vtable 0x004a8e20 : { *state-hooks-gsmovieplayer.o(.data.rel.ro._ZTV13GSMoviePlayer .gnu.linkonce.d.rel.ro._ZTV13GSMoviePlayer) }
     .state_kind 0x002e323c : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.t._ZN13GSMoviePlayer8isKindOfEi .text._ZN13GSMoviePlayer8isKindOfEi) }
+    .entry_0 0x002e328c : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayer6updateEP12StateMachine .gnu.linkonce.t._ZN13GSMoviePlayer6updateEP12StateMachine) }
+    .entry_text 0x0041812c : { *state-hooks-gsmovieplayer.o(.rodata.str1.4 .rodata.str1.1) }
+    .state_instance 0x002d44c4 : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.t._ZN12StateMachine11getInstanceEv .text._ZN12StateMachine11getInstanceEv) }
+    .state_instance_cleanup 0x002d4518 : { *state-hooks-gsmovieplayer.o(.text.__tcf_0) }
+    .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
+    .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
+    .movie_switch 0x002e326c : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI8GSSplashEEPT_v .text._ZN12StateMachine11switchStateI8GSSplashEEPT_v) }
 }
+ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
+ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");

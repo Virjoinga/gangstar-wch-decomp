@@ -45,7 +45,15 @@
         "_ZN13GSMoviePlayerD1Ev",
         "_ZN13GSMoviePlayerD0Ev",
         "_ZN13GSMoviePlayerD2Ev",
-        "_ZN13GSMoviePlayer8isKindOfEi"
+        "_ZN13GSMoviePlayer8isKindOfEi",
+        "_ZN13GSMoviePlayer6updateEP12StateMachine",
+        "_ZN12StateMachine11getInstanceEv",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d4519",
+            "compiled_name": "__tcf_0"
+        },
+        "_ZN12StateMachine11switchStateI8GSSplashEEPT_v"
     ],
     "sections": [
         ".hook_0",
@@ -72,7 +80,20 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".entry_0",
+        ".entry_text",
+        ".state_instance",
+        ".state_instance_cleanup",
+        ".movie_switch"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "nativeStopAllSounds",
+        "nativeLoadMovie",
+        "_ZN8GSSplashC1Ev",
+        "_ZN12StateMachineC1Ev",
+        "_ZN12StateMachineD1Ev",
+        "_ZN12StateMachine12_switchStateEP9StateBase"
+    ]
 }

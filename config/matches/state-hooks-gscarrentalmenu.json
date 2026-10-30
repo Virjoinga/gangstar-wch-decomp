@@ -45,7 +45,18 @@
         "_ZN15GSCarRentalMenuD1Ev",
         "_ZN15GSCarRentalMenuD0Ev",
         "_ZN15GSCarRentalMenuD2Ev",
-        "_ZN15GSCarRentalMenu8isKindOfEi"
+        "_ZN15GSCarRentalMenu8isKindOfEi",
+        "_ZN15GSCarRentalMenu4ctorEPK12StateMachine",
+        "_ZN15GSCarRentalMenu4dtorEPK12StateMachine",
+        "_ZN11CHudManager4initEv",
+        "_ZN11CHudManager4lockEv",
+        "_ZN11CHudManager6unlockEv",
+        "_ZNK11CHudManager8isLockedEv",
+        "_ZN13ScriptManager6resumeEv",
+        "_ZN13ScriptManager20skipBlockingCommandsEv",
+        "_ZNK13ScriptManager10getMissionEv",
+        "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
+        "_ZNK13ScriptManager7getRaceEv"
     ],
     "sections": [
         ".hook_0",
@@ -72,7 +83,38 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".entry_0",
+        ".entry_text",
+        ".menu_exit",
+        ".hud_manager_helpers_0",
+        ".hud_manager_helpers_1",
+        ".hud_manager_helpers_2",
+        ".hud_manager_helpers_3",
+        ".script_manager_helpers_0",
+        ".script_manager_helpers_1",
+        ".script_manager_helpers_2",
+        ".script_manager_helpers_3",
+        ".script_manager_helpers_4"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN10PlayerTest9GetPlayerEv",
+        "_ZN11Application11GetInstanceEv",
+        "_ZN15TouchScreenBase5clearEv",
+        "_ZN13ScriptManager11getInstanceEv",
+        "_ZN13ScriptManager5pauseEv",
+        "_ZN11CHudManager4hideEv",
+        "_ZN11MenuManager11getInstanceEv",
+        "_ZN11MenuManager9hideTextsEv",
+        "_ZN11MenuManager4pushEPKcb",
+        "_ZN13CameraManager11getInstanceEv",
+        "_ZN13CameraManager20setTouchScreenInputsEb",
+        "_ZN11MenuManager9showTextsEv",
+        "_ZN11CHudManager4showEv"
+    ],
+    "dependencies": [
+        "hud-manager-helpers",
+        "script-manager-helpers"
+    ]
 }

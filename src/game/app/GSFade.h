@@ -3,6 +3,8 @@
 
 #include "../core/StateBase.h"
 
+class Vehicle;
+
 // Observed allocation extent, StateBase interface and constructor stores.
 // Remaining callback bodies and field meanings are provisional.
 class GSFade : public StateBase {
@@ -19,10 +21,10 @@ public:
         return StateBase::isKindOf(kind);
     }
 private:
-    unsigned char unknown4[4];
+    unsigned int unknown4;
     unsigned int unknown8;
     unsigned int unknown12;
-    unsigned char unknown16[4];
+    Vehicle* unknown16;
 };
 
 #endif

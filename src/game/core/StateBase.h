@@ -4,6 +4,7 @@
 class StateMachine;
 class StateBase {
 public:
+    static bool s_musicPlaying;
     virtual ~StateBase() {}
     virtual void ctor(const StateMachine*) {}
     virtual void dtor(const StateMachine*) {}
