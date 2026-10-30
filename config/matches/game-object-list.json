@@ -109,7 +109,6 @@
         ".gol_20",
         ".gol_vtable__ZTV14GameObjectList",
         ".gol_vtable__ZTV22IterationConditionName",
-        ".gol_empty_text",
         ".level_load",
         ".level_name",
         ".level_metatype",
@@ -202,7 +201,8 @@
         ".level_hook_clean",
         ".level_get_speed",
         ".level_get_material_id",
-        ".level_get_triangle_id"
+        ".level_get_triangle_id",
+        ".shared_startup_empty_text"
     ],
     "external_thumb_functions": [
         "_ZN16SceneNodeManager11getInstanceEv",

@@ -33,8 +33,8 @@ SECTIONS {
     .manager_startup_record_7 0x004b9c88 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .manager_startup_record_8 0x004b9c90 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai5guardE) }
     .manager_startup_record_9 0x004b9c98 (NOLOAD) : { *weapon-manager.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
-    .startup_empty_text 0x0044d91c : { *weapon-manager.o(.rodata.str1.*) }
-    .manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }
+
+.manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }
     .manager_local_string 0x004b9c24 (NOLOAD) : { *weapon-manager.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .manager_retention_cost 0x00331a08 : { *weapon-manager.o(.text._ZN13WeaponManager28getKeepWeaponsWhenBustedCostEv) }
     .manager_add 0x003315c4 : { *weapon-manager.o(.text._ZN13WeaponManager9addWeaponEP6Weapon) }
@@ -70,4 +70,5 @@ SECTIONS {
     .manager_12 0x003318d4 : { *weapon-manager.o(.text._ZN13WeaponManager11setRHWeaponEP6Weapon) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }

@@ -24,8 +24,8 @@ SECTIONS
     .ammo_startup 0x003261b8 : { *ammo.o(.text._Z41__static_initialization_and_destruction_0ii) }
     .ammo_startup_wrapper 0x003262fc : { *ammo.o(.text._GLOBAL__I__ZN4AmmoC2EP7ASpritei) }
     .ammo_string_cleanup 0x00326310 : { *ammo.o(.text.__tcf_3) }
-    .ammo_empty_string 0x0044d91c : { *ammo.o(.rodata.str1.4) *hud-element.o(.rodata.str1.4) }
-    .ammo_storage_string 0x004b91dc (NOLOAD) : { *ammo.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+
+.ammo_storage_string 0x004b91dc (NOLOAD) : { *ammo.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .ammo_storage_half 0x004b91fc (NOLOAD) : { *ammo.o(.bss._ZN3irr2ps5vHalfE) }
     .ammo_storage_record_0 0x004b9208 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai11civ_passiveE) }
     .ammo_storage_record_1 0x004b9210 (NOLOAD) : { *ammo.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
@@ -49,6 +49,7 @@ SECTIONS
     .ammo_draw_thunk 0x00325f80 : { *ammo.o(.text._ZThn4_NK4Ammo6draw2dEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.ammo_storage_string) == 32, "Ammo string extent");
 ASSERT(SIZEOF(.ammo_storage_half) == 12, "Ammo half extent");

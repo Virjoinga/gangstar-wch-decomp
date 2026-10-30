@@ -30,7 +30,6 @@
         ".ammo_startup",
         ".ammo_startup_wrapper",
         ".ammo_string_cleanup",
-        ".ammo_empty_string",
         ".ammo_constructor",
         ".ammo_destructor",
         ".ammo_delete",
@@ -86,7 +85,7 @@
             "name": ".got",
             "offset": 864
         },
-        ".ammo_empty_string"
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN4Ammo9setWeaponEP6Weapon",

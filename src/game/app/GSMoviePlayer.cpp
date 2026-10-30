@@ -15,7 +15,7 @@
 
 #include "../core/LocalSdkStartupStorage.h"
 
-static const char localStartupEmptyText[] __attribute__((section(".rodata.local_startup_empty"))) = "";
+#include "../core/LocalStartupText.h"
 
 void operator delete(void*) throw();
 extern "C" {

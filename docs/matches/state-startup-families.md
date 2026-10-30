@@ -56,6 +56,11 @@ same source form. No branch hints, register pins, inline assembly or barriers
 are used. The complete functions, whole emitted sections/alignment, affected
 vtables and global GOT regions are compared.
 
+Subsequent module integration uses LocalStartupText.h and a shared link-once
+empty-text definition so multiple linked startup objects retain one address.
+The state function bytes are unchanged; see
+[shared-module-startup.md](shared-module-startup.md) for that regression.
+
 ## Regression and completeness
 
 `python tools/build.py --all` exits 0 with 3,641 successful comparisons across

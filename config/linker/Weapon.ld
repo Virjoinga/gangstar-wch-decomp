@@ -273,8 +273,8 @@ SECTIONS {
     .weapon_startup_record_7 0x004b9c0c (NOLOAD) : { *weapon.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
     .weapon_startup_record_8 0x004b9c14 (NOLOAD) : { *weapon.o(.bss._ZN8gameloft2ai5guardE) }
     .weapon_startup_record_9 0x004b9c1c (NOLOAD) : { *weapon.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
-    .startup_empty_text 0x0044d91c : { *weapon-manager.o(.rodata.str1.*) *weapon.o(.rodata.str1.*)  *level-object.o(.rodata.str1.*) }
-    .weapon_factory_cleanup 0x00330440 : { *weapon.o(.text.__tcf_0) }
+
+.weapon_factory_cleanup 0x00330440 : { *weapon.o(.text.__tcf_0) }
     .weapon_string_cleanup 0x003309d4 : { *weapon.o(.text.__tcf_3) }
     .weapon_local_string 0x004b9ba8 (NOLOAD) : { *weapon.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .weapon_manager_string_cleanup 0x0033116c : { *weapon-manager.o(.text.__tcf_3) }
@@ -343,4 +343,5 @@ SECTIONS {
     .unlock 0x00330834 : { *weapon.o(.text._ZN6Weapon6unlockEv) }
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }

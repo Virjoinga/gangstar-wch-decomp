@@ -68,6 +68,30 @@
         {
             "name": "__tcf_4",
             "address": "0x002e14dd"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x003236b9"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00323ed9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN11CHudManagerC2Ev",
+            "address": "0x0032401d"
+        },
+        {
+            "name": "__tcf_6",
+            "address": "0x0033d0c1"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x0033f9d9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN13ScriptManager12s_playerTestE",
+            "address": "0x0033fb1d"
         }
     ],
     "sections": [
@@ -111,7 +135,13 @@
         ".local_startup_function_0",
         ".local_startup_function_1",
         ".local_startup_function_2",
-        ".local_startup_text"
+        ".module_startup_hud_manager_helpers_function_0",
+        ".module_startup_hud_manager_helpers_function_1",
+        ".module_startup_hud_manager_helpers_function_2",
+        ".module_startup_script_manager_helpers_function_0",
+        ".module_startup_script_manager_helpers_function_1",
+        ".module_startup_script_manager_helpers_function_2",
+        ".shared_startup_empty_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [

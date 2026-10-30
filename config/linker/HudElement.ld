@@ -10,7 +10,8 @@ SECTIONS
 {
     .got 0x004b0048 : { *(.got.plt) . = 0x360; *(.got) }
     .verification 0x00600000 : { *retail-got.o(.text) }
-    .hud_rodata 0x0044d91c : { *hud-element.o(.rodata.str1.4) }
+
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
 ASSERT(SIZEOF(.hud_empty_string) == 32, "HudElement string storage extent");
 ASSERT(SIZEOF(.hud_half_vector) == 12, "HudElement half-vector storage extent");

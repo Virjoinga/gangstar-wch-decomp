@@ -125,7 +125,6 @@
         ".manager_startup_wrapper",
         ".weapon_startup_initialization",
         ".weapon_startup_wrapper",
-        ".startup_empty_text",
         ".save_startup_cleanup",
         ".save_startup_initialization",
         ".save_startup_wrapper",
@@ -235,7 +234,11 @@
         ".level_hook_clean",
         ".level_get_speed",
         ".level_get_material_id",
-        ".level_get_triangle_id"
+        ".level_get_triangle_id",
+        ".module_startup_path_name_function_0",
+        ".module_startup_path_name_function_1",
+        ".module_startup_path_name_function_2",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN8SaveGame12SampleObjectEP11LevelObject",
@@ -284,7 +287,19 @@
         "_ZN11LevelObject17isVisibleOnScreenEv",
         "_ZN11LevelObject13isWithinRangeEf",
         "_ZN11LevelObject17canSeeLevelObjectEPS_RN3irr4core8vector3dIfEE",
-        "_ZN11LevelObject12getSpawnTypeEv"
+        "_ZN11LevelObject12getSpawnTypeEv",
+        {
+            "name": "__tcf_4",
+            "address": "0x002d2625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d2841"
+        },
+        {
+            "name": "_GLOBAL__I_mouseLButtHeld",
+            "address": "0x002d2985"
+        }
     ],
     "dependencies": [
         "gs3d-stuff",

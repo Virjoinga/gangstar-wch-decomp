@@ -68,7 +68,7 @@
         ".manager_string_cleanup",
         ".manager_startup_initialization",
         ".manager_startup_wrapper",
-        ".startup_empty_text"
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN13WeaponManager13unlimitedAmmoEb",

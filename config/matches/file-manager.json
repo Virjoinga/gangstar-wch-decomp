@@ -48,7 +48,14 @@
         ".streamvtable",
         ".pathtext",
         ".debugtext",
-        ".debugrodata"
+        ".debugrodata",
+        ".module_startup_file_manager_function_0",
+        ".module_startup_file_manager_function_1",
+        ".module_startup_file_manager_function_2",
+        ".module_startup_path_name_function_0",
+        ".module_startup_path_name_function_1",
+        ".module_startup_path_name_function_2",
+        ".shared_startup_empty_text"
     ],
     "functions": [
         "_ZN11FileManager15_GetNumMappingsEv",
@@ -80,7 +87,31 @@
         "_ZN11FileManagerC2Eb",
         "_ZN11FileManager14InitArgMappingEv",
         "_ZN11FileManager4InitEv",
-        "_ZN11FileManager10GetDvdNameEPKc"
+        "_ZN11FileManager10GetDvdNameEPKc",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d3625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d3b61"
+        },
+        {
+            "name": "_GLOBAL__I__ZN11FileManager5s_mgrE",
+            "address": "0x002d3bcd"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002d2625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d2841"
+        },
+        {
+            "name": "_GLOBAL__I_mouseLButtHeld",
+            "address": "0x002d2985"
+        }
     ],
     "dependencies": [
         "stream",

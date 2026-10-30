@@ -8,6 +8,7 @@
  * functions of Ammo.cpp here, in the order they appear in the library.
  */
 
+#include "../core/LocalStartupText.h"
 #include "Ammo.h"
 #include "../core/ASprite.h"
 #include "../core/VideoDriver.h"
@@ -124,7 +125,7 @@ static void __static_initialization_and_destruction_0(int initialize, int priori
         value.allocated = 0;
         value.used = 0;
         value.reference = false;
-        _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(&value, "");
+        _ZN3irr4core6stringIcNS0_12irrAllocatorIcEEEaSIcEERS4_PKT_(&value, localStartupEmptyText);
         __aeabi_atexit(0, __tcf_3, &__dso_handle);
         new (irr::ps::vHalf) irr::ps::LocalVector3(0.5f, 0.5f, 0.5f);
         new (gameloft::ai::civ_passive) gameloft::ai::LocalTransitionList(retail_ammo_transitions::civPassive_trans, 75);

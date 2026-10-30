@@ -131,7 +131,7 @@
         ".local_startup_function_0",
         ".local_startup_function_1",
         ".local_startup_function_2",
-        ".local_startup_text"
+        ".shared_startup_empty_text"
     ],
     "retail_got": true,
     "dependencies": [

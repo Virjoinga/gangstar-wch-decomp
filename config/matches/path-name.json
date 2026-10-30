@@ -14,7 +14,8 @@
         "-mthumb-interwork",
         "-march=armv5te",
         "-mtune=xscale",
-        "-mfloat-abi=softfp"
+        "-mfloat-abi=softfp",
+        "-fdata-sections"
     ],
     "assembler_flags": [
         "-march=armv5te",
@@ -22,12 +23,32 @@
         "-mfpu=vfp",
         "-meabi=4"
     ],
-    "retail_got": false,
+    "retail_got": true,
     "linker_script": "config/linker/PathName.ld",
     "sections": [
-        ".text"
+        ".text",
+        ".module_startup_path_name_function_0",
+        ".module_startup_path_name_function_1",
+        ".module_startup_path_name_function_2",
+        {
+            "name": ".got",
+            "offset": 864
+        },
+        ".shared_startup_empty_text"
     ],
     "functions": [
-        "_Z21ekd_makestringfile255PKcPc"
+        "_Z21ekd_makestringfile255PKcPc",
+        {
+            "name": "__tcf_4",
+            "address": "0x002d2625"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002d2841"
+        },
+        {
+            "name": "_GLOBAL__I_mouseLButtHeld",
+            "address": "0x002d2985"
+        }
     ]
 }

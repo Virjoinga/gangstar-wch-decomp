@@ -84,8 +84,8 @@ SECTIONS {
     .level_startup_wrapper 0x003179c0 : { *level-object.o(.text._GLOBAL__I__ZN11LevelObject12s_highlightsE) }
     .level_startup_string 0x004b8a38 (NOLOAD) : { *level-object.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
     .level_startup_half 0x004b8a58 (NOLOAD) : { *level-object.o(.bss._ZN3irr2ps5vHalfE) }
-    .level_empty_text 0x0044d91c : { *level-object.o(.rodata.str1.*) *item.o(.rodata.str1.*) }
-    .level_startup_record_0 0x004b8a64 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+
+.level_startup_record_0 0x004b8a64 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11civ_passiveE) }
     .level_startup_record_1 0x004b8a6c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
     .level_startup_record_2 0x004b8a74 (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
     .level_startup_record_3 0x004b8a7c (NOLOAD) : { *level-object.o(.bss._ZN8gameloft2ai11gang_memberE) }
@@ -298,4 +298,5 @@ SECTIONS {
     /* Local callback numbering differs in this partial translation unit. */
     .item_factory_singleton_cleanup 0x002fce8c : { *item.o(.text.__tcf_0) }
     .item_wanted_singleton_cleanup 0x002fc27c : { *item.o(.text.__tcf_2) }
+    .shared_startup_empty_text 0x0044d91c : { *(.gnu.linkonce.r.localStartupEmptyText) }
 }
