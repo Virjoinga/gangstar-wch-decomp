@@ -8824,7 +8824,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d4045	0x30	Application.cpp	game	app	pending	__tcf_5	__tcf_5
 0x002d4075	0x20	Application.cpp	game	app	pending	_ZN6IEventD0Ev	IEvent::~IEvent()
 0x002d4095	0x18	Application.cpp	game	app	pending	_ZN6IEventD1Ev	IEvent::~IEvent()
-0x002d40ad	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v	GSInGameMenu* StateMachine::pushState<GSInGameMenu>()
+0x002d40ad	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI12GSInGameMenuEEPT_v	GSInGameMenu* StateMachine::pushState<GSInGameMenu>()
 0x002d40cd	0x30	SoundManager.cpp	game	audio	pending	_ZN12SoundManager11getInstanceEv	SoundManager::getInstance()
 0x002d40fd	0x10c	Application.cpp	game	app	pending	_ZN11Application15ProcessKeyEventEbi	Application::ProcessKeyEvent(bool, int)
 0x002d4209	0x60	Application.cpp	game	app	pending	_ZN11Application19StartGlobalResumingEv	Application::StartGlobalResuming()
@@ -8842,7 +8842,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d4519	0x1c	Application.cpp	game	app	pending	__tcf_2	__tcf_2
 0x002d4535	0x1c	ASprite.cpp	game	rendering	pending	_ZN7ASprite14GetFrameHeightEi	ASprite::GetFrameHeight(int)
 0x002d4551	0x1c	ASprite.cpp	game	rendering	pending	_ZN7ASprite13GetFrameWidthEi	ASprite::GetFrameWidth(int)
-0x002d456d	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v	GSMoviePlayer* StateMachine::switchState<GSMoviePlayer>()
+0x002d456d	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI13GSMoviePlayerEEPT_v	GSMoviePlayer* StateMachine::switchState<GSMoviePlayer>()
 0x002d458d	0x20	Application.cpp	game	app	pending	_Z10SafeDeleteI15CControlManagerEvRPT_	void SafeDelete<CControlManager>(CControlManager*&)
 0x002d45ad	0x15c	Application.cpp	game	app	pending	_ZN11Application14appKeyReleasedEi	Application::appKeyReleased(int)
 0x002d4709	0x134	Application.cpp	game	app	pending	_ZN11Application13appKeyPressedEi	Application::appKeyPressed(int)
@@ -8924,7 +8924,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002d64cd	0x2c	StateMachine.cpp	game	ai	matched	_ZNK12StateMachine6draw2dEv	StateMachine::draw2d() const
 0x002d64f9	0x12	StateMachine.cpp	stlport	-	matched	_ZN9stlp_priv12_Vector_baseIP9StateBaseSaIS2_EED1Ev	stlp_priv::_Vector_base<StateBase*, std::allocator<StateBase*> >::~_Vector_base()
 0x002d650d	0xd0	StateMachine.cpp	stlport	-	matched	_ZNSt6vectorIP9StateBaseSaIS1_EE18_M_insert_overflowEPS1_RKS1_RKSt11__true_typejb	std::vector<StateBase*, std::allocator<StateBase*> >::_M_insert_overflow(StateBase**, StateBase* const&, std::__true_type const&, unsigned int, bool)
-0x002d65dd	0x6c	StateMachine.cpp	game	ai	pending	_ZN12StateMachine10_pushStateEP9StateBase	StateMachine::_pushState(StateBase*)
+0x002d65dd	0x6c	StateMachine.cpp	game	ai	matched	_ZN12StateMachine10_pushStateEP9StateBase	StateMachine::_pushState(StateBase*)
 0x002d6649	0x4c	StateMachine.cpp	game	ai	matched	_ZN12StateMachine12_switchStateEP9StateBase	StateMachine::_switchState(StateBase*)
 0x002d6694	0x14	StateMachine.cpp	game	ai	matched	_ZThn8_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
 0x002d66a8	0x14	StateMachine.cpp	game	ai	matched	_ZThn4_N12StateMachineD0Ev	non-virtual thunk to StateMachine::~StateMachine()
@@ -9351,7 +9351,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e2b41	0x30	GSLoading.cpp	game	app	pending	__tcf_4	__tcf_4
 0x002e2b71	0x44	GSLoading.cpp	game	app	pending	_ZN9GSLoading14LoadingResumedEv	GSLoading::LoadingResumed()
 0x002e2bb5	0x34	GSLoading.cpp	game	app	pending	_ZN9GSLoading13LoadingPausedEv	GSLoading::LoadingPaused()
-0x002e2be9	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11switchStateI9GS3DStuffEEPT_v	GS3DStuff* StateMachine::switchState<GS3DStuff>()
+0x002e2be9	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI9GS3DStuffEEPT_v	GS3DStuff* StateMachine::switchState<GS3DStuff>()
 0x002e2c09	0x90	GSLoading.cpp	game	app	pending	_ZN9GSLoading6updateEP12StateMachine	GSLoading::update(StateMachine*)
 0x002e2c99	0x4c	GSLoading.cpp	game	app	pending	_ZN9GSLoading4dtorEPK12StateMachine	GSLoading::dtor(StateMachine const*)
 0x002e2ce5	0x60	GSLoading.cpp	game	app	pending	_ZN9GSLoading4ctorEPK12StateMachine	GSLoading::ctor(StateMachine const*)
@@ -9382,7 +9382,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e324d	0x18	GSMoviePlayer.cpp	game	app	pending	_ZN13GSMoviePlayerC2Ev	GSMoviePlayer::GSMoviePlayer()
 0x002e3265	0x2	GSMoviePlayer.cpp	game	app	pending	_ZN13GSMoviePlayer4ctorEPK12StateMachine	GSMoviePlayer::ctor(StateMachine const*)
 0x002e3269	0x2	GSMoviePlayer.cpp	game	app	pending	_ZN13GSMoviePlayer4dtorEPK12StateMachine	GSMoviePlayer::dtor(StateMachine const*)
-0x002e326d	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11switchStateI8GSSplashEEPT_v	GSSplash* StateMachine::switchState<GSSplash>()
+0x002e326d	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI8GSSplashEEPT_v	GSSplash* StateMachine::switchState<GSSplash>()
 0x002e328d	0x30	GSMoviePlayer.cpp	game	app	pending	_ZN13GSMoviePlayer6updateEP12StateMachine	GSMoviePlayer::update(StateMachine*)
 0x002e32bd	0x6c	GSMoviePlayer.cpp	game	app	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
 0x002e3329	0x14	GSMoviePlayer.cpp	game	app	pending	_GLOBAL__I__ZN13GSMoviePlayerC2Ev	_GLOBAL__I__ZN13GSMoviePlayerC2Ev
@@ -9406,7 +9406,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e373d	0x24	GSSideMissionMenu.cpp	game	ui	pending	_ZN17GSSideMissionMenuD1Ev	GSSideMissionMenu::~GSSideMissionMenu()
 0x002e373d	0x24	GSSideMissionMenu.cpp	game	ui	pending	_ZN17GSSideMissionMenuD2Ev	GSSideMissionMenu::~GSSideMissionMenu()
 0x002e3761	0xe	GSSplash.cpp	game	app	pending	_ZN8GSSplash8isKindOfEi	GSSplash::isKindOf(int)
-0x002e3771	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11switchStateI10GSMainMenuEEPT_v	GSMainMenu* StateMachine::switchState<GSMainMenu>()
+0x002e3771	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI10GSMainMenuEEPT_v	GSMainMenu* StateMachine::switchState<GSMainMenu>()
 0x002e3791	0x46	GSSplash.cpp	game	app	pending	_ZN8GSSplash4dtorEPK12StateMachine	GSSplash::dtor(StateMachine const*)
 0x002e37d9	0x58	GSSplash.cpp	game	app	pending	_ZN8GSSplash4ctorEPK12StateMachine	GSSplash::ctor(StateMachine const*)
 0x002e3831	0xd4	GSSplash.cpp	game	app	pending	_ZN8GSSplash6updateEP12StateMachine	GSSplash::update(StateMachine*)
@@ -9584,7 +9584,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x002e7415	0x22	MenuState.cpp	game	ui	pending	_ZN5Menus14ConfirmPayment9GetWidgetEv	Menus::ConfirmPayment::GetWidget()
 0x002e7439	0x22	MenuState.cpp	game	ui	pending	_ZN5Menus7Confirm9GetWidgetEv	Menus::Confirm::GetWidget()
 0x002e745d	0x1c	MenuState.cpp	game	ui	pending	__tcf_5	__tcf_5
-0x002e7479	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine11switchStateI9GSLoadingEEPT_v	GSLoading* StateMachine::switchState<GSLoading>()
+0x002e7479	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine11switchStateI9GSLoadingEEPT_v	GSLoading* StateMachine::switchState<GSLoading>()
 0x002e7499	0x46	MenuState.cpp	gameswf	-	matched	_ZN7gameswf5arrayIiE7reserveEi	gameswf::array<int>::reserve(int)
 0x002e74e1	0x44	MenuState.cpp	gameswf	-	matched	_ZN7gameswf5arrayIiE6resizeEi	gameswf::array<int>::resize(int)
 0x002e7525	0x40	MenuState.cpp	gameswf	-	matched	_ZN7gameswf5arrayIiE6appendEPKii	gameswf::array<int>::append(int const*, int)
@@ -10475,10 +10475,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00305cc5	0x8	Shop.cpp	game	ui	pending	_ZNK4Shop8unlockedEv	Shop::unlocked() const
 0x00305ccd	0x6	Shop.cpp	game	ui	pending	_ZNK4Shop9triggeredEv	Shop::triggered() const
 0x00305cd5	0x4	Shop.cpp	game	ui	pending	_ZN4Shop5getIdEv	Shop::getId()
-0x00305cd9	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v	GSWeaponShopMenu* StateMachine::pushState<GSWeaponShopMenu>()
-0x00305cf9	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v	GSCarRepairMenu* StateMachine::pushState<GSCarRepairMenu>()
+0x00305cd9	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI16GSWeaponShopMenuEEPT_v	GSWeaponShopMenu* StateMachine::pushState<GSWeaponShopMenu>()
+0x00305cf9	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI15GSCarRepairMenuEEPT_v	GSCarRepairMenu* StateMachine::pushState<GSCarRepairMenu>()
 0x00305d19	0x1c	Shop.cpp	game	ui	pending	__tcf_3	__tcf_3
-0x00305d35	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v	GSCarRentalMenu* StateMachine::pushState<GSCarRentalMenu>()
+0x00305d35	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI15GSCarRentalMenuEEPT_v	GSCarRentalMenu* StateMachine::pushState<GSCarRentalMenu>()
 0x00305d55	0x2c	Shop.cpp	game	ui	pending	_ZN4ShopC2Ei	Shop::Shop(int)
 0x00305d55	0x2c	Shop.cpp	game	ui	pending	_ZN4ShopC1Ei	Shop::Shop(int)
 0x00305d81	0x70	Shop.cpp	game	ui	pending	_ZN4Shop4LoadERKN7Structs14CheckpointShopE	Shop::Load(Structs::CheckpointShop const&)
@@ -11960,7 +11960,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00338b5d	0x30	Revive.cpp	game	core	pending	__tcf_5	__tcf_5
 0x00338b8d	0x20	Revive.cpp	game	missions	pending	_ZN6Revive6draw2dEv	Revive::draw2d()
 0x00338bad	0x1c	Revive.cpp	game	core	pending	__tcf_4	__tcf_4
-0x00338bc9	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v	GSBustedMenu* StateMachine::pushState<GSBustedMenu>()
+0x00338bc9	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI12GSBustedMenuEEPT_v	GSBustedMenu* StateMachine::pushState<GSBustedMenu>()
 0x00338be9	0x3c	Revive.cpp	game	missions	pending	_ZN6ReviveD2Ev	Revive::~Revive()
 0x00338be9	0x3c	Revive.cpp	game	missions	pending	_ZN6ReviveD1Ev	Revive::~Revive()
 0x00338c25	0x1c	Revive.cpp	game	core	pending	__tcf_3	__tcf_3
@@ -11982,7 +11982,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00339179	0x40	Script.cpp	stlport	-	matched	_ZNSaIN9stlp_priv13_Rb_tree_nodeISt4pairIKP11LevelObjectiEEEE8allocateEjPKv	std::allocator<stlp_priv::_Rb_tree_node<std::pair<LevelObject* const, int> > >::allocate(unsigned int, void const*)
 0x003391b9	0x1c	Script.cpp	game	scripting	pending	__tcf_3	__tcf_3
 0x003391d5	0x1c	Script.cpp	game	scripting	pending	__tcf_5	__tcf_5
-0x003391f1	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v	GSBlockingTutorial* StateMachine::pushState<GSBlockingTutorial>()
+0x003391f1	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI18GSBlockingTutorialEEPT_v	GSBlockingTutorial* StateMachine::pushState<GSBlockingTutorial>()
 0x00339211	0x1c	Script.cpp	game	scripting	pending	__tcf_4	__tcf_4
 0x0033922d	0x3a	Script.cpp	game	scripting	pending	_ZN6Script8setStateENS_5StateEN10PlayerTest8eContextE	Script::setState(Script::State, PlayerTest::eContext)
 0x00339269	0x1a	Script.cpp	game	scripting	pending	_ZN6Script12unlockScriptEi	Script::unlockScript(int)
@@ -12121,7 +12121,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0033ddb1	0x24	ScriptManager.cpp	game	scripting	pending	_ZN7Structs11ActorAttack4ReadER10DataStream	Structs::ActorAttack::Read(DataStream&)
 0x0033ddd5	0x984	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManager11loadCommandER10DataStream	ScriptManager::loadCommand(DataStream&)
 0x0033e759	0x1c	ScriptManager.cpp	game	scripting	pending	__tcf_4	__tcf_4
-0x0033e775	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI9GSFailureEEPT_v	GSFailure* StateMachine::pushState<GSFailure>()
+0x0033e775	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI9GSFailureEEPT_v	GSFailure* StateMachine::pushState<GSFailure>()
 0x0033e795	0x20	ScriptManager.cpp	game	scripting	pending	_Z10SafeDeleteI6ReviveEvRPT_	void SafeDelete<Revive>(Revive*&)
 0x0033e7b5	0x1c	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManagerD2Ev	ScriptManager::~ScriptManager()
 0x0033e7b5	0x1c	ScriptManager.cpp	game	scripting	pending	_ZN13ScriptManagerD1Ev	ScriptManager::~ScriptManager()
@@ -12462,7 +12462,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00346c29	0x4c	SideMission.cpp	irrlicht	-	matched	_ZN3irr4core5arrayIP10CheckpointNS0_12irrAllocatorIS3_EEE9push_backERKS3_	irr::core::array<Checkpoint*, irr::core::irrAllocator<Checkpoint*> >::push_back(Checkpoint* const&)
 0x00346c75	0x30	SideMission.cpp	game	missions	pending	__tcf_5	__tcf_5
 0x00346ca5	0x1c	SideMission.cpp	game	missions	pending	__tcf_4	__tcf_4
-0x00346cc1	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI6GSFadeEEPT_v	GSFade* StateMachine::pushState<GSFade>()
+0x00346cc1	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI6GSFadeEEPT_v	GSFade* StateMachine::pushState<GSFade>()
 0x00346ce1	0x20	SideMission.cpp	game	missions	pending	_ZN11SideMission13fadeInFadeOutEv	SideMission::fadeInFadeOut()
 0x00346d01	0x1c	SideMission.cpp	game	missions	pending	__tcf_3	__tcf_3
 0x00346d1d	0x1e	SideMission.cpp	game	missions	pending	_ZN11SideMission5startEv	SideMission::start()
@@ -12492,7 +12492,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00347961	0x64	SideMissionManager.cpp	game	missions	pending	_ZN18SideMissionManager11initMissionEv	SideMissionManager::initMission()
 0x003479c5	0x50	SideMissionManager.cpp	game	missions	pending	_ZN18SideMissionManager4stopEb	SideMissionManager::stop(bool)
 0x00347a15	0x1c	SideMissionManager.cpp	game	missions	pending	__tcf_3	__tcf_3
-0x00347a31	0x20	StateMachine.cpp	game	ai	pending	_ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v	GSSideMissionMenu* StateMachine::pushState<GSSideMissionMenu>()
+0x00347a31	0x20	StateMachine.cpp	game	ai	matched	_ZN12StateMachine9pushStateI17GSSideMissionMenuEEPT_v	GSSideMissionMenu* StateMachine::pushState<GSSideMissionMenu>()
 0x00347a51	0x20	SideMissionManager.cpp	game	missions	pending	_Z10SafeDeleteI20AmbulanceSideMissionEvRPT_	void SafeDelete<AmbulanceSideMission>(AmbulanceSideMission*&)
 0x00347a71	0x20	SideMissionManager.cpp	game	missions	pending	_Z10SafeDeleteI19DeliverySideMissionEvRPT_	void SafeDelete<DeliverySideMission>(DeliverySideMission*&)
 0x00347a91	0x20	SideMissionManager.cpp	game	missions	pending	_Z10SafeDeleteI15TaxiSideMissionEvRPT_	void SafeDelete<TaxiSideMission>(TaxiSideMission*&)
