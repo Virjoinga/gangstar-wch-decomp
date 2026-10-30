@@ -3,14 +3,20 @@
 
 #include "../core/StateBase.h"
 
-// Observed allocation extent and primary StateBase conversion only.
-// Native constructor/destructor and other fields remain unrecovered.
+// Observed allocation extent, StateBase interface and constructor stores.
+// Remaining callback bodies and field meanings are provisional.
 class GSFailure : public StateBase {
 public:
     GSFailure();
     virtual ~GSFailure();
+    virtual void ctor(const StateMachine*);
+    virtual void dtor(const StateMachine*);
+    virtual void update(StateMachine*);
+    virtual void draw2d(const StateMachine*);
+    virtual bool isKindOf(int);
 private:
-    unsigned char unknown4[8];
+    unsigned int unknown4;
+    unsigned int unknown8;
 };
 
 #endif
