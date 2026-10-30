@@ -1995,10 +1995,10 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x00208bb5	0xdc	pngwutil.c	libpng	-	matched	png_write_filtered_row	png_write_filtered_row
 0x00208c91	0xaac	pngwutil.c	libpng	-	matched	png_write_find_filter	png_write_find_filter
 0x0020973d	0x3e8	pngwutil.c	libpng	-	matched	png_write_IHDR	png_write_IHDR
-0x00209b25	0x30	ParticleSystem.cpp	game	rendering	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00209b55	0x14	ParticleSystem.cpp	game	rendering	pending	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_ParticleSystem.cpp_8D2A3925_8D00650B	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_ParticleSystem.cpp_8D2A3925_8D00650B
-0x00209b69	0x30	PBehaviorModel.cpp	game	ai	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x00209b99	0x14	PBehaviorModel.cpp	game	ai	pending	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PBehaviorModel.cpp_8D2A3925_5F21CBFB	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PBehaviorModel.cpp_8D2A3925_5F21CBFB
+0x00209b25	0x30	ParticleSystem.cpp	game	rendering	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00209b55	0x14	ParticleSystem.cpp	game	rendering	matched	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_ParticleSystem.cpp_8D2A3925_8D00650B	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_ParticleSystem.cpp_8D2A3925_8D00650B
+0x00209b69	0x30	PBehaviorModel.cpp	game	ai	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x00209b99	0x14	PBehaviorModel.cpp	game	ai	matched	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PBehaviorModel.cpp_8D2A3925_5F21CBFB	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PBehaviorModel.cpp_8D2A3925_5F21CBFB
 0x00209bad	0x4	PDomain.cpp	irrlicht	-	matched	_ZNK3irr2ps7PDPoint7getTypeEv	irr::ps::PDPoint::getType() const
 0x00209bb1	0x4	PDomain.cpp	irrlicht	-	matched	_ZNK3irr2ps6PDLine7getTypeEv	irr::ps::PDLine::getType() const
 0x00209bb5	0x4	PDomain.cpp	irrlicht	-	matched	_ZNK3irr2ps5PDBox7getTypeEv	irr::ps::PDBox::getType() const
@@ -2083,8 +2083,8 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0020bba5	0x22a	PDomain.cpp	irrlicht	-	matched	_ZN3irr2ps6PDLine9transformERKNS_4core8CMatrix4IfEE	irr::ps::PDLine::transform(irr::core::CMatrix4<float> const&)
 0x0020bdd1	0x470	PDomain.cpp	irrlicht	-	matched	_ZN3irr2ps10PDCylinder9transformERKNS_4core8CMatrix4IfEE	irr::ps::PDCylinder::transform(irr::core::CMatrix4<float> const&)
 0x0020c241	0x1e4	PDomain.cpp	irrlicht	-	matched	_ZN3irr2ps5PDBox9transformERKNS_4core8CMatrix4IfEE	irr::ps::PDBox::transform(irr::core::CMatrix4<float> const&)
-0x0020c425	0x30	PSManager.cpp	game	ai	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0020c455	0x14	PSManager.cpp	game	ai	pending	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PSManager.cpp_33AAFEDA_05D2067C	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PSManager.cpp_33AAFEDA_05D2067C
+0x0020c425	0x30	PSManager.cpp	game	ai	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0020c455	0x14	PSManager.cpp	game	ai	matched	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PSManager.cpp_33AAFEDA_05D2067C	_GLOBAL__I_.._GangstarAndroid_.._lib_Irrlicht_source_Irrlicht_particlesystem_scr_PSManager.cpp_33AAFEDA_05D2067C
 0x0020c469	0x1c	PVRTDecompress.cpp	game	rendering	pending	_Z22util_number_is_power_2j	util_number_is_power_2(unsigned int)
 0x0020c485	0x136	PVRTDecompress.cpp	game	rendering	pending	_Z18InterpolateColoursPKiS0_S0_S0_iiiPi	InterpolateColours(int const*, int const*, int const*, int const*, int, int, int, int*)
 0x0020c5bd	0x130	PVRTDecompress.cpp	game	rendering	pending	_Z18GetModulationValueiiiPA16_KiS1_PiS2_	GetModulationValue(int, int, int, int const (*) [16], int const (*) [16], int*, int*)
@@ -12953,16 +12953,16 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034f159	0x1c	CarSounds.cpp	game	vehicles	pending	_ZN16CarSoundSettingsC1Ev	CarSoundSettings::CarSoundSettings()
 0x0034f175	0x8	CarSounds.cpp	game	vehicles	pending	_ZN18TurboSoundSettingsC1Ev	TurboSoundSettings::TurboSoundSettings()
 0x0034f175	0x8	CarSounds.cpp	game	vehicles	pending	_ZN18TurboSoundSettingsC2Ev	TurboSoundSettings::TurboSoundSettings()
-0x0034f17d	0x4	CarSounds.cpp	game	vehicles	pending	_Z18IsSoundPlayingStubii	IsSoundPlayingStub(int, int)
-0x0034f181	0x6	CarSounds.cpp	game	vehicles	pending	_Z8PlayStubibff	PlayStub(int, bool, float, float)
-0x0034f189	0x2	CarSounds.cpp	game	vehicles	pending	_Z8StopStubii	StopStub(int, int)
-0x0034f18d	0x2	CarSounds.cpp	game	vehicles	pending	_Z12SetPitchStubiif	SetPitchStub(int, int, float)
-0x0034f191	0x2	CarSounds.cpp	game	vehicles	pending	_Z13SetVolumeStubiif	SetVolumeStub(int, int, float)
-0x0034f195	0x3c	CarSounds.cpp	game	vehicles	pending	_ZN17CarSoundCallbacksC2Ev	CarSoundCallbacks::CarSoundCallbacks()
-0x0034f195	0x3c	CarSounds.cpp	game	vehicles	pending	_ZN17CarSoundCallbacksC1Ev	CarSoundCallbacks::CarSoundCallbacks()
-0x0034f1d1	0x2	CarSounds.cpp	game	vehicles	pending	_ZN17CarSoundCallbacksD1Ev	CarSoundCallbacks::~CarSoundCallbacks()
-0x0034f1d1	0x2	CarSounds.cpp	game	vehicles	pending	_ZN17CarSoundCallbacksD2Ev	CarSoundCallbacks::~CarSoundCallbacks()
-0x0034f1d5	0x16	CarSounds.cpp	game	vehicles	pending	_ZN17CarSoundCallbacksaSERKS_	CarSoundCallbacks::operator=(CarSoundCallbacks const&)
+0x0034f17d	0x4	CarSounds.cpp	game	vehicles	matched	_Z18IsSoundPlayingStubii	IsSoundPlayingStub(int, int)
+0x0034f181	0x6	CarSounds.cpp	game	vehicles	matched	_Z8PlayStubibff	PlayStub(int, bool, float, float)
+0x0034f189	0x2	CarSounds.cpp	game	vehicles	matched	_Z8StopStubii	StopStub(int, int)
+0x0034f18d	0x2	CarSounds.cpp	game	vehicles	matched	_Z12SetPitchStubiif	SetPitchStub(int, int, float)
+0x0034f191	0x2	CarSounds.cpp	game	vehicles	matched	_Z13SetVolumeStubiif	SetVolumeStub(int, int, float)
+0x0034f195	0x3c	CarSounds.cpp	game	vehicles	matched	_ZN17CarSoundCallbacksC2Ev	CarSoundCallbacks::CarSoundCallbacks()
+0x0034f195	0x3c	CarSounds.cpp	game	vehicles	matched	_ZN17CarSoundCallbacksC1Ev	CarSoundCallbacks::CarSoundCallbacks()
+0x0034f1d1	0x2	CarSounds.cpp	game	vehicles	matched	_ZN17CarSoundCallbacksD1Ev	CarSoundCallbacks::~CarSoundCallbacks()
+0x0034f1d1	0x2	CarSounds.cpp	game	vehicles	matched	_ZN17CarSoundCallbacksD2Ev	CarSoundCallbacks::~CarSoundCallbacks()
+0x0034f1d5	0x16	CarSounds.cpp	game	vehicles	matched	_ZN17CarSoundCallbacksaSERKS_	CarSoundCallbacks::operator=(CarSoundCallbacks const&)
 0x0034f1ed	0x8	CarSounds.cpp	game	vehicles	pending	_ZN9SoundFadeC2Ev	SoundFade::SoundFade()
 0x0034f1ed	0x8	CarSounds.cpp	game	vehicles	pending	_ZN9SoundFadeC1Ev	SoundFade::SoundFade()
 0x0034f1f5	0x2	CarSounds.cpp	game	vehicles	pending	_ZN9SoundFadeD2Ev	SoundFade::~SoundFade()
@@ -12975,7 +12975,7 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034f2a9	0x32	CarSounds.cpp	game	vehicles	pending	_ZN9CarSoundsC2Ev	CarSounds::CarSounds()
 0x0034f2a9	0x32	CarSounds.cpp	game	vehicles	pending	_ZN9CarSoundsC1Ev	CarSounds::CarSounds()
 0x0034f2dd	0x2e	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds15FilterRPMValuesEi	CarSounds::FilterRPMValues(int)
-0x0034f30d	0x20	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds17RegisterCallbacksERK17CarSoundCallbacks	CarSounds::RegisterCallbacks(CarSoundCallbacks const&)
+0x0034f30d	0x20	CarSounds.cpp	game	vehicles	matched	_ZN9CarSounds17RegisterCallbacksERK17CarSoundCallbacks	CarSounds::RegisterCallbacks(CarSoundCallbacks const&)
 0x0034f32d	0x2c	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds19UnregisterCallbacksEv	CarSounds::UnregisterCallbacks()
 0x0034f359	0x8	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds17RemoveTurboSoundsEP18TurboSoundSettings	CarSounds::RemoveTurboSounds(TurboSoundSettings*)
 0x0034f361	0x44	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds17InterpolateLinearEiiiff	CarSounds::InterpolateLinear(int, int, int, float, float)
@@ -12985,9 +12985,9 @@ address	size	source_file	origin	area	status	symbol	demangled
 0x0034f785	0x220	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds20UpdateOnEngineSoundsEv	CarSounds::UpdateOnEngineSounds()
 0x0034f9a5	0xe8	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds17UpdateRumbleSoundEv	CarSounds::UpdateRumbleSound()
 0x0034fa8d	0x60	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds18UpdateStartupSoundEv	CarSounds::UpdateStartupSound()
-0x0034faed	0x1c	CarSounds.cpp	game	vehicles	pending	__tcf_0	__tcf_0
-0x0034fb09	0x40	CarSounds.cpp	game	vehicles	pending	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
-0x0034fb49	0x14	CarSounds.cpp	game	vehicles	pending	_GLOBAL__I__ZN18CarSoundParametersC2Ev	_GLOBAL__I__ZN18CarSoundParametersC2Ev
+0x0034faed	0x1c	CarSounds.cpp	game	vehicles	matched	__tcf_0	__tcf_0
+0x0034fb09	0x40	CarSounds.cpp	game	vehicles	matched	_Z41__static_initialization_and_destruction_0ii	__static_initialization_and_destruction_0(int, int)
+0x0034fb49	0x14	CarSounds.cpp	game	vehicles	matched	_GLOBAL__I__ZN18CarSoundParametersC2Ev	_GLOBAL__I__ZN18CarSoundParametersC2Ev
 0x0034fb61	0x94	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds20InterpolateFlatEndedEiiiff	CarSounds::InterpolateFlatEnded(int, int, int, float, float)
 0x0034fbf9	0x1fc	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds17UpdateTurboSoundsEv	CarSounds::UpdateTurboSounds()
 0x0034fdf5	0x190	CarSounds.cpp	game	vehicles	pending	_ZN9CarSounds6UpdateEP18CarSoundParameters	CarSounds::Update(CarSoundParameters*)
