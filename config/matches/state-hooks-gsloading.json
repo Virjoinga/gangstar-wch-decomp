@@ -43,7 +43,19 @@
         "_ZN9GSLoadingD1Ev",
         "_ZN9GSLoadingD0Ev",
         "_ZN9GSLoadingD2Ev",
-        "_ZN9GSLoading8isKindOfEi"
+        "_ZN9GSLoading8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e2de9"
+        },
+        {
+            "name": "_GLOBAL__I_m_background",
+            "address": "0x002e2f2d"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e2b41"
+        }
     ],
     "sections": [
         ".state_ctor",
@@ -68,7 +80,11 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true
 }

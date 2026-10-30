@@ -45,7 +45,19 @@
         "_ZN16GSWeaponShopMenuD1Ev",
         "_ZN16GSWeaponShopMenuD0Ev",
         "_ZN16GSWeaponShopMenuD2Ev",
-        "_ZN16GSWeaponShopMenu8isKindOfEi"
+        "_ZN16GSWeaponShopMenu8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e3ca5"
+        },
+        {
+            "name": "_GLOBAL__I__ZN16GSWeaponShopMenuC2Ev",
+            "address": "0x002e3de9"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e3dfd"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -72,7 +84,11 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true
 }

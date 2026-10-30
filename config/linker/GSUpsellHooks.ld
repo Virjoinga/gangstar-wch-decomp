@@ -6,6 +6,7 @@ _Znwj = 0x001c4814;
 __cxa_guard_acquire = 0x001c4958;
 __cxa_guard_release = 0x001c46c4;
 __aeabi_atexit = 0x001c494c;
+
 SECTIONS
 {
     .base_0 0x002dacc0 : { *state-hooks-gsupsell.o(.gnu.linkonce.t._ZN9StateBase8isKindOfEi .text._ZN9StateBase8isKindOfEi .gnu.linkonce.d.rel.ro._ZN9StateBase8isKindOfEi .data.rel.ro._ZN9StateBase8isKindOfEi) }
@@ -56,6 +57,15 @@ SECTIONS
     .menu_manager_helpers_15 0x002e3f84 : { *menu-manager-helpers.o(.text._ZNK11MenuManager15areAnimsEnabledEv .gnu.linkonce.t._ZNK11MenuManager15areAnimsEnabledEv) }
     .menu_manager_helpers_16 0x002e465c : { *menu-manager-helpers.o(.text._ZNK11MenuManager8getDepthEv .gnu.linkonce.t._ZNK11MenuManager8getDepthEv) }
     .menu_manager_helpers_17 0x002e65d0 : { *menu-manager-helpers.o(.text._ZNK11MenuManager10getMapModeEv .gnu.linkonce.t._ZNK11MenuManager10getMapModeEv) }
+    .local_startup_function_0 0x002e3b1c : { *state-hooks-gsupsell.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .local_startup_function_1 0x002e3b88 : { *state-hooks-gsupsell.o(.text._GLOBAL__I__ZN8GSUpsellC2Ev) }
+    .local_startup_function_2 0x002e3a2c : { *state-hooks-gsupsell.o(.text.__tcf_3) }
+    .local_startup_function_3 0x002e3a5c : { *state-hooks-gsupsell.o(.text.__tcf_5) }
+    .local_startup_storage_0 0x004b70c0 (NOLOAD) : { *state-hooks-gsupsell.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .local_startup_storage_1 0x004b70e0 (NOLOAD) : { *state-hooks-gsupsell.o(.bss._ZN3irr2ps5vHalfE) }
+    .local_startup_text 0x0044d91c : { *state-hooks-gsupsell.o(.rodata.local_startup_empty) }
 }
 ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
 ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");
+ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

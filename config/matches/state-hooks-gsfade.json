@@ -64,7 +64,23 @@
             "compiled_name": "__tcf_0"
         },
         "_ZN6GSFade6draw2dEPK12StateMachine",
-        "_ZNK11Application19GetScreenDimensionsERiS0_"
+        "_ZNK11Application19GetScreenDimensionsERiS0_",
+        {
+            "name": "__tcf_3",
+            "address": "0x002e1b59"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e1bfd"
+        },
+        {
+            "name": "_GLOBAL__I__ZN6GSFadeC2Ev",
+            "address": "0x002e1d41"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e1d55"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -106,7 +122,12 @@
         ".state_instance",
         ".state_instance_cleanup",
         ".fade_draw2d",
-        ".screen_dimensions"
+        ".screen_dimensions",
+        ".local_startup_cleanup_state",
+        ".local_startup_initialization",
+        ".local_startup_wrapper",
+        ".local_startup_cleanup_string",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "dependencies": [

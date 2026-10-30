@@ -44,7 +44,19 @@
         "_ZN12GSInGameMenuD1Ev",
         "_ZN12GSInGameMenuD0Ev",
         "_ZN12GSInGameMenuD2Ev",
-        "_ZN12GSInGameMenu8isKindOfEi"
+        "_ZN12GSInGameMenu8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e2961"
+        },
+        {
+            "name": "_GLOBAL__I__ZN12GSInGameMenu12s_skipFadeInE",
+            "address": "0x002e2aa5"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e267d"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -70,7 +82,11 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true
 }

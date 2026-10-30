@@ -45,7 +45,29 @@
         "_ZN17GSSideMissionMenuD1Ev",
         "_ZN17GSSideMissionMenuD0Ev",
         "_ZN17GSSideMissionMenuD2Ev",
-        "_ZN17GSSideMissionMenu8isKindOfEi"
+        "_ZN17GSSideMissionMenu8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e34d5"
+        },
+        {
+            "name": "_GLOBAL__I__ZN17GSSideMissionMenuC2Ev",
+            "address": "0x002e3619"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e362d"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e33d5"
+        },
+        "_ZN12StateMachine11getInstanceEv",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d4519",
+            "compiled_name": "__tcf_0"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -72,7 +94,18 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_function_3",
+        ".local_startup_text",
+        ".state_instance",
+        ".state_instance_cleanup"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN12StateMachineC1Ev",
+        "_ZN12StateMachineD1Ev"
+    ]
 }

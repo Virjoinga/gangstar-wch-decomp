@@ -2,6 +2,19 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gsloading/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+_ZN28retail_gsloading_transitions16civPassive_transE = 0x0041758c;
+_ZN28retail_gsloading_transitions17scriptedNpc_transE = 0x004176b8;
+_ZN28retail_gsloading_transitions19civAggressive_transE = 0x004176e8;
+_ZN28retail_gsloading_transitions16gangMember_transE = 0x004177cc;
+_ZN28retail_gsloading_transitions9cop_transE = 0x004177d8;
+_ZN28retail_gsloading_transitions10swat_transE = 0x00417910;
+_ZN28retail_gsloading_transitions17civ_vehicle_transE = 0x0041791c;
+_ZN28retail_gsloading_transitions17cop_vehicle_transE = 0x004179ac;
+_ZN28retail_gsloading_transitions11guard_transE = 0x00417a60;
+_ZN28retail_gsloading_transitions22scripted_vehicle_transE = 0x00417b08;
+__aeabi_atexit = 0x001c494c;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
 SECTIONS
 {
     .state_ctor 0x002e2dd0 : { *state-hooks-gsloading.o(.text._ZN9GSLoadingC1Ev) }
@@ -25,4 +38,32 @@ SECTIONS
     .state_delete 0x002e2f40 : { *state-hooks-gsloading.o(.text._ZN9GSLoadingD0Ev) }
     .state_vtable 0x004a8da0 : { *state-hooks-gsloading.o(.data.rel.ro._ZTV9GSLoading .gnu.linkonce.d.rel.ro._ZTV9GSLoading) }
     .state_kind 0x002e2b08 : { *state-hooks-gsloading.o(.gnu.linkonce.t._ZN9GSLoading8isKindOfEi .text._ZN9GSLoading8isKindOfEi) }
+    .local_startup_function_0 0x002e2de8 : { *state-hooks-gsloading.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .local_startup_function_1 0x002e2f2c : { *state-hooks-gsloading.o(.text._GLOBAL__I_m_background) }
+    .local_startup_function_2 0x002e2b40 : { *state-hooks-gsloading.o(.text.__tcf_4) }
+    .local_startup_storage_0 0x004b6ef0 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .local_startup_storage_1 0x004b6f10 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN3irr2ps5vHalfE) }
+    .local_startup_storage_2 0x004b6f1c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai11civ_passiveE) }
+    .local_startup_storage_3 0x004b6f24 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai12npc_scriptedE) }
+    .local_startup_storage_4 0x004b6f2c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai13civ_agressiveE) }
+    .local_startup_storage_5 0x004b6f34 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai11gang_memberE) }
+    .local_startup_storage_6 0x004b6f3c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai3copE) }
+    .local_startup_storage_7 0x004b6f44 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai4swatE) }
+    .local_startup_storage_8 0x004b6f4c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai11civ_vehicleE) }
+    .local_startup_storage_9 0x004b6f54 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai11cop_vehicleE) }
+    .local_startup_storage_10 0x004b6f5c (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai5guardE) }
+    .local_startup_storage_11 0x004b6f64 (NOLOAD) : { *state-hooks-gsloading.o(.bss._ZN8gameloft2ai16scripted_vehicleE) }
+    .local_startup_text 0x0044d91c : { *state-hooks-gsloading.o(.rodata.local_startup_empty) }
 }
+ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");
+ASSERT(SIZEOF(.local_startup_storage_2) == 8, "_ZN8gameloft2ai11civ_passiveE extent");
+ASSERT(SIZEOF(.local_startup_storage_3) == 8, "_ZN8gameloft2ai12npc_scriptedE extent");
+ASSERT(SIZEOF(.local_startup_storage_4) == 8, "_ZN8gameloft2ai13civ_agressiveE extent");
+ASSERT(SIZEOF(.local_startup_storage_5) == 8, "_ZN8gameloft2ai11gang_memberE extent");
+ASSERT(SIZEOF(.local_startup_storage_6) == 8, "_ZN8gameloft2ai3copE extent");
+ASSERT(SIZEOF(.local_startup_storage_7) == 8, "_ZN8gameloft2ai4swatE extent");
+ASSERT(SIZEOF(.local_startup_storage_8) == 8, "_ZN8gameloft2ai11civ_vehicleE extent");
+ASSERT(SIZEOF(.local_startup_storage_9) == 8, "_ZN8gameloft2ai11cop_vehicleE extent");
+ASSERT(SIZEOF(.local_startup_storage_10) == 8, "_ZN8gameloft2ai5guardE extent");
+ASSERT(SIZEOF(.local_startup_storage_11) == 8, "_ZN8gameloft2ai16scripted_vehicleE extent");

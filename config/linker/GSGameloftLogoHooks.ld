@@ -2,6 +2,9 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gsgameloftlogo/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__aeabi_atexit = 0x001c494c;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
 SECTIONS
 {
     .base_0 0x002dacc0 : { *state-hooks-gsgameloftlogo.o(.gnu.linkonce.t._ZN9StateBase8isKindOfEi .text._ZN9StateBase8isKindOfEi .gnu.linkonce.d.rel.ro._ZN9StateBase8isKindOfEi .data.rel.ro._ZN9StateBase8isKindOfEi) }
@@ -29,4 +32,12 @@ SECTIONS
     .hook_2 0x002e2534 : { *state-hooks-gsgameloftlogo.o(.text._ZN14GSGameloftLogo4drawEPK12StateMachine .gnu.linkonce.t._ZN14GSGameloftLogo4drawEPK12StateMachine) }
     .hook_3 0x002e2538 : { *state-hooks-gsgameloftlogo.o(.text._ZN14GSGameloftLogo4dtorEPK12StateMachine .gnu.linkonce.t._ZN14GSGameloftLogo4dtorEPK12StateMachine) }
     .state_vtable 0x004a8d20 : { *state-hooks-gsgameloftlogo.o(.data.rel.ro._ZTV14GSGameloftLogo .gnu.linkonce.d.rel.ro._ZTV14GSGameloftLogo) }
+    .local_startup_function_0 0x002e2550 : { *state-hooks-gsgameloftlogo.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .local_startup_function_1 0x002e25bc : { *state-hooks-gsgameloftlogo.o(.text._GLOBAL__I__ZN14GSGameloftLogoC2Ev) }
+    .local_startup_function_2 0x002e25d0 : { *state-hooks-gsgameloftlogo.o(.text.__tcf_3) }
+    .local_startup_storage_0 0x004b6e3c (NOLOAD) : { *state-hooks-gsgameloftlogo.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .local_startup_storage_1 0x004b6e5c (NOLOAD) : { *state-hooks-gsgameloftlogo.o(.bss._ZN3irr2ps5vHalfE) }
+    .local_startup_text 0x0044d91c : { *state-hooks-gsgameloftlogo.o(.rodata.local_startup_empty) }
 }
+ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

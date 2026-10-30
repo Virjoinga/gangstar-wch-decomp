@@ -71,7 +71,24 @@
         "_ZN11MenuManager11enableAnimsEb",
         "_ZNK11MenuManager15areAnimsEnabledEv",
         "_ZNK11MenuManager8getDepthEv",
-        "_ZNK11MenuManager10getMapModeEv"
+        "_ZNK11MenuManager10getMapModeEv",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e3b1d"
+        },
+        {
+            "name": "_GLOBAL__I__ZN8GSUpsellC2Ev",
+            "address": "0x002e3b89"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e3a2d"
+        },
+        {
+            "name": "__tcf_0",
+            "address": "0x002e3a5d",
+            "compiled_name": "__tcf_5"
+        }
     ],
     "sections": [
         {
@@ -121,7 +138,12 @@
         ".menu_manager_helpers_14",
         ".menu_manager_helpers_15",
         ".menu_manager_helpers_16",
-        ".menu_manager_helpers_17"
+        ".menu_manager_helpers_17",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_function_3",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [

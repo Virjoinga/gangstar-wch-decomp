@@ -43,7 +43,19 @@
         "_ZN8GSSplashD1Ev",
         "_ZN8GSSplashD0Ev",
         "_ZN8GSSplashD2Ev",
-        "_ZN8GSSplash8isKindOfEi"
+        "_ZN8GSSplash8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e391d"
+        },
+        {
+            "name": "_GLOBAL__I_m_splash",
+            "address": "0x002e3989"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e399d"
+        }
     ],
     "sections": [
         ".state_ctor",
@@ -68,7 +80,11 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true
 }

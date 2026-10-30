@@ -56,7 +56,19 @@
         "_ZN13ScriptManager20skipBlockingCommandsEv",
         "_ZNK13ScriptManager10getMissionEv",
         "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
-        "_ZNK13ScriptManager7getRaceEv"
+        "_ZNK13ScriptManager7getRaceEv",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e1385"
+        },
+        {
+            "name": "_GLOBAL__I__ZN15GSCarRentalMenuC2Ev",
+            "address": "0x002e14c9"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e14dd"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -95,7 +107,11 @@
         ".script_manager_helpers_1",
         ".script_manager_helpers_2",
         ".script_manager_helpers_3",
-        ".script_manager_helpers_4"
+        ".script_manager_helpers_4",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [

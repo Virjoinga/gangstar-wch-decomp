@@ -66,7 +66,19 @@
         "_ZNK11MenuManager15areAnimsEnabledEv",
         "_ZNK11MenuManager8getDepthEv",
         "_ZNK11MenuManager10getMapModeEv",
-        "_ZN10GSMainMenu4dtorEPK12StateMachine"
+        "_ZN10GSMainMenu4dtorEPK12StateMachine",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e3065"
+        },
+        {
+            "name": "_GLOBAL__I__ZN10GSMainMenuC2Ev",
+            "address": "0x002e31a9"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e31bd"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -115,7 +127,11 @@
         ".menu_manager_helpers_15",
         ".menu_manager_helpers_16",
         ".menu_manager_helpers_17",
-        ".menu_exit"
+        ".menu_exit",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "dependencies": [

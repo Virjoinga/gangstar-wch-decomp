@@ -53,7 +53,19 @@
             "address": "0x002d4519",
             "compiled_name": "__tcf_0"
         },
-        "_ZN12StateMachine11switchStateI8GSSplashEEPT_v"
+        "_ZN12StateMachine11switchStateI8GSSplashEEPT_v",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e32bd"
+        },
+        {
+            "name": "_GLOBAL__I__ZN13GSMoviePlayerC2Ev",
+            "address": "0x002e3329"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e333d"
+        }
     ],
     "sections": [
         ".hook_0",
@@ -85,7 +97,11 @@
         ".entry_text",
         ".state_instance",
         ".state_instance_cleanup",
-        ".movie_switch"
+        ".movie_switch",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "external_thumb_functions": [
