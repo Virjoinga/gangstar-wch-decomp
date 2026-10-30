@@ -24,4 +24,5 @@ SECTIONS
     .state_destructor 0x002e0f08 : { *state-hooks-gsblockingtutorial.o(.text._ZN18GSBlockingTutorialD1Ev) }
     .state_delete 0x002e0edc : { *state-hooks-gsblockingtutorial.o(.text._ZN18GSBlockingTutorialD0Ev) }
     .state_vtable 0x004a8ba0 : { *state-hooks-gsblockingtutorial.o(.data.rel.ro._ZTV18GSBlockingTutorial .gnu.linkonce.d.rel.ro._ZTV18GSBlockingTutorial) }
+    .state_kind 0x002e0c5c : { *state-hooks-gsblockingtutorial.o(.gnu.linkonce.t._ZN18GSBlockingTutorial8isKindOfEi .text._ZN18GSBlockingTutorial8isKindOfEi) }
 }

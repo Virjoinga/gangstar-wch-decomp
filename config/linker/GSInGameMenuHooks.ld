@@ -25,4 +25,5 @@ SECTIONS
     .state_destructor 0x002e2ae4 : { *state-hooks-gsingamemenu.o(.text._ZN12GSInGameMenuD1Ev) }
     .state_delete 0x002e2ab8 : { *state-hooks-gsingamemenu.o(.text._ZN12GSInGameMenuD0Ev) }
     .state_vtable 0x004a8d60 : { *state-hooks-gsingamemenu.o(.data.rel.ro._ZTV12GSInGameMenu .gnu.linkonce.d.rel.ro._ZTV12GSInGameMenu) }
+    .state_kind 0x002e2650 : { *state-hooks-gsingamemenu.o(.gnu.linkonce.t._ZN12GSInGameMenu8isKindOfEi .text._ZN12GSInGameMenu8isKindOfEi) }
 }

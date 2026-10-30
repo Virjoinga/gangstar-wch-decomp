@@ -43,7 +43,8 @@
         "_ZN9StateBase6updateEP12StateMachine",
         "_ZN15GSCarRepairMenuD1Ev",
         "_ZN15GSCarRepairMenuD0Ev",
-        "_ZN15GSCarRepairMenuD2Ev"
+        "_ZN15GSCarRepairMenuD2Ev",
+        "_ZN15GSCarRepairMenu8isKindOfEi"
     ],
     "sections": [
         ".hook_0",
@@ -68,7 +69,8 @@
         ".base_13",
         ".state_destructor",
         ".state_delete",
-        ".state_vtable"
+        ".state_vtable",
+        ".state_kind"
     ],
     "retail_got": true
 }

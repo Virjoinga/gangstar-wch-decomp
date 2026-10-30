@@ -25,4 +25,5 @@ SECTIONS
     .state_destructor 0x002e1db0 : { *state-hooks-gsfade.o(.text._ZN6GSFadeD1Ev) }
     .state_delete 0x002e1d84 : { *state-hooks-gsfade.o(.text._ZN6GSFadeD0Ev) }
     .state_vtable 0x004a8ca0 : { *state-hooks-gsfade.o(.data.rel.ro._ZTV6GSFade .gnu.linkonce.d.rel.ro._ZTV6GSFade) }
+    .state_kind 0x002e1a4c : { *state-hooks-gsfade.o(.gnu.linkonce.t._ZN6GSFade8isKindOfEi .text._ZN6GSFade8isKindOfEi) }
 }

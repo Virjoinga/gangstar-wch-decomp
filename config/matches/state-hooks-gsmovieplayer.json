@@ -44,7 +44,8 @@
         "_ZN9StateBase6updateEP12StateMachine",
         "_ZN13GSMoviePlayerD1Ev",
         "_ZN13GSMoviePlayerD0Ev",
-        "_ZN13GSMoviePlayerD2Ev"
+        "_ZN13GSMoviePlayerD2Ev",
+        "_ZN13GSMoviePlayer8isKindOfEi"
     ],
     "sections": [
         ".hook_0",
@@ -70,7 +71,8 @@
         ".base_13",
         ".state_destructor",
         ".state_delete",
-        ".state_vtable"
+        ".state_vtable",
+        ".state_kind"
     ],
     "retail_got": true
 }

@@ -24,4 +24,5 @@ SECTIONS
     .state_destructor 0x002e24dc : { *state-hooks-gsfailure.o(.text._ZN9GSFailureD1Ev) }
     .state_delete 0x002e24b0 : { *state-hooks-gsfailure.o(.text._ZN9GSFailureD0Ev) }
     .state_vtable 0x004a8ce0 : { *state-hooks-gsfailure.o(.data.rel.ro._ZTV9GSFailure .gnu.linkonce.d.rel.ro._ZTV9GSFailure) }
+    .state_kind 0x002e1dd4 : { *state-hooks-gsfailure.o(.gnu.linkonce.t._ZN9GSFailure8isKindOfEi .text._ZN9GSFailure8isKindOfEi) }
 }

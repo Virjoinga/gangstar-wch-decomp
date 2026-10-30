@@ -14,7 +14,10 @@ public:
     virtual void ctor(const StateMachine*);
     virtual void dtor(const StateMachine*);
     virtual void update(StateMachine*);
-    virtual bool isKindOf(int);
+    virtual bool isKindOf(int kind) {
+        if (kind == 20) return true;
+        return StateBase::isKindOf(kind);
+    }
 private:
     unsigned int unknown4;
     unsigned int unknown8;

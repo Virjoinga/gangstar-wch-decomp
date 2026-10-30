@@ -26,4 +26,5 @@ SECTIONS
     .state_destructor 0x002e373c : { *state-hooks-gssidemissionmenu.o(.text._ZN17GSSideMissionMenuD1Ev) }
     .state_delete 0x002e3710 : { *state-hooks-gssidemissionmenu.o(.text._ZN17GSSideMissionMenuD0Ev) }
     .state_vtable 0x004a8e60 : { *state-hooks-gssidemissionmenu.o(.data.rel.ro._ZTV17GSSideMissionMenu .gnu.linkonce.d.rel.ro._ZTV17GSSideMissionMenu) }
+    .state_kind 0x002e33bc : { *state-hooks-gssidemissionmenu.o(.gnu.linkonce.t._ZN17GSSideMissionMenu8isKindOfEi .text._ZN17GSSideMissionMenu8isKindOfEi) }
 }

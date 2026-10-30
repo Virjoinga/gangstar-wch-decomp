@@ -24,4 +24,5 @@ SECTIONS
     .state_destructor 0x002e39f8 : { *state-hooks-gssplash.o(.text._ZN8GSSplashD1Ev) }
     .state_delete 0x002e39cc : { *state-hooks-gssplash.o(.text._ZN8GSSplashD0Ev) }
     .state_vtable 0x004a8ea0 : { *state-hooks-gssplash.o(.data.rel.ro._ZTV8GSSplash .gnu.linkonce.d.rel.ro._ZTV8GSSplash) }
+    .state_kind 0x002e3760 : { *state-hooks-gssplash.o(.gnu.linkonce.t._ZN8GSSplash8isKindOfEi .text._ZN8GSSplash8isKindOfEi) }
 }
