@@ -47,7 +47,19 @@
         "_ZN14GSGameloftLogo4ctorEPK12StateMachine",
         "_ZN14GSGameloftLogo6updateEP12StateMachine",
         "_ZN14GSGameloftLogo4drawEPK12StateMachine",
-        "_ZN14GSGameloftLogo4dtorEPK12StateMachine"
+        "_ZN14GSGameloftLogo4dtorEPK12StateMachine",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e2551"
+        },
+        {
+            "name": "_GLOBAL__I__ZN14GSGameloftLogoC2Ev",
+            "address": "0x002e25bd"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e25d1"
+        }
     ],
     "sections": [
         {
@@ -76,7 +88,11 @@
         ".hook_1",
         ".hook_2",
         ".hook_3",
-        ".state_vtable"
+        ".state_vtable",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_text"
     ],
     "retail_got": true
 }

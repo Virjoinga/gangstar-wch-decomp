@@ -80,6 +80,22 @@
             "name": "__tcf_2",
             "address": "0x002d4519",
             "compiled_name": "__tcf_0"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e16e9"
+        },
+        {
+            "name": "_GLOBAL__I__ZN15GSCarRepairMenuC2Ev",
+            "address": "0x002e182d"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e1841"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e15f9"
         }
     ],
     "sections": [
@@ -139,7 +155,12 @@
         ".menu_manager_helpers_17",
         ".repair_update",
         ".state_instance",
-        ".state_instance_cleanup"
+        ".state_instance_cleanup",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_function_3",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "dependencies": [

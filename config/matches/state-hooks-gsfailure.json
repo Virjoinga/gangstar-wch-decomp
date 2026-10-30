@@ -43,7 +43,29 @@
         "_ZN9GSFailureD1Ev",
         "_ZN9GSFailureD0Ev",
         "_ZN9GSFailureD2Ev",
-        "_ZN9GSFailure8isKindOfEi"
+        "_ZN9GSFailure8isKindOfEi",
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e2359"
+        },
+        {
+            "name": "_GLOBAL__I__ZN9GSFailure14s_bCutsceneDieE",
+            "address": "0x002e249d"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e1de5"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e1f49"
+        },
+        "_ZN12StateMachine11getInstanceEv",
+        {
+            "name": "__tcf_2",
+            "address": "0x002d4519",
+            "compiled_name": "__tcf_0"
+        }
     ],
     "sections": [
         ".state_ctor",
@@ -68,7 +90,18 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_function_3",
+        ".local_startup_text",
+        ".state_instance",
+        ".state_instance_cleanup"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN12StateMachineC1Ev",
+        "_ZN12StateMachineD1Ev"
+    ]
 }

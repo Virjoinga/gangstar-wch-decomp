@@ -6,6 +6,7 @@ _Znwj = 0x001c4814;
 __cxa_guard_acquire = 0x001c4958;
 __cxa_guard_release = 0x001c46c4;
 __aeabi_atexit = 0x001c494c;
+
 SECTIONS
 {
     .hook_0 0x002e3264 : { *state-hooks-gsmovieplayer.o(.text._ZN13GSMoviePlayer4ctorEPK12StateMachine .gnu.linkonce.t._ZN13GSMoviePlayer4ctorEPK12StateMachine) }
@@ -38,6 +39,14 @@ SECTIONS
     .state_instance_guard 0x004b6904 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.b._ZGVZN12StateMachine11getInstanceEvE2sm .bss._ZGVZN12StateMachine11getInstanceEvE2sm) }
     .state_instance_storage 0x004b6908 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.b._ZZN12StateMachine11getInstanceEvE2sm .bss._ZZN12StateMachine11getInstanceEvE2sm) }
     .movie_switch 0x002e326c : { *state-hooks-gsmovieplayer.o(.gnu.linkonce.t._ZN12StateMachine11switchStateI8GSSplashEEPT_v .text._ZN12StateMachine11switchStateI8GSSplashEEPT_v) }
+    .local_startup_function_0 0x002e32bc : { *state-hooks-gsmovieplayer.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .local_startup_function_1 0x002e3328 : { *state-hooks-gsmovieplayer.o(.text._GLOBAL__I__ZN13GSMoviePlayerC2Ev) }
+    .local_startup_function_2 0x002e333c : { *state-hooks-gsmovieplayer.o(.text.__tcf_3) }
+    .local_startup_storage_0 0x004b6fe8 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .local_startup_storage_1 0x004b7008 (NOLOAD) : { *state-hooks-gsmovieplayer.o(.bss._ZN3irr2ps5vHalfE) }
+    .local_startup_text 0x0044d91c : { *state-hooks-gsmovieplayer.o(.rodata.local_startup_empty) }
 }
 ASSERT(SIZEOF(.state_instance_guard) == 4, "StateMachine instance guard extent");
 ASSERT(SIZEOF(.state_instance_storage) == 40, "StateMachine instance storage extent");
+ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");

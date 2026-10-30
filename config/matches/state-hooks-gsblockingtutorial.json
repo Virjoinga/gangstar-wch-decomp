@@ -79,6 +79,22 @@
             "name": "__tcf_2",
             "address": "0x002d4519",
             "compiled_name": "__tcf_0"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002e0d55"
+        },
+        {
+            "name": "_GLOBAL__I__ZN18GSBlockingTutorialC2Ev",
+            "address": "0x002e0e99"
+        },
+        {
+            "name": "__tcf_4",
+            "address": "0x002e0ead"
+        },
+        {
+            "name": "__tcf_3",
+            "address": "0x002e0cb5"
         }
     ],
     "sections": [
@@ -137,7 +153,12 @@
         ".menu_manager_helpers_16",
         ".menu_manager_helpers_17",
         ".state_instance",
-        ".state_instance_cleanup"
+        ".state_instance_cleanup",
+        ".local_startup_function_0",
+        ".local_startup_function_1",
+        ".local_startup_function_2",
+        ".local_startup_function_3",
+        ".local_startup_text"
     ],
     "retail_got": true,
     "dependencies": [

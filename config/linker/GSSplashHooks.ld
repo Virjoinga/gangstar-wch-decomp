@@ -2,6 +2,9 @@ OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 INCLUDE build/matches/state-hooks-gssplash/retail-symbols.ld
 _ZdlPv = 0x001c42b0;
+__aeabi_atexit = 0x001c494c;
+__cxa_guard_acquire = 0x001c4958;
+__cxa_guard_release = 0x001c46c4;
 SECTIONS
 {
     .state_ctor 0x002e3904 : { *state-hooks-gssplash.o(.text._ZN8GSSplashC1Ev) }
@@ -25,4 +28,12 @@ SECTIONS
     .state_delete 0x002e39cc : { *state-hooks-gssplash.o(.text._ZN8GSSplashD0Ev) }
     .state_vtable 0x004a8ea0 : { *state-hooks-gssplash.o(.data.rel.ro._ZTV8GSSplash .gnu.linkonce.d.rel.ro._ZTV8GSSplash) }
     .state_kind 0x002e3760 : { *state-hooks-gssplash.o(.gnu.linkonce.t._ZN8GSSplash8isKindOfEi .text._ZN8GSSplash8isKindOfEi) }
+    .local_startup_function_0 0x002e391c : { *state-hooks-gssplash.o(.text._Z41__static_initialization_and_destruction_0ii) }
+    .local_startup_function_1 0x002e3988 : { *state-hooks-gssplash.o(.text._GLOBAL__I_m_splash) }
+    .local_startup_function_2 0x002e399c : { *state-hooks-gssplash.o(.text.__tcf_3) }
+    .local_startup_storage_0 0x004b7094 (NOLOAD) : { *state-hooks-gssplash.o(.bss._ZN3irr5scene6quake315irrEmptyStringcE) }
+    .local_startup_storage_1 0x004b70b4 (NOLOAD) : { *state-hooks-gssplash.o(.bss._ZN3irr2ps5vHalfE) }
+    .local_startup_text 0x0044d91c : { *state-hooks-gssplash.o(.rodata.local_startup_empty) }
 }
+ASSERT(SIZEOF(.local_startup_storage_0) == 32, "_ZN3irr5scene6quake315irrEmptyStringcE extent");
+ASSERT(SIZEOF(.local_startup_storage_1) == 12, "_ZN3irr2ps5vHalfE extent");
