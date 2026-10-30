@@ -1,0 +1,52 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/missions/Checkpoint.cpp",
+    "linker_script": "config/linker/CheckpointAiStartup.ld",
+    "functions": [
+        {
+            "name": "__tcf_3",
+            "address": "0x002f79b5"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x002f785d"
+        },
+        {
+            "name": "_GLOBAL__I__ZN10Checkpoint18s_bTutoCallContactE",
+            "address": "0x002f79a1"
+        }
+    ],
+    "sections": [
+        ".ai_startup_function_0",
+        ".ai_startup_function_1",
+        ".ai_startup_function_2",
+        ".shared_startup_empty_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}

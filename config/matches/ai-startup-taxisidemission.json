@@ -1,0 +1,52 @@
+{
+    "toolchain": "toolchain/android-ndk-1.6_r1/build/prebuilt/windows/arm-eabi-4.2.1",
+    "compiler_flags": [
+        "-O2",
+        "-fpic",
+        "-fno-toplevel-reorder",
+        "-fno-strict-aliasing",
+        "-fno-rtti",
+        "-fno-exceptions",
+        "-mthumb",
+        "-mthumb-interwork",
+        "-march=armv5te",
+        "-mtune=xscale",
+        "-mfloat-abi=softfp",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-finline-limit=70"
+    ],
+    "assembler_flags": [
+        "-march=armv5te",
+        "-mfloat-abi=softfp",
+        "-mfpu=vfp",
+        "-meabi=4"
+    ],
+    "source": "src/game/vehicles/TaxiSideMission.cpp",
+    "linker_script": "config/linker/TaxiSideMissionAiStartup.ld",
+    "functions": [
+        {
+            "name": "__tcf_4",
+            "address": "0x00347e8d"
+        },
+        {
+            "name": "_Z41__static_initialization_and_destruction_0ii",
+            "address": "0x00348331"
+        },
+        {
+            "name": "_GLOBAL__I__ZN15TaxiSideMissionC2Ev",
+            "address": "0x00348475"
+        }
+    ],
+    "sections": [
+        ".ai_startup_function_0",
+        ".ai_startup_function_1",
+        ".ai_startup_function_2",
+        ".shared_startup_empty_text",
+        {
+            "name": ".got",
+            "offset": 864
+        }
+    ],
+    "retail_got": true
+}
