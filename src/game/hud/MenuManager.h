@@ -1,14 +1,37 @@
 #ifndef WCH_HUD_MENU_MANAGER_H
 #define WCH_HUD_MENU_MANAGER_H
 
-// Observed shop-record stride and accessed fields only. The record's remaining
-// fields and the complete menu manager interface are not yet recovered.
+// Observed prefix of the object returned by getMenuFX; its actual type is unknown.
+struct MenuFXPrefix {
+    unsigned char unknown0[228];
+    int depth;
+};
+
+// Partial member layout and shop-record stride. Do not instantiate or use sizeof.
+// Word-valued flag/map accessors retain provisional return types.
 class MenuManager {
 public:
     static MenuManager* getInstance();
     int getDepth() const;
     void showTexts();
     void push(const char*, bool);
+    void resetWidgetVisibility();
+    void MenuPause();
+    void MenuResume();
+    void setTutorialIds(int, int);
+    void setRepairCost(int);
+    int getRepairCost() const;
+    bool areCheatsUnlocked() const;
+    bool isCheatsUnlockAllowed() const;
+    bool isClearingFocus() const;
+    MenuFXPrefix* getMenuFX();
+    int isInGameMenu() const;
+    unsigned int consumedCursors() const;
+    void consumeCursor();
+    int getCharAutoLineFeed();
+    void enableAnims(bool);
+    bool areAnimsEnabled() const;
+    int getMapMode() const;
     struct WeaponShopData {
         int price;
         union { int code; unsigned short category; };
@@ -16,6 +39,24 @@ public:
     };
     static int s_WeaponShopDataCount;
     static WeaponShopData s_WeaponShopData[];
+private:
+    unsigned char unknown0[60];
+    int mapMode;
+    unsigned char unknown64[4];
+    int inGameMenu;
+    int tutorialId;
+    int tutorialTextId;
+    int repairCost;
+    unsigned char unknown84[104];
+    MenuFXPrefix* menuFX;
+    unsigned char unknown192[4];
+    bool widgetVisibility;
+    bool clearingFocus;
+    unsigned char unknown198[211];
+    bool animsEnabled;
+    bool cheatsUnlocked;
+    bool cheatsUnlockAllowed;
+    unsigned int consumedCursorCount;
 };
 
 #endif

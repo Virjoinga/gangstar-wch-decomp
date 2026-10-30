@@ -45,7 +45,17 @@
         "_ZN12GSBustedMenuD1Ev",
         "_ZN12GSBustedMenuD0Ev",
         "_ZN12GSBustedMenuD2Ev",
-        "_ZN12GSBustedMenu8isKindOfEi"
+        "_ZN12GSBustedMenu8isKindOfEi",
+        "_ZN12GSBustedMenu4dtorEPK12StateMachine",
+        "_ZN11CHudManager4initEv",
+        "_ZN11CHudManager4lockEv",
+        "_ZN11CHudManager6unlockEv",
+        "_ZNK11CHudManager8isLockedEv",
+        "_ZN13ScriptManager6resumeEv",
+        "_ZN13ScriptManager20skipBlockingCommandsEv",
+        "_ZNK13ScriptManager10getMissionEv",
+        "_ZNK13ScriptManager22getCinematicsHudSpriteEv",
+        "_ZNK13ScriptManager7getRaceEv"
     ],
     "sections": [
         ".hook_0",
@@ -72,7 +82,28 @@
         ".state_destructor",
         ".state_delete",
         ".state_vtable",
-        ".state_kind"
+        ".state_kind",
+        ".cleanup_hook",
+        ".hud_manager_helpers_0",
+        ".hud_manager_helpers_1",
+        ".hud_manager_helpers_2",
+        ".hud_manager_helpers_3",
+        ".script_manager_helpers_0",
+        ".script_manager_helpers_1",
+        ".script_manager_helpers_2",
+        ".script_manager_helpers_3",
+        ".script_manager_helpers_4"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "dependencies": [
+        "hud-manager-helpers",
+        "script-manager-helpers"
+    ],
+    "external_thumb_functions": [
+        "_ZN11MenuManager11getInstanceEv",
+        "_ZN11MenuManager9showTextsEv",
+        "_ZN11Application11GetInstanceEv",
+        "_ZN13ScriptManager11getInstanceEv",
+        "_ZN11CHudManager4showEv"
+    ]
 }

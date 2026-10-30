@@ -27,4 +27,14 @@ SECTIONS
     .state_delete 0x002e127c : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenuD0Ev) }
     .state_vtable 0x004a8be0 : { *state-hooks-gsbustedmenu.o(.data.rel.ro._ZTV12GSBustedMenu .gnu.linkonce.d.rel.ro._ZTV12GSBustedMenu) }
     .state_kind 0x002e0f2c : { *state-hooks-gsbustedmenu.o(.gnu.linkonce.t._ZN12GSBustedMenu8isKindOfEi .text._ZN12GSBustedMenu8isKindOfEi) }
+    .cleanup_hook 0x002e0f90 : { *state-hooks-gsbustedmenu.o(.text._ZN12GSBustedMenu4dtorEPK12StateMachine) }
+    .hud_manager_helpers_0 0x003235a4 : { *hud-manager-helpers.o(.text._ZN11CHudManager4initEv .gnu.linkonce.t._ZN11CHudManager4initEv) }
+    .hud_manager_helpers_1 0x003235e4 : { *hud-manager-helpers.o(.text._ZN11CHudManager4lockEv .gnu.linkonce.t._ZN11CHudManager4lockEv) }
+    .hud_manager_helpers_2 0x003235ec : { *hud-manager-helpers.o(.text._ZN11CHudManager6unlockEv .gnu.linkonce.t._ZN11CHudManager6unlockEv) }
+    .hud_manager_helpers_3 0x003235f4 : { *hud-manager-helpers.o(.text._ZNK11CHudManager8isLockedEv .gnu.linkonce.t._ZNK11CHudManager8isLockedEv) }
+    .script_manager_helpers_0 0x0033cffc : { *script-manager-helpers.o(.text._ZN13ScriptManager6resumeEv .gnu.linkonce.t._ZN13ScriptManager6resumeEv) }
+    .script_manager_helpers_1 0x0033d034 : { *script-manager-helpers.o(.text._ZN13ScriptManager20skipBlockingCommandsEv .gnu.linkonce.t._ZN13ScriptManager20skipBlockingCommandsEv) }
+    .script_manager_helpers_2 0x0033d08c : { *script-manager-helpers.o(.text._ZNK13ScriptManager10getMissionEv .gnu.linkonce.t._ZNK13ScriptManager10getMissionEv) }
+    .script_manager_helpers_3 0x0033d0a4 : { *script-manager-helpers.o(.text._ZNK13ScriptManager22getCinematicsHudSpriteEv .gnu.linkonce.t._ZNK13ScriptManager22getCinematicsHudSpriteEv) }
+    .script_manager_helpers_4 0x0033d0a8 : { *script-manager-helpers.o(.text._ZNK13ScriptManager7getRaceEv .gnu.linkonce.t._ZNK13ScriptManager7getRaceEv) }
 }
