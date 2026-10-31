@@ -16,4 +16,7 @@ SECTIONS
     .factory_function_scene 0x002d69c4 : { *custom-irr-factory.o(.gnu.linkonce.t._ZN16CCustomIrrFactor18createSceneManagerEPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS7_15IGUIEnvironmentE) }
     .factory_function_files 0x002d69f8 : { *custom-irr-factory.o(.gnu.linkonce.t._ZN16CCustomIrrFactor16createFileSystemEv) }
     .factory_vtable 0x004a6458 : { *custom-irr-factory.o(.gnu.linkonce.d.rel.ro._ZTV16CCustomIrrFactor) }
+    .verification_base_destructor 0x00500000 : { *custom-irr-factory.o(.gnu.linkonce.t._ZN17CCustomFileSystemD2Ev) }
+    .file_system_d0 0x002d68b0 : { *custom-irr-factory.o(.gnu.linkonce.t._ZN17CCustomFileSystemD0Ev) }
+    .file_system_d1 0x002d690c : { *custom-irr-factory.o(.gnu.linkonce.t._ZN17CCustomFileSystemD1Ev) }
 }

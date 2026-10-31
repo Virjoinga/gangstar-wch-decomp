@@ -36,6 +36,26 @@
         {
             "name": "_GLOBAL__I__ZNK17CCustomFileSystem15getAbsolutePathERKN3irr4core6stringIcNS1_12irrAllocatorIcEEEE",
             "address": "0x002d6871"
+        },
+        {
+            "name": "_ZNK17CCustomFileSystem15getAbsolutePathERKN3irr4core6stringIcNS1_12irrAllocatorIcEEEE",
+            "address": "0x002d6885"
+        },
+        {
+            "name": "_ZTv0_n12_N17CCustomFileSystemD0Ev",
+            "address": "0x002d68b1"
+        },
+        {
+            "name": "_ZN17CCustomFileSystemD0Ev",
+            "address": "0x002d68c5"
+        },
+        {
+            "name": "_ZTv0_n12_N17CCustomFileSystemD1Ev",
+            "address": "0x002d690d"
+        },
+        {
+            "name": "_ZN17CCustomFileSystemD1Ev",
+            "address": "0x002d6921"
         }
     ],
     "sections": [
@@ -46,7 +66,17 @@
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".file_system_function_0",
+        ".file_system_d0",
+        ".file_system_d1",
+        ".file_system_table_0",
+        ".file_system_table_1",
+        ".file_system_table_2",
+        ".file_system_table_3"
     ],
-    "retail_got": true
+    "retail_got": true,
+    "external_thumb_functions": [
+        "_ZN3irr2io11CFileSystemD2Ev"
+    ]
 }

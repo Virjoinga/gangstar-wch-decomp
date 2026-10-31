@@ -53,3 +53,12 @@ static void _GLOBAL__I__ZNK17CCustomFileSystem15getAbsolutePathERKN3irr4core6str
     __static_initialization_and_destruction_0(1, 65535);
 }
 }
+
+#include "FactoryFileSystem.h"
+#include "ObservedString.h"
+
+irr::io::FilePath CCustomFileSystem::getAbsolutePath(
+    const irr::io::FilePath& filename) const
+{
+    return filename;
+}

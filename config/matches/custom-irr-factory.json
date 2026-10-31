@@ -52,6 +52,22 @@
         {
             "name": "_ZN16CCustomIrrFactor16createFileSystemEv",
             "address": "0x002d69f9"
+        },
+        {
+            "name": "_ZTv0_n12_N17CCustomFileSystemD0Ev",
+            "address": "0x002d68b1"
+        },
+        {
+            "name": "_ZN17CCustomFileSystemD0Ev",
+            "address": "0x002d68c5"
+        },
+        {
+            "name": "_ZTv0_n12_N17CCustomFileSystemD1Ev",
+            "address": "0x002d690d"
+        },
+        {
+            "name": "_ZN17CCustomFileSystemD1Ev",
+            "address": "0x002d6921"
         }
     ],
     "sections": [
@@ -66,13 +82,16 @@
         {
             "name": ".got",
             "offset": 864
-        }
+        },
+        ".file_system_d0",
+        ".file_system_d1"
     ],
     "retail_got": true,
     "external_thumb_functions": [
         "_ZN3irr11CIrrFactoryC1Ev",
         "_ZN3irr11CIrrFactoryD1Ev",
         "_ZN19CCustomSceneManagerC1EPN3irr5video12IVideoDriverEPNS0_2io11IFileSystemEPNS0_3gui14ICursorControlEPNS0_5scene10IMeshCacheEPNS7_15IGUIEnvironmentE",
-        "_ZN3irr2io11CFileSystemC2Ev"
+        "_ZN3irr2io11CFileSystemC2Ev",
+        "_ZN3irr2io11CFileSystemD2Ev"
     ]
 }
