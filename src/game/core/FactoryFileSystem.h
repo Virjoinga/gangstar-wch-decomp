@@ -47,6 +47,7 @@ public:
     virtual IXMLWriter* createXMLWriter(const char*) = 0;
     virtual IXMLWriter* createXMLWriter(IWriteFile*) = 0;
     virtual IAttributes* createEmptyAttributes(video::IVideoDriver*) = 0;
+    virtual ~IFileSystem();
 };
 class CFileSystem : public IFileSystem {
     unsigned char unknown4[60];
@@ -81,7 +82,7 @@ class CCustomFileSystem : public irr::io::CFileSystem {
 public:
     CCustomFileSystem() {}
     virtual irr::io::FilePath getAbsolutePath(const irr::io::FilePath&) const;
-    virtual ~CCustomFileSystem();
+    virtual ~CCustomFileSystem() __attribute__((used)) {}
 };
 
 #endif
