@@ -44,6 +44,7 @@ public:
     void DestroyWheels();
     virtual void WarmUp();
     virtual void enable();
+    virtual void OnSpawn();
     virtual void init();
     void CreateBody();
     virtual void Stop();

@@ -42,6 +42,7 @@ SECTIONS
     .custom_skin_transformed_bounds 0x00307fc4 : { *(.text._ZNK26CustomSkinnedMeshSceneNode25getTransformedBoundingBoxEv) }
     .vehicle_play_siren 0x00312020 : { *(.text._ZN7Vehicle9playSirenEv) }
     .vehicle_tag_for_kill 0x0030a8f4 : { *(.text._ZN7Vehicle10tagForKillEb) }
+    .vehicle_spawn 0x0030bbbc : { *(.text._ZN7Vehicle7OnSpawnEv) }
     .vehicle_init 0x0030fedc : { *(.text._ZN7Vehicle4initEv) }
     .vehicle_enable 0x0030bb64 : { *(.text._ZN7Vehicle6enableEv) }
     .vehicle_initialize_driver 0x0030a8bc : { *(.text._ZN7Vehicle16initializeDriverEv) }
