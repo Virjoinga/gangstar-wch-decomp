@@ -40,6 +40,7 @@ SECTIONS
     .vehicle_base_event_dtor 0x002d4094 : { *(.gnu.linkonce.t._ZN6IEventD1Ev) }
     .vehicle_base_event_vtable 0x004a6198 : { *(.gnu.linkonce.d.rel.ro._ZTV6IEvent) }
     .custom_skin_transformed_bounds 0x00307fc4 : { *(.text._ZNK26CustomSkinnedMeshSceneNode25getTransformedBoundingBoxEv) }
+    .vehicle_play_siren 0x00312020 : { *(.text._ZN7Vehicle9playSirenEv) }
     .vehicle_enable 0x0030bb64 : { *(.text._ZN7Vehicle6enableEv) }
     .vehicle_initialize_driver 0x0030a8bc : { *(.text._ZN7Vehicle16initializeDriverEv) }
     .custom_skin_bounds 0x00307b00 : { *(.text._ZNK26CustomSkinnedMeshSceneNode14getBoundingBoxEv) }

@@ -53,6 +53,7 @@ public:
     void mobilize();
     int getMarkerType();
     void stopSiren();
+    void playSiren();
     void clearOnAlert();
     void cleanupTargetDetection();
     void onCameraEnter();
