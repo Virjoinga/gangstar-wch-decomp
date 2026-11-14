@@ -548,6 +548,21 @@ void Vehicle::WarmUp()
         SceneNodeManager::getInstance()->manage(s_nodePoolID[objectType], this, 19);
 }
 
+void Vehicle::tagForKill(bool tagged)
+{
+    const unsigned int killTarget = 1u << 25;
+    if (tagged) {
+        flags344 |= killTarget;
+        unknown4 |= 4u;
+        ScriptManager::getInstance()->displayOnMinimap(this, true, true);
+        showHighlight(0);
+    } else {
+        flags344 &= ~killTarget;
+        ScriptManager::getInstance()->displayOnMinimap(this, false, true);
+        showHighlight(-1);
+    }
+}
+
 void Vehicle::enable()
 {
     const bool wasEnabled = isEnabled();
