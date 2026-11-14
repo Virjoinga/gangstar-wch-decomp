@@ -44,6 +44,8 @@ public:
     void DestroyWheels();
     virtual void WarmUp();
     virtual void enable();
+    virtual void init();
+    void CreateBody();
     virtual void Stop();
     virtual void SetPosition(const irr::core::vector3d<float>& position);
     virtual void SetRotation(const irr::core::quaternion& rotation);
@@ -203,7 +205,13 @@ private:
     unsigned char unknown428[64];
     irr::core::vector3d<float> previousPosition;
     bool hasBeenStolen;
-    unsigned char unknown505[7];
+    unsigned char unknown505;
+    bool unknown506;
+    bool unknown507;
+    bool unknown508;
+    bool unknown509;
+    unsigned char unknown510;
+    bool unknown511;
     irr::core::vector3d<float> wheelPositions[4];
     unsigned char unknown560[60];
     irr::core::vector3d<float> bodyOffset;
@@ -225,7 +233,9 @@ private:
     unsigned char unknown780[4];
     int sensorContactCount;
     int spawnType;
-    unsigned char unknown792[40];
+    bool turnSoundPlaying;
+    bool skidSoundPlaying;
+    unsigned char unknown794[38];
     irr::scene::ISceneNode* lightNodes[4];
     unsigned char unknown848[52];
     bool exploding;
@@ -235,7 +245,8 @@ private:
     unsigned char unknown908[8];
     int maxHealth;
     int health;
-    unsigned char unknown924[28];
+    int unknown924;
+    unsigned char unknown928[24];
     irr::scene::ISceneNodeAnimator* explosionAnimator;
     irr::scene::ITimelineController* explosionTimeline;
     unsigned char unknown960[4];

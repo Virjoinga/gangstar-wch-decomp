@@ -26,6 +26,7 @@
     "source": "src/game/vehicles/Vehicle.cpp",
     "linker_script": "config/linker/VehicleCleanup.ld",
     "functions": [
+        "_ZN7Vehicle4initEv",
         "_ZN7Vehicle10tagForKillEb",
         "_ZN7Vehicle9playSirenEv",
         "_ZN7Vehicle6enableEv",
@@ -252,6 +253,7 @@
     ],
     "retail_got": true,
     "external_thumb_functions": [
+        "_ZN7Vehicle10CreateBodyEv",
         "_ZN11LevelObject6enableEv",
         "_ZN7Vehicle6repairEv",
         "_ZN9Character17positionInVehicleEb",
