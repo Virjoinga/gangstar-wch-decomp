@@ -581,6 +581,24 @@ void Vehicle::init()
     unknown776 = 0.0f;
 }
 
+void Vehicle::OnSpawn()
+{
+    if (hasSceneNodePool() && !sceneNode)
+        grabSceneNode(0, 0);
+
+    hasBeenStolen = false;
+    flags344 |= 1u << 23;
+    unknown4 |= 2u;
+    LevelObject::OnSpawn();
+    init();
+    sceneNode->setVisible(true);
+    ResetBodyPosition();
+    enabledSceneNode->setVisible(true);
+    unknown4 |= 4u;
+    _resetLights();
+    flags344 &= ~2u;
+}
+
 void Vehicle::enable()
 {
     const bool wasEnabled = isEnabled();
