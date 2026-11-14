@@ -8,6 +8,7 @@ _Znwj = 0x001c4814;
 atoi = 0x001c4880;
 __stack_chk_fail = 0x001c42e0;
 _ZN21GameFactoryProperties9billboardE = 0x004144b8;
+_ZN8gameloft7vehicle13gear_profiles8profilesE = 0x004b8810;
 _ZdlPv = 0x001c42b0;
 strcmp = 0x001c4658;
 puts = 0x001c41b4;
@@ -42,6 +43,7 @@ SECTIONS
     .custom_skin_transformed_bounds 0x00307fc4 : { *(.text._ZNK26CustomSkinnedMeshSceneNode25getTransformedBoundingBoxEv) }
     .vehicle_play_siren 0x00312020 : { *(.text._ZN7Vehicle9playSirenEv) }
     .vehicle_tag_for_kill 0x0030a8f4 : { *(.text._ZN7Vehicle10tagForKillEb) }
+    .vehicle_shift_gears 0x00311da8 : { *(.text._ZN7Vehicle11_shiftGearsEj) }
     .vehicle_spawn 0x0030bbbc : { *(.text._ZN7Vehicle7OnSpawnEv) }
     .vehicle_init 0x0030fedc : { *(.text._ZN7Vehicle4initEv) }
     .vehicle_enable 0x0030bb64 : { *(.text._ZN7Vehicle6enableEv) }

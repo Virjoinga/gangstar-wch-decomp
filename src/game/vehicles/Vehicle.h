@@ -138,6 +138,8 @@ public:
 private:
     void resetPreviousPos();
     void ResetBodyPosition();
+    int getVelDirec();
+    void _shiftGears(unsigned int speed);
     void _adjustEnginePitch(unsigned int value);
     void openDoorWithClip(const char* clip, bool left);
     void setWheelVisibility(bool visible);
@@ -172,7 +174,9 @@ private:
     irr::core::vector3d<float> adjustedDestination;
     bool destinationReachable;
     bool driveToLocationFlag;
-    unsigned char unknown274[10];
+    unsigned char unknown274[2];
+    unsigned int gearProfile;
+    unsigned char unknown280[4];
     const char* enterAnim;
     const char* exitAnim;
     const char* closeDoorAnim;
@@ -194,7 +198,9 @@ private:
     unsigned char unknown348[8];
     float accelerationAmount;
     float brakeAmount;
-    unsigned char unknown364[20];
+    unsigned char unknown364[4];
+    unsigned int gear;
+    unsigned char unknown372[12];
     int sirenChannel;
     unsigned char unknown388[12];
     int waitElapsed;

@@ -193,6 +193,34 @@ void Vehicle::_pitch(float radians)
     rotateBasisPair<&irr::core::vector3d<float>::rotateYZBy>(basisY, basisZ, radians);
 }
 
+namespace gameloft { namespace vehicle { namespace gear_profiles {
+struct GearProfile {
+    unsigned int gearCount;
+    unsigned char unknown[12];
+    const unsigned int* shiftSpeeds;
+    unsigned char unknown20[8];
+};
+extern GearProfile profiles[] __attribute__((visibility("hidden")));
+} } }
+
+void Vehicle::_shiftGears(unsigned int speed)
+{
+    if (getVelDirec() == 3) {
+        gear = static_cast<unsigned int>(-1);
+        return;
+    }
+    if (gear == static_cast<unsigned int>(-1))
+        gear = 1;
+
+    const unsigned int currentGear = gear;
+    const gameloft::vehicle::gear_profiles::GearProfile& profile =
+        gameloft::vehicle::gear_profiles::profiles[gearProfile];
+    if (currentGear < profile.gearCount && speed >= profile.shiftSpeeds[currentGear - 1])
+        gear = currentGear + 1;
+    else if (currentGear > 1 && speed < profile.shiftSpeeds[currentGear - 2])
+        gear = currentGear - 1;
+}
+
 void Vehicle::_adjustTraction(b2Body* body, float amount)
 {
     const float velocityY = body->linearVelocity.y;
