@@ -563,6 +563,24 @@ void Vehicle::tagForKill(bool tagged)
     }
 }
 
+void Vehicle::init()
+{
+    if (!collisionBody)
+        CreateBody();
+
+    unknown506 = false;
+    unknown507 = false;
+    unknown508 = false;
+    unknown509 = false;
+    unknown511 = false;
+    sensorContactCount = 0;
+    turnSoundPlaying = false;
+    skidSoundPlaying = false;
+    unknown924 = 0;
+    speed = 0.0f;
+    unknown776 = 0.0f;
+}
+
 void Vehicle::enable()
 {
     const bool wasEnabled = isEnabled();
