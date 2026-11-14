@@ -118,6 +118,7 @@ public:
     void enableBackfaceCulling(bool enabled);
     void _resetLights();
     void rent(bool rented);
+    void tagForKill(bool tagged);
     void loadExplosion(const char* name);
     void showWheels();
     void hideWheels();
