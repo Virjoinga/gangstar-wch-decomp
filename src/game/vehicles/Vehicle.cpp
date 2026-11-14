@@ -1094,6 +1094,17 @@ void Vehicle::resetCollisions()
     }
 }
 
+void __attribute__((weak)) Vehicle::playSiren()
+{
+    SoundManager* sound = SoundManager::getInstance();
+    sound->unknown140 = true;
+    const int channel = sound->playEx(241, 0, true, 1.0f, 0, false, 1.0f, 0);
+    sound->unknown140 = false;
+    sirenChannel = channel;
+    if (channel >= 0)
+        flags344 |= 1u << 27;
+}
+
 void __attribute__((weak)) Vehicle::stopSiren()
 {
     const unsigned int sirenPlaying = 1u << 27;

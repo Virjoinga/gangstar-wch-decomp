@@ -293,7 +293,7 @@ irr::core::vector3d<float> SoundManager::convertVisual3DToSound3D(
     return 0.01f * position;
 }
 
-bool SoundManager::playEx(int id, const irr::core::vector3d<float>*, bool loop,
+int SoundManager::playEx(int id, const irr::core::vector3d<float>*, bool loop,
                           float volume, int, bool, float, void (*)())
 {
     if (flags & 2) {
@@ -345,7 +345,7 @@ void soundEndCallback()
         SoundManager::getInstance()->endCutscene();
 }
 
-bool SoundManager::playSoundCallback(int id, bool loop, float volume, float pitch)
+int SoundManager::playSoundCallback(int id, bool loop, float volume, float pitch)
 {
     SoundManager* manager = getInstance();
     float gain = volume * 0.01f * getInstance()->effectsPlaybackVolume;
@@ -416,7 +416,7 @@ void SoundManager::_resetFrequencies()
 
 const int SoundManager::s_playFreqs[3] = {3, 1, 2};
 
-bool SoundManager::playPriorityAudio(int id, bool loop)
+int SoundManager::playPriorityAudio(int id, bool loop)
 {
     getInstance()->beginCutscene();
     return getInstance()->playEx(id, 0, loop, 1.0f, 0, true, 1.0f, soundEndCallback);

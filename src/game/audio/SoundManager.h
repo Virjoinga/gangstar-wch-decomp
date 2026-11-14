@@ -21,7 +21,7 @@ public:
     void clear();
     void toggleSound();
     static SoundManager* getInstance() __attribute__((weak));
-    bool playEx(int id, const irr::core::vector3d<float>* position, bool flag,
+    int playEx(int id, const irr::core::vector3d<float>* position, bool flag,
                 float value1, int value2, bool flag2, float value3, void (*callback)());
     void init();
     void unInit();
@@ -77,12 +77,12 @@ public:
     bool isSoundPlaying(int resourceId, int channel);
     int getNumberOfAllocatedSounds();
 
-    static bool playSoundCallback(int id, bool loop, float volume, float pitch);
+    static int playSoundCallback(int id, bool loop, float volume, float pitch);
     static int s_soundsPlaying;
     void endCutscene();
     void beginCutscene();
     bool isRestrictedSfx(int id) const;
-    bool playPriorityAudio(int id, bool loop);
+    int playPriorityAudio(int id, bool loop);
     void allocBuffers();
     CSoundData* _getSoundData(int soundId);
     void setSfxVolume(float volume);
